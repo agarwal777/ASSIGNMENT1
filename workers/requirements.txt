@@ -1,0 +1,7 @@
+# Local ingestion workers (not deployed). Pinned loosely; lock after B1 works.
+httpx>=0.27
+yfinance>=0.2.50
+pandas>=2.2
+pymupdf>=1.24
+pydantic>=2.8
+rapidfuzz>=3.9
