@@ -23,6 +23,7 @@ export type DigestEvent = {
   url: string | null;
   related: { title: string; url: string }[];
   results?: RawResults;
+  trend?: { period: string; revenue: number | null; ebitda_margin: number | null }[];
   move?: { volume_multiple: number | null; return_pct: number | null };
   volume30d?: number[];
   no_filing_hours?: number | null;

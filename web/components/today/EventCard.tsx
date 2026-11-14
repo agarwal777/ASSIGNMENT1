@@ -2,24 +2,30 @@ import PathLine from "@/components/people/PathLine";
 import PersonChip from "@/components/people/PersonChip";
 import StintList from "@/components/people/StintList";
 import MetricTable from "@/components/today/MetricTable";
-import PromiseCheckLine from "@/components/today/PromiseCheckLine";
+import StatTiles from "@/components/today/StatTiles";
+import TrendChart from "@/components/today/TrendChart";
 import VolumeStrip from "@/components/today/VolumeStrip";
+import BulletChart from "@/components/trust/BulletChart";
 import EpistemicTag from "@/components/trust/EpistemicTag";
-import Num from "@/components/trust/Num";
-import StatusPill from "@/components/trust/StatusPill";
 import { SourceLink } from "@/components/trust/SourceLink";
+import StatusPill from "@/components/trust/StatusPill";
 import { copy } from "@/lib/copy";
 import { date, time } from "@/lib/format";
-import { statusFromStance } from "@/lib/status";
-import type { Card, Epistemic } from "@/lib/types";
+import { statusFromStance, type Status } from "@/lib/status";
+import type { Card, Claim, Epistemic, PromiseCheck, SourceRef } from "@/lib/types";
 
 /**
- * One card, one fixed order (FRONTEND.md §5.1): meta · verdict · evidence · assumption · divider ·
- * person · question · sources. Slots without data are left out, never shown empty.
+ * One card, one fixed order: meta · verdict · lead stats · trend · claims (bullet charts) · evidence ·
+ * "All numbers" · person · question · sources + review. Slots without data are left out, never shown empty.
  */
-export default function EventCard({ card, refDate }: { card: Card; refDate?: string }) {
+export default function EventCard({ card, refDate, networkLoaded = false, reviewed = false, onReviewed }: {
+  card: Card; refDate?: string; networkLoaded?: boolean; reviewed?: boolean; onReviewed?: () => void;
+}) {
+  const guidance = card.variant === "results" && card.promiseCheck && card.promiseCheck.promiseId !== card.assumption?.ref.id
+    ? guidanceClaim(card.promiseCheck, card.period) : null;
   return (
-    <article aria-labelledby={`${card.id}-h`} className="rounded-[12px] border border-line bg-surface p-4">
+    <article aria-labelledby={`${card.id}-h`}
+      className={`rounded-[12px] border border-line bg-surface p-4 transition-opacity ${reviewed ? "opacity-55" : ""}`}>
       {/* 1 · meta */}
       <p className="flex flex-wrap items-center gap-x-1.5 text-[13px] font-medium text-ink-3">
         <span className="text-ink">{card.companyName}</span>
@@ -32,38 +38,95 @@ export default function EventCard({ card, refDate }: { card: Card; refDate?: str
       {/* 2 · verdict */}
       <h3 id={`${card.id}-h`} className="mt-1 font-serif text-[19px] font-medium leading-[26px]">{card.headline}</h3>
 
-      {/* 3 · evidence */}
-      <Evidence card={card} refDate={refDate} />
+      {/* 3 · lead stats, trend */}
+      {card.tiles && <StatTiles tiles={card.tiles} />}
+      {card.trend && <TrendChart trend={card.trend} />}
 
-      {/* 4 · assumption */}
+      {/* 4 · claims */}
       {card.assumption && (
-        <div className="mt-3 flex items-start gap-2">
-          <StatusPill status={card.assumption.status ?? statusFromStance(card.assumption.stance)} />
-          <p className="text-[15px] leading-[22px]">
-            {card.assumption.ref.text}
-            {card.assumption.ref.deadline && <span className="text-ink-3"> · {copy.card.by} {card.assumption.ref.deadline}</span>}
-            {card.assumption.rationale && <span className="block text-[13px] text-ink-2">{card.assumption.rationale}</span>}
-          </p>
-        </div>
+        <ClaimBlock status={card.assumption.status ?? statusFromStance(card.assumption.stance)} text={card.assumption.ref.text}
+          deadline={card.assumption.ref.deadline} claim={card.assumption.claim} rationale={card.assumption.rationale} />
+      )}
+      {guidance && card.variant === "results" && (
+        <ClaimBlock status={guidance.claim.status} text={guidance.text} deadline={guidance.claim.deadline} claim={guidance.claim}
+          source={card.promiseCheck?.quote} refDate={refDate} />
       )}
 
-      {(card.person || card.question) && <hr className="my-3 border-line" />}
+      {/* 5 · evidence that isn't a number */}
+      <Evidence card={card} refDate={refDate} />
 
-      {/* 6 · person: tap for the call sheet */}
-      {card.person && <PersonChip person={card.person} eventId={card.id} />}
+      {/* 6 · every number, with its source */}
+      {card.variant === "results" && (
+        <details className="mt-3 rounded-[8px] border border-line">
+          <summary className="flex min-h-11 cursor-pointer items-center px-3 text-[13px] font-medium text-ink-2">{copy.card.allNumbers}</summary>
+          <div className="px-3 pb-2">
+            <MetricTable metrics={card.metrics} exceptional={card.exceptional} />
+            {card.metrics[0]?.value.source && <SourceLink s={card.metrics[0].value.source} refDate={refDate} />}
+          </div>
+        </details>
+      )}
 
-      {/* 7 · question */}
+      <hr className="my-3 border-line" />
+
+      {/* 7 · person */}
+      {card.person ? <PersonChip person={card.person} eventId={card.id} />
+        : networkLoaded && <p className="text-[13px] text-ink-2">{copy.card.noPerson(shortCompany(card.companyName))}</p>}
+
+      {/* 8 · question */}
       {card.question && (
         <p className="mt-2 text-[15px] leading-[22px]"><span className="font-medium text-accent">{copy.card.ask} </span>{card.question}</p>
       )}
 
-      {/* 8 · sources */}
+      {/* 9 · sources, review */}
       <footer className="mt-2 flex flex-wrap items-center gap-x-3">
         {card.sources.map((s) => <SourceLink key={s.documentId} s={s} refDate={refDate} />)}
         {card.sources.length === 0 && <span className="py-3 text-[13px] text-ink-3">{copy.card.priceSource}</span>}
         <EpistemicTag e={footerTag(card)} />
       </footer>
+      {onReviewed && (
+        <button type="button" onClick={onReviewed} aria-pressed={reviewed}
+          aria-label={reviewed ? copy.card.undoReviewed : copy.card.markReviewed}
+          className={`mt-2 flex min-h-11 w-full items-center justify-center gap-1.5 rounded-[8px] border text-[15px] font-medium ${
+            reviewed ? "border-line text-ink-2" : "border-accent text-accent"}`}>
+          {reviewed ? `✓ ${copy.card.reviewed}` : copy.card.markReviewed}
+        </button>
+      )}
     </article>
+  );
+}
+
+const shortCompany = (n: string) => n.replace(/\s+(Limited|Ltd\.?)$/i, "");
+
+/** Management's guidance for this year as a claim. Before Q4 it can only be on track or behind. */
+function guidanceClaim(pc: PromiseCheck, period: string): { text: string; claim: Claim } {
+  const floor = pc.guidedHigh === pc.guidedLow;
+  const a = pc.actual.value;
+  const inside = floor ? a >= pc.guidedLow : a >= pc.guidedLow && a <= pc.guidedHigh;
+  const q = Number(period.match(/^Q([1-4])/)?.[1] ?? 0);
+  const status: Status = q === 4 ? (inside ? "met" : "missed") : inside ? "on_track" : "behind";
+  const t = (n: number) => n.toLocaleString("en-IN", { maximumFractionDigits: 2 });
+  return {
+    text: `${copy.card.guidedBy} EBITDA margin ${floor ? `at least ${t(pc.guidedLow)}%` : `${t(pc.guidedLow)}–${t(pc.guidedHigh)}%`}`,
+    claim: { metric: "ebitda_margin", unit: "pct", deadline: period.slice(-4), status, target: pc.guidedLow,
+      targetHigh: floor ? undefined : pc.guidedHigh, actual: a, quartersReported: q || undefined, quartersTotal: 4 },
+  };
+}
+
+function ClaimBlock({ status, text, deadline, claim, rationale, source, refDate }: {
+  status: Status; text: string; deadline?: string; claim?: Claim; rationale?: string; source?: SourceRef; refDate?: string;
+}) {
+  return (
+    <div className="mt-3">
+      <div className="flex items-start gap-2">
+        <StatusPill status={status} />
+        <p className="min-w-0 text-[15px] leading-[22px]">
+          {text}{deadline && <span className="text-ink-3"> · {copy.card.by} {deadline}</span>}
+        </p>
+      </div>
+      {claim ? <div className="mt-2"><BulletChart claim={claim} label={text} /></div>
+        : rationale && <p className="mt-1 text-[13px] text-ink-2">{rationale}</p>}
+      {source && <SourceLink s={source} refDate={refDate} />}
+    </div>
   );
 }
 
@@ -79,12 +142,7 @@ function footerTag(card: Card): Epistemic {
 function Evidence({ card, refDate }: { card: Card; refDate?: string }) {
   switch (card.variant) {
     case "results":
-      return (
-        <>
-          <MetricTable metrics={card.metrics} exceptional={card.exceptional} />
-          {card.promiseCheck && <PromiseCheckLine check={card.promiseCheck} />}
-        </>
-      );
+      return null;
     case "management_change":
       return (
         <div className="mt-2">
@@ -104,20 +162,6 @@ function Evidence({ card, refDate }: { card: Card; refDate?: string }) {
     case "anomaly":
       return (
         <div className="mt-3">
-          <div className="grid grid-cols-2 gap-2">
-            {card.volumeRatio && (
-              <div className="rounded-[8px] bg-bg px-3 py-2">
-                <p className="text-[13px] text-ink-3">{copy.card.volumeVsAvg}</p>
-                <Num v={card.volumeRatio} className="text-[19px] font-medium" />
-              </div>
-            )}
-            {card.priceChange && (
-              <div className="rounded-[8px] bg-bg px-3 py-2">
-                <p className="text-[13px] text-ink-3">{copy.card.priceChange}</p>
-                <Num v={card.priceChange} className="text-[19px] font-medium" />
-              </div>
-            )}
-          </div>
           <VolumeStrip values={card.volume30d} />
           <p className="mt-2 text-[13px] text-ink-2">{copy.card.noFiling(card.noFilingHours)}</p>
         </div>

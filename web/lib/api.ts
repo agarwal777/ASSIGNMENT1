@@ -7,7 +7,7 @@ import { toClaim } from "@/lib/claims";
 import { copy } from "@/lib/copy";
 import { bps as fmtBps, pct as fmtPct } from "@/lib/format";
 import type { DigestEvent } from "@/lib/digest";
-import type { Card, DigestResponse, MetricRow, NumValue, SourceRef } from "@/lib/types";
+import type { Card, DigestResponse, MetricRow, NumValue, SourceRef, StatTile, Trend } from "@/lib/types";
 
 export const DEFAULT_AS_OF: string = digestData.default_as_of;
 export const SCORING_NOTE: string = digestData.scoring_note;
@@ -88,6 +88,31 @@ const marginMove = (value: number | null | undefined, vs: string): NumValue | un
 const EBITDA_FORMULA =
   "EBITDA = profit before exceptional items and tax + finance costs + depreciation − other income (− share of associates when it sits inside PBT)";
 
+/** Which metric drives the results headline (same rules as resultsHeadline). */
+function driver(e: DigestEvent): "margin" | "pat" | "revenue" {
+  const r = e.results!;
+  const m = r.ebitda_margin.yoy_bps ?? null, rev = r.metrics.revenue?.yoy_pct ?? null, pat = r.metrics.pat?.yoy_pct ?? null;
+  if (m != null && Math.abs(m) >= 150 && rev != null) return "margin";
+  if (rev != null && pat != null && Math.abs(pat) >= 30) return "pat";
+  return "revenue";
+}
+
+/** Two lead stats for the metrics in the headline, and the key metric's trend. */
+function leadStats(e: DigestEvent, rows: MetricRow[]): { tiles: StatTile[]; trend?: Trend } {
+  const by = (k: MetricRow["metric"]) => rows.find((r) => r.metric === k);
+  const tile = (k: MetricRow["metric"]): StatTile[] => {
+    const r = by(k);
+    return r ? [{ label: copy.metric[k], value: r.value, signedValue: false, delta: r.yoy, deltaPeriod: "YoY" }] : [];
+  };
+  const d = driver(e);
+  const tiles = d === "margin" ? [...tile("ebitda_margin"), ...tile("revenue")]
+    : d === "pat" ? [...tile("revenue"), ...tile("pat")] : [...tile("revenue"), ...tile("ebitda_margin")];
+  const metric = d === "margin" ? "ebitda_margin" : "revenue";
+  const points = (e.trend ?? []).flatMap((q) => (q[metric] != null ? [{ period: q.period, value: q[metric]! }] : []));
+  return { tiles: tiles.slice(0, 2),
+    trend: points.length >= 3 ? { metric, label: copy.metric[metric], kind: metric === "revenue" ? "inr_cr" : "pct", points } : undefined };
+}
+
 /** Verdict from the numbers, largest surprise first. Template only: no model writes headlines. */
 function resultsHeadline(e: DigestEvent): string {
   const r = e.results!;
@@ -150,10 +175,11 @@ function questionFor(e: DigestEvent): string {
   // README §6.7: start from the gap. A thesis item that is behind (or missed) becomes the question.
   const hit = e.thesis?.find((t) => t.status === "behind" || t.status === "missed");
   if (hit) {
-    const so = hit.evidence.replace(/^actual /, "");
+    const name = copy.ledger.metric[hit.metric] ?? "this metric";
+    const what = name.startsWith("EBITDA") ? name : name.toLowerCase();
     return hit.source === "investor"
-      ? `Your assumption "${hit.text}" is ${hit.status === "missed" ? "missed" : "behind"}: ${so}. Is the gap cyclical, or a change in the business?`
-      : `Management guided "${hit.text}" for ${hit.deadline} and is ${hit.status === "missed" ? "short" : "behind"}: ${so}. What would close the gap in the second half?`;
+      ? `Is the shortfall in ${what} cyclical, or has something changed in the business?`
+      : `What would ${e.name} need to change to reach its ${hit.deadline} ${what} guidance, and is that in management's hands?`;
   }
   if (r?.metrics?.revenue) {
     const m = r.ebitda_margin.yoy_bps;
@@ -173,7 +199,8 @@ export function toCard(e: DigestEvent): Card {
     id: e.id, companySymbol: e.symbol, companyName: e.name, category: e.category, at: e.at,
     score: e.score, reasons: e.reasons, question: questionFor(e),
     sources: [src, ...e.related.slice(0, 1).map((x) => ({ documentId: x.url, label: `${e.symbol}: ${x.title}`, publishedAt: e.at }))]
-      .filter((x): x is SourceRef => !!x && !!x.documentId),
+      .filter((x): x is SourceRef => !!x && !!x.documentId)
+      .filter((x, i, all) => all.findIndex((y) => y.documentId === x.documentId) === i),   // one link per document
   };
   const t = e.thesis?.[0];
   const assumption = t ? {
@@ -182,8 +209,9 @@ export function toCard(e: DigestEvent): Card {
   } : undefined;
   if (e.results?.metrics && Object.keys(e.results.metrics).length) {
     const pc = e.promise_check;
-    return { ...base, assumption, variant: "results", headline: resultsHeadline(e), period: e.results.period ?? "",
-      metrics: metrics(e, src), exceptional: exceptional(e),
+    const rows = metrics(e, src);
+    return { ...base, ...leadStats(e, rows), assumption, variant: "results", headline: resultsHeadline(e), period: e.results.period ?? "",
+      metrics: rows, exceptional: exceptional(e),
       promiseCheck: pc ? {
         promiseId: pc.promise_id, guidedLow: pc.guided_low,
         guidedHigh: pc.guided_high ?? pc.guided_low,   // open-ended "at least" guidance: high === low
@@ -205,7 +233,13 @@ export function toCard(e: DigestEvent): Card {
   if (e.kind === "move" && e.move) {
     const vol = e.move.volume_multiple, ret = e.move.return_pct;
     const unexplained = e.category === "unexplained_move";
-    return { ...base, variant: "anomaly",
+    const tiles: StatTile[] = [
+      ...(vol != null ? [{ label: copy.card.volumeVsAvg, value: { value: vol, kind: "ratio", epistemic: "CALCULATED",
+        formula: "today's volume ÷ average of the previous 20 sessions" } as NumValue, signedValue: false }] : []),
+      ...(ret != null ? [{ label: copy.card.priceChange, value: { value: ret, kind: "pct", epistemic: "CALCULATED",
+        formula: "(close − previous close) ÷ previous close" } as NumValue, signedValue: true, deltaPeriod: copy.card.oneDay }] : []),
+    ];
+    return { ...base, tiles, variant: "anomaly",
       headline: vol != null && vol > 2
         ? `Volume ${vol.toFixed(1)}× normal${unexplained ? " with no filing" : ""}`
         : `Price ${ret != null && ret < 0 ? "down" : "up"} ${fmtPct(Math.abs(ret ?? 0), false)}${unexplained ? " with no filing" : ""}`,

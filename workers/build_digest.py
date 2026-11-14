@@ -69,6 +69,22 @@ def surprise_results(h: dict) -> tuple[float, list[str]]:
     return s, reasons   # parser warnings are shown on the card as notes, not repeated as chips
 
 
+def qkey(q: str) -> tuple[int, int]:
+    return int(q[-2:]), int(q[1])
+
+
+def trend(fx: dict, period: str | None, n: int = 5) -> list[dict]:
+    """Up to n quarters ending at this results period, for the card's small trend chart."""
+    if not period or not period.startswith("Q"):
+        return []
+    qs = sorted({p for (p, m) in fx if m == "revenue" and len(p) == 6 and p.startswith("Q")}, key=qkey)
+    out = []
+    for q in [q for q in qs if qkey(q) <= qkey(period)][-n:]:
+        rev, eb = fx.get((q, "revenue")), fx.get((q, "ebitda"))
+        out.append({"period": q, "revenue": rev, "ebitda_margin": round(100 * eb / rev, 2) if rev and eb is not None else None})
+    return out
+
+
 def main() -> None:
     portfolio = [r for r in csv.DictReader((SEED / "portfolio.csv").open(encoding="utf-8"))
                  if "portfolio" in r["role"]]
@@ -190,6 +206,7 @@ def main() -> None:
                 word = "missed" if top["status"] == "missed" else "behind"   # same words as the status pills
                 ev["reasons"].insert(0, (f"{word} your assumption" if top["source"] == "investor"
                                          else f"{word} management's guidance") if hit else "touches your thesis")
+            ev["trend"] = trend(fx, res.get("period"))
             pc = promise_check(fx, led, res.get("period"))
             if pc:
                 ev["promise_check"] = pc

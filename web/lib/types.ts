@@ -19,6 +19,7 @@ export interface CardBase {
   assumption?: { ref: AssumptionRef; stance: Stance; rationale?: string; epistemic: Epistemic;
                 status?: PromiseStatus /* redesign: one status vocabulary */; claim?: Claim /* redesign: bullet chart */ };
   person?: PersonRef; question?: string; sources: SourceRef[];
+  tiles?: StatTile[] /* redesign: lead stats */; trend?: Trend /* redesign: 3–5 quarter trend */;
 }
 export interface MetricRow { metric: 'revenue' | 'ebitda' | 'ebitda_margin' | 'pbt' | 'pat'; value: NumValue; qoq?: NumValue; yoy?: NumValue; }
 export interface PromiseCheck { promiseId: string; guidedLow: number; guidedHigh: number; unit: string; actual: NumValue; quote: SourceRef; }
@@ -41,6 +42,11 @@ export interface DigestResponse {
 }
 
 // ── 2. Additions following the §7.2 pattern ────────────────────────────────────────
+/** A lead stat on a card: the value, and its change with the period it is measured over. */
+export interface StatTile { label: string; value: NumValue; signedValue?: boolean; delta?: NumValue; deltaPeriod?: string }
+/** The key metric over the last 3–5 quarters, oldest first. */
+export interface Trend { metric: 'revenue' | 'ebitda_margin'; label: string; kind: 'inr_cr' | 'pct'; points: { period: string; value: number }[] }
+
 /** One vocabulary everywhere. met/missed only after the deadline; before it a shortfall is behind. */
 export type PromiseStatus = 'on_track' | 'behind' | 'met' | 'missed' | 'cant_check';
 

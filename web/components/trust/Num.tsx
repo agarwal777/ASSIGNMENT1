@@ -27,7 +27,7 @@ export default function Num({ v, signed = true, className = "", tone = false }: 
   }
   return (
     <button type="button" onClick={action} aria-label={`${label}. ${v.formula ? "Show formula" : "Show source"}`}
-      className={`tabular -my-2 inline-flex whitespace-nowrap min-h-11 items-center underline decoration-dotted decoration-ink-3 underline-offset-4 ${color} ${className}`}>
+      className={`tabular -my-2 inline-flex whitespace-nowrap min-h-11 items-center rounded-[4px] hover:bg-accent/10 ${color} ${className}`}>
       {text}
     </button>
   );

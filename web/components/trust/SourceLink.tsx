@@ -11,9 +11,9 @@ export function SourceLink({ s, refDate }: { s: SourceRef; refDate?: string }) {
   return (
     <button type="button"
       onClick={() => open("source", { doc: s.documentId, page: s.page, label: s.label, at: s.publishedAt })}
-      className="inline-flex min-h-11 items-center gap-1.5 text-left text-[13px] font-medium text-ink-2 underline decoration-dotted underline-offset-4">
+      className="inline-flex min-h-11 max-w-full min-w-0 items-center gap-1.5 text-left text-[13px] font-medium text-ink-2">
       <FileText size={14} aria-hidden className="shrink-0" />
-      <span>{s.label} · {date(s.publishedAt, refDate)}</span>
+      <span className="line-clamp-2 min-w-0 [overflow-wrap:anywhere] underline decoration-line underline-offset-4">{s.label} · {date(s.publishedAt, refDate)}</span>
     </button>
   );
 }

@@ -62,6 +62,10 @@ export const digestFixture: DigestResponse = {
       reasons: ["volume 3.0× its 20-day average", "no filing since the previous session"],
       volumeRatio: { value: 3, kind: "ratio", epistemic: "CALCULATED", formula: "today's volume ÷ average of the previous 20 sessions" },
       priceChange: { value: -6, kind: "pct", epistemic: "CALCULATED", formula: "(close − previous close) ÷ previous close" },
+      tiles: [
+        { label: "Volume vs 20-day average", value: { value: 3, kind: "ratio", epistemic: "CALCULATED", formula: "today's volume ÷ average of the previous 20 sessions" }, signedValue: false },
+        { label: "Price change", value: { value: -6, kind: "pct", epistemic: "CALCULATED", formula: "(close − previous close) ÷ previous close" }, signedValue: true, deltaPeriod: "1 day" },
+      ],
       volume30d: [10, 11, 9, 10, 12, 10, 9, 11, 10, 10, 9, 10, 11, 10, 12, 10, 9, 10, 11, 10, 10, 9, 11, 10, 10, 12, 11, 10, 10, 30],
       noFilingHours: 48,
       question: "What public developments in the cables sector could explain a move like this?",

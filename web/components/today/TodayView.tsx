@@ -1,6 +1,6 @@
 "use client";
 
-import { useEffect, useMemo, useState } from "react";
+import { useEffect, useMemo, useState, useSyncExternalStore } from "react";
 import { usePathname, useRouter, useSearchParams } from "next/navigation";
 import Link from "next/link";
 import { ChevronLeft, ChevronRight, Settings } from "lucide-react";
@@ -16,7 +16,33 @@ import { withPerson } from "@/lib/people";
 import { loadNetwork } from "@/lib/vault";
 
 const DAY = 24 * 3600_000;
+
 const WINDOWS = [{ key: "24h", hours: 24 }, { key: "7d", hours: 168 }] as const;
+
+/**
+ * Reviewed card ids, per replay date, in localStorage. Storage can be missing or blocked (private
+ * mode): every access is wrapped, and an in-memory copy keeps the button working for this visit.
+ */
+const reviewKey = (day: string) => `finn.reviewed.${day}`;
+const memory = new Map<string, string>();
+const listeners = new Set<() => void>();
+function readRaw(day: string): string {
+  const k = reviewKey(day);
+  try { return window.localStorage.getItem(k) ?? memory.get(k) ?? "[]"; } catch { return memory.get(k) ?? "[]"; }
+}
+function writeRaw(day: string, v: string) {
+  memory.set(reviewKey(day), v);
+  try { window.localStorage.setItem(reviewKey(day), v); } catch { /* kept in memory only */ }
+  listeners.forEach((l) => l());
+}
+function subscribe(l: () => void) {
+  listeners.add(l);
+  window.addEventListener("storage", l);
+  return () => { listeners.delete(l); window.removeEventListener("storage", l); };
+}
+function parseIds(raw: string): string[] {
+  try { const v = JSON.parse(raw); return Array.isArray(v) ? v.filter((x) => typeof x === "string") : []; } catch { return []; }
+}
 
 export default function TodayView() {
   const q = useSearchParams();
@@ -30,6 +56,13 @@ export default function TodayView() {
   const [networkError, setNetworkError] = useState(false);
   const [showAllWorth, setShowAllWorth] = useState(false);
   useEffect(() => { loadNetwork().then(setContacts).catch(() => setNetworkError(true)); }, []);
+  // The server renders "nothing reviewed"; the device's stored list takes over after hydration.
+  const reviewedRaw = useSyncExternalStore(subscribe, () => readRaw(day), () => "[]");
+  const reviewedIds = useMemo(() => parseIds(reviewedRaw), [reviewedRaw]);
+  const toggleReviewed = (id: string) => {
+    const ids = reviewedIds.includes(id) ? reviewedIds.filter((x) => x !== id) : [...reviewedIds, id];
+    writeRaw(day, JSON.stringify(ids));
+  };
 
   const digest = useMemo(() => getDigest(asOf, win.hours), [asOf, win.hours]);
   // README §6.2 network bonus N, computed here because the network never leaves the device:
@@ -96,12 +129,16 @@ export default function TodayView() {
 
         {/* Needs you */}
         <section aria-labelledby="needs" className="mt-6">
-          <h2 id="needs" className="mb-3 text-[13px] font-medium text-ink-2">
+          <h2 id="needs" className="text-[13px] font-medium text-ink-2">
             {copy.today.needsYou} <span className="text-accent">· {cards.length}</span>
           </h2>
+          {cards.length > 0 && <ReviewProgress done={cards.filter((c) => reviewedIds.includes(c.id)).length} total={cards.length} />}
           {cards.length === 0
             ? <p className="text-[15px] text-ink-2">{copy.today.nothingNeedsYou}</p>
-            : <div className="space-y-3">{cards.map((c) => <EventCard key={c.id} card={c} refDate={asOf} />)}</div>}
+            : <div className="space-y-3">{cards.map((c) => (
+                <EventCard key={c.id} card={c} refDate={asOf} networkLoaded={contacts !== null}
+                  reviewed={reviewedIds.includes(c.id)} onReviewed={() => toggleReviewed(c.id)} />
+              ))}</div>}
           {networkError && <p className="mt-2 text-[13px] text-ink-3">{copy.today.networkUnavailable}</p>}
         </section>
 
@@ -154,5 +191,17 @@ export default function TodayView() {
         <p className="mt-2 text-center text-[11px] text-ink-3">{SCORING_NOTE}</p>
       </div>
     </>
+  );
+}
+
+function ReviewProgress({ done, total }: { done: number; total: number }) {
+  return (
+    <div className="mb-3 mt-2">
+      <div role="progressbar" aria-valuemin={0} aria-valuemax={total} aria-valuenow={done} aria-label={copy.card.progress(done, total)}
+        className="h-1.5 overflow-hidden rounded-full bg-line">
+        <div className="h-full rounded-full bg-accent transition-[width]" style={{ width: `${(100 * done) / total}%` }} />
+      </div>
+      <p className="mt-1 text-[13px] text-ink-2">{copy.card.progress(done, total)}</p>
+    </div>
   );
 }

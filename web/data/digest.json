@@ -1,5 +1,5 @@
 {
- "generated_at": "2026-11-15T03:16:09",
+ "generated_at": "2026-11-15T03:30:01",
  "default_as_of": "2026-11-06T08:00:00+05:30",
  "scoring_note": "score = (0.35·materiality + 0.25·surprise + 0.30·thesis) / 0.90; your network adds up to 0.10 on your device and only reorders cards. Weights are a starting heuristic",
  "events": [
@@ -133,6 +133,33 @@
    "reasons": [
     "EBITDA margin -311 bps YoY",
     "revenue +35.4% YoY"
+   ],
+   "trend": [
+    {
+     "period": "Q2FY26",
+     "revenue": 12576.86,
+     "ebitda_margin": 19.41
+    },
+    {
+     "period": "Q3FY26",
+     "revenue": 14830.24,
+     "ebitda_margin": 19.03
+    },
+    {
+     "period": "Q4FY26",
+     "revenue": 17246.44,
+     "ebitda_margin": 19.18
+    },
+    {
+     "period": "Q1FY27",
+     "revenue": 13069.59,
+     "ebitda_margin": 18.44
+    },
+    {
+     "period": "Q2FY27",
+     "revenue": 17029.87,
+     "ebitda_margin": 16.3
+    }
    ],
    "thesis": [],
    "bucket": "needs_you"
@@ -969,6 +996,33 @@
     "revenue +26.3% YoY",
     "PAT +32.7% YoY"
    ],
+   "trend": [
+    {
+     "period": "Q2FY26",
+     "revenue": 15544.91,
+     "ebitda_margin": 21.24
+    },
+    {
+     "period": "Q3FY26",
+     "revenue": 13948.41,
+     "ebitda_margin": 21.9
+    },
+    {
+     "period": "Q4FY26",
+     "revenue": 14900.2,
+     "ebitda_margin": 17.44
+    },
+    {
+     "period": "Q1FY27",
+     "revenue": 19051.26,
+     "ebitda_margin": 21.07
+    },
+    {
+     "period": "Q2FY27",
+     "revenue": 19635.94,
+     "ebitda_margin": 18.67
+    }
+   ],
    "thesis": [],
    "bucket": "needs_you"
   },
@@ -1567,6 +1621,33 @@
    "score": 0.483,
    "reasons": [
     "results"
+   ],
+   "trend": [
+    {
+     "period": "Q2FY26",
+     "revenue": 1677.38,
+     "ebitda_margin": 9.31
+    },
+    {
+     "period": "Q3FY26",
+     "revenue": 1895.69,
+     "ebitda_margin": 9.07
+    },
+    {
+     "period": "Q4FY26",
+     "revenue": 2119.21,
+     "ebitda_margin": 16.77
+    },
+    {
+     "period": "Q1FY27",
+     "revenue": 1814.62,
+     "ebitda_margin": 8.22
+    },
+    {
+     "period": "Q2FY27",
+     "revenue": 1826.69,
+     "ebitda_margin": 10.7
+    }
    ],
    "thesis": [],
    "bucket": "worth_a_read"
@@ -2578,6 +2659,33 @@
    "reasons": [
     "results"
    ],
+   "trend": [
+    {
+     "period": "Q2FY26",
+     "revenue": 58689.29,
+     "ebitda_margin": 15.16
+    },
+    {
+     "period": "Q3FY26",
+     "revenue": 57002.4,
+     "ebitda_margin": 14.38
+    },
+    {
+     "period": "Q4FY26",
+     "revenue": 63270.13,
+     "ebitda_margin": 15.53
+    },
+    {
+     "period": "Q1FY27",
+     "revenue": 60794.29,
+     "ebitda_margin": 15.24
+    },
+    {
+     "period": "Q2FY27",
+     "revenue": 65436.24,
+     "ebitda_margin": 16.1
+    }
+   ],
    "thesis": [],
    "bucket": "worth_a_read"
   },
@@ -2890,6 +2998,33 @@
     "behind your assumption",
     "EBITDA margin +172 bps YoY",
     "PAT +51.5% YoY"
+   ],
+   "trend": [
+    {
+     "period": "Q2FY26",
+     "revenue": 2347.32,
+     "ebitda_margin": 3.0
+    },
+    {
+     "period": "Q3FY26",
+     "revenue": 3070.77,
+     "ebitda_margin": 5.77
+    },
+    {
+     "period": "Q4FY26",
+     "revenue": 4887.83,
+     "ebitda_margin": 4.51
+    },
+    {
+     "period": "Q1FY27",
+     "revenue": 4673.5,
+     "ebitda_margin": 5.68
+    },
+    {
+     "period": "Q2FY27",
+     "revenue": 2706.57,
+     "ebitda_margin": 4.72
+    }
    ],
    "thesis": [
     {
@@ -3495,6 +3630,33 @@
    "reasons": [
     "PAT -42.7% YoY"
    ],
+   "trend": [
+    {
+     "period": "Q2FY26",
+     "revenue": 2340.15,
+     "ebitda_margin": 20.35
+    },
+    {
+     "period": "Q3FY26",
+     "revenue": 2437.22,
+     "ebitda_margin": 19.79
+    },
+    {
+     "period": "Q4FY26",
+     "revenue": 2499.47,
+     "ebitda_margin": 19.4
+    },
+    {
+     "period": "Q1FY27",
+     "revenue": 2569.65,
+     "ebitda_margin": 19.45
+    },
+    {
+     "period": "Q2FY27",
+     "revenue": 2607.89,
+     "ebitda_margin": 19.56
+    }
+   ],
    "thesis": [],
    "bucket": "needs_you"
   },
@@ -3740,6 +3902,33 @@
    "reasons": [
     "EBITDA margin +420 bps YoY",
     "PAT +58.0% YoY"
+   ],
+   "trend": [
+    {
+     "period": "Q2FY26",
+     "revenue": 2387.4,
+     "ebitda_margin": 5.54
+    },
+    {
+     "period": "Q3FY26",
+     "revenue": 2103.0,
+     "ebitda_margin": 1.8
+    },
+    {
+     "period": "Q4FY26",
+     "revenue": 2789.9,
+     "ebitda_margin": 8.15
+    },
+    {
+     "period": "Q1FY27",
+     "revenue": 2642.1,
+     "ebitda_margin": 9.8
+    },
+    {
+     "period": "Q2FY27",
+     "revenue": 2742.6,
+     "ebitda_margin": 9.74
+    }
    ],
    "thesis": [],
    "bucket": "needs_you"
@@ -4063,6 +4252,33 @@
    "reasons": [
     "results"
    ],
+   "trend": [
+    {
+     "period": "Q2FY26",
+     "revenue": 2473.9,
+     "ebitda_margin": 6.95
+    },
+    {
+     "period": "Q3FY26",
+     "revenue": 2634.68,
+     "ebitda_margin": 9.67
+    },
+    {
+     "period": "Q4FY26",
+     "revenue": 3428.04,
+     "ebitda_margin": 10.92
+    },
+    {
+     "period": "Q1FY27",
+     "revenue": 2302.73,
+     "ebitda_margin": 2.98
+    },
+    {
+     "period": "Q2FY27",
+     "revenue": 2755.87,
+     "ebitda_margin": 7.04
+    }
+   ],
    "thesis": [],
    "bucket": "worth_a_read"
   },
@@ -4170,6 +4386,33 @@
    "score": 0.708,
    "reasons": [
     "revenue +32.4% YoY"
+   ],
+   "trend": [
+    {
+     "period": "Q2FY26",
+     "revenue": 4543.01,
+     "ebitda_margin": 8.66
+    },
+    {
+     "period": "Q3FY26",
+     "revenue": 4868.29,
+     "ebitda_margin": 8.96
+    },
+    {
+     "period": "Q4FY26",
+     "revenue": 6232.71,
+     "ebitda_margin": 8.83
+    },
+    {
+     "period": "Q1FY27",
+     "revenue": 5811.83,
+     "ebitda_margin": 9.38
+    },
+    {
+     "period": "Q2FY27",
+     "revenue": 6014.67,
+     "ebitda_margin": 8.79
+    }
    ],
    "thesis": [],
    "bucket": "needs_you"
@@ -4743,6 +4986,33 @@
     "revenue -31.0% YoY",
     "PAT +73.7% YoY"
    ],
+   "trend": [
+    {
+     "period": "Q2FY26",
+     "revenue": 1258.1,
+     "ebitda_margin": 9.89
+    },
+    {
+     "period": "Q3FY26",
+     "revenue": 1041.6,
+     "ebitda_margin": 8.51
+    },
+    {
+     "period": "Q4FY26",
+     "revenue": 1166.97,
+     "ebitda_margin": 9.12
+    },
+    {
+     "period": "Q1FY27",
+     "revenue": 756.68,
+     "ebitda_margin": 7.53
+    },
+    {
+     "period": "Q2FY27",
+     "revenue": 867.75,
+     "ebitda_margin": 8.6
+    }
+   ],
    "thesis": [],
    "bucket": "needs_you"
   },
@@ -4932,6 +5202,33 @@
     "EBITDA margin -327 bps YoY",
     "revenue +26.2% YoY"
    ],
+   "trend": [
+    {
+     "period": "Q2FY26",
+     "revenue": 35079.82,
+     "ebitda_margin": 18.44
+    },
+    {
+     "period": "Q3FY26",
+     "revenue": 38941.65,
+     "ebitda_margin": 14.68
+    },
+    {
+     "period": "Q4FY26",
+     "revenue": 39600.92,
+     "ebitda_margin": 13.91
+    },
+    {
+     "period": "Q1FY27",
+     "revenue": 41958.76,
+     "ebitda_margin": 12.27
+    },
+    {
+     "period": "Q2FY27",
+     "revenue": 44281.88,
+     "ebitda_margin": 15.17
+    }
+   ],
    "thesis": [
     {
      "id": "inv-mm-1",
@@ -5082,6 +5379,33 @@
    "reasons": [
     "revenue +38.3% YoY",
     "PAT +36.6% YoY"
+   ],
+   "trend": [
+    {
+     "period": "Q2FY26",
+     "revenue": 4814.03,
+     "ebitda_margin": 11.46
+    },
+    {
+     "period": "Q3FY26",
+     "revenue": 5018.06,
+     "ebitda_margin": 11.03
+    },
+    {
+     "period": "Q4FY26",
+     "revenue": 5336.41,
+     "ebitda_margin": 11.3
+    },
+    {
+     "period": "Q1FY27",
+     "revenue": 5556.85,
+     "ebitda_margin": 10.29
+    },
+    {
+     "period": "Q2FY27",
+     "revenue": 6655.42,
+     "ebitda_margin": 11.02
+    }
    ],
    "thesis": [],
    "bucket": "needs_you"
@@ -5351,6 +5675,33 @@
    "reasons": [
     "behind management's guidance",
     "PAT +32.5% YoY"
+   ],
+   "trend": [
+    {
+     "period": "Q2FY26",
+     "revenue": 8285.7,
+     "ebitda_margin": 20.25
+    },
+    {
+     "period": "Q3FY26",
+     "revenue": 8645.9,
+     "ebitda_margin": 20.51
+    },
+    {
+     "period": "Q4FY26",
+     "revenue": 8853.34,
+     "ebitda_margin": 19.8
+    },
+    {
+     "period": "Q1FY27",
+     "revenue": 9150.35,
+     "ebitda_margin": 20.56
+    },
+    {
+     "period": "Q2FY27",
+     "revenue": 10263.29,
+     "ebitda_margin": 21.0
+    }
    ],
    "promise_check": {
     "promise_id": "AUROPHARMA-2026-11-11-2",
@@ -6017,6 +6368,33 @@
    "reasons": [
     "EBITDA margin -710 bps YoY"
    ],
+   "trend": [
+    {
+     "period": "Q2FY26",
+     "revenue": 7047.51,
+     "ebitda_margin": 33.22
+    },
+    {
+     "period": "Q3FY26",
+     "revenue": 7167.52,
+     "ebitda_margin": 31.56
+    },
+    {
+     "period": "Q4FY26",
+     "revenue": 7474.66,
+     "ebitda_margin": 33.25
+    },
+    {
+     "period": "Q1FY27",
+     "revenue": 8276.89,
+     "ebitda_margin": 29.6
+    },
+    {
+     "period": "Q2FY27",
+     "revenue": 7827.26,
+     "ebitda_margin": 26.12
+    }
+   ],
    "thesis": [],
    "bucket": "needs_you"
   },
@@ -6276,6 +6654,33 @@
     "EBITDA margin +418 bps YoY",
     "revenue +33.6% YoY",
     "PAT +38.3% YoY"
+   ],
+   "trend": [
+    {
+     "period": "Q2FY26",
+     "revenue": 1099.22,
+     "ebitda_margin": 21.01
+    },
+    {
+     "period": "Q3FY26",
+     "revenue": 1121.05,
+     "ebitda_margin": 19.38
+    },
+    {
+     "period": "Q4FY26",
+     "revenue": 1159.05,
+     "ebitda_margin": 21.03
+    },
+    {
+     "period": "Q1FY27",
+     "revenue": 1304.05,
+     "ebitda_margin": 21.99
+    },
+    {
+     "period": "Q2FY27",
+     "revenue": 1469.04,
+     "ebitda_margin": 25.19
+    }
    ],
    "thesis": [],
    "bucket": "needs_you"
@@ -6691,6 +7096,33 @@
     "EBITDA margin -211 bps YoY",
     "revenue -10.2% YoY",
     "PAT -81.5% YoY"
+   ],
+   "trend": [
+    {
+     "period": "Q2FY26",
+     "revenue": 6091.56,
+     "ebitda_margin": 7.07
+    },
+    {
+     "period": "Q3FY26",
+     "revenue": 6001.35,
+     "ebitda_margin": 7.16
+    },
+    {
+     "period": "Q4FY26",
+     "revenue": 6389.75,
+     "ebitda_margin": 7.01
+    },
+    {
+     "period": "Q1FY27",
+     "revenue": 5023.54,
+     "ebitda_margin": 5.79
+    },
+    {
+     "period": "Q2FY27",
+     "revenue": 5467.71,
+     "ebitda_margin": 4.96
+    }
    ],
    "thesis": [],
    "bucket": "needs_you"
@@ -7558,6 +7990,33 @@
    "score": 0.647,
    "reasons": [
     "EBITDA margin -296 bps YoY"
+   ],
+   "trend": [
+    {
+     "period": "Q2FY26",
+     "revenue": 357.67,
+     "ebitda_margin": 20.12
+    },
+    {
+     "period": "Q3FY26",
+     "revenue": 371.03,
+     "ebitda_margin": 20.32
+    },
+    {
+     "period": "Q4FY26",
+     "revenue": 345.57,
+     "ebitda_margin": 19.33
+    },
+    {
+     "period": "Q1FY27",
+     "revenue": 358.07,
+     "ebitda_margin": 17.17
+    },
+    {
+     "period": "Q2FY27",
+     "revenue": 414.98,
+     "ebitda_margin": 17.16
+    }
    ],
    "thesis": [],
    "bucket": "worth_a_read"
