@@ -1,0 +1,2 @@
+# B0 deploys this only. B7 adds: httpx, pymupdf, pydantic, yfinance (measure size first).
+fastapi==0.117.1
