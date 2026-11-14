@@ -20,6 +20,57 @@ const EXECS = executivesData.executives as Exec[];
 
 export const READ_MIN = { folded: 0.5, worth: 1.5 };
 
+/** "2026-11-06" → "2026-11-06T08:00:00+05:30": the brief is read at 08:00 IST. */
+export const asOfFor = (day: string) => `${day}T08:00:00+05:30`;
+/** ISO timestamp → its IST calendar day, "YYYY-MM-DD". */
+export const dayOf = (iso: string) => new Date(new Date(iso).getTime() + 5.5 * 3600_000).toISOString().slice(0, 10);
+
+export const getEvent = (id: string): DigestEvent | undefined => EVENTS.find((e) => e.id === id);
+
+/**
+ * Three questions for a call, from the event's public evidence only (templates, no model).
+ * They ask for context and interpretation, never for unpublished price-sensitive information.
+ */
+export function callQuestions(e: DigestEvent, via?: string): string[] {
+  const q: string[] = [];
+  const r = e.results;
+  if (r?.metrics?.revenue) {
+    const m = r.ebitda_margin.yoy_bps;
+    if (m != null && Math.abs(m) >= 100)
+      q.push(`EBITDA margin moved ${fmtBps(m)} YoY. In this industry, is a move like that usually pricing, mix or input costs?`);
+    const rev = r.metrics.revenue.yoy_pct;
+    if (rev != null) q.push(`Revenue is ${fmtPct(rev)} YoY. How much of growth like this is volume and how much is price in this business?`);
+    if (r.warnings.some((w) => w.includes("exceptional")))
+      q.push("How does the industry usually treat an exceptional item like this one: one-off or recurring?");
+  }
+  if (e.category === "management_change" && via) {
+    q.push(`What is ${via} like to work with, and what did they change in the roles you saw?`);
+    q.push("What does a leader with that background usually prioritise in the first year?");
+    q.push("How are leadership transitions like this usually received by teams and customers?");
+  }
+  if (e.category === "M&A") {
+    q.push(`What does ${e.name} get from a deal like this that it couldn't build itself?`);
+    q.push("How have similar deals in this sector worked out?");
+  }
+  if (e.kind === "move") {
+    q.push("What public developments in this sector could explain a move like this?");
+    q.push("How is demand in the sector looking from where you sit?");
+  }
+  q.push(`If you were me, what would you ask ${e.name}'s management on the next call?`);
+  return [...new Set(q)].slice(0, 3);
+}
+
+/** A draft the investor edits and sends themselves. FINN never sends anything. */
+export function callOpener(e: DigestEvent, contactName: string): string {
+  const first = contactName.split(" ")[0];
+  const hook = e.results?.period ? `just reported its ${e.results.period.replace("FY", " FY")} numbers`
+    : e.category === "management_change" ? "announced a leadership change"
+    : e.category === "M&A" ? "announced a deal"
+    : e.kind === "move" ? "has been moving a lot"
+    : "filed something I'm thinking about";
+  return `Hi ${first}, hope you're well. ${e.name} ${hook}, and I'd value your read on the industry context. Do you have 15 minutes this week?`;
+}
+
 // ── helpers ──────────────────────────────────────────────────────────────────────────
 const sourceOf = (e: DigestEvent): SourceRef | null =>
   e.url ? { documentId: e.url, label: `${e.symbol}: ${e.title}`, publishedAt: e.at } : null;

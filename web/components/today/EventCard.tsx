@@ -1,4 +1,5 @@
-import PathLine, { ProbableBadge } from "@/components/people/PathLine";
+import PathLine from "@/components/people/PathLine";
+import PersonChip from "@/components/people/PersonChip";
 import StintList from "@/components/people/StintList";
 import MetricTable from "@/components/today/MetricTable";
 import PromiseCheckLine from "@/components/today/PromiseCheckLine";
@@ -47,14 +48,8 @@ export default function EventCard({ card, refDate }: { card: Card; refDate?: str
 
       {(card.person || card.question) && <hr className="my-3 border-line" />}
 
-      {/* 6 · person (becomes a tappable chip with the call sheet in B4) */}
-      {card.person && (
-        <p className="text-[15px] leading-[22px]">
-          <span className="font-medium">{card.person.displayName}</span>
-          {!card.person.confirmed && <> <ProbableBadge /></>}
-          <span className="block text-[13px] text-ink-2">{card.person.reason}</span>
-        </p>
-      )}
+      {/* 6 · person: tap for the call sheet */}
+      {card.person && <PersonChip person={card.person} eventId={card.id} />}
 
       {/* 7 · question */}
       {card.question && (

@@ -11,6 +11,7 @@ import { useSheetNav } from "@/lib/sheet";
 
 // vaul (~25 KB gzipped) loads only when a sheet is first opened, not with every screen.
 const Sheet = dynamic(() => import("@/components/shell/Sheet"));
+const CallSheet = dynamic(() => import("@/components/people/CallSheet"));
 
 /**
  * Renders whichever sheet the URL names (?sheet=source|formula). Mounted once in the shell inside
@@ -24,6 +25,10 @@ export default function SheetHost() {
   // Stay mounted after the first sheet so later sheets animate in and out normally.
   const [used, setUsed] = useState(false);
   if (sheet && !used) setUsed(true);
+  // Remember the last call so the sheet can animate out after its params leave the URL.
+  const [call, setCall] = useState<{ event: string; contact: string } | null>(null);
+  const ev = q.get("event"), ct = q.get("contact");
+  if (sheet === "call" && ev && ct && (call?.event !== ev || call?.contact !== ct)) setCall({ event: ev, contact: ct });
   if (!used && !sheet) return null;
   const doc = q.get("doc") ?? "";
   const label = q.get("label") ?? copy.sheet.untitledSource;
@@ -59,6 +64,11 @@ export default function SheetHost() {
           </a>
         )}
       </Sheet>
+
+      {call && (
+        <CallSheet open={sheet === "call"} onClose={close} eventId={call.event} contactId={call.contact}
+          day={q.get("date") ?? undefined} />
+      )}
     </>
   );
 }

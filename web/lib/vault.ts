@@ -11,7 +11,15 @@ type Row = {
  * supabase-js (~60 KB gzipped) is imported here on demand, after first paint, so it stays out of
  * the initial JavaScript of every screen.
  */
-export async function loadNetwork(): Promise<Contact[]> {
+let cached: Promise<Contact[]> | null = null;
+
+/** One fetch per page load; the card list and the call sheet share it. A failure is not cached. */
+export function loadNetwork(): Promise<Contact[]> {
+  cached ??= fetchNetwork().catch((e) => { cached = null; throw e; });
+  return cached;
+}
+
+async function fetchNetwork(): Promise<Contact[]> {
   const { ensureDemoSession, supabase } = await import("@/lib/supabase");
   await ensureDemoSession();
   const { data, error } = await supabase

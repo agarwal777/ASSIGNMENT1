@@ -3,33 +3,19 @@
 import { useEffect, useMemo, useState } from "react";
 import { usePathname, useRouter, useSearchParams } from "next/navigation";
 import { ChevronLeft, ChevronRight } from "lucide-react";
-import executivesData from "@/data/executives.json";
-import orgsData from "@/data/orgs.json";
 import TopBar from "@/components/shell/TopBar";
 import EventCard from "@/components/today/EventCard";
 import Num from "@/components/trust/Num";
 import { SourceLink } from "@/components/trust/SourceLink";
-import { DEFAULT_AS_OF, EVENT_RANGE, SCORING_NOTE, getDigest } from "@/lib/api";
+import { DEFAULT_AS_OF, EVENT_RANGE, SCORING_NOTE, asOfFor, dayOf, getDigest } from "@/lib/api";
 import { copy } from "@/lib/copy";
 import { date, time } from "@/lib/format";
-import { whoToAsk, type Contact, type Executive, type Orgs } from "@/lib/network";
-import type { Card } from "@/lib/types";
+import type { Contact } from "@/lib/network";
+import { withPerson } from "@/lib/people";
 import { loadNetwork } from "@/lib/vault";
 
 const DAY = 24 * 3600_000;
 const WINDOWS = [{ key: "24h", hours: 24 }, { key: "7d", hours: 168 }] as const;
-const orgs = orgsData as unknown as Orgs;
-const executives: Executive[] = executivesData.executives.map((x) => ({
-  ...x, stints: x.stints.map((s) => ({ ...s, datesKnown: s.start != null })),
-}));
-
-/** "2026-11-06" → "2026-11-06T08:00:00+05:30": the brief is read at 08:00 IST. */
-const asOfFor = (day: string) => `${day}T08:00:00+05:30`;
-const dayOf = (iso: string) => new Date(new Date(iso).getTime() + 5.5 * 3600_000).toISOString().slice(0, 10);
-const fracYear = (iso: string) => {
-  const d = new Date(iso);
-  return d.getUTCFullYear() + (d.getTime() - Date.UTC(d.getUTCFullYear(), 0, 1)) / (365.25 * DAY);
-};
 
 export default function TodayView() {
   const q = useSearchParams();
@@ -45,7 +31,7 @@ export default function TodayView() {
   useEffect(() => { loadNetwork().then(setContacts).catch(() => setNetworkError(true)); }, []);
 
   const digest = useMemo(() => getDigest(asOf, win.hours), [asOf, win.hours]);
-  const cards = useMemo(() => digest.needsYou.map((c) => withPerson(c, contacts, asOf)), [digest, contacts, asOf]);
+  const cards = useMemo(() => digest.needsYou.map((c) => withPerson(c, contacts, asOf, copy.people.you)), [digest, contacts, asOf]);
 
   const setParam = (k: string, v: string | null) => {
     const p = new URLSearchParams(q.toString());
@@ -156,16 +142,4 @@ export default function TodayView() {
       </div>
     </>
   );
-}
-
-/** Attach the strongest person from the investor's own network (computed on the device). */
-function withPerson(c: Card, contacts: Contact[] | null, asOf: string): Card {
-  if (!contacts) return c;
-  const [s] = whoToAsk(c.companySymbol, c.id, contacts, executives, orgs, fracYear(asOf));
-  if (!s) return c;
-  const person = { contactId: s.contact.id, displayName: s.contact.name, reason: s.reason, strength: s.score, confirmed: !s.probable };
-  if (c.variant === "management_change" && s.via) {
-    return { ...c, person, path: { steps: [copy.people.you, s.contact.name, s.via], strength: s.score, confirmed: !s.probable, explanation: s.reason } };
-  }
-  return { ...c, person };
 }
