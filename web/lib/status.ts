@@ -8,12 +8,12 @@ import type { PromiseStatus, Stance } from "@/lib/types";
 export type Status = PromiseStatus;
 
 // Class names are literal so Tailwind can see them (never build them at runtime).
-export const STATUS: Record<Status, { label: string; Icon: typeof Check; text: string; bg: string; fill: string; bar: string }> = {
-  on_track: { label: "On track", Icon: Check, text: "text-supports", bg: "bg-supports/12", fill: "fill-supports", bar: "bg-supports" },
-  met: { label: "Met", Icon: CircleCheckBig, text: "text-supports", bg: "bg-supports/12", fill: "fill-supports", bar: "bg-supports" },
-  behind: { label: "Behind", Icon: TriangleAlert, text: "text-unclear", bg: "bg-unclear/12", fill: "fill-unclear", bar: "bg-unclear" },
-  missed: { label: "Missed", Icon: X, text: "text-contradicts", bg: "bg-contradicts/12", fill: "fill-contradicts", bar: "bg-contradicts" },
-  cant_check: { label: "Can't check yet", Icon: CircleHelp, text: "text-ink-3", bg: "bg-line/60", fill: "fill-ink-3", bar: "bg-ink-3" },
+export const STATUS: Record<Status, { label: string; Icon: typeof Check; text: string; bg: string; fill: string; bar: string; stroke: string }> = {
+  on_track: { label: "On track", Icon: Check, text: "text-supports", bg: "bg-supports/12", fill: "fill-supports", bar: "bg-supports", stroke: "stroke-supports" },
+  met: { label: "Met", Icon: CircleCheckBig, text: "text-supports", bg: "bg-supports/12", fill: "fill-supports", bar: "bg-supports", stroke: "stroke-supports" },
+  behind: { label: "Behind", Icon: TriangleAlert, text: "text-unclear", bg: "bg-unclear/12", fill: "fill-unclear", bar: "bg-unclear", stroke: "stroke-unclear" },
+  missed: { label: "Missed", Icon: X, text: "text-contradicts", bg: "bg-contradicts/12", fill: "fill-contradicts", bar: "bg-contradicts", stroke: "stroke-contradicts" },
+  cant_check: { label: "Can't check yet", Icon: CircleHelp, text: "text-ink-3", bg: "bg-line/60", fill: "fill-ink-3", bar: "bg-ink-3", stroke: "stroke-ink-3" },
 };
 
 /** Problems first, then good news, then the unknowable. */

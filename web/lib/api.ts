@@ -291,6 +291,14 @@ function subjectHeadline(e: DigestEvent): string {
   return copy.subjectHeadline[e.title] ?? `${copy.category[e.category] ?? "Company"} filing`;
 }
 
+/** A written one-line headline for a filing: the card template, or a short headline from its NSE subject. */
+export function filingHeadline(id: string): string | undefined {
+  const e = getEvent(id);
+  if (!e) return undefined;
+  const c = toCard(e);
+  return c.variant === "material" ? subjectHeadline(e) : c.headline;
+}
+
 /**
  * What the Portfolio row shows for a company, up to the end of the snapshot: the latest *important*
  * filing (never a routine one) as a headline, and an unusual price/volume move from the last 7 days.
@@ -298,7 +306,9 @@ function subjectHeadline(e: DigestEvent): string {
 export function companySignals(symbol: string) {
   const end = new Date(EVENT_RANGE.last).getTime(), weekStart = end - 7 * 864e5;
   const ev = EVENTS.filter((e) => e.symbol === symbol).sort((a, b) => b.at.localeCompare(a.at));
-  const imp = ev.find((e) => e.kind === "filing" && e.bucket !== "collapsed");
+  // A filing that needed you this week outranks a later one that was only worth a read.
+  const imp = ev.find((e) => e.kind === "filing" && e.bucket === "needs_you" && new Date(e.at).getTime() > weekStart)
+    ?? ev.find((e) => e.kind === "filing" && e.bucket !== "collapsed");
   const mv = ev.find((e) => e.kind === "move" && e.move && new Date(e.at).getTime() > weekStart);
   const card = imp ? toCard(imp) : null;
   return {

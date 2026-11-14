@@ -2,7 +2,7 @@
 // reaches a client bundle. Maps the snapshot into the CompanyPayload / PortfolioRow contracts.
 import data from "@/data/companies.json";
 import executivesData from "@/data/executives.json";
-import { companySignals } from "@/lib/api";
+import { companySignals, filingHeadline } from "@/lib/api";
 import { type RawClaimFields, toClaim } from "@/lib/claims";
 import { isProblem, STATUS_ORDER } from "@/lib/status";
 import type {
@@ -62,7 +62,11 @@ const item = (source: "management" | "investor") => (i: RawItem): ThesisItem => 
 function nextQuestion(r: Raw): string {
   const all = [...(r.thesis.investor as RawItem[]), ...(r.thesis.management as RawItem[])];
   const hit = all.find((i) => isProblem(i.status as PromiseStatus));
-  if (hit) return `What would it take to get back on "${hit.text.replace(/\.$/, "")}", and is that in management's hands?`;
+  if (hit) {
+    const what = (({ ebitda_margin: "EBITDA margin", revenue_growth: "revenue growth", pat_growth: "profit growth" }) as Record<string, string>)[
+      (hit as RawItem).metric] ?? "this target";
+    return `What would it take to close the gap on ${what} by ${hit.deadline}, and is that in management's hands?`;
+  }
   if ((r.ledger as RawPromise[]).some((p) => p.status === "cant_check" && p.scope && p.scope !== "company"))
     return "Which of management's segment targets matter most for the stock, and how are they tracking?";
   return `If you were me, what would you ask ${r.name}'s management on the next call?`;
@@ -85,7 +89,7 @@ export function getCompany(symbol: string): CompanyPayload | null {
     quarters: quarters(r.symbol, r),
     nextQuestion: { text: nextQuestion(r), people: [] },
     recentFilings: (r.recent_filings as { id: string; title: string; at: string; tier: string; url: string | null }[]).map((f) => ({
-      id: f.id, title: f.title, at: f.at, tier: f.tier as "needs_you" | "worth_a_read" | "collapsed",
+      id: f.id, title: f.title, headline: filingHeadline(f.id), at: f.at, tier: f.tier as "needs_you" | "worth_a_read" | "collapsed",
       source: { documentId: f.url ?? "", label: `${r.symbol}: ${f.title}`, publishedAt: f.at },
     })),
   };

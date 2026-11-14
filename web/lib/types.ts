@@ -75,7 +75,7 @@ export interface CompanyPayload {
   quarters: QuarterRow[];
   nextQuestion?: { text: string; people: PersonRef[] };
   transcripts?: { count: number; since: string | null };
-  recentFilings: { id: string; title: string; at: string; tier: 'needs_you' | 'worth_a_read' | 'collapsed'; source: SourceRef }[];
+  recentFilings: { id: string; title: string; headline?: string; at: string; tier: 'needs_you' | 'worth_a_read' | 'collapsed'; source: SourceRef }[];
 }
 
 export interface PortfolioRow {

@@ -3,6 +3,7 @@ import { notFound } from "next/navigation";
 import { ChevronLeft } from "lucide-react";
 import LedgerTimeline from "@/components/company/LedgerTimeline";
 import NextQuestion from "@/components/company/NextQuestion";
+import QuarterCharts from "@/components/company/QuarterCharts";
 import SnapshotTable from "@/components/company/SnapshotTable";
 import BulletChart from "@/components/trust/BulletChart";
 import StatusPill from "@/components/trust/StatusPill";
@@ -24,6 +25,8 @@ export default async function CompanyPage({ params }: { params: Promise<{ symbol
   if (!c) notFound();
   const eventId = c.recentFilings.find((f) => f.tier === "needs_you")?.id ?? c.recentFilings[0]?.id;
   const cred = c.credibility;
+  const important = c.recentFilings.filter((f) => f.tier !== "collapsed");
+  const routine = c.recentFilings.filter((f) => f.tier === "collapsed");
 
   return (
     <article>
@@ -61,7 +64,7 @@ export default async function CompanyPage({ params }: { params: Promise<{ symbol
           <h2 id="thesis" className="text-[13px] font-medium text-ink-2">{copy.company.thesis}</h2>
           <ThesisRow title={copy.company.managementClaims} items={c.thesis.management}
             empty={hasLedgerData(c.symbol) ? copy.company.noManagementClaims : copy.company.noClaimsWithoutTranscripts} />
-          <ThesisRow title={copy.company.yourAssumptions} items={c.thesis.investor} empty={copy.company.noAssumptions} demo />
+          <ThesisRow title={copy.company.yourAssumptions} items={c.thesis.investor} empty={copy.company.noAssumptions} />
         </section>
 
         {/* 4 · promised vs delivered */}
@@ -77,7 +80,15 @@ export default async function CompanyPage({ params }: { params: Promise<{ symbol
         {/* 5 · snapshot */}
         <section aria-labelledby="snapshot" className="mt-6">
           <h2 id="snapshot" className="mb-1 text-[13px] font-medium text-ink-2">{copy.company.snapshot(c.quarters.length)}</h2>
-          {c.quarters.length > 0 ? <SnapshotTable rows={c.quarters} /> : <p className="text-[15px] text-ink-2">{copy.company.noQuarters}</p>}
+          {c.quarters.length > 0 ? (
+            <>
+              <QuarterCharts rows={c.quarters} />
+              <details className="mt-3 rounded-[8px] border border-line">
+                <summary className="flex min-h-11 cursor-pointer items-center px-3 text-[13px] font-medium text-ink-2">{copy.company.allQuarters}</summary>
+                <div className="px-3 pb-2"><SnapshotTable rows={c.quarters} /></div>
+              </details>
+            </>
+          ) : <p className="text-[15px] text-ink-2">{copy.company.noQuarters}</p>}
         </section>
 
         {/* 6 · next question and people */}
@@ -93,14 +104,29 @@ export default async function CompanyPage({ params }: { params: Promise<{ symbol
           <section aria-labelledby="filings" className="mt-6">
             <h2 id="filings" className="text-[13px] font-medium text-ink-2">{copy.company.recentFilings}</h2>
             <ul className="mt-1 divide-y divide-line">
-              {c.recentFilings.map((f) => (
-                <li key={f.id} className="py-1">
-                  <p className="text-[13px] text-ink-3">{copy.tier[f.tier]} · {date(f.at, SNAPSHOT_AS_OF)}</p>
-                  {f.source.documentId ? <SourceLink s={{ ...f.source, label: f.title }} refDate={SNAPSHOT_AS_OF} />
-                    : <p className="text-[15px]">{f.title}</p>}
+              {important.map((f) => (
+                <li key={f.id} className="flex min-w-0 items-center gap-2 py-1">
+                  <span className={`shrink-0 rounded-full px-2 text-[11px] font-medium leading-5 ${
+                    f.tier === "needs_you" ? "bg-accent/10 text-accent" : "bg-line/60 text-ink-2"}`}>{copy.tier[f.tier]}</span>
+                  {f.source.documentId
+                    ? <span className="min-w-0 flex-1 truncate"><SourceLink s={{ ...f.source, label: f.headline ?? f.title }} refDate={SNAPSHOT_AS_OF} oneLine /></span>
+                    : <p className="min-w-0 flex-1 truncate text-[15px]">{f.headline ?? f.title}</p>}
                 </li>
               ))}
             </ul>
+            {routine.length > 0 && (
+              <details className="mt-2 rounded-[8px] border border-line">
+                <summary className="flex min-h-11 cursor-pointer items-center px-3 text-[13px] font-medium text-ink-2">{copy.company.routine(routine.length)}</summary>
+                <ul className="px-3 pb-2">
+                  {routine.map((f) => (
+                    <li key={f.id} className="min-w-0">
+                      {f.source.documentId ? <SourceLink s={{ ...f.source, label: f.title }} refDate={SNAPSHOT_AS_OF} />
+                        : <p className="text-[13px]">{f.title}</p>}
+                    </li>
+                  ))}
+                </ul>
+              </details>
+            )}
           </section>
         )}
       </div>
@@ -108,7 +134,7 @@ export default async function CompanyPage({ params }: { params: Promise<{ symbol
   );
 }
 
-function ThesisRow({ title, items, empty, demo }: { title: string; items: ThesisItem[]; empty: string; demo?: boolean }) {
+function ThesisRow({ title, items, empty }: { title: string; items: ThesisItem[]; empty: string }) {
   return (
     <div className="mt-2">
       <h3 className="text-[13px] text-ink-3">{title}</h3>
@@ -125,7 +151,6 @@ function ThesisRow({ title, items, empty, demo }: { title: string; items: Thesis
               </div>
               {i.claim ? <div className="mt-2"><BulletChart claim={i.claim} label={i.ref.text} /></div>
                 : i.evidence && <p className="mt-1 text-[13px] text-ink-2">{i.evidence}</p>}
-              {demo && <p className="mt-1 text-[11px] text-ink-3">{copy.company.demoAssumption}</p>}
             </li>
           ))}
         </ul>

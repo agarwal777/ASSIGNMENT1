@@ -6,14 +6,14 @@ import { useSheetNav } from "@/lib/sheet";
 import type { SourceRef } from "@/lib/types";
 
 /** Filing title + date → source sheet. */
-export function SourceLink({ s, refDate }: { s: SourceRef; refDate?: string }) {
+export function SourceLink({ s, refDate, oneLine = false }: { s: SourceRef; refDate?: string; oneLine?: boolean }) {
   const { open } = useSheetNav();
   return (
     <button type="button"
       onClick={() => open("source", { doc: s.documentId, page: s.page, label: s.label, at: s.publishedAt })}
       className="inline-flex min-h-11 max-w-full min-w-0 items-center gap-1.5 text-left text-[13px] font-medium text-ink-2">
       <FileText size={14} aria-hidden className="shrink-0" />
-      <span className="line-clamp-2 min-w-0 [overflow-wrap:anywhere] underline decoration-line underline-offset-4">{s.label} · {date(s.publishedAt, refDate)}</span>
+      <span className={`${oneLine ? "truncate" : "line-clamp-2 [overflow-wrap:anywhere]"} min-w-0 underline decoration-line underline-offset-4`}>{s.label} · {date(s.publishedAt, refDate)}</span>
     </button>
   );
 }
