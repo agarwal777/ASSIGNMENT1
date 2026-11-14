@@ -81,6 +81,22 @@ export const digestFixture: DigestResponse = {
   ],
 };
 
+/** A fourth variant for /dev/cards (the digest fixture keeps exactly three "Needs you" cards). */
+export const materialCardFixture: DigestResponse["needsYou"][number] = {
+  variant: "material", id: "fx-orbit-ma", companySymbol: "ORBIT", companyName: "Orbit Foods (example)",
+  category: "M&A", at: "2026-11-05T17:40:00+05:30", score: 0.7,
+  headline: "Buys a regional snacks brand for cash",
+  reasons: ["M&A"],
+  summary: "Board approves acquiring 100% of a regional snacks maker, funded from internal cash.",
+  // `fields` is Record<string, string> in §7.2, so it cannot carry a Num: keep it to non-numeric facts.
+  fields: { Counterparty: "Sunrise Snacks (example)", "Paid with": "Internal cash", "Expected close": "Q4 FY27" },
+  assumption: { ref: { id: "fx-a9", text: "Growth stays organic; no large acquisitions", source: "investor" },
+    stance: "insufficient", epistemic: "INFERRED", rationale: "Deal size relative to the balance sheet is not stated" },
+  person: { contactId: "fx-c5", displayName: "Tarun P. (example)", reason: "Both worked at Big Audit Firm; overlap not confirmed", strength: 0.25, confirmed: false },
+  question: "How have regional snack brands held up after being bought by national players?",
+  sources: [src("Orbit Foods: acquisition (example)", "2026-11-05T17:40:00+05:30", 1)],
+};
+
 const names = ["Acme Polymers", "Northwind Appliances", "Lumen Cables", "Orbit Foods", "Delta Pharma", "Granite Cement",
   "Harbor Logistics", "Ion Batteries", "Juniper Textiles", "Kestrel Engineering", "Lotus Hospitals", "Meridian Power",
   "Nimbus Software", "Oakline Chemicals", "Pioneer Steel"];
