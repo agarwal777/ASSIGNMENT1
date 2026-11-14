@@ -1,17 +1,41 @@
 "use client";
 
-import { useMemo, useState } from "react";
+import { useCallback, useEffect, useMemo, useState } from "react";
+import CallSheet from "@/components/CallSheet";
+import executivesData from "@/data/executives.json";
+import orgsData from "@/data/orgs.json";
 import {
   READ_MIN, WINDOWS, bps, crore, fmtDay, fmtTime, inWindow, label, minutesSkipped, pct, split,
   type Digest, type DigestEvent,
 } from "@/lib/digest";
+import { whoToAsk, type Contact, type Executive, type Orgs, type Suggestion } from "@/lib/network";
+import { loadNetwork } from "@/lib/vault";
 
 const DAY = 24 * 3600_000;
+const orgs = orgsData as unknown as Orgs;
+const executives: Executive[] = executivesData.executives.map((x) => ({
+  ...x, stints: x.stints.map((s) => ({ ...s, datesKnown: s.start != null })),
+}));
+
+/** Fractional year, e.g. 6 Nov 2026 → 2026.85; used by recency and keep-warm rules. */
+const fracYear = (d: Date) =>
+  d.getUTCFullYear() + (d.getTime() - Date.UTC(d.getUTCFullYear(), 0, 1)) / (365.25 * DAY);
 
 export default function Today({ digest }: { digest: Digest }) {
   const [asOf, setAsOf] = useState(() => new Date(digest.default_as_of));
   const [hours, setHours] = useState<number>(24);
   const [showMath, setShowMath] = useState(false);
+  const [contacts, setContacts] = useState<Contact[] | null>(null);
+  const [networkError, setNetworkError] = useState<string | null>(null);
+  const [sheet, setSheet] = useState<{ e: DigestEvent; s: Suggestion } | null>(null);
+
+  useEffect(() => {
+    loadNetwork().then(setContacts).catch((err) => setNetworkError(String(err?.message ?? err)));
+  }, []);
+
+  const ask = useCallback((e: DigestEvent): Suggestion[] =>
+    contacts ? whoToAsk(e.symbol, e.id, contacts, executives, orgs, fracYear(asOf)) : [],
+  [contacts, asOf]);
 
   const first = useMemo(
     () => Math.min(...digest.events.map((e) => new Date(e.at).getTime())), [digest]);
@@ -74,8 +98,15 @@ export default function Today({ digest }: { digest: Digest }) {
       </header>
 
       <Section title="Needs you" empty="Nothing in this window needs your attention.">
-        {needs.map((e) => <Card key={e.id} e={e} />)}
+        {needs.map((e) => (
+          <Card key={e.id} e={e} people={ask(e)} loading={contacts === null && !networkError}
+            onOpen={(s) => setSheet({ e, s })} />
+        ))}
       </Section>
+      {networkError && (
+        <p className="mt-2 text-xs text-ink/50">Your network could not be loaded ({networkError}).</p>
+      )}
+      {sheet && <CallSheet e={sheet.e} s={sheet.s} onClose={() => setSheet(null)} />}
 
       {worth.length > 0 && (
         <Section title="Worth a read">
@@ -116,18 +147,73 @@ function Meta({ e }: { e: DigestEvent }) {
   );
 }
 
-function Card({ e }: { e: DigestEvent }) {
+function Card({ e, people, loading, onOpen }: {
+  e: DigestEvent; people: Suggestion[]; loading: boolean; onOpen: (s: Suggestion) => void;
+}) {
+  const named = executives.filter((x) => x.events.includes(e.id));
   return (
     <article className="mb-4 rounded-lg border border-ink/15 p-4 shadow-sm">
       <Meta e={e} />
       <h3 className="mt-1 font-serif text-xl leading-snug">{headline(e)}</h3>
       {e.results?.metrics && Object.keys(e.results.metrics).length > 0 && <ResultsTable e={e} />}
-      {e.kind === "filing" && !e.results && e.summary && (
+      {e.kind === "filing" && !e.results && e.summary && headline(e) !== e.summary && (
         <p className="mt-2 text-sm text-ink/80">{e.summary}</p>
       )}
+      {named.map((x) => <PersonBrief key={x.id} x={x} />)}
       <Reasons reasons={e.reasons} />
+      <WhoToAsk people={people} loading={loading} onOpen={onOpen} />
       <Source e={e} />
     </article>
+  );
+}
+
+/** Who the incoming person is: career path from the filing's own Brief Profile. */
+function PersonBrief({ x }: { x: Executive }) {
+  const yrs = (a: string | null, b: string | null) => (a ? `${a.slice(0, 4)}–${b ? b.slice(0, 4) : "now"}` : "");
+  return (
+    <div className="mt-3 border-l-2 border-ink/20 pl-3">
+      <p className="text-sm font-semibold">{x.name}</p>
+      <p className="text-xs text-ink/60">{x.role}</p>
+      <p className="mt-1 text-xs text-ink/80">
+        {x.stints.map((s) => `${s.org}${s.role && s.function !== "education" ? ` (${s.role.split(":")[0]})` : ""} ${yrs(s.start, s.end)}`.trim()).join(" → ")}
+      </p>
+      <p className="mt-1 text-[11px] text-ink/40">From the filing&apos;s brief profile</p>
+    </div>
+  );
+}
+
+function WhoToAsk({ people, loading, onOpen }: {
+  people: Suggestion[]; loading: boolean; onOpen: (s: Suggestion) => void;
+}) {
+  if (loading) return <p className="mt-3 text-xs text-ink/40">Checking your network…</p>;
+  if (people.length === 0) return null;
+  const [top, ...rest] = people;
+  return (
+    <div className="mt-3 rounded-md bg-ink/5 p-3">
+      <p className="text-[11px] uppercase tracking-widest text-ink/50">Who to ask</p>
+      <button onClick={() => onOpen(top)} className="mt-1 block w-full text-left">
+        <span className="font-semibold">{top.contact.name}</span>
+        {top.probable && <span className="ml-1 text-xs text-ink/50">(probable)</span>}
+        <span className="block text-sm text-ink/80">{top.reason}</span>
+        {top.keepWarm && <span className="block text-xs text-ink/50">{top.keepWarm}</span>}
+        <span className="mt-1 block text-xs underline">Open call sheet</span>
+      </button>
+      {rest.length > 0 && (
+        <details className="mt-2">
+          <summary className="cursor-pointer text-xs text-ink/60">{rest.length} more in your network</summary>
+          <ul className="mt-1 space-y-1">
+            {rest.slice(0, 4).map((s) => (
+              <li key={s.contact.id}>
+                <button onClick={() => onOpen(s)} className="text-left text-xs">
+                  <span className="font-semibold">{s.contact.name}</span> · {s.reason}
+                  {s.probable && " (probable)"}
+                </button>
+              </li>
+            ))}
+          </ul>
+        </details>
+      )}
+    </div>
   );
 }
 

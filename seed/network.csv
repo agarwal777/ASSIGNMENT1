@@ -1,0 +1,50 @@
+contact_id,display_name,closeness,last_contacted,tags,org,role,function,start,end
+c01,Rohan M.,4,2026-09-10,consumer durables;supply chain,Voltbek Home Appliances,Head of Supply Chain,supply_chain,2019-06-01,2022-03-31
+c01,Rohan M.,4,2026-09-10,consumer durables;supply chain,Godrej Appliances,VP Operations,operations,2022-04-01,
+c02,Ananya I.,3,2025-11-20,consumer durables;HVAC,Voltas,Product Manager - Room ACs,marketing,2012-07-01,2018-05-31
+c02,Ananya I.,3,2025-11-20,consumer durables;HVAC,Blue Star,Head of Product,marketing,2018-06-01,
+c03,Vikram S.,5,2026-10-01,Tata group;strategy,Tata Administrative Service,TAS officer,general_management,1999-07-01,2003-06-30
+c03,Vikram S.,5,2026-10-01,Tata group;strategy,Tata Motors,Strategy,strategy,2003-07-01,2012-03-31
+c04,Neha K.,2,2024-12-01,consumer;marketing,SP Jain Institute of Management & Research,PGDM,education,,
+c04,Neha K.,2,2024-12-01,consumer;marketing,Hindustan Unilever,Brand Manager,marketing,2005-06-01,
+c05,Arjun R.,4,2026-08-14,railways;engineering,Indian Railways,RDSO engineer,engineering,2008-01-01,2016-02-29
+c05,Arjun R.,4,2026-08-14,railways;engineering,Titagarh Rail Systems,VP Sales,sales,2016-03-01,
+c06,Meera P.,3,2026-06-02,cement;logistics,UltraTech Cement,Head of Logistics Procurement,procurement,2014-04-01,
+c07,Karan M.,5,2026-10-20,tractors;rural,Mahindra & Mahindra,Farm Equipment Sales,sales,2010-06-01,2020-01-31
+c07,Karan M.,5,2026-10-20,tractors;rural,Escorts Kubota,Head of Sales North,sales,2020-02-01,
+c08,Sanjana D.,3,2026-04-11,autos;EVs,Mahindra & Mahindra,Automotive Finance,finance,2015-01-01,2021-06-30
+c09,Farhan Q.,4,2026-09-25,pharma;US generics;regulatory,Lupin,Head of US Regulatory Affairs,regulatory,2011-03-01,2019-08-31
+c10,Priya N.,3,2025-08-15,pharma;injectables;quality,Aurobindo Pharma,Injectables Quality Head,quality,2016-01-01,2022-02-28
+c10,Priya N.,3,2025-08-15,pharma;injectables;quality,Gland Pharma,VP Quality,quality,2022-03-01,
+c11,Rahul B.,4,2026-07-30,EPC;transmission,KEC International,Project Director,operations,2009-04-01,2018-03-31
+c11,Rahul B.,4,2026-07-30,EPC;transmission,Kalpataru Projects,Business Head - T&D,operations,2018-04-01,
+c12,Deepa M.,3,2026-05-19,healthcare;hospitals,Medanta (Global Health),COO - Gurugram,operations,2014-01-01,2021-12-31
+c12,Deepa M.,3,2026-05-19,healthcare;hospitals,Max Healthcare,Cluster COO,operations,2022-01-01,
+c13,Siddharth J.,4,2026-09-02,power;renewables,Tata Power,Renewables Business Development,strategy,2013-05-01,2019-04-30
+c13,Siddharth J.,4,2026-09-02,power;renewables,ReNew,Director - Strategy,strategy,2019-05-01,
+c14,Aditi R.,2,2025-06-30,commercial vehicles;lending,Hinduja Leyland Finance,Credit Head,finance,2012-01-01,2019-03-31
+c14,Aditi R.,2,2025-06-30,commercial vehicles;lending,Ashok Leyland,Treasury,finance,2019-04-01,2023-09-30
+c15,Manoj T.,3,2026-03-03,auto components;lighting,Uno Minda,Plant Head - Lighting,operations,2008-01-01,2017-06-30
+c15,Manoj T.,3,2026-03-03,auto components;lighting,Sona Comstar,GM Manufacturing,operations,2017-07-01,
+c16,Ishaan K.,4,2026-10-05,specialty chemicals;pigments,Sudarshan Chemical,Pigments R&D Lead,r_and_d,2010-01-01,2019-12-31
+c16,Ishaan K.,4,2026-10-05,specialty chemicals;pigments,Clariant,Head of Applications,r_and_d,2020-01-01,
+c17,Kavya R.,3,2026-02-17,specialty chemicals;fertilisers,Deepak Fertilisers,Corporate Strategy,strategy,2015-01-01,2021-03-31
+c17,Kavya R.,3,2026-02-17,specialty chemicals;fertilisers,Coromandel International,Strategy Lead,strategy,2021-04-01,
+c18,Nikhil S.,5,2026-10-28,defence;shipbuilding,Garden Reach Shipbuilders & Engineers,Design Engineer,engineering,2006-07-01,2014-06-30
+c18,Nikhil S.,5,2026-10-28,defence;shipbuilding,Mazagon Dock Shipbuilders,Project Manager,engineering,2014-07-01,
+c19,Rhea T.,3,2026-01-09,QSR;consumer,Jubilant FoodWorks,Supply Chain Manager,supply_chain,2016-01-01,2022-06-30
+c19,Rhea T.,3,2026-01-09,QSR;consumer,Westlife Foodworld,Head of Sourcing,supply_chain,2022-07-01,
+c20,Aakash G.,4,2026-08-21,IT;banking technology,Aurionpro Solutions,Banking Tech Lead,technology,2015-01-01,2020-03-31
+c20,Aakash G.,4,2026-08-21,IT;banking technology,Infosys,Finacle Product Manager,technology,2020-04-01,
+c21,Tanvi S.,3,2026-06-26,steel;metals,Tata Steel,Europe Operations Finance,finance,2012-01-01,2018-06-30
+c21,Tanvi S.,3,2026-06-26,steel;metals,JSW Steel,Finance Controller,finance,2018-07-01,
+c22,Gaurav C.,2,2025-03-14,construction;infrastructure,NCC,Business Head - Buildings,operations,2010-01-01,2016-12-31
+c22,Gaurav C.,2,2025-03-14,construction;infrastructure,Larsen & Toubro,Cluster Head,operations,2017-01-01,
+c23,Pooja B.,4,2026-09-17,capital goods;boilers,Thermax,Energy Business Sales,sales,2011-01-01,2019-03-31
+c23,Pooja B.,4,2026-09-17,capital goods;boilers,Forbes Marshall,Regional Head,sales,2019-04-01,
+c24,Ravi S.,3,2026-04-29,consumer durables;Turkey,Arçelik,India Market Entry,strategy,2017-01-01,2021-12-31
+c25,Leela F.,5,2026-10-12,Tata group;finance,Tata Sons,Group Finance,finance,2003-04-01,2012-03-31
+c26,Sameer J.,2,2025-01-22,retail;apparel,Trent,Westside Merchandising,merchandising,2009-01-01,2015-12-31
+c27,Harsh V.,4,2026-07-07,consumer durables;HVAC,Daikin Airconditioning India,Regional Sales Head,sales,2014-01-01,
+c28,Shalini K.,3,2026-05-05,pharma;finance,Lupin,Finance Controller,finance,2018-01-01,2023-06-30
+c28,Shalini K.,3,2026-05-05,pharma;finance,Dr. Reddy's,Finance Director,finance,2023-07-01,

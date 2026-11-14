@@ -1,5 +1,5 @@
 {
- "generated_at": "2026-11-14T23:50:42",
+ "generated_at": "2026-11-15T00:09:56",
  "default_as_of": "2026-11-06T08:00:00+05:30",
  "scoring_note": "score = (0.35·materiality + 0.25·surprise) / 0.60 until thesis and network signals exist; weights are a starting heuristic",
  "events": [
@@ -1115,17 +1115,17 @@
     "return_pct": 10.47
    },
    "components": {
-    "M": 0.35,
+    "M": 0.5,
     "S": 1,
     "T": null,
     "N": null
    },
-   "score": 0.621,
+   "score": 0.708,
    "reasons": [
     "volume 3.1× its 20-day average",
     "price +10.5% on the day"
    ],
-   "bucket": "worth_a_read"
+   "bucket": "needs_you"
   },
   {
    "id": "UNOMINDA-earnings_call-2026-11-11",
@@ -2253,12 +2253,12 @@
    "category": "management_change",
    "at": "2026-11-06T17:31:30+05:30",
    "title": "Appointment",
-   "summary": "Appointment of Mr Sunil Alaric DSouza as Chairman of the company w.e.f. November 12, 2026.",
-   "url": "https://nsearchives.nseindia.in/corporate/VOLTAS_RB_06112026171534_02SE_Directorssigned.pdf",
+   "summary": "Appointment of Mr Jayant Balan as Managing Director of the company w.e.f. 25th May, 2027.",
+   "url": "https://nsearchives.nseindia.in/corporate/VOLTAS_RB_06112026172057_02SE_Directorssigned.pdf",
    "related": [
     {
      "title": "Appointment",
-     "url": "https://nsearchives.nseindia.in/corporate/VOLTAS_RB_06112026172057_02SE_Directorssigned.pdf"
+     "url": "https://nsearchives.nseindia.in/corporate/VOLTAS_RB_06112026171534_02SE_Directorssigned.pdf"
     },
     {
      "title": "Appointment",
@@ -2552,17 +2552,17 @@
     "return_pct": -17.27
    },
    "components": {
-    "M": 0.35,
+    "M": 0.5,
     "S": 1,
     "T": null,
     "N": null
    },
-   "score": 0.621,
+   "score": 0.708,
    "reasons": [
     "volume 17.3× its 20-day average",
     "price -17.3% on the day"
    ],
-   "bucket": "worth_a_read"
+   "bucket": "needs_you"
   },
   {
    "id": "NCC-move-2026-11-06",
@@ -3530,17 +3530,17 @@
     "return_pct": 10.5
    },
    "components": {
-    "M": 0.35,
+    "M": 0.5,
     "S": 1,
     "T": null,
     "N": null
    },
-   "score": 0.621,
+   "score": 0.708,
    "reasons": [
     "volume 7.2× its 20-day average",
     "price +10.5% on the day"
    ],
-   "bucket": "worth_a_read"
+   "bucket": "needs_you"
   },
   {
    "id": "UNOMINDA-move-2026-11-05",
@@ -3559,17 +3559,17 @@
     "return_pct": 11.54
    },
    "components": {
-    "M": 0.35,
+    "M": 0.5,
     "S": 1,
     "T": null,
     "N": null
    },
-   "score": 0.621,
+   "score": 0.708,
    "reasons": [
     "volume 10.7× its 20-day average",
     "price +11.5% on the day"
    ],
-   "bucket": "worth_a_read"
+   "bucket": "needs_you"
   },
   {
    "id": "AUROPHARMA-move-2026-11-05",
@@ -4516,17 +4516,17 @@
     "return_pct": 5.75
    },
    "components": {
-    "M": 0.35,
+    "M": 0.5,
     "S": 1,
     "T": null,
     "N": null
    },
-   "score": 0.621,
+   "score": 0.708,
    "reasons": [
     "volume 11.2× its 20-day average",
     "price +5.7% on the day"
    ],
-   "bucket": "worth_a_read"
+   "bucket": "needs_you"
   },
   {
    "id": "KEC-move-2026-11-04",
@@ -5087,16 +5087,16 @@
     "return_pct": 4.11
    },
    "components": {
-    "M": 0.35,
+    "M": 0.5,
     "S": 1,
     "T": null,
     "N": null
    },
-   "score": 0.621,
+   "score": 0.708,
    "reasons": [
     "volume 7.6× its 20-day average"
    ],
-   "bucket": "worth_a_read"
+   "bucket": "needs_you"
   },
   {
    "id": "KEC-move-2026-11-03",
@@ -5115,17 +5115,17 @@
     "return_pct": -9.36
    },
    "components": {
-    "M": 0.35,
+    "M": 0.5,
     "S": 1,
     "T": null,
     "N": null
    },
-   "score": 0.621,
+   "score": 0.708,
    "reasons": [
     "volume 6.6× its 20-day average",
     "price -9.4% on the day"
    ],
-   "bucket": "worth_a_read"
+   "bucket": "needs_you"
   },
   {
    "id": "TATASTEEL-M&A-2026-11-03",

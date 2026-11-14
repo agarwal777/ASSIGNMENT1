@@ -1,0 +1,47 @@
+{
+  "_note": "Curated by FINN for the prototype (our judgement, not from filings): canonical names, aliases, rough size and peer relations. Production would grow this from annual-report disclosures.",
+  "symbols": {
+    "M&M": "Mahindra & Mahindra", "ASHOKLEY": "Ashok Leyland", "UNOMINDA": "Uno Minda",
+    "AUROPHARMA": "Aurobindo Pharma", "LUPIN": "Lupin", "MEDANTA": "Medanta (Global Health)",
+    "TEXRAIL": "Texmaco Rail & Engineering", "THERMAX": "Thermax",
+    "GRSE": "Garden Reach Shipbuilders & Engineers", "KEC": "KEC International", "NCC": "NCC",
+    "TATAPOWER": "Tata Power", "DEEPAKFERT": "Deepak Fertilisers", "SUDARSCHEM": "Sudarshan Chemical",
+    "JUBLFOOD": "Jubilant FoodWorks", "VOLTAS": "Voltas", "AURIONPRO": "Aurionpro Solutions",
+    "TATASTEEL": "Tata Steel"
+  },
+  "aliases": {
+    "Tata Administrative Services": "Tata Administrative Service",
+    "Global Health": "Medanta (Global Health)", "Medanta": "Medanta (Global Health)",
+    "Mahindra and Mahindra": "Mahindra & Mahindra", "M&M": "Mahindra & Mahindra",
+    "Voltbek": "Voltbek Home Appliances", "Jubilant Foodworks": "Jubilant FoodWorks",
+    "Texmaco": "Texmaco Rail & Engineering", "Sudarshan Chemical Industries": "Sudarshan Chemical",
+    "Deepak Fertilizers": "Deepak Fertilisers", "Arcelik": "Arçelik"
+  },
+  "large": [
+    "Mahindra & Mahindra", "Ashok Leyland", "Aurobindo Pharma", "Lupin", "Tata Power", "Tata Steel",
+    "Voltas", "KEC International", "Tata Sons", "Tata Motors", "Larsen & Toubro", "JSW Steel",
+    "Dr. Reddy's", "Infosys", "Hindustan Unilever", "Indian Railways", "UltraTech Cement", "Trent"
+  ],
+  "relations": {
+    "VOLTAS": {"competitors": ["Blue Star", "Daikin Airconditioning India", "Godrej Appliances"],
+               "partners": ["Arçelik", "Voltbek Home Appliances"]},
+    "TEXRAIL": {"competitors": ["Titagarh Rail Systems", "Jupiter Wagons"],
+                "customers": ["UltraTech Cement", "Indian Railways"]},
+    "M&M": {"competitors": ["Escorts Kubota", "Tata Motors"]},
+    "ASHOKLEY": {"competitors": ["Tata Motors"], "partners": ["Hinduja Leyland Finance"]},
+    "UNOMINDA": {"competitors": ["Sona Comstar"]},
+    "LUPIN": {"competitors": ["Dr. Reddy's", "Aurobindo Pharma"]},
+    "AUROPHARMA": {"competitors": ["Lupin", "Gland Pharma"]},
+    "MEDANTA": {"competitors": ["Max Healthcare"]},
+    "KEC": {"competitors": ["Kalpataru Projects"]},
+    "NCC": {"competitors": ["Larsen & Toubro"]},
+    "TATAPOWER": {"competitors": ["ReNew"]},
+    "THERMAX": {"competitors": ["Forbes Marshall"]},
+    "GRSE": {"competitors": ["Mazagon Dock Shipbuilders"]},
+    "SUDARSCHEM": {"competitors": ["Clariant"]},
+    "DEEPAKFERT": {"competitors": ["Coromandel International"]},
+    "JUBLFOOD": {"competitors": ["Westlife Foodworld"]},
+    "AURIONPRO": {"competitors": ["Infosys"]},
+    "TATASTEEL": {"competitors": ["JSW Steel"]}
+  }
+}

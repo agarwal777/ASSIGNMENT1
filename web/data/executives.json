@@ -1,0 +1,35 @@
+{
+  "_note": "Public data: executives named in exchange filings. Stints are taken from the filing's 'Brief Profile' (Reg. 30 Annexure A). For the prototype they were transcribed by hand from the cited sentences; production uses small-model extraction into the same schema. Years only: the filing gives no months.",
+  "executives": [
+    {
+      "id": "jayant-balan",
+      "name": "Jayant Balan",
+      "din": "03480708",
+      "company": "VOLTAS",
+      "role": "Managing Director (from 25 May 2027); MD Designate and Head – Room Air Conditioner Business now",
+      "events": ["VOLTAS-management_change-2026-11-06"],
+      "source": "https://nsearchives.nseindia.in/corporate/VOLTAS_RB_06112026171534_02SE_Directorssigned.pdf",
+      "stints": [
+        {"org": "Tata Administrative Service", "role": "TAS officer", "function": "general_management", "start": "1999", "end": "2001", "quote": "joined the Tata Group in 1999 as part of the Tata Administrative Service and moved to Voltas in 2001"},
+        {"org": "Voltas", "role": "Leadership roles: manufacturing, supply chain, strategy, international operations, consumer durables", "function": "general_management", "start": "2001", "end": null, "quote": "moved to Voltas in 2001. Over past two and a half decades, Mr. Balan has held leadership roles across manufacturing, supply chain, strategy, international operations, and consumer durables"},
+        {"org": "Voltbek Home Appliances", "role": "CEO", "function": "general_management", "start": "2019", "end": "2026", "quote": "serving as CEO of Voltbek Home Appliances Private Limited since 2019 before transitioning to the role of Head – Room Air Conditioner Business of the Company in January 2026"},
+        {"org": "SP Jain Institute of Management & Research", "role": "PGDM", "function": "education", "start": null, "end": null, "quote": "Mechanical Engineer and PGDM from SP Jain Institute of Management & Research"}
+      ]
+    },
+    {
+      "id": "venkatesalu-palaniswamy",
+      "name": "Venkatesalu Palaniswamy",
+      "din": "02190892",
+      "company": "VOLTAS",
+      "role": "Additional Director (Non-Independent, Non-Executive) from 12 Nov 2026; MD of Trent",
+      "events": ["VOLTAS-management_change-2026-11-06"],
+      "source": "https://nsearchives.nseindia.in/corporate/VOLTAS_RB_06112026171534_02SE_Directorssigned.pdf",
+      "stints": [
+        {"org": "Tata Administrative Service", "role": "TAS officer", "function": "finance", "start": "2001", "end": "2008", "end_inferred": true, "quote": "associated with Tata Administrative Services since 2001 and was formerly with Tata Sons Limited as a part of the Group Finance team"},
+        {"org": "Tata Sons", "role": "Group Finance", "function": "finance", "start": "2001", "end": "2008", "end_inferred": true, "quote": "formerly with Tata Sons Limited as a part of the Group Finance team"},
+        {"org": "Trent", "role": "ED & CEO, then Managing Director", "function": "general_management", "start": "2008", "end": null, "quote": "He joined Trent in 2008"},
+        {"org": "Symbiosis Institute of International Business", "role": "Master's in Management", "function": "education", "start": null, "end": null, "quote": "Master's in Management from Symbiosis (SIIB) Pune"}
+      ]
+    }
+  ]
+}

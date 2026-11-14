@@ -89,6 +89,14 @@ def main() -> None:
     for (sym, cat, day), rows in groups.items():
         rows.sort(key=lambda x: x["_when"])
         lead = rows[0]
+        if cat == "management_change":
+            # Lead with the most senior change in the group (an MD/CEO beats a chairman or director).
+            for pat in (r"managing director|chief executive|\bceo\b", r"chief financial|\bcfo\b", KMP_RE.pattern):
+                hit = next((x for x in rows if re.search(pat, x.get("attchmntText") or "", re.I)), None)
+                if hit:
+                    lead = hit
+                    break
+            rows = [lead] + [x for x in rows if x is not lead]
         text = " ".join(x.get("attchmntText") or "" for x in rows)
         m, reasons, s = MATERIALITY.get(cat, 0.05), [], 0.0
         ev = {"id": f"{sym}-{cat}-{day}", "symbol": sym, "name": names.get(sym, sym),
@@ -125,7 +133,9 @@ def main() -> None:
         if a["symbol"] not in syms or a["date"] < "2026-10-31":
             continue
         unexplained = a.get("unexplained") is True
-        m = 0.6 if unexplained else 0.35
+        big = abs(a.get("return_pct") or 0) >= 10 or (a.get("volume_multiple") or 0) >= 5
+        # A filing may explain a move, but a ±10% day or 5× volume still deserves attention.
+        m = 0.6 if unexplained else 0.5 if big else 0.35
         s = min(max((a.get("volume_multiple") or 0) / 4, abs(a.get("return_pct") or 0) / 10), 1)
         reasons = list(a["reasons"]) + (["no filing since the previous session"] if unexplained else [])
         events.append({
