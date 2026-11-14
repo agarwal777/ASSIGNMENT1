@@ -100,6 +100,41 @@ function keepWarm(c: Contact, asOf: number): string | null {
 
 function yr(s: string | null) { return s ? s.slice(0, 4) : "?"; }
 
+/**
+ * "Who knows …?": a typed person (matched against executives in public filings) or organisation
+ * (matched against your contacts' employers). Same scoring and template wording as whoToAsk.
+ */
+export function whoKnows(query: string, contacts: Contact[], executives: Executive[], orgs: Orgs, asOf: number): Suggestion[] {
+  const q = query.trim().toLowerCase();
+  if (q.length < 2) return [];
+  const people = executives.filter((e) => e.name.toLowerCase().includes(q));
+  const symbolHit = Object.entries(orgs.symbols).find(([s, n]) => s.toLowerCase() === q || n.toLowerCase().includes(q));
+  const orgQuery = symbolHit ? canonical(symbolHit[1], orgs).toLowerCase() : q;
+  const out: Suggestion[] = [];
+  for (const c of contacts) {
+    const warm = keepWarm(c, asOf);
+    for (const p of people) {
+      const o = bestOverlap(c, p, orgs, asOf);
+      if (o && o.strength >= MIN_SHOWN) out.push({ contact: c, kind: "second_degree", via: p.name, probable: !o.confirmed,
+        keepWarm: warm, score: round(o.strength * (0.5 + c.closeness / 10)), reason: explainOverlap(o, p.name) });
+    }
+    for (const s of c.stints) {
+      const org = canonical(s.org, orgs);
+      if (s.function === "education" || !org.toLowerCase().includes(orgQuery)) continue;
+      const end = toYear(s.end, true) ?? asOf;
+      out.push({ contact: c, kind: "alumni", probable: false, keepWarm: warm,
+        score: round((s.end == null ? 0.8 : 0.7 * Math.exp(-Math.max(0, asOf - end) / 10)) * (0.5 + c.closeness / 10)),
+        reason: `${s.end == null ? "At" : "Worked at"} ${org} ${yr(s.start)}–${s.end ? yr(s.end) : "now"} (${s.role ?? s.function})` });
+    }
+  }
+  const best = new Map<string, Suggestion>();
+  for (const s of out) {
+    const prev = best.get(s.contact.id);
+    if (!prev || s.score > prev.score) best.set(s.contact.id, s);
+  }
+  return [...best.values()].sort((a, b) => b.score - a.score);
+}
+
 /** Ranked people to ask about an event at `symbol`, optionally involving executives. */
 export function whoToAsk(symbol: string, eventId: string, contacts: Contact[], executives: Executive[],
   orgs: Orgs, asOf: number): Suggestion[] {

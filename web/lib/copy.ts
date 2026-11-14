@@ -37,6 +37,35 @@ export const copy = {
   ask: {
     title: "Ask",
     empty: "Search any NSE company to see its promises, its numbers and who you know there.",
+    intentLabel: "What do you want to know",
+    intents: { promises: "Promises and numbers", who: "Who knows…" },
+    searchLabel: "Search NSE companies",
+    placeholder: "Company or NSE symbol",
+    inSnapshot: "in your snapshot",
+    notInSnapshot: "read it now",
+    noSymbol: "We couldn't find that NSE symbol.",
+    suggestions: [
+      { symbol: "DIXON", label: "Try a company you don't own: Dixon Technologies" },
+      { symbol: "AUROPHARMA", label: "Aurobindo Pharma: what management promised, and what it delivered" },
+      { symbol: "VOLTAS", label: "Voltas: new managing director, and who knows him" },
+    ],
+    steps: { validate: "Find the company on NSE", prices: "Daily prices for the last year", results: "Results from the exchange XBRL filings", transcripts: "Earnings-call transcripts" } as Record<string, string>,
+    stepDetail: (id: string, d: string) =>
+      id === "results" && d === "lender" ? "Skipped: EBITDA isn't meaningful for lenders"
+      : id === "transcripts" && /found; promise extraction/.test(d) ? `${d.split(" ")[0]} found; promise extraction runs offline in this prototype`
+      : d,
+    elapsed: (s: number) => `${s} s`,
+    slow: "Still reading. We'll show what we have at 90 seconds.",
+    unknownSymbol: "We couldn't find that NSE symbol.",
+    failed: "Our server couldn't reach the sources just now. Try again, or pick a company in your snapshot.",
+    reduced: (n: number | null) =>
+      `Showing prices and reported numbers. ${n ? `NSE lists ${n} earnings-call transcripts for this company; ` : ""}the promise ledger is built offline, so it isn't available for companies outside your snapshot yet.`,
+    reducedLender: "Showing prices only. This is a lender, so the EBITDA results card doesn't apply; a lender card (NII, PPOP, PAT) is planned.",
+    readIn: (s: number) => `Read from primary sources in ${s} s.`,
+    whoLabel: "Person or company",
+    whoPlaceholder: "A person or a company",
+    whoSuggestions: ["Jayant Balan", "Voltas", "Tata Sons", "Lupin"],
+    whoNone: "No one in your network matches yet.",
   },
   sheet: {
     close: "Close",
