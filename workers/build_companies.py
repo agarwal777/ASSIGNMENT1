@@ -10,12 +10,30 @@ from __future__ import annotations
 
 import csv
 import json
+import re
+from datetime import datetime as _dt
 from collections import defaultdict
 from pathlib import Path
 
 SEED, WEB = Path("seed"), Path("web/data")
 
 from thesis import thesis_for
+
+
+RECENT = json.loads(Path("seed/filings/recent.json").read_text(encoding="utf-8"))
+TRANSCRIPT = re.compile("transcript", re.I)
+
+
+def transcripts_on_nse(sym: str, recent: list[dict]) -> dict:
+    """Earnings-call transcripts this company filed on NSE in the snapshot (a year of history where we
+    pulled it, otherwise the recent window). Shown when there is no ledger: extraction runs offline."""
+    hist = Path(f"seed/filings/history_{sym}.json")
+    rows = json.loads(hist.read_text(encoding="utf-8")) if hist.exists() else [x for x in recent if x["symbol"] == sym]
+    rows = rows if isinstance(rows, list) else rows.get("data", [])
+    hits = [x for x in rows if TRANSCRIPT.search((x.get("attchmntText") or "") + x.get("desc", "") + x.get("attchmntFile", ""))]
+    window = rows if hist.exists() else recent      # the window searched, not this company's first filing
+    since = min((_dt.strptime(x["an_dt"][:11], "%d-%b-%Y") for x in window), default=None)
+    return {"count": len(hits), "since": since.date().isoformat() if since else None}
 
 
 def main() -> None:
@@ -88,6 +106,7 @@ def main() -> None:
             "results_source": (results.get(sym) or {}).get("source"),
             "price": price, "quarters": quarters,
             "ledger": led["promises"], "has_ledger": "ledger" in c["role"].split(";"),
+            "transcripts": transcripts_on_nse(sym, RECENT),
             "credibility": {"met": n.get("met", 0), "resolved": n.get("met", 0) + n.get("missed", 0)},
             "thesis": thesis,
             "recent_filings": recent,

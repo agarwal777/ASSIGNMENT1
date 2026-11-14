@@ -68,12 +68,20 @@ export interface CompanyPayload {
   ledger: LedgerPromise[];
   quarters: QuarterRow[];
   nextQuestion?: { text: string; people: PersonRef[] };
+  transcripts?: { count: number; since: string | null };
   recentFilings: { id: string; title: string; at: string; tier: 'needs_you' | 'worth_a_read' | 'collapsed'; source: SourceRef }[];
 }
 
 export interface PortfolioRow {
-  symbol: string; name: string; sector: string;
+  symbol: string; name: string; shortName: string; sector: string;
   thesis: { status: PromiseStatus }[];
+  claims: { label: string; claim: Claim }[];
+  /** Latest important filing (never routine), as a written headline. */
+  headline?: { text: string; at: string; eventId: string };
+  move?: { returnPct?: number; volumeMultiple?: number; at: string; eventId: string };
+  nextEvent?: { text: string; at: string; note?: string };
+  eventId?: string;
+  transcripts: { count: number; since: string | null };
   credibility?: { met: number; resolved: number };
   lastEvent?: { title: string; at: string; tier: 'needs_you' | 'worth_a_read' | 'collapsed' };
   needsYou: boolean;

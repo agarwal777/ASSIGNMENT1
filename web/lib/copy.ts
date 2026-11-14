@@ -27,7 +27,20 @@ export const copy = {
   portfolio: {
     title: "Portfolio",
     count: (n: number) => `${n} companies`,
-    sortNote: "Companies with something new this week come first, then those whose thesis is under pressure.",
+    filterLabel: "Show",
+    filters: { all: "All", needs: "Needs you", behind: "Behind", moves: "Unusual moves" } as Record<string, string>,
+    claimsLine: (n: number, parts: string) => (n === 0 ? "No tracked claims yet" : `${n} tracked claim${n === 1 ? "" : "s"}: ${parts}`),
+    claimsBar: (parts: string) => `Tracked claims by status: ${parts}`,
+    tag: (n: number, label: string) => `${n} ${label.toLowerCase()}`,
+    moveTag: (ret: string, vol: string) => [ret, vol && `${vol} vol`].filter(Boolean).join(" · "),
+    trackClaims: "Track management's claims",
+    openCompany: (name: string) => `Open ${name}`,
+    nextEvent: "Next",
+    noPerson: (name: string) => `No one in your network has worked at ${name} or its peers.`,
+    findingPerson: "Looking in your network…",
+    networkFailed: "Your network couldn't be loaded just now.",
+    noneMatch: "No company matches this filter.",
+    expand: (name: string) => `${name}: show claims and who to ask`,
     needsYou: "Needs you this week",
     noThesis: "No claims tracked yet",
     thesisLabel: (s: string) => `Claims: ${s}`,
@@ -133,6 +146,10 @@ export const copy = {
     oneResolved: (kept: boolean) => `1 checkable promise so far, ${kept ? "kept" : "not kept"}`,
     noneCheckable: "No promise from the last 4 quarters can be checked against reported numbers yet.",
     noTranscripts: "Earnings-call transcripts for this company aren't in the snapshot, so there's no promise ledger yet.",
+    transcriptsOffline: (name: string, n: number, since: string) =>
+      `NSE has ${n === 0 ? "no" : n} earnings-call transcript${n === 1 ? "" : "s"} for ${name} since ${since}. `
+      + "Promise extraction runs offline in this prototype and hasn't been run on this company yet, so there are no management claims to track."
+      + (n === 0 ? "" : " Once it runs, each checkable promise appears here with its quote and a bullet chart."),
     thesis: "Thesis",
     managementClaims: "Management's claims you're tracking",
     yourAssumptions: "Your assumptions",
@@ -248,4 +265,13 @@ export const copy = {
     note: "Fictional fixtures for review. Not shown to users.",
   },
   comingNext: "This screen is being built next.",
+  /** NSE subject → a short written headline for filings without a template (never the raw text). */
+  subjectHeadline: {
+    "Acquisition": "Acquisition filed", "Amalgamation/Merger": "Group companies to merge",
+    "Scheme of Arrangement": "Scheme of arrangement takes effect", "Other Restructuring": "Restructuring update",
+    "Sale or disposal": "Sale of a business or asset", "Capacity addition": "Capacity addition announced",
+    "Credit Rating": "Credit rating update", "Change in Director(s)": "Board change",
+    "Appointment": "New senior appointment", "Change in Management": "Senior management change",
+    "Fund Raising": "Fund raise announced", "Litigation": "Litigation update",
+  } as Record<string, string>,
 } as const;

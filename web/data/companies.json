@@ -252,6 +252,10 @@
     }
    ],
    "has_ledger": true,
+   "transcripts": {
+    "count": 5,
+    "since": "2025-10-16"
+   },
    "credibility": {
     "met": 0,
     "resolved": 0
@@ -417,6 +421,10 @@
    ],
    "ledger": [],
    "has_ledger": false,
+   "transcripts": {
+    "count": 0,
+    "since": "2026-10-31"
+   },
    "credibility": {
     "met": 0,
     "resolved": 0
@@ -544,6 +552,10 @@
    ],
    "ledger": [],
    "has_ledger": false,
+   "transcripts": {
+    "count": 1,
+    "since": "2026-10-31"
+   },
    "credibility": {
     "met": 0,
     "resolved": 0
@@ -1008,6 +1020,10 @@
     }
    ],
    "has_ledger": true,
+   "transcripts": {
+    "count": 5,
+    "since": "2025-10-16"
+   },
    "credibility": {
     "met": 1,
     "resolved": 1
@@ -1219,6 +1235,10 @@
    ],
    "ledger": [],
    "has_ledger": false,
+   "transcripts": {
+    "count": 1,
+    "since": "2026-10-31"
+   },
    "credibility": {
     "met": 0,
     "resolved": 0
@@ -1367,6 +1387,10 @@
    ],
    "ledger": [],
    "has_ledger": false,
+   "transcripts": {
+    "count": 1,
+    "since": "2026-10-31"
+   },
    "credibility": {
     "met": 0,
     "resolved": 0
@@ -1515,6 +1539,10 @@
    ],
    "ledger": [],
    "has_ledger": false,
+   "transcripts": {
+    "count": 0,
+    "since": "2026-10-31"
+   },
    "credibility": {
     "met": 0,
     "resolved": 0
@@ -1649,6 +1677,10 @@
    ],
    "ledger": [],
    "has_ledger": false,
+   "transcripts": {
+    "count": 5,
+    "since": "2025-10-17"
+   },
    "credibility": {
     "met": 0,
     "resolved": 0
@@ -1797,6 +1829,10 @@
    ],
    "ledger": [],
    "has_ledger": false,
+   "transcripts": {
+    "count": 0,
+    "since": "2026-10-31"
+   },
    "credibility": {
     "met": 0,
     "resolved": 0
@@ -1910,6 +1946,10 @@
    ],
    "ledger": [],
    "has_ledger": false,
+   "transcripts": {
+    "count": 1,
+    "since": "2026-10-31"
+   },
    "credibility": {
     "met": 0,
     "resolved": 0
@@ -2058,6 +2098,10 @@
    ],
    "ledger": [],
    "has_ledger": false,
+   "transcripts": {
+    "count": 1,
+    "since": "2026-10-31"
+   },
    "credibility": {
     "met": 0,
     "resolved": 0
@@ -2192,6 +2236,10 @@
    ],
    "ledger": [],
    "has_ledger": false,
+   "transcripts": {
+    "count": 4,
+    "since": "2025-10-17"
+   },
    "credibility": {
     "met": 0,
     "resolved": 0
@@ -2331,6 +2379,10 @@
    ],
    "ledger": [],
    "has_ledger": false,
+   "transcripts": {
+    "count": 0,
+    "since": "2026-10-31"
+   },
    "credibility": {
     "met": 0,
     "resolved": 0
@@ -2465,6 +2517,10 @@
    ],
    "ledger": [],
    "has_ledger": false,
+   "transcripts": {
+    "count": 0,
+    "since": "2026-10-31"
+   },
    "credibility": {
     "met": 0,
     "resolved": 0
@@ -2606,6 +2662,10 @@
    ],
    "ledger": [],
    "has_ledger": false,
+   "transcripts": {
+    "count": 1,
+    "since": "2026-10-31"
+   },
    "credibility": {
     "met": 0,
     "resolved": 0
@@ -2873,6 +2933,10 @@
     }
    ],
    "has_ledger": true,
+   "transcripts": {
+    "count": 5,
+    "since": "2025-10-14"
+   },
    "credibility": {
     "met": 0,
     "resolved": 0
@@ -3024,6 +3088,10 @@
    ],
    "ledger": [],
    "has_ledger": false,
+   "transcripts": {
+    "count": 1,
+    "since": "2026-10-31"
+   },
    "credibility": {
     "met": 0,
     "resolved": 0
@@ -3151,6 +3219,10 @@
    ],
    "ledger": [],
    "has_ledger": false,
+   "transcripts": {
+    "count": 1,
+    "since": "2026-10-31"
+   },
    "credibility": {
     "met": 0,
     "resolved": 0
@@ -3299,6 +3371,10 @@
    ],
    "ledger": [],
    "has_ledger": false,
+   "transcripts": {
+    "count": 1,
+    "since": "2026-10-31"
+   },
    "credibility": {
     "met": 0,
     "resolved": 0
@@ -3372,6 +3448,10 @@
    ],
    "ledger": [],
    "has_ledger": false,
+   "transcripts": {
+    "count": 1,
+    "since": "2026-10-31"
+   },
    "credibility": {
     "met": 0,
     "resolved": 0
@@ -3445,6 +3525,10 @@
    ],
    "ledger": [],
    "has_ledger": false,
+   "transcripts": {
+    "count": 1,
+    "since": "2026-10-31"
+   },
    "credibility": {
     "met": 0,
     "resolved": 0
@@ -3518,6 +3602,10 @@
    ],
    "ledger": [],
    "has_ledger": false,
+   "transcripts": {
+    "count": 1,
+    "since": "2026-10-31"
+   },
    "credibility": {
     "met": 0,
     "resolved": 0

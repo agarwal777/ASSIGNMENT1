@@ -8,7 +8,7 @@ import BulletChart from "@/components/trust/BulletChart";
 import StatusPill from "@/components/trust/StatusPill";
 import Num from "@/components/trust/Num";
 import { SourceLink } from "@/components/trust/SourceLink";
-import { SNAPSHOT_AS_OF, companySymbols, getCompany, hasLedgerData } from "@/lib/companies";
+import { shortName, SNAPSHOT_AS_OF, companySymbols, getCompany, hasLedgerData } from "@/lib/companies";
 import { copy } from "@/lib/copy";
 import { date, period } from "@/lib/format";
 import type { ThesisItem } from "@/lib/types";
@@ -66,10 +66,12 @@ export default async function CompanyPage({ params }: { params: Promise<{ symbol
 
         {/* 4 · promised vs delivered */}
         <section aria-labelledby="ledger" className="mt-6">
-          <h2 id="ledger" className="text-[13px] font-medium text-ink-2">{copy.company.ledger}</h2>
+          <h2 id="ledger" className="scroll-mt-16 text-[13px] font-medium text-ink-2">{copy.company.ledger}</h2>
           {c.ledger.length > 0
             ? <div className="mt-2"><LedgerTimeline promises={c.ledger} asOf={SNAPSHOT_AS_OF} /></div>
-            : <p className="mt-2 text-[15px] text-ink-2">{hasLedgerData(c.symbol) ? copy.company.noPromises : copy.company.noTranscripts}</p>}
+            : <p className="mt-2 text-[15px] leading-[22px] text-ink-2">{hasLedgerData(c.symbol) ? copy.company.noPromises
+              : c.transcripts?.since ? copy.company.transcriptsOffline(shortName(c.name), c.transcripts.count, date(`${c.transcripts.since}T12:00:00+05:30`))
+              : copy.company.noTranscripts}</p>}
         </section>
 
         {/* 5 · snapshot */}

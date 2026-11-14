@@ -1,6 +1,8 @@
 // Server-side only: imported by server components (Portfolio, Company), so companies.json never
 // reaches a client bundle. Maps the snapshot into the CompanyPayload / PortfolioRow contracts.
 import data from "@/data/companies.json";
+import executivesData from "@/data/executives.json";
+import { companySignals } from "@/lib/api";
 import { type RawClaimFields, toClaim } from "@/lib/claims";
 import { isProblem, STATUS_ORDER } from "@/lib/status";
 import type {
@@ -76,6 +78,7 @@ export function getCompany(symbol: string): CompanyPayload | null {
     price: p && close ? { close, asOf: p.as_of,
       dayChange: { value: p.day_change, kind: "pct", epistemic: "CALCULATED", formula: "(close − previous close) ÷ previous close" } } : undefined,
     credibility: r.credibility,
+    transcripts: r.transcripts,
     thesis: { management: (r.thesis.management as RawItem[]).map(item("management")),
       investor: (r.thesis.investor as RawItem[]).map((i) => ({ ...item("investor")(i), editable: false })) },
     ledger: ledger(r.symbol, r),
@@ -90,15 +93,46 @@ export function getCompany(symbol: string): CompanyPayload | null {
 
 export const hasLedgerData = (symbol: string) => Boolean(COMPANIES[symbol]?.has_ledger);
 
+/** "Voltas Limited" → "Voltas". */
+export const shortName = (n: string) => n.replace(/\s+(Limited|Ltd\.?)$/i, "");
+
+const QUARTER_END = ["", "06-30", "09-30", "12-31", "03-31"];
+/**
+ * The next dated thing we know about: the next quarter's results deadline under SEBI's listing rules
+ * (LODR Reg. 33: 45 days after a quarter, 60 days for the audited Q4), or an announced executive
+ * start date, whichever comes first.
+ */
+function nextEvent(r: Raw): PortfolioRow["nextEvent"] {
+  const out: NonNullable<PortfolioRow["nextEvent"]>[] = [];
+  const last = (r.quarters as { period: string }[]).at(-1)?.period.match(/^Q([1-4])FY(\d{2})$/);
+  if (last) {
+    const q = Number(last[1]) % 4 + 1, fy = Number(last[2]) + (q === 1 ? 1 : 0);
+    const end = new Date(`${2000 + fy - (q === 4 ? 0 : 1)}-${QUARTER_END[q]}T00:00:00+05:30`);
+    const due = new Date(end.getTime() + (q === 4 ? 60 : 45) * 864e5);
+    out.push({ text: `Q${q} FY${fy} results due by`, at: due.toISOString(), note: "listing-rule deadline" });
+  }
+  for (const x of executivesData.executives as { name: string; company?: string; effective?: string; title?: string }[]) {
+    if (x.company === r.symbol && x.effective && x.effective > SNAPSHOT_AS_OF.slice(0, 10))
+      out.push({ text: `${x.name} starts as ${x.title ?? "executive"}`, at: `${x.effective}T00:00:00+05:30` });
+  }
+  return out.sort((a, b) => a.at.localeCompare(b.at))[0];
+}
+
 export function getPortfolio(): PortfolioRow[] {
-  const rows: PortfolioRow[] = Object.values(COMPANIES).filter((r) => r.role.split(";").includes("portfolio")).map((r) => ({
-    symbol: r.symbol, name: r.name, sector: r.sector,
+  const rows: PortfolioRow[] = Object.values(COMPANIES).filter((r) => r.role.split(";").includes("portfolio")).map((r) => {
+    const items = [...(r.thesis.investor as RawItem[]), ...(r.thesis.management as RawItem[])];
+    const sig = companySignals(r.symbol);
+    return {
+    symbol: r.symbol, name: r.name, shortName: shortName(r.name), sector: r.sector,
+    claims: items.flatMap((i) => { const claim = toClaim(i); return claim ? [{ label: i.text, claim }] : []; }),
+    headline: sig.headline, move: sig.move, eventId: sig.eventId, nextEvent: nextEvent(r),
+    transcripts: r.transcripts,
     thesis: [...(r.thesis.investor as RawItem[]), ...(r.thesis.management as RawItem[])].map((i) => ({ status: i.status as PromiseStatus })),
     credibility: r.credibility.resolved > 0 ? r.credibility : undefined,
     lastEvent: r.last_event ? { title: r.last_event.title, at: r.last_event.at,
       tier: r.last_event.tier as "needs_you" | "worth_a_read" | "collapsed" } : undefined,
     needsYou: r.needs_you,
-  }));
+  }; });
   const contradicted = (r: PortfolioRow) => r.thesis.filter((t) => isProblem(t.status)).length;
   return rows.sort((a, b) => Number(b.needsYou) - Number(a.needsYou) || contradicted(b) - contradicted(a) || a.name.localeCompare(b.name));
 }

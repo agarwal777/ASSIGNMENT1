@@ -4,6 +4,7 @@
 import digestData from "@/data/digest.json";
 import executivesData from "@/data/executives.json";
 import { toClaim } from "@/lib/claims";
+import { copy } from "@/lib/copy";
 import { bps as fmtBps, pct as fmtPct } from "@/lib/format";
 import type { DigestEvent } from "@/lib/digest";
 import type { Card, DigestResponse, MetricRow, NumValue, SourceRef } from "@/lib/types";
@@ -246,5 +247,29 @@ export function getDigest(asOf: string, hours: number): DigestResponse & { all: 
     })),
     collapsed: [...groups.values()].sort((a, b) => b.count - a.count),
     all: inWin,
+  };
+}
+
+// ── portfolio signals ────────────────────────────────────────────────────────────────
+/** A short headline for a filing that isn't results or a known appointment: from the NSE subject,
+ *  never the raw exchange text (which is long, legal and often a company's own boilerplate). */
+function subjectHeadline(e: DigestEvent): string {
+  return copy.subjectHeadline[e.title] ?? `${copy.category[e.category] ?? "Company"} filing`;
+}
+
+/**
+ * What the Portfolio row shows for a company, up to the end of the snapshot: the latest *important*
+ * filing (never a routine one) as a headline, and an unusual price/volume move from the last 7 days.
+ */
+export function companySignals(symbol: string) {
+  const end = new Date(EVENT_RANGE.last).getTime(), weekStart = end - 7 * 864e5;
+  const ev = EVENTS.filter((e) => e.symbol === symbol).sort((a, b) => b.at.localeCompare(a.at));
+  const imp = ev.find((e) => e.kind === "filing" && e.bucket !== "collapsed");
+  const mv = ev.find((e) => e.kind === "move" && e.move && new Date(e.at).getTime() > weekStart);
+  const card = imp ? toCard(imp) : null;
+  return {
+    headline: imp && card ? { text: card.variant === "material" ? subjectHeadline(imp) : card.headline, at: imp.at, eventId: imp.id } : undefined,
+    move: mv?.move ? { returnPct: mv.move.return_pct ?? undefined, volumeMultiple: mv.move.volume_multiple ?? undefined, at: mv.at, eventId: mv.id } : undefined,
+    eventId: (imp ?? ev[0])?.id,
   };
 }
