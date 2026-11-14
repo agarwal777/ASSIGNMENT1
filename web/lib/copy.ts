@@ -154,7 +154,7 @@ export const copy = {
     of: "of",
     promisesWindow: "checkable promises in the last 4 quarters",
     notEnough: "Not enough resolved promises yet",
-    oneResolved: (kept: boolean) => `1 checkable promise so far, ${kept ? "kept" : "not kept"}`,
+    oneResolved: (met: boolean) => `1 checkable promise so far: ${met ? "met" : "missed"}`,
     noneCheckable: "No promise from the last 4 quarters can be checked against reported numbers yet.",
     noTranscripts: "Earnings-call transcripts for this company aren't in the snapshot, so there's no promise ledger yet.",
     transcriptsOffline: (name: string, n: number, since: string) =>
