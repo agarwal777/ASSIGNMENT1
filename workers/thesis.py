@@ -15,8 +15,23 @@ from pathlib import Path
 
 SEED, WEB = Path("seed"), Path("web/data")
 
-STATUS_TO_STANCE = {"delivered": "supports", "on_track": "supports", "missed": "contradicts",
-                    "at_risk": "contradicts", "revised": "neutral", "unverifiable": "insufficient"}
+# One status vocabulary everywhere: on_track · behind · met · missed · cant_check.
+# "met"/"missed" only once the deadline has passed; before that a shortfall is "behind".
+STATUS_TO_STANCE = {"met": "supports", "on_track": "supports", "missed": "contradicts",
+                    "behind": "contradicts", "cant_check": "insufficient"}
+SNAPSHOT_DATE = "2026-11-15"
+
+
+def fy_end(fy: str) -> str:
+    """'FY27' → '2027-03-31'."""
+    return f"20{fy[-2:]}-03-31"
+
+
+def status_for(ok: bool | None, deadline: str) -> str:
+    if ok is None:
+        return "cant_check"
+    passed = deadline.startswith("FY") and fy_end(deadline) < SNAPSHOT_DATE
+    return ("met" if ok else "missed") if passed else ("on_track" if ok else "behind")
 METRIC_LABEL = {"ebitda_margin": "EBITDA margin", "revenue_growth": "Revenue growth", "pat_growth": "Profit growth"}
 
 
@@ -58,9 +73,11 @@ def ytd_margin(fx: dict, fy: str) -> tuple[float | None, list[str]]:
 def thesis_for(fx: dict, led: dict, rows: list[dict]) -> dict:
     management = [{"id": p["id"], "text": claim_label(p), "deadline": p["deadline_period"], "metric": p["metric"],
                    "stance": STATUS_TO_STANCE[p["status"]], "evidence": p["evidence"], "status": p["status"],
-                   "source": "management"}
+                   "source": "management", "target_low": p.get("target_low"), "target_high": p.get("target_high"),
+                   "actual": p.get("actual"), "quarters_reported": p.get("quarters_reported"),
+                   "quarters_total": p.get("quarters_total")}
                   for p in sorted(led.get("promises", []), key=lambda p: p["said_at"], reverse=True)
-                  if p["status"] != "unverifiable"]
+                  if p["status"] != "cant_check"]
     seen, deduped = set(), []
     for m in management:   # a reiterated target is one claim: keep its latest statement
         if (m["text"], m["deadline"]) not in seen:
@@ -68,15 +85,17 @@ def thesis_for(fx: dict, led: dict, rows: list[dict]) -> dict:
             deduped.append(m)
     investor = []
     for t in rows:
-        stance, evidence = "insufficient", "no reported quarters for this period yet"
+        ok, evidence, actual, qs = None, "no reported quarters for this period yet", None, []
         if t["metric"] == "ebitda_margin":
-            m, qs = ytd_margin(fx, t["deadline"])
-            if m is not None:
-                ok = m >= float(t["target"]) if t["operator"] == ">=" else m <= float(t["target"])
-                stance = "supports" if ok else "contradicts"
-                evidence = f"{m:.2f}% year to date ({qs[0]}–{qs[-1]})"
+            actual, qs = ytd_margin(fx, t["deadline"])
+            if actual is not None:
+                ok = actual >= float(t["target"]) if t["operator"] == ">=" else actual <= float(t["target"])
+                evidence = f"{actual:.2f}% year to date ({qs[0]}–{qs[-1]})"
+        status = status_for(ok, t["deadline"])
         investor.append({"id": t["id"], "text": t["text"], "deadline": t["deadline"], "metric": t["metric"],
-                         "stance": stance, "evidence": evidence, "demo": True, "source": "investor"})
+                         "status": status, "stance": STATUS_TO_STANCE[status], "evidence": evidence, "demo": True,
+                         "source": "investor", "target_low": float(t["target"]), "target_high": None,
+                         "actual": actual, "quarters_reported": len(qs), "quarters_total": 4})
     return {"management": deduped[:4], "investor": investor}
 
 

@@ -88,8 +88,7 @@ def main() -> None:
             "results_source": (results.get(sym) or {}).get("source"),
             "price": price, "quarters": quarters,
             "ledger": led["promises"], "has_ledger": "ledger" in c["role"].split(";"),
-            "credibility": {"delivered": n.get("delivered", 0),
-                            "resolved": n.get("delivered", 0) + n.get("missed", 0) + n.get("revised", 0)},
+            "credibility": {"met": n.get("met", 0), "resolved": n.get("met", 0) + n.get("missed", 0)},
             "thesis": thesis,
             "recent_filings": recent,
             "needs_you": bool(needs),
@@ -100,7 +99,7 @@ def main() -> None:
                                         encoding="utf-8")
     for sym, c in out.items():
         print(f"{sym:<11} q={len(c['quarters'])} ledger={len(c['ledger']):>2} mgmt={len(c['thesis']['management'])} "
-              f"inv={[i['stance'] for i in c['thesis']['investor']]} needs_you={c['needs_you']}")
+              f"inv={[i['status'] for i in c['thesis']['investor']]} needs_you={c['needs_you']}")
 
 
 if __name__ == "__main__":

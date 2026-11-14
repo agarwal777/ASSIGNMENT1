@@ -2,10 +2,10 @@
 
 Checkable today (company-level, from XBRL facts): ebitda_margin, revenue_growth, pat_growth,
 for a quarter (QnFYyy), a half (HnFYyy) or a fiscal year (FYyy).
-  delivered / missed   the period is complete and actual is inside / outside the target range
-  on_track / at_risk   the period is in progress; year-to-date actual is inside / outside the range
-  revised              a later call gave a different target for the same metric, scope and period
-  unverifiable         segment-level, non-financial (capacity, dates) or data not available
+  met / missed         the period is complete and actual is inside / outside the target range
+  on_track / behind    the period is in progress; year-to-date actual is inside / outside the range
+  (revised_by)         set when a later call gave a different target; the outcome is still judged
+  cant_check           segment-level, non-financial (capacity, dates) or data not available
 "A single number" targets count as met when actual ≥ target (growth, margin) — stated in the UI.
 
 Output: web/data/ledger.json (per company: promises with status + evidence, credibility line).
@@ -62,27 +62,28 @@ def actual(metric: str, qs: list[str], facts: dict[tuple[str, str], float]) -> t
 
 def judge(p: dict, facts: dict, latest: str) -> tuple[str, str]:
     if p["metric"] not in CHECKABLE:
-        return "unverifiable", "not a reported financial line (checked by hand or in later calls)"
+        return "cant_check", "not a reported financial line (checked by hand or in later calls)"
     if p.get("scope", "company").lower() not in ("company", "overall", "consolidated", "standalone"):
-        return "unverifiable", f"segment-level ({p['scope']}): segment numbers not parsed yet"
+        return "cant_check", f"segment-level ({p['scope']}): segment numbers not parsed yet"
     qs = quarters_in(p["deadline_period"])
     if not qs:
-        return "unverifiable", f"no checkable period ({p['deadline_period']})"
+        return "cant_check", f"no checkable period ({p['deadline_period']})"
     lo, hi = p.get("target_low"), p.get("target_high")
     if lo is None and hi is None:
-        return "unverifiable", "no numeric target"
+        return "cant_check", "no numeric target"
     lo = lo if lo is not None else hi
     val, used = actual(p["metric"], qs, facts)
     if val is None:
-        return "unverifiable", "financials for this period not in the snapshot"
+        return "cant_check", "financials for this period not in the snapshot"
     complete = len(used) == len(qs)
     inside = val >= lo if (hi is None or hi == lo) else lo <= val <= hi
     span = f"{used[0]}–{used[-1]}" if len(used) > 1 else used[0]
     unit = "%" if p["metric"] == "ebitda_margin" else "% YoY"
     evidence = f"actual {val}{unit} ({'full period' if complete else 'year to date ' + span})"
+    p["actual"], p["quarters_reported"], p["quarters_total"] = val, len(used), len(qs)   # for the bullet chart
     if complete:
-        return ("delivered" if inside else "missed"), evidence
-    return ("on_track" if inside else "at_risk"), evidence
+        return ("met" if inside else "missed"), evidence
+    return ("on_track" if inside else "behind"), evidence
 
 
 def main() -> None:
@@ -106,19 +107,17 @@ def main() -> None:
 
     out: dict[str, dict] = {}
     for p in raw:
-        if p.get("revised_by"):
-            p["status"], p["evidence"] = "revised", "a later call changed this target"
-        else:
-            p["status"], p["evidence"] = judge(p, facts_by[p["symbol"]], latest.get(p["symbol"], ""))
+        # A revised promise keeps its own outcome; the revision shows in the ledger history (revised_by).
+        p["status"], p["evidence"] = judge(p, facts_by[p["symbol"]], latest.get(p["symbol"], ""))
         c = out.setdefault(p["symbol"], {"promises": []})
         c["promises"].append(p)
     for sym, c in out.items():
         n = defaultdict(int)
         for p in c["promises"]:
             n[p["status"]] += 1
-        resolved = n["delivered"] + n["missed"] + n["revised"]
+        resolved = n["met"] + n["missed"]
         c["counts"] = dict(n)
-        c["credibility"] = (f"Delivered {n['delivered']} of {resolved} checkable promises in the last 4 quarters"
+        c["credibility"] = (f"Met {n['met']} of {resolved} checkable promises in the last 4 quarters"
                             if resolved else "No promise from the last 4 quarters can be checked against reported numbers yet")
         c["promises"].sort(key=lambda p: (p["said_at"], p["metric"]))
         print(f"{sym:<11} {dict(n)}  → {c['credibility']}")

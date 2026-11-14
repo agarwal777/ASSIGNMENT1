@@ -4,7 +4,7 @@ import { ChevronLeft } from "lucide-react";
 import LedgerTimeline from "@/components/company/LedgerTimeline";
 import NextQuestion from "@/components/company/NextQuestion";
 import SnapshotTable from "@/components/company/SnapshotTable";
-import StanceBadge from "@/components/today/StanceBadge";
+import StatusPill from "@/components/trust/StatusPill";
 import Num from "@/components/trust/Num";
 import { SourceLink } from "@/components/trust/SourceLink";
 import { SNAPSHOT_AS_OF, companySymbols, getCompany, hasLedgerData } from "@/lib/companies";
@@ -46,10 +46,10 @@ export default async function CompanyPage({ params }: { params: Promise<{ symbol
         {/* 2 · credibility */}
         <p className="mt-4 rounded-[12px] bg-surface p-3 text-[15px] leading-[22px] border border-line">
           {cred && cred.resolved >= 2 ? (
-            <>{copy.company.delivered} <Num v={{ value: cred.delivered, kind: "count", epistemic: "CALCULATED" }} /> {copy.company.of}{" "}
+            <>{copy.company.met} <Num v={{ value: cred.met, kind: "count", epistemic: "CALCULATED" }} /> {copy.company.of}{" "}
               <Num v={{ value: cred.resolved, kind: "count", epistemic: "CALCULATED" }} /> {copy.company.promisesWindow}</>
           ) : cred && cred.resolved === 1 ? (
-            <>{copy.company.notEnough} <span className="text-ink-2">({copy.company.oneResolved(cred.delivered === 1)})</span></>
+            <>{copy.company.notEnough} <span className="text-ink-2">({copy.company.oneResolved(cred.met === 1)})</span></>
           ) : (
             <span className="text-ink-2">{hasLedgerData(c.symbol) ? copy.company.noneCheckable : copy.company.noTranscripts}</span>
           )}
@@ -114,7 +114,7 @@ function ThesisRow({ title, items, empty, demo }: { title: string; items: Thesis
           {items.map((i) => (
             <li key={i.ref.id} className="rounded-[12px] border border-line bg-surface p-3">
               <div className="flex items-start gap-2">
-                <StanceBadge stance={i.stance} />
+                <StatusPill status={i.status} />
                 <p className="min-w-0 text-[15px] leading-[22px]">
                   {i.ref.text}
                   {i.ref.deadline && <span className="text-ink-3"> · {copy.card.by} {period(i.ref.deadline)}</span>}

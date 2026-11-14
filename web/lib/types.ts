@@ -16,7 +16,8 @@ export interface AssumptionRef { id: string; text: string; source: 'management' 
 export interface CardBase {
   id: string; companySymbol: string; companyName: string; category: string; at: string;
   headline: string; score: number; reasons: string[];
-  assumption?: { ref: AssumptionRef; stance: Stance; rationale?: string; epistemic: Epistemic };
+  assumption?: { ref: AssumptionRef; stance: Stance; rationale?: string; epistemic: Epistemic;
+                status?: PromiseStatus /* redesign: one status vocabulary */ };
   person?: PersonRef; question?: string; sources: SourceRef[];
 }
 export interface MetricRow { metric: 'revenue' | 'ebitda' | 'ebitda_margin' | 'pbt' | 'pat'; value: NumValue; qoq?: NumValue; yoy?: NumValue; }
@@ -40,7 +41,8 @@ export interface DigestResponse {
 }
 
 // ── 2. Additions following the §7.2 pattern ────────────────────────────────────────
-export type PromiseStatus = 'delivered' | 'on_track' | 'at_risk' | 'revised' | 'missed' | 'unverifiable';
+/** One vocabulary everywhere. met/missed only after the deadline; before it a shortfall is behind. */
+export type PromiseStatus = 'on_track' | 'behind' | 'met' | 'missed' | 'cant_check';
 
 export interface LedgerPromise {
   id: string; saidAt: string; deadline: string; metric: string; scope: string;
@@ -49,14 +51,14 @@ export interface LedgerPromise {
   status: PromiseStatus; evidence: string; actual?: NumValue; revisedBy?: string;
 }
 export interface QuarterRow { period: string; revenue?: NumValue; ebitdaMargin?: NumValue; pat?: NumValue; revenueYoy?: NumValue; }
-export interface ThesisItem { ref: AssumptionRef; stance: Stance; evidence?: string; editable?: boolean }
+export interface ThesisItem { ref: AssumptionRef; stance: Stance; status: PromiseStatus; evidence?: string; editable?: boolean }
 
 export interface CompanyPayload {
   mode: 'full' | 'reduced';
   reducedReason?: string;
   symbol: string; name: string; sector: string;
   price?: { close: NumValue; dayChange: NumValue; asOf: string };
-  credibility?: { delivered: number; resolved: number };
+  credibility?: { met: number; resolved: number };
   thesis: { management: ThesisItem[]; investor: ThesisItem[] };
   ledger: LedgerPromise[];
   quarters: QuarterRow[];
@@ -66,8 +68,8 @@ export interface CompanyPayload {
 
 export interface PortfolioRow {
   symbol: string; name: string; sector: string;
-  thesis: { stance: Stance }[];
-  credibility?: { delivered: number; resolved: number };
+  thesis: { status: PromiseStatus }[];
+  credibility?: { met: number; resolved: number };
   lastEvent?: { title: string; at: string; tier: 'needs_you' | 'worth_a_read' | 'collapsed' };
   needsYou: boolean;
 }

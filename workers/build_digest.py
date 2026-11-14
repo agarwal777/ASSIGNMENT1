@@ -6,7 +6,7 @@ never re-scores, so what you see is exactly what this file decided — and why.
 
 Score (README §6.2): 0.35·M + 0.25·S + 0.30·T + 0.10·N.
 M, S and T are decided here; the bucket uses (0.35·M + 0.25·S + 0.30·T) / 0.90.
-T: 1.0 results that contradict a numeric thesis item · 0.7 results that touch one · 0.4 any other
+T: 1.0 results behind (or missing) a numeric thesis item · 0.7 results that touch one · 0.4 any other
 event about a company you own. N (network) depends on the investor's private contacts, so it is
 added on the device (weight 0.10) and only reorders cards within "Needs you". Stated, not hidden.
 
@@ -187,8 +187,9 @@ def main() -> None:
                 hit = any(i["stance"] == "contradicts" for i in numeric)
                 t = 1.0 if hit else 0.7
                 top = linked[0]
-                ev["reasons"].insert(0, ("contradicts your assumption" if top["source"] == "investor"
-                                         else "behind management's guidance") if hit else "touches your thesis")
+                word = "missed" if top["status"] == "missed" else "behind"   # same words as the status pills
+                ev["reasons"].insert(0, (f"{word} your assumption" if top["source"] == "investor"
+                                         else f"{word} management's guidance") if hit else "touches your thesis")
             pc = promise_check(fx, led, res.get("period"))
             if pc:
                 ev["promise_check"] = pc

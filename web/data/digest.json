@@ -1,5 +1,5 @@
 {
- "generated_at": "2026-11-15T02:27:32",
+ "generated_at": "2026-11-15T03:16:09",
  "default_as_of": "2026-11-06T08:00:00+05:30",
  "scoring_note": "score = (0.35·materiality + 0.25·surprise + 0.30·thesis) / 0.90; your network adds up to 0.10 on your device and only reorders cards. Weights are a starting heuristic",
  "events": [
@@ -2887,7 +2887,7 @@
    },
    "score": 0.922,
    "reasons": [
-    "contradicts your assumption",
+    "behind your assumption",
     "EBITDA margin +172 bps YoY",
     "PAT +51.5% YoY"
    ],
@@ -2897,10 +2897,16 @@
      "text": "EBITDA margin stays at or above 6% this year",
      "deadline": "FY27",
      "metric": "ebitda_margin",
+     "status": "behind",
      "stance": "contradicts",
      "evidence": "5.33% year to date (Q1FY27–Q2FY27)",
      "demo": true,
-     "source": "investor"
+     "source": "investor",
+     "target_low": 6.0,
+     "target_high": null,
+     "actual": 5.33,
+     "quarters_reported": 2,
+     "quarters_total": 4
     }
    ],
    "bucket": "needs_you"
@@ -4922,7 +4928,7 @@
    },
    "score": 0.867,
    "reasons": [
-    "contradicts your assumption",
+    "behind your assumption",
     "EBITDA margin -327 bps YoY",
     "revenue +26.2% YoY"
    ],
@@ -4932,10 +4938,16 @@
      "text": "EBITDA margin stays at or above 15% this year",
      "deadline": "FY27",
      "metric": "ebitda_margin",
+     "status": "behind",
      "stance": "contradicts",
      "evidence": "13.76% year to date (Q1FY27–Q2FY27)",
      "demo": true,
-     "source": "investor"
+     "source": "investor",
+     "target_low": 15.0,
+     "target_high": null,
+     "actual": 13.76,
+     "quarters_reported": 2,
+     "quarters_total": 4
     }
    ],
    "bucket": "needs_you"
@@ -5363,8 +5375,13 @@
      "metric": "ebitda_margin",
      "stance": "contradicts",
      "evidence": "actual 20.79% (year to date Q1FY27–Q2FY27)",
-     "status": "at_risk",
-     "source": "management"
+     "status": "behind",
+     "source": "management",
+     "target_low": 21,
+     "target_high": null,
+     "actual": 20.79,
+     "quarters_reported": 2,
+     "quarters_total": 4
     }
    ],
    "bucket": "needs_you"

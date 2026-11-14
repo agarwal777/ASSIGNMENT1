@@ -36,7 +36,7 @@ export const digestFixture: DigestResponse = {
         quote: src("Acme Polymers: Q1 FY27 call transcript (example)", "2026-08-10T18:00:00+05:30", 7),
       },
       assumption: { ref: { id: "fx-a1", text: "EBITDA margin stays at or above 16%", source: "investor", deadline: "FY27" },
-        stance: "contradicts", epistemic: "CALCULATED", rationale: "15.0% this quarter" },
+        stance: "contradicts", status: "behind", epistemic: "CALCULATED", rationale: "15.0% this quarter" },
       person: { contactId: "fx-c1", displayName: "Ravi K. (example)", reason: "Ran procurement at a competitor, 2018–2023", strength: 0.6, confirmed: true },
       question: "Is the raw-material cost spike behind the margin drop, and is it passing through to prices?",
       sources: [RESULTS],
@@ -91,7 +91,7 @@ export const materialCardFixture: DigestResponse["needsYou"][number] = {
   // `fields` is Record<string, string> in §7.2, so it cannot carry a Num: keep it to non-numeric facts.
   fields: { Counterparty: "Sunrise Snacks (example)", "Paid with": "Internal cash", "Expected close": "Q4 FY27" },
   assumption: { ref: { id: "fx-a9", text: "Growth stays organic; no large acquisitions", source: "investor" },
-    stance: "insufficient", epistemic: "INFERRED", rationale: "Deal size relative to the balance sheet is not stated" },
+    stance: "insufficient", status: "cant_check", epistemic: "INFERRED", rationale: "Deal size relative to the balance sheet is not stated" },
   person: { contactId: "fx-c5", displayName: "Tarun P. (example)", reason: "Both worked at Big Audit Firm; overlap not confirmed", strength: 0.25, confirmed: false },
   question: "How have regional snack brands held up after being bought by national players?",
   sources: [src("Orbit Foods: acquisition (example)", "2026-11-05T17:40:00+05:30", 1)],
@@ -102,8 +102,8 @@ const names = ["Acme Polymers", "Northwind Appliances", "Lumen Cables", "Orbit F
   "Nimbus Software", "Oakline Chemicals", "Pioneer Steel"];
 export const portfolioFixture: PortfolioRow[] = names.map((n, i) => ({
   symbol: n.split(" ")[0].toUpperCase(), name: `${n} (example)`, sector: ["Chemicals", "Consumer durables", "Cables", "Food", "Pharma"][i % 5],
-  thesis: [{ stance: i < 2 ? "contradicts" : "supports" }, { stance: i % 3 === 0 ? "insufficient" : "supports" }, { stance: "neutral" }],
-  credibility: i % 4 === 3 ? undefined : { delivered: 5 - (i % 3), resolved: 8 },
+  thesis: [{ status: i < 2 ? "behind" : "on_track" }, { status: i % 3 === 0 ? "cant_check" : "met" }, { status: "missed" }],
+  credibility: i % 4 === 3 ? undefined : { met: 5 - (i % 3), resolved: 8 },
   lastEvent: { title: i < 3 ? "Needs you" : "Routine filing", at: "2026-11-05T12:00:00+05:30", tier: i < 3 ? "needs_you" : "collapsed" },
   needsYou: i < 3,
 }));
@@ -111,18 +111,18 @@ export const portfolioFixture: PortfolioRow[] = names.map((n, i) => ({
 export const companyFixture: CompanyPayload = {
   mode: "full", symbol: "ACMEPOLY", name: "Acme Polymers (example)", sector: "Chemicals",
   price: { close: { value: 500, kind: "count", epistemic: "SAID" }, dayChange: { value: -2, kind: "pct", epistemic: "CALCULATED", formula: "(close − previous close) ÷ previous close" }, asOf: "2026-11-05T15:30:00+05:30" },
-  credibility: { delivered: 5, resolved: 8 },
+  credibility: { met: 5, resolved: 8 },
   thesis: {
-    management: [{ ref: { id: "fx-m1", text: "EBITDA margin 16–18%", source: "management", deadline: "FY27" }, stance: "contradicts", evidence: "15.0% year to date" }],
-    investor: [{ ref: { id: "fx-a1", text: "EBITDA margin stays at or above 16%", source: "investor", deadline: "FY27" }, stance: "contradicts", editable: true }],
+    management: [{ ref: { id: "fx-m1", text: "EBITDA margin 16–18%", source: "management", deadline: "FY27" }, stance: "contradicts", status: "behind", evidence: "15.0% year to date" }],
+    investor: [{ ref: { id: "fx-a1", text: "EBITDA margin stays at or above 16%", source: "investor", deadline: "FY27" }, stance: "contradicts", status: "behind", editable: true }],
   },
   ledger: [
     { id: "fx-p1", saidAt: "2026-08-10", deadline: "FY27", metric: "ebitda_margin", scope: "company",
       quote: { ...src("Q1 FY27 call (example)", "2026-08-10T18:00:00+05:30", 7), text: "We expect margins in the range of 16 to 18 percent for the year.", speaker: "CFO" },
-      guided: { low: 16, high: 18, unit: "percent" }, status: "at_risk", evidence: "actual 15.0% (year to date)" },
+      guided: { low: 16, high: 18, unit: "percent" }, status: "behind", evidence: "actual 15.0% (year to date)" },
     { id: "fx-p2", saidAt: "2026-05-12", deadline: "Q2FY27", metric: "capacity", scope: "Plant 2",
       quote: { ...src("Q4 FY26 call (example)", "2026-05-12T18:00:00+05:30", 4), text: "Plant 2 will start commercial production by September.", speaker: "MD" },
-      status: "unverifiable", evidence: "not a reported financial line" },
+      status: "cant_check", evidence: "not a reported financial line" },
   ],
   quarters: ["Q3FY26", "Q4FY26", "Q1FY27", "Q2FY27"].map((p, i) => ({
     period: p, revenue: cr(900 + i * 30), ebitdaMargin: { value: 17 - i * 0.5, kind: "pct", epistemic: "CALCULATED", formula: "EBITDA ÷ revenue" },

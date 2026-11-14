@@ -1,18 +1,18 @@
 "use client";
 
-import { Check, CircleDashed, CircleHelp, Clock, RefreshCw, X } from "lucide-react";
 import { copy } from "@/lib/copy";
 import { period as fmtPeriod } from "@/lib/format";
 import { useSheetNav } from "@/lib/sheet";
+import { STATUS } from "@/lib/status";
 import type { LedgerPromise, PromiseStatus } from "@/lib/types";
 
-const STYLE: Record<PromiseStatus, { Icon: typeof Check; text: string; bar: string; fill: string; dash?: string }> = {
-  delivered: { Icon: Check, text: "text-supports", bar: "stroke-supports", fill: "fill-supports" },
-  on_track: { Icon: Clock, text: "text-supports", bar: "stroke-supports", fill: "fill-none" },
-  at_risk: { Icon: CircleDashed, text: "text-contradicts", bar: "stroke-contradicts", fill: "fill-none", dash: "4 2" },
-  missed: { Icon: X, text: "text-contradicts", bar: "stroke-contradicts", fill: "fill-contradicts" },
-  revised: { Icon: RefreshCw, text: "text-unclear", bar: "stroke-unclear", fill: "fill-[url(#ledger-stripes)]" },
-  unverifiable: { Icon: CircleHelp, text: "text-ink-3", bar: "stroke-ink-3", fill: "fill-none", dash: "1 3" },
+// Bar pattern on top of the shared status colour: solid = resolved, outline = in progress, dotted = unknowable.
+const BAR: Record<PromiseStatus, { bar: string; fill: string; dash?: string }> = {
+  met: { bar: "stroke-supports", fill: "fill-supports" },
+  on_track: { bar: "stroke-supports", fill: "fill-none" },
+  behind: { bar: "stroke-unclear", fill: "fill-none", dash: "4 2" },
+  missed: { bar: "stroke-contradicts", fill: "fill-contradicts" },
+  cant_check: { bar: "stroke-ink-3", fill: "fill-none", dash: "1 3" },
 };
 
 /** "Q3FY27" → 31 Dec 2026, "FY27" → 31 Mar 2027, "H1FY27" → 30 Sep 2026; null when unspecified. */
@@ -42,7 +42,7 @@ export default function LedgerTimeline({ promises, asOf }: { promises: LedgerPro
     <div>
       <ul className="space-y-1">
         {promises.map((p, i) => {
-          const s = STYLE[p.status];
+          const s = { ...BAR[p.status], ...STATUS[p.status] };
           const end = deadlineDate(p.deadline);
           return (
             <li key={p.id}>
@@ -53,7 +53,7 @@ export default function LedgerTimeline({ promises, asOf }: { promises: LedgerPro
                     {copy.ledger.metric[p.metric] ?? p.metric}{p.scope !== "company" && <span className="font-normal text-ink-3"> · {p.scope}</span>}
                   </span>
                   <span className={`inline-flex shrink-0 items-center gap-1 text-[11px] font-medium ${s.text}`}>
-                    <s.Icon size={12} aria-hidden /> {copy.ledger.status[p.status]}
+                    <s.Icon size={12} aria-hidden /> {s.label}
                   </span>
                 </span>
                 <svg viewBox="0 0 100 10" preserveAspectRatio="none" className="mt-1 h-2.5 w-full overflow-visible" aria-hidden>
@@ -72,13 +72,6 @@ export default function LedgerTimeline({ promises, asOf }: { promises: LedgerPro
           );
         })}
       </ul>
-      <svg width="0" height="0" className="absolute" aria-hidden>
-        <defs>
-          <pattern id="ledger-stripes" width="4" height="4" patternUnits="userSpaceOnUse" patternTransform="rotate(45)">
-            <rect width="2" height="4" className="fill-unclear" />
-          </pattern>
-        </defs>
-      </svg>
       <p className="mt-2 text-[11px] leading-4 text-ink-3">{copy.ledger.legend}</p>
     </div>
   );

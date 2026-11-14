@@ -17,7 +17,7 @@
     "match": "exact",
     "source": "https://nsearchives.nseindia.in/corporate/AUROPHARMA_16022026112327_LtrToSEsTranscriptEarningCall16022026.pdf",
     "id": "AUROPHARMA-2026-02-16-2",
-    "status": "unverifiable",
+    "status": "cant_check",
     "evidence": "not a reported financial line (checked by hand or in later calls)"
    },
    {
@@ -36,7 +36,7 @@
     "match": "exact",
     "source": "https://nsearchives.nseindia.in/corporate/AUROPHARMA_16022026112327_LtrToSEsTranscriptEarningCall16022026.pdf",
     "id": "AUROPHARMA-2026-02-16-5",
-    "status": "unverifiable",
+    "status": "cant_check",
     "evidence": "not a reported financial line (checked by hand or in later calls)"
    },
    {
@@ -55,7 +55,7 @@
     "match": "exact",
     "source": "https://nsearchives.nseindia.in/corporate/AUROPHARMA_16022026112327_LtrToSEsTranscriptEarningCall16022026.pdf",
     "id": "AUROPHARMA-2026-02-16-6",
-    "status": "unverifiable",
+    "status": "cant_check",
     "evidence": "not a reported financial line (checked by hand or in later calls)"
    },
    {
@@ -74,7 +74,10 @@
     "match": "exact",
     "source": "https://nsearchives.nseindia.in/corporate/AUROPHARMA_16022026112327_LtrToSEsTranscriptEarningCall16022026.pdf",
     "id": "AUROPHARMA-2026-02-16-4",
-    "status": "delivered",
+    "actual": 20.23,
+    "quarters_reported": 4,
+    "quarters_total": 4,
+    "status": "met",
     "evidence": "actual 20.23% (full period)"
    },
    {
@@ -93,7 +96,7 @@
     "match": "exact",
     "source": "https://nsearchives.nseindia.in/corporate/AUROPHARMA_16022026112327_LtrToSEsTranscriptEarningCall16022026.pdf",
     "id": "AUROPHARMA-2026-02-16-1",
-    "status": "unverifiable",
+    "status": "cant_check",
     "evidence": "not a reported financial line (checked by hand or in later calls)"
    },
    {
@@ -112,7 +115,7 @@
     "match": "exact",
     "source": "https://nsearchives.nseindia.in/corporate/AUROPHARMA_16022026112327_LtrToSEsTranscriptEarningCall16022026.pdf",
     "id": "AUROPHARMA-2026-02-16-3",
-    "status": "unverifiable",
+    "status": "cant_check",
     "evidence": "not a reported financial line (checked by hand or in later calls)"
    },
    {
@@ -131,7 +134,7 @@
     "match": "exact",
     "source": "https://nsearchives.nseindia.in/corporate/AUROPHARMA_27052026182247_LtrToSEsTranscriptEarningCall27052026.pdf",
     "id": "AUROPHARMA-2026-05-27-4",
-    "status": "unverifiable",
+    "status": "cant_check",
     "evidence": "not a reported financial line (checked by hand or in later calls)"
    },
    {
@@ -150,7 +153,10 @@
     "match": "exact",
     "source": "https://nsearchives.nseindia.in/corporate/AUROPHARMA_27052026182247_LtrToSEsTranscriptEarningCall27052026.pdf",
     "id": "AUROPHARMA-2026-05-27-1",
-    "status": "at_risk",
+    "actual": 20.79,
+    "quarters_reported": 2,
+    "quarters_total": 4,
+    "status": "behind",
     "evidence": "actual 20.79% (year to date Q1FY27–Q2FY27)"
    },
    {
@@ -169,7 +175,7 @@
     "match": "exact",
     "source": "https://nsearchives.nseindia.in/corporate/AUROPHARMA_27052026182247_LtrToSEsTranscriptEarningCall27052026.pdf",
     "id": "AUROPHARMA-2026-05-27-3",
-    "status": "unverifiable",
+    "status": "cant_check",
     "evidence": "segment-level (Europe formulations): segment numbers not parsed yet"
    },
    {
@@ -188,7 +194,7 @@
     "match": "exact",
     "source": "https://nsearchives.nseindia.in/corporate/AUROPHARMA_27052026182247_LtrToSEsTranscriptEarningCall27052026.pdf",
     "id": "AUROPHARMA-2026-05-27-2",
-    "status": "unverifiable",
+    "status": "cant_check",
     "evidence": "not a reported financial line (checked by hand or in later calls)"
    },
    {
@@ -207,7 +213,7 @@
     "match": "exact",
     "source": "https://nsearchives.nseindia.in/corporate/AUROPHARMA_11112026130442_LtrToSEsTranscriptEarningCall11112026.pdf",
     "id": "AUROPHARMA-2026-11-11-5",
-    "status": "unverifiable",
+    "status": "cant_check",
     "evidence": "not a reported financial line (checked by hand or in later calls)"
    },
    {
@@ -226,7 +232,10 @@
     "match": "exact",
     "source": "https://nsearchives.nseindia.in/corporate/AUROPHARMA_11112026130442_LtrToSEsTranscriptEarningCall11112026.pdf",
     "id": "AUROPHARMA-2026-11-11-2",
-    "status": "at_risk",
+    "actual": 20.79,
+    "quarters_reported": 2,
+    "quarters_total": 4,
+    "status": "behind",
     "evidence": "actual 20.79% (year to date Q1FY27–Q2FY27)"
    },
    {
@@ -245,7 +254,7 @@
     "match": "exact",
     "source": "https://nsearchives.nseindia.in/corporate/AUROPHARMA_11112026130442_LtrToSEsTranscriptEarningCall11112026.pdf",
     "id": "AUROPHARMA-2026-11-11-4",
-    "status": "unverifiable",
+    "status": "cant_check",
     "evidence": "financials for this period not in the snapshot"
    },
    {
@@ -264,7 +273,7 @@
     "match": "exact",
     "source": "https://nsearchives.nseindia.in/corporate/AUROPHARMA_11112026130442_LtrToSEsTranscriptEarningCall11112026.pdf",
     "id": "AUROPHARMA-2026-11-11-3",
-    "status": "unverifiable",
+    "status": "cant_check",
     "evidence": "not a reported financial line (checked by hand or in later calls)"
    },
    {
@@ -283,19 +292,21 @@
     "match": "exact",
     "source": "https://nsearchives.nseindia.in/corporate/AUROPHARMA_11112026130442_LtrToSEsTranscriptEarningCall11112026.pdf",
     "id": "AUROPHARMA-2026-11-11-1",
+    "actual": 20.2,
+    "quarters_reported": 2,
+    "quarters_total": 4,
     "status": "on_track",
     "evidence": "actual 20.2% YoY (year to date Q1FY27–Q2FY27)"
    }
   ],
   "counts": {
-   "unverifiable": 11,
-   "delivered": 1,
-   "at_risk": 2,
+   "cant_check": 11,
+   "met": 1,
+   "behind": 2,
    "on_track": 1,
-   "missed": 0,
-   "revised": 0
+   "missed": 0
   },
-  "credibility": "Delivered 1 of 1 checkable promises in the last 4 quarters"
+  "credibility": "Met 1 of 1 checkable promises in the last 4 quarters"
  },
  "M&M": {
   "promises": [
@@ -315,7 +326,7 @@
     "match": "exact",
     "source": "https://nsearchives.nseindia.in/corporate/NishaMandhana_17022026144818_SEIntimationregardingTranscriptofAnalystMeet11022026.pdf",
     "id": "M&M-2026-02-17-1",
-    "status": "unverifiable",
+    "status": "cant_check",
     "evidence": "not a reported financial line (checked by hand or in later calls)"
    },
    {
@@ -334,7 +345,7 @@
     "match": "exact",
     "source": "https://nsearchives.nseindia.in/corporate/NishaMandhana_17022026144818_SEIntimationregardingTranscriptofAnalystMeet11022026.pdf",
     "id": "M&M-2026-02-17-2",
-    "status": "unverifiable",
+    "status": "cant_check",
     "evidence": "not a reported financial line (checked by hand or in later calls)"
    },
    {
@@ -353,7 +364,7 @@
     "match": "exact",
     "source": "https://nsearchives.nseindia.in/corporate/NishaMandhana_17022026144818_SEIntimationregardingTranscriptofAnalystMeet11022026.pdf",
     "id": "M&M-2026-02-17-4",
-    "status": "unverifiable",
+    "status": "cant_check",
     "evidence": "not a reported financial line (checked by hand or in later calls)"
    },
    {
@@ -372,7 +383,7 @@
     "match": "exact",
     "source": "https://nsearchives.nseindia.in/corporate/NishaMandhana_17022026144818_SEIntimationregardingTranscriptofAnalystMeet11022026.pdf",
     "id": "M&M-2026-02-17-3",
-    "status": "unverifiable",
+    "status": "cant_check",
     "evidence": "segment-level (Tech Mahindra): segment numbers not parsed yet"
    },
    {
@@ -391,7 +402,7 @@
     "match": "exact",
     "source": "https://nsearchives.nseindia.in/corporate/AmitDodani_04082026194302_IntimationofTranscriptofearningcallQ1F27.pdf",
     "id": "M&M-2026-08-04-2",
-    "status": "unverifiable",
+    "status": "cant_check",
     "evidence": "not a reported financial line (checked by hand or in later calls)"
    },
    {
@@ -410,7 +421,7 @@
     "match": "exact",
     "source": "https://nsearchives.nseindia.in/corporate/AmitDodani_04082026194302_IntimationofTranscriptofearningcallQ1F27.pdf",
     "id": "M&M-2026-08-04-3",
-    "status": "unverifiable",
+    "status": "cant_check",
     "evidence": "not a reported financial line (checked by hand or in later calls)"
    },
    {
@@ -429,7 +440,7 @@
     "match": "exact",
     "source": "https://nsearchives.nseindia.in/corporate/AmitDodani_04082026194302_IntimationofTranscriptofearningcallQ1F27.pdf",
     "id": "M&M-2026-08-04-1",
-    "status": "unverifiable",
+    "status": "cant_check",
     "evidence": "segment-level (Tech Mahindra): segment numbers not parsed yet"
    },
    {
@@ -448,7 +459,7 @@
     "match": "exact",
     "source": "https://nsearchives.nseindia.in/corporate/AmitDodani_04082026194302_IntimationofTranscriptofearningcallQ1F27.pdf",
     "id": "M&M-2026-08-04-4",
-    "status": "unverifiable",
+    "status": "cant_check",
     "evidence": "not a reported financial line (checked by hand or in later calls)"
    },
    {
@@ -467,15 +478,14 @@
     "match": "exact",
     "source": "https://nsearchives.nseindia.in/corporate/AmitDodani_04082026194302_IntimationofTranscriptofearningcallQ1F27.pdf",
     "id": "M&M-2026-08-04-5",
-    "status": "unverifiable",
+    "status": "cant_check",
     "evidence": "not a reported financial line (checked by hand or in later calls)"
    }
   ],
   "counts": {
-   "unverifiable": 9,
-   "delivered": 0,
-   "missed": 0,
-   "revised": 0
+   "cant_check": 9,
+   "met": 0,
+   "missed": 0
   },
   "credibility": "No promise from the last 4 quarters can be checked against reported numbers yet"
  },
@@ -497,7 +507,7 @@
     "match": "exact",
     "source": "https://nsearchives.nseindia.in/corporate/VOLTAS_RB_03022026194154_SEIntimation.pdf",
     "id": "VOLTAS-2026-02-03-1",
-    "status": "unverifiable",
+    "status": "cant_check",
     "evidence": "not a reported financial line (checked by hand or in later calls)"
    },
    {
@@ -516,7 +526,7 @@
     "match": "exact",
     "source": "https://nsearchives.nseindia.in/corporate/VOLTAS_RB_03022026194154_SEIntimation.pdf",
     "id": "VOLTAS-2026-02-03-2",
-    "status": "unverifiable",
+    "status": "cant_check",
     "evidence": "not a reported financial line (checked by hand or in later calls)"
    },
    {
@@ -535,7 +545,7 @@
     "match": "exact",
     "source": "https://nsearchives.nseindia.in/corporate/VOLTAS_RB_20082026182809_SE_Intimation_signed.pdf",
     "id": "VOLTAS-2026-08-20-1",
-    "status": "unverifiable",
+    "status": "cant_check",
     "evidence": "not a reported financial line (checked by hand or in later calls)"
    },
    {
@@ -554,7 +564,7 @@
     "match": "exact",
     "source": "https://nsearchives.nseindia.in/corporate/VOLTAS_RB_20082026182809_SE_Intimation_signed.pdf",
     "id": "VOLTAS-2026-08-20-2",
-    "status": "unverifiable",
+    "status": "cant_check",
     "evidence": "not a reported financial line (checked by hand or in later calls)"
    },
    {
@@ -573,7 +583,7 @@
     "match": "exact",
     "source": "https://nsearchives.nseindia.in/corporate/VOLTAS_RB_12112026215516_SEIntimationtranscriptsigned.pdf",
     "id": "VOLTAS-2026-11-12-1",
-    "status": "unverifiable",
+    "status": "cant_check",
     "evidence": "segment-level (Electro-Mechanical Projects and Services): segment numbers not parsed yet"
    },
    {
@@ -592,15 +602,14 @@
     "match": "exact",
     "source": "https://nsearchives.nseindia.in/corporate/VOLTAS_RB_12112026215516_SEIntimationtranscriptsigned.pdf",
     "id": "VOLTAS-2026-11-12-2",
-    "status": "unverifiable",
+    "status": "cant_check",
     "evidence": "segment-level (Voltbek): segment numbers not parsed yet"
    }
   ],
   "counts": {
-   "unverifiable": 6,
-   "delivered": 0,
-   "missed": 0,
-   "revised": 0
+   "cant_check": 6,
+   "met": 0,
+   "missed": 0
   },
   "credibility": "No promise from the last 4 quarters can be checked against reported numbers yet"
  }

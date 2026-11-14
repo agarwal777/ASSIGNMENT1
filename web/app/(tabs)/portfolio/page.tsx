@@ -29,7 +29,7 @@ export default function PortfolioPage() {
                   <MiniThesisStrip items={r.thesis} />
                   {r.credibility && (
                     <span className="text-[13px] text-ink-2">
-                      <Num v={{ value: r.credibility.delivered, kind: "count", epistemic: "CALCULATED" }} />/
+                      <Num v={{ value: r.credibility.met, kind: "count", epistemic: "CALCULATED" }} />/
                       <Num v={{ value: r.credibility.resolved, kind: "count", epistemic: "CALCULATED" }} />{" "}
                       {copy.portfolio.credibilitySuffix}
                     </span>

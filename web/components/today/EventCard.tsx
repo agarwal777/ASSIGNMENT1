@@ -3,13 +3,14 @@ import PersonChip from "@/components/people/PersonChip";
 import StintList from "@/components/people/StintList";
 import MetricTable from "@/components/today/MetricTable";
 import PromiseCheckLine from "@/components/today/PromiseCheckLine";
-import StanceBadge from "@/components/today/StanceBadge";
 import VolumeStrip from "@/components/today/VolumeStrip";
 import EpistemicTag from "@/components/trust/EpistemicTag";
 import Num from "@/components/trust/Num";
+import StatusPill from "@/components/trust/StatusPill";
 import { SourceLink } from "@/components/trust/SourceLink";
 import { copy } from "@/lib/copy";
 import { date, time } from "@/lib/format";
+import { statusFromStance } from "@/lib/status";
 import type { Card, Epistemic } from "@/lib/types";
 
 /**
@@ -37,7 +38,7 @@ export default function EventCard({ card, refDate }: { card: Card; refDate?: str
       {/* 4 · assumption */}
       {card.assumption && (
         <div className="mt-3 flex items-start gap-2">
-          <StanceBadge stance={card.assumption.stance} />
+          <StatusPill status={card.assumption.status ?? statusFromStance(card.assumption.stance)} />
           <p className="text-[15px] leading-[22px]">
             {card.assumption.ref.text}
             {card.assumption.ref.deadline && <span className="text-ink-3"> · {copy.card.by} {card.assumption.ref.deadline}</span>}

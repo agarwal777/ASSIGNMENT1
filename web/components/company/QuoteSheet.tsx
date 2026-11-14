@@ -4,7 +4,9 @@ import { ExternalLink } from "lucide-react";
 import ledgerData from "@/data/ledger.json";
 import Sheet from "@/components/shell/Sheet";
 import EpistemicTag from "@/components/trust/EpistemicTag";
+import StatusPill from "@/components/trust/StatusPill";
 import { copy } from "@/lib/copy";
+import type { Status } from "@/lib/status";
 import { date, period } from "@/lib/format";
 
 type RawPromise = {
@@ -31,7 +33,7 @@ export default function QuoteSheet({ open, onClose, promiseId }: { open: boolean
           <dl className="mt-3 grid grid-cols-[auto_1fr] gap-x-3 gap-y-1 text-[13px]">
             <dt className="text-ink-3">{copy.quote.scope}</dt><dd>{p.scope ?? "company"}</dd>
             <dt className="text-ink-3">{copy.quote.deadline}</dt><dd>{p.deadline_period === "unspecified" ? copy.ledger.noDeadline : period(p.deadline_period)}</dd>
-            <dt className="text-ink-3">{copy.quote.status}</dt><dd className="font-medium">{copy.ledger.status[p.status as keyof typeof copy.ledger.status]}</dd>
+            <dt className="text-ink-3">{copy.quote.status}</dt><dd><StatusPill status={p.status as Status} /></dd>
             <dt className="text-ink-3">{copy.quote.evidence}</dt><dd>{p.evidence}</dd>
           </dl>
           <p className="mt-3 flex items-center gap-2 text-[13px] text-ink-2"><EpistemicTag e="EXTRACTED" /> {copy.quote.howExtracted}</p>

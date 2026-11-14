@@ -1,6 +1,7 @@
 // Server-side only: imported by server components (Portfolio, Company), so companies.json never
 // reaches a client bundle. Maps the snapshot into the CompanyPayload / PortfolioRow contracts.
 import data from "@/data/companies.json";
+import { isProblem, STATUS_ORDER } from "@/lib/status";
 import type {
   CompanyPayload, LedgerPromise, NumValue, PortfolioRow, PromiseStatus, QuarterRow, SourceRef, Stance, ThesisItem,
 } from "@/lib/types";
@@ -11,7 +12,7 @@ type RawPromise = {
   speaker_role: string; page: number; source: string; target_low?: number | null; target_high?: number | null;
   unit: string; status: string; evidence: string; revised_by?: string;
 };
-type RawItem = { id: string; text: string; deadline: string; stance: string; evidence: string };
+type RawItem = { id: string; text: string; deadline: string; stance: string; status: string; evidence: string };
 
 const COMPANIES = data.companies as Record<string, Raw>;
 export const SNAPSHOT_AS_OF: string = data.as_of;
@@ -37,11 +38,11 @@ function quarters(sym: string, r: Raw): QuarterRow[] {
 }
 
 // Checkable outcomes first (what moved), then what can't be checked yet; oldest promise first within each.
-const STATUS_ORDER: Record<string, number> = { missed: 0, at_risk: 1, delivered: 2, on_track: 3, revised: 4, unverifiable: 5 };
+const rank = (s: string) => { const i = STATUS_ORDER.indexOf(s as PromiseStatus); return i < 0 ? 9 : i; };
 
 function ledger(sym: string, r: Raw): LedgerPromise[] {
   return [...(r.ledger as RawPromise[])].sort((a, b) =>
-    (STATUS_ORDER[a.status] ?? 9) - (STATUS_ORDER[b.status] ?? 9) || a.said_at.localeCompare(b.said_at)).map((p) => ({
+    rank(a.status) - rank(b.status) || a.said_at.localeCompare(b.said_at)).map((p) => ({
     id: p.id, saidAt: p.said_at, deadline: p.deadline_period, metric: p.metric, scope: p.scope ?? "company",
     quote: { documentId: p.source, page: p.page, label: `${sym}: earnings call transcript`, publishedAt: p.said_at,
       text: p.statement_verbatim, speaker: p.speaker_role },
@@ -52,14 +53,14 @@ function ledger(sym: string, r: Raw): LedgerPromise[] {
 }
 
 const item = (source: "management" | "investor") => (i: RawItem): ThesisItem => ({
-  ref: { id: i.id, text: i.text, source, deadline: i.deadline }, stance: i.stance as Stance, evidence: i.evidence,
+  ref: { id: i.id, text: i.text, source, deadline: i.deadline }, stance: i.stance as Stance, status: i.status as PromiseStatus, evidence: i.evidence,
 });
 
 function nextQuestion(r: Raw): string {
   const all = [...(r.thesis.investor as RawItem[]), ...(r.thesis.management as RawItem[])];
-  const hit = all.find((i) => i.stance === "contradicts");
+  const hit = all.find((i) => isProblem(i.status as PromiseStatus));
   if (hit) return `What would it take to get back on "${hit.text.replace(/\.$/, "")}", and is that in management's hands?`;
-  if ((r.ledger as RawPromise[]).some((p) => p.status === "unverifiable" && p.scope && p.scope !== "company"))
+  if ((r.ledger as RawPromise[]).some((p) => p.status === "cant_check" && p.scope && p.scope !== "company"))
     return "Which of management's segment targets matter most for the stock, and how are they tracking?";
   return `If you were me, what would you ask ${r.name}'s management on the next call?`;
 }
@@ -91,12 +92,12 @@ export const hasLedgerData = (symbol: string) => Boolean(COMPANIES[symbol]?.has_
 export function getPortfolio(): PortfolioRow[] {
   const rows: PortfolioRow[] = Object.values(COMPANIES).filter((r) => r.role.split(";").includes("portfolio")).map((r) => ({
     symbol: r.symbol, name: r.name, sector: r.sector,
-    thesis: [...(r.thesis.investor as RawItem[]), ...(r.thesis.management as RawItem[])].map((i) => ({ stance: i.stance as Stance })),
+    thesis: [...(r.thesis.investor as RawItem[]), ...(r.thesis.management as RawItem[])].map((i) => ({ status: i.status as PromiseStatus })),
     credibility: r.credibility.resolved > 0 ? r.credibility : undefined,
     lastEvent: r.last_event ? { title: r.last_event.title, at: r.last_event.at,
       tier: r.last_event.tier as "needs_you" | "worth_a_read" | "collapsed" } : undefined,
     needsYou: r.needs_you,
   }));
-  const contradicted = (r: PortfolioRow) => r.thesis.filter((t) => t.stance === "contradicts").length;
+  const contradicted = (r: PortfolioRow) => r.thesis.filter((t) => isProblem(t.status)).length;
   return rows.sort((a, b) => Number(b.needsYou) - Number(a.needsYou) || contradicted(b) - contradicted(a) || a.name.localeCompare(b.name));
 }

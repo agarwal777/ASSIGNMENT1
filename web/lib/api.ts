@@ -145,13 +145,13 @@ function exceptional(e: DigestEvent): NumValue | undefined {
 /** One question per card from public evidence; asks for context, never unpublished information. */
 function questionFor(e: DigestEvent): string {
   const r = e.results;
-  // README §6.7: start from the gap. A contradicted thesis item becomes the question.
-  const hit = e.thesis?.find((t) => t.stance === "contradicts");
+  // README §6.7: start from the gap. A thesis item that is behind (or missed) becomes the question.
+  const hit = e.thesis?.find((t) => t.status === "behind" || t.status === "missed");
   if (hit) {
     const so = hit.evidence.replace(/^actual /, "");
     return hit.source === "investor"
-      ? `Your assumption "${hit.text}" is off track: ${so}. Is the gap cyclical, or a change in the business?`
-      : `Management guided "${hit.text}" for ${hit.deadline} and is behind: ${so}. What would close the gap in the second half?`;
+      ? `Your assumption "${hit.text}" is ${hit.status === "missed" ? "missed" : "behind"}: ${so}. Is the gap cyclical, or a change in the business?`
+      : `Management guided "${hit.text}" for ${hit.deadline} and is ${hit.status === "missed" ? "short" : "behind"}: ${so}. What would close the gap in the second half?`;
   }
   if (r?.metrics?.revenue) {
     const m = r.ebitda_margin.yoy_bps;
@@ -176,7 +176,7 @@ export function toCard(e: DigestEvent): Card {
   const t = e.thesis?.[0];
   const assumption = t ? {
     ref: { id: t.id, text: t.text, source: t.source, deadline: t.deadline },
-    stance: t.stance, rationale: t.evidence, epistemic: "CALCULATED" as const,
+    stance: t.stance, status: t.status, rationale: t.evidence, epistemic: "CALCULATED" as const,
   } : undefined;
   if (e.results?.metrics && Object.keys(e.results.metrics).length) {
     const pc = e.promise_check;
