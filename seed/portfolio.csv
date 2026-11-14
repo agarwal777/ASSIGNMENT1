@@ -6,7 +6,7 @@ AUROPHARMA,Pharma,portfolio;ledger,large,false
 LUPIN,Pharma,portfolio,large,false
 MEDANTA,Healthcare,portfolio,mid,false
 TEXRAIL,Capital goods,portfolio,small,false
-THERMAX,Capital goods,portfolio;ledger,mid,false
+THERMAX,Capital goods,portfolio,mid,false
 GRSE,Defence shipbuilding,portfolio,mid,false
 KEC,Transmission,portfolio,mid,false
 NCC,Construction,portfolio,mid,false
@@ -14,7 +14,7 @@ TATAPOWER,Power,portfolio;appointment_backup,large,false
 DEEPAKFERT,Chemicals,portfolio,mid,false
 SUDARSCHEM,Chemicals,portfolio,small,false
 JUBLFOOD,Consumer,portfolio,mid,false
-VOLTAS,Consumer durables,portfolio;appointment,mid,false
+VOLTAS,Consumer durables,portfolio;appointment;ledger,mid,false
 AURIONPRO,IT,portfolio,small,false
 TATASTEEL,Metals,portfolio,large,false
 TITAN,Consumer,research,large,false

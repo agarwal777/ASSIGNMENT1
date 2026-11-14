@@ -177,47 +177,51 @@
  },
  "https://nsearchives.nseindia.in/corporate/THERMAXNSE_12112026093647_SEintimationtranscriptQ2.pdf": {
   "symbol": "THERMAX",
-  "kind": "transcript",
+  "kind": "transcript_notice",
   "path": "seed/docs/THERMAX/12Nov2026_transcript_THERMAXNSE_12112026093647_SEintimationtranscriptQ2.pdf",
   "filed": "12-Nov-2026 09:37:11",
   "subject": "Analysts/Institutional Investor Meet/Con. Call Updates",
   "sha256": "9fa4fb1866a3cadb2c1d5a78ac8695eb70df464fc3b920027a3dc22ae99533a9",
   "bytes": 751697,
   "pages": 1,
-  "text_chars": 1008
+  "text_chars": 1008,
+  "note": "1-page letter pointing to company website; not a transcript"
  },
  "https://nsearchives.nseindia.in/corporate/THERMAXNSE_06082026161051_SEIntimationtranscriptsigned.pdf": {
   "symbol": "THERMAX",
-  "kind": "transcript",
+  "kind": "transcript_notice",
   "path": "seed/docs/THERMAX/06Aug2026_transcript_THERMAXNSE_06082026161051_SEIntimationtranscriptsigned.pdf",
   "filed": "06-Aug-2026 16:11:12",
   "subject": "Analysts/Institutional Investor Meet/Con. Call Updates",
   "sha256": "1fba303e5f1b9af67e648d5029273c4195e3a448fa05b2f31cef10eeb3f001a7",
   "bytes": 391120,
   "pages": 1,
-  "text_chars": 1031
+  "text_chars": 1031,
+  "note": "1-page letter pointing to company website; not a transcript"
  },
  "https://nsearchives.nseindia.in/corporate/THERMAXNSE_12052026102903_SEIntimationtranscriptsigned.pdf": {
   "symbol": "THERMAX",
-  "kind": "transcript",
+  "kind": "transcript_notice",
   "path": "seed/docs/THERMAX/12May2026_transcript_THERMAXNSE_12052026102903_SEIntimationtranscriptsigned.pdf",
   "filed": "12-May-2026 10:29:40",
   "subject": "Analysts/Institutional Investor Meet/Con. Call Updates",
   "sha256": "84ea7b9bf2eb0ca440eb77ad63e3aa037af8150a5177c161e8b1f774b1fde6b2",
   "bytes": 393999,
   "pages": 1,
-  "text_chars": 977
+  "text_chars": 977,
+  "note": "1-page letter pointing to company website; not a transcript"
  },
  "https://nsearchives.nseindia.in/corporate/THERMAXNSE_09022026175851_Investors_call_transcript_Q3.pdf": {
   "symbol": "THERMAX",
-  "kind": "transcript",
+  "kind": "transcript_notice",
   "path": "seed/docs/THERMAX/09Feb2026_transcript_THERMAXNSE_09022026175851_Investors_call_transcript_Q3.pdf",
   "filed": "09-Feb-2026 17:59:01",
   "subject": "Analysts/Institutional Investor Meet/Con. Call Updates",
   "sha256": "e1f7ffe41d4a8abd8b1966b8488e2fd11757026ad07ec07e17f5ba7fab4432cd",
   "bytes": 389960,
   "pages": 1,
-  "text_chars": 1033
+  "text_chars": 1033,
+  "note": "1-page letter pointing to company website; not a transcript"
  },
  "https://nsearchives.nseindia.in/corporate/GRSE_14112026103104_Intimation_Investors_and_Analyst_Meeting_Q2_H1_FY_26_27.pdf": {
   "symbol": "GRSE",
@@ -416,5 +420,49 @@
   "bytes": 569512,
   "pages": 22,
   "text_chars": 54111
+ },
+ "https://nsearchives.nseindia.in/corporate/VOLTAS_RB_12112026215516_SEIntimationtranscriptsigned.pdf": {
+  "symbol": "VOLTAS",
+  "kind": "transcript",
+  "path": "seed/docs/VOLTAS/12Nov2026_transcript_VOLTAS_RB_12112026215516_SEIntimationtranscriptsigned.pdf",
+  "filed": "12-Nov-2026 21:55:28",
+  "subject": "Analysts/Institutional Investor Meet/Con. Call Updates",
+  "sha256": "ea3631fcab6158e7bf203b51ad38e17b6d1dad2e1ef2af34a85505da705e4dfd",
+  "bytes": 626008,
+  "pages": 21,
+  "text_chars": 60827
+ },
+ "https://nsearchives.nseindia.in/corporate/VOLTAS_RB_20082026182809_SE_Intimation_signed.pdf": {
+  "symbol": "VOLTAS",
+  "kind": "transcript",
+  "path": "seed/docs/VOLTAS/20Aug2026_transcript_VOLTAS_RB_20082026182809_SE_Intimation_signed.pdf",
+  "filed": "20-Aug-2026 18:28:39",
+  "subject": "Analysts/Institutional Investor Meet/Con. Call Updates",
+  "sha256": "a74c10f782265c209967d7ba9342af6d978f4eeb9b04f4a1d71ff530c96b1b02",
+  "bytes": 437726,
+  "pages": 19,
+  "text_chars": 55430
+ },
+ "https://nsearchives.nseindia.in/corporate/VOLTAS_RB_20052026195055_SE_Transcript_lettersigned.pdf": {
+  "symbol": "VOLTAS",
+  "kind": "transcript",
+  "path": "seed/docs/VOLTAS/20May2026_transcript_VOLTAS_RB_20052026195055_SE_Transcript_lettersigned.pdf",
+  "filed": "20-May-2026 19:52:37",
+  "subject": "Analysts/Institutional Investor Meet/Con. Call Updates",
+  "sha256": "8cf64ced3d5c699924aea85004e500fb9e518e2e9d26b0c7acbe88798aa558de",
+  "bytes": 570467,
+  "pages": 19,
+  "text_chars": 54002
+ },
+ "https://nsearchives.nseindia.in/corporate/VOLTAS_RB_03022026194154_SEIntimation.pdf": {
+  "symbol": "VOLTAS",
+  "kind": "transcript",
+  "path": "seed/docs/VOLTAS/03Feb2026_transcript_VOLTAS_RB_03022026194154_SEIntimation.pdf",
+  "filed": "03-Feb-2026 19:42:13",
+  "subject": "Analysts/Institutional Investor Meet/Con. Call Updates",
+  "sha256": "66aa46a1a19fd88156e0fa662996476b82373810a9d8d1e12d39777788f684d0",
+  "bytes": 1087954,
+  "pages": 18,
+  "text_chars": 47615
  }
 }
