@@ -1,12 +1,16 @@
 "use client";
 
+import { useState } from "react";
+import dynamic from "next/dynamic";
 import { useSearchParams } from "next/navigation";
 import { ExternalLink } from "lucide-react";
-import Sheet from "@/components/shell/Sheet";
 import EpistemicTag from "@/components/trust/EpistemicTag";
 import { copy } from "@/lib/copy";
 import { date } from "@/lib/format";
 import { useSheetNav } from "@/lib/sheet";
+
+// vaul (~25 KB gzipped) loads only when a sheet is first opened, not with every screen.
+const Sheet = dynamic(() => import("@/components/shell/Sheet"));
 
 /**
  * Renders whichever sheet the URL names (?sheet=source|formula). Mounted once in the shell inside
@@ -17,6 +21,10 @@ export default function SheetHost() {
   const q = useSearchParams();
   const { close } = useSheetNav();
   const sheet = q.get("sheet");
+  // Stay mounted after the first sheet so later sheets animate in and out normally.
+  const [used, setUsed] = useState(false);
+  if (sheet && !used) setUsed(true);
+  if (!used && !sheet) return null;
   const doc = q.get("doc") ?? "";
   const label = q.get("label") ?? copy.sheet.untitledSource;
   const at = q.get("at");

@@ -6,6 +6,22 @@ export const copy = {
   today: {
     title: "Today",
     done: "That's everything that matters today.",
+    loading: "Loading your brief",
+    prevDay: "Previous day",
+    nextDay: "Next day",
+    viewing: (d: string) => `Viewing ${d}, 08:00`,
+    replay: "replay",
+    header: (filings: number, needs: number) =>
+      `${filings.toLocaleString("en-IN")} filings · ${needs} need${needs === 1 ? "s" : ""} you`,
+    minutesSkipped: "min of reading skipped (estimate)",
+    windowLabel: "Time window",
+    windows: { "24h": "24h", "7d": "7 days" } as Record<string, string>,
+    needsYou: "Needs you",
+    nothingNeedsYou: "Nothing in this window needs you. The rest is below.",
+    networkUnavailable: "Your network couldn't be loaded, so cards show no person for now.",
+    worthARead: "Worth a read",
+    showAll: (n: number) => `Show all ${n}`,
+    folded: (n: number) => `${n} routine filing${n === 1 ? "" : "s"}, folded`,
   },
   portfolio: {
     title: "Portfolio",
@@ -78,6 +94,7 @@ export const copy = {
     unexplained_move: "Unexplained move", price_volume: "Price and volume",
   } as Record<string, string>,
   people: {
+    you: "You",
     now: "now",
     yearsNotStated: "years not stated",
     probable: "probable",

@@ -40,8 +40,6 @@
   --color-supports: var(--supports);
   --color-contradicts: var(--contradicts);
   --color-unclear: var(--unclear);
-  /* Temporary alias for the pre-B3 Today screen; removed when Today is rebuilt. */
-  --color-paper: var(--bg);
   --font-sans: var(--font-inter);
   --font-serif: var(--font-newsreader);
 }

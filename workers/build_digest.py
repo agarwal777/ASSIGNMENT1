@@ -77,6 +77,24 @@ def main() -> None:
     filings = [r for r in json.loads((SEED / "filings" / "recent.json").read_text(encoding="utf-8"))
                if r.get("symbol") in syms]
 
+    # For anomaly cards: the 30 sessions up to each day, and hours since the company's last filing.
+    series: dict[str, list[tuple[str, int]]] = defaultdict(list)
+    for r in csv.DictReader((SEED / "prices.csv").open(encoding="utf-8")):
+        series[r["symbol"]].append((r["date"], int(r["volume"])))
+    volumes: dict[str, dict[str, list[int]]] = defaultdict(dict)
+    for sym, s in series.items():
+        s.sort()
+        for i, (d, _) in enumerate(s):
+            volumes[sym][d] = [v for _, v in s[max(0, i - 29): i + 1]]
+    filed_at: dict[str, list[datetime]] = defaultdict(list)
+    for r in filings:
+        filed_at[r["symbol"]].append(datetime.strptime(r["an_dt"], "%d-%b-%Y %H:%M:%S"))
+
+    def hours_since_filing(sym: str, day: str) -> int | None:
+        close = datetime.fromisoformat(day + "T15:30:00")
+        before = [t for t in filed_at.get(sym, []) if t <= close]
+        return int((close - max(before)).total_seconds() // 3600) if before else None
+
     # Group same company + category + day: results day brings an outcome, a press release,
     # a newspaper ad and a deck — one card, not four.
     groups: dict[tuple, list[dict]] = defaultdict(list)
@@ -146,6 +164,8 @@ def main() -> None:
             "title": "Unexplained move" if unexplained else "Price / volume move",
             "summary": "; ".join(a["reasons"]), "url": None, "related": [],
             "move": {k: a.get(k) for k in ("volume_multiple", "return_pct")},
+            "volume30d": volumes[a["symbol"]].get(a["date"], []),
+            "no_filing_hours": hours_since_filing(a["symbol"], a["date"]),
             "components": {"M": m, "S": round(s, 2), "T": None, "N": None},
             "score": round((0.35 * m + 0.25 * s) / 0.60, 3), "reasons": reasons})
 

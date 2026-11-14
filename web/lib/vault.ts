@@ -1,5 +1,4 @@
 import type { Contact } from "@/lib/network";
-import { ensureDemoSession, supabase } from "@/lib/supabase";
 
 type Row = {
   id: string; display_name: string; closeness: number | null; last_contacted: string | null; tags: string[];
@@ -7,8 +6,13 @@ type Row = {
     start_date: string | null; end_date: string | null; dates_known: boolean }[];
 };
 
-/** The investor's own contacts. RLS returns only this user's rows; nothing leaves the browser. */
+/**
+ * The investor's own contacts. RLS returns only this user's rows; matching happens on the device.
+ * supabase-js (~60 KB gzipped) is imported here on demand, after first paint, so it stays out of
+ * the initial JavaScript of every screen.
+ */
 export async function loadNetwork(): Promise<Contact[]> {
+  const { ensureDemoSession, supabase } = await import("@/lib/supabase");
   await ensureDemoSession();
   const { data, error } = await supabase
     .from("contacts")
