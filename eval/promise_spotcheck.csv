@@ -1,0 +1,21 @@
+n,promise_id,quote_verbatim,is_target,metric_ok,scope_ok,target_ok,deadline_ok,note
+1,AUROPHARMA-2026-05-27-4,yes,yes,yes,yes,yes,ambiguous,"""close the commissioning ... in 2029"": calendar 2029 spans FY29 and FY30; FY30 chosen"
+2,AUROPHARMA-2026-02-16-1,yes,yes,yes,yes,yes,yes,Europe revenue to exceed EUR 1 bn by FY26; metric 'other' is right for a revenue level
+3,M&M-2026-02-17-1,yes,yes,yes,yes,yes,yes,"add 3,000-5,000/month by July-August = Q2FY27"
+4,M&M-2026-08-04-4,yes,yes,no,yes,yes,yes,"Lifespaces Rs 10,000 cr is pre-sales, labelled order_book"
+5,VOLTAS-2026-02-03-1,yes,yes,yes,yes,yes,yes,Chennai 1.5 mn units in 1-2 months from Feb 2026
+6,VOLTAS-2026-08-20-1,yes,yes,yes,yes,yes,yes,JV compressor capacity 2.8 mn; no date given and none invented
+7,M&M-2026-08-04-3,yes,yes,yes,yes,yes,ambiguous,"""first half of calendar 2029"" mapped to FY30 (could end in FY29 Q4 or FY30 Q1)"
+8,M&M-2026-08-04-1,yes,yes,no,yes,yes,yes,"Tech Mahindra target is 15% EBIT margin, labelled ebitda_margin"
+9,AUROPHARMA-2026-02-16-6,yes,yes,yes,yes,yes,yes,"biologics capex USD 80-120 mn over the next two years, FY28"
+10,AUROPHARMA-2026-11-11-2,yes,yes,yes,yes,yes,yes,EBITDA margin north of 21% for FY27
+11,M&M-2026-08-04-5,yes,yes,yes,yes,yes,ambiguous,"Mahindra Finance Rs 3 lakh cr book ""by 2031"" mapped to FY31"
+12,AUROPHARMA-2026-11-11-5,yes,yes,yes,no,yes,yes,"USD 200 mn is the organic capex run rate, scoped as 'company'"
+13,AUROPHARMA-2026-05-27-1,yes,yes,yes,yes,yes,yes,EBITDA margin north of 21% for FY27
+14,AUROPHARMA-2026-02-16-4,yes,yes,yes,yes,yes,yes,"20-21% for FY26; the qualifier ""mostly on the higher side"" is not captured as a field"
+15,AUROPHARMA-2026-02-16-2,yes,yes,yes,yes,yes,no,"""over the next 12 months"" from Feb 2026 is Q4FY27, extracted as Q3FY27"
+16,M&M-2026-02-17-2,yes,yes,yes,yes,yes,yes,ICE capacity +7-8k/month in FY27
+17,AUROPHARMA-2026-05-27-3,yes,yes,yes,yes,yes,yes,Europe formulations minimum double-digit growth FY27
+18,AUROPHARMA-2026-11-11-1,yes,yes,yes,yes,yes,yes,double-digit revenue growth FY27
+19,AUROPHARMA-2026-02-16-3,yes,yes,yes,yes,yes,yes,Pen-G utilisation 65-70% by March 2026 = Q4FY26
+20,M&M-2026-08-04-2,yes,yes,yes,yes,yes,yes,"ICE SUV capacity 60,000/month by September = H1FY27"
