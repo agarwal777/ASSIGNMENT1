@@ -5,8 +5,10 @@ Events = portfolio filings (classified by rules) + price/volume alerts. Each eve
 never re-scores, so what you see is exactly what this file decided — and why.
 
 Score (README §6.2): 0.35·M + 0.25·S + 0.30·T + 0.10·N.
-T (thesis relevance) and N (network bonus) arrive with the ledger and network blocks. Until then
-the score is renormalised over the parts that exist: (0.35·M + 0.25·S) / 0.60. Stated, not hidden.
+M, S and T are decided here; the bucket uses (0.35·M + 0.25·S + 0.30·T) / 0.90.
+T: 1.0 results that contradict a numeric thesis item · 0.7 results that touch one · 0.4 any other
+event about a company you own. N (network) depends on the investor's private contacts, so it is
+added on the device (weight 0.10) and only reorders cards within "Needs you". Stated, not hidden.
 
 Usage (from finn/):  workers/.venv/Scripts/python workers/build_digest.py
 """
@@ -20,6 +22,7 @@ from datetime import datetime
 from pathlib import Path
 
 from classify import MATERIALITY, classify
+from thesis import load as load_thesis, promise_check, thesis_for
 
 SEED = Path("seed")
 OUT = Path("web/data/digest.json")
@@ -169,6 +172,36 @@ def main() -> None:
             "components": {"M": m, "S": round(s, 2), "T": None, "N": None},
             "score": round((0.35 * m + 0.25 * s) / 0.60, 3), "reasons": reasons})
 
+    # Thesis relevance (T): link results to the investor's thesis, add management's own guidance check.
+    facts, ledger, theses = load_thesis()
+    for ev in events:
+        sym = ev["symbol"]
+        fx, led = facts.get(sym, {}), ledger.get(sym, {})
+        th = thesis_for(fx, led, theses.get(sym, []))
+        t, linked = 0.4, []
+        res = ev.get("results")
+        if res and res.get("metrics"):
+            numeric = [i for i in th["investor"] + th["management"] if i["metric"] in ("ebitda_margin", "revenue_growth")]
+            if numeric:
+                linked = sorted(numeric, key=lambda i: (i["stance"] != "contradicts", i["source"] != "investor"))
+                hit = any(i["stance"] == "contradicts" for i in numeric)
+                t = 1.0 if hit else 0.7
+                top = linked[0]
+                ev["reasons"].insert(0, ("contradicts your assumption" if top["source"] == "investor"
+                                         else "behind management's guidance") if hit else "touches your thesis")
+            pc = promise_check(fx, led, res.get("period"))
+            if pc:
+                ev["promise_check"] = pc
+        # A change at the top is qualitative evidence on any thesis you hold (README §6.2: 0.7).
+        if ev["category"] == "management_change" and "top-management change" in ev["reasons"] \
+                and (th["investor"] or th["management"]):
+            t = 0.7
+            ev["reasons"].insert(0, "touches your thesis (leadership)")
+        ev["thesis"] = linked[:1]
+        m, s_ = ev["components"]["M"], ev["components"]["S"]
+        ev["components"]["T"] = t
+        ev["score"] = round((0.35 * m + 0.25 * s_ + 0.30 * t) / 0.90, 3)
+
     for ev in events:
         b = "needs_you" if ev["score"] >= NEEDS_YOU else "worth_a_read" if ev["score"] >= WORTH else "collapsed"
         if ev["category"] in FLOOR and b == "collapsed":
@@ -181,8 +214,8 @@ def main() -> None:
     OUT.write_text(json.dumps({
         "generated_at": datetime.now().isoformat(timespec="seconds"),
         "default_as_of": DEFAULT_AS_OF,
-        "scoring_note": "score = (0.35·materiality + 0.25·surprise) / 0.60 until thesis and "
-                        "network signals exist; weights are a starting heuristic",
+        "scoring_note": "score = (0.35·materiality + 0.25·surprise + 0.30·thesis) / 0.90; your network adds up to "
+                        "0.10 on your device and only reorders cards. Weights are a starting heuristic",
         "events": events}, ensure_ascii=False, indent=1), encoding="utf-8")
     by = defaultdict(int)
     for e in events:

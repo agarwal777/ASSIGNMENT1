@@ -22,6 +22,7 @@ export const copy = {
     worthARead: "Worth a read",
     showAll: (n: number) => `Show all ${n}`,
     folded: (n: number) => `${n} routine filing${n === 1 ? "" : "s"}, folded`,
+    networkReason: "someone you know is close to this",
   },
   portfolio: {
     title: "Portfolio",
@@ -102,7 +103,9 @@ export const copy = {
     notAvailable: "Not available",
     exceptional: "Exceptional items this quarter:",
     guided: "Guided",
+    guidedAtLeast: "Guided at least",
     delivered: "delivered",
+    soFar: "so far this year",
     withinGuidance: "within guidance",
     outsideGuidance: "outside guidance",
     effective: "effective",

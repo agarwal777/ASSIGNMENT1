@@ -32,7 +32,16 @@ export default function TodayView() {
   useEffect(() => { loadNetwork().then(setContacts).catch(() => setNetworkError(true)); }, []);
 
   const digest = useMemo(() => getDigest(asOf, win.hours), [asOf, win.hours]);
-  const cards = useMemo(() => digest.needsYou.map((c) => withPerson(c, contacts, asOf, copy.people.you)), [digest, contacts, asOf]);
+  // README §6.2 network bonus N, computed here because the network never leaves the device:
+  // N = 1 when a contact's link strength is ≥ 0.5. It adds 0.10 and only reorders "Needs you".
+  const cards = useMemo(() => digest.needsYou
+    .map((c) => withPerson(c, contacts, asOf, copy.people.you))
+    .map((c) => {
+      const n = c.person && c.person.strength >= 0.5 ? 1 : 0;
+      return { c: n ? { ...c, reasons: [...c.reasons, copy.today.networkReason] } : c, final: 0.9 * c.score + 0.1 * n };
+    })
+    .sort((a, b) => b.final - a.final)
+    .map((x) => x.c), [digest, contacts, asOf]);
 
   const setParam = (k: string, v: string | null) => {
     const p = new URLSearchParams(q.toString());

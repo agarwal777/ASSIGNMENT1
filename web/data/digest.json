@@ -1,7 +1,7 @@
 {
- "generated_at": "2026-11-15T01:23:09",
+ "generated_at": "2026-11-15T02:27:32",
  "default_as_of": "2026-11-06T08:00:00+05:30",
- "scoring_note": "score = (0.35·materiality + 0.25·surprise) / 0.60 until thesis and network signals exist; weights are a starting heuristic",
+ "scoring_note": "score = (0.35·materiality + 0.25·surprise + 0.30·thesis) / 0.90; your network adds up to 0.10 on your device and only reorders cards. Weights are a starting heuristic",
  "events": [
   {
    "id": "ASHOKLEY-dividend-2026-11-14",
@@ -18,13 +18,14 @@
    "components": {
     "M": 0.3,
     "S": 0.0,
-    "T": null,
+    "T": 0.4,
     "N": null
    },
-   "score": 0.175,
+   "score": 0.25,
    "reasons": [
     "dividend"
    ],
+   "thesis": [],
    "bucket": "collapsed"
   },
   {
@@ -42,13 +43,14 @@
    "components": {
     "M": 0.3,
     "S": 0.0,
-    "T": null,
+    "T": 0.4,
     "N": null
    },
-   "score": 0.175,
+   "score": 0.25,
    "reasons": [
     "board / secretarial change"
    ],
+   "thesis": [],
    "bucket": "collapsed"
   },
   {
@@ -66,13 +68,14 @@
    "components": {
     "M": 0.05,
     "S": 0.0,
-    "T": null,
+    "T": 0.4,
     "N": null
    },
-   "score": 0.029,
+   "score": 0.153,
    "reasons": [
     "unclassified"
    ],
+   "thesis": [],
    "bucket": "collapsed"
   },
   {
@@ -123,14 +126,15 @@
    "components": {
     "M": 0.9,
     "S": 0.89,
-    "T": null,
+    "T": 0.4,
     "N": null
    },
-   "score": 0.894,
+   "score": 0.731,
    "reasons": [
     "EBITDA margin -311 bps YoY",
     "revenue +35.4% YoY"
    ],
+   "thesis": [],
    "bucket": "needs_you"
   },
   {
@@ -148,13 +152,14 @@
    "components": {
     "M": 0.05,
     "S": 0.0,
-    "T": null,
+    "T": 0.4,
     "N": null
    },
-   "score": 0.029,
+   "score": 0.153,
    "reasons": [
     "unclassified"
    ],
+   "thesis": [],
    "bucket": "collapsed"
   },
   {
@@ -172,13 +177,14 @@
    "components": {
     "M": 0.15,
     "S": 0.0,
-    "T": null,
+    "T": 0.4,
     "N": null
    },
-   "score": 0.087,
+   "score": 0.192,
    "reasons": [
     "investor meetings"
    ],
+   "thesis": [],
    "bucket": "collapsed"
   },
   {
@@ -196,13 +202,14 @@
    "components": {
     "M": 0.35,
     "S": 0.0,
-    "T": null,
+    "T": 0.4,
     "N": null
    },
-   "score": 0.204,
+   "score": 0.269,
    "reasons": [
     "press release"
    ],
+   "thesis": [],
    "bucket": "collapsed"
   },
   {
@@ -225,13 +232,14 @@
    "components": {
     "M": 0.35,
     "S": 0.0,
-    "T": null,
+    "T": 0.4,
     "N": null
    },
-   "score": 0.204,
+   "score": 0.269,
    "reasons": [
     "press release"
    ],
+   "thesis": [],
    "bucket": "collapsed"
   },
   {
@@ -249,13 +257,14 @@
    "components": {
     "M": 0.25,
     "S": 0.0,
-    "T": null,
+    "T": 0.4,
     "N": null
    },
-   "score": 0.146,
+   "score": 0.231,
    "reasons": [
     "earnings call"
    ],
+   "thesis": [],
    "bucket": "collapsed"
   },
   {
@@ -273,13 +282,14 @@
    "components": {
     "M": 0.35,
     "S": 0.0,
-    "T": null,
+    "T": 0.4,
     "N": null
    },
-   "score": 0.204,
+   "score": 0.269,
    "reasons": [
     "press release"
    ],
+   "thesis": [],
    "bucket": "collapsed"
   },
   {
@@ -297,13 +307,14 @@
    "components": {
     "M": 0.35,
     "S": 0.0,
-    "T": null,
+    "T": 0.4,
     "N": null
    },
-   "score": 0.204,
+   "score": 0.269,
    "reasons": [
     "press release"
    ],
+   "thesis": [],
    "bucket": "collapsed"
   },
   {
@@ -321,13 +332,14 @@
    "components": {
     "M": 0.15,
     "S": 0.0,
-    "T": null,
+    "T": 0.4,
     "N": null
    },
-   "score": 0.087,
+   "score": 0.192,
    "reasons": [
     "investor meetings"
    ],
+   "thesis": [],
    "bucket": "collapsed"
   },
   {
@@ -345,13 +357,14 @@
    "components": {
     "M": 0.9,
     "S": 0.0,
-    "T": null,
+    "T": 0.4,
     "N": null
    },
-   "score": 0.525,
+   "score": 0.483,
    "reasons": [
     "numbers not machine-readable in the filing"
    ],
+   "thesis": [],
    "bucket": "worth_a_read"
   },
   {
@@ -369,13 +382,14 @@
    "components": {
     "M": 0.05,
     "S": 0.0,
-    "T": null,
+    "T": 0.4,
     "N": null
    },
-   "score": 0.029,
+   "score": 0.153,
    "reasons": [
     "unclassified"
    ],
+   "thesis": [],
    "bucket": "collapsed"
   },
   {
@@ -393,13 +407,14 @@
    "components": {
     "M": 0.35,
     "S": 0.0,
-    "T": null,
+    "T": 0.4,
     "N": null
    },
-   "score": 0.204,
+   "score": 0.269,
    "reasons": [
     "press release"
    ],
+   "thesis": [],
    "bucket": "collapsed"
   },
   {
@@ -417,13 +432,14 @@
    "components": {
     "M": 0.15,
     "S": 0.0,
-    "T": null,
+    "T": 0.4,
     "N": null
    },
-   "score": 0.087,
+   "score": 0.192,
    "reasons": [
     "investor meetings"
    ],
+   "thesis": [],
    "bucket": "collapsed"
   },
   {
@@ -441,13 +457,14 @@
    "components": {
     "M": 0.25,
     "S": 0.0,
-    "T": null,
+    "T": 0.4,
     "N": null
    },
-   "score": 0.146,
+   "score": 0.231,
    "reasons": [
     "earnings call"
    ],
+   "thesis": [],
    "bucket": "collapsed"
   },
   {
@@ -465,13 +482,14 @@
    "components": {
     "M": 0.25,
     "S": 0.0,
-    "T": null,
+    "T": 0.4,
     "N": null
    },
-   "score": 0.146,
+   "score": 0.231,
    "reasons": [
     "earnings call"
    ],
+   "thesis": [],
    "bucket": "collapsed"
   },
   {
@@ -489,13 +507,14 @@
    "components": {
     "M": 0.25,
     "S": 0.0,
-    "T": null,
+    "T": 0.4,
     "N": null
    },
-   "score": 0.146,
+   "score": 0.231,
    "reasons": [
     "earnings call"
    ],
+   "thesis": [],
    "bucket": "collapsed"
   },
   {
@@ -513,13 +532,14 @@
    "components": {
     "M": 0.15,
     "S": 0.0,
-    "T": null,
+    "T": 0.4,
     "N": null
    },
-   "score": 0.087,
+   "score": 0.192,
    "reasons": [
     "investor meetings"
    ],
+   "thesis": [],
    "bucket": "collapsed"
   },
   {
@@ -537,13 +557,14 @@
    "components": {
     "M": 0.15,
     "S": 0.0,
-    "T": null,
+    "T": 0.4,
     "N": null
    },
-   "score": 0.087,
+   "score": 0.192,
    "reasons": [
     "investor meetings"
    ],
+   "thesis": [],
    "bucket": "collapsed"
   },
   {
@@ -561,13 +582,14 @@
    "components": {
     "M": 0.35,
     "S": 0.0,
-    "T": null,
+    "T": 0.4,
     "N": null
    },
-   "score": 0.204,
+   "score": 0.269,
    "reasons": [
     "press release"
    ],
+   "thesis": [],
    "bucket": "collapsed"
   },
   {
@@ -585,13 +607,14 @@
    "components": {
     "M": 0.15,
     "S": 0.0,
-    "T": null,
+    "T": 0.4,
     "N": null
    },
-   "score": 0.087,
+   "score": 0.192,
    "reasons": [
     "investor meetings"
    ],
+   "thesis": [],
    "bucket": "collapsed"
   },
   {
@@ -646,13 +669,14 @@
    "components": {
     "M": 0.35,
     "S": 0.93,
-    "T": null,
+    "T": 0.4,
     "N": null
    },
-   "score": 0.593,
+   "score": 0.528,
    "reasons": [
     "volume 3.7× its 20-day average"
    ],
+   "thesis": [],
    "bucket": "worth_a_read"
   },
   {
@@ -670,13 +694,14 @@
    "components": {
     "M": 0.05,
     "S": 0.0,
-    "T": null,
+    "T": 0.4,
     "N": null
    },
-   "score": 0.029,
+   "score": 0.153,
    "reasons": [
     "unclassified"
    ],
+   "thesis": [],
    "bucket": "collapsed"
   },
   {
@@ -694,13 +719,14 @@
    "components": {
     "M": 0.35,
     "S": 0.0,
-    "T": null,
+    "T": 0.4,
     "N": null
    },
-   "score": 0.204,
+   "score": 0.269,
    "reasons": [
     "press release"
    ],
+   "thesis": [],
    "bucket": "collapsed"
   },
   {
@@ -718,13 +744,14 @@
    "components": {
     "M": 0.25,
     "S": 0.0,
-    "T": null,
+    "T": 0.4,
     "N": null
    },
-   "score": 0.146,
+   "score": 0.231,
    "reasons": [
     "earnings call"
    ],
+   "thesis": [],
    "bucket": "collapsed"
   },
   {
@@ -742,13 +769,14 @@
    "components": {
     "M": 0.25,
     "S": 0.0,
-    "T": null,
+    "T": 0.4,
     "N": null
    },
-   "score": 0.146,
+   "score": 0.231,
    "reasons": [
     "earnings call"
    ],
+   "thesis": [],
    "bucket": "collapsed"
   },
   {
@@ -766,14 +794,15 @@
    "components": {
     "M": 0.85,
     "S": 0.5,
-    "T": null,
+    "T": 0.4,
     "N": null
    },
-   "score": 0.704,
+   "score": 0.603,
    "reasons": [
     "top-management change"
    ],
-   "bucket": "needs_you"
+   "thesis": [],
+   "bucket": "worth_a_read"
   },
   {
    "id": "M&M-earnings_call-2026-11-11",
@@ -790,13 +819,14 @@
    "components": {
     "M": 0.25,
     "S": 0.0,
-    "T": null,
+    "T": 0.4,
     "N": null
    },
-   "score": 0.146,
+   "score": 0.231,
    "reasons": [
     "earnings call"
    ],
+   "thesis": [],
    "bucket": "collapsed"
   },
   {
@@ -814,13 +844,14 @@
    "components": {
     "M": 0.7,
     "S": 0.0,
-    "T": null,
+    "T": 0.4,
     "N": null
    },
-   "score": 0.408,
+   "score": 0.406,
    "reasons": [
     "capex"
    ],
+   "thesis": [],
    "bucket": "worth_a_read"
   },
   {
@@ -843,13 +874,14 @@
    "components": {
     "M": 0.35,
     "S": 0.0,
-    "T": null,
+    "T": 0.4,
     "N": null
    },
-   "score": 0.204,
+   "score": 0.269,
    "reasons": [
     "press release"
    ],
+   "thesis": [],
    "bucket": "collapsed"
   },
   {
@@ -867,13 +899,14 @@
    "components": {
     "M": 0.35,
     "S": 0.0,
-    "T": null,
+    "T": 0.4,
     "N": null
    },
-   "score": 0.204,
+   "score": 0.269,
    "reasons": [
     "press release"
    ],
+   "thesis": [],
    "bucket": "collapsed"
   },
   {
@@ -927,15 +960,16 @@
    "components": {
     "M": 0.9,
     "S": 0.66,
-    "T": null,
+    "T": 0.4,
     "N": null
    },
-   "score": 0.799,
+   "score": 0.667,
    "reasons": [
     "EBITDA margin -257 bps YoY",
     "revenue +26.3% YoY",
     "PAT +32.7% YoY"
    ],
+   "thesis": [],
    "bucket": "needs_you"
   },
   {
@@ -953,13 +987,14 @@
    "components": {
     "M": 0.25,
     "S": 0.0,
-    "T": null,
+    "T": 0.4,
     "N": null
    },
-   "score": 0.146,
+   "score": 0.231,
    "reasons": [
     "earnings call"
    ],
+   "thesis": [],
    "bucket": "collapsed"
   },
   {
@@ -1014,13 +1049,14 @@
    "components": {
     "M": 0.35,
     "S": 0.53,
-    "T": null,
+    "T": 0.4,
     "N": null
    },
-   "score": 0.425,
+   "score": 0.417,
    "reasons": [
     "price +5.3% on the day"
    ],
+   "thesis": [],
    "bucket": "worth_a_read"
   },
   {
@@ -1075,13 +1111,14 @@
    "components": {
     "M": 0.35,
     "S": 0.53,
-    "T": null,
+    "T": 0.4,
     "N": null
    },
-   "score": 0.423,
+   "score": 0.417,
    "reasons": [
     "volume 2.1× its 20-day average"
    ],
+   "thesis": [],
    "bucket": "worth_a_read"
   },
   {
@@ -1136,14 +1173,15 @@
    "components": {
     "M": 0.35,
     "S": 0.73,
-    "T": null,
+    "T": 0.4,
     "N": null
    },
-   "score": 0.51,
+   "score": 0.472,
    "reasons": [
     "volume 2.9× its 20-day average",
     "price +7.2% on the day"
    ],
+   "thesis": [],
    "bucket": "worth_a_read"
   },
   {
@@ -1198,13 +1236,14 @@
    "components": {
     "M": 0.35,
     "S": 0.77,
-    "T": null,
+    "T": 0.4,
     "N": null
    },
-   "score": 0.525,
+   "score": 0.483,
    "reasons": [
     "volume 3.1× its 20-day average"
    ],
+   "thesis": [],
    "bucket": "worth_a_read"
   },
   {
@@ -1259,13 +1298,14 @@
    "components": {
     "M": 0.35,
     "S": 0.6,
-    "T": null,
+    "T": 0.4,
     "N": null
    },
-   "score": 0.456,
+   "score": 0.436,
    "reasons": [
     "volume 2.4× its 20-day average"
    ],
+   "thesis": [],
    "bucket": "worth_a_read"
   },
   {
@@ -1320,13 +1360,14 @@
    "components": {
     "M": 0.35,
     "S": 0.61,
-    "T": null,
+    "T": 0.4,
     "N": null
    },
-   "score": 0.459,
+   "score": 0.439,
    "reasons": [
     "price +6.1% on the day"
    ],
+   "thesis": [],
    "bucket": "worth_a_read"
   },
   {
@@ -1381,15 +1422,16 @@
    "components": {
     "M": 0.5,
     "S": 1,
-    "T": null,
+    "T": 0.4,
     "N": null
    },
-   "score": 0.708,
+   "score": 0.606,
    "reasons": [
     "volume 3.1× its 20-day average",
     "price +10.5% on the day"
    ],
-   "bucket": "needs_you"
+   "thesis": [],
+   "bucket": "worth_a_read"
   },
   {
    "id": "UNOMINDA-earnings_call-2026-11-11",
@@ -1406,13 +1448,14 @@
    "components": {
     "M": 0.25,
     "S": 0.0,
-    "T": null,
+    "T": 0.4,
     "N": null
    },
-   "score": 0.146,
+   "score": 0.231,
    "reasons": [
     "earnings call"
    ],
+   "thesis": [],
    "bucket": "collapsed"
   },
   {
@@ -1430,13 +1473,14 @@
    "components": {
     "M": 0.15,
     "S": 0.0,
-    "T": null,
+    "T": 0.4,
     "N": null
    },
-   "score": 0.087,
+   "score": 0.192,
    "reasons": [
     "investor meetings"
    ],
+   "thesis": [],
    "bucket": "collapsed"
   },
   {
@@ -1454,13 +1498,14 @@
    "components": {
     "M": 0.15,
     "S": 0.0,
-    "T": null,
+    "T": 0.4,
     "N": null
    },
-   "score": 0.087,
+   "score": 0.192,
    "reasons": [
     "investor meetings"
    ],
+   "thesis": [],
    "bucket": "collapsed"
   },
   {
@@ -1516,13 +1561,14 @@
    "components": {
     "M": 0.9,
     "S": 0.0,
-    "T": null,
+    "T": 0.4,
     "N": null
    },
-   "score": 0.525,
+   "score": 0.483,
    "reasons": [
     "results"
    ],
+   "thesis": [],
    "bucket": "worth_a_read"
   },
   {
@@ -1540,13 +1586,14 @@
    "components": {
     "M": 0.05,
     "S": 0.0,
-    "T": null,
+    "T": 0.4,
     "N": null
    },
-   "score": 0.029,
+   "score": 0.153,
    "reasons": [
     "unclassified"
    ],
+   "thesis": [],
    "bucket": "collapsed"
   },
   {
@@ -1564,13 +1611,14 @@
    "components": {
     "M": 0.25,
     "S": 0.0,
-    "T": null,
+    "T": 0.4,
     "N": null
    },
-   "score": 0.146,
+   "score": 0.231,
    "reasons": [
     "earnings call"
    ],
+   "thesis": [],
    "bucket": "collapsed"
   },
   {
@@ -1588,13 +1636,14 @@
    "components": {
     "M": 0.15,
     "S": 0.0,
-    "T": null,
+    "T": 0.4,
     "N": null
    },
-   "score": 0.087,
+   "score": 0.192,
    "reasons": [
     "investor meetings"
    ],
+   "thesis": [],
    "bucket": "collapsed"
   },
   {
@@ -1617,13 +1666,14 @@
    "components": {
     "M": 0.35,
     "S": 0.0,
-    "T": null,
+    "T": 0.4,
     "N": null
    },
-   "score": 0.204,
+   "score": 0.269,
    "reasons": [
     "press release"
    ],
+   "thesis": [],
    "bucket": "collapsed"
   },
   {
@@ -1646,13 +1696,14 @@
    "components": {
     "M": 0.15,
     "S": 0.0,
-    "T": null,
+    "T": 0.4,
     "N": null
    },
-   "score": 0.087,
+   "score": 0.192,
    "reasons": [
     "investor meetings"
    ],
+   "thesis": [],
    "bucket": "collapsed"
   },
   {
@@ -1670,13 +1721,14 @@
    "components": {
     "M": 0.35,
     "S": 0.0,
-    "T": null,
+    "T": 0.4,
     "N": null
    },
-   "score": 0.204,
+   "score": 0.269,
    "reasons": [
     "press release"
    ],
+   "thesis": [],
    "bucket": "collapsed"
   },
   {
@@ -1694,13 +1746,14 @@
    "components": {
     "M": 0.25,
     "S": 0.0,
-    "T": null,
+    "T": 0.4,
     "N": null
    },
-   "score": 0.146,
+   "score": 0.231,
    "reasons": [
     "earnings call"
    ],
+   "thesis": [],
    "bucket": "collapsed"
   },
   {
@@ -1731,13 +1784,14 @@
    "components": {
     "M": 0.15,
     "S": 0.0,
-    "T": null,
+    "T": 0.4,
     "N": null
    },
-   "score": 0.087,
+   "score": 0.192,
    "reasons": [
     "investor meetings"
    ],
+   "thesis": [],
    "bucket": "collapsed"
   },
   {
@@ -1755,13 +1809,14 @@
    "components": {
     "M": 0.85,
     "S": 0.0,
-    "T": null,
+    "T": 0.4,
     "N": null
    },
-   "score": 0.496,
+   "score": 0.464,
    "reasons": [
     "M&A"
    ],
+   "thesis": [],
    "bucket": "worth_a_read"
   },
   {
@@ -1779,13 +1834,14 @@
    "components": {
     "M": 0.25,
     "S": 0.0,
-    "T": null,
+    "T": 0.4,
     "N": null
    },
-   "score": 0.146,
+   "score": 0.231,
    "reasons": [
     "earnings call"
    ],
+   "thesis": [],
    "bucket": "collapsed"
   },
   {
@@ -1803,13 +1859,14 @@
    "components": {
     "M": 0.25,
     "S": 0.0,
-    "T": null,
+    "T": 0.4,
     "N": null
    },
-   "score": 0.146,
+   "score": 0.231,
    "reasons": [
     "earnings call"
    ],
+   "thesis": [],
    "bucket": "collapsed"
   },
   {
@@ -1827,13 +1884,14 @@
    "components": {
     "M": 0.3,
     "S": 0.0,
-    "T": null,
+    "T": 0.4,
     "N": null
    },
-   "score": 0.175,
+   "score": 0.25,
    "reasons": [
     "board / secretarial change"
    ],
+   "thesis": [],
    "bucket": "collapsed"
   },
   {
@@ -1851,13 +1909,14 @@
    "components": {
     "M": 0.05,
     "S": 0.0,
-    "T": null,
+    "T": 0.4,
     "N": null
    },
-   "score": 0.029,
+   "score": 0.153,
    "reasons": [
     "unclassified"
    ],
+   "thesis": [],
    "bucket": "collapsed"
   },
   {
@@ -1912,13 +1971,14 @@
    "components": {
     "M": 0.35,
     "S": 0.57,
-    "T": null,
+    "T": 0.4,
     "N": null
    },
-   "score": 0.442,
+   "score": 0.428,
    "reasons": [
     "volume 2.3× its 20-day average"
    ],
+   "thesis": [],
    "bucket": "worth_a_read"
   },
   {
@@ -1973,14 +2033,15 @@
    "components": {
     "M": 0.35,
     "S": 0.66,
-    "T": null,
+    "T": 0.4,
     "N": null
    },
-   "score": 0.479,
+   "score": 0.453,
    "reasons": [
     "volume 2.2× its 20-day average",
     "price +6.6% on the day"
    ],
+   "thesis": [],
    "bucket": "worth_a_read"
   },
   {
@@ -2035,14 +2096,15 @@
    "components": {
     "M": 0.35,
     "S": 0.91,
-    "T": null,
+    "T": 0.4,
     "N": null
    },
-   "score": 0.582,
+   "score": 0.522,
    "reasons": [
     "volume 3.6× its 20-day average",
     "price -6.3% on the day"
    ],
+   "thesis": [],
    "bucket": "worth_a_read"
   },
   {
@@ -2097,13 +2159,14 @@
    "components": {
     "M": 0.35,
     "S": 0.72,
-    "T": null,
+    "T": 0.4,
     "N": null
    },
-   "score": 0.505,
+   "score": 0.469,
    "reasons": [
     "volume 2.9× its 20-day average"
    ],
+   "thesis": [],
    "bucket": "worth_a_read"
   },
   {
@@ -2158,13 +2221,14 @@
    "components": {
     "M": 0.35,
     "S": 0.56,
-    "T": null,
+    "T": 0.4,
     "N": null
    },
-   "score": 0.438,
+   "score": 0.425,
    "reasons": [
     "volume 2.2× its 20-day average"
    ],
+   "thesis": [],
    "bucket": "worth_a_read"
   },
   {
@@ -2187,13 +2251,14 @@
    "components": {
     "M": 0.15,
     "S": 0.0,
-    "T": null,
+    "T": 0.4,
     "N": null
    },
-   "score": 0.087,
+   "score": 0.192,
    "reasons": [
     "investor meetings"
    ],
+   "thesis": [],
    "bucket": "collapsed"
   },
   {
@@ -2211,13 +2276,14 @@
    "components": {
     "M": 0.05,
     "S": 0.0,
-    "T": null,
+    "T": 0.4,
     "N": null
    },
-   "score": 0.029,
+   "score": 0.153,
    "reasons": [
     "unclassified"
    ],
+   "thesis": [],
    "bucket": "collapsed"
   },
   {
@@ -2235,13 +2301,14 @@
    "components": {
     "M": 0.05,
     "S": 0.0,
-    "T": null,
+    "T": 0.4,
     "N": null
    },
-   "score": 0.029,
+   "score": 0.153,
    "reasons": [
     "unclassified"
    ],
+   "thesis": [],
    "bucket": "collapsed"
   },
   {
@@ -2259,13 +2326,14 @@
    "components": {
     "M": 0.35,
     "S": 0.0,
-    "T": null,
+    "T": 0.4,
     "N": null
    },
-   "score": 0.204,
+   "score": 0.269,
    "reasons": [
     "press release"
    ],
+   "thesis": [],
    "bucket": "collapsed"
   },
   {
@@ -2283,13 +2351,14 @@
    "components": {
     "M": 0.25,
     "S": 0.0,
-    "T": null,
+    "T": 0.4,
     "N": null
    },
-   "score": 0.146,
+   "score": 0.231,
    "reasons": [
     "earnings call"
    ],
+   "thesis": [],
    "bucket": "collapsed"
   },
   {
@@ -2307,13 +2376,14 @@
    "components": {
     "M": 0.85,
     "S": 0.0,
-    "T": null,
+    "T": 0.4,
     "N": null
    },
-   "score": 0.496,
+   "score": 0.464,
    "reasons": [
     "M&A"
    ],
+   "thesis": [],
    "bucket": "worth_a_read"
   },
   {
@@ -2331,13 +2401,14 @@
    "components": {
     "M": 0.05,
     "S": 0.0,
-    "T": null,
+    "T": 0.4,
     "N": null
    },
-   "score": 0.029,
+   "score": 0.153,
    "reasons": [
     "unclassified"
    ],
+   "thesis": [],
    "bucket": "collapsed"
   },
   {
@@ -2355,13 +2426,14 @@
    "components": {
     "M": 0.05,
     "S": 0.0,
-    "T": null,
+    "T": 0.4,
     "N": null
    },
-   "score": 0.029,
+   "score": 0.153,
    "reasons": [
     "unclassified"
    ],
+   "thesis": [],
    "bucket": "collapsed"
   },
   {
@@ -2379,13 +2451,14 @@
    "components": {
     "M": 0.15,
     "S": 0.0,
-    "T": null,
+    "T": 0.4,
     "N": null
    },
-   "score": 0.087,
+   "score": 0.192,
    "reasons": [
     "investor meetings"
    ],
+   "thesis": [],
    "bucket": "collapsed"
   },
   {
@@ -2408,13 +2481,14 @@
    "components": {
     "M": 0.35,
     "S": 0.0,
-    "T": null,
+    "T": 0.4,
     "N": null
    },
-   "score": 0.204,
+   "score": 0.269,
    "reasons": [
     "press release"
    ],
+   "thesis": [],
    "bucket": "collapsed"
   },
   {
@@ -2437,13 +2511,14 @@
    "components": {
     "M": 0.05,
     "S": 0.0,
-    "T": null,
+    "T": 0.4,
     "N": null
    },
-   "score": 0.029,
+   "score": 0.153,
    "reasons": [
     "unclassified"
    ],
+   "thesis": [],
    "bucket": "collapsed"
   },
   {
@@ -2496,13 +2571,14 @@
    "components": {
     "M": 0.9,
     "S": 0.0,
-    "T": null,
+    "T": 0.4,
     "N": null
    },
-   "score": 0.525,
+   "score": 0.483,
    "reasons": [
     "results"
    ],
+   "thesis": [],
    "bucket": "worth_a_read"
   },
   {
@@ -2520,13 +2596,14 @@
    "components": {
     "M": 0.25,
     "S": 0.0,
-    "T": null,
+    "T": 0.4,
     "N": null
    },
-   "score": 0.146,
+   "score": 0.231,
    "reasons": [
     "earnings call"
    ],
+   "thesis": [],
    "bucket": "collapsed"
   },
   {
@@ -2544,13 +2621,14 @@
    "components": {
     "M": 0.25,
     "S": 0.0,
-    "T": null,
+    "T": 0.4,
     "N": null
    },
-   "score": 0.146,
+   "score": 0.231,
    "reasons": [
     "earnings call"
    ],
+   "thesis": [],
    "bucket": "collapsed"
   },
   {
@@ -2568,13 +2646,14 @@
    "components": {
     "M": 0.15,
     "S": 0.0,
-    "T": null,
+    "T": 0.4,
     "N": null
    },
-   "score": 0.087,
+   "score": 0.192,
    "reasons": [
     "investor meetings"
    ],
+   "thesis": [],
    "bucket": "collapsed"
   },
   {
@@ -2592,13 +2671,14 @@
    "components": {
     "M": 0.25,
     "S": 0.0,
-    "T": null,
+    "T": 0.4,
     "N": null
    },
-   "score": 0.146,
+   "score": 0.231,
    "reasons": [
     "earnings call"
    ],
+   "thesis": [],
    "bucket": "collapsed"
   },
   {
@@ -2616,13 +2696,14 @@
    "components": {
     "M": 0.15,
     "S": 0.0,
-    "T": null,
+    "T": 0.4,
     "N": null
    },
-   "score": 0.087,
+   "score": 0.192,
    "reasons": [
     "agm egm"
    ],
+   "thesis": [],
    "bucket": "collapsed"
   },
   {
@@ -2640,13 +2721,14 @@
    "components": {
     "M": 0.15,
     "S": 0.0,
-    "T": null,
+    "T": 0.4,
     "N": null
    },
-   "score": 0.087,
+   "score": 0.192,
    "reasons": [
     "investor meetings"
    ],
+   "thesis": [],
    "bucket": "collapsed"
   },
   {
@@ -2664,13 +2746,14 @@
    "components": {
     "M": 0.35,
     "S": 0.0,
-    "T": null,
+    "T": 0.4,
     "N": null
    },
-   "score": 0.204,
+   "score": 0.269,
    "reasons": [
     "press release"
    ],
+   "thesis": [],
    "bucket": "collapsed"
   },
   {
@@ -2701,13 +2784,15 @@
    "components": {
     "M": 0.85,
     "S": 0.5,
-    "T": null,
+    "T": 0.7,
     "N": null
    },
-   "score": 0.704,
+   "score": 0.703,
    "reasons": [
+    "touches your thesis (leadership)",
     "top-management change"
    ],
+   "thesis": [],
    "bucket": "needs_you"
   },
   {
@@ -2730,13 +2815,14 @@
    "components": {
     "M": 0.05,
     "S": 0.0,
-    "T": null,
+    "T": 0.4,
     "N": null
    },
-   "score": 0.029,
+   "score": 0.153,
    "reasons": [
     "unclassified"
    ],
+   "thesis": [],
    "bucket": "collapsed"
   },
   {
@@ -2796,13 +2882,26 @@
    "components": {
     "M": 0.9,
     "S": 0.86,
-    "T": null,
+    "T": 1.0,
     "N": null
    },
-   "score": 0.883,
+   "score": 0.922,
    "reasons": [
+    "contradicts your assumption",
     "EBITDA margin +172 bps YoY",
     "PAT +51.5% YoY"
+   ],
+   "thesis": [
+    {
+     "id": "inv-voltas-1",
+     "text": "EBITDA margin stays at or above 6% this year",
+     "deadline": "FY27",
+     "metric": "ebitda_margin",
+     "stance": "contradicts",
+     "evidence": "5.33% year to date (Q1FY27–Q2FY27)",
+     "demo": true,
+     "source": "investor"
+    }
    ],
    "bucket": "needs_you"
   },
@@ -2826,13 +2925,14 @@
    "components": {
     "M": 0.3,
     "S": 0.0,
-    "T": null,
+    "T": 0.4,
     "N": null
    },
-   "score": 0.175,
+   "score": 0.25,
    "reasons": [
     "board / secretarial change"
    ],
+   "thesis": [],
    "bucket": "collapsed"
   },
   {
@@ -2850,13 +2950,14 @@
    "components": {
     "M": 0.25,
     "S": 0.0,
-    "T": null,
+    "T": 0.4,
     "N": null
    },
-   "score": 0.146,
+   "score": 0.231,
    "reasons": [
     "earnings call"
    ],
+   "thesis": [],
    "bucket": "collapsed"
   },
   {
@@ -2874,13 +2975,14 @@
    "components": {
     "M": 0.25,
     "S": 0.0,
-    "T": null,
+    "T": 0.4,
     "N": null
    },
-   "score": 0.146,
+   "score": 0.231,
    "reasons": [
     "earnings call"
    ],
+   "thesis": [],
    "bucket": "collapsed"
   },
   {
@@ -2898,13 +3000,14 @@
    "components": {
     "M": 0.85,
     "S": 0.0,
-    "T": null,
+    "T": 0.4,
     "N": null
    },
-   "score": 0.496,
+   "score": 0.464,
    "reasons": [
     "M&A"
    ],
+   "thesis": [],
    "bucket": "worth_a_read"
   },
   {
@@ -2959,14 +3062,15 @@
    "components": {
     "M": 0.35,
     "S": 0.81,
-    "T": null,
+    "T": 0.4,
     "N": null
    },
-   "score": 0.544,
+   "score": 0.494,
    "reasons": [
     "volume 3.3× its 20-day average",
     "price +5.1% on the day"
    ],
+   "thesis": [],
    "bucket": "worth_a_read"
   },
   {
@@ -3021,13 +3125,14 @@
    "components": {
     "M": 0.35,
     "S": 0.74,
-    "T": null,
+    "T": 0.4,
     "N": null
    },
-   "score": 0.511,
+   "score": 0.475,
    "reasons": [
     "volume 3.0× its 20-day average"
    ],
+   "thesis": [],
    "bucket": "worth_a_read"
   },
   {
@@ -3082,15 +3187,16 @@
    "components": {
     "M": 0.5,
     "S": 1,
-    "T": null,
+    "T": 0.4,
     "N": null
    },
-   "score": 0.708,
+   "score": 0.606,
    "reasons": [
     "volume 17.3× its 20-day average",
     "price -17.3% on the day"
    ],
-   "bucket": "needs_you"
+   "thesis": [],
+   "bucket": "worth_a_read"
   },
   {
    "id": "NCC-move-2026-11-06",
@@ -3144,13 +3250,14 @@
    "components": {
     "M": 0.35,
     "S": 0.55,
-    "T": null,
+    "T": 0.4,
     "N": null
    },
-   "score": 0.432,
+   "score": 0.422,
    "reasons": [
     "volume 2.2× its 20-day average"
    ],
+   "thesis": [],
    "bucket": "worth_a_read"
   },
   {
@@ -3205,13 +3312,14 @@
    "components": {
     "M": 0.35,
     "S": 0.58,
-    "T": null,
+    "T": 0.4,
     "N": null
    },
-   "score": 0.447,
+   "score": 0.431,
    "reasons": [
     "volume 2.3× its 20-day average"
    ],
+   "thesis": [],
    "bucket": "worth_a_read"
   },
   {
@@ -3266,13 +3374,14 @@
    "components": {
     "M": 0.35,
     "S": 0.89,
-    "T": null,
+    "T": 0.4,
     "N": null
    },
-   "score": 0.573,
+   "score": 0.517,
    "reasons": [
     "volume 3.5× its 20-day average"
    ],
+   "thesis": [],
    "bucket": "worth_a_read"
   },
   {
@@ -3290,13 +3399,14 @@
    "components": {
     "M": 0.35,
     "S": 0.0,
-    "T": null,
+    "T": 0.4,
     "N": null
    },
-   "score": 0.204,
+   "score": 0.269,
    "reasons": [
     "press release"
    ],
+   "thesis": [],
    "bucket": "collapsed"
   },
   {
@@ -3314,13 +3424,14 @@
    "components": {
     "M": 0.05,
     "S": 0.0,
-    "T": null,
+    "T": 0.4,
     "N": null
    },
-   "score": 0.029,
+   "score": 0.153,
    "reasons": [
     "unclassified"
    ],
+   "thesis": [],
    "bucket": "collapsed"
   },
   {
@@ -3371,13 +3482,14 @@
    "components": {
     "M": 0.9,
     "S": 0.71,
-    "T": null,
+    "T": 0.4,
     "N": null
    },
-   "score": 0.822,
+   "score": 0.681,
    "reasons": [
     "PAT -42.7% YoY"
    ],
+   "thesis": [],
    "bucket": "needs_you"
   },
   {
@@ -3400,13 +3512,14 @@
    "components": {
     "M": 0.15,
     "S": 0.0,
-    "T": null,
+    "T": 0.4,
     "N": null
    },
-   "score": 0.087,
+   "score": 0.192,
    "reasons": [
     "investor meetings"
    ],
+   "thesis": [],
    "bucket": "collapsed"
   },
   {
@@ -3424,13 +3537,14 @@
    "components": {
     "M": 0.05,
     "S": 0.0,
-    "T": null,
+    "T": 0.4,
     "N": null
    },
-   "score": 0.029,
+   "score": 0.153,
    "reasons": [
     "unclassified"
    ],
+   "thesis": [],
    "bucket": "collapsed"
   },
   {
@@ -3448,13 +3562,14 @@
    "components": {
     "M": 0.05,
     "S": 0.0,
-    "T": null,
+    "T": 0.4,
     "N": null
    },
-   "score": 0.029,
+   "score": 0.153,
    "reasons": [
     "unclassified"
    ],
+   "thesis": [],
    "bucket": "collapsed"
   },
   {
@@ -3472,13 +3587,14 @@
    "components": {
     "M": 0.25,
     "S": 0.0,
-    "T": null,
+    "T": 0.4,
     "N": null
    },
-   "score": 0.146,
+   "score": 0.231,
    "reasons": [
     "earnings call"
    ],
+   "thesis": [],
    "bucket": "collapsed"
   },
   {
@@ -3496,13 +3612,14 @@
    "components": {
     "M": 0.35,
     "S": 0.0,
-    "T": null,
+    "T": 0.4,
     "N": null
    },
-   "score": 0.204,
+   "score": 0.269,
    "reasons": [
     "press release"
    ],
+   "thesis": [],
    "bucket": "collapsed"
   },
   {
@@ -3525,13 +3642,14 @@
    "components": {
     "M": 0.05,
     "S": 0.0,
-    "T": null,
+    "T": 0.4,
     "N": null
    },
-   "score": 0.029,
+   "score": 0.153,
    "reasons": [
     "unclassified"
    ],
+   "thesis": [],
    "bucket": "collapsed"
   },
   {
@@ -3549,13 +3667,14 @@
    "components": {
     "M": 0.3,
     "S": 0.0,
-    "T": null,
+    "T": 0.4,
     "N": null
    },
-   "score": 0.175,
+   "score": 0.25,
    "reasons": [
     "board / secretarial change"
    ],
+   "thesis": [],
    "bucket": "collapsed"
   },
   {
@@ -3608,14 +3727,15 @@
    "components": {
     "M": 0.9,
     "S": 0.97,
-    "T": null,
+    "T": 0.4,
     "N": null
    },
-   "score": 0.928,
+   "score": 0.753,
    "reasons": [
     "EBITDA margin +420 bps YoY",
     "PAT +58.0% YoY"
    ],
+   "thesis": [],
    "bucket": "needs_you"
   },
   {
@@ -3633,13 +3753,14 @@
    "components": {
     "M": 0.05,
     "S": 0.0,
-    "T": null,
+    "T": 0.4,
     "N": null
    },
-   "score": 0.029,
+   "score": 0.153,
    "reasons": [
     "unclassified"
    ],
+   "thesis": [],
    "bucket": "collapsed"
   },
   {
@@ -3657,13 +3778,14 @@
    "components": {
     "M": 0.05,
     "S": 0.0,
-    "T": null,
+    "T": 0.4,
     "N": null
    },
-   "score": 0.029,
+   "score": 0.153,
    "reasons": [
     "unclassified"
    ],
+   "thesis": [],
    "bucket": "collapsed"
   },
   {
@@ -3681,13 +3803,14 @@
    "components": {
     "M": 0.05,
     "S": 0.0,
-    "T": null,
+    "T": 0.4,
     "N": null
    },
-   "score": 0.029,
+   "score": 0.153,
    "reasons": [
     "unclassified"
    ],
+   "thesis": [],
    "bucket": "collapsed"
   },
   {
@@ -3705,13 +3828,14 @@
    "components": {
     "M": 0.35,
     "S": 0.0,
-    "T": null,
+    "T": 0.4,
     "N": null
    },
-   "score": 0.204,
+   "score": 0.269,
    "reasons": [
     "press release"
    ],
+   "thesis": [],
    "bucket": "collapsed"
   },
   {
@@ -3729,13 +3853,14 @@
    "components": {
     "M": 0.25,
     "S": 0.0,
-    "T": null,
+    "T": 0.4,
     "N": null
    },
-   "score": 0.146,
+   "score": 0.231,
    "reasons": [
     "earnings call"
    ],
+   "thesis": [],
    "bucket": "collapsed"
   },
   {
@@ -3753,13 +3878,14 @@
    "components": {
     "M": 0.25,
     "S": 0.0,
-    "T": null,
+    "T": 0.4,
     "N": null
    },
-   "score": 0.146,
+   "score": 0.231,
    "reasons": [
     "earnings call"
    ],
+   "thesis": [],
    "bucket": "collapsed"
   },
   {
@@ -3777,13 +3903,14 @@
    "components": {
     "M": 0.15,
     "S": 0.0,
-    "T": null,
+    "T": 0.4,
     "N": null
    },
-   "score": 0.087,
+   "score": 0.192,
    "reasons": [
     "investor meetings"
    ],
+   "thesis": [],
    "bucket": "collapsed"
   },
   {
@@ -3801,13 +3928,14 @@
    "components": {
     "M": 0.15,
     "S": 0.0,
-    "T": null,
+    "T": 0.4,
     "N": null
    },
-   "score": 0.087,
+   "score": 0.192,
    "reasons": [
     "investor meetings"
    ],
+   "thesis": [],
    "bucket": "collapsed"
   },
   {
@@ -3834,13 +3962,14 @@
    "components": {
     "M": 0.35,
     "S": 0.0,
-    "T": null,
+    "T": 0.4,
     "N": null
    },
-   "score": 0.204,
+   "score": 0.269,
    "reasons": [
     "re-appointment (continuity)"
    ],
+   "thesis": [],
    "bucket": "collapsed"
   },
   {
@@ -3863,13 +3992,14 @@
    "components": {
     "M": 0.85,
     "S": 0.0,
-    "T": null,
+    "T": 0.4,
     "N": null
    },
-   "score": 0.496,
+   "score": 0.464,
    "reasons": [
     "M&A"
    ],
+   "thesis": [],
    "bucket": "worth_a_read"
   },
   {
@@ -3920,13 +4050,14 @@
    "components": {
     "M": 0.9,
     "S": 0.0,
-    "T": null,
+    "T": 0.4,
     "N": null
    },
-   "score": 0.525,
+   "score": 0.483,
    "reasons": [
     "results"
    ],
+   "thesis": [],
    "bucket": "worth_a_read"
   },
   {
@@ -3944,13 +4075,14 @@
    "components": {
     "M": 0.05,
     "S": 0.0,
-    "T": null,
+    "T": 0.4,
     "N": null
    },
-   "score": 0.029,
+   "score": 0.153,
    "reasons": [
     "unclassified"
    ],
+   "thesis": [],
    "bucket": "collapsed"
   },
   {
@@ -3968,13 +4100,14 @@
    "components": {
     "M": 0.85,
     "S": 0.0,
-    "T": null,
+    "T": 0.4,
     "N": null
    },
-   "score": 0.496,
+   "score": 0.464,
    "reasons": [
     "M&A"
    ],
+   "thesis": [],
    "bucket": "worth_a_read"
   },
   {
@@ -4025,13 +4158,14 @@
    "components": {
     "M": 0.9,
     "S": 0.81,
-    "T": null,
+    "T": 0.4,
     "N": null
    },
-   "score": 0.862,
+   "score": 0.708,
    "reasons": [
     "revenue +32.4% YoY"
    ],
+   "thesis": [],
    "bucket": "needs_you"
   },
   {
@@ -4049,13 +4183,14 @@
    "components": {
     "M": 0.05,
     "S": 0.0,
-    "T": null,
+    "T": 0.4,
     "N": null
    },
-   "score": 0.029,
+   "score": 0.153,
    "reasons": [
     "unclassified"
    ],
+   "thesis": [],
    "bucket": "collapsed"
   },
   {
@@ -4078,13 +4213,14 @@
    "components": {
     "M": 0.05,
     "S": 0.0,
-    "T": null,
+    "T": 0.4,
     "N": null
    },
-   "score": 0.029,
+   "score": 0.153,
    "reasons": [
     "unclassified"
    ],
+   "thesis": [],
    "bucket": "collapsed"
   },
   {
@@ -4102,13 +4238,14 @@
    "components": {
     "M": 0.25,
     "S": 0.0,
-    "T": null,
+    "T": 0.4,
     "N": null
    },
-   "score": 0.146,
+   "score": 0.231,
    "reasons": [
     "earnings call"
    ],
+   "thesis": [],
    "bucket": "collapsed"
   },
   {
@@ -4163,14 +4300,15 @@
    "components": {
     "M": 0.35,
     "S": 0.95,
-    "T": null,
+    "T": 0.4,
     "N": null
    },
-   "score": 0.601,
+   "score": 0.533,
    "reasons": [
     "volume 3.8× its 20-day average",
     "price +5.6% on the day"
    ],
+   "thesis": [],
    "bucket": "worth_a_read"
   },
   {
@@ -4225,15 +4363,16 @@
    "components": {
     "M": 0.5,
     "S": 1,
-    "T": null,
+    "T": 0.4,
     "N": null
    },
-   "score": 0.708,
+   "score": 0.606,
    "reasons": [
     "volume 7.2× its 20-day average",
     "price +10.5% on the day"
    ],
-   "bucket": "needs_you"
+   "thesis": [],
+   "bucket": "worth_a_read"
   },
   {
    "id": "UNOMINDA-move-2026-11-05",
@@ -4287,15 +4426,16 @@
    "components": {
     "M": 0.5,
     "S": 1,
-    "T": null,
+    "T": 0.4,
     "N": null
    },
-   "score": 0.708,
+   "score": 0.606,
    "reasons": [
     "volume 10.7× its 20-day average",
     "price +11.5% on the day"
    ],
-   "bucket": "needs_you"
+   "thesis": [],
+   "bucket": "worth_a_read"
   },
   {
    "id": "AUROPHARMA-move-2026-11-05",
@@ -4349,13 +4489,14 @@
    "components": {
     "M": 0.35,
     "S": 0.88,
-    "T": null,
+    "T": 0.4,
     "N": null
    },
-   "score": 0.57,
+   "score": 0.514,
    "reasons": [
     "volume 3.5× its 20-day average"
    ],
+   "thesis": [],
    "bucket": "worth_a_read"
   },
   {
@@ -4410,13 +4551,14 @@
    "components": {
     "M": 0.35,
     "S": 0.65,
-    "T": null,
+    "T": 0.4,
     "N": null
    },
-   "score": 0.473,
+   "score": 0.45,
    "reasons": [
     "volume 2.6× its 20-day average"
    ],
+   "thesis": [],
    "bucket": "worth_a_read"
   },
   {
@@ -4471,14 +4613,15 @@
    "components": {
     "M": 0.35,
     "S": 0.58,
-    "T": null,
+    "T": 0.4,
     "N": null
    },
-   "score": 0.446,
+   "score": 0.431,
    "reasons": [
     "volume 2.3× its 20-day average",
     "price +5.0% on the day"
    ],
+   "thesis": [],
    "bucket": "worth_a_read"
   },
   {
@@ -4496,13 +4639,14 @@
    "components": {
     "M": 0.05,
     "S": 0.0,
-    "T": null,
+    "T": 0.4,
     "N": null
    },
-   "score": 0.029,
+   "score": 0.153,
    "reasons": [
     "unclassified"
    ],
+   "thesis": [],
    "bucket": "collapsed"
   },
   {
@@ -4525,13 +4669,14 @@
    "components": {
     "M": 0.35,
     "S": 0.0,
-    "T": null,
+    "T": 0.4,
     "N": null
    },
-   "score": 0.204,
+   "score": 0.269,
    "reasons": [
     "re-appointment (continuity)"
    ],
+   "thesis": [],
    "bucket": "collapsed"
   },
   {
@@ -4584,14 +4729,15 @@
    "components": {
     "M": 0.9,
     "S": 1,
-    "T": null,
+    "T": 0.4,
     "N": null
    },
-   "score": 0.942,
+   "score": 0.761,
    "reasons": [
     "revenue -31.0% YoY",
     "PAT +73.7% YoY"
    ],
+   "thesis": [],
    "bucket": "needs_you"
   },
   {
@@ -4614,13 +4760,14 @@
    "components": {
     "M": 0.15,
     "S": 0.0,
-    "T": null,
+    "T": 0.4,
     "N": null
    },
-   "score": 0.087,
+   "score": 0.192,
    "reasons": [
     "investor meetings"
    ],
+   "thesis": [],
    "bucket": "collapsed"
   },
   {
@@ -4643,13 +4790,14 @@
    "components": {
     "M": 0.15,
     "S": 0.0,
-    "T": null,
+    "T": 0.4,
     "N": null
    },
-   "score": 0.087,
+   "score": 0.192,
    "reasons": [
     "investor meetings"
    ],
+   "thesis": [],
    "bucket": "collapsed"
   },
   {
@@ -4672,13 +4820,14 @@
    "components": {
     "M": 0.3,
     "S": 0.0,
-    "T": null,
+    "T": 0.4,
     "N": null
    },
-   "score": 0.175,
+   "score": 0.25,
    "reasons": [
     "board / secretarial change"
    ],
+   "thesis": [],
    "bucket": "collapsed"
   },
   {
@@ -4701,13 +4850,14 @@
    "components": {
     "M": 0.35,
     "S": 0.0,
-    "T": null,
+    "T": 0.4,
     "N": null
    },
-   "score": 0.204,
+   "score": 0.269,
    "reasons": [
     "press release"
    ],
+   "thesis": [],
    "bucket": "collapsed"
   },
   {
@@ -4767,13 +4917,26 @@
    "components": {
     "M": 0.9,
     "S": 0.66,
-    "T": null,
+    "T": 1.0,
     "N": null
    },
-   "score": 0.798,
+   "score": 0.867,
    "reasons": [
+    "contradicts your assumption",
     "EBITDA margin -327 bps YoY",
     "revenue +26.2% YoY"
+   ],
+   "thesis": [
+    {
+     "id": "inv-mm-1",
+     "text": "EBITDA margin stays at or above 15% this year",
+     "deadline": "FY27",
+     "metric": "ebitda_margin",
+     "stance": "contradicts",
+     "evidence": "13.76% year to date (Q1FY27–Q2FY27)",
+     "demo": true,
+     "source": "investor"
+    }
    ],
    "bucket": "needs_you"
   },
@@ -4792,13 +4955,14 @@
    "components": {
     "M": 0.8,
     "S": 0.0,
-    "T": null,
+    "T": 0.4,
     "N": null
    },
-   "score": 0.467,
+   "score": 0.444,
    "reasons": [
     "management change"
    ],
+   "thesis": [],
    "bucket": "worth_a_read"
   },
   {
@@ -4816,13 +4980,14 @@
    "components": {
     "M": 0.7,
     "S": 0.0,
-    "T": null,
+    "T": 0.4,
     "N": null
    },
-   "score": 0.408,
+   "score": 0.406,
    "reasons": [
     "capex"
    ],
+   "thesis": [],
    "bucket": "worth_a_read"
   },
   {
@@ -4840,13 +5005,14 @@
    "components": {
     "M": 0.05,
     "S": 0.0,
-    "T": null,
+    "T": 0.4,
     "N": null
    },
-   "score": 0.029,
+   "score": 0.153,
    "reasons": [
     "unclassified"
    ],
+   "thesis": [],
    "bucket": "collapsed"
   },
   {
@@ -4897,14 +5063,15 @@
    "components": {
     "M": 0.9,
     "S": 0.96,
-    "T": null,
+    "T": 0.4,
     "N": null
    },
-   "score": 0.924,
+   "score": 0.75,
    "reasons": [
     "revenue +38.3% YoY",
     "PAT +36.6% YoY"
    ],
+   "thesis": [],
    "bucket": "needs_you"
   },
   {
@@ -4922,13 +5089,14 @@
    "components": {
     "M": 0.35,
     "S": 0.0,
-    "T": null,
+    "T": 0.4,
     "N": null
    },
-   "score": 0.204,
+   "score": 0.269,
    "reasons": [
     "press release"
    ],
+   "thesis": [],
    "bucket": "collapsed"
   },
   {
@@ -4951,13 +5119,14 @@
    "components": {
     "M": 0.35,
     "S": 0.0,
-    "T": null,
+    "T": 0.4,
     "N": null
    },
-   "score": 0.204,
+   "score": 0.269,
    "reasons": [
     "press release"
    ],
+   "thesis": [],
    "bucket": "collapsed"
   },
   {
@@ -4975,13 +5144,14 @@
    "components": {
     "M": 0.25,
     "S": 0.0,
-    "T": null,
+    "T": 0.4,
     "N": null
    },
-   "score": 0.146,
+   "score": 0.231,
    "reasons": [
     "earnings call"
    ],
+   "thesis": [],
    "bucket": "collapsed"
   },
   {
@@ -4999,13 +5169,14 @@
    "components": {
     "M": 0.8,
     "S": 0.0,
-    "T": null,
+    "T": 0.4,
     "N": null
    },
-   "score": 0.467,
+   "score": 0.444,
    "reasons": [
     "management change"
    ],
+   "thesis": [],
    "bucket": "worth_a_read"
   },
   {
@@ -5028,13 +5199,14 @@
    "components": {
     "M": 0.85,
     "S": 0.0,
-    "T": null,
+    "T": 0.4,
     "N": null
    },
-   "score": 0.496,
+   "score": 0.464,
    "reasons": [
     "M&A"
    ],
+   "thesis": [],
    "bucket": "worth_a_read"
   },
   {
@@ -5052,13 +5224,14 @@
    "components": {
     "M": 0.05,
     "S": 0.0,
-    "T": null,
+    "T": 0.4,
     "N": null
    },
-   "score": 0.029,
+   "score": 0.153,
    "reasons": [
     "unclassified"
    ],
+   "thesis": [],
    "bucket": "collapsed"
   },
   {
@@ -5076,13 +5249,14 @@
    "components": {
     "M": 0.15,
     "S": 0.0,
-    "T": null,
+    "T": 0.4,
     "N": null
    },
-   "score": 0.087,
+   "score": 0.192,
    "reasons": [
     "investor meetings"
    ],
+   "thesis": [],
    "bucket": "collapsed"
   },
   {
@@ -5100,13 +5274,14 @@
    "components": {
     "M": 0.35,
     "S": 0.0,
-    "T": null,
+    "T": 0.4,
     "N": null
    },
-   "score": 0.204,
+   "score": 0.269,
    "reasons": [
     "press release"
    ],
+   "thesis": [],
    "bucket": "collapsed"
   },
   {
@@ -5157,12 +5332,40 @@
    "components": {
     "M": 0.9,
     "S": 0.54,
-    "T": null,
+    "T": 1.0,
     "N": null
    },
-   "score": 0.751,
+   "score": 0.833,
    "reasons": [
+    "behind management's guidance",
     "PAT +32.5% YoY"
+   ],
+   "promise_check": {
+    "promise_id": "AUROPHARMA-2026-11-11-2",
+    "guided_low": 21.0,
+    "guided_high": null,
+    "unit": "percent",
+    "actual": 20.79,
+    "actual_quarters": [
+     "Q1FY27",
+     "Q2FY27"
+    ],
+    "said_at": "2026-11-11",
+    "page": 6,
+    "source": "https://nsearchives.nseindia.in/corporate/AUROPHARMA_11112026130442_LtrToSEsTranscriptEarningCall11112026.pdf",
+    "met": false
+   },
+   "thesis": [
+    {
+     "id": "AUROPHARMA-2026-11-11-2",
+     "text": "EBITDA margin at least 21%",
+     "deadline": "FY27",
+     "metric": "ebitda_margin",
+     "stance": "contradicts",
+     "evidence": "actual 20.79% (year to date Q1FY27–Q2FY27)",
+     "status": "at_risk",
+     "source": "management"
+    }
    ],
    "bucket": "needs_you"
   },
@@ -5181,13 +5384,14 @@
    "components": {
     "M": 0.6,
     "S": 0.0,
-    "T": null,
+    "T": 0.4,
     "N": null
    },
-   "score": 0.35,
+   "score": 0.367,
    "reasons": [
     "credit rating"
    ],
+   "thesis": [],
    "bucket": "worth_a_read"
   },
   {
@@ -5205,13 +5409,14 @@
    "components": {
     "M": 0.15,
     "S": 0.0,
-    "T": null,
+    "T": 0.4,
     "N": null
    },
-   "score": 0.087,
+   "score": 0.192,
    "reasons": [
     "investor meetings"
    ],
+   "thesis": [],
    "bucket": "collapsed"
   },
   {
@@ -5229,13 +5434,14 @@
    "components": {
     "M": 0.25,
     "S": 0.0,
-    "T": null,
+    "T": 0.4,
     "N": null
    },
-   "score": 0.146,
+   "score": 0.231,
    "reasons": [
     "earnings call"
    ],
+   "thesis": [],
    "bucket": "collapsed"
   },
   {
@@ -5290,16 +5496,17 @@
    "components": {
     "M": 0.6,
     "S": 0.9,
-    "T": null,
+    "T": 0.4,
     "N": null
    },
-   "score": 0.724,
+   "score": 0.617,
    "reasons": [
     "volume 3.6× its 20-day average",
     "price +6.4% on the day",
     "no filing since the previous session"
    ],
-   "bucket": "needs_you"
+   "thesis": [],
+   "bucket": "worth_a_read"
   },
   {
    "id": "AUROPHARMA-move-2026-11-04",
@@ -5353,13 +5560,14 @@
    "components": {
     "M": 0.35,
     "S": 0.65,
-    "T": null,
+    "T": 0.4,
     "N": null
    },
-   "score": 0.474,
+   "score": 0.45,
    "reasons": [
     "volume 2.6× its 20-day average"
    ],
+   "thesis": [],
    "bucket": "worth_a_read"
   },
   {
@@ -5414,13 +5622,14 @@
    "components": {
     "M": 0.35,
     "S": 0.63,
-    "T": null,
+    "T": 0.4,
     "N": null
    },
-   "score": 0.466,
+   "score": 0.444,
    "reasons": [
     "volume 2.5× its 20-day average"
    ],
+   "thesis": [],
    "bucket": "worth_a_read"
   },
   {
@@ -5475,15 +5684,16 @@
    "components": {
     "M": 0.5,
     "S": 1,
-    "T": null,
+    "T": 0.4,
     "N": null
    },
-   "score": 0.708,
+   "score": 0.606,
    "reasons": [
     "volume 11.2× its 20-day average",
     "price +5.7% on the day"
    ],
-   "bucket": "needs_you"
+   "thesis": [],
+   "bucket": "worth_a_read"
   },
   {
    "id": "KEC-move-2026-11-04",
@@ -5537,13 +5747,14 @@
    "components": {
     "M": 0.35,
     "S": 0.92,
-    "T": null,
+    "T": 0.4,
     "N": null
    },
-   "score": 0.586,
+   "score": 0.525,
    "reasons": [
     "volume 3.7× its 20-day average"
    ],
+   "thesis": [],
    "bucket": "worth_a_read"
   },
   {
@@ -5598,14 +5809,15 @@
    "components": {
     "M": 0.6,
     "S": 0.65,
-    "T": null,
+    "T": 0.4,
     "N": null
    },
-   "score": 0.619,
+   "score": 0.547,
    "reasons": [
     "volume 2.6× its 20-day average",
     "no filing since the previous session"
    ],
+   "thesis": [],
    "bucket": "worth_a_read"
   },
   {
@@ -5623,13 +5835,14 @@
    "components": {
     "M": 0.05,
     "S": 0.0,
-    "T": null,
+    "T": 0.4,
     "N": null
    },
-   "score": 0.029,
+   "score": 0.153,
    "reasons": [
     "unclassified"
    ],
+   "thesis": [],
    "bucket": "collapsed"
   },
   {
@@ -5647,13 +5860,14 @@
    "components": {
     "M": 0.05,
     "S": 0.0,
-    "T": null,
+    "T": 0.4,
     "N": null
    },
-   "score": 0.029,
+   "score": 0.153,
    "reasons": [
     "unclassified"
    ],
+   "thesis": [],
    "bucket": "collapsed"
   },
   {
@@ -5671,13 +5885,14 @@
    "components": {
     "M": 0.15,
     "S": 0.0,
-    "T": null,
+    "T": 0.4,
     "N": null
    },
-   "score": 0.087,
+   "score": 0.192,
    "reasons": [
     "investor meetings"
    ],
+   "thesis": [],
    "bucket": "collapsed"
   },
   {
@@ -5695,13 +5910,14 @@
    "components": {
     "M": 0.35,
     "S": 0.0,
-    "T": null,
+    "T": 0.4,
     "N": null
    },
-   "score": 0.204,
+   "score": 0.269,
    "reasons": [
     "press release"
    ],
+   "thesis": [],
    "bucket": "collapsed"
   },
   {
@@ -5719,13 +5935,14 @@
    "components": {
     "M": 0.8,
     "S": 0.0,
-    "T": null,
+    "T": 0.4,
     "N": null
    },
-   "score": 0.467,
+   "score": 0.444,
    "reasons": [
     "management change"
    ],
+   "thesis": [],
    "bucket": "worth_a_read"
   },
   {
@@ -5776,13 +5993,14 @@
    "components": {
     "M": 0.9,
     "S": 1,
-    "T": null,
+    "T": 0.4,
     "N": null
    },
-   "score": 0.942,
+   "score": 0.761,
    "reasons": [
     "EBITDA margin -710 bps YoY"
    ],
+   "thesis": [],
    "bucket": "needs_you"
   },
   {
@@ -5800,13 +6018,14 @@
    "components": {
     "M": 0.35,
     "S": 0.0,
-    "T": null,
+    "T": 0.4,
     "N": null
    },
-   "score": 0.204,
+   "score": 0.269,
    "reasons": [
     "press release"
    ],
+   "thesis": [],
    "bucket": "collapsed"
   },
   {
@@ -5824,13 +6043,14 @@
    "components": {
     "M": 0.15,
     "S": 0.0,
-    "T": null,
+    "T": 0.4,
     "N": null
    },
-   "score": 0.087,
+   "score": 0.192,
    "reasons": [
     "investor meetings"
    ],
+   "thesis": [],
    "bucket": "collapsed"
   },
   {
@@ -5848,13 +6068,14 @@
    "components": {
     "M": 0.25,
     "S": 0.0,
-    "T": null,
+    "T": 0.4,
     "N": null
    },
-   "score": 0.146,
+   "score": 0.231,
    "reasons": [
     "earnings call"
    ],
+   "thesis": [],
    "bucket": "collapsed"
   },
   {
@@ -5872,13 +6093,14 @@
    "components": {
     "M": 0.15,
     "S": 0.0,
-    "T": null,
+    "T": 0.4,
     "N": null
    },
-   "score": 0.087,
+   "score": 0.192,
    "reasons": [
     "investor meetings"
    ],
+   "thesis": [],
    "bucket": "collapsed"
   },
   {
@@ -5896,13 +6118,14 @@
    "components": {
     "M": 0.15,
     "S": 0.0,
-    "T": null,
+    "T": 0.4,
     "N": null
    },
-   "score": 0.087,
+   "score": 0.192,
    "reasons": [
     "investor meetings"
    ],
+   "thesis": [],
    "bucket": "collapsed"
   },
   {
@@ -5920,13 +6143,14 @@
    "components": {
     "M": 0.35,
     "S": 0.0,
-    "T": null,
+    "T": 0.4,
     "N": null
    },
-   "score": 0.204,
+   "score": 0.269,
    "reasons": [
     "press release"
    ],
+   "thesis": [],
    "bucket": "collapsed"
   },
   {
@@ -5944,13 +6168,14 @@
    "components": {
     "M": 0.7,
     "S": 0.0,
-    "T": null,
+    "T": 0.4,
     "N": null
    },
-   "score": 0.408,
+   "score": 0.406,
    "reasons": [
     "capex"
    ],
+   "thesis": [],
    "bucket": "worth_a_read"
   },
   {
@@ -5968,13 +6193,14 @@
    "components": {
     "M": 0.35,
     "S": 0.0,
-    "T": null,
+    "T": 0.4,
     "N": null
    },
-   "score": 0.204,
+   "score": 0.269,
    "reasons": [
     "press release"
    ],
+   "thesis": [],
    "bucket": "collapsed"
   },
   {
@@ -6025,15 +6251,16 @@
    "components": {
     "M": 0.9,
     "S": 0.84,
-    "T": null,
+    "T": 0.4,
     "N": null
    },
-   "score": 0.875,
+   "score": 0.717,
    "reasons": [
     "EBITDA margin +418 bps YoY",
     "revenue +33.6% YoY",
     "PAT +38.3% YoY"
    ],
+   "thesis": [],
    "bucket": "needs_you"
   },
   {
@@ -6088,14 +6315,15 @@
    "components": {
     "M": 0.6,
     "S": 0.64,
-    "T": null,
+    "T": 0.4,
     "N": null
    },
-   "score": 0.617,
+   "score": 0.544,
    "reasons": [
     "volume 2.6× its 20-day average",
     "no filing since the previous session"
    ],
+   "thesis": [],
    "bucket": "worth_a_read"
   },
   {
@@ -6150,13 +6378,14 @@
    "components": {
     "M": 0.35,
     "S": 0.5,
-    "T": null,
+    "T": 0.4,
     "N": null
    },
-   "score": 0.413,
+   "score": 0.408,
    "reasons": [
     "volume 2.0× its 20-day average"
    ],
+   "thesis": [],
    "bucket": "worth_a_read"
   },
   {
@@ -6211,14 +6440,15 @@
    "components": {
     "M": 0.5,
     "S": 1,
-    "T": null,
+    "T": 0.4,
     "N": null
    },
-   "score": 0.708,
+   "score": 0.606,
    "reasons": [
     "volume 7.6× its 20-day average"
    ],
-   "bucket": "needs_you"
+   "thesis": [],
+   "bucket": "worth_a_read"
   },
   {
    "id": "KEC-move-2026-11-03",
@@ -6272,15 +6502,16 @@
    "components": {
     "M": 0.5,
     "S": 1,
-    "T": null,
+    "T": 0.4,
     "N": null
    },
-   "score": 0.708,
+   "score": 0.606,
    "reasons": [
     "volume 6.6× its 20-day average",
     "price -9.4% on the day"
    ],
-   "bucket": "needs_you"
+   "thesis": [],
+   "bucket": "worth_a_read"
   },
   {
    "id": "TATASTEEL-M&A-2026-11-03",
@@ -6302,13 +6533,14 @@
    "components": {
     "M": 0.85,
     "S": 0.0,
-    "T": null,
+    "T": 0.4,
     "N": null
    },
-   "score": 0.496,
+   "score": 0.464,
    "reasons": [
     "M&A"
    ],
+   "thesis": [],
    "bucket": "worth_a_read"
   },
   {
@@ -6326,13 +6558,14 @@
    "components": {
     "M": 0.15,
     "S": 0.0,
-    "T": null,
+    "T": 0.4,
     "N": null
    },
-   "score": 0.087,
+   "score": 0.192,
    "reasons": [
     "investor meetings"
    ],
+   "thesis": [],
    "bucket": "collapsed"
   },
   {
@@ -6350,13 +6583,14 @@
    "components": {
     "M": 0.35,
     "S": 0.0,
-    "T": null,
+    "T": 0.4,
     "N": null
    },
-   "score": 0.204,
+   "score": 0.269,
    "reasons": [
     "press release"
    ],
+   "thesis": [],
    "bucket": "collapsed"
   },
   {
@@ -6374,13 +6608,14 @@
    "components": {
     "M": 0.8,
     "S": 0.0,
-    "T": null,
+    "T": 0.4,
     "N": null
    },
-   "score": 0.467,
+   "score": 0.444,
    "reasons": [
     "management change"
    ],
+   "thesis": [],
    "bucket": "worth_a_read"
   },
   {
@@ -6431,15 +6666,16 @@
    "components": {
     "M": 0.9,
     "S": 1,
-    "T": null,
+    "T": 0.4,
     "N": null
    },
-   "score": 0.942,
+   "score": 0.761,
    "reasons": [
     "EBITDA margin -211 bps YoY",
     "revenue -10.2% YoY",
     "PAT -81.5% YoY"
    ],
+   "thesis": [],
    "bucket": "needs_you"
   },
   {
@@ -6457,13 +6693,14 @@
    "components": {
     "M": 0.85,
     "S": 0.0,
-    "T": null,
+    "T": 0.4,
     "N": null
    },
-   "score": 0.496,
+   "score": 0.464,
    "reasons": [
     "M&A"
    ],
+   "thesis": [],
    "bucket": "worth_a_read"
   },
   {
@@ -6481,13 +6718,14 @@
    "components": {
     "M": 0.35,
     "S": 0.0,
-    "T": null,
+    "T": 0.4,
     "N": null
    },
-   "score": 0.204,
+   "score": 0.269,
    "reasons": [
     "press release"
    ],
+   "thesis": [],
    "bucket": "collapsed"
   },
   {
@@ -6510,13 +6748,14 @@
    "components": {
     "M": 0.3,
     "S": 0.0,
-    "T": null,
+    "T": 0.4,
     "N": null
    },
-   "score": 0.175,
+   "score": 0.25,
    "reasons": [
     "board / secretarial change"
    ],
+   "thesis": [],
    "bucket": "collapsed"
   },
   {
@@ -6534,13 +6773,14 @@
    "components": {
     "M": 0.05,
     "S": 0.0,
-    "T": null,
+    "T": 0.4,
     "N": null
    },
-   "score": 0.029,
+   "score": 0.153,
    "reasons": [
     "unclassified"
    ],
+   "thesis": [],
    "bucket": "collapsed"
   },
   {
@@ -6558,13 +6798,14 @@
    "components": {
     "M": 0.15,
     "S": 0.0,
-    "T": null,
+    "T": 0.4,
     "N": null
    },
-   "score": 0.087,
+   "score": 0.192,
    "reasons": [
     "investor meetings"
    ],
+   "thesis": [],
    "bucket": "collapsed"
   },
   {
@@ -6587,13 +6828,14 @@
    "components": {
     "M": 0.35,
     "S": 0.0,
-    "T": null,
+    "T": 0.4,
     "N": null
    },
-   "score": 0.204,
+   "score": 0.269,
    "reasons": [
     "press release"
    ],
+   "thesis": [],
    "bucket": "collapsed"
   },
   {
@@ -6611,13 +6853,14 @@
    "components": {
     "M": 0.25,
     "S": 0.0,
-    "T": null,
+    "T": 0.4,
     "N": null
    },
-   "score": 0.146,
+   "score": 0.231,
    "reasons": [
     "earnings call"
    ],
+   "thesis": [],
    "bucket": "collapsed"
   },
   {
@@ -6672,13 +6915,14 @@
    "components": {
     "M": 0.35,
     "S": 0.66,
-    "T": null,
+    "T": 0.4,
     "N": null
    },
-   "score": 0.479,
+   "score": 0.453,
    "reasons": [
     "volume 2.6× its 20-day average"
    ],
+   "thesis": [],
    "bucket": "worth_a_read"
   },
   {
@@ -6733,13 +6977,14 @@
    "components": {
     "M": 0.35,
     "S": 0.6,
-    "T": null,
+    "T": 0.4,
     "N": null
    },
-   "score": 0.456,
+   "score": 0.436,
    "reasons": [
     "price +6.0% on the day"
    ],
+   "thesis": [],
    "bucket": "worth_a_read"
   },
   {
@@ -6794,14 +7039,15 @@
    "components": {
     "M": 0.35,
     "S": 0.53,
-    "T": null,
+    "T": 0.4,
     "N": null
    },
-   "score": 0.425,
+   "score": 0.417,
    "reasons": [
     "volume 2.1× its 20-day average",
     "price +5.3% on the day"
    ],
+   "thesis": [],
    "bucket": "worth_a_read"
   },
   {
@@ -6856,13 +7102,14 @@
    "components": {
     "M": 0.35,
     "S": 0.59,
-    "T": null,
+    "T": 0.4,
     "N": null
    },
-   "score": 0.449,
+   "score": 0.433,
    "reasons": [
     "price +5.9% on the day"
    ],
+   "thesis": [],
    "bucket": "worth_a_read"
   },
   {
@@ -6917,13 +7164,14 @@
    "components": {
     "M": 0.35,
     "S": 0.56,
-    "T": null,
+    "T": 0.4,
     "N": null
    },
-   "score": 0.439,
+   "score": 0.425,
    "reasons": [
     "volume 2.3× its 20-day average"
    ],
+   "thesis": [],
    "bucket": "worth_a_read"
   },
   {
@@ -6978,14 +7226,15 @@
    "components": {
     "M": 0.6,
     "S": 0.58,
-    "T": null,
+    "T": 0.4,
     "N": null
    },
-   "score": 0.593,
+   "score": 0.528,
    "reasons": [
     "price +5.8% on the day",
     "no filing since the previous session"
    ],
+   "thesis": [],
    "bucket": "worth_a_read"
   },
   {
@@ -7003,13 +7252,14 @@
    "components": {
     "M": 0.8,
     "S": 0.0,
-    "T": null,
+    "T": 0.4,
     "N": null
    },
-   "score": 0.467,
+   "score": 0.444,
    "reasons": [
     "management change"
    ],
+   "thesis": [],
    "bucket": "worth_a_read"
   },
   {
@@ -7027,13 +7277,14 @@
    "components": {
     "M": 0.05,
     "S": 0.0,
-    "T": null,
+    "T": 0.4,
     "N": null
    },
-   "score": 0.029,
+   "score": 0.153,
    "reasons": [
     "unclassified"
    ],
+   "thesis": [],
    "bucket": "collapsed"
   },
   {
@@ -7051,13 +7302,14 @@
    "components": {
     "M": 0.15,
     "S": 0.0,
-    "T": null,
+    "T": 0.4,
     "N": null
    },
-   "score": 0.087,
+   "score": 0.192,
    "reasons": [
     "investor meetings"
    ],
+   "thesis": [],
    "bucket": "collapsed"
   },
   {
@@ -7075,13 +7327,14 @@
    "components": {
     "M": 0.35,
     "S": 0.0,
-    "T": null,
+    "T": 0.4,
     "N": null
    },
-   "score": 0.204,
+   "score": 0.269,
    "reasons": [
     "press release"
    ],
+   "thesis": [],
    "bucket": "collapsed"
   },
   {
@@ -7099,13 +7352,14 @@
    "components": {
     "M": 0.25,
     "S": 0.0,
-    "T": null,
+    "T": 0.4,
     "N": null
    },
-   "score": 0.146,
+   "score": 0.231,
    "reasons": [
     "earnings call"
    ],
+   "thesis": [],
    "bucket": "collapsed"
   },
   {
@@ -7123,13 +7377,14 @@
    "components": {
     "M": 0.15,
     "S": 0.0,
-    "T": null,
+    "T": 0.4,
     "N": null
    },
-   "score": 0.087,
+   "score": 0.192,
    "reasons": [
     "investor meetings"
    ],
+   "thesis": [],
    "bucket": "collapsed"
   },
   {
@@ -7147,13 +7402,14 @@
    "components": {
     "M": 0.35,
     "S": 0.0,
-    "T": null,
+    "T": 0.4,
     "N": null
    },
-   "score": 0.204,
+   "score": 0.269,
    "reasons": [
     "press release"
    ],
+   "thesis": [],
    "bucket": "collapsed"
   },
   {
@@ -7171,13 +7427,14 @@
    "components": {
     "M": 0.6,
     "S": 0.0,
-    "T": null,
+    "T": 0.4,
     "N": null
    },
-   "score": 0.35,
+   "score": 0.367,
    "reasons": [
     "credit rating"
    ],
+   "thesis": [],
    "bucket": "worth_a_read"
   },
   {
@@ -7195,13 +7452,14 @@
    "components": {
     "M": 0.35,
     "S": 0.0,
-    "T": null,
+    "T": 0.4,
     "N": null
    },
-   "score": 0.204,
+   "score": 0.269,
    "reasons": [
     "press release"
    ],
+   "thesis": [],
    "bucket": "collapsed"
   },
   {
@@ -7219,13 +7477,14 @@
    "components": {
     "M": 0.85,
     "S": 0.0,
-    "T": null,
+    "T": 0.4,
     "N": null
    },
-   "score": 0.496,
+   "score": 0.464,
    "reasons": [
     "M&A"
    ],
+   "thesis": [],
    "bucket": "worth_a_read"
   },
   {
@@ -7276,14 +7535,15 @@
    "components": {
     "M": 0.9,
     "S": 0.59,
-    "T": null,
+    "T": 0.4,
     "N": null
    },
-   "score": 0.772,
+   "score": 0.647,
    "reasons": [
     "EBITDA margin -296 bps YoY"
    ],
-   "bucket": "needs_you"
+   "thesis": [],
+   "bucket": "worth_a_read"
   },
   {
    "id": "NCC-press_release-2026-10-31",
@@ -7300,13 +7560,14 @@
    "components": {
     "M": 0.35,
     "S": 0.0,
-    "T": null,
+    "T": 0.4,
     "N": null
    },
-   "score": 0.204,
+   "score": 0.269,
    "reasons": [
     "press release"
    ],
+   "thesis": [],
    "bucket": "collapsed"
   },
   {
@@ -7329,13 +7590,14 @@
    "components": {
     "M": 0.3,
     "S": 0.0,
-    "T": null,
+    "T": 0.4,
     "N": null
    },
-   "score": 0.175,
+   "score": 0.25,
    "reasons": [
     "board / secretarial change"
    ],
+   "thesis": [],
    "bucket": "collapsed"
   }
  ]

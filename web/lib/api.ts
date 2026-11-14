@@ -145,6 +145,14 @@ function exceptional(e: DigestEvent): NumValue | undefined {
 /** One question per card from public evidence; asks for context, never unpublished information. */
 function questionFor(e: DigestEvent): string {
   const r = e.results;
+  // README §6.7: start from the gap. A contradicted thesis item becomes the question.
+  const hit = e.thesis?.find((t) => t.stance === "contradicts");
+  if (hit) {
+    const so = hit.evidence.replace(/^actual /, "");
+    return hit.source === "investor"
+      ? `Your assumption "${hit.text}" is off track: ${so}. Is the gap cyclical, or a change in the business?`
+      : `Management guided "${hit.text}" for ${hit.deadline} and is behind: ${so}. What would close the gap in the second half?`;
+  }
   if (r?.metrics?.revenue) {
     const m = r.ebitda_margin.yoy_bps;
     if (m != null && Math.abs(m) >= 100) return `What moved the margin ${fmtBps(m)} YoY: pricing, mix or input costs, and is it the same at peers?`;
@@ -165,9 +173,23 @@ export function toCard(e: DigestEvent): Card {
     sources: [src, ...e.related.slice(0, 1).map((x) => ({ documentId: x.url, label: `${e.symbol}: ${x.title}`, publishedAt: e.at }))]
       .filter((x): x is SourceRef => !!x && !!x.documentId),
   };
+  const t = e.thesis?.[0];
+  const assumption = t ? {
+    ref: { id: t.id, text: t.text, source: t.source, deadline: t.deadline },
+    stance: t.stance, rationale: t.evidence, epistemic: "CALCULATED" as const,
+  } : undefined;
   if (e.results?.metrics && Object.keys(e.results.metrics).length) {
-    return { ...base, variant: "results", headline: resultsHeadline(e), period: e.results.period ?? "",
-      metrics: metrics(e, src), exceptional: exceptional(e) };
+    const pc = e.promise_check;
+    return { ...base, assumption, variant: "results", headline: resultsHeadline(e), period: e.results.period ?? "",
+      metrics: metrics(e, src), exceptional: exceptional(e),
+      promiseCheck: pc ? {
+        promiseId: pc.promise_id, guidedLow: pc.guided_low,
+        guidedHigh: pc.guided_high ?? pc.guided_low,   // open-ended "at least" guidance: high === low
+        unit: pc.unit,
+        actual: { value: pc.actual, kind: "pct", epistemic: "CALCULATED",
+          formula: `EBITDA ÷ revenue, ${pc.actual_quarters[0]}–${pc.actual_quarters[pc.actual_quarters.length - 1]} (year to date)` },
+        quote: { documentId: pc.source, page: pc.page, label: `${e.symbol}: earnings call transcript`, publishedAt: pc.said_at },
+      } : undefined };
   }
   const exec = EXECS.find((x) => x.events.includes(e.id) && x.effective);
   if (e.category === "management_change" && exec) {

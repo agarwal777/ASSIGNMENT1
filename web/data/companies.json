@@ -263,9 +263,11 @@
       "id": "inv-mm-1",
       "text": "EBITDA margin stays at or above 15% this year",
       "deadline": "FY27",
+      "metric": "ebitda_margin",
       "stance": "contradicts",
       "evidence": "13.76% year to date (Q1FY27–Q2FY27)",
-      "demo": true
+      "demo": true,
+      "source": "investor"
      }
     ]
    },
@@ -998,25 +1000,31 @@
       "id": "AUROPHARMA-2026-11-11-2",
       "text": "EBITDA margin at least 21%",
       "deadline": "FY27",
+      "metric": "ebitda_margin",
       "stance": "contradicts",
       "evidence": "actual 20.79% (year to date Q1FY27–Q2FY27)",
-      "status": "at_risk"
+      "status": "at_risk",
+      "source": "management"
      },
      {
       "id": "AUROPHARMA-2026-11-11-1",
       "text": "Revenue growth at least 10%",
       "deadline": "FY27",
+      "metric": "revenue_growth",
       "stance": "supports",
       "evidence": "actual 20.2% YoY (year to date Q1FY27–Q2FY27)",
-      "status": "on_track"
+      "status": "on_track",
+      "source": "management"
      },
      {
       "id": "AUROPHARMA-2026-02-16-4",
       "text": "EBITDA margin 20–21%",
       "deadline": "FY26",
+      "metric": "ebitda_margin",
       "stance": "supports",
       "evidence": "actual 20.23% (full period)",
-      "status": "delivered"
+      "status": "delivered",
+      "source": "management"
      }
     ],
     "investor": [
@@ -1024,9 +1032,11 @@
       "id": "inv-auro-1",
       "text": "EBITDA margin stays at or above 20% this year",
       "deadline": "FY27",
+      "metric": "ebitda_margin",
       "stance": "supports",
       "evidence": "20.79% year to date (Q1FY27–Q2FY27)",
-      "demo": true
+      "demo": true,
+      "source": "investor"
      }
     ]
    },
@@ -2170,7 +2180,7 @@
      "id": "TATAPOWER-management_change-2026-11-11",
      "title": "Appointment of Mr Sanjay Kumar Banga as additional Executive Director of the company w.e.f. November 11, 2026.",
      "at": "2026-11-11T19:01:38+05:30",
-     "tier": "needs_you",
+     "tier": "worth_a_read",
      "url": "https://nsearchives.nseindia.in/corporate/KSTPCL_11112026190124_MD_APPT_-_Reg_30.pdf"
     },
     {
@@ -2225,8 +2235,8 @@
    ],
    "needs_you": true,
    "last_event": {
-    "title": "Appointment of Mr Sanjay Kumar Banga as additional Executive Director of the company w.e.f. November 11, 2026.",
-    "at": "2026-11-11T19:01:38+05:30",
+    "title": "Tata Power Company Limited has submitted to the Exchange, the financial results for the period ended September 30, 2026.",
+    "at": "2026-11-11T17:20:19+05:30",
     "tier": "needs_you"
    }
   },
@@ -2489,11 +2499,11 @@
      "url": "https://nsearchives.nseindia.in/corporate/SUDARSCHEM_02112026185351_SaleofVP402112026Signed.pdf"
     }
    ],
-   "needs_you": true,
+   "needs_you": false,
    "last_event": {
     "title": "volume 3.1× its 20-day average; price +10.5% on the day",
     "at": "2026-11-11T15:30:00+05:30",
-    "tier": "needs_you"
+    "tier": "worth_a_read"
    }
   },
   "JUBLFOOD": {
@@ -2835,9 +2845,11 @@
       "id": "inv-voltas-1",
       "text": "EBITDA margin stays at or above 6% this year",
       "deadline": "FY27",
+      "metric": "ebitda_margin",
       "stance": "contradicts",
       "evidence": "5.33% year to date (Q1FY27–Q2FY27)",
-      "demo": true
+      "demo": true,
+      "source": "investor"
      }
     ]
    },
@@ -3022,7 +3034,7 @@
      "id": "AURIONPRO-results-2026-10-31",
      "title": "Aurionpro Solutions Limited has submitted to the Exchange, the financial results for the quarter and half year ended September 30, 2026.",
      "at": "2026-10-31T20:08:18+05:30",
-     "tier": "needs_you",
+     "tier": "worth_a_read",
      "url": "https://nsearchives.nseindia.in/corporate/AURIONPRO_31102026200551_ASL_Outcome_of_the_Board_Meeting_31102026Final_sd.pdf"
     }
    ],

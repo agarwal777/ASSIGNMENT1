@@ -15,26 +15,7 @@ from pathlib import Path
 
 SEED, WEB = Path("seed"), Path("web/data")
 
-STATUS_TO_STANCE = {"delivered": "supports", "on_track": "supports", "missed": "contradicts",
-                    "at_risk": "contradicts", "revised": "neutral", "unverifiable": "insufficient"}
-
-
-METRIC_LABEL = {"ebitda_margin": "EBITDA margin", "revenue_growth": "Revenue growth", "pat_growth": "Profit growth"}
-
-
-def claim_label(p: dict) -> str:
-    """Short pill text from the extracted target; the verbatim quote stays one tap away in the ledger."""
-    lab = METRIC_LABEL.get(p["metric"], p["metric"].replace("_", " ").capitalize())
-    lo, hi = p.get("target_low"), p.get("target_high")
-    if lo is not None and hi is not None and hi != lo:
-        return f"{lab} {lo:g}–{hi:g}%"
-    if lo is not None:
-        return f"{lab} at least {lo:g}%"
-    return lab
-
-
-def fy_quarters(fy: str) -> list[str]:
-    return [f"Q{q}{fy}" for q in (1, 2, 3, 4)]
+from thesis import thesis_for
 
 
 def main() -> None:
@@ -94,31 +75,7 @@ def main() -> None:
             price = {"close": p1, "day_change": round(100 * (p1 - p0) / p0, 2), "as_of": d1}
 
         led = ledger.get(sym, {"promises": [], "counts": {}})
-        # Management's claims you're tracking: company-level, numerically checkable promises.
-        management = [{"id": p["id"], "text": claim_label(p), "deadline": p["deadline_period"],
-                       "stance": STATUS_TO_STANCE[p["status"]], "evidence": p["evidence"], "status": p["status"]}
-                      for p in sorted(led["promises"], key=lambda p: p["said_at"], reverse=True)
-                      if p["status"] != "unverifiable"]
-        # A reiterated target is one claim: keep its latest statement (the ledger keeps every one).
-        seen, deduped = set(), []
-        for m in management:
-            if (m["text"], m["deadline"]) not in seen:
-                seen.add((m["text"], m["deadline"]))
-                deduped.append(m)
-        management = deduped[:4]
-        # Your assumptions (demo, seeded): rule-checked against year-to-date reported numbers.
-        investor = []
-        for t in theses.get(sym, []):
-            qs = [q for q in fy_quarters(t["deadline"]) if (q, "revenue") in fx]
-            stance, evidence = "insufficient", "no reported quarters for this period yet"
-            if qs and t["metric"] == "ebitda_margin":
-                m = 100 * sum(fx[(q, "ebitda")] for q in qs) / sum(fx[(q, "revenue")] for q in qs)
-                ok = m >= float(t["target"]) if t["operator"] == ">=" else m <= float(t["target"])
-                stance = "supports" if ok else "contradicts"
-                evidence = f"{m:.2f}% year to date ({qs[0]}–{qs[-1]})"
-            investor.append({"id": t["id"], "text": t["text"], "deadline": t["deadline"], "stance": stance,
-                             "evidence": evidence, "demo": True})
-
+        thesis = thesis_for(fx, led, theses.get(sym, []))   # same stances the Today cards use
         n = led.get("counts", {})
         ev = sorted(events_by.get(sym, []), key=lambda e: e["at"], reverse=True)
         recent = [{"id": e["id"], "title": e["summary"] or e["title"], "at": e["at"], "tier": e["bucket"],
@@ -133,7 +90,7 @@ def main() -> None:
             "ledger": led["promises"], "has_ledger": "ledger" in c["role"].split(";"),
             "credibility": {"delivered": n.get("delivered", 0),
                             "resolved": n.get("delivered", 0) + n.get("missed", 0) + n.get("revised", 0)},
-            "thesis": {"management": management, "investor": investor},
+            "thesis": thesis,
             "recent_filings": recent,
             "needs_you": bool(needs),
             "last_event": ({"title": (needs or ev)[0]["summary"] or (needs or ev)[0]["title"],

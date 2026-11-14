@@ -26,6 +26,13 @@ export type DigestEvent = {
   move?: { volume_multiple: number | null; return_pct: number | null };
   volume30d?: number[];
   no_filing_hours?: number | null;
+  /** The thesis item this event bears on most (contradicted first), from workers/thesis.py. */
+  thesis?: { id: string; text: string; deadline: string; metric: string; stance: "supports" | "contradicts" | "neutral" | "insufficient";
+    evidence: string; source: "investor" | "management"; demo?: boolean }[];
+  /** Management's guidance for this fiscal year next to the year-to-date actual. */
+  promise_check?: { promise_id: string; guided_low: number; guided_high: number | null; unit: string; actual: number;
+    actual_quarters: string[]; said_at: string; page: number; source: string; met: boolean };
+  components?: { M: number; S: number; T: number | null; N: number | null };
   score: number;
   bucket: "needs_you" | "worth_a_read" | "collapsed";
   reasons: string[];

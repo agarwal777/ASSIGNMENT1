@@ -105,13 +105,25 @@ flowchart LR
 other income − share of associates *only when it sits inside PBT* (decided per filing by arithmetic).
 Starting from profit before exceptional items removes one-offs without guessing their sign.
 
-### Scoring
+### Scoring and the thesis
 
-`score = (0.35·materiality + 0.25·surprise) / 0.60`. Thesis relevance and network weight from the
-original formula are not wired into the score yet, so it is renormalised and **says so on screen**.
-Top-management changes score high; board, secretarial changes and re-appointments fold. Results,
-M&A, litigation and pledging are never folded. Moves are "unexplained" only if nothing was filed between
-the previous session and the move (weekends count).
+`score = 0.35·M + 0.25·S + 0.30·T + 0.10·N` (README v2 §6.2), computed in two places:
+
+- **M, S, T in batch.** Materiality by category; surprise from the numbers; **thesis relevance T**:
+  1.0 when results contradict a numeric thesis item, 0.7 when they touch one or when a top-management
+  change hits a company you hold a thesis on, 0.4 for any other event about a company you own. Buckets
+  use `(0.35·M + 0.25·S + 0.30·T) / 0.90`.
+- **N on the device.** The network bonus depends on the investor's private contacts, so it is added in
+  the browser (N = 1 when a contact's link strength is ≥ 0.5) and only reorders cards within
+  "Needs you", so nothing jumps between sections when the network loads.
+
+Thesis items are checked by rules against year-to-date reported numbers (`workers/thesis.py`, shared
+by the cards and the Company page). Results cards show the **assumption line** with its stance, a
+**promise cross-check** where management guided the same metric for the year (Aurobindo: "Guided at
+least 21.0% · so far this year 20.8%"), and a **next question built from the gap** ("Your assumption
+'EBITDA margin stays at or above 15% this year' is off track: 13.76% year to date…").
+Results, M&A, litigation and pledging are never folded. Moves are "unexplained" only if nothing was
+filed between the previous session and the move (weekends count).
 
 ## 5. Trust: no invented numbers or quotes
 
