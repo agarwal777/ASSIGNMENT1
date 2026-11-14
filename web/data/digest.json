@@ -1,0 +1,5989 @@
+{
+ "generated_at": "2026-11-14T23:50:42",
+ "default_as_of": "2026-11-06T08:00:00+05:30",
+ "scoring_note": "score = (0.35·materiality + 0.25·surprise) / 0.60 until thesis and network signals exist; weights are a starting heuristic",
+ "events": [
+  {
+   "id": "ASHOKLEY-dividend-2026-11-14",
+   "symbol": "ASHOKLEY",
+   "name": "Ashok Leyland Limited",
+   "sector": "Autos",
+   "kind": "filing",
+   "category": "dividend",
+   "at": "2026-11-14T20:16:22+05:30",
+   "title": "Dividend",
+   "summary": "Board of Directors at its meeting held on November 14, 2026, declared Interim Dividend of Re. 1 per equity share.",
+   "url": "https://nsearchives.nseindia.in/corporate/ASHOKLEYLAND_14112026201537_ALOutcomeofBMNov142026.pdf",
+   "related": [],
+   "components": {
+    "M": 0.3,
+    "S": 0.0,
+    "T": null,
+    "N": null
+   },
+   "score": 0.175,
+   "reasons": [
+    "dividend"
+   ],
+   "bucket": "collapsed"
+  },
+  {
+   "id": "ASHOKLEY-management_change-2026-11-14",
+   "symbol": "ASHOKLEY",
+   "name": "Ashok Leyland Limited",
+   "sector": "Autos",
+   "kind": "filing",
+   "category": "management_change",
+   "at": "2026-11-14T20:14:11+05:30",
+   "title": "Appointment",
+   "summary": "Appointment of Mr. Venkatesan Venkataraman as Additional Director in the category of Non-Executive Non-Independent Director of the company w.e.f. November 14, 2026.",
+   "url": "https://nsearchives.nseindia.in/corporate/ASHOKLEYLAND_14112026201346_ALOutcomeofBMNov142026VVAppt.pdf",
+   "related": [],
+   "components": {
+    "M": 0.3,
+    "S": 0.0,
+    "T": null,
+    "N": null
+   },
+   "score": 0.175,
+   "reasons": [
+    "board / secretarial change"
+   ],
+   "bucket": "collapsed"
+  },
+  {
+   "id": "ASHOKLEY-unclassified-2026-11-14",
+   "symbol": "ASHOKLEY",
+   "name": "Ashok Leyland Limited",
+   "sector": "Autos",
+   "kind": "filing",
+   "category": "unclassified",
+   "at": "2026-11-14T20:09:39+05:30",
+   "title": "Record Date",
+   "summary": "Record date for the purpose of Dividend is 20-Nov-2026.",
+   "url": "https://nsearchives.nseindia.in/corporate/ASHOKLEYLAND_14112026200910_ALOutcomeofBMNov142026.pdf",
+   "related": [],
+   "components": {
+    "M": 0.05,
+    "S": 0.0,
+    "T": null,
+    "N": null
+   },
+   "score": 0.029,
+   "reasons": [
+    "unclassified"
+   ],
+   "bucket": "collapsed"
+  },
+  {
+   "id": "ASHOKLEY-results-2026-11-14",
+   "symbol": "ASHOKLEY",
+   "name": "Ashok Leyland Limited",
+   "sector": "Autos",
+   "kind": "filing",
+   "category": "results",
+   "at": "2026-11-14T20:08:20+05:30",
+   "title": "Outcome of Board Meeting",
+   "summary": "Ashok Leyland Limited has submitted to the Exchange, the financial results for the period ended September 30, 2026.",
+   "url": "https://nsearchives.nseindia.in/corporate/ASHOKLEYLAND_14112026200621_ALOutcomeofBMNov142026.pdf",
+   "related": [],
+   "results": {
+    "period": "Q2FY27",
+    "basis": "consolidated",
+    "metrics": {
+     "revenue": {
+      "value_cr": 17029.87,
+      "qoq_pct": 30.3,
+      "yoy_pct": 35.4
+     },
+     "ebitda": {
+      "value_cr": 2776.29,
+      "qoq_pct": 15.2,
+      "yoy_pct": 13.7
+     },
+     "pbt": {
+      "value_cr": 1258.07,
+      "qoq_pct": 33.3,
+      "yoy_pct": 12.7
+     },
+     "pat": {
+      "value_cr": 891.45,
+      "qoq_pct": 33.5,
+      "yoy_pct": 8.8
+     }
+    },
+    "ebitda_margin": {
+     "pct": 16.3,
+     "qoq_bps": -214,
+     "yoy_bps": -311
+    },
+    "warnings": [],
+    "source": "https://nsearchives.nseindia.in/corporate/xbrl/INTEGRATED_FILING_INDAS_1758732_14112026091104_WEB.xml"
+   },
+   "components": {
+    "M": 0.9,
+    "S": 0.89,
+    "T": null,
+    "N": null
+   },
+   "score": 0.894,
+   "reasons": [
+    "EBITDA margin -311 bps YoY",
+    "revenue +35.4% YoY"
+   ],
+   "bucket": "needs_you"
+  },
+  {
+   "id": "DEEPAKFERT-unclassified-2026-11-14",
+   "symbol": "DEEPAKFERT",
+   "name": "Deepak Fertilizers and Petrochemicals Corporation Limited",
+   "sector": "Chemicals",
+   "kind": "filing",
+   "category": "unclassified",
+   "at": "2026-11-14T18:22:49+05:30",
+   "title": "Copy of Newspaper Publication",
+   "summary": "Copy of Newspaper Publication for Unaudited Financial Results of the Company for the quarter and half year ended 30th September, 2026.",
+   "url": "https://nsearchives.nseindia.in/corporate/DEEPAKFERT1_14112026182224_IntimationNewspaperPublication.pdf",
+   "related": [],
+   "components": {
+    "M": 0.05,
+    "S": 0.0,
+    "T": null,
+    "N": null
+   },
+   "score": 0.029,
+   "reasons": [
+    "unclassified"
+   ],
+   "bucket": "collapsed"
+  },
+  {
+   "id": "MEDANTA-investor_meetings-2026-11-14",
+   "symbol": "MEDANTA",
+   "name": "Global Health Limited",
+   "sector": "Healthcare",
+   "kind": "filing",
+   "category": "investor_meetings",
+   "at": "2026-11-14T12:44:46+05:30",
+   "title": "Investor Presentation",
+   "summary": "Investor Presentation",
+   "url": "https://nsearchives.nseindia.in/corporate/MEDANTA21_14112026124431_GHLANALYSTSMEETNOVEMBER142026SIGNED.pdf",
+   "related": [],
+   "components": {
+    "M": 0.15,
+    "S": 0.0,
+    "T": null,
+    "N": null
+   },
+   "score": 0.087,
+   "reasons": [
+    "investor meetings"
+   ],
+   "bucket": "collapsed"
+  },
+  {
+   "id": "DEEPAKFERT-press_release-2026-11-14",
+   "symbol": "DEEPAKFERT",
+   "name": "Deepak Fertilizers and Petrochemicals Corporation Limited",
+   "sector": "Chemicals",
+   "kind": "filing",
+   "category": "press_release",
+   "at": "2026-11-14T12:28:16+05:30",
+   "title": "General Updates",
+   "summary": "Update on ITAT appeal against the Company Outcome of Appeals",
+   "url": "https://nsearchives.nseindia.in/corporate/DEEPAKFERT1_14112026122655_Intimation_to_Stock_Exchanges_-_ITAT_Appeal_Outcome_-14112026.pdf",
+   "related": [],
+   "components": {
+    "M": 0.35,
+    "S": 0.0,
+    "T": null,
+    "N": null
+   },
+   "score": 0.204,
+   "reasons": [
+    "press release"
+   ],
+   "bucket": "collapsed"
+  },
+  {
+   "id": "TEXRAIL-press_release-2026-11-14",
+   "symbol": "TEXRAIL",
+   "name": "Texmaco Rail & Engineering Limited",
+   "sector": "Capital goods",
+   "kind": "filing",
+   "category": "press_release",
+   "at": "2026-11-14T12:10:49+05:30",
+   "title": "Bagging/Receiving of orders/contracts",
+   "summary": "Bagging/Receiving of orders/contracts",
+   "url": "https://nsearchives.nseindia.in/corporate/TEXRAIL_14112026120920_TexRailReceiptofOrderNWR14112026Signed.pdf",
+   "related": [
+    {
+     "title": "Bagging/Receiving of orders/contracts",
+     "url": "https://nsearchives.nseindia.in/corporate/TEXRAIL_14112026195553_TexRailReceiptofOrderIVC14112026Signed.pdf"
+    }
+   ],
+   "components": {
+    "M": 0.35,
+    "S": 0.0,
+    "T": null,
+    "N": null
+   },
+   "score": 0.204,
+   "reasons": [
+    "press release"
+   ],
+   "bucket": "collapsed"
+  },
+  {
+   "id": "GRSE-earnings_call-2026-11-14",
+   "symbol": "GRSE",
+   "name": "Garden Reach Shipbuilders & Engineers Limited",
+   "sector": "Defence shipbuilding",
+   "kind": "filing",
+   "category": "earnings_call",
+   "at": "2026-11-14T10:31:36+05:30",
+   "title": "Analysts/Institutional Investor Meet/Con. Call Updates",
+   "summary": "In terms of Regulation 30 read with Para A of Part A of Schedule lll of the Securities and Exchange Board of India (Listing Obligations and Disclosure Requirements) Regulations, 2015, we wish to inform that Conference Call for Investors and Analysts is scheduled to be held on Thursday, 19th November, 2026 at 03.30 P.M. to discuss the Company s Q2 & H1 FY 27 results and the road ahead. The details of the Conference Call are attached herewith.During the aforesaid call, the Management will comment on the Unaudited Financial Results and Operations for the Quarter Ended 30th Sep, 2026 and road ahead.This is for your information and record.",
+   "url": "https://nsearchives.nseindia.in/corporate/GRSE_14112026103104_Intimation_Investors_and_Analyst_Meeting_Q2_H1_FY_26_27.pdf",
+   "related": [],
+   "components": {
+    "M": 0.25,
+    "S": 0.0,
+    "T": null,
+    "N": null
+   },
+   "score": 0.146,
+   "reasons": [
+    "earnings call"
+   ],
+   "bucket": "collapsed"
+  },
+  {
+   "id": "M&M-press_release-2026-11-13",
+   "symbol": "M&M",
+   "name": "Mahindra & Mahindra Limited",
+   "sector": "Autos",
+   "kind": "filing",
+   "category": "press_release",
+   "at": "2026-11-13T21:28:55+05:30",
+   "title": "Updates",
+   "summary": "'Transfer Of Equity Shares by Mahindra & Mahindra Employees Stock Option Trust to the Stock Option Grantees'.",
+   "url": "https://nsearchives.nseindia.in/corporate/Deepak_13112026212813_Employeeslist13112026.pdf",
+   "related": [],
+   "components": {
+    "M": 0.35,
+    "S": 0.0,
+    "T": null,
+    "N": null
+   },
+   "score": 0.204,
+   "reasons": [
+    "press release"
+   ],
+   "bucket": "collapsed"
+  },
+  {
+   "id": "DEEPAKFERT-press_release-2026-11-13",
+   "symbol": "DEEPAKFERT",
+   "name": "Deepak Fertilizers and Petrochemicals Corporation Limited",
+   "sector": "Chemicals",
+   "kind": "filing",
+   "category": "press_release",
+   "at": "2026-11-13T20:59:10+05:30",
+   "title": "Press Release",
+   "summary": "A press release dated November 13, 2026, titled \"Press Release on Unaudited Financial Results for the quarter and half year ended 30th September 2026\".",
+   "url": "https://nsearchives.nseindia.in/corporate/DEEPAKFERT1_13112026205832_Results_Signed_1.pdf",
+   "related": [],
+   "components": {
+    "M": 0.35,
+    "S": 0.0,
+    "T": null,
+    "N": null
+   },
+   "score": 0.204,
+   "reasons": [
+    "press release"
+   ],
+   "bucket": "collapsed"
+  },
+  {
+   "id": "DEEPAKFERT-investor_meetings-2026-11-13",
+   "symbol": "DEEPAKFERT",
+   "name": "Deepak Fertilizers and Petrochemicals Corporation Limited",
+   "sector": "Chemicals",
+   "kind": "filing",
+   "category": "investor_meetings",
+   "at": "2026-11-13T20:55:14+05:30",
+   "title": "Investor Presentation",
+   "summary": "Investor Presentation",
+   "url": "https://nsearchives.nseindia.in/corporate/DEEPAKFERT1_13112026204919_Results_Signed_1.pdf",
+   "related": [],
+   "components": {
+    "M": 0.15,
+    "S": 0.0,
+    "T": null,
+    "N": null
+   },
+   "score": 0.087,
+   "reasons": [
+    "investor meetings"
+   ],
+   "bucket": "collapsed"
+  },
+  {
+   "id": "DEEPAKFERT-results-2026-11-13",
+   "symbol": "DEEPAKFERT",
+   "name": "Deepak Fertilizers and Petrochemicals Corporation Limited",
+   "sector": "Chemicals",
+   "kind": "filing",
+   "category": "results",
+   "at": "2026-11-13T20:46:10+05:30",
+   "title": "Outcome of Board Meeting",
+   "summary": "Deepak Fertilizers And Petrochemicals Corporation Limited has submitted to the Exchange, the financial results for the quarter and half year ended September 30, 2026.",
+   "url": "https://nsearchives.nseindia.in/corporate/DEEPAKFERT1_13112026203559_Results_Signed_1.pdf",
+   "related": [],
+   "components": {
+    "M": 0.9,
+    "S": 0.0,
+    "T": null,
+    "N": null
+   },
+   "score": 0.525,
+   "reasons": [
+    "numbers not machine-readable in the filing"
+   ],
+   "bucket": "worth_a_read"
+  },
+  {
+   "id": "UNOMINDA-unclassified-2026-11-13",
+   "symbol": "UNOMINDA",
+   "name": "UNO Minda Limited",
+   "sector": "Auto parts",
+   "kind": "filing",
+   "category": "unclassified",
+   "at": "2026-11-13T18:15:14+05:30",
+   "title": "Copy of Newspaper Publication",
+   "summary": "Copy of Newspaper Publication",
+   "url": "https://nsearchives.nseindia.in/corporate/MINDAIND1_13112026181423_NWIntimation.pdf",
+   "related": [],
+   "components": {
+    "M": 0.05,
+    "S": 0.0,
+    "T": null,
+    "N": null
+   },
+   "score": 0.029,
+   "reasons": [
+    "unclassified"
+   ],
+   "bucket": "collapsed"
+  },
+  {
+   "id": "THERMAX-press_release-2026-11-13",
+   "symbol": "THERMAX",
+   "name": "Thermax Limited",
+   "sector": "Capital goods",
+   "kind": "filing",
+   "category": "press_release",
+   "at": "2026-11-13T16:57:28+05:30",
+   "title": "Updates",
+   "summary": "'Change in Registered Office of RTA '.",
+   "url": "https://nsearchives.nseindia.in/corporate/THERMAXNSE_13112026165615_SeintimationKFinCorporateofficeshifting.pdf",
+   "related": [],
+   "components": {
+    "M": 0.35,
+    "S": 0.0,
+    "T": null,
+    "N": null
+   },
+   "score": 0.204,
+   "reasons": [
+    "press release"
+   ],
+   "bucket": "collapsed"
+  },
+  {
+   "id": "THERMAX-investor_meetings-2026-11-13",
+   "symbol": "THERMAX",
+   "name": "Thermax Limited",
+   "sector": "Capital goods",
+   "kind": "filing",
+   "category": "investor_meetings",
+   "at": "2026-11-13T16:52:55+05:30",
+   "title": "Analysts/Institutional Investor Meet/Con. Call Updates",
+   "summary": "Schedule of meet",
+   "url": "https://nsearchives.nseindia.in/corporate/THERMAXNSE_13112026165232_SEIntimationInvestors_Meet.pdf",
+   "related": [],
+   "components": {
+    "M": 0.15,
+    "S": 0.0,
+    "T": null,
+    "N": null
+   },
+   "score": 0.087,
+   "reasons": [
+    "investor meetings"
+   ],
+   "bucket": "collapsed"
+  },
+  {
+   "id": "JUBLFOOD-earnings_call-2026-11-13",
+   "symbol": "JUBLFOOD",
+   "name": "Jubilant Foodworks Limited",
+   "sector": "Consumer",
+   "kind": "filing",
+   "category": "earnings_call",
+   "at": "2026-11-13T13:33:14+05:30",
+   "title": "Analysts/Institutional Investor Meet/Con. Call Updates",
+   "summary": "Transcript of Conference Call for Q2FY27 Results",
+   "url": "https://nsearchives.nseindia.in/corporate/JUBLFOOD_13112026133207_SETranscriptQ2FY27.pdf",
+   "related": [],
+   "components": {
+    "M": 0.25,
+    "S": 0.0,
+    "T": null,
+    "N": null
+   },
+   "score": 0.146,
+   "reasons": [
+    "earnings call"
+   ],
+   "bucket": "collapsed"
+  },
+  {
+   "id": "TATASTEEL-earnings_call-2026-11-12",
+   "symbol": "TATASTEEL",
+   "name": "Tata Steel Limited",
+   "sector": "Metals",
+   "kind": "filing",
+   "category": "earnings_call",
+   "at": "2026-11-12T22:19:55+05:30",
+   "title": "Analysts/Institutional Investor Meet/Con. Call Updates",
+   "summary": "Transcript",
+   "url": "https://nsearchives.nseindia.in/corporate/NIDHIFADNAVIS_12112026221915_BSENSE_Signed.pdf",
+   "related": [],
+   "components": {
+    "M": 0.25,
+    "S": 0.0,
+    "T": null,
+    "N": null
+   },
+   "score": 0.146,
+   "reasons": [
+    "earnings call"
+   ],
+   "bucket": "collapsed"
+  },
+  {
+   "id": "VOLTAS-earnings_call-2026-11-12",
+   "symbol": "VOLTAS",
+   "name": "Voltas Limited",
+   "sector": "Consumer durables",
+   "kind": "filing",
+   "category": "earnings_call",
+   "at": "2026-11-12T21:55:28+05:30",
+   "title": "Analysts/Institutional Investor Meet/Con. Call Updates",
+   "summary": "Transcript",
+   "url": "https://nsearchives.nseindia.in/corporate/VOLTAS_RB_12112026215516_SEIntimationtranscriptsigned.pdf",
+   "related": [],
+   "components": {
+    "M": 0.25,
+    "S": 0.0,
+    "T": null,
+    "N": null
+   },
+   "score": 0.146,
+   "reasons": [
+    "earnings call"
+   ],
+   "bucket": "collapsed"
+  },
+  {
+   "id": "KEC-investor_meetings-2026-11-12",
+   "symbol": "KEC",
+   "name": "KEC International Limited",
+   "sector": "Transmission",
+   "kind": "filing",
+   "category": "investor_meetings",
+   "at": "2026-11-12T18:21:56+05:30",
+   "title": "Analysts/Institutional Investor Meet/Con. Call Updates",
+   "summary": "Schedule of meet",
+   "url": "https://nsearchives.nseindia.in/corporate/KEC_12112026182139_AnalystMeetIntimation.pdf",
+   "related": [],
+   "components": {
+    "M": 0.15,
+    "S": 0.0,
+    "T": null,
+    "N": null
+   },
+   "score": 0.087,
+   "reasons": [
+    "investor meetings"
+   ],
+   "bucket": "collapsed"
+  },
+  {
+   "id": "M&M-investor_meetings-2026-11-12",
+   "symbol": "M&M",
+   "name": "Mahindra & Mahindra Limited",
+   "sector": "Autos",
+   "kind": "filing",
+   "category": "investor_meetings",
+   "at": "2026-11-12T17:30:41+05:30",
+   "title": "Analysts/Institutional Investor Meet/Con. Call Updates",
+   "summary": "Participation in Investor Meeting",
+   "url": "https://nsearchives.nseindia.in/corporate/AmitDodani_12112026173022_ConclusionofAnalystMeet12112026.pdf",
+   "related": [],
+   "components": {
+    "M": 0.15,
+    "S": 0.0,
+    "T": null,
+    "N": null
+   },
+   "score": 0.087,
+   "reasons": [
+    "investor meetings"
+   ],
+   "bucket": "collapsed"
+  },
+  {
+   "id": "M&M-press_release-2026-11-12",
+   "symbol": "M&M",
+   "name": "Mahindra & Mahindra Limited",
+   "sector": "Autos",
+   "kind": "filing",
+   "category": "press_release",
+   "at": "2026-11-12T17:13:06+05:30",
+   "title": "General Updates",
+   "summary": "The Production, Sales and Export figures of the Company for the Month of October 2026",
+   "url": "https://nsearchives.nseindia.in/corporate/AmitDodani_12112026171250_MonthlyReportOct2026.pdf",
+   "related": [],
+   "components": {
+    "M": 0.35,
+    "S": 0.0,
+    "T": null,
+    "N": null
+   },
+   "score": 0.204,
+   "reasons": [
+    "press release"
+   ],
+   "bucket": "collapsed"
+  },
+  {
+   "id": "TATASTEEL-investor_meetings-2026-11-12",
+   "symbol": "TATASTEEL",
+   "name": "Tata Steel Limited",
+   "sector": "Metals",
+   "kind": "filing",
+   "category": "investor_meetings",
+   "at": "2026-11-12T16:53:41+05:30",
+   "title": "Analysts/Institutional Investor Meet/Con. Call Updates",
+   "summary": "Intimation of Schedule of Analyst / Institutional Investor Meeting under the Securities and Exchange Board of India (Listing Obligations and Disclosure Requirements) Regulations, 2015, as amended",
+   "url": "https://nsearchives.nseindia.in/corporate/NIDHIFADNAVIS_12112026165318_BSENSE_Signed.pdf",
+   "related": [],
+   "components": {
+    "M": 0.15,
+    "S": 0.0,
+    "T": null,
+    "N": null
+   },
+   "score": 0.087,
+   "reasons": [
+    "investor meetings"
+   ],
+   "bucket": "collapsed"
+  },
+  {
+   "id": "TATAPOWER-move-2026-11-12",
+   "symbol": "TATAPOWER",
+   "name": "Tata Power Company Limited",
+   "sector": "Power",
+   "kind": "move",
+   "category": "price_volume",
+   "at": "2026-11-12T15:30:00+05:30",
+   "title": "Price / volume move",
+   "summary": "volume 3.7× its 20-day average",
+   "url": null,
+   "related": [],
+   "move": {
+    "volume_multiple": 3.73,
+    "return_pct": -0.83
+   },
+   "components": {
+    "M": 0.35,
+    "S": 0.93,
+    "T": null,
+    "N": null
+   },
+   "score": 0.593,
+   "reasons": [
+    "volume 3.7× its 20-day average"
+   ],
+   "bucket": "worth_a_read"
+  },
+  {
+   "id": "TATAPOWER-unclassified-2026-11-12",
+   "symbol": "TATAPOWER",
+   "name": "Tata Power Company Limited",
+   "sector": "Power",
+   "kind": "filing",
+   "category": "unclassified",
+   "at": "2026-11-12T14:30:56+05:30",
+   "title": "Copy of Newspaper Publication",
+   "summary": "Copy of Newspaper Publication pertaining Financial Results for Quarter and half year ended September 30, 2026",
+   "url": "https://nsearchives.nseindia.in/corporate/VPTPCL_12112026143001_new3.pdf",
+   "related": [],
+   "components": {
+    "M": 0.05,
+    "S": 0.0,
+    "T": null,
+    "N": null
+   },
+   "score": 0.029,
+   "reasons": [
+    "unclassified"
+   ],
+   "bucket": "collapsed"
+  },
+  {
+   "id": "LUPIN-press_release-2026-11-12",
+   "symbol": "LUPIN",
+   "name": "Lupin Limited",
+   "sector": "Pharma",
+   "kind": "filing",
+   "category": "press_release",
+   "at": "2026-11-12T11:39:56+05:30",
+   "title": "Press Release",
+   "summary": "A press release dated November 12, 2026, titled \"Lupin Announces European Launch of Biosimilar Ranibizumab\".",
+   "url": "https://nsearchives.nseindia.in/corporate/Lupin2_12112026113810_SELetterPressRelease.pdf",
+   "related": [],
+   "components": {
+    "M": 0.35,
+    "S": 0.0,
+    "T": null,
+    "N": null
+   },
+   "score": 0.204,
+   "reasons": [
+    "press release"
+   ],
+   "bucket": "collapsed"
+  },
+  {
+   "id": "THERMAX-earnings_call-2026-11-12",
+   "symbol": "THERMAX",
+   "name": "Thermax Limited",
+   "sector": "Capital goods",
+   "kind": "filing",
+   "category": "earnings_call",
+   "at": "2026-11-12T09:37:11+05:30",
+   "title": "Analysts/Institutional Investor Meet/Con. Call Updates",
+   "summary": "Transcript",
+   "url": "https://nsearchives.nseindia.in/corporate/THERMAXNSE_12112026093647_SEintimationtranscriptQ2.pdf",
+   "related": [],
+   "components": {
+    "M": 0.25,
+    "S": 0.0,
+    "T": null,
+    "N": null
+   },
+   "score": 0.146,
+   "reasons": [
+    "earnings call"
+   ],
+   "bucket": "collapsed"
+  },
+  {
+   "id": "TATAPOWER-earnings_call-2026-11-11",
+   "symbol": "TATAPOWER",
+   "name": "Tata Power Company Limited",
+   "sector": "Power",
+   "kind": "filing",
+   "category": "earnings_call",
+   "at": "2026-11-11T20:35:57+05:30",
+   "title": "Analysts/Institutional Investor Meet/Con. Call Updates",
+   "summary": "Link of Recording",
+   "url": "https://nsearchives.nseindia.in/corporate/VPTPCL_11112026203424_Analyst_Call.pdf",
+   "related": [],
+   "components": {
+    "M": 0.25,
+    "S": 0.0,
+    "T": null,
+    "N": null
+   },
+   "score": 0.146,
+   "reasons": [
+    "earnings call"
+   ],
+   "bucket": "collapsed"
+  },
+  {
+   "id": "TATAPOWER-management_change-2026-11-11",
+   "symbol": "TATAPOWER",
+   "name": "Tata Power Company Limited",
+   "sector": "Power",
+   "kind": "filing",
+   "category": "management_change",
+   "at": "2026-11-11T19:01:38+05:30",
+   "title": "Appointment",
+   "summary": "Appointment of Mr Sanjay Kumar Banga as additional Executive Director of the company w.e.f. November 11, 2026.",
+   "url": "https://nsearchives.nseindia.in/corporate/KSTPCL_11112026190124_MD_APPT_-_Reg_30.pdf",
+   "related": [],
+   "components": {
+    "M": 0.85,
+    "S": 0.5,
+    "T": null,
+    "N": null
+   },
+   "score": 0.704,
+   "reasons": [
+    "top-management change"
+   ],
+   "bucket": "needs_you"
+  },
+  {
+   "id": "M&M-earnings_call-2026-11-11",
+   "symbol": "M&M",
+   "name": "Mahindra & Mahindra Limited",
+   "sector": "Autos",
+   "kind": "filing",
+   "category": "earnings_call",
+   "at": "2026-11-11T18:59:05+05:30",
+   "title": "Analysts/Institutional Investor Meet/Con. Call Updates",
+   "summary": "Transcript of M&M Analyst Meet Q2F27",
+   "url": "https://nsearchives.nseindia.in/corporate/AmitDodani_11112026185839_Intimation_Transcript_Q2F27_Earningscall_05112026.pdf",
+   "related": [],
+   "components": {
+    "M": 0.25,
+    "S": 0.0,
+    "T": null,
+    "N": null
+   },
+   "score": 0.146,
+   "reasons": [
+    "earnings call"
+   ],
+   "bucket": "collapsed"
+  },
+  {
+   "id": "TATAPOWER-capex-2026-11-11",
+   "symbol": "TATAPOWER",
+   "name": "Tata Power Company Limited",
+   "sector": "Power",
+   "kind": "filing",
+   "category": "capex",
+   "at": "2026-11-11T17:42:13+05:30",
+   "title": "Capacity addition",
+   "summary": "Capacity addition",
+   "url": "https://nsearchives.nseindia.in/corporate/VPTPCL_11112026174200_Reg_30_Capacity_Addition_Shirwata.pdf",
+   "related": [],
+   "components": {
+    "M": 0.7,
+    "S": 0.0,
+    "T": null,
+    "N": null
+   },
+   "score": 0.408,
+   "reasons": [
+    "capex"
+   ],
+   "bucket": "worth_a_read"
+  },
+  {
+   "id": "TATAPOWER-press_release-2026-11-11",
+   "symbol": "TATAPOWER",
+   "name": "Tata Power Company Limited",
+   "sector": "Power",
+   "kind": "filing",
+   "category": "press_release",
+   "at": "2026-11-11T17:39:57+05:30",
+   "title": "Press Release",
+   "summary": "A press release dated November 11, 2026, titled \"Press Release issued by the Company on the Audited Standalone Financial Results and Unaudited Consolidated Financial Results of the Company for the quarter and half year ended September 30, 2026.\".",
+   "url": "https://nsearchives.nseindia.in/corporate/VPTPCL_11112026173937_Press_Release.pdf",
+   "related": [
+    {
+     "title": "Updates",
+     "url": "https://nsearchives.nseindia.in/corporate/VPTPCL_11112026192204_Regulation_30_KMP.pdf"
+    }
+   ],
+   "components": {
+    "M": 0.35,
+    "S": 0.0,
+    "T": null,
+    "N": null
+   },
+   "score": 0.204,
+   "reasons": [
+    "press release"
+   ],
+   "bucket": "collapsed"
+  },
+  {
+   "id": "GRSE-press_release-2026-11-11",
+   "symbol": "GRSE",
+   "name": "Garden Reach Shipbuilders & Engineers Limited",
+   "sector": "Defence shipbuilding",
+   "kind": "filing",
+   "category": "press_release",
+   "at": "2026-11-11T17:37:35+05:30",
+   "title": "Press Release",
+   "summary": "A press release dated November 11, 2026, titled \"Press Release Performance Review of Q2 & H1 FY27 - GRSE Strengthens Financial Performance, Registers Impressive Growth in Q2 & H1 FY27\".",
+   "url": "https://nsearchives.nseindia.in/corporate/GRSE_11112026173726_Press_Release_for_Q2_FY_2026-27.pdf",
+   "related": [],
+   "components": {
+    "M": 0.35,
+    "S": 0.0,
+    "T": null,
+    "N": null
+   },
+   "score": 0.204,
+   "reasons": [
+    "press release"
+   ],
+   "bucket": "collapsed"
+  },
+  {
+   "id": "TATAPOWER-results-2026-11-11",
+   "symbol": "TATAPOWER",
+   "name": "Tata Power Company Limited",
+   "sector": "Power",
+   "kind": "filing",
+   "category": "results",
+   "at": "2026-11-11T17:20:19+05:30",
+   "title": "Outcome of Board Meeting",
+   "summary": "Tata Power Company Limited has submitted to the Exchange, the financial results for the period ended September 30, 2026.",
+   "url": "https://nsearchives.nseindia.in/corporate/VPTPCL_11112026172001_outcome_final.pdf",
+   "related": [],
+   "results": {
+    "period": "Q2FY27",
+    "basis": "consolidated",
+    "metrics": {
+     "revenue": {
+      "value_cr": 19635.94,
+      "qoq_pct": 3.1,
+      "yoy_pct": 26.3
+     },
+     "ebitda": {
+      "value_cr": 3666.85,
+      "qoq_pct": -8.6,
+      "yoy_pct": 11.1
+     },
+     "pbt": {
+      "value_cr": 1442.91,
+      "qoq_pct": -16.8,
+      "yoy_pct": 8.8
+     },
+     "pat": {
+      "value_cr": 1652.04,
+      "qoq_pct": 17.9,
+      "yoy_pct": 32.7
+     }
+    },
+    "ebitda_margin": {
+     "pct": 18.67,
+     "qoq_bps": -240,
+     "yoy_bps": -257
+    },
+    "warnings": [
+     "PAT does not reconcile with PBT, tax and associates; discontinued operations or minority items may be present",
+     "exceptional items of ₹119.18 cr this quarter"
+    ],
+    "source": "https://nsearchives.nseindia.in/corporate/xbrl/INTEGRATED_FILING_INDAS_1756234_11112026070341_WEB.xml"
+   },
+   "components": {
+    "M": 0.9,
+    "S": 0.66,
+    "T": null,
+    "N": null
+   },
+   "score": 0.799,
+   "reasons": [
+    "EBITDA margin -257 bps YoY",
+    "revenue +26.3% YoY",
+    "PAT +32.7% YoY"
+   ],
+   "bucket": "needs_you"
+  },
+  {
+   "id": "TEXRAIL-earnings_call-2026-11-11",
+   "symbol": "TEXRAIL",
+   "name": "Texmaco Rail & Engineering Limited",
+   "sector": "Capital goods",
+   "kind": "filing",
+   "category": "earnings_call",
+   "at": "2026-11-11T17:12:37+05:30",
+   "title": "Analysts/Institutional Investor Meet/Con. Call Updates",
+   "summary": "Link of Recording",
+   "url": "https://nsearchives.nseindia.in/corporate/TEXRAIL_11112026171217_TexRailAudioRecording11112026Signed.pdf",
+   "related": [],
+   "components": {
+    "M": 0.25,
+    "S": 0.0,
+    "T": null,
+    "N": null
+   },
+   "score": 0.146,
+   "reasons": [
+    "earnings call"
+   ],
+   "bucket": "collapsed"
+  },
+  {
+   "id": "M&M-move-2026-11-11",
+   "symbol": "M&M",
+   "name": "Mahindra & Mahindra Limited",
+   "sector": "Autos",
+   "kind": "move",
+   "category": "price_volume",
+   "at": "2026-11-11T15:30:00+05:30",
+   "title": "Price / volume move",
+   "summary": "price +5.3% on the day",
+   "url": null,
+   "related": [],
+   "move": {
+    "volume_multiple": 1.9,
+    "return_pct": 5.3
+   },
+   "components": {
+    "M": 0.35,
+    "S": 0.53,
+    "T": null,
+    "N": null
+   },
+   "score": 0.425,
+   "reasons": [
+    "price +5.3% on the day"
+   ],
+   "bucket": "worth_a_read"
+  },
+  {
+   "id": "AUROPHARMA-move-2026-11-11",
+   "symbol": "AUROPHARMA",
+   "name": "Aurobindo Pharma Limited",
+   "sector": "Pharma",
+   "kind": "move",
+   "category": "price_volume",
+   "at": "2026-11-11T15:30:00+05:30",
+   "title": "Price / volume move",
+   "summary": "volume 2.1× its 20-day average",
+   "url": null,
+   "related": [],
+   "move": {
+    "volume_multiple": 2.1,
+    "return_pct": -1.5
+   },
+   "components": {
+    "M": 0.35,
+    "S": 0.53,
+    "T": null,
+    "N": null
+   },
+   "score": 0.423,
+   "reasons": [
+    "volume 2.1× its 20-day average"
+   ],
+   "bucket": "worth_a_read"
+  },
+  {
+   "id": "TEXRAIL-move-2026-11-11",
+   "symbol": "TEXRAIL",
+   "name": "Texmaco Rail & Engineering Limited",
+   "sector": "Capital goods",
+   "kind": "move",
+   "category": "price_volume",
+   "at": "2026-11-11T15:30:00+05:30",
+   "title": "Price / volume move",
+   "summary": "volume 2.9× its 20-day average; price +7.2% on the day",
+   "url": null,
+   "related": [],
+   "move": {
+    "volume_multiple": 2.94,
+    "return_pct": 7.2
+   },
+   "components": {
+    "M": 0.35,
+    "S": 0.73,
+    "T": null,
+    "N": null
+   },
+   "score": 0.51,
+   "reasons": [
+    "volume 2.9× its 20-day average",
+    "price +7.2% on the day"
+   ],
+   "bucket": "worth_a_read"
+  },
+  {
+   "id": "NCC-move-2026-11-11",
+   "symbol": "NCC",
+   "name": "NCC Limited",
+   "sector": "Construction",
+   "kind": "move",
+   "category": "price_volume",
+   "at": "2026-11-11T15:30:00+05:30",
+   "title": "Price / volume move",
+   "summary": "volume 3.1× its 20-day average",
+   "url": null,
+   "related": [],
+   "move": {
+    "volume_multiple": 3.08,
+    "return_pct": 4.85
+   },
+   "components": {
+    "M": 0.35,
+    "S": 0.77,
+    "T": null,
+    "N": null
+   },
+   "score": 0.525,
+   "reasons": [
+    "volume 3.1× its 20-day average"
+   ],
+   "bucket": "worth_a_read"
+  },
+  {
+   "id": "TATAPOWER-move-2026-11-11",
+   "symbol": "TATAPOWER",
+   "name": "Tata Power Company Limited",
+   "sector": "Power",
+   "kind": "move",
+   "category": "price_volume",
+   "at": "2026-11-11T15:30:00+05:30",
+   "title": "Price / volume move",
+   "summary": "volume 2.4× its 20-day average",
+   "url": null,
+   "related": [],
+   "move": {
+    "volume_multiple": 2.42,
+    "return_pct": 0.0
+   },
+   "components": {
+    "M": 0.35,
+    "S": 0.6,
+    "T": null,
+    "N": null
+   },
+   "score": 0.456,
+   "reasons": [
+    "volume 2.4× its 20-day average"
+   ],
+   "bucket": "worth_a_read"
+  },
+  {
+   "id": "DEEPAKFERT-move-2026-11-11",
+   "symbol": "DEEPAKFERT",
+   "name": "Deepak Fertilizers and Petrochemicals Corporation Limited",
+   "sector": "Chemicals",
+   "kind": "move",
+   "category": "price_volume",
+   "at": "2026-11-11T15:30:00+05:30",
+   "title": "Price / volume move",
+   "summary": "price +6.1% on the day",
+   "url": null,
+   "related": [],
+   "move": {
+    "volume_multiple": 1.91,
+    "return_pct": 6.11
+   },
+   "components": {
+    "M": 0.35,
+    "S": 0.61,
+    "T": null,
+    "N": null
+   },
+   "score": 0.459,
+   "reasons": [
+    "price +6.1% on the day"
+   ],
+   "bucket": "worth_a_read"
+  },
+  {
+   "id": "SUDARSCHEM-move-2026-11-11",
+   "symbol": "SUDARSCHEM",
+   "name": "Sudarshan Chemical Industries Limited",
+   "sector": "Chemicals",
+   "kind": "move",
+   "category": "price_volume",
+   "at": "2026-11-11T15:30:00+05:30",
+   "title": "Price / volume move",
+   "summary": "volume 3.1× its 20-day average; price +10.5% on the day",
+   "url": null,
+   "related": [],
+   "move": {
+    "volume_multiple": 3.1,
+    "return_pct": 10.47
+   },
+   "components": {
+    "M": 0.35,
+    "S": 1,
+    "T": null,
+    "N": null
+   },
+   "score": 0.621,
+   "reasons": [
+    "volume 3.1× its 20-day average",
+    "price +10.5% on the day"
+   ],
+   "bucket": "worth_a_read"
+  },
+  {
+   "id": "UNOMINDA-earnings_call-2026-11-11",
+   "symbol": "UNOMINDA",
+   "name": "UNO Minda Limited",
+   "sector": "Auto parts",
+   "kind": "filing",
+   "category": "earnings_call",
+   "at": "2026-11-11T15:15:24+05:30",
+   "title": "Analysts/Institutional Investor Meet/Con. Call Updates",
+   "summary": "Transcript of Earnings Call held on November 05, 2026",
+   "url": "https://nsearchives.nseindia.in/corporate/MINDAIND1_11112026151509_Intimationcovering_transcript.pdf",
+   "related": [],
+   "components": {
+    "M": 0.25,
+    "S": 0.0,
+    "T": null,
+    "N": null
+   },
+   "score": 0.146,
+   "reasons": [
+    "earnings call"
+   ],
+   "bucket": "collapsed"
+  },
+  {
+   "id": "M&M-investor_meetings-2026-11-11",
+   "symbol": "M&M",
+   "name": "Mahindra & Mahindra Limited",
+   "sector": "Autos",
+   "kind": "filing",
+   "category": "investor_meetings",
+   "at": "2026-11-11T14:55:45+05:30",
+   "title": "Analysts/Institutional Investor Meet/Con. Call Updates",
+   "summary": "Schedule of meet",
+   "url": "https://nsearchives.nseindia.in/corporate/AmitDodani_11112026145521_UpcomingAnalystMeet16112026.pdf",
+   "related": [],
+   "components": {
+    "M": 0.15,
+    "S": 0.0,
+    "T": null,
+    "N": null
+   },
+   "score": 0.087,
+   "reasons": [
+    "investor meetings"
+   ],
+   "bucket": "collapsed"
+  },
+  {
+   "id": "SUDARSCHEM-investor_meetings-2026-11-11",
+   "symbol": "SUDARSCHEM",
+   "name": "Sudarshan Chemical Industries Limited",
+   "sector": "Chemicals",
+   "kind": "filing",
+   "category": "investor_meetings",
+   "at": "2026-11-11T14:48:31+05:30",
+   "title": "Analysts/Institutional Investor Meet/Con. Call Updates",
+   "summary": "Schedule of meet",
+   "url": "https://nsearchives.nseindia.in/corporate/SUDARSCHEM_11112026144820_SUDARSHANCallInvite13112026Signed.pdf",
+   "related": [],
+   "components": {
+    "M": 0.15,
+    "S": 0.0,
+    "T": null,
+    "N": null
+   },
+   "score": 0.087,
+   "reasons": [
+    "investor meetings"
+   ],
+   "bucket": "collapsed"
+  },
+  {
+   "id": "GRSE-results-2026-11-11",
+   "symbol": "GRSE",
+   "name": "Garden Reach Shipbuilders & Engineers Limited",
+   "sector": "Defence shipbuilding",
+   "kind": "filing",
+   "category": "results",
+   "at": "2026-11-11T14:47:22+05:30",
+   "title": "Outcome of Board Meeting",
+   "summary": "Garden Reach Shipbuilders & Engineers Limited has submitted to the Exchange, the financial results for the period ended September 30, 2026.",
+   "url": "https://nsearchives.nseindia.in/corporate/GRSE_11112026144558_GRSE_-_Unaudited_Financial_Results_-_Q2_FY_26-27.pdf",
+   "related": [
+    {
+     "title": "Integrated Filing- Financial",
+     "url": "https://nsearchives.nseindia.in/corporate/GRSE_11112026153634_GRSE_-_Unaudited_Financial_Results_-_Q2_FY_26-27.pdf"
+    }
+   ],
+   "results": {
+    "period": "Q2FY27",
+    "basis": "standalone",
+    "metrics": {
+     "revenue": {
+      "value_cr": 1826.69,
+      "qoq_pct": 0.7,
+      "yoy_pct": 8.9
+     },
+     "ebitda": {
+      "value_cr": 195.49,
+      "qoq_pct": 31.0,
+      "yoy_pct": 25.2
+     },
+     "pbt": {
+      "value_cr": 231.62,
+      "qoq_pct": 0.0,
+      "yoy_pct": 10.6
+     },
+     "pat": {
+      "value_cr": 171.97,
+      "qoq_pct": -0.5,
+      "yoy_pct": 11.8
+     }
+    },
+    "ebitda_margin": {
+     "pct": 10.7,
+     "qoq_bps": 248,
+     "yoy_bps": 139
+    },
+    "warnings": [],
+    "source": "https://nsearchives.nseindia.in/corporate/xbrl/INTEGRATED_FILING_INDAS_1756048_11112026032721_WEB.xml"
+   },
+   "components": {
+    "M": 0.9,
+    "S": 0.0,
+    "T": null,
+    "N": null
+   },
+   "score": 0.525,
+   "reasons": [
+    "results"
+   ],
+   "bucket": "worth_a_read"
+  },
+  {
+   "id": "TATAPOWER-unclassified-2026-11-11",
+   "symbol": "TATAPOWER",
+   "name": "Tata Power Company Limited",
+   "sector": "Power",
+   "kind": "filing",
+   "category": "unclassified",
+   "at": "2026-11-11T13:45:36+05:30",
+   "title": "ESOP/ESOS/ESPS",
+   "summary": "Grant of 6488790 Options.",
+   "url": "https://nsearchives.nseindia.in/corporate/VPTPCL_11112026134527_ESOP_Grant_SE_letter_1126.pdf",
+   "related": [],
+   "components": {
+    "M": 0.05,
+    "S": 0.0,
+    "T": null,
+    "N": null
+   },
+   "score": 0.029,
+   "reasons": [
+    "unclassified"
+   ],
+   "bucket": "collapsed"
+  },
+  {
+   "id": "AUROPHARMA-earnings_call-2026-11-11",
+   "symbol": "AUROPHARMA",
+   "name": "Aurobindo Pharma Limited",
+   "sector": "Pharma",
+   "kind": "filing",
+   "category": "earnings_call",
+   "at": "2026-11-11T13:05:10+05:30",
+   "title": "Analysts/Institutional Investor Meet/Con. Call Updates",
+   "summary": "Transcript",
+   "url": "https://nsearchives.nseindia.in/corporate/AUROPHARMA_11112026130442_LtrToSEsTranscriptEarningCall11112026.pdf",
+   "related": [],
+   "components": {
+    "M": 0.25,
+    "S": 0.0,
+    "T": null,
+    "N": null
+   },
+   "score": 0.146,
+   "reasons": [
+    "earnings call"
+   ],
+   "bucket": "collapsed"
+  },
+  {
+   "id": "UNOMINDA-investor_meetings-2026-11-11",
+   "symbol": "UNOMINDA",
+   "name": "UNO Minda Limited",
+   "sector": "Auto parts",
+   "kind": "filing",
+   "category": "investor_meetings",
+   "at": "2026-11-11T12:47:06+05:30",
+   "title": "Analysts/Institutional Investor Meet/Con. Call Updates",
+   "summary": "Schedule of meet",
+   "url": "https://nsearchives.nseindia.in/corporate/MINDAIND1_11112026124637_Intimation11112026.pdf",
+   "related": [],
+   "components": {
+    "M": 0.15,
+    "S": 0.0,
+    "T": null,
+    "N": null
+   },
+   "score": 0.087,
+   "reasons": [
+    "investor meetings"
+   ],
+   "bucket": "collapsed"
+  },
+  {
+   "id": "AUROPHARMA-press_release-2026-11-11",
+   "symbol": "AUROPHARMA",
+   "name": "Aurobindo Pharma Limited",
+   "sector": "Pharma",
+   "kind": "filing",
+   "category": "press_release",
+   "at": "2026-11-11T11:29:06+05:30",
+   "title": "General Updates",
+   "summary": "Apitoria Unit 2, an API manufacturing facility of Apitoria Pharma Private Limited., a subsidiary of the Company, receives Establishment Inspection Report from US FDA with classification as Voluntary Action Indicated",
+   "url": "https://nsearchives.nseindia.in/corporate/AUROPHARMA_11112026112206_LtrToSEsApitoriaUnit2USFDA11112026.pdf",
+   "related": [
+    {
+     "title": "General Updates",
+     "url": "https://nsearchives.nseindia.in/corporate/AUROPHARMA_11112026203007_LtrToSEsLannetUSFDA11112026.pdf"
+    }
+   ],
+   "components": {
+    "M": 0.35,
+    "S": 0.0,
+    "T": null,
+    "N": null
+   },
+   "score": 0.204,
+   "reasons": [
+    "press release"
+   ],
+   "bucket": "collapsed"
+  },
+  {
+   "id": "TATAPOWER-investor_meetings-2026-11-11",
+   "symbol": "TATAPOWER",
+   "name": "Tata Power Company Limited",
+   "sector": "Power",
+   "kind": "filing",
+   "category": "investor_meetings",
+   "at": "2026-11-11T09:57:50+05:30",
+   "title": "Analysts/Institutional Investor Meet/Con. Call Updates",
+   "summary": "Schedule of meet",
+   "url": "https://nsearchives.nseindia.in/corporate/VPTPCL_11112026095652_Letter_to_SE_Analyst_Meet.pdf",
+   "related": [
+    {
+     "title": "Investor Presentation",
+     "url": "https://nsearchives.nseindia.in/corporate/VPTPCL_11112026173256_Analyst_Presentation_Q2_FY27.pdf"
+    }
+   ],
+   "components": {
+    "M": 0.15,
+    "S": 0.0,
+    "T": null,
+    "N": null
+   },
+   "score": 0.087,
+   "reasons": [
+    "investor meetings"
+   ],
+   "bucket": "collapsed"
+  },
+  {
+   "id": "TEXRAIL-press_release-2026-11-11",
+   "symbol": "TEXRAIL",
+   "name": "Texmaco Rail & Engineering Limited",
+   "sector": "Capital goods",
+   "kind": "filing",
+   "category": "press_release",
+   "at": "2026-11-11T09:57:08+05:30",
+   "title": "General Updates",
+   "summary": "Investor Presentation for the quarter and half year ended 30th September, 2026",
+   "url": "https://nsearchives.nseindia.in/corporate/TEXRAIL_11112026095643_EarningsPresentation11112026SIGNED.pdf",
+   "related": [],
+   "components": {
+    "M": 0.35,
+    "S": 0.0,
+    "T": null,
+    "N": null
+   },
+   "score": 0.204,
+   "reasons": [
+    "press release"
+   ],
+   "bucket": "collapsed"
+  },
+  {
+   "id": "ASHOKLEY-earnings_call-2026-11-10",
+   "symbol": "ASHOKLEY",
+   "name": "Ashok Leyland Limited",
+   "sector": "Autos",
+   "kind": "filing",
+   "category": "earnings_call",
+   "at": "2026-11-10T18:51:47+05:30",
+   "title": "Analysts/Institutional Investor Meet/Con. Call Updates",
+   "summary": "Schedule of Earnings Call",
+   "url": "https://nsearchives.nseindia.in/corporate/ASHOKLEYLAND_10112026185030_45Earningsconcallintimation_16Nov26PDF.pdf",
+   "related": [],
+   "components": {
+    "M": 0.25,
+    "S": 0.0,
+    "T": null,
+    "N": null
+   },
+   "score": 0.146,
+   "reasons": [
+    "earnings call"
+   ],
+   "bucket": "collapsed"
+  },
+  {
+   "id": "MEDANTA-investor_meetings-2026-11-10",
+   "symbol": "MEDANTA",
+   "name": "Global Health Limited",
+   "sector": "Healthcare",
+   "kind": "filing",
+   "category": "investor_meetings",
+   "at": "2026-11-10T16:06:39+05:30",
+   "title": "Analysts/Institutional Investor Meet/Con. Call Updates",
+   "summary": "Schedule of meet",
+   "url": "https://nsearchives.nseindia.in/corporate/MEDANTA21_10112026160241_GHLANALYSTSMEETNOVEMBER102026SIGNED.pdf",
+   "related": [
+    {
+     "title": "Analysts/Institutional Investor Meet/Con. Call Updates",
+     "url": "https://nsearchives.nseindia.in/corporate/MEDANTA21_10112026160354_GHLANALYSTSMEETNOVEMBER102026_SIGNED.pdf"
+    },
+    {
+     "title": "Analysts/Institutional Investor Meet/Con. Call Updates",
+     "url": "https://nsearchives.nseindia.in/corporate/MEDANTA21_10112026160417_GHLANALYSTSMEETNOVEMBER102026_SIGNED.pdf"
+    },
+    {
+     "title": "Analysts/Institutional Investor Meet/Con. Call Updates",
+     "url": "https://nsearchives.nseindia.in/corporate/MEDANTA21_10112026160319_GHLANALYSTSMEETNOVEMBER102026SIGNED.pdf"
+    }
+   ],
+   "components": {
+    "M": 0.15,
+    "S": 0.0,
+    "T": null,
+    "N": null
+   },
+   "score": 0.087,
+   "reasons": [
+    "investor meetings"
+   ],
+   "bucket": "collapsed"
+  },
+  {
+   "id": "DEEPAKFERT-M&A-2026-11-10",
+   "symbol": "DEEPAKFERT",
+   "name": "Deepak Fertilizers and Petrochemicals Corporation Limited",
+   "sector": "Chemicals",
+   "kind": "filing",
+   "category": "M&A",
+   "at": "2026-11-10T14:32:58+05:30",
+   "title": "Acquisition",
+   "summary": "Incorporation of new step-down wholly owned subsidiary of the Company.",
+   "url": "https://nsearchives.nseindia.in/corporate/DEEPAKFERT1_10112026143149_SE_-_Intimation_-_MNSL.pdf",
+   "related": [],
+   "components": {
+    "M": 0.85,
+    "S": 0.0,
+    "T": null,
+    "N": null
+   },
+   "score": 0.496,
+   "reasons": [
+    "M&A"
+   ],
+   "bucket": "worth_a_read"
+  },
+  {
+   "id": "NCC-earnings_call-2026-11-10",
+   "symbol": "NCC",
+   "name": "NCC Limited",
+   "sector": "Construction",
+   "kind": "filing",
+   "category": "earnings_call",
+   "at": "2026-11-10T12:13:22+05:30",
+   "title": "Analysts/Institutional Investor Meet/Con. Call Updates",
+   "summary": "Transcript",
+   "url": "https://nsearchives.nseindia.in/corporate/NCC_10112026121249_Transcript_10Nov26.pdf",
+   "related": [],
+   "components": {
+    "M": 0.25,
+    "S": 0.0,
+    "T": null,
+    "N": null
+   },
+   "score": 0.146,
+   "reasons": [
+    "earnings call"
+   ],
+   "bucket": "collapsed"
+  },
+  {
+   "id": "MEDANTA-earnings_call-2026-11-10",
+   "symbol": "MEDANTA",
+   "name": "Global Health Limited",
+   "sector": "Healthcare",
+   "kind": "filing",
+   "category": "earnings_call",
+   "at": "2026-11-10T11:41:17+05:30",
+   "title": "Analysts/Institutional Investor Meet/Con. Call Updates",
+   "summary": "Transcript",
+   "url": "https://nsearchives.nseindia.in/corporate/MEDANTA21_10112026114048_GHLTRANSCRIPTSINTNOV2026SIGNED.pdf",
+   "related": [],
+   "components": {
+    "M": 0.25,
+    "S": 0.0,
+    "T": null,
+    "N": null
+   },
+   "score": 0.146,
+   "reasons": [
+    "earnings call"
+   ],
+   "bucket": "collapsed"
+  },
+  {
+   "id": "THERMAX-management_change-2026-11-09",
+   "symbol": "THERMAX",
+   "name": "Thermax Limited",
+   "sector": "Capital goods",
+   "kind": "filing",
+   "category": "management_change",
+   "at": "2026-11-09T18:38:36+05:30",
+   "title": "Cessation",
+   "summary": "Cessation of Mr Harsh Mariwala as Non- Executive Independent Director of the company w.e.f. November 09, 2026.",
+   "url": "https://nsearchives.nseindia.in/corporate/THERMAXNSE_09112026183820_SEIntimation_HCM_Cessation.pdf",
+   "related": [],
+   "components": {
+    "M": 0.3,
+    "S": 0.0,
+    "T": null,
+    "N": null
+   },
+   "score": 0.175,
+   "reasons": [
+    "board / secretarial change"
+   ],
+   "bucket": "collapsed"
+  },
+  {
+   "id": "THERMAX-unclassified-2026-11-09",
+   "symbol": "THERMAX",
+   "name": "Thermax Limited",
+   "sector": "Capital goods",
+   "kind": "filing",
+   "category": "unclassified",
+   "at": "2026-11-09T18:37:00+05:30",
+   "title": "Retirement",
+   "summary": "Retirement",
+   "url": "https://nsearchives.nseindia.in/corporate/THERMAXNSE_09112026183642_SEIntimation_HCM_Cessation.pdf",
+   "related": [],
+   "components": {
+    "M": 0.05,
+    "S": 0.0,
+    "T": null,
+    "N": null
+   },
+   "score": 0.029,
+   "reasons": [
+    "unclassified"
+   ],
+   "bucket": "collapsed"
+  },
+  {
+   "id": "AUROPHARMA-move-2026-11-09",
+   "symbol": "AUROPHARMA",
+   "name": "Aurobindo Pharma Limited",
+   "sector": "Pharma",
+   "kind": "move",
+   "category": "price_volume",
+   "at": "2026-11-09T15:30:00+05:30",
+   "title": "Price / volume move",
+   "summary": "volume 2.3× its 20-day average",
+   "url": null,
+   "related": [],
+   "move": {
+    "volume_multiple": 2.28,
+    "return_pct": 3.07
+   },
+   "components": {
+    "M": 0.35,
+    "S": 0.57,
+    "T": null,
+    "N": null
+   },
+   "score": 0.442,
+   "reasons": [
+    "volume 2.3× its 20-day average"
+   ],
+   "bucket": "worth_a_read"
+  },
+  {
+   "id": "NCC-move-2026-11-09",
+   "symbol": "NCC",
+   "name": "NCC Limited",
+   "sector": "Construction",
+   "kind": "move",
+   "category": "price_volume",
+   "at": "2026-11-09T15:30:00+05:30",
+   "title": "Price / volume move",
+   "summary": "volume 2.2× its 20-day average; price +6.6% on the day",
+   "url": null,
+   "related": [],
+   "move": {
+    "volume_multiple": 2.2,
+    "return_pct": 6.59
+   },
+   "components": {
+    "M": 0.35,
+    "S": 0.66,
+    "T": null,
+    "N": null
+   },
+   "score": 0.479,
+   "reasons": [
+    "volume 2.2× its 20-day average",
+    "price +6.6% on the day"
+   ],
+   "bucket": "worth_a_read"
+  },
+  {
+   "id": "JUBLFOOD-move-2026-11-09",
+   "symbol": "JUBLFOOD",
+   "name": "Jubilant Foodworks Limited",
+   "sector": "Consumer",
+   "kind": "move",
+   "category": "price_volume",
+   "at": "2026-11-09T15:30:00+05:30",
+   "title": "Price / volume move",
+   "summary": "volume 3.6× its 20-day average; price -6.3% on the day",
+   "url": null,
+   "related": [],
+   "move": {
+    "volume_multiple": 3.63,
+    "return_pct": -6.28
+   },
+   "components": {
+    "M": 0.35,
+    "S": 0.91,
+    "T": null,
+    "N": null
+   },
+   "score": 0.582,
+   "reasons": [
+    "volume 3.6× its 20-day average",
+    "price -6.3% on the day"
+   ],
+   "bucket": "worth_a_read"
+  },
+  {
+   "id": "VOLTAS-move-2026-11-09",
+   "symbol": "VOLTAS",
+   "name": "Voltas Limited",
+   "sector": "Consumer durables",
+   "kind": "move",
+   "category": "price_volume",
+   "at": "2026-11-09T15:30:00+05:30",
+   "title": "Price / volume move",
+   "summary": "volume 2.9× its 20-day average",
+   "url": null,
+   "related": [],
+   "move": {
+    "volume_multiple": 2.89,
+    "return_pct": -0.81
+   },
+   "components": {
+    "M": 0.35,
+    "S": 0.72,
+    "T": null,
+    "N": null
+   },
+   "score": 0.505,
+   "reasons": [
+    "volume 2.9× its 20-day average"
+   ],
+   "bucket": "worth_a_read"
+  },
+  {
+   "id": "TATASTEEL-move-2026-11-09",
+   "symbol": "TATASTEEL",
+   "name": "Tata Steel Limited",
+   "sector": "Metals",
+   "kind": "move",
+   "category": "price_volume",
+   "at": "2026-11-09T15:30:00+05:30",
+   "title": "Price / volume move",
+   "summary": "volume 2.2× its 20-day average",
+   "url": null,
+   "related": [],
+   "move": {
+    "volume_multiple": 2.24,
+    "return_pct": -0.78
+   },
+   "components": {
+    "M": 0.35,
+    "S": 0.56,
+    "T": null,
+    "N": null
+   },
+   "score": 0.438,
+   "reasons": [
+    "volume 2.2× its 20-day average"
+   ],
+   "bucket": "worth_a_read"
+  },
+  {
+   "id": "AUROPHARMA-investor_meetings-2026-11-09",
+   "symbol": "AUROPHARMA",
+   "name": "Aurobindo Pharma Limited",
+   "sector": "Pharma",
+   "kind": "filing",
+   "category": "investor_meetings",
+   "at": "2026-11-09T14:46:39+05:30",
+   "title": "Analysts/Institutional Investor Meet/Con. Call Updates",
+   "summary": "Schedule of meet",
+   "url": "https://nsearchives.nseindia.in/corporate/AUROPHARMA_09112026144557_LtrToSEsInvestorMeetJM16112026JMfin09112026.pdf",
+   "related": [
+    {
+     "title": "Analysts/Institutional Investor Meet/Con. Call Updates",
+     "url": "https://nsearchives.nseindia.in/corporate/AUROPHARMA_09112026144815_LtrToSEsInvestorMeetAvendus17112026JMfin09112026.pdf"
+    }
+   ],
+   "components": {
+    "M": 0.15,
+    "S": 0.0,
+    "T": null,
+    "N": null
+   },
+   "score": 0.087,
+   "reasons": [
+    "investor meetings"
+   ],
+   "bucket": "collapsed"
+  },
+  {
+   "id": "TATASTEEL-unclassified-2026-11-09",
+   "symbol": "TATASTEEL",
+   "name": "Tata Steel Limited",
+   "sector": "Metals",
+   "kind": "filing",
+   "category": "unclassified",
+   "at": "2026-11-09T14:16:12+05:30",
+   "title": "Copy of Newspaper Publication",
+   "summary": "Newspaper Advertisement Disclosure under Regulation 30 of the Securities and Exchange Board of India (Listing Obligations and Disclosure Requirements) Regulations, 2015 ( SEBI Listing Regulations )",
+   "url": "https://nsearchives.nseindia.in/corporate/NIDHIFADNAVIS_09112026141442_BSENSE_Signed.pdf",
+   "related": [],
+   "components": {
+    "M": 0.05,
+    "S": 0.0,
+    "T": null,
+    "N": null
+   },
+   "score": 0.029,
+   "reasons": [
+    "unclassified"
+   ],
+   "bucket": "collapsed"
+  },
+  {
+   "id": "SUDARSCHEM-unclassified-2026-11-09",
+   "symbol": "SUDARSCHEM",
+   "name": "Sudarshan Chemical Industries Limited",
+   "sector": "Chemicals",
+   "kind": "filing",
+   "category": "unclassified",
+   "at": "2026-11-09T10:24:25+05:30",
+   "title": "Copy of Newspaper Publication",
+   "summary": "Copy of Newspaper Publication",
+   "url": "https://nsearchives.nseindia.in/corporate/SUDARSCHEM_09112026102418_Q2FY27NewspaperAdvtSigned.pdf",
+   "related": [],
+   "components": {
+    "M": 0.05,
+    "S": 0.0,
+    "T": null,
+    "N": null
+   },
+   "score": 0.029,
+   "reasons": [
+    "unclassified"
+   ],
+   "bucket": "collapsed"
+  },
+  {
+   "id": "TATAPOWER-press_release-2026-11-07",
+   "symbol": "TATAPOWER",
+   "name": "Tata Power Company Limited",
+   "sector": "Power",
+   "kind": "filing",
+   "category": "press_release",
+   "at": "2026-11-07T18:40:29+05:30",
+   "title": "General Updates",
+   "summary": "General Updates",
+   "url": "https://nsearchives.nseindia.in/corporate/VPTPCL_07112026184018_reg_30_07-11-2026.pdf",
+   "related": [],
+   "components": {
+    "M": 0.35,
+    "S": 0.0,
+    "T": null,
+    "N": null
+   },
+   "score": 0.204,
+   "reasons": [
+    "press release"
+   ],
+   "bucket": "collapsed"
+  },
+  {
+   "id": "TATASTEEL-earnings_call-2026-11-07",
+   "symbol": "TATASTEEL",
+   "name": "Tata Steel Limited",
+   "sector": "Metals",
+   "kind": "filing",
+   "category": "earnings_call",
+   "at": "2026-11-07T16:58:42+05:30",
+   "title": "Analysts/Institutional Investor Meet/Con. Call Updates",
+   "summary": "Link of Recording",
+   "url": "https://nsearchives.nseindia.in/corporate/SAKSHIKAPUR_07112026165801_BSENSE_Signed.pdf",
+   "related": [],
+   "components": {
+    "M": 0.25,
+    "S": 0.0,
+    "T": null,
+    "N": null
+   },
+   "score": 0.146,
+   "reasons": [
+    "earnings call"
+   ],
+   "bucket": "collapsed"
+  },
+  {
+   "id": "TATASTEEL-M&A-2026-11-07",
+   "symbol": "TATASTEEL",
+   "name": "Tata Steel Limited",
+   "sector": "Metals",
+   "kind": "filing",
+   "category": "M&A",
+   "at": "2026-11-07T15:45:33+05:30",
+   "title": "Acquisition",
+   "summary": "Acquisition of 38,222 equity shares of face value &#8377;10/- each in Creative Port Development Private Limited ( CPDPL ) due to conversion of 25,10,830 Optionally Convertible Redeemable Preference Shares of CPDPL, as per terms of issue",
+   "url": "https://nsearchives.nseindia.in/corporate/NIDHIFADNAVIS_07112026154336_NSEBSE_CPDPL.pdf",
+   "related": [],
+   "components": {
+    "M": 0.85,
+    "S": 0.0,
+    "T": null,
+    "N": null
+   },
+   "score": 0.496,
+   "reasons": [
+    "M&A"
+   ],
+   "bucket": "worth_a_read"
+  },
+  {
+   "id": "KEC-unclassified-2026-11-07",
+   "symbol": "KEC",
+   "name": "KEC International Limited",
+   "sector": "Transmission",
+   "kind": "filing",
+   "category": "unclassified",
+   "at": "2026-11-07T14:39:51+05:30",
+   "title": "Copy of Newspaper Publication",
+   "summary": "Copy of Newspaper Publication on Notice of Postal Ballot and information related to remote e-voting",
+   "url": "https://nsearchives.nseindia.in/corporate/KEC_07112026143922_SEIntimation_Newspaper.pdf",
+   "related": [],
+   "components": {
+    "M": 0.05,
+    "S": 0.0,
+    "T": null,
+    "N": null
+   },
+   "score": 0.029,
+   "reasons": [
+    "unclassified"
+   ],
+   "bucket": "collapsed"
+  },
+  {
+   "id": "JUBLFOOD-unclassified-2026-11-07",
+   "symbol": "JUBLFOOD",
+   "name": "Jubilant Foodworks Limited",
+   "sector": "Consumer",
+   "kind": "filing",
+   "category": "unclassified",
+   "at": "2026-11-07T13:44:40+05:30",
+   "title": "Copy of Newspaper Publication",
+   "summary": "Copy of Newspaper Publication",
+   "url": "https://nsearchives.nseindia.in/corporate/JUBLFOOD_07112026134253_SEintimationforNewspaperPublication06112026.pdf",
+   "related": [],
+   "components": {
+    "M": 0.05,
+    "S": 0.0,
+    "T": null,
+    "N": null
+   },
+   "score": 0.029,
+   "reasons": [
+    "unclassified"
+   ],
+   "bucket": "collapsed"
+  },
+  {
+   "id": "TATASTEEL-investor_meetings-2026-11-07",
+   "symbol": "TATASTEEL",
+   "name": "Tata Steel Limited",
+   "sector": "Metals",
+   "kind": "filing",
+   "category": "investor_meetings",
+   "at": "2026-11-07T13:23:05+05:30",
+   "title": "Investor Presentation",
+   "summary": "Investor Presentation",
+   "url": "https://nsearchives.nseindia.in/corporate/NIDHIFADNAVIS_07112026132213_BSENSEPRANDIR.pdf",
+   "related": [],
+   "components": {
+    "M": 0.15,
+    "S": 0.0,
+    "T": null,
+    "N": null
+   },
+   "score": 0.087,
+   "reasons": [
+    "investor meetings"
+   ],
+   "bucket": "collapsed"
+  },
+  {
+   "id": "TATASTEEL-press_release-2026-11-07",
+   "symbol": "TATASTEEL",
+   "name": "Tata Steel Limited",
+   "sector": "Metals",
+   "kind": "filing",
+   "category": "press_release",
+   "at": "2026-11-07T13:21:16+05:30",
+   "title": "Press Release",
+   "summary": "A press release dated November 07, 2026, titled 'Tata Steel reports Consolidated EBITDA of Rs 10,665 crores for the quarter and Rs 20,035 crores for the half year ended September 30, 2026'.",
+   "url": "https://nsearchives.nseindia.in/corporate/NIDHIFADNAVIS_07112026132017_BSENSEPRANDIR.pdf",
+   "related": [
+    {
+     "title": "General Updates",
+     "url": "https://nsearchives.nseindia.in/corporate/NIDHIFADNAVIS_07112026134209_Outcome_of_BM.pdf"
+    }
+   ],
+   "components": {
+    "M": 0.35,
+    "S": 0.0,
+    "T": null,
+    "N": null
+   },
+   "score": 0.204,
+   "reasons": [
+    "press release"
+   ],
+   "bucket": "collapsed"
+  },
+  {
+   "id": "TATASTEEL-unclassified-2026-11-07",
+   "symbol": "TATASTEEL",
+   "name": "Tata Steel Limited",
+   "sector": "Metals",
+   "kind": "filing",
+   "category": "unclassified",
+   "at": "2026-11-07T13:17:42+05:30",
+   "title": "Retirement",
+   "summary": "Retirement of Mr. Noel Naval Tata as the Non-Executive, Non-Independent Director and Vice Chairman of the Board",
+   "url": "https://nsearchives.nseindia.in/corporate/NIDHIFADNAVIS_07112026131701_BOARDOUTCOME-NOV7.pdf",
+   "related": [
+    {
+     "title": "Outcome of Board Meeting",
+     "url": "https://nsearchives.nseindia.in/corporate/NIDHIFADNAVIS_07112026134722_Outcome_of_BM.pdf"
+    }
+   ],
+   "components": {
+    "M": 0.05,
+    "S": 0.0,
+    "T": null,
+    "N": null
+   },
+   "score": 0.029,
+   "reasons": [
+    "unclassified"
+   ],
+   "bucket": "collapsed"
+  },
+  {
+   "id": "TATASTEEL-results-2026-11-07",
+   "symbol": "TATASTEEL",
+   "name": "Tata Steel Limited",
+   "sector": "Metals",
+   "kind": "filing",
+   "category": "results",
+   "at": "2026-11-07T13:06:33+05:30",
+   "title": "Outcome of Board Meeting",
+   "summary": "Tata Steel Limited has submitted to the Exchange, the financial results for the quarter and half year ended September 30, 2026.",
+   "url": "https://nsearchives.nseindia.in/corporate/NIDHIFADNAVIS_07112026130531_BOARDOUTCOME-NOV7.pdf",
+   "related": [],
+   "results": {
+    "period": "Q2FY27",
+    "basis": "consolidated",
+    "metrics": {
+     "revenue": {
+      "value_cr": 65436.24,
+      "qoq_pct": 7.6,
+      "yoy_pct": 11.5
+     },
+     "ebitda": {
+      "value_cr": 10533.07,
+      "qoq_pct": 13.7,
+      "yoy_pct": 18.4
+     },
+     "pbt": {
+      "value_cr": 5342.88,
+      "qoq_pct": 42.8,
+      "yoy_pct": 28.1
+     },
+     "pat": {
+      "value_cr": 3699.59,
+      "qoq_pct": 55.1,
+      "yoy_pct": 16.2
+     }
+    },
+    "ebitda_margin": {
+     "pct": 16.1,
+     "qoq_bps": 86,
+     "yoy_bps": 94
+    },
+    "warnings": [
+     "exceptional items of ₹348.68 cr this quarter"
+    ],
+    "source": "https://nsearchives.nseindia.in/corporate/xbrl/INTEGRATED_FILING_INDAS_1755442_07112026053333_WEB.xml"
+   },
+   "components": {
+    "M": 0.9,
+    "S": 0.0,
+    "T": null,
+    "N": null
+   },
+   "score": 0.525,
+   "reasons": [
+    "results"
+   ],
+   "bucket": "worth_a_read"
+  },
+  {
+   "id": "VOLTAS-earnings_call-2026-11-06",
+   "symbol": "VOLTAS",
+   "name": "Voltas Limited",
+   "sector": "Consumer durables",
+   "kind": "filing",
+   "category": "earnings_call",
+   "at": "2026-11-06T21:14:59+05:30",
+   "title": "Analysts/Institutional Investor Meet/Con. Call Updates",
+   "summary": "Link of Recording",
+   "url": "https://nsearchives.nseindia.in/corporate/VOLTAS_RB_06112026211403_SEIntimationAudioRecording.pdf",
+   "related": [],
+   "components": {
+    "M": 0.25,
+    "S": 0.0,
+    "T": null,
+    "N": null
+   },
+   "score": 0.146,
+   "reasons": [
+    "earnings call"
+   ],
+   "bucket": "collapsed"
+  },
+  {
+   "id": "LUPIN-earnings_call-2026-11-06",
+   "symbol": "LUPIN",
+   "name": "Lupin Limited",
+   "sector": "Pharma",
+   "kind": "filing",
+   "category": "earnings_call",
+   "at": "2026-11-06T20:38:37+05:30",
+   "title": "Analysts/Institutional Investor Meet/Con. Call Updates",
+   "summary": "Transcript of Q2 FY2027 Earnings Conference Call.",
+   "url": "https://nsearchives.nseindia.in/corporate/Lupin2_06112026203743_SE_Intimation_of_Investor_Meet_Transcript.pdf",
+   "related": [],
+   "components": {
+    "M": 0.25,
+    "S": 0.0,
+    "T": null,
+    "N": null
+   },
+   "score": 0.146,
+   "reasons": [
+    "earnings call"
+   ],
+   "bucket": "collapsed"
+  },
+  {
+   "id": "DEEPAKFERT-investor_meetings-2026-11-06",
+   "symbol": "DEEPAKFERT",
+   "name": "Deepak Fertilizers and Petrochemicals Corporation Limited",
+   "sector": "Chemicals",
+   "kind": "filing",
+   "category": "investor_meetings",
+   "at": "2026-11-06T19:15:07+05:30",
+   "title": "Analysts/Institutional Investor Meet/Con. Call Updates",
+   "summary": "Schedule of meet",
+   "url": "https://nsearchives.nseindia.in/corporate/DEEPAKFERT1_06112026191353_IntimationEarningsCall.pdf",
+   "related": [],
+   "components": {
+    "M": 0.15,
+    "S": 0.0,
+    "T": null,
+    "N": null
+   },
+   "score": 0.087,
+   "reasons": [
+    "investor meetings"
+   ],
+   "bucket": "collapsed"
+  },
+  {
+   "id": "JUBLFOOD-earnings_call-2026-11-06",
+   "symbol": "JUBLFOOD",
+   "name": "Jubilant Foodworks Limited",
+   "sector": "Consumer",
+   "kind": "filing",
+   "category": "earnings_call",
+   "at": "2026-11-06T18:27:50+05:30",
+   "title": "Analysts/Institutional Investor Meet/Con. Call Updates",
+   "summary": "Audio recording of Conference Call",
+   "url": "https://nsearchives.nseindia.in/corporate/JUBLFOOD_06112026182730_CoveringAudioRecordingQ2FY26.pdf",
+   "related": [],
+   "components": {
+    "M": 0.25,
+    "S": 0.0,
+    "T": null,
+    "N": null
+   },
+   "score": 0.146,
+   "reasons": [
+    "earnings call"
+   ],
+   "bucket": "collapsed"
+  },
+  {
+   "id": "KEC-agm_egm-2026-11-06",
+   "symbol": "KEC",
+   "name": "KEC International Limited",
+   "sector": "Transmission",
+   "kind": "filing",
+   "category": "agm_egm",
+   "at": "2026-11-06T18:20:00+05:30",
+   "title": "Shareholders meeting",
+   "summary": "The Notice of Postal Ballot is enclosed herewith",
+   "url": "https://nsearchives.nseindia.in/corporate/KEC_06112026181927_SEPostalBallotIntimation.pdf",
+   "related": [],
+   "components": {
+    "M": 0.15,
+    "S": 0.0,
+    "T": null,
+    "N": null
+   },
+   "score": 0.087,
+   "reasons": [
+    "agm egm"
+   ],
+   "bucket": "collapsed"
+  },
+  {
+   "id": "VOLTAS-investor_meetings-2026-11-06",
+   "symbol": "VOLTAS",
+   "name": "Voltas Limited",
+   "sector": "Consumer durables",
+   "kind": "filing",
+   "category": "investor_meetings",
+   "at": "2026-11-06T18:09:56+05:30",
+   "title": "Investor Presentation",
+   "summary": "Investor Presentation",
+   "url": "https://nsearchives.nseindia.in/corporate/VOLTAS_RB_06112026180943_SEIntimationsigned.pdf",
+   "related": [],
+   "components": {
+    "M": 0.15,
+    "S": 0.0,
+    "T": null,
+    "N": null
+   },
+   "score": 0.087,
+   "reasons": [
+    "investor meetings"
+   ],
+   "bucket": "collapsed"
+  },
+  {
+   "id": "VOLTAS-press_release-2026-11-06",
+   "symbol": "VOLTAS",
+   "name": "Voltas Limited",
+   "sector": "Consumer durables",
+   "kind": "filing",
+   "category": "press_release",
+   "at": "2026-11-06T17:47:42+05:30",
+   "title": "Press Release",
+   "summary": "A press release dated November 06, 2026, titled \"Voltas Delivers Steady Q2 FY27 Performance, on the back of market leadership and Execution Excellence\".",
+   "url": "https://nsearchives.nseindia.in/corporate/VOLTAS_RB_06112026174401_01_Financial_Results_signed.pdf",
+   "related": [],
+   "components": {
+    "M": 0.35,
+    "S": 0.0,
+    "T": null,
+    "N": null
+   },
+   "score": 0.204,
+   "reasons": [
+    "press release"
+   ],
+   "bucket": "collapsed"
+  },
+  {
+   "id": "VOLTAS-management_change-2026-11-06",
+   "symbol": "VOLTAS",
+   "name": "Voltas Limited",
+   "sector": "Consumer durables",
+   "kind": "filing",
+   "category": "management_change",
+   "at": "2026-11-06T17:31:30+05:30",
+   "title": "Appointment",
+   "summary": "Appointment of Mr Sunil Alaric DSouza as Chairman of the company w.e.f. November 12, 2026.",
+   "url": "https://nsearchives.nseindia.in/corporate/VOLTAS_RB_06112026171534_02SE_Directorssigned.pdf",
+   "related": [
+    {
+     "title": "Appointment",
+     "url": "https://nsearchives.nseindia.in/corporate/VOLTAS_RB_06112026172057_02SE_Directorssigned.pdf"
+    },
+    {
+     "title": "Appointment",
+     "url": "https://nsearchives.nseindia.in/corporate/VOLTAS_RB_06112026171832_02SE_Directorssigned.pdf"
+    },
+    {
+     "title": "Retirement",
+     "url": "https://nsearchives.nseindia.in/corporate/VOLTAS_RB_06112026171132_02SE_Directorssigned.pdf"
+    }
+   ],
+   "components": {
+    "M": 0.85,
+    "S": 0.5,
+    "T": null,
+    "N": null
+   },
+   "score": 0.704,
+   "reasons": [
+    "top-management change"
+   ],
+   "bucket": "needs_you"
+  },
+  {
+   "id": "VOLTAS-unclassified-2026-11-06",
+   "symbol": "VOLTAS",
+   "name": "Voltas Limited",
+   "sector": "Consumer durables",
+   "kind": "filing",
+   "category": "unclassified",
+   "at": "2026-11-06T17:08:25+05:30",
+   "title": "Change in Auditors",
+   "summary": "Change in Auditors of the company.",
+   "url": "https://nsearchives.nseindia.in/corporate/VOLTAS_RB_06112026170542_03_Auditor_appointment_signed.pdf",
+   "related": [
+    {
+     "title": "Retirement",
+     "url": "https://nsearchives.nseindia.in/corporate/VOLTAS_RB_06112026171317_02SE_Directorssigned.pdf"
+    }
+   ],
+   "components": {
+    "M": 0.05,
+    "S": 0.0,
+    "T": null,
+    "N": null
+   },
+   "score": 0.029,
+   "reasons": [
+    "unclassified"
+   ],
+   "bucket": "collapsed"
+  },
+  {
+   "id": "VOLTAS-results-2026-11-06",
+   "symbol": "VOLTAS",
+   "name": "Voltas Limited",
+   "sector": "Consumer durables",
+   "kind": "filing",
+   "category": "results",
+   "at": "2026-11-06T16:59:40+05:30",
+   "title": "Outcome of Board Meeting",
+   "summary": "Voltas Limited has submitted to the Exchange, the financial results for the period ended September 30, 2026.",
+   "url": "https://nsearchives.nseindia.in/corporate/VOLTAS_RB_06112026165511_01_Financial_Results_signed.pdf",
+   "related": [
+    {
+     "title": "Outcome of Board Meeting",
+     "url": "https://nsearchives.nseindia.in/corporate/VOLTAS_RB_06112026165629_03_Auditor_appointment_signed.pdf"
+    },
+    {
+     "title": "Outcome of Board Meeting",
+     "url": "https://nsearchives.nseindia.in/corporate/VOLTAS_RB_06112026165554_02SE_Directorssigned.pdf"
+    }
+   ],
+   "results": {
+    "period": "Q2FY27",
+    "basis": "consolidated",
+    "metrics": {
+     "revenue": {
+      "value_cr": 2706.57,
+      "qoq_pct": -42.1,
+      "yoy_pct": 15.3
+     },
+     "ebitda": {
+      "value_cr": 127.86,
+      "qoq_pct": -51.8,
+      "yoy_pct": 81.6
+     },
+     "pbt": {
+      "value_cr": 124.03,
+      "qoq_pct": -61.6,
+      "yoy_pct": 36.8
+     },
+     "pat": {
+      "value_cr": 47.71,
+      "qoq_pct": -77.6,
+      "yoy_pct": 51.5
+     }
+    },
+    "ebitda_margin": {
+     "pct": 4.72,
+     "qoq_bps": -96,
+     "yoy_bps": 172
+    },
+    "warnings": [],
+    "source": "https://nsearchives.nseindia.in/corporate/xbrl/INTEGRATED_FILING_INDAS_1755186_06112026085901_WEB.xml"
+   },
+   "components": {
+    "M": 0.9,
+    "S": 0.86,
+    "T": null,
+    "N": null
+   },
+   "score": 0.883,
+   "reasons": [
+    "EBITDA margin +172 bps YoY",
+    "PAT +51.5% YoY"
+   ],
+   "bucket": "needs_you"
+  },
+  {
+   "id": "JUBLFOOD-management_change-2026-11-06",
+   "symbol": "JUBLFOOD",
+   "name": "Jubilant Foodworks Limited",
+   "sector": "Consumer",
+   "kind": "filing",
+   "category": "management_change",
+   "at": "2026-11-06T16:58:52+05:30",
+   "title": "Resignation",
+   "summary": "An update on the change in date of resignation of the Company Secretary",
+   "url": "https://nsearchives.nseindia.in/corporate/JUBLFOOD_06112026165837_SEIntimationchangeindateofCS.pdf",
+   "related": [
+    {
+     "title": "Resignation of Director/KMP/SMP",
+     "url": "https://nsearchives.nseindia.in/corporate/JUBLFOOD_ROID_104150_KMP_Doc.zip"
+    }
+   ],
+   "components": {
+    "M": 0.3,
+    "S": 0.0,
+    "T": null,
+    "N": null
+   },
+   "score": 0.175,
+   "reasons": [
+    "board / secretarial change"
+   ],
+   "bucket": "collapsed"
+  },
+  {
+   "id": "NCC-earnings_call-2026-11-06",
+   "symbol": "NCC",
+   "name": "NCC Limited",
+   "sector": "Construction",
+   "kind": "filing",
+   "category": "earnings_call",
+   "at": "2026-11-06T16:06:54+05:30",
+   "title": "Analysts/Institutional Investor Meet/Con. Call Updates",
+   "summary": "Link of Recording of the Conference call held today.",
+   "url": "https://nsearchives.nseindia.in/corporate/NCC_06112026160507_Audio_Recording_of_the_Coference_call.pdf",
+   "related": [],
+   "components": {
+    "M": 0.25,
+    "S": 0.0,
+    "T": null,
+    "N": null
+   },
+   "score": 0.146,
+   "reasons": [
+    "earnings call"
+   ],
+   "bucket": "collapsed"
+  },
+  {
+   "id": "KEC-earnings_call-2026-11-06",
+   "symbol": "KEC",
+   "name": "KEC International Limited",
+   "sector": "Transmission",
+   "kind": "filing",
+   "category": "earnings_call",
+   "at": "2026-11-06T15:52:03+05:30",
+   "title": "Analysts/Institutional Investor Meet/Con. Call Updates",
+   "summary": "Transcript of the Earnings Conference Call held on Tuesday, November 03, 2026, for the Unaudited Financial Results of the Company for the quarter and half year ended September 30, 2026, has been made available on the Company's website.",
+   "url": "https://nsearchives.nseindia.in/corporate/KEC_06112026155134_SE_Intimation_Transcript.pdf",
+   "related": [],
+   "components": {
+    "M": 0.25,
+    "S": 0.0,
+    "T": null,
+    "N": null
+   },
+   "score": 0.146,
+   "reasons": [
+    "earnings call"
+   ],
+   "bucket": "collapsed"
+  },
+  {
+   "id": "M&M-M&A-2026-11-06",
+   "symbol": "M&M",
+   "name": "Mahindra & Mahindra Limited",
+   "sector": "Autos",
+   "kind": "filing",
+   "category": "M&A",
+   "at": "2026-11-06T15:36:06+05:30",
+   "title": "Acquisition",
+   "summary": "Acquisition",
+   "url": "https://nsearchives.nseindia.in/corporate/AmitDodani_06112026153559_SEIntimationSMLRightsIssue.pdf",
+   "related": [],
+   "components": {
+    "M": 0.85,
+    "S": 0.0,
+    "T": null,
+    "N": null
+   },
+   "score": 0.496,
+   "reasons": [
+    "M&A"
+   ],
+   "bucket": "worth_a_read"
+  },
+  {
+   "id": "M&M-move-2026-11-06",
+   "symbol": "M&M",
+   "name": "Mahindra & Mahindra Limited",
+   "sector": "Autos",
+   "kind": "move",
+   "category": "price_volume",
+   "at": "2026-11-06T15:30:00+05:30",
+   "title": "Price / volume move",
+   "summary": "volume 3.3× its 20-day average; price +5.1% on the day",
+   "url": null,
+   "related": [],
+   "move": {
+    "volume_multiple": 3.26,
+    "return_pct": 5.11
+   },
+   "components": {
+    "M": 0.35,
+    "S": 0.81,
+    "T": null,
+    "N": null
+   },
+   "score": 0.544,
+   "reasons": [
+    "volume 3.3× its 20-day average",
+    "price +5.1% on the day"
+   ],
+   "bucket": "worth_a_read"
+  },
+  {
+   "id": "UNOMINDA-move-2026-11-06",
+   "symbol": "UNOMINDA",
+   "name": "UNO Minda Limited",
+   "sector": "Auto parts",
+   "kind": "move",
+   "category": "price_volume",
+   "at": "2026-11-06T15:30:00+05:30",
+   "title": "Price / volume move",
+   "summary": "volume 3.0× its 20-day average",
+   "url": null,
+   "related": [],
+   "move": {
+    "volume_multiple": 2.95,
+    "return_pct": -0.67
+   },
+   "components": {
+    "M": 0.35,
+    "S": 0.74,
+    "T": null,
+    "N": null
+   },
+   "score": 0.511,
+   "reasons": [
+    "volume 3.0× its 20-day average"
+   ],
+   "bucket": "worth_a_read"
+  },
+  {
+   "id": "THERMAX-move-2026-11-06",
+   "symbol": "THERMAX",
+   "name": "Thermax Limited",
+   "sector": "Capital goods",
+   "kind": "move",
+   "category": "price_volume",
+   "at": "2026-11-06T15:30:00+05:30",
+   "title": "Price / volume move",
+   "summary": "volume 17.3× its 20-day average; price -17.3% on the day",
+   "url": null,
+   "related": [],
+   "move": {
+    "volume_multiple": 17.28,
+    "return_pct": -17.27
+   },
+   "components": {
+    "M": 0.35,
+    "S": 1,
+    "T": null,
+    "N": null
+   },
+   "score": 0.621,
+   "reasons": [
+    "volume 17.3× its 20-day average",
+    "price -17.3% on the day"
+   ],
+   "bucket": "worth_a_read"
+  },
+  {
+   "id": "NCC-move-2026-11-06",
+   "symbol": "NCC",
+   "name": "NCC Limited",
+   "sector": "Construction",
+   "kind": "move",
+   "category": "price_volume",
+   "at": "2026-11-06T15:30:00+05:30",
+   "title": "Price / volume move",
+   "summary": "volume 2.2× its 20-day average",
+   "url": null,
+   "related": [],
+   "move": {
+    "volume_multiple": 2.19,
+    "return_pct": 0.33
+   },
+   "components": {
+    "M": 0.35,
+    "S": 0.55,
+    "T": null,
+    "N": null
+   },
+   "score": 0.432,
+   "reasons": [
+    "volume 2.2× its 20-day average"
+   ],
+   "bucket": "worth_a_read"
+  },
+  {
+   "id": "TATAPOWER-move-2026-11-06",
+   "symbol": "TATAPOWER",
+   "name": "Tata Power Company Limited",
+   "sector": "Power",
+   "kind": "move",
+   "category": "price_volume",
+   "at": "2026-11-06T15:30:00+05:30",
+   "title": "Price / volume move",
+   "summary": "volume 2.3× its 20-day average",
+   "url": null,
+   "related": [],
+   "move": {
+    "volume_multiple": 2.33,
+    "return_pct": -3.31
+   },
+   "components": {
+    "M": 0.35,
+    "S": 0.58,
+    "T": null,
+    "N": null
+   },
+   "score": 0.447,
+   "reasons": [
+    "volume 2.3× its 20-day average"
+   ],
+   "bucket": "worth_a_read"
+  },
+  {
+   "id": "SUDARSCHEM-move-2026-11-06",
+   "symbol": "SUDARSCHEM",
+   "name": "Sudarshan Chemical Industries Limited",
+   "sector": "Chemicals",
+   "kind": "move",
+   "category": "price_volume",
+   "at": "2026-11-06T15:30:00+05:30",
+   "title": "Price / volume move",
+   "summary": "volume 3.5× its 20-day average",
+   "url": null,
+   "related": [],
+   "move": {
+    "volume_multiple": 3.54,
+    "return_pct": -1.7
+   },
+   "components": {
+    "M": 0.35,
+    "S": 0.89,
+    "T": null,
+    "N": null
+   },
+   "score": 0.573,
+   "reasons": [
+    "volume 3.5× its 20-day average"
+   ],
+   "bucket": "worth_a_read"
+  },
+  {
+   "id": "JUBLFOOD-press_release-2026-11-06",
+   "symbol": "JUBLFOOD",
+   "name": "Jubilant Foodworks Limited",
+   "sector": "Consumer",
+   "kind": "filing",
+   "category": "press_release",
+   "at": "2026-11-06T15:26:58+05:30",
+   "title": "General Updates",
+   "summary": "Letter to Shareholders on Financial Results",
+   "url": "https://nsearchives.nseindia.in/corporate/JUBLFOOD_06112026152646_LettertoShareholders.pdf",
+   "related": [],
+   "components": {
+    "M": 0.35,
+    "S": 0.0,
+    "T": null,
+    "N": null
+   },
+   "score": 0.204,
+   "reasons": [
+    "press release"
+   ],
+   "bucket": "collapsed"
+  },
+  {
+   "id": "JUBLFOOD-unclassified-2026-11-06",
+   "symbol": "JUBLFOOD",
+   "name": "Jubilant Foodworks Limited",
+   "sector": "Consumer",
+   "kind": "filing",
+   "category": "unclassified",
+   "at": "2026-11-06T15:23:58+05:30",
+   "title": "Change in Auditors",
+   "summary": "Change in Auditors of the company.",
+   "url": "https://nsearchives.nseindia.in/corporate/JUBLFOOD_06112026152348_SEIntimationAuditorAppointment.pdf",
+   "related": [],
+   "components": {
+    "M": 0.05,
+    "S": 0.0,
+    "T": null,
+    "N": null
+   },
+   "score": 0.029,
+   "reasons": [
+    "unclassified"
+   ],
+   "bucket": "collapsed"
+  },
+  {
+   "id": "JUBLFOOD-results-2026-11-06",
+   "symbol": "JUBLFOOD",
+   "name": "Jubilant Foodworks Limited",
+   "sector": "Consumer",
+   "kind": "filing",
+   "category": "results",
+   "at": "2026-11-06T15:20:30+05:30",
+   "title": "Outcome of Board Meeting",
+   "summary": "Jubilant Foodworks Limited has submitted to the Exchange, the financial results for the period ended September 30, 2026.",
+   "url": "https://nsearchives.nseindia.in/corporate/JUBLFOOD_06112026152011_FOutcome_of_BM.pdf",
+   "related": [],
+   "results": {
+    "period": "Q2FY27",
+    "basis": "consolidated",
+    "metrics": {
+     "revenue": {
+      "value_cr": 2607.89,
+      "qoq_pct": 1.5,
+      "yoy_pct": 11.4
+     },
+     "ebitda": {
+      "value_cr": 510.03,
+      "qoq_pct": 2.0,
+      "yoy_pct": 7.1
+     },
+     "pbt": {
+      "value_cr": 159.04,
+      "qoq_pct": 8.0,
+      "yoy_pct": 2.3
+     },
+     "pat": {
+      "value_cr": 111.59,
+      "qoq_pct": 11.6,
+      "yoy_pct": -42.7
+     }
+    },
+    "ebitda_margin": {
+     "pct": 19.56,
+     "qoq_bps": 11,
+     "yoy_bps": -79
+    },
+    "warnings": [],
+    "source": "https://nsearchives.nseindia.in/corporate/xbrl/INTEGRATED_FILING_INDAS_1754883_06112026053355_WEB.xml"
+   },
+   "components": {
+    "M": 0.9,
+    "S": 0.71,
+    "T": null,
+    "N": null
+   },
+   "score": 0.822,
+   "reasons": [
+    "PAT -42.7% YoY"
+   ],
+   "bucket": "needs_you"
+  },
+  {
+   "id": "SUDARSCHEM-investor_meetings-2026-11-06",
+   "symbol": "SUDARSCHEM",
+   "name": "Sudarshan Chemical Industries Limited",
+   "sector": "Chemicals",
+   "kind": "filing",
+   "category": "investor_meetings",
+   "at": "2026-11-06T14:53:45+05:30",
+   "title": "Investor Presentation",
+   "summary": "Investor Presentation",
+   "url": "https://nsearchives.nseindia.in/corporate/SUDARSCHEM_06112026145332_SUDARSHANInvestorPresentationSept2026SIGNED.pdf",
+   "related": [
+    {
+     "title": "Analysts/Institutional Investor Meet/Con. Call Updates",
+     "url": "https://nsearchives.nseindia.in/corporate/SUDARSCHEM_06112026145629_SUDARSHANInvestorPresentationSept2026SIGNED.pdf"
+    }
+   ],
+   "components": {
+    "M": 0.15,
+    "S": 0.0,
+    "T": null,
+    "N": null
+   },
+   "score": 0.087,
+   "reasons": [
+    "investor meetings"
+   ],
+   "bucket": "collapsed"
+  },
+  {
+   "id": "NCC-unclassified-2026-11-06",
+   "symbol": "NCC",
+   "name": "NCC Limited",
+   "sector": "Construction",
+   "kind": "filing",
+   "category": "unclassified",
+   "at": "2026-11-06T14:46:58+05:30",
+   "title": "Copy of Newspaper Publication",
+   "summary": "Copy of Newspaper Publication",
+   "url": "https://nsearchives.nseindia.in/corporate/NCC_06112026144639_Newpaper_publication_6Nov26.pdf",
+   "related": [],
+   "components": {
+    "M": 0.05,
+    "S": 0.0,
+    "T": null,
+    "N": null
+   },
+   "score": 0.029,
+   "reasons": [
+    "unclassified"
+   ],
+   "bucket": "collapsed"
+  },
+  {
+   "id": "THERMAX-unclassified-2026-11-06",
+   "symbol": "THERMAX",
+   "name": "Thermax Limited",
+   "sector": "Capital goods",
+   "kind": "filing",
+   "category": "unclassified",
+   "at": "2026-11-06T14:40:14+05:30",
+   "title": "Copy of Newspaper Publication",
+   "summary": "Copy of Newspaper Publication",
+   "url": "https://nsearchives.nseindia.in/corporate/THERMAXNSE_06112026144004_TL_NewspaperAdv_Q2.pdf",
+   "related": [],
+   "components": {
+    "M": 0.05,
+    "S": 0.0,
+    "T": null,
+    "N": null
+   },
+   "score": 0.029,
+   "reasons": [
+    "unclassified"
+   ],
+   "bucket": "collapsed"
+  },
+  {
+   "id": "THERMAX-earnings_call-2026-11-06",
+   "symbol": "THERMAX",
+   "name": "Thermax Limited",
+   "sector": "Capital goods",
+   "kind": "filing",
+   "category": "earnings_call",
+   "at": "2026-11-06T14:34:25+05:30",
+   "title": "Analysts/Institutional Investor Meet/Con. Call Updates",
+   "summary": "Link of Recording",
+   "url": "https://nsearchives.nseindia.in/corporate/THERMAXNSE_06112026143413_TL_Audiorecordinginvestorcall_Q2.pdf",
+   "related": [],
+   "components": {
+    "M": 0.25,
+    "S": 0.0,
+    "T": null,
+    "N": null
+   },
+   "score": 0.146,
+   "reasons": [
+    "earnings call"
+   ],
+   "bucket": "collapsed"
+  },
+  {
+   "id": "SUDARSCHEM-press_release-2026-11-06",
+   "symbol": "SUDARSCHEM",
+   "name": "Sudarshan Chemical Industries Limited",
+   "sector": "Chemicals",
+   "kind": "filing",
+   "category": "press_release",
+   "at": "2026-11-06T14:19:48+05:30",
+   "title": "General Updates",
+   "summary": "Authorized Officials to Determine Materiality of an Event or Information",
+   "url": "https://nsearchives.nseindia.in/corporate/SUDARSCHEM_06112026141937_SUDARSHANOutcomeofBM06112026_v1SIGNED.pdf",
+   "related": [],
+   "components": {
+    "M": 0.35,
+    "S": 0.0,
+    "T": null,
+    "N": null
+   },
+   "score": 0.204,
+   "reasons": [
+    "press release"
+   ],
+   "bucket": "collapsed"
+  },
+  {
+   "id": "SUDARSCHEM-unclassified-2026-11-06",
+   "symbol": "SUDARSCHEM",
+   "name": "Sudarshan Chemical Industries Limited",
+   "sector": "Chemicals",
+   "kind": "filing",
+   "category": "unclassified",
+   "at": "2026-11-06T14:16:39+05:30",
+   "title": "Change in Company Secretary/Compliance Officer",
+   "summary": "Change in Company Secretary/Compliance Officer",
+   "url": "https://nsearchives.nseindia.in/corporate/SUDARSCHEM_06112026141622_SUDARSHANOutcomeofBM06112026_v1SIGNED.pdf",
+   "related": [
+    {
+     "title": "ESOP/ESOS/ESPS",
+     "url": "https://nsearchives.nseindia.in/corporate/SUDARSCHEM_06112026142223_SUDARSHAN-DisclosureunderReg30-ESOPGrantintimationSIGNED.pdf"
+    }
+   ],
+   "components": {
+    "M": 0.05,
+    "S": 0.0,
+    "T": null,
+    "N": null
+   },
+   "score": 0.029,
+   "reasons": [
+    "unclassified"
+   ],
+   "bucket": "collapsed"
+  },
+  {
+   "id": "SUDARSCHEM-management_change-2026-11-06",
+   "symbol": "SUDARSCHEM",
+   "name": "Sudarshan Chemical Industries Limited",
+   "sector": "Chemicals",
+   "kind": "filing",
+   "category": "management_change",
+   "at": "2026-11-06T14:14:36+05:30",
+   "title": "Appointment",
+   "summary": "Appointment of Mr Amit Deshpande as Company Secretary & Compliance Officer of the company w.e.f. November 06, 2026.",
+   "url": "https://nsearchives.nseindia.in/corporate/SUDARSCHEM_06112026141412_SUDARSHANOutcomeofBM06112026_v1SIGNED.pdf",
+   "related": [],
+   "components": {
+    "M": 0.3,
+    "S": 0.0,
+    "T": null,
+    "N": null
+   },
+   "score": 0.175,
+   "reasons": [
+    "board / secretarial change"
+   ],
+   "bucket": "collapsed"
+  },
+  {
+   "id": "SUDARSCHEM-results-2026-11-06",
+   "symbol": "SUDARSCHEM",
+   "name": "Sudarshan Chemical Industries Limited",
+   "sector": "Chemicals",
+   "kind": "filing",
+   "category": "results",
+   "at": "2026-11-06T14:08:18+05:30",
+   "title": "Outcome of Board Meeting",
+   "summary": "Sudarshan Chemical Industries Limited has submitted to the Exchange, the financial results for the period ended September 30, 2026.",
+   "url": "https://nsearchives.nseindia.in/corporate/SUDARSCHEM_06112026140757_SUDARSHANOutcomeofBM06112026_v1SIGNED.pdf",
+   "related": [],
+   "results": {
+    "period": "Q2FY27",
+    "basis": "consolidated",
+    "metrics": {
+     "revenue": {
+      "value_cr": 2742.6,
+      "qoq_pct": 3.8,
+      "yoy_pct": 14.9
+     },
+     "ebitda": {
+      "value_cr": 267.1,
+      "qoq_pct": 3.2,
+      "yoy_pct": 102.0
+     },
+     "pbt": {
+      "value_cr": 63.6,
+      "qoq_pct": -55.9,
+      "yoy_pct": 214.9
+     },
+     "pat": {
+      "value_cr": 30.5,
+      "qoq_pct": -70.5,
+      "yoy_pct": 58.0
+     }
+    },
+    "ebitda_margin": {
+     "pct": 9.74,
+     "qoq_bps": -6,
+     "yoy_bps": 420
+    },
+    "warnings": [
+     "exceptional items of ₹-82.90 cr this quarter"
+    ],
+    "source": "https://nsearchives.nseindia.in/corporate/xbrl/INTEGRATED_FILING_INDAS_1754942_06112026060433_WEB.xml"
+   },
+   "components": {
+    "M": 0.9,
+    "S": 0.97,
+    "T": null,
+    "N": null
+   },
+   "score": 0.928,
+   "reasons": [
+    "EBITDA margin +420 bps YoY",
+    "PAT +58.0% YoY"
+   ],
+   "bucket": "needs_you"
+  },
+  {
+   "id": "AUROPHARMA-unclassified-2026-11-06",
+   "symbol": "AUROPHARMA",
+   "name": "Aurobindo Pharma Limited",
+   "sector": "Pharma",
+   "kind": "filing",
+   "category": "unclassified",
+   "at": "2026-11-06T11:27:37+05:30",
+   "title": "Copy of Newspaper Publication",
+   "summary": "Copy of financial results published in newspapers.",
+   "url": "https://nsearchives.nseindia.in/corporate/AUROPHARMA_06112026112647_LtrToSEsQ2UFRpublished06112026.pdf",
+   "related": [],
+   "components": {
+    "M": 0.05,
+    "S": 0.0,
+    "T": null,
+    "N": null
+   },
+   "score": 0.029,
+   "reasons": [
+    "unclassified"
+   ],
+   "bucket": "collapsed"
+  },
+  {
+   "id": "UNOMINDA-unclassified-2026-11-06",
+   "symbol": "UNOMINDA",
+   "name": "UNO Minda Limited",
+   "sector": "Auto parts",
+   "kind": "filing",
+   "category": "unclassified",
+   "at": "2026-11-06T11:06:09+05:30",
+   "title": "Copy of Newspaper Publication",
+   "summary": "Copy of Newspaper clippings for the publication of unaudited standalone and consolidated financial results of the Company for the quarter and half year ended on September 30, 2026.",
+   "url": "https://nsearchives.nseindia.in/corporate/MINDAIND1_06112026110550_Intimation_Newspaper_publication.pdf",
+   "related": [],
+   "components": {
+    "M": 0.05,
+    "S": 0.0,
+    "T": null,
+    "N": null
+   },
+   "score": 0.029,
+   "reasons": [
+    "unclassified"
+   ],
+   "bucket": "collapsed"
+  },
+  {
+   "id": "M&M-unclassified-2026-11-06",
+   "symbol": "M&M",
+   "name": "Mahindra & Mahindra Limited",
+   "sector": "Autos",
+   "kind": "filing",
+   "category": "unclassified",
+   "at": "2026-11-06T10:54:47+05:30",
+   "title": "Copy of Newspaper Publication",
+   "summary": "Copy of Newspaper Publication",
+   "url": "https://nsearchives.nseindia.in/corporate/ferozebaria_06112026105344_IntimationofNewspaperPublication06112026.pdf",
+   "related": [],
+   "components": {
+    "M": 0.05,
+    "S": 0.0,
+    "T": null,
+    "N": null
+   },
+   "score": 0.029,
+   "reasons": [
+    "unclassified"
+   ],
+   "bucket": "collapsed"
+  },
+  {
+   "id": "TEXRAIL-press_release-2026-11-05",
+   "symbol": "TEXRAIL",
+   "name": "Texmaco Rail & Engineering Limited",
+   "sector": "Capital goods",
+   "kind": "filing",
+   "category": "press_release",
+   "at": "2026-11-05T21:25:38+05:30",
+   "title": "Bagging/Receiving of orders/contracts",
+   "summary": "Receipt of Orders worth Rs. 428.55 Crores in aggregate (incl. taxes) from Ultratech Cement Ltd, Jujhar Logistics & Travels Ltd and APL Logistics Vascor Automotive Pvt. Ltd.",
+   "url": "https://nsearchives.nseindia.in/corporate/TEXRAIL_05112026212458_OrderUJA05112026Signed.pdf",
+   "related": [],
+   "components": {
+    "M": 0.35,
+    "S": 0.0,
+    "T": null,
+    "N": null
+   },
+   "score": 0.204,
+   "reasons": [
+    "press release"
+   ],
+   "bucket": "collapsed"
+  },
+  {
+   "id": "M&M-earnings_call-2026-11-05",
+   "symbol": "M&M",
+   "name": "Mahindra & Mahindra Limited",
+   "sector": "Autos",
+   "kind": "filing",
+   "category": "earnings_call",
+   "at": "2026-11-05T20:37:24+05:30",
+   "title": "Analysts/Institutional Investor Meet/Con. Call Updates",
+   "summary": "Link of Audio-Video recording of M&M Analyst Meet Q2FY27 Earnings Conference Call",
+   "url": "https://nsearchives.nseindia.in/corporate/AmitDodani_05112026203607_IntimationofAudiorecordingofanalystmeet_Q2F27_05112026.pdf",
+   "related": [],
+   "components": {
+    "M": 0.25,
+    "S": 0.0,
+    "T": null,
+    "N": null
+   },
+   "score": 0.146,
+   "reasons": [
+    "earnings call"
+   ],
+   "bucket": "collapsed"
+  },
+  {
+   "id": "UNOMINDA-earnings_call-2026-11-05",
+   "symbol": "UNOMINDA",
+   "name": "UNO Minda Limited",
+   "sector": "Auto parts",
+   "kind": "filing",
+   "category": "earnings_call",
+   "at": "2026-11-05T20:29:30+05:30",
+   "title": "Analysts/Institutional Investor Meet/Con. Call Updates",
+   "summary": "Link of Recording of the earnings call held today i.e. November 05, 2026.",
+   "url": "https://nsearchives.nseindia.in/corporate/MINDAIND1_05112026202917_Intimation_Audio_call.pdf",
+   "related": [],
+   "components": {
+    "M": 0.25,
+    "S": 0.0,
+    "T": null,
+    "N": null
+   },
+   "score": 0.146,
+   "reasons": [
+    "earnings call"
+   ],
+   "bucket": "collapsed"
+  },
+  {
+   "id": "NCC-investor_meetings-2026-11-05",
+   "symbol": "NCC",
+   "name": "NCC Limited",
+   "sector": "Construction",
+   "kind": "filing",
+   "category": "investor_meetings",
+   "at": "2026-11-05T20:02:07+05:30",
+   "title": "Analysts/Institutional Investor Meet/Con. Call Updates",
+   "summary": "Presentation",
+   "url": "https://nsearchives.nseindia.in/corporate/NCC_05112026200150_Disclosure_of_Investor_Presentation.pdf",
+   "related": [],
+   "components": {
+    "M": 0.15,
+    "S": 0.0,
+    "T": null,
+    "N": null
+   },
+   "score": 0.087,
+   "reasons": [
+    "investor meetings"
+   ],
+   "bucket": "collapsed"
+  },
+  {
+   "id": "THERMAX-investor_meetings-2026-11-05",
+   "symbol": "THERMAX",
+   "name": "Thermax Limited",
+   "sector": "Capital goods",
+   "kind": "filing",
+   "category": "investor_meetings",
+   "at": "2026-11-05T18:20:26+05:30",
+   "title": "Investor Presentation",
+   "summary": "Investor Presentation",
+   "url": "https://nsearchives.nseindia.in/corporate/THERMAXNSE_05112026181951_SEintimationInvestorPrez.pdf",
+   "related": [],
+   "components": {
+    "M": 0.15,
+    "S": 0.0,
+    "T": null,
+    "N": null
+   },
+   "score": 0.087,
+   "reasons": [
+    "investor meetings"
+   ],
+   "bucket": "collapsed"
+  },
+  {
+   "id": "NCC-management_change-2026-11-05",
+   "symbol": "NCC",
+   "name": "NCC Limited",
+   "sector": "Construction",
+   "kind": "filing",
+   "category": "management_change",
+   "at": "2026-11-05T18:17:59+05:30",
+   "title": "Appointment",
+   "summary": "Re-appointment of Sri A A V Ranga Raju as Managing Director of the company w.e.f. April 01, 2027.",
+   "url": "https://nsearchives.nseindia.in/corporate/NCC_05112026181328_Outcome_of_the_Board_Meeting.pdf",
+   "related": [
+    {
+     "title": "Appointment",
+     "url": "https://nsearchives.nseindia.in/corporate/NCC_05112026181537_Outcome_of_the_Board_Meeting.pdf"
+    },
+    {
+     "title": "Appointment",
+     "url": "https://nsearchives.nseindia.in/corporate/NCC_05112026181742_Outcome_of_the_Board_Meeting.pdf"
+    }
+   ],
+   "components": {
+    "M": 0.35,
+    "S": 0.0,
+    "T": null,
+    "N": null
+   },
+   "score": 0.204,
+   "reasons": [
+    "re-appointment (continuity)"
+   ],
+   "bucket": "collapsed"
+  },
+  {
+   "id": "ASHOKLEY-M&A-2026-11-05",
+   "symbol": "ASHOKLEY",
+   "name": "Ashok Leyland Limited",
+   "sector": "Autos",
+   "kind": "filing",
+   "category": "M&A",
+   "at": "2026-11-05T18:09:40+05:30",
+   "title": "Other Restructuring",
+   "summary": "Updates on Scheme of Arrangement - Hinduja Leyland Finance Limited",
+   "url": "https://nsearchives.nseindia.in/corporate/ASHOKLEYLAND_05112026180926_44ALupdatesonHLFL.pdf",
+   "related": [
+    {
+     "title": "Acquisition",
+     "url": "https://nsearchives.nseindia.in/corporate/ASHOKLEYLAND_05112026180822_44ALupdatesonHLFL.pdf"
+    }
+   ],
+   "components": {
+    "M": 0.85,
+    "S": 0.0,
+    "T": null,
+    "N": null
+   },
+   "score": 0.496,
+   "reasons": [
+    "M&A"
+   ],
+   "bucket": "worth_a_read"
+  },
+  {
+   "id": "THERMAX-results-2026-11-05",
+   "symbol": "THERMAX",
+   "name": "Thermax Limited",
+   "sector": "Capital goods",
+   "kind": "filing",
+   "category": "results",
+   "at": "2026-11-05T18:02:05+05:30",
+   "title": "Outcome of Board Meeting",
+   "summary": "Thermax Limited has submitted to the Exchange, the financial results for the period ended September 30, 2026.",
+   "url": "https://nsearchives.nseindia.in/corporate/THERMAXNSE_05112026180056_SEIntimationBMOutcome.pdf",
+   "related": [],
+   "results": {
+    "period": "Q2FY27",
+    "basis": "consolidated",
+    "metrics": {
+     "revenue": {
+      "value_cr": 2755.87,
+      "qoq_pct": 19.7,
+      "yoy_pct": 11.4
+     },
+     "ebitda": {
+      "value_cr": 194.14,
+      "qoq_pct": 182.9,
+      "yoy_pct": 12.9
+     },
+     "pbt": {
+      "value_cr": 168.86,
+      "qoq_pct": 300.7,
+      "yoy_pct": -2.8
+     },
+     "pat": {
+      "value_cr": 113.11,
+      "qoq_pct": 419.1,
+      "yoy_pct": -5.3
+     }
+    },
+    "ebitda_margin": {
+     "pct": 7.04,
+     "qoq_bps": 406,
+     "yoy_bps": 9
+    },
+    "warnings": [],
+    "source": "https://nsearchives.nseindia.in/corporate/xbrl/INTEGRATED_FILING_INDAS_1753918_05112026063454_WEB.xml"
+   },
+   "components": {
+    "M": 0.9,
+    "S": 0.0,
+    "T": null,
+    "N": null
+   },
+   "score": 0.525,
+   "reasons": [
+    "results"
+   ],
+   "bucket": "worth_a_read"
+  },
+  {
+   "id": "NCC-unclassified-2026-11-05",
+   "symbol": "NCC",
+   "name": "NCC Limited",
+   "sector": "Construction",
+   "kind": "filing",
+   "category": "unclassified",
+   "at": "2026-11-05T18:00:51+05:30",
+   "title": "Amendment to AOA/MOA",
+   "summary": "The Amendment to AOA/MOA of the company.",
+   "url": "https://nsearchives.nseindia.in/corporate/NCC_05112026180022_Outcome_of_the_Board_Meeting.pdf",
+   "related": [],
+   "components": {
+    "M": 0.05,
+    "S": 0.0,
+    "T": null,
+    "N": null
+   },
+   "score": 0.029,
+   "reasons": [
+    "unclassified"
+   ],
+   "bucket": "collapsed"
+  },
+  {
+   "id": "DEEPAKFERT-M&A-2026-11-05",
+   "symbol": "DEEPAKFERT",
+   "name": "Deepak Fertilizers and Petrochemicals Corporation Limited",
+   "sector": "Chemicals",
+   "kind": "filing",
+   "category": "M&A",
+   "at": "2026-11-05T17:41:42+05:30",
+   "title": "Acquisition",
+   "summary": "Incorporation of a wholly owned subsidiary company limited by guarantee under Section 8 of the Companies Act, 2013 viz Prayas Institute for Future Readiness",
+   "url": "https://nsearchives.nseindia.in/corporate/DEEPAKFERT2_05112026174040_IntimationPrayas.pdf",
+   "related": [],
+   "components": {
+    "M": 0.85,
+    "S": 0.0,
+    "T": null,
+    "N": null
+   },
+   "score": 0.496,
+   "reasons": [
+    "M&A"
+   ],
+   "bucket": "worth_a_read"
+  },
+  {
+   "id": "NCC-results-2026-11-05",
+   "symbol": "NCC",
+   "name": "NCC Limited",
+   "sector": "Construction",
+   "kind": "filing",
+   "category": "results",
+   "at": "2026-11-05T17:40:44+05:30",
+   "title": "Outcome of Board Meeting",
+   "summary": "NCC Limited has submitted to the Exchange, the financial results for the period ended September 30, 2026.",
+   "url": "https://nsearchives.nseindia.in/corporate/NCC_05112026173840_Outcome_of_the_Board_Meeting.pdf",
+   "related": [],
+   "results": {
+    "period": "Q2FY27",
+    "basis": "consolidated",
+    "metrics": {
+     "revenue": {
+      "value_cr": 6014.67,
+      "qoq_pct": 3.5,
+      "yoy_pct": 32.4
+     },
+     "ebitda": {
+      "value_cr": 528.46,
+      "qoq_pct": -3.1,
+      "yoy_pct": 34.4
+     },
+     "pbt": {
+      "value_cr": 268.99,
+      "qoq_pct": -12.8,
+      "yoy_pct": 30.2
+     },
+     "pat": {
+      "value_cr": 198.84,
+      "qoq_pct": -13.1,
+      "yoy_pct": 18.8
+     }
+    },
+    "ebitda_margin": {
+     "pct": 8.79,
+     "qoq_bps": -59,
+     "yoy_bps": 13
+    },
+    "warnings": [],
+    "source": "https://nsearchives.nseindia.in/corporate/xbrl/INTEGRATED_FILING_INDAS_1754093_05112026073640_WEB.xml"
+   },
+   "components": {
+    "M": 0.9,
+    "S": 0.81,
+    "T": null,
+    "N": null
+   },
+   "score": 0.862,
+   "reasons": [
+    "revenue +32.4% YoY"
+   ],
+   "bucket": "needs_you"
+  },
+  {
+   "id": "LUPIN-unclassified-2026-11-05",
+   "symbol": "LUPIN",
+   "name": "Lupin Limited",
+   "sector": "Pharma",
+   "kind": "filing",
+   "category": "unclassified",
+   "at": "2026-11-05T16:38:30+05:30",
+   "title": "Copy of Newspaper Publication",
+   "summary": "Copies of Newspaper Publication regarding Unaudited Financial Results of the Company for the quarter and half year ended September 30, 2026.",
+   "url": "https://nsearchives.nseindia.in/corporate/Lupin2_05112026163455_SEintimationletter.pdf",
+   "related": [],
+   "components": {
+    "M": 0.05,
+    "S": 0.0,
+    "T": null,
+    "N": null
+   },
+   "score": 0.029,
+   "reasons": [
+    "unclassified"
+   ],
+   "bucket": "collapsed"
+  },
+  {
+   "id": "M&M-unclassified-2026-11-05",
+   "symbol": "M&M",
+   "name": "Mahindra & Mahindra Limited",
+   "sector": "Autos",
+   "kind": "filing",
+   "category": "unclassified",
+   "at": "2026-11-05T15:47:06+05:30",
+   "title": "Copy of Newspaper Publication",
+   "summary": "Copy of Newspaper Publication pertaining to Special Window for Re-Lodgement of Transfer Request of Physical Shares and actions required by Shareholders holding Shares in Physical Form",
+   "url": "https://nsearchives.nseindia.in/corporate/Deepak_05112026154633_SE_INTIMATION_SPECIAL_WINDOW_RELODGEMENT.pdf",
+   "related": [
+    {
+     "title": "Related Party Transactions",
+     "url": "https://nsearchives.nseindia.in/corporate/AmitDodani_05112026183350_SEIntimationRPT_H1F27_05112026.pdf"
+    }
+   ],
+   "components": {
+    "M": 0.05,
+    "S": 0.0,
+    "T": null,
+    "N": null
+   },
+   "score": 0.029,
+   "reasons": [
+    "unclassified"
+   ],
+   "bucket": "collapsed"
+  },
+  {
+   "id": "AURIONPRO-earnings_call-2026-11-05",
+   "symbol": "AURIONPRO",
+   "name": "Aurionpro Solutions Limited",
+   "sector": "IT",
+   "kind": "filing",
+   "category": "earnings_call",
+   "at": "2026-11-05T15:34:46+05:30",
+   "title": "Analysts/Institutional Investor Meet/Con. Call Updates",
+   "summary": "Transcript of Earnings call held on November 02, 2026.",
+   "url": "https://nsearchives.nseindia.in/corporate/AURIONPRO_05112026153420_ASL_Earnings_Call_Transcript_sd.pdf",
+   "related": [],
+   "components": {
+    "M": 0.25,
+    "S": 0.0,
+    "T": null,
+    "N": null
+   },
+   "score": 0.146,
+   "reasons": [
+    "earnings call"
+   ],
+   "bucket": "collapsed"
+  },
+  {
+   "id": "M&M-move-2026-11-05",
+   "symbol": "M&M",
+   "name": "Mahindra & Mahindra Limited",
+   "sector": "Autos",
+   "kind": "move",
+   "category": "price_volume",
+   "at": "2026-11-05T15:30:00+05:30",
+   "title": "Price / volume move",
+   "summary": "volume 3.8× its 20-day average; price +5.6% on the day",
+   "url": null,
+   "related": [],
+   "move": {
+    "volume_multiple": 3.81,
+    "return_pct": 5.59
+   },
+   "components": {
+    "M": 0.35,
+    "S": 0.95,
+    "T": null,
+    "N": null
+   },
+   "score": 0.601,
+   "reasons": [
+    "volume 3.8× its 20-day average",
+    "price +5.6% on the day"
+   ],
+   "bucket": "worth_a_read"
+  },
+  {
+   "id": "ASHOKLEY-move-2026-11-05",
+   "symbol": "ASHOKLEY",
+   "name": "Ashok Leyland Limited",
+   "sector": "Autos",
+   "kind": "move",
+   "category": "price_volume",
+   "at": "2026-11-05T15:30:00+05:30",
+   "title": "Price / volume move",
+   "summary": "volume 7.2× its 20-day average; price +10.5% on the day",
+   "url": null,
+   "related": [],
+   "move": {
+    "volume_multiple": 7.17,
+    "return_pct": 10.5
+   },
+   "components": {
+    "M": 0.35,
+    "S": 1,
+    "T": null,
+    "N": null
+   },
+   "score": 0.621,
+   "reasons": [
+    "volume 7.2× its 20-day average",
+    "price +10.5% on the day"
+   ],
+   "bucket": "worth_a_read"
+  },
+  {
+   "id": "UNOMINDA-move-2026-11-05",
+   "symbol": "UNOMINDA",
+   "name": "UNO Minda Limited",
+   "sector": "Auto parts",
+   "kind": "move",
+   "category": "price_volume",
+   "at": "2026-11-05T15:30:00+05:30",
+   "title": "Price / volume move",
+   "summary": "volume 10.7× its 20-day average; price +11.5% on the day",
+   "url": null,
+   "related": [],
+   "move": {
+    "volume_multiple": 10.67,
+    "return_pct": 11.54
+   },
+   "components": {
+    "M": 0.35,
+    "S": 1,
+    "T": null,
+    "N": null
+   },
+   "score": 0.621,
+   "reasons": [
+    "volume 10.7× its 20-day average",
+    "price +11.5% on the day"
+   ],
+   "bucket": "worth_a_read"
+  },
+  {
+   "id": "AUROPHARMA-move-2026-11-05",
+   "symbol": "AUROPHARMA",
+   "name": "Aurobindo Pharma Limited",
+   "sector": "Pharma",
+   "kind": "move",
+   "category": "price_volume",
+   "at": "2026-11-05T15:30:00+05:30",
+   "title": "Price / volume move",
+   "summary": "volume 3.5× its 20-day average",
+   "url": null,
+   "related": [],
+   "move": {
+    "volume_multiple": 3.51,
+    "return_pct": 4.69
+   },
+   "components": {
+    "M": 0.35,
+    "S": 0.88,
+    "T": null,
+    "N": null
+   },
+   "score": 0.57,
+   "reasons": [
+    "volume 3.5× its 20-day average"
+   ],
+   "bucket": "worth_a_read"
+  },
+  {
+   "id": "TEXRAIL-move-2026-11-05",
+   "symbol": "TEXRAIL",
+   "name": "Texmaco Rail & Engineering Limited",
+   "sector": "Capital goods",
+   "kind": "move",
+   "category": "price_volume",
+   "at": "2026-11-05T15:30:00+05:30",
+   "title": "Price / volume move",
+   "summary": "volume 2.6× its 20-day average",
+   "url": null,
+   "related": [],
+   "move": {
+    "volume_multiple": 2.58,
+    "return_pct": -4.02
+   },
+   "components": {
+    "M": 0.35,
+    "S": 0.65,
+    "T": null,
+    "N": null
+   },
+   "score": 0.473,
+   "reasons": [
+    "volume 2.6× its 20-day average"
+   ],
+   "bucket": "worth_a_read"
+  },
+  {
+   "id": "JUBLFOOD-move-2026-11-05",
+   "symbol": "JUBLFOOD",
+   "name": "Jubilant Foodworks Limited",
+   "sector": "Consumer",
+   "kind": "move",
+   "category": "price_volume",
+   "at": "2026-11-05T15:30:00+05:30",
+   "title": "Price / volume move",
+   "summary": "volume 2.3× its 20-day average; price +5.0% on the day",
+   "url": null,
+   "related": [],
+   "move": {
+    "volume_multiple": 2.32,
+    "return_pct": 5.01
+   },
+   "components": {
+    "M": 0.35,
+    "S": 0.58,
+    "T": null,
+    "N": null
+   },
+   "score": 0.446,
+   "reasons": [
+    "volume 2.3× its 20-day average",
+    "price +5.0% on the day"
+   ],
+   "bucket": "worth_a_read"
+  },
+  {
+   "id": "THERMAX-unclassified-2026-11-05",
+   "symbol": "THERMAX",
+   "name": "Thermax Limited",
+   "sector": "Capital goods",
+   "kind": "filing",
+   "category": "unclassified",
+   "at": "2026-11-05T15:27:12+05:30",
+   "title": "Action(s) taken or orders passed",
+   "summary": "Action(s) taken or orders passed",
+   "url": "https://nsearchives.nseindia.in/corporate/THERMAXNSE_05112026152702_SEIntimationGSTPenalty_Nov2026.pdf",
+   "related": [],
+   "components": {
+    "M": 0.05,
+    "S": 0.0,
+    "T": null,
+    "N": null
+   },
+   "score": 0.029,
+   "reasons": [
+    "unclassified"
+   ],
+   "bucket": "collapsed"
+  },
+  {
+   "id": "TEXRAIL-management_change-2026-11-05",
+   "symbol": "TEXRAIL",
+   "name": "Texmaco Rail & Engineering Limited",
+   "sector": "Capital goods",
+   "kind": "filing",
+   "category": "management_change",
+   "at": "2026-11-05T14:59:13+05:30",
+   "title": "Change in Director(s)",
+   "summary": "Change in Director(s) of the company.",
+   "url": "https://nsearchives.nseindia.in/corporate/TEXRAIL_05112026145903_TexRailBMOutcome05112026Signed.pdf",
+   "related": [
+    {
+     "title": "Change in Management",
+     "url": "https://nsearchives.nseindia.in/corporate/TEXRAIL_05112026150234_TexRailBMOutcome05112026Signed.pdf"
+    }
+   ],
+   "components": {
+    "M": 0.35,
+    "S": 0.0,
+    "T": null,
+    "N": null
+   },
+   "score": 0.204,
+   "reasons": [
+    "re-appointment (continuity)"
+   ],
+   "bucket": "collapsed"
+  },
+  {
+   "id": "TEXRAIL-results-2026-11-05",
+   "symbol": "TEXRAIL",
+   "name": "Texmaco Rail & Engineering Limited",
+   "sector": "Capital goods",
+   "kind": "filing",
+   "category": "results",
+   "at": "2026-11-05T14:52:03+05:30",
+   "title": "Outcome of Board Meeting",
+   "summary": "Texmaco Rail & Engineering Limited has submitted to the Exchange, the financial results for the period ended September 30, 2026.",
+   "url": "https://nsearchives.nseindia.in/corporate/TEXRAIL_05112026145026_TexRailBMOutcome05112026Signed.pdf",
+   "related": [],
+   "results": {
+    "period": "Q2FY27",
+    "basis": "consolidated",
+    "metrics": {
+     "revenue": {
+      "value_cr": 867.75,
+      "qoq_pct": 14.7,
+      "yoy_pct": -31.0
+     },
+     "ebitda": {
+      "value_cr": 74.64,
+      "qoq_pct": 30.9,
+      "yoy_pct": -40.0
+     },
+     "pbt": {
+      "value_cr": 123.48,
+      "qoq_pct": 224.0,
+      "yoy_pct": 35.4
+     },
+     "pat": {
+      "value_cr": 111.04,
+      "qoq_pct": 121.8,
+      "yoy_pct": 73.7
+     }
+    },
+    "ebitda_margin": {
+     "pct": 8.6,
+     "qoq_bps": 107,
+     "yoy_bps": -129
+    },
+    "warnings": [
+     "exceptional items of ₹76.01 cr this quarter"
+    ],
+    "source": "https://nsearchives.nseindia.in/corporate/xbrl/INTEGRATED_FILING_INDAS_1753889_05112026062622_WEB.xml"
+   },
+   "components": {
+    "M": 0.9,
+    "S": 1,
+    "T": null,
+    "N": null
+   },
+   "score": 0.942,
+   "reasons": [
+    "revenue -31.0% YoY",
+    "PAT +73.7% YoY"
+   ],
+   "bucket": "needs_you"
+  },
+  {
+   "id": "UNOMINDA-investor_meetings-2026-11-05",
+   "symbol": "UNOMINDA",
+   "name": "UNO Minda Limited",
+   "sector": "Auto parts",
+   "kind": "filing",
+   "category": "investor_meetings",
+   "at": "2026-11-05T14:31:57+05:30",
+   "title": "Investor Presentation",
+   "summary": "Investor Presentation",
+   "url": "https://nsearchives.nseindia.in/corporate/MINDAIND1_05112026143119_Intimation_InvestorpresentationF.pdf",
+   "related": [
+    {
+     "title": "Analysts/Institutional Investor Meet/Con. Call Updates",
+     "url": "https://nsearchives.nseindia.in/corporate/MINDAIND1_05112026143522_Intimation_InvestorpresentationF.pdf"
+    }
+   ],
+   "components": {
+    "M": 0.15,
+    "S": 0.0,
+    "T": null,
+    "N": null
+   },
+   "score": 0.087,
+   "reasons": [
+    "investor meetings"
+   ],
+   "bucket": "collapsed"
+  },
+  {
+   "id": "M&M-investor_meetings-2026-11-05",
+   "symbol": "M&M",
+   "name": "Mahindra & Mahindra Limited",
+   "sector": "Autos",
+   "kind": "filing",
+   "category": "investor_meetings",
+   "at": "2026-11-05T13:53:35+05:30",
+   "title": "Investor Presentation",
+   "summary": "Investor Presentation",
+   "url": "https://nsearchives.nseindia.in/corporate/AmitDodani_05112026135323_PresentationtobemadetoPressAnalyst_Reg_30.pdf",
+   "related": [
+    {
+     "title": "Analysts/Institutional Investor Meet/Con. Call Updates",
+     "url": "https://nsearchives.nseindia.in/corporate/AmitDodani_05112026191034_UpcomingAnalystMeet12112026.pdf"
+    }
+   ],
+   "components": {
+    "M": 0.15,
+    "S": 0.0,
+    "T": null,
+    "N": null
+   },
+   "score": 0.087,
+   "reasons": [
+    "investor meetings"
+   ],
+   "bucket": "collapsed"
+  },
+  {
+   "id": "M&M-management_change-2026-11-05",
+   "symbol": "M&M",
+   "name": "Mahindra & Mahindra Limited",
+   "sector": "Autos",
+   "kind": "filing",
+   "category": "management_change",
+   "at": "2026-11-05T13:04:12+05:30",
+   "title": "Change in Management",
+   "summary": "Change in Management",
+   "url": "https://nsearchives.nseindia.in/corporate/Pooja_05112026130348_Outcome5Nov.pdf",
+   "related": [
+    {
+     "title": "Cessation",
+     "url": "https://nsearchives.nseindia.in/corporate/Pooja_05112026130646_Outcome5Nov.pdf"
+    }
+   ],
+   "components": {
+    "M": 0.3,
+    "S": 0.0,
+    "T": null,
+    "N": null
+   },
+   "score": 0.175,
+   "reasons": [
+    "board / secretarial change"
+   ],
+   "bucket": "collapsed"
+  },
+  {
+   "id": "M&M-press_release-2026-11-05",
+   "symbol": "M&M",
+   "name": "Mahindra & Mahindra Limited",
+   "sector": "Autos",
+   "kind": "filing",
+   "category": "press_release",
+   "at": "2026-11-05T13:01:01+05:30",
+   "title": "Press Release",
+   "summary": "A press release dated November 05, 2026, titled \"Press Release on Unaudited Standalone and Consolidated Financial Results of the Company for the Second Quarter and Half Year ended 30th September 2026\".",
+   "url": "https://nsearchives.nseindia.in/corporate/ferozebaria_05112026130049_BoardMeetingPR05112026.pdf",
+   "related": [
+    {
+     "title": "General Updates",
+     "url": "https://nsearchives.nseindia.in/corporate/AmitDodani_05112026133302_PresentationtobemadetoPressAnalyst.pdf"
+    }
+   ],
+   "components": {
+    "M": 0.35,
+    "S": 0.0,
+    "T": null,
+    "N": null
+   },
+   "score": 0.204,
+   "reasons": [
+    "press release"
+   ],
+   "bucket": "collapsed"
+  },
+  {
+   "id": "M&M-results-2026-11-05",
+   "symbol": "M&M",
+   "name": "Mahindra & Mahindra Limited",
+   "sector": "Autos",
+   "kind": "filing",
+   "category": "results",
+   "at": "2026-11-05T12:57:20+05:30",
+   "title": "Outcome of Board Meeting",
+   "summary": "Mahindra & Mahindra Limited has submitted to the Exchange, the Unaudited Standalone and Consolidated financial results for the Second Quarter and Half Year ended September 30, 2026.",
+   "url": "https://nsearchives.nseindia.in/corporate/Pooja_05112026125638_Outcome5Nov.pdf",
+   "related": [
+    {
+     "title": "Outcome of Board Meeting",
+     "url": "https://nsearchives.nseindia.in/corporate/Pooja_05112026125925_Outcome5Nov.pdf"
+    },
+    {
+     "title": "Outcome of Board Meeting",
+     "url": "https://nsearchives.nseindia.in/corporate/Pooja_05112026130154_Outcome5Nov.pdf"
+    }
+   ],
+   "results": {
+    "period": "Q2FY27",
+    "basis": "standalone",
+    "metrics": {
+     "revenue": {
+      "value_cr": 44281.88,
+      "qoq_pct": 5.5,
+      "yoy_pct": 26.2
+     },
+     "ebitda": {
+      "value_cr": 6717.51,
+      "qoq_pct": 30.4,
+      "yoy_pct": 3.9
+     },
+     "pbt": {
+      "value_cr": 6637.89,
+      "qoq_pct": 39.0,
+      "yoy_pct": 9.4
+     },
+     "pat": {
+      "value_cr": 5101.62,
+      "qoq_pct": 38.4,
+      "yoy_pct": 12.9
+     }
+    },
+    "ebitda_margin": {
+     "pct": 15.17,
+     "qoq_bps": 290,
+     "yoy_bps": -327
+    },
+    "warnings": [],
+    "source": "https://nsearchives.nseindia.in/corporate/xbrl/INTEGRATED_FILING_INDAS_1753613_05112026052243_WEB.xml"
+   },
+   "components": {
+    "M": 0.9,
+    "S": 0.66,
+    "T": null,
+    "N": null
+   },
+   "score": 0.798,
+   "reasons": [
+    "EBITDA margin -327 bps YoY",
+    "revenue +26.2% YoY"
+   ],
+   "bucket": "needs_you"
+  },
+  {
+   "id": "UNOMINDA-management_change-2026-11-05",
+   "symbol": "UNOMINDA",
+   "name": "UNO Minda Limited",
+   "sector": "Auto parts",
+   "kind": "filing",
+   "category": "management_change",
+   "at": "2026-11-05T12:52:25+05:30",
+   "title": "Change in Management",
+   "summary": "Change in Senior Management Personnel",
+   "url": "https://nsearchives.nseindia.in/corporate/MINDAIND1_05112026125215_Outcomef.pdf",
+   "related": [],
+   "components": {
+    "M": 0.8,
+    "S": 0.0,
+    "T": null,
+    "N": null
+   },
+   "score": 0.467,
+   "reasons": [
+    "management change"
+   ],
+   "bucket": "worth_a_read"
+  },
+  {
+   "id": "UNOMINDA-capex-2026-11-05",
+   "symbol": "UNOMINDA",
+   "name": "UNO Minda Limited",
+   "sector": "Auto parts",
+   "kind": "filing",
+   "category": "capex",
+   "at": "2026-11-05T12:50:13+05:30",
+   "title": "Capacity addition",
+   "summary": "Capacity addition for its Sunroof Division",
+   "url": "https://nsearchives.nseindia.in/corporate/MINDAIND1_05112026124958_Outcomef.pdf",
+   "related": [],
+   "components": {
+    "M": 0.7,
+    "S": 0.0,
+    "T": null,
+    "N": null
+   },
+   "score": 0.408,
+   "reasons": [
+    "capex"
+   ],
+   "bucket": "worth_a_read"
+  },
+  {
+   "id": "JUBLFOOD-unclassified-2026-11-05",
+   "symbol": "JUBLFOOD",
+   "name": "Jubilant Foodworks Limited",
+   "sector": "Consumer",
+   "kind": "filing",
+   "category": "unclassified",
+   "at": "2026-11-05T12:48:55+05:30",
+   "title": "Copy of Newspaper Publication",
+   "summary": "Submission of Copies of Newspaper Publication",
+   "url": "https://nsearchives.nseindia.in/corporate/JUBLFOOD_05112026124846_SEIntimationRelodgementNov26.pdf",
+   "related": [],
+   "components": {
+    "M": 0.05,
+    "S": 0.0,
+    "T": null,
+    "N": null
+   },
+   "score": 0.029,
+   "reasons": [
+    "unclassified"
+   ],
+   "bucket": "collapsed"
+  },
+  {
+   "id": "UNOMINDA-results-2026-11-05",
+   "symbol": "UNOMINDA",
+   "name": "UNO Minda Limited",
+   "sector": "Auto parts",
+   "kind": "filing",
+   "category": "results",
+   "at": "2026-11-05T12:46:32+05:30",
+   "title": "Outcome of Board Meeting",
+   "summary": "UNO Minda Limited has submitted to the Exchange, the financial results for the period ended September 30, 2026.",
+   "url": "https://nsearchives.nseindia.in/corporate/MINDAIND1_05112026124457_Outcomef.pdf",
+   "related": [],
+   "results": {
+    "period": "Q2FY27",
+    "basis": "consolidated",
+    "metrics": {
+     "revenue": {
+      "value_cr": 6655.42,
+      "qoq_pct": 19.8,
+      "yoy_pct": 38.3
+     },
+     "ebitda": {
+      "value_cr": 733.27,
+      "qoq_pct": 28.3,
+      "yoy_pct": 32.9
+     },
+     "pbt": {
+      "value_cr": 511.02,
+      "qoq_pct": 43.8,
+      "yoy_pct": 47.7
+     },
+     "pat": {
+      "value_cr": 440.81,
+      "qoq_pct": 39.7,
+      "yoy_pct": 36.6
+     }
+    },
+    "ebitda_margin": {
+     "pct": 11.02,
+     "qoq_bps": 73,
+     "yoy_bps": -44
+    },
+    "warnings": [],
+    "source": "https://nsearchives.nseindia.in/corporate/xbrl/INTEGRATED_FILING_INDAS_1753993_05112026065545_WEB.xml"
+   },
+   "components": {
+    "M": 0.9,
+    "S": 0.96,
+    "T": null,
+    "N": null
+   },
+   "score": 0.924,
+   "reasons": [
+    "revenue +38.3% YoY",
+    "PAT +36.6% YoY"
+   ],
+   "bucket": "needs_you"
+  },
+  {
+   "id": "TATAPOWER-press_release-2026-11-05",
+   "symbol": "TATAPOWER",
+   "name": "Tata Power Company Limited",
+   "sector": "Power",
+   "kind": "filing",
+   "category": "press_release",
+   "at": "2026-11-05T10:34:26+05:30",
+   "title": "Press Release",
+   "summary": "A press release dated November 05, 2026, titled \"Tata Power Renewables Commissions 300 MW Project for SECI in Karnataka\".",
+   "url": "https://nsearchives.nseindia.in/corporate/KSTPCL_05112026103413_PR.pdf",
+   "related": [],
+   "components": {
+    "M": 0.35,
+    "S": 0.0,
+    "T": null,
+    "N": null
+   },
+   "score": 0.204,
+   "reasons": [
+    "press release"
+   ],
+   "bucket": "collapsed"
+  },
+  {
+   "id": "UNOMINDA-press_release-2026-11-05",
+   "symbol": "UNOMINDA",
+   "name": "UNO Minda Limited",
+   "sector": "Auto parts",
+   "kind": "filing",
+   "category": "press_release",
+   "at": "2026-11-05T10:06:26+05:30",
+   "title": "Committee Meeting Updates",
+   "summary": "Outcome of Committee Meeting held on November 05, 2026.",
+   "url": "https://nsearchives.nseindia.in/corporate/MINDAIND1_05112026100611_ESOPGRANTINTIMATION05112026.pdf",
+   "related": [
+    {
+     "title": "Press Release",
+     "url": "https://nsearchives.nseindia.in/corporate/MINDAIND1_05112026142535_Intimation_Pressreleasef.pdf"
+    }
+   ],
+   "components": {
+    "M": 0.35,
+    "S": 0.0,
+    "T": null,
+    "N": null
+   },
+   "score": 0.204,
+   "reasons": [
+    "press release"
+   ],
+   "bucket": "collapsed"
+  },
+  {
+   "id": "LUPIN-earnings_call-2026-11-04",
+   "symbol": "LUPIN",
+   "name": "Lupin Limited",
+   "sector": "Pharma",
+   "kind": "filing",
+   "category": "earnings_call",
+   "at": "2026-11-04T21:11:59+05:30",
+   "title": "Analysts/Institutional Investor Meet/Con. Call Updates",
+   "summary": "Link of Recording.",
+   "url": "https://nsearchives.nseindia.in/corporate/Lupin2_04112026210945_SE_Intimation_Audio_Link_Q2_FY27.pdf",
+   "related": [],
+   "components": {
+    "M": 0.25,
+    "S": 0.0,
+    "T": null,
+    "N": null
+   },
+   "score": 0.146,
+   "reasons": [
+    "earnings call"
+   ],
+   "bucket": "collapsed"
+  },
+  {
+   "id": "AUROPHARMA-management_change-2026-11-04",
+   "symbol": "AUROPHARMA",
+   "name": "Aurobindo Pharma Limited",
+   "sector": "Pharma",
+   "kind": "filing",
+   "category": "management_change",
+   "at": "2026-11-04T20:42:39+05:30",
+   "title": "Change in Director(s)",
+   "summary": "Change in Director(s) of the company.",
+   "url": "https://nsearchives.nseindia.in/corporate/AUROPHARMA_04112026204230_LtrToSEsReappointmentofMrKumar04112026.pdf",
+   "related": [],
+   "components": {
+    "M": 0.8,
+    "S": 0.0,
+    "T": null,
+    "N": null
+   },
+   "score": 0.467,
+   "reasons": [
+    "management change"
+   ],
+   "bucket": "worth_a_read"
+  },
+  {
+   "id": "AUROPHARMA-M&A-2026-11-04",
+   "symbol": "AUROPHARMA",
+   "name": "Aurobindo Pharma Limited",
+   "sector": "Pharma",
+   "kind": "filing",
+   "category": "M&A",
+   "at": "2026-11-04T20:25:02+05:30",
+   "title": "Amalgamation/Merger",
+   "summary": "Amalgamation/Merger of Auroactive Pharma Private Limited with Apitoria Pharma Private Limited wholly owned subsidiaries of the Company.",
+   "url": "https://nsearchives.nseindia.in/corporate/AUROPHARMA_04112026202447_LtrToSEAuroactiveApitoriaMerger04112026.pdf",
+   "related": [
+    {
+     "title": "Acquisition",
+     "url": "https://nsearchives.nseindia.in/corporate/AUROPHARMA_04112026203119_LtrToSEsOwnershipTransferRussia04112026.pdf"
+    }
+   ],
+   "components": {
+    "M": 0.85,
+    "S": 0.0,
+    "T": null,
+    "N": null
+   },
+   "score": 0.496,
+   "reasons": [
+    "M&A"
+   ],
+   "bucket": "worth_a_read"
+  },
+  {
+   "id": "AUROPHARMA-unclassified-2026-11-04",
+   "symbol": "AUROPHARMA",
+   "name": "Aurobindo Pharma Limited",
+   "sector": "Pharma",
+   "kind": "filing",
+   "category": "unclassified",
+   "at": "2026-11-04T20:13:02+05:30",
+   "title": "Record Date",
+   "summary": "Record date for the purpose of Dividend is 11-Nov-2026.",
+   "url": "https://nsearchives.nseindia.in/corporate/AUROPHARMA_04112026201247_LtrToSEsDividendUpdate04112026.pdf",
+   "related": [],
+   "components": {
+    "M": 0.05,
+    "S": 0.0,
+    "T": null,
+    "N": null
+   },
+   "score": 0.029,
+   "reasons": [
+    "unclassified"
+   ],
+   "bucket": "collapsed"
+  },
+  {
+   "id": "AUROPHARMA-investor_meetings-2026-11-04",
+   "symbol": "AUROPHARMA",
+   "name": "Aurobindo Pharma Limited",
+   "sector": "Pharma",
+   "kind": "filing",
+   "category": "investor_meetings",
+   "at": "2026-11-04T20:11:04+05:30",
+   "title": "Investor Presentation",
+   "summary": "Investor Presentation",
+   "url": "https://nsearchives.nseindia.in/corporate/AUROPHARMA_04112026201054_LtrToSEsInvestorPresentation04112026.pdf",
+   "related": [],
+   "components": {
+    "M": 0.15,
+    "S": 0.0,
+    "T": null,
+    "N": null
+   },
+   "score": 0.087,
+   "reasons": [
+    "investor meetings"
+   ],
+   "bucket": "collapsed"
+  },
+  {
+   "id": "AUROPHARMA-press_release-2026-11-04",
+   "symbol": "AUROPHARMA",
+   "name": "Aurobindo Pharma Limited",
+   "sector": "Pharma",
+   "kind": "filing",
+   "category": "press_release",
+   "at": "2026-11-04T20:09:09+05:30",
+   "title": "Press Release",
+   "summary": "A press release dated November 04, 2026, titled \"Press release on Q2 FY27 Financial Results.\".",
+   "url": "https://nsearchives.nseindia.in/corporate/AUROPHARMA_04112026200852_LtrToSEsPressRelease04112026.pdf",
+   "related": [],
+   "components": {
+    "M": 0.35,
+    "S": 0.0,
+    "T": null,
+    "N": null
+   },
+   "score": 0.204,
+   "reasons": [
+    "press release"
+   ],
+   "bucket": "collapsed"
+  },
+  {
+   "id": "AUROPHARMA-results-2026-11-04",
+   "symbol": "AUROPHARMA",
+   "name": "Aurobindo Pharma Limited",
+   "sector": "Pharma",
+   "kind": "filing",
+   "category": "results",
+   "at": "2026-11-04T19:53:46+05:30",
+   "title": "Outcome of Board Meeting",
+   "summary": "Aurobindo Pharma Limited has submitted to the Exchange, the financial results for the period ended September 30, 2026.",
+   "url": "https://nsearchives.nseindia.in/corporate/AUROPHARMA_04112026194825_LtrToSEsOutcomeOfBM04112026.pdf",
+   "related": [],
+   "results": {
+    "period": "Q2FY27",
+    "basis": "consolidated",
+    "metrics": {
+     "revenue": {
+      "value_cr": 10263.29,
+      "qoq_pct": 12.2,
+      "yoy_pct": 23.9
+     },
+     "ebitda": {
+      "value_cr": 2155.75,
+      "qoq_pct": 14.6,
+      "yoy_pct": 28.5
+     },
+     "pbt": {
+      "value_cr": 1690.61,
+      "qoq_pct": 11.5,
+      "yoy_pct": 32.7
+     },
+     "pat": {
+      "value_cr": 1123.84,
+      "qoq_pct": 8.9,
+      "yoy_pct": 32.5
+     }
+    },
+    "ebitda_margin": {
+     "pct": 21.0,
+     "qoq_bps": 44,
+     "yoy_bps": 75
+    },
+    "warnings": [],
+    "source": "https://nsearchives.nseindia.in/corporate/xbrl/INTEGRATED_FILING_INDAS_1753288_04112026104818_WEB.xml"
+   },
+   "components": {
+    "M": 0.9,
+    "S": 0.54,
+    "T": null,
+    "N": null
+   },
+   "score": 0.751,
+   "reasons": [
+    "PAT +32.5% YoY"
+   ],
+   "bucket": "needs_you"
+  },
+  {
+   "id": "M&M-credit_rating-2026-11-04",
+   "symbol": "M&M",
+   "name": "Mahindra & Mahindra Limited",
+   "sector": "Autos",
+   "kind": "filing",
+   "category": "credit_rating",
+   "at": "2026-11-04T19:43:00+05:30",
+   "title": "Credit Rating",
+   "summary": "Credit Rating",
+   "url": "https://nsearchives.nseindia.in/corporate/ferozebaria_04112026194248_CARE04112026.pdf",
+   "related": [],
+   "components": {
+    "M": 0.6,
+    "S": 0.0,
+    "T": null,
+    "N": null
+   },
+   "score": 0.35,
+   "reasons": [
+    "credit rating"
+   ],
+   "bucket": "worth_a_read"
+  },
+  {
+   "id": "TEXRAIL-investor_meetings-2026-11-04",
+   "symbol": "TEXRAIL",
+   "name": "Texmaco Rail & Engineering Limited",
+   "sector": "Capital goods",
+   "kind": "filing",
+   "category": "investor_meetings",
+   "at": "2026-11-04T18:54:18+05:30",
+   "title": "Analysts/Institutional Investor Meet/Con. Call Updates",
+   "summary": "Schedule of meet",
+   "url": "https://nsearchives.nseindia.in/corporate/TEXRAIL_04112026185314_TexrailSEInvestorCall111126.pdf",
+   "related": [],
+   "components": {
+    "M": 0.15,
+    "S": 0.0,
+    "T": null,
+    "N": null
+   },
+   "score": 0.087,
+   "reasons": [
+    "investor meetings"
+   ],
+   "bucket": "collapsed"
+  },
+  {
+   "id": "MEDANTA-earnings_call-2026-11-04",
+   "symbol": "MEDANTA",
+   "name": "Global Health Limited",
+   "sector": "Healthcare",
+   "kind": "filing",
+   "category": "earnings_call",
+   "at": "2026-11-04T16:57:30+05:30",
+   "title": "Analysts/Institutional Investor Meet/Con. Call Updates",
+   "summary": "Link of Recording",
+   "url": "https://nsearchives.nseindia.in/corporate/MEDANTA21_04112026165710_GHLAUDIORECORDINGINTIMATIONNOVEMBER042026Signed.pdf",
+   "related": [],
+   "components": {
+    "M": 0.25,
+    "S": 0.0,
+    "T": null,
+    "N": null
+   },
+   "score": 0.146,
+   "reasons": [
+    "earnings call"
+   ],
+   "bucket": "collapsed"
+  },
+  {
+   "id": "UNOMINDA-move-2026-11-04",
+   "symbol": "UNOMINDA",
+   "name": "UNO Minda Limited",
+   "sector": "Auto parts",
+   "kind": "move",
+   "category": "unexplained_move",
+   "at": "2026-11-04T15:30:00+05:30",
+   "title": "Unexplained move",
+   "summary": "volume 3.6× its 20-day average; price +6.4% on the day",
+   "url": null,
+   "related": [],
+   "move": {
+    "volume_multiple": 3.59,
+    "return_pct": 6.44
+   },
+   "components": {
+    "M": 0.6,
+    "S": 0.9,
+    "T": null,
+    "N": null
+   },
+   "score": 0.724,
+   "reasons": [
+    "volume 3.6× its 20-day average",
+    "price +6.4% on the day",
+    "no filing since the previous session"
+   ],
+   "bucket": "needs_you"
+  },
+  {
+   "id": "AUROPHARMA-move-2026-11-04",
+   "symbol": "AUROPHARMA",
+   "name": "Aurobindo Pharma Limited",
+   "sector": "Pharma",
+   "kind": "move",
+   "category": "price_volume",
+   "at": "2026-11-04T15:30:00+05:30",
+   "title": "Price / volume move",
+   "summary": "volume 2.6× its 20-day average",
+   "url": null,
+   "related": [],
+   "move": {
+    "volume_multiple": 2.59,
+    "return_pct": 0.62
+   },
+   "components": {
+    "M": 0.35,
+    "S": 0.65,
+    "T": null,
+    "N": null
+   },
+   "score": 0.474,
+   "reasons": [
+    "volume 2.6× its 20-day average"
+   ],
+   "bucket": "worth_a_read"
+  },
+  {
+   "id": "LUPIN-move-2026-11-04",
+   "symbol": "LUPIN",
+   "name": "Lupin Limited",
+   "sector": "Pharma",
+   "kind": "move",
+   "category": "price_volume",
+   "at": "2026-11-04T15:30:00+05:30",
+   "title": "Price / volume move",
+   "summary": "volume 2.5× its 20-day average",
+   "url": null,
+   "related": [],
+   "move": {
+    "volume_multiple": 2.51,
+    "return_pct": -0.36
+   },
+   "components": {
+    "M": 0.35,
+    "S": 0.63,
+    "T": null,
+    "N": null
+   },
+   "score": 0.466,
+   "reasons": [
+    "volume 2.5× its 20-day average"
+   ],
+   "bucket": "worth_a_read"
+  },
+  {
+   "id": "MEDANTA-move-2026-11-04",
+   "symbol": "MEDANTA",
+   "name": "Global Health Limited",
+   "sector": "Healthcare",
+   "kind": "move",
+   "category": "price_volume",
+   "at": "2026-11-04T15:30:00+05:30",
+   "title": "Price / volume move",
+   "summary": "volume 11.2× its 20-day average; price +5.7% on the day",
+   "url": null,
+   "related": [],
+   "move": {
+    "volume_multiple": 11.16,
+    "return_pct": 5.75
+   },
+   "components": {
+    "M": 0.35,
+    "S": 1,
+    "T": null,
+    "N": null
+   },
+   "score": 0.621,
+   "reasons": [
+    "volume 11.2× its 20-day average",
+    "price +5.7% on the day"
+   ],
+   "bucket": "worth_a_read"
+  },
+  {
+   "id": "KEC-move-2026-11-04",
+   "symbol": "KEC",
+   "name": "KEC International Limited",
+   "sector": "Transmission",
+   "kind": "move",
+   "category": "price_volume",
+   "at": "2026-11-04T15:30:00+05:30",
+   "title": "Price / volume move",
+   "summary": "volume 3.7× its 20-day average",
+   "url": null,
+   "related": [],
+   "move": {
+    "volume_multiple": 3.67,
+    "return_pct": 1.64
+   },
+   "components": {
+    "M": 0.35,
+    "S": 0.92,
+    "T": null,
+    "N": null
+   },
+   "score": 0.586,
+   "reasons": [
+    "volume 3.7× its 20-day average"
+   ],
+   "bucket": "worth_a_read"
+  },
+  {
+   "id": "JUBLFOOD-move-2026-11-04",
+   "symbol": "JUBLFOOD",
+   "name": "Jubilant Foodworks Limited",
+   "sector": "Consumer",
+   "kind": "move",
+   "category": "unexplained_move",
+   "at": "2026-11-04T15:30:00+05:30",
+   "title": "Unexplained move",
+   "summary": "volume 2.6× its 20-day average",
+   "url": null,
+   "related": [],
+   "move": {
+    "volume_multiple": 2.58,
+    "return_pct": 3.01
+   },
+   "components": {
+    "M": 0.6,
+    "S": 0.65,
+    "T": null,
+    "N": null
+   },
+   "score": 0.619,
+   "reasons": [
+    "volume 2.6× its 20-day average",
+    "no filing since the previous session"
+   ],
+   "bucket": "worth_a_read"
+  },
+  {
+   "id": "KEC-unclassified-2026-11-04",
+   "symbol": "KEC",
+   "name": "KEC International Limited",
+   "sector": "Transmission",
+   "kind": "filing",
+   "category": "unclassified",
+   "at": "2026-11-04T15:23:18+05:30",
+   "title": "Copy of Newspaper Publication",
+   "summary": "Please find enclosed herewith copies of newspaper advertisements published regarding Unaudited Financial Results of the Company for the quarter and half year ended September 30, 2026.",
+   "url": "https://nsearchives.nseindia.in/corporate/KEC_04112026152248_SEintimation.pdf",
+   "related": [],
+   "components": {
+    "M": 0.05,
+    "S": 0.0,
+    "T": null,
+    "N": null
+   },
+   "score": 0.029,
+   "reasons": [
+    "unclassified"
+   ],
+   "bucket": "collapsed"
+  },
+  {
+   "id": "MEDANTA-unclassified-2026-11-04",
+   "symbol": "MEDANTA",
+   "name": "Global Health Limited",
+   "sector": "Healthcare",
+   "kind": "filing",
+   "category": "unclassified",
+   "at": "2026-11-04T12:32:57+05:30",
+   "title": "Copy of Newspaper Publication",
+   "summary": "Copy of Newspaper Publication",
+   "url": "https://nsearchives.nseindia.in/corporate/MEDANTA21_04112026123237_GHLNEWSPAPERADVERNOVEMBER042026Signed.pdf",
+   "related": [],
+   "components": {
+    "M": 0.05,
+    "S": 0.0,
+    "T": null,
+    "N": null
+   },
+   "score": 0.029,
+   "reasons": [
+    "unclassified"
+   ],
+   "bucket": "collapsed"
+  },
+  {
+   "id": "LUPIN-investor_meetings-2026-11-04",
+   "symbol": "LUPIN",
+   "name": "Lupin Limited",
+   "sector": "Pharma",
+   "kind": "filing",
+   "category": "investor_meetings",
+   "at": "2026-11-04T01:49:55+05:30",
+   "title": "Investor Presentation",
+   "summary": "Investor Presentation",
+   "url": "https://nsearchives.nseindia.in/corporate/Lupin2_04112026014841_SE_Intimation_Investor_Presentation_04112026.pdf",
+   "related": [],
+   "components": {
+    "M": 0.15,
+    "S": 0.0,
+    "T": null,
+    "N": null
+   },
+   "score": 0.087,
+   "reasons": [
+    "investor meetings"
+   ],
+   "bucket": "collapsed"
+  },
+  {
+   "id": "LUPIN-press_release-2026-11-04",
+   "symbol": "LUPIN",
+   "name": "Lupin Limited",
+   "sector": "Pharma",
+   "kind": "filing",
+   "category": "press_release",
+   "at": "2026-11-04T01:44:23+05:30",
+   "title": "Press Release",
+   "summary": "A press release dated November 04, 2026, titled \"Lupin Q2 FY2027 Results \".",
+   "url": "https://nsearchives.nseindia.in/corporate/Lupin2_04112026014246_SE_Intimation_Press_Release_04112026.pdf",
+   "related": [],
+   "components": {
+    "M": 0.35,
+    "S": 0.0,
+    "T": null,
+    "N": null
+   },
+   "score": 0.204,
+   "reasons": [
+    "press release"
+   ],
+   "bucket": "collapsed"
+  },
+  {
+   "id": "LUPIN-management_change-2026-11-04",
+   "symbol": "LUPIN",
+   "name": "Lupin Limited",
+   "sector": "Pharma",
+   "kind": "filing",
+   "category": "management_change",
+   "at": "2026-11-04T01:12:08+05:30",
+   "title": "Change in Director(s)",
+   "summary": "Change in Director(s) of the company.",
+   "url": "https://nsearchives.nseindia.in/corporate/Lupin2_04112026011040_SE_Intimation_appointment_of_AG.pdf",
+   "related": [],
+   "components": {
+    "M": 0.8,
+    "S": 0.0,
+    "T": null,
+    "N": null
+   },
+   "score": 0.467,
+   "reasons": [
+    "management change"
+   ],
+   "bucket": "worth_a_read"
+  },
+  {
+   "id": "LUPIN-results-2026-11-04",
+   "symbol": "LUPIN",
+   "name": "Lupin Limited",
+   "sector": "Pharma",
+   "kind": "filing",
+   "category": "results",
+   "at": "2026-11-04T00:44:51+05:30",
+   "title": "Outcome of Board Meeting",
+   "summary": "Lupin Limited has submitted to the Exchange, the Standalone and Consolidated Unaudited Financial Results for the quarter and half year ended September 30, 2026.",
+   "url": "https://nsearchives.nseindia.in/corporate/Lupin2_04112026004100_SE_Outcome_UFR_Intimation.pdf",
+   "related": [],
+   "results": {
+    "period": "Q2FY27",
+    "basis": "consolidated",
+    "metrics": {
+     "revenue": {
+      "value_cr": 7827.26,
+      "qoq_pct": -5.4,
+      "yoy_pct": 11.1
+     },
+     "ebitda": {
+      "value_cr": 2044.41,
+      "qoq_pct": -16.5,
+      "yoy_pct": -12.7
+     },
+     "pbt": {
+      "value_cr": 1579.59,
+      "qoq_pct": -21.7,
+      "yoy_pct": -21.3
+     },
+     "pat": {
+      "value_cr": 1155.3,
+      "qoq_pct": -18.5,
+      "yoy_pct": -22.2
+     }
+    },
+    "ebitda_margin": {
+     "pct": 26.12,
+     "qoq_bps": -348,
+     "yoy_bps": -710
+    },
+    "warnings": [],
+    "source": "https://nsearchives.nseindia.in/corporate/xbrl/INTEGRATED_FILING_INDAS_1752380_04112026013306_WEB.xml"
+   },
+   "components": {
+    "M": 0.9,
+    "S": 1,
+    "T": null,
+    "N": null
+   },
+   "score": 0.942,
+   "reasons": [
+    "EBITDA margin -710 bps YoY"
+   ],
+   "bucket": "needs_you"
+  },
+  {
+   "id": "LUPIN-press_release-2026-11-03",
+   "symbol": "LUPIN",
+   "name": "Lupin Limited",
+   "sector": "Pharma",
+   "kind": "filing",
+   "category": "press_release",
+   "at": "2026-11-03T19:34:01+05:30",
+   "title": "Press Release",
+   "summary": "A press release dated November 03, 2026, titled \"Lupin Launches Raltegravir Tablets, USP, 600 mg in the United States\".",
+   "url": "https://nsearchives.nseindia.in/corporate/Lupin2_03112026193332_SEletterpressrelease.pdf",
+   "related": [],
+   "components": {
+    "M": 0.35,
+    "S": 0.0,
+    "T": null,
+    "N": null
+   },
+   "score": 0.204,
+   "reasons": [
+    "press release"
+   ],
+   "bucket": "collapsed"
+  },
+  {
+   "id": "SUDARSCHEM-investor_meetings-2026-11-03",
+   "symbol": "SUDARSCHEM",
+   "name": "Sudarshan Chemical Industries Limited",
+   "sector": "Chemicals",
+   "kind": "filing",
+   "category": "investor_meetings",
+   "at": "2026-11-03T18:07:59+05:30",
+   "title": "Analysts/Institutional Investor Meet/Con. Call Updates",
+   "summary": "Schedule of meet",
+   "url": "https://nsearchives.nseindia.in/corporate/SUDARSCHEM_03112026180740_Q2FY27AnalystCallIntimation03112026Signed.pdf",
+   "related": [],
+   "components": {
+    "M": 0.15,
+    "S": 0.0,
+    "T": null,
+    "N": null
+   },
+   "score": 0.087,
+   "reasons": [
+    "investor meetings"
+   ],
+   "bucket": "collapsed"
+  },
+  {
+   "id": "KEC-earnings_call-2026-11-03",
+   "symbol": "KEC",
+   "name": "KEC International Limited",
+   "sector": "Transmission",
+   "kind": "filing",
+   "category": "earnings_call",
+   "at": "2026-11-03T17:56:02+05:30",
+   "title": "Analysts/Institutional Investor Meet/Con. Call Updates",
+   "summary": "Audio Recording of the Earnings Conference Call held today i.e. November 03, 2026, at 10:00 a.m. (IST), for the Unaudited Financial Results of the Company for the quarter and half year ended September 30, 2026, has been made available on the Company's website.",
+   "url": "https://nsearchives.nseindia.in/corporate/KEC_03112026175244_SE_Intimation.pdf",
+   "related": [],
+   "components": {
+    "M": 0.25,
+    "S": 0.0,
+    "T": null,
+    "N": null
+   },
+   "score": 0.146,
+   "reasons": [
+    "earnings call"
+   ],
+   "bucket": "collapsed"
+  },
+  {
+   "id": "VOLTAS-investor_meetings-2026-11-03",
+   "symbol": "VOLTAS",
+   "name": "Voltas Limited",
+   "sector": "Consumer durables",
+   "kind": "filing",
+   "category": "investor_meetings",
+   "at": "2026-11-03T17:31:59+05:30",
+   "title": "Analysts/Institutional Investor Meet/Con. Call Updates",
+   "summary": "Schedule of meet",
+   "url": "https://nsearchives.nseindia.in/corporate/VOLTAS_RB_03112026173122_SE_Intimation.pdf",
+   "related": [],
+   "components": {
+    "M": 0.15,
+    "S": 0.0,
+    "T": null,
+    "N": null
+   },
+   "score": 0.087,
+   "reasons": [
+    "investor meetings"
+   ],
+   "bucket": "collapsed"
+  },
+  {
+   "id": "MEDANTA-investor_meetings-2026-11-03",
+   "symbol": "MEDANTA",
+   "name": "Global Health Limited",
+   "sector": "Healthcare",
+   "kind": "filing",
+   "category": "investor_meetings",
+   "at": "2026-11-03T17:27:36+05:30",
+   "title": "Investor Presentation",
+   "summary": "Investor Presentation",
+   "url": "https://nsearchives.nseindia.in/corporate/MEDANTA21_03112026172712_GHLINVESTORPRESENTATIONNOV032026SIGNED.pdf",
+   "related": [],
+   "components": {
+    "M": 0.15,
+    "S": 0.0,
+    "T": null,
+    "N": null
+   },
+   "score": 0.087,
+   "reasons": [
+    "investor meetings"
+   ],
+   "bucket": "collapsed"
+  },
+  {
+   "id": "MEDANTA-press_release-2026-11-03",
+   "symbol": "MEDANTA",
+   "name": "Global Health Limited",
+   "sector": "Healthcare",
+   "kind": "filing",
+   "category": "press_release",
+   "at": "2026-11-03T17:25:18+05:30",
+   "title": "Press Release",
+   "summary": "A press release dated November 03, 2026, titled \"Press release for the Results of Second Quarter & Half Year ended September 30, 2026.\"",
+   "url": "https://nsearchives.nseindia.in/corporate/MEDANTA21_03112026172432_GHLPRESSRELEASENOVEMBER032026SIGNED.pdf",
+   "related": [],
+   "components": {
+    "M": 0.35,
+    "S": 0.0,
+    "T": null,
+    "N": null
+   },
+   "score": 0.204,
+   "reasons": [
+    "press release"
+   ],
+   "bucket": "collapsed"
+  },
+  {
+   "id": "MEDANTA-capex-2026-11-03",
+   "symbol": "MEDANTA",
+   "name": "Global Health Limited",
+   "sector": "Healthcare",
+   "kind": "filing",
+   "category": "capex",
+   "at": "2026-11-03T16:22:19+05:30",
+   "title": "Capacity addition",
+   "summary": "Capacity addition",
+   "url": "https://nsearchives.nseindia.in/corporate/MEDANTA21_03112026162207_GHLOUTCOMEOFBMNOV032026SIGNED.pdf",
+   "related": [],
+   "components": {
+    "M": 0.7,
+    "S": 0.0,
+    "T": null,
+    "N": null
+   },
+   "score": 0.408,
+   "reasons": [
+    "capex"
+   ],
+   "bucket": "worth_a_read"
+  },
+  {
+   "id": "M&M-press_release-2026-11-03",
+   "symbol": "M&M",
+   "name": "Mahindra & Mahindra Limited",
+   "sector": "Autos",
+   "kind": "filing",
+   "category": "press_release",
+   "at": "2026-11-03T16:07:13+05:30",
+   "title": "Updates",
+   "summary": "The change in the address of the Corporate Office of the Registrar to an Issue and Share Transfer Agent'.",
+   "url": "https://nsearchives.nseindia.in/corporate/Deepak_03112026160659_SE_Intimation_Change_of_Kfintech_Corporate_Office.pdf",
+   "related": [],
+   "components": {
+    "M": 0.35,
+    "S": 0.0,
+    "T": null,
+    "N": null
+   },
+   "score": 0.204,
+   "reasons": [
+    "press release"
+   ],
+   "bucket": "collapsed"
+  },
+  {
+   "id": "MEDANTA-results-2026-11-03",
+   "symbol": "MEDANTA",
+   "name": "Global Health Limited",
+   "sector": "Healthcare",
+   "kind": "filing",
+   "category": "results",
+   "at": "2026-11-03T16:06:37+05:30",
+   "title": "Outcome of Board Meeting",
+   "summary": "Global Health Limited has submitted to the Exchange, the financial results for the period ended September 30, 2026.",
+   "url": "https://nsearchives.nseindia.in/corporate/MEDANTA21_03112026160317_GHLOUTCOMEOFBMNOV032026SIGNED.pdf",
+   "related": [],
+   "results": {
+    "period": "Q2FY27",
+    "basis": "consolidated",
+    "metrics": {
+     "revenue": {
+      "value_cr": 1469.04,
+      "qoq_pct": 12.7,
+      "yoy_pct": 33.6
+     },
+     "ebitda": {
+      "value_cr": 370.11,
+      "qoq_pct": 29.1,
+      "yoy_pct": 60.3
+     },
+     "pbt": {
+      "value_cr": 294.83,
+      "qoq_pct": 38.2,
+      "yoy_pct": 47.6
+     },
+     "pat": {
+      "value_cr": 219.14,
+      "qoq_pct": 39.4,
+      "yoy_pct": 38.3
+     }
+    },
+    "ebitda_margin": {
+     "pct": 25.19,
+     "qoq_bps": 320,
+     "yoy_bps": 418
+    },
+    "warnings": [],
+    "source": "https://nsearchives.nseindia.in/corporate/xbrl/INTEGRATED_FILING_INDAS_1751853_03112026044819_WEB.xml"
+   },
+   "components": {
+    "M": 0.9,
+    "S": 0.84,
+    "T": null,
+    "N": null
+   },
+   "score": 0.875,
+   "reasons": [
+    "EBITDA margin +418 bps YoY",
+    "revenue +33.6% YoY",
+    "PAT +38.3% YoY"
+   ],
+   "bucket": "needs_you"
+  },
+  {
+   "id": "UNOMINDA-move-2026-11-03",
+   "symbol": "UNOMINDA",
+   "name": "UNO Minda Limited",
+   "sector": "Auto parts",
+   "kind": "move",
+   "category": "unexplained_move",
+   "at": "2026-11-03T15:30:00+05:30",
+   "title": "Unexplained move",
+   "summary": "volume 2.6× its 20-day average",
+   "url": null,
+   "related": [],
+   "move": {
+    "volume_multiple": 2.56,
+    "return_pct": 0.52
+   },
+   "components": {
+    "M": 0.6,
+    "S": 0.64,
+    "T": null,
+    "N": null
+   },
+   "score": 0.617,
+   "reasons": [
+    "volume 2.6× its 20-day average",
+    "no filing since the previous session"
+   ],
+   "bucket": "worth_a_read"
+  },
+  {
+   "id": "MEDANTA-move-2026-11-03",
+   "symbol": "MEDANTA",
+   "name": "Global Health Limited",
+   "sector": "Healthcare",
+   "kind": "move",
+   "category": "price_volume",
+   "at": "2026-11-03T15:30:00+05:30",
+   "title": "Price / volume move",
+   "summary": "volume 2.0× its 20-day average",
+   "url": null,
+   "related": [],
+   "move": {
+    "volume_multiple": 2.0,
+    "return_pct": 2.11
+   },
+   "components": {
+    "M": 0.35,
+    "S": 0.5,
+    "T": null,
+    "N": null
+   },
+   "score": 0.413,
+   "reasons": [
+    "volume 2.0× its 20-day average"
+   ],
+   "bucket": "worth_a_read"
+  },
+  {
+   "id": "GRSE-move-2026-11-03",
+   "symbol": "GRSE",
+   "name": "Garden Reach Shipbuilders & Engineers Limited",
+   "sector": "Defence shipbuilding",
+   "kind": "move",
+   "category": "price_volume",
+   "at": "2026-11-03T15:30:00+05:30",
+   "title": "Price / volume move",
+   "summary": "volume 7.6× its 20-day average",
+   "url": null,
+   "related": [],
+   "move": {
+    "volume_multiple": 7.64,
+    "return_pct": 4.11
+   },
+   "components": {
+    "M": 0.35,
+    "S": 1,
+    "T": null,
+    "N": null
+   },
+   "score": 0.621,
+   "reasons": [
+    "volume 7.6× its 20-day average"
+   ],
+   "bucket": "worth_a_read"
+  },
+  {
+   "id": "KEC-move-2026-11-03",
+   "symbol": "KEC",
+   "name": "KEC International Limited",
+   "sector": "Transmission",
+   "kind": "move",
+   "category": "price_volume",
+   "at": "2026-11-03T15:30:00+05:30",
+   "title": "Price / volume move",
+   "summary": "volume 6.6× its 20-day average; price -9.4% on the day",
+   "url": null,
+   "related": [],
+   "move": {
+    "volume_multiple": 6.62,
+    "return_pct": -9.36
+   },
+   "components": {
+    "M": 0.35,
+    "S": 1,
+    "T": null,
+    "N": null
+   },
+   "score": 0.621,
+   "reasons": [
+    "volume 6.6× its 20-day average",
+    "price -9.4% on the day"
+   ],
+   "bucket": "worth_a_read"
+  },
+  {
+   "id": "TATASTEEL-M&A-2026-11-03",
+   "symbol": "TATASTEEL",
+   "name": "Tata Steel Limited",
+   "sector": "Metals",
+   "kind": "filing",
+   "category": "M&A",
+   "at": "2026-11-03T12:46:35+05:30",
+   "title": "Scheme of Arrangement",
+   "summary": "Effective Date of the Scheme of Amalgamation amongst Tata Steel Limited and Rujuvalika Investments Limited, wholly owned subsidiary, and their respective shareholders",
+   "url": "https://nsearchives.nseindia.in/corporate/NIDHIFADNAVIS_03112026124351_BSENSE.pdf",
+   "related": [
+    {
+     "title": "Amalgamation/Merger",
+     "url": "https://nsearchives.nseindia.in/corporate/NIDHIFADNAVIS_03112026124745_BSENSE.pdf"
+    }
+   ],
+   "components": {
+    "M": 0.85,
+    "S": 0.0,
+    "T": null,
+    "N": null
+   },
+   "score": 0.496,
+   "reasons": [
+    "M&A"
+   ],
+   "bucket": "worth_a_read"
+  },
+  {
+   "id": "KEC-investor_meetings-2026-11-02",
+   "symbol": "KEC",
+   "name": "KEC International Limited",
+   "sector": "Transmission",
+   "kind": "filing",
+   "category": "investor_meetings",
+   "at": "2026-11-02T21:22:18+05:30",
+   "title": "Investor Presentation",
+   "summary": "Investor Presentation",
+   "url": "https://nsearchives.nseindia.in/corporate/KEC_02112026212142_SE_Intimation_Investor_Presentation_Q2_FY27.pdf",
+   "related": [],
+   "components": {
+    "M": 0.15,
+    "S": 0.0,
+    "T": null,
+    "N": null
+   },
+   "score": 0.087,
+   "reasons": [
+    "investor meetings"
+   ],
+   "bucket": "collapsed"
+  },
+  {
+   "id": "KEC-press_release-2026-11-02",
+   "symbol": "KEC",
+   "name": "KEC International Limited",
+   "sector": "Transmission",
+   "kind": "filing",
+   "category": "press_release",
+   "at": "2026-11-02T21:18:22+05:30",
+   "title": "Press Release",
+   "summary": "Please find enclosed herewith a copy of the Press Release on the Unaudited Financial Results of the Company for the quarter and half year ended September 30, 2026.",
+   "url": "https://nsearchives.nseindia.in/corporate/KEC_02112026211750_SE_intimation_PressRelease.pdf",
+   "related": [],
+   "components": {
+    "M": 0.35,
+    "S": 0.0,
+    "T": null,
+    "N": null
+   },
+   "score": 0.204,
+   "reasons": [
+    "press release"
+   ],
+   "bucket": "collapsed"
+  },
+  {
+   "id": "KEC-management_change-2026-11-02",
+   "symbol": "KEC",
+   "name": "KEC International Limited",
+   "sector": "Transmission",
+   "kind": "filing",
+   "category": "management_change",
+   "at": "2026-11-02T21:14:06+05:30",
+   "title": "Appointment",
+   "summary": "The Board of Directors of the Company at its meeting held today i.e. November 02, 2026, inter alia, approved the appointment of Mr. Anant Vardhan Goenka as an Additional Director (Non-Executive, Non-Independent) effective November 02, 2026.",
+   "url": "https://nsearchives.nseindia.in/corporate/KEC_02112026211334_SE_Intimation_Appointment_of_director.pdf",
+   "related": [],
+   "components": {
+    "M": 0.8,
+    "S": 0.0,
+    "T": null,
+    "N": null
+   },
+   "score": 0.467,
+   "reasons": [
+    "management change"
+   ],
+   "bucket": "worth_a_read"
+  },
+  {
+   "id": "KEC-results-2026-11-02",
+   "symbol": "KEC",
+   "name": "KEC International Limited",
+   "sector": "Transmission",
+   "kind": "filing",
+   "category": "results",
+   "at": "2026-11-02T21:09:59+05:30",
+   "title": "Outcome of Board Meeting",
+   "summary": "The Unaudited Financial Results for the quarter and half year ended September 30, 2026, along with the Limited Review Reports of the Statutory Auditors are enclosed.",
+   "url": "https://nsearchives.nseindia.in/corporate/KEC_02112026210430_SE_intimation_BM_outcome_Results.pdf",
+   "related": [],
+   "results": {
+    "period": "Q2FY27",
+    "basis": "consolidated",
+    "metrics": {
+     "revenue": {
+      "value_cr": 5467.71,
+      "qoq_pct": 8.8,
+      "yoy_pct": -10.2
+     },
+     "ebitda": {
+      "value_cr": 271.28,
+      "qoq_pct": -6.7,
+      "yoy_pct": -37.0
+     },
+     "pbt": {
+      "value_cr": 40.88,
+      "qoq_pct": -54.5,
+      "yoy_pct": -80.8
+     },
+     "pat": {
+      "value_cr": 29.74,
+      "qoq_pct": -59.0,
+      "yoy_pct": -81.5
+     }
+    },
+    "ebitda_margin": {
+     "pct": 4.96,
+     "qoq_bps": -83,
+     "yoy_bps": -211
+    },
+    "warnings": [],
+    "source": "https://nsearchives.nseindia.in/corporate/xbrl/INTEGRATED_FILING_INDAS_1751525_02112026092732_WEB.xml"
+   },
+   "components": {
+    "M": 0.9,
+    "S": 1,
+    "T": null,
+    "N": null
+   },
+   "score": 0.942,
+   "reasons": [
+    "EBITDA margin -211 bps YoY",
+    "revenue -10.2% YoY",
+    "PAT -81.5% YoY"
+   ],
+   "bucket": "needs_you"
+  },
+  {
+   "id": "SUDARSCHEM-M&A-2026-11-02",
+   "symbol": "SUDARSCHEM",
+   "name": "Sudarshan Chemical Industries Limited",
+   "sector": "Chemicals",
+   "kind": "filing",
+   "category": "M&A",
+   "at": "2026-11-02T18:54:01+05:30",
+   "title": "Sale or disposal",
+   "summary": "Sale or disposal",
+   "url": "https://nsearchives.nseindia.in/corporate/SUDARSCHEM_02112026185351_SaleofVP402112026Signed.pdf",
+   "related": [],
+   "components": {
+    "M": 0.85,
+    "S": 0.0,
+    "T": null,
+    "N": null
+   },
+   "score": 0.496,
+   "reasons": [
+    "M&A"
+   ],
+   "bucket": "worth_a_read"
+  },
+  {
+   "id": "LUPIN-press_release-2026-11-02",
+   "symbol": "LUPIN",
+   "name": "Lupin Limited",
+   "sector": "Pharma",
+   "kind": "filing",
+   "category": "press_release",
+   "at": "2026-11-02T18:05:51+05:30",
+   "title": "Press Release",
+   "summary": "A press release dated November 02, 2026, titled \"Lupin Receives U.S. FDA Approval for Amifampridine Tablets\".",
+   "url": "https://nsearchives.nseindia.in/corporate/Lupin2_02112026175800_SELetterPressRelease.pdf",
+   "related": [],
+   "components": {
+    "M": 0.35,
+    "S": 0.0,
+    "T": null,
+    "N": null
+   },
+   "score": 0.204,
+   "reasons": [
+    "press release"
+   ],
+   "bucket": "collapsed"
+  },
+  {
+   "id": "MEDANTA-management_change-2026-11-02",
+   "symbol": "MEDANTA",
+   "name": "Global Health Limited",
+   "sector": "Healthcare",
+   "kind": "filing",
+   "category": "management_change",
+   "at": "2026-11-02T17:26:44+05:30",
+   "title": "Change in Management",
+   "summary": "Change in Management",
+   "url": "https://nsearchives.nseindia.in/corporate/MEDANTA21_02112026172623_GHLResignationofSMPNOVEMBER022026SIGNED.pdf",
+   "related": [
+    {
+     "title": "Resignation of Director/KMP/SMP",
+     "url": "https://nsearchives.nseindia.in/corporate/MEDANTA_ROID_103012_KMP_Doc.zip"
+    }
+   ],
+   "components": {
+    "M": 0.3,
+    "S": 0.0,
+    "T": null,
+    "N": null
+   },
+   "score": 0.175,
+   "reasons": [
+    "board / secretarial change"
+   ],
+   "bucket": "collapsed"
+  },
+  {
+   "id": "MEDANTA-unclassified-2026-11-02",
+   "symbol": "MEDANTA",
+   "name": "Global Health Limited",
+   "sector": "Healthcare",
+   "kind": "filing",
+   "category": "unclassified",
+   "at": "2026-11-02T17:25:01+05:30",
+   "title": "ESOP/ESOS/ESPS",
+   "summary": "Grant of 314000 Options.",
+   "url": "https://nsearchives.nseindia.in/corporate/MEDANTA21_02112026172430_GHLResignationofSMPNOVEMBER022026SIGNED.pdf",
+   "related": [],
+   "components": {
+    "M": 0.05,
+    "S": 0.0,
+    "T": null,
+    "N": null
+   },
+   "score": 0.029,
+   "reasons": [
+    "unclassified"
+   ],
+   "bucket": "collapsed"
+  },
+  {
+   "id": "TATAPOWER-investor_meetings-2026-11-02",
+   "symbol": "TATAPOWER",
+   "name": "Tata Power Company Limited",
+   "sector": "Power",
+   "kind": "filing",
+   "category": "investor_meetings",
+   "at": "2026-11-02T17:12:16+05:30",
+   "title": "Analysts/Institutional Investor Meet/Con. Call Updates",
+   "summary": "Schedule of meet",
+   "url": "https://nsearchives.nseindia.in/corporate/KSTPCL_02112026171009_Analyst_Call_Q2FY27.pdf",
+   "related": [],
+   "components": {
+    "M": 0.15,
+    "S": 0.0,
+    "T": null,
+    "N": null
+   },
+   "score": 0.087,
+   "reasons": [
+    "investor meetings"
+   ],
+   "bucket": "collapsed"
+  },
+  {
+   "id": "GRSE-press_release-2026-11-02",
+   "symbol": "GRSE",
+   "name": "Garden Reach Shipbuilders & Engineers Limited",
+   "sector": "Defence shipbuilding",
+   "kind": "filing",
+   "category": "press_release",
+   "at": "2026-11-02T16:40:54+05:30",
+   "title": "Press Release",
+   "summary": "In continuance of our earlier letter no. GRSE/BD-69/CA/14/25-26 dated 22 May 2025 on the subject matter GRSE become L1 to NGC Project and in terms of Regulation 30 and other applicable provisions of the Securities and Exchange Board of India (Listing Obligations and Disclosure Requirements) Regulations, 2015, as amended, we wish to inform you that the Company has signed a contract with the Indian Navy in New Delhi today for the construction of five Next Generation Corvettes (NGCs). The contract, valued at approximately Rs. 32,000 Crore.Copy of the press release is enclosed herewith.This is for your information and record",
+   "url": "https://nsearchives.nseindia.in/corporate/GRSE_02112026164033_Corp_Ann__Press_Release_regarding_signing_of_contract_for_5_NGCs.pdf",
+   "related": [
+    {
+     "title": "Bagging/Receiving of orders/contracts",
+     "url": "https://nsearchives.nseindia.in/corporate/GRSE_02112026171922_Corp_Ann_Signing_of_contract_for_5_NGCs.pdf"
+    }
+   ],
+   "components": {
+    "M": 0.35,
+    "S": 0.0,
+    "T": null,
+    "N": null
+   },
+   "score": 0.204,
+   "reasons": [
+    "press release"
+   ],
+   "bucket": "collapsed"
+  },
+  {
+   "id": "AURIONPRO-earnings_call-2026-11-02",
+   "symbol": "AURIONPRO",
+   "name": "Aurionpro Solutions Limited",
+   "sector": "IT",
+   "kind": "filing",
+   "category": "earnings_call",
+   "at": "2026-11-02T16:37:12+05:30",
+   "title": "Analysts/Institutional Investor Meet/Con. Call Updates",
+   "summary": "Link of Recording of Earnings Call held on November 02, 2026",
+   "url": "https://nsearchives.nseindia.in/corporate/AURIONPRO_02112026163647_ASL_Earnings_Call_Recording_September_sd.pdf",
+   "related": [],
+   "components": {
+    "M": 0.25,
+    "S": 0.0,
+    "T": null,
+    "N": null
+   },
+   "score": 0.146,
+   "reasons": [
+    "earnings call"
+   ],
+   "bucket": "collapsed"
+  },
+  {
+   "id": "UNOMINDA-move-2026-11-02",
+   "symbol": "UNOMINDA",
+   "name": "UNO Minda Limited",
+   "sector": "Auto parts",
+   "kind": "move",
+   "category": "price_volume",
+   "at": "2026-11-02T15:30:00+05:30",
+   "title": "Price / volume move",
+   "summary": "volume 2.6× its 20-day average",
+   "url": null,
+   "related": [],
+   "move": {
+    "volume_multiple": 2.64,
+    "return_pct": 3.34
+   },
+   "components": {
+    "M": 0.35,
+    "S": 0.66,
+    "T": null,
+    "N": null
+   },
+   "score": 0.479,
+   "reasons": [
+    "volume 2.6× its 20-day average"
+   ],
+   "bucket": "worth_a_read"
+  },
+  {
+   "id": "TEXRAIL-move-2026-11-02",
+   "symbol": "TEXRAIL",
+   "name": "Texmaco Rail & Engineering Limited",
+   "sector": "Capital goods",
+   "kind": "move",
+   "category": "price_volume",
+   "at": "2026-11-02T15:30:00+05:30",
+   "title": "Price / volume move",
+   "summary": "price +6.0% on the day",
+   "url": null,
+   "related": [],
+   "move": {
+    "volume_multiple": 1.01,
+    "return_pct": 6.04
+   },
+   "components": {
+    "M": 0.35,
+    "S": 0.6,
+    "T": null,
+    "N": null
+   },
+   "score": 0.456,
+   "reasons": [
+    "price +6.0% on the day"
+   ],
+   "bucket": "worth_a_read"
+  },
+  {
+   "id": "GRSE-move-2026-11-02",
+   "symbol": "GRSE",
+   "name": "Garden Reach Shipbuilders & Engineers Limited",
+   "sector": "Defence shipbuilding",
+   "kind": "move",
+   "category": "price_volume",
+   "at": "2026-11-02T15:30:00+05:30",
+   "title": "Price / volume move",
+   "summary": "volume 2.1× its 20-day average; price +5.3% on the day",
+   "url": null,
+   "related": [],
+   "move": {
+    "volume_multiple": 2.09,
+    "return_pct": 5.3
+   },
+   "components": {
+    "M": 0.35,
+    "S": 0.53,
+    "T": null,
+    "N": null
+   },
+   "score": 0.425,
+   "reasons": [
+    "volume 2.1× its 20-day average",
+    "price +5.3% on the day"
+   ],
+   "bucket": "worth_a_read"
+  },
+  {
+   "id": "KEC-move-2026-11-02",
+   "symbol": "KEC",
+   "name": "KEC International Limited",
+   "sector": "Transmission",
+   "kind": "move",
+   "category": "price_volume",
+   "at": "2026-11-02T15:30:00+05:30",
+   "title": "Price / volume move",
+   "summary": "price +5.9% on the day",
+   "url": null,
+   "related": [],
+   "move": {
+    "volume_multiple": 0.77,
+    "return_pct": 5.87
+   },
+   "components": {
+    "M": 0.35,
+    "S": 0.59,
+    "T": null,
+    "N": null
+   },
+   "score": 0.449,
+   "reasons": [
+    "price +5.9% on the day"
+   ],
+   "bucket": "worth_a_read"
+  },
+  {
+   "id": "AURIONPRO-move-2026-11-02",
+   "symbol": "AURIONPRO",
+   "name": "Aurionpro Solutions Limited",
+   "sector": "IT",
+   "kind": "move",
+   "category": "price_volume",
+   "at": "2026-11-02T15:30:00+05:30",
+   "title": "Price / volume move",
+   "summary": "volume 2.3× its 20-day average",
+   "url": null,
+   "related": [],
+   "move": {
+    "volume_multiple": 2.25,
+    "return_pct": 1.66
+   },
+   "components": {
+    "M": 0.35,
+    "S": 0.56,
+    "T": null,
+    "N": null
+   },
+   "score": 0.439,
+   "reasons": [
+    "volume 2.3× its 20-day average"
+   ],
+   "bucket": "worth_a_read"
+  },
+  {
+   "id": "TATASTEEL-move-2026-11-02",
+   "symbol": "TATASTEEL",
+   "name": "Tata Steel Limited",
+   "sector": "Metals",
+   "kind": "move",
+   "category": "unexplained_move",
+   "at": "2026-11-02T15:30:00+05:30",
+   "title": "Unexplained move",
+   "summary": "price +5.8% on the day",
+   "url": null,
+   "related": [],
+   "move": {
+    "volume_multiple": 1.33,
+    "return_pct": 5.83
+   },
+   "components": {
+    "M": 0.6,
+    "S": 0.58,
+    "T": null,
+    "N": null
+   },
+   "score": 0.593,
+   "reasons": [
+    "price +5.8% on the day",
+    "no filing since the previous session"
+   ],
+   "bucket": "worth_a_read"
+  },
+  {
+   "id": "GRSE-management_change-2026-11-02",
+   "symbol": "GRSE",
+   "name": "Garden Reach Shipbuilders & Engineers Limited",
+   "sector": "Defence shipbuilding",
+   "kind": "filing",
+   "category": "management_change",
+   "at": "2026-11-02T15:13:59+05:30",
+   "title": "Change in Director(s)",
+   "summary": "Change in Director(s) of the company.",
+   "url": "https://nsearchives.nseindia.in/corporate/GRSE_02112026151337_Appointment_of_Shri_Laishram_Meenabanta_Singh_ID.pdf",
+   "related": [],
+   "components": {
+    "M": 0.8,
+    "S": 0.0,
+    "T": null,
+    "N": null
+   },
+   "score": 0.467,
+   "reasons": [
+    "management change"
+   ],
+   "bucket": "worth_a_read"
+  },
+  {
+   "id": "AURIONPRO-unclassified-2026-11-02",
+   "symbol": "AURIONPRO",
+   "name": "Aurionpro Solutions Limited",
+   "sector": "IT",
+   "kind": "filing",
+   "category": "unclassified",
+   "at": "2026-11-02T13:23:13+05:30",
+   "title": "Copy of Newspaper Publication",
+   "summary": "Copy of Newspaper Publication regarding unaudited financial statements for the quarter and half year ended September 30, 2026",
+   "url": "https://nsearchives.nseindia.in/corporate/AURIONPRO_02112026132237_ASL_Newspaper_advt_September2026_sd.pdf",
+   "related": [],
+   "components": {
+    "M": 0.05,
+    "S": 0.0,
+    "T": null,
+    "N": null
+   },
+   "score": 0.029,
+   "reasons": [
+    "unclassified"
+   ],
+   "bucket": "collapsed"
+  },
+  {
+   "id": "THERMAX-investor_meetings-2026-11-02",
+   "symbol": "THERMAX",
+   "name": "Thermax Limited",
+   "sector": "Capital goods",
+   "kind": "filing",
+   "category": "investor_meetings",
+   "at": "2026-11-02T11:35:33+05:30",
+   "title": "Analysts/Institutional Investor Meet/Con. Call Updates",
+   "summary": "Schedule of meet",
+   "url": "https://nsearchives.nseindia.in/corporate/THERMAXNSE_02112026113522_SEinitimation_sd.pdf",
+   "related": [],
+   "components": {
+    "M": 0.15,
+    "S": 0.0,
+    "T": null,
+    "N": null
+   },
+   "score": 0.087,
+   "reasons": [
+    "investor meetings"
+   ],
+   "bucket": "collapsed"
+  },
+  {
+   "id": "ASHOKLEY-press_release-2026-11-02",
+   "symbol": "ASHOKLEY",
+   "name": "Ashok Leyland Limited",
+   "sector": "Autos",
+   "kind": "filing",
+   "category": "press_release",
+   "at": "2026-11-02T08:34:12+05:30",
+   "title": "Monthly Business Updates",
+   "summary": "Monthly Business Updates for the month of October 2026",
+   "url": "https://nsearchives.nseindia.in/corporate/ASHOKLEYLAND_02112026083345_42salesvolumeOct2026PDF.pdf",
+   "related": [],
+   "components": {
+    "M": 0.35,
+    "S": 0.0,
+    "T": null,
+    "N": null
+   },
+   "score": 0.204,
+   "reasons": [
+    "press release"
+   ],
+   "bucket": "collapsed"
+  },
+  {
+   "id": "UNOMINDA-earnings_call-2026-11-01",
+   "symbol": "UNOMINDA",
+   "name": "UNO Minda Limited",
+   "sector": "Auto parts",
+   "kind": "filing",
+   "category": "earnings_call",
+   "at": "2026-11-01T18:15:54+05:30",
+   "title": "Analysts/Institutional Investor Meet/Con. Call Updates",
+   "summary": "The rescheduling of earnings call to discuss the operational and financial performance for Q2 & H1FY27.",
+   "url": "https://nsearchives.nseindia.in/corporate/MINDAIND1_01112026181529_Intimation_update_in_earnings_call_signed.pdf",
+   "related": [],
+   "components": {
+    "M": 0.25,
+    "S": 0.0,
+    "T": null,
+    "N": null
+   },
+   "score": 0.146,
+   "reasons": [
+    "earnings call"
+   ],
+   "bucket": "collapsed"
+  },
+  {
+   "id": "AURIONPRO-investor_meetings-2026-11-01",
+   "symbol": "AURIONPRO",
+   "name": "Aurionpro Solutions Limited",
+   "sector": "IT",
+   "kind": "filing",
+   "category": "investor_meetings",
+   "at": "2026-11-01T14:20:15+05:30",
+   "title": "Investor Presentation",
+   "summary": "Investor Presentation",
+   "url": "https://nsearchives.nseindia.in/corporate/AURIONPRO_01112026142000_ASL_Q2_Investor_Presentation_SD.pdf",
+   "related": [],
+   "components": {
+    "M": 0.15,
+    "S": 0.0,
+    "T": null,
+    "N": null
+   },
+   "score": 0.087,
+   "reasons": [
+    "investor meetings"
+   ],
+   "bucket": "collapsed"
+  },
+  {
+   "id": "M&M-press_release-2026-11-01",
+   "symbol": "M&M",
+   "name": "Mahindra & Mahindra Limited",
+   "sector": "Autos",
+   "kind": "filing",
+   "category": "press_release",
+   "at": "2026-11-01T10:15:10+05:30",
+   "title": "Monthly Business Updates",
+   "summary": "Monthly Business Updates for the month of October 2026",
+   "url": "https://nsearchives.nseindia.in/corporate/ferozebaria_01112026101454_SEIntimationNovember2026PR.pdf",
+   "related": [],
+   "components": {
+    "M": 0.35,
+    "S": 0.0,
+    "T": null,
+    "N": null
+   },
+   "score": 0.204,
+   "reasons": [
+    "press release"
+   ],
+   "bucket": "collapsed"
+  },
+  {
+   "id": "TEXRAIL-credit_rating-2026-10-31",
+   "symbol": "TEXRAIL",
+   "name": "Texmaco Rail & Engineering Limited",
+   "sector": "Capital goods",
+   "kind": "filing",
+   "category": "credit_rating",
+   "at": "2026-10-31T22:53:19+05:30",
+   "title": "Credit Rating",
+   "summary": "Credit Rating",
+   "url": "https://nsearchives.nseindia.in/corporate/TEXRAIL_31102026225259_SECREDITRATING31102026.pdf",
+   "related": [],
+   "components": {
+    "M": 0.6,
+    "S": 0.0,
+    "T": null,
+    "N": null
+   },
+   "score": 0.35,
+   "reasons": [
+    "credit rating"
+   ],
+   "bucket": "worth_a_read"
+  },
+  {
+   "id": "AURIONPRO-press_release-2026-10-31",
+   "symbol": "AURIONPRO",
+   "name": "Aurionpro Solutions Limited",
+   "sector": "IT",
+   "kind": "filing",
+   "category": "press_release",
+   "at": "2026-10-31T20:22:09+05:30",
+   "title": "Press Release",
+   "summary": "A press release dated October 31, 2026, titled \"Press release relating to announcement of unaudited financial results of the Company for the quarter and half year ended September 30, 2026.\".",
+   "url": "https://nsearchives.nseindia.in/corporate/AURIONPRO_31102026202131_ASL_Press_Release_Q2FY27_sd.pdf",
+   "related": [],
+   "components": {
+    "M": 0.35,
+    "S": 0.0,
+    "T": null,
+    "N": null
+   },
+   "score": 0.204,
+   "reasons": [
+    "press release"
+   ],
+   "bucket": "collapsed"
+  },
+  {
+   "id": "AURIONPRO-M&A-2026-10-31",
+   "symbol": "AURIONPRO",
+   "name": "Aurionpro Solutions Limited",
+   "sector": "IT",
+   "kind": "filing",
+   "category": "M&A",
+   "at": "2026-10-31T20:13:09+05:30",
+   "title": "Amalgamation/Merger",
+   "summary": "Scheme of Amalgamation of Three Wholly Owned Subsidiaries with Aurionpro Solutions Limited.",
+   "url": "https://nsearchives.nseindia.in/corporate/AURIONPRO_31102026201253_ASL_Outcome_of_Board_Meeting_Merger_sd.pdf",
+   "related": [],
+   "components": {
+    "M": 0.85,
+    "S": 0.0,
+    "T": null,
+    "N": null
+   },
+   "score": 0.496,
+   "reasons": [
+    "M&A"
+   ],
+   "bucket": "worth_a_read"
+  },
+  {
+   "id": "AURIONPRO-results-2026-10-31",
+   "symbol": "AURIONPRO",
+   "name": "Aurionpro Solutions Limited",
+   "sector": "IT",
+   "kind": "filing",
+   "category": "results",
+   "at": "2026-10-31T20:08:18+05:30",
+   "title": "Outcome of Board Meeting",
+   "summary": "Aurionpro Solutions Limited has submitted to the Exchange, the financial results for the quarter and half year ended September 30, 2026.",
+   "url": "https://nsearchives.nseindia.in/corporate/AURIONPRO_31102026200551_ASL_Outcome_of_the_Board_Meeting_31102026Final_sd.pdf",
+   "related": [],
+   "results": {
+    "period": "Q2FY27",
+    "basis": "consolidated",
+    "metrics": {
+     "revenue": {
+      "value_cr": 414.98,
+      "qoq_pct": 15.9,
+      "yoy_pct": 16.0
+     },
+     "ebitda": {
+      "value_cr": 71.21,
+      "qoq_pct": 15.8,
+      "yoy_pct": -1.1
+     },
+     "pbt": {
+      "value_cr": 61.16,
+      "qoq_pct": 16.9,
+      "yoy_pct": -12.0
+     },
+     "pat": {
+      "value_cr": 50.2,
+      "qoq_pct": 11.5,
+      "yoy_pct": -10.1
+     }
+    },
+    "ebitda_margin": {
+     "pct": 17.16,
+     "qoq_bps": -1,
+     "yoy_bps": -296
+    },
+    "warnings": [],
+    "source": "https://nsearchives.nseindia.in/corporate/xbrl/INTEGRATED_FILING_INDAS_1750825_31102026083737_WEB.xml"
+   },
+   "components": {
+    "M": 0.9,
+    "S": 0.59,
+    "T": null,
+    "N": null
+   },
+   "score": 0.772,
+   "reasons": [
+    "EBITDA margin -296 bps YoY"
+   ],
+   "bucket": "needs_you"
+  },
+  {
+   "id": "NCC-press_release-2026-10-31",
+   "symbol": "NCC",
+   "name": "NCC Limited",
+   "sector": "Construction",
+   "kind": "filing",
+   "category": "press_release",
+   "at": "2026-10-31T17:18:53+05:30",
+   "title": "Bagging/Receiving of orders/contracts",
+   "summary": "Bagging/Receiving of orders/contracts",
+   "url": "https://nsearchives.nseindia.in/corporate/NCC_31102026171838_Reg_30_31Oct.pdf",
+   "related": [],
+   "components": {
+    "M": 0.35,
+    "S": 0.0,
+    "T": null,
+    "N": null
+   },
+   "score": 0.204,
+   "reasons": [
+    "press release"
+   ],
+   "bucket": "collapsed"
+  },
+  {
+   "id": "MEDANTA-management_change-2026-10-31",
+   "symbol": "MEDANTA",
+   "name": "Global Health Limited",
+   "sector": "Healthcare",
+   "kind": "filing",
+   "category": "management_change",
+   "at": "2026-10-31T16:27:45+05:30",
+   "title": "Cessation",
+   "summary": "Cessation of Dr. Pankaj Dhamija, Hospital Director, Gurugram Unit and also designated as one of the Senior Management Personnel of the Company w.e.f. October 30, 2026.",
+   "url": "https://nsearchives.nseindia.in/corporate/MEDANTA21_31102026162355_GHLResignationofSMP31OCTOBER2026Signed.pdf",
+   "related": [
+    {
+     "title": "Resignation of Director/KMP/SMP",
+     "url": "https://nsearchives.nseindia.in/corporate/MEDANTA_ROID_102803_KMP_Doc.zip"
+    }
+   ],
+   "components": {
+    "M": 0.3,
+    "S": 0.0,
+    "T": null,
+    "N": null
+   },
+   "score": 0.175,
+   "reasons": [
+    "board / secretarial change"
+   ],
+   "bucket": "collapsed"
+  }
+ ]
+}
