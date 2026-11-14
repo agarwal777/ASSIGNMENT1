@@ -12,7 +12,7 @@ export default function SnapshotTable({ rows }: { rows: QuarterRow[] }) {
     { label: copy.metric.pat, get: (q) => q.pat, signed: false },
   ];
   return (
-    <div className="-mx-4 overflow-x-auto px-4" role="region" aria-label={copy.company.snapshotLabel} tabIndex={0}>
+    <div className="overflow-x-auto" role="region" aria-label={copy.company.snapshotLabel} tabIndex={0}>
       <table className="text-[14px] leading-5">
         <thead>
           <tr className="text-[13px] text-ink-3">
