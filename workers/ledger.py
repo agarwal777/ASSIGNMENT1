@@ -1,0 +1,130 @@
+"""B5: promised vs delivered. Deterministic status for each extracted promise (no model).
+
+Checkable today (company-level, from XBRL facts): ebitda_margin, revenue_growth, pat_growth,
+for a quarter (QnFYyy), a half (HnFYyy) or a fiscal year (FYyy).
+  delivered / missed   the period is complete and actual is inside / outside the target range
+  on_track / at_risk   the period is in progress; year-to-date actual is inside / outside the range
+  revised              a later call gave a different target for the same metric, scope and period
+  unverifiable         segment-level, non-financial (capacity, dates) or data not available
+"A single number" targets count as met when actual ≥ target (growth, margin) — stated in the UI.
+
+Output: web/data/ledger.json (per company: promises with status + evidence, credibility line).
+Usage (from finn/):  workers/.venv/Scripts/python workers/ledger.py
+"""
+from __future__ import annotations
+
+import csv
+import json
+import re
+from collections import defaultdict
+from pathlib import Path
+
+SEED = Path("seed")
+OUT = Path("web/data/ledger.json")
+CHECKABLE = {"ebitda_margin", "revenue_growth", "pat_growth"}
+QUARTER_RE = re.compile(r"^Q([1-4])FY(\d{2})$")
+HALF_RE = re.compile(r"^H([12])FY(\d{2})$")
+YEAR_RE = re.compile(r"^FY(\d{2})$")
+
+
+def quarters_in(period: str) -> list[str] | None:
+    if m := QUARTER_RE.match(period):
+        return [period]
+    if m := HALF_RE.match(period):
+        h, fy = int(m[1]), m[2]
+        return [f"Q{q}FY{fy}" for q in ((1, 2) if h == 1 else (3, 4))]
+    if m := YEAR_RE.match(period):
+        return [f"Q{q}FY{m[1]}" for q in (1, 2, 3, 4)]
+    return None
+
+
+def prior_year(q: str) -> str:
+    m = QUARTER_RE.match(q)
+    return f"Q{m[1]}FY{int(m[2]) - 1:02d}"
+
+
+def actual(metric: str, qs: list[str], facts: dict[tuple[str, str], float]) -> tuple[float | None, list[str]]:
+    """Actual over the quarters we have (all of qs, or the leading YTD subset). Returns (value, quarters used)."""
+    have = [q for q in qs if (q, "revenue") in facts]
+    if not have:
+        return None, []
+    if metric == "ebitda_margin":
+        rev = sum(facts[(q, "revenue")] for q in have)
+        ebitda = sum(facts.get((q, "ebitda"), 0) for q in have)
+        return (round(100 * ebitda / rev, 2) if rev else None), have
+    base = "revenue" if metric == "revenue_growth" else "pat"
+    prev = [prior_year(q) for q in have]
+    if any((p, base) not in facts for p in prev):
+        return None, have
+    cur, old = sum(facts[(q, base)] for q in have), sum(facts[(p, base)] for p in prev)
+    return (round(100 * (cur - old) / old, 1) if old > 0 else None), have
+
+
+def judge(p: dict, facts: dict, latest: str) -> tuple[str, str]:
+    if p["metric"] not in CHECKABLE:
+        return "unverifiable", "not a reported financial line (checked by hand or in later calls)"
+    if p.get("scope", "company").lower() not in ("company", "overall", "consolidated", "standalone"):
+        return "unverifiable", f"segment-level ({p['scope']}): segment numbers not parsed yet"
+    qs = quarters_in(p["deadline_period"])
+    if not qs:
+        return "unverifiable", f"no checkable period ({p['deadline_period']})"
+    lo, hi = p.get("target_low"), p.get("target_high")
+    if lo is None and hi is None:
+        return "unverifiable", "no numeric target"
+    lo = lo if lo is not None else hi
+    val, used = actual(p["metric"], qs, facts)
+    if val is None:
+        return "unverifiable", "financials for this period not in the snapshot"
+    complete = len(used) == len(qs)
+    inside = val >= lo if (hi is None or hi == lo) else lo <= val <= hi
+    span = f"{used[0]}–{used[-1]}" if len(used) > 1 else used[0]
+    unit = "%" if p["metric"] == "ebitda_margin" else "% YoY"
+    evidence = f"actual {val}{unit} ({'full period' if complete else 'year to date ' + span})"
+    if complete:
+        return ("delivered" if inside else "missed"), evidence
+    return ("on_track" if inside else "at_risk"), evidence
+
+
+def main() -> None:
+    raw = json.loads((SEED / "promises.json").read_text(encoding="utf-8"))["promises"]
+    facts_by: dict[str, dict] = defaultdict(dict)
+    latest: dict[str, str] = {}
+    for f in csv.DictReader((SEED / "facts.csv").open(encoding="utf-8")):
+        facts_by[f["symbol"]][(f["period"], f["metric"])] = float(f["value_cr"])
+        latest[f["symbol"]] = max(latest.get(f["symbol"], ""), f["period_end"])
+
+    # Revisions: a later statement on the same metric, scope and period with a different target.
+    groups = defaultdict(list)
+    for p in raw:
+        groups[(p["symbol"], p["metric"], p.get("scope", "company").lower(), p["deadline_period"])].append(p)
+    for g in groups.values():
+        g.sort(key=lambda x: x["said_at"])
+        for a, b in zip(g, g[1:]):
+            if (a.get("target_low"), a.get("target_high")) != (b.get("target_low"), b.get("target_high")) \
+                    and b["said_at"] > a["said_at"]:
+                a["revised_by"] = b["id"]
+
+    out: dict[str, dict] = {}
+    for p in raw:
+        if p.get("revised_by"):
+            p["status"], p["evidence"] = "revised", "a later call changed this target"
+        else:
+            p["status"], p["evidence"] = judge(p, facts_by[p["symbol"]], latest.get(p["symbol"], ""))
+        c = out.setdefault(p["symbol"], {"promises": []})
+        c["promises"].append(p)
+    for sym, c in out.items():
+        n = defaultdict(int)
+        for p in c["promises"]:
+            n[p["status"]] += 1
+        resolved = n["delivered"] + n["missed"] + n["revised"]
+        c["counts"] = dict(n)
+        c["credibility"] = (f"Delivered {n['delivered']} of {resolved} checkable promises in the last 4 quarters"
+                            if resolved else "No promise from the last 4 quarters can be checked against reported numbers yet")
+        c["promises"].sort(key=lambda p: (p["said_at"], p["metric"]))
+        print(f"{sym:<11} {dict(n)}  → {c['credibility']}")
+    OUT.write_text(json.dumps(out, ensure_ascii=False, indent=1), encoding="utf-8")
+    print(f"wrote {OUT}")
+
+
+if __name__ == "__main__":
+    main()

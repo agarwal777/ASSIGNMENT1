@@ -1,0 +1,3344 @@
+{
+ "as_of": "2026-11-06T08:00:00+05:30",
+ "companies": {
+  "M&M": {
+   "symbol": "M&M",
+   "name": "Mahindra & Mahindra Limited",
+   "sector": "Autos",
+   "role": "portfolio;ledger",
+   "basis": "standalone",
+   "results_source": "https://nsearchives.nseindia.in/corporate/xbrl/INTEGRATED_FILING_INDAS_1753613_05112026052243_WEB.xml",
+   "price": {
+    "close": 3333.0,
+    "day_change": -1.94,
+    "as_of": "2026-11-13"
+   },
+   "quarters": [
+    {
+     "period": "Q4FY25",
+     "revenue": 31608.67,
+     "pat": 2437.14,
+     "source": "https://nsearchives.nseindia.in/corporate/xbrl/INTEGRATED_FILING_INDAS_1431443_05052025024737_WEB.xml",
+     "period_end": "2025-03-31",
+     "ebitda_margin": 13.35,
+     "revenue_yoy": null
+    },
+    {
+     "period": "Q1FY26",
+     "revenue": 34142.96,
+     "pat": 3449.84,
+     "source": "https://nsearchives.nseindia.in/corporate/xbrl/INTEGRATED_FILING_INDAS_1498650_30072025095254_WEB.xml",
+     "period_end": "2025-06-30",
+     "ebitda_margin": 14.05,
+     "revenue_yoy": null
+    },
+    {
+     "period": "Q2FY26",
+     "revenue": 35079.82,
+     "pat": 4520.52,
+     "source": "https://nsearchives.nseindia.in/corporate/xbrl/INTEGRATED_FILING_INDAS_1565188_04112025075712_WEB.xml",
+     "period_end": "2025-09-30",
+     "ebitda_margin": 18.44,
+     "revenue_yoy": null
+    },
+    {
+     "period": "Q3FY26",
+     "revenue": 38941.65,
+     "pat": 3931.3,
+     "source": "https://nsearchives.nseindia.in/corporate/xbrl/INTEGRATED_FILING_INDAS_1623161_11022026025324_WEB.xml",
+     "period_end": "2025-12-31",
+     "ebitda_margin": 14.68,
+     "revenue_yoy": null
+    },
+    {
+     "period": "Q4FY26",
+     "revenue": 39600.92,
+     "pat": 3737.27,
+     "source": "https://nsearchives.nseindia.in/corporate/xbrl/INTEGRATED_FILING_INDAS_1663643_05052026042738_WEB.xml",
+     "period_end": "2026-03-31",
+     "ebitda_margin": 13.91,
+     "revenue_yoy": 25.3
+    },
+    {
+     "period": "Q1FY27",
+     "revenue": 41958.76,
+     "pat": 3684.97,
+     "source": "https://nsearchives.nseindia.in/corporate/xbrl/INTEGRATED_FILING_INDAS_1705128_30072026041112_WEB.xml",
+     "period_end": "2026-06-30",
+     "ebitda_margin": 12.27,
+     "revenue_yoy": 22.9
+    },
+    {
+     "period": "Q2FY27",
+     "revenue": 44281.88,
+     "pat": 5101.62,
+     "source": "https://nsearchives.nseindia.in/corporate/xbrl/INTEGRATED_FILING_INDAS_1753613_05112026052243_WEB.xml",
+     "period_end": "2026-09-30",
+     "ebitda_margin": 15.17,
+     "revenue_yoy": 26.2
+    }
+   ],
+   "ledger": [
+    {
+     "statement_verbatim": "We'll aim by July-August to add about 3,000 to 5,000 between these products per month.",
+     "speaker_role": "ED and CEO, Auto and Farm Sector",
+     "metric": "capacity",
+     "scope": "auto",
+     "unit": "units per month",
+     "deadline_period": "Q2FY27",
+     "hedged": true,
+     "target_high": 5000.0,
+     "target_low": 3000.0,
+     "symbol": "M&M",
+     "said_at": "2026-02-17",
+     "page": 5,
+     "match": "exact",
+     "source": "https://nsearchives.nseindia.in/corporate/NishaMandhana_17022026144818_SEIntimationregardingTranscriptofAnalystMeet11022026.pdf",
+     "id": "M&M-2026-02-17-1",
+     "status": "unverifiable",
+     "evidence": "not a reported financial line (checked by hand or in later calls)"
+    },
+    {
+     "statement_verbatim": "FY27 we would add in ICE another 7,000 to 8,000 at least.",
+     "speaker_role": "ED and CEO, Auto and Farm Sector",
+     "metric": "capacity",
+     "scope": "ICE vehicles",
+     "unit": "units per month",
+     "deadline_period": "FY27",
+     "hedged": true,
+     "target_high": 8000.0,
+     "target_low": 7000.0,
+     "symbol": "M&M",
+     "said_at": "2026-02-17",
+     "page": 8,
+     "match": "exact",
+     "source": "https://nsearchives.nseindia.in/corporate/NishaMandhana_17022026144818_SEIntimationregardingTranscriptofAnalystMeet11022026.pdf",
+     "id": "M&M-2026-02-17-2",
+     "status": "unverifiable",
+     "evidence": "not a reported financial line (checked by hand or in later calls)"
+    },
+    {
+     "statement_verbatim": "But like I said, we are adding 100,000 in Nagpur greenfield for Mahindra branded tractors plus looking at what we need to do for Swaraj which should cover us for F27.",
+     "speaker_role": "ED and CEO, Auto and Farm Sector",
+     "metric": "capacity",
+     "scope": "Mahindra branded tractors",
+     "unit": "units",
+     "deadline_period": "FY27",
+     "hedged": true,
+     "target_high": 100000.0,
+     "target_low": 100000.0,
+     "symbol": "M&M",
+     "said_at": "2026-02-17",
+     "page": 17,
+     "match": "exact",
+     "source": "https://nsearchives.nseindia.in/corporate/NishaMandhana_17022026144818_SEIntimationregardingTranscriptofAnalystMeet11022026.pdf",
+     "id": "M&M-2026-02-17-4",
+     "status": "unverifiable",
+     "evidence": "not a reported financial line (checked by hand or in later calls)"
+    },
+    {
+     "statement_verbatim": "It is on track to deliver what it has to in its first phase which ends by F27 and it has to get to a 15% EBIT margin.",
+     "speaker_role": "Group CEO & MD",
+     "metric": "ebitda_margin",
+     "scope": "Tech Mahindra",
+     "unit": "percent",
+     "deadline_period": "FY27",
+     "hedged": true,
+     "target_high": 15.0,
+     "target_low": 15.0,
+     "symbol": "M&M",
+     "said_at": "2026-02-17",
+     "page": 12,
+     "match": "exact",
+     "source": "https://nsearchives.nseindia.in/corporate/NishaMandhana_17022026144818_SEIntimationregardingTranscriptofAnalystMeet11022026.pdf",
+     "id": "M&M-2026-02-17-3",
+     "status": "unverifiable",
+     "evidence": "segment-level (Tech Mahindra): segment numbers not parsed yet"
+    }
+   ],
+   "has_ledger": true,
+   "credibility": {
+    "delivered": 0,
+    "resolved": 0
+   },
+   "thesis": {
+    "management": [],
+    "investor": [
+     {
+      "id": "inv-mm-1",
+      "text": "EBITDA margin stays at or above 15% this year",
+      "deadline": "FY27",
+      "stance": "contradicts",
+      "evidence": "13.76% year to date (Q1FY27–Q2FY27)",
+      "demo": true
+     }
+    ]
+   },
+   "recent_filings": [
+    {
+     "id": "M&M-press_release-2026-11-13",
+     "title": "'Transfer Of Equity Shares by Mahindra & Mahindra Employees Stock Option Trust to the Stock Option Grantees'.",
+     "at": "2026-11-13T21:28:55+05:30",
+     "tier": "collapsed",
+     "url": "https://nsearchives.nseindia.in/corporate/Deepak_13112026212813_Employeeslist13112026.pdf"
+    },
+    {
+     "id": "M&M-investor_meetings-2026-11-12",
+     "title": "Participation in Investor Meeting",
+     "at": "2026-11-12T17:30:41+05:30",
+     "tier": "collapsed",
+     "url": "https://nsearchives.nseindia.in/corporate/AmitDodani_12112026173022_ConclusionofAnalystMeet12112026.pdf"
+    },
+    {
+     "id": "M&M-press_release-2026-11-12",
+     "title": "The Production, Sales and Export figures of the Company for the Month of October 2026",
+     "at": "2026-11-12T17:13:06+05:30",
+     "tier": "collapsed",
+     "url": "https://nsearchives.nseindia.in/corporate/AmitDodani_12112026171250_MonthlyReportOct2026.pdf"
+    },
+    {
+     "id": "M&M-earnings_call-2026-11-11",
+     "title": "Transcript of M&M Analyst Meet Q2F27",
+     "at": "2026-11-11T18:59:05+05:30",
+     "tier": "collapsed",
+     "url": "https://nsearchives.nseindia.in/corporate/AmitDodani_11112026185839_Intimation_Transcript_Q2F27_Earningscall_05112026.pdf"
+    },
+    {
+     "id": "M&M-investor_meetings-2026-11-11",
+     "title": "Schedule of meet",
+     "at": "2026-11-11T14:55:45+05:30",
+     "tier": "collapsed",
+     "url": "https://nsearchives.nseindia.in/corporate/AmitDodani_11112026145521_UpcomingAnalystMeet16112026.pdf"
+    },
+    {
+     "id": "M&M-M&A-2026-11-06",
+     "title": "Acquisition",
+     "at": "2026-11-06T15:36:06+05:30",
+     "tier": "worth_a_read",
+     "url": "https://nsearchives.nseindia.in/corporate/AmitDodani_06112026153559_SEIntimationSMLRightsIssue.pdf"
+    },
+    {
+     "id": "M&M-unclassified-2026-11-06",
+     "title": "Copy of Newspaper Publication",
+     "at": "2026-11-06T10:54:47+05:30",
+     "tier": "collapsed",
+     "url": "https://nsearchives.nseindia.in/corporate/ferozebaria_06112026105344_IntimationofNewspaperPublication06112026.pdf"
+    },
+    {
+     "id": "M&M-earnings_call-2026-11-05",
+     "title": "Link of Audio-Video recording of M&M Analyst Meet Q2FY27 Earnings Conference Call",
+     "at": "2026-11-05T20:37:24+05:30",
+     "tier": "collapsed",
+     "url": "https://nsearchives.nseindia.in/corporate/AmitDodani_05112026203607_IntimationofAudiorecordingofanalystmeet_Q2F27_05112026.pdf"
+    },
+    {
+     "id": "M&M-unclassified-2026-11-05",
+     "title": "Copy of Newspaper Publication pertaining to Special Window for Re-Lodgement of Transfer Request of Physical Shares and actions required by Shareholders holding Shares in Physical Form",
+     "at": "2026-11-05T15:47:06+05:30",
+     "tier": "collapsed",
+     "url": "https://nsearchives.nseindia.in/corporate/Deepak_05112026154633_SE_INTIMATION_SPECIAL_WINDOW_RELODGEMENT.pdf"
+    },
+    {
+     "id": "M&M-investor_meetings-2026-11-05",
+     "title": "Investor Presentation",
+     "at": "2026-11-05T13:53:35+05:30",
+     "tier": "collapsed",
+     "url": "https://nsearchives.nseindia.in/corporate/AmitDodani_05112026135323_PresentationtobemadetoPressAnalyst_Reg_30.pdf"
+    }
+   ],
+   "needs_you": false,
+   "last_event": {
+    "title": "'Transfer Of Equity Shares by Mahindra & Mahindra Employees Stock Option Trust to the Stock Option Grantees'.",
+    "at": "2026-11-13T21:28:55+05:30",
+    "tier": "collapsed"
+   }
+  },
+  "ASHOKLEY": {
+   "symbol": "ASHOKLEY",
+   "name": "Ashok Leyland Limited",
+   "sector": "Autos",
+   "role": "portfolio",
+   "basis": "consolidated",
+   "results_source": "https://nsearchives.nseindia.in/corporate/xbrl/INTEGRATED_FILING_INDAS_1758732_14112026091104_WEB.xml",
+   "price": {
+    "close": 169.2,
+    "day_change": -2.73,
+    "as_of": "2026-11-13"
+   },
+   "quarters": [
+    {
+     "period": "Q2FY26",
+     "revenue": 12576.86,
+     "pat": 819.7,
+     "source": "https://nsearchives.nseindia.in/corporate/xbrl/INTEGRATED_FILING_INDAS_1572985_12112025091144_WEB.xml",
+     "period_end": "2025-09-30",
+     "ebitda_margin": 19.41,
+     "revenue_yoy": null
+    },
+    {
+     "period": "Q3FY26",
+     "revenue": 14830.24,
+     "pat": 862.24,
+     "source": "https://nsearchives.nseindia.in/corporate/xbrl/INTEGRATED_FILING_INDAS_1623239_11022026035414_WEB.xml",
+     "period_end": "2025-12-31",
+     "ebitda_margin": 19.03,
+     "revenue_yoy": null
+    },
+    {
+     "period": "Q4FY26",
+     "revenue": 17246.44,
+     "pat": 1381.32,
+     "source": "https://nsearchives.nseindia.in/corporate/xbrl/INTEGRATED_FILING_INDAS_1675813_29052026025723_WEB.xml",
+     "period_end": "2026-03-31",
+     "ebitda_margin": 19.18,
+     "revenue_yoy": null
+    },
+    {
+     "period": "Q1FY27",
+     "revenue": 13069.59,
+     "pat": 667.77,
+     "source": "https://nsearchives.nseindia.in/corporate/xbrl/INTEGRATED_FILING_INDAS_1714908_14082026065518_WEB.xml",
+     "period_end": "2026-06-30",
+     "ebitda_margin": 18.44,
+     "revenue_yoy": null
+    },
+    {
+     "period": "Q2FY27",
+     "revenue": 17029.87,
+     "pat": 891.45,
+     "source": "https://nsearchives.nseindia.in/corporate/xbrl/INTEGRATED_FILING_INDAS_1758732_14112026091104_WEB.xml",
+     "period_end": "2026-09-30",
+     "ebitda_margin": 16.3,
+     "revenue_yoy": 35.4
+    }
+   ],
+   "ledger": [],
+   "has_ledger": false,
+   "credibility": {
+    "delivered": 0,
+    "resolved": 0
+   },
+   "thesis": {
+    "management": [],
+    "investor": []
+   },
+   "recent_filings": [
+    {
+     "id": "ASHOKLEY-dividend-2026-11-14",
+     "title": "Board of Directors at its meeting held on November 14, 2026, declared Interim Dividend of Re. 1 per equity share.",
+     "at": "2026-11-14T20:16:22+05:30",
+     "tier": "collapsed",
+     "url": "https://nsearchives.nseindia.in/corporate/ASHOKLEYLAND_14112026201537_ALOutcomeofBMNov142026.pdf"
+    },
+    {
+     "id": "ASHOKLEY-management_change-2026-11-14",
+     "title": "Appointment of Mr. Venkatesan Venkataraman as Additional Director in the category of Non-Executive Non-Independent Director of the company w.e.f. November 14, 2026.",
+     "at": "2026-11-14T20:14:11+05:30",
+     "tier": "collapsed",
+     "url": "https://nsearchives.nseindia.in/corporate/ASHOKLEYLAND_14112026201346_ALOutcomeofBMNov142026VVAppt.pdf"
+    },
+    {
+     "id": "ASHOKLEY-unclassified-2026-11-14",
+     "title": "Record date for the purpose of Dividend is 20-Nov-2026.",
+     "at": "2026-11-14T20:09:39+05:30",
+     "tier": "collapsed",
+     "url": "https://nsearchives.nseindia.in/corporate/ASHOKLEYLAND_14112026200910_ALOutcomeofBMNov142026.pdf"
+    },
+    {
+     "id": "ASHOKLEY-results-2026-11-14",
+     "title": "Ashok Leyland Limited has submitted to the Exchange, the financial results for the period ended September 30, 2026.",
+     "at": "2026-11-14T20:08:20+05:30",
+     "tier": "needs_you",
+     "url": "https://nsearchives.nseindia.in/corporate/ASHOKLEYLAND_14112026200621_ALOutcomeofBMNov142026.pdf"
+    },
+    {
+     "id": "ASHOKLEY-earnings_call-2026-11-10",
+     "title": "Schedule of Earnings Call",
+     "at": "2026-11-10T18:51:47+05:30",
+     "tier": "collapsed",
+     "url": "https://nsearchives.nseindia.in/corporate/ASHOKLEYLAND_10112026185030_45Earningsconcallintimation_16Nov26PDF.pdf"
+    },
+    {
+     "id": "ASHOKLEY-M&A-2026-11-05",
+     "title": "Updates on Scheme of Arrangement - Hinduja Leyland Finance Limited",
+     "at": "2026-11-05T18:09:40+05:30",
+     "tier": "worth_a_read",
+     "url": "https://nsearchives.nseindia.in/corporate/ASHOKLEYLAND_05112026180926_44ALupdatesonHLFL.pdf"
+    },
+    {
+     "id": "ASHOKLEY-press_release-2026-11-02",
+     "title": "Monthly Business Updates for the month of October 2026",
+     "at": "2026-11-02T08:34:12+05:30",
+     "tier": "collapsed",
+     "url": "https://nsearchives.nseindia.in/corporate/ASHOKLEYLAND_02112026083345_42salesvolumeOct2026PDF.pdf"
+    }
+   ],
+   "needs_you": true,
+   "last_event": {
+    "title": "Ashok Leyland Limited has submitted to the Exchange, the financial results for the period ended September 30, 2026.",
+    "at": "2026-11-14T20:08:20+05:30",
+    "tier": "needs_you"
+   }
+  },
+  "UNOMINDA": {
+   "symbol": "UNOMINDA",
+   "name": "UNO Minda Limited",
+   "sector": "Auto parts",
+   "role": "portfolio",
+   "basis": "consolidated",
+   "results_source": "https://nsearchives.nseindia.in/corporate/xbrl/INTEGRATED_FILING_INDAS_1753993_05112026065545_WEB.xml",
+   "price": {
+    "close": 1388.0,
+    "day_change": 0.14,
+    "as_of": "2026-11-13"
+   },
+   "quarters": [
+    {
+     "period": "Q2FY26",
+     "revenue": 4814.03,
+     "pat": 322.79,
+     "source": "https://nsearchives.nseindia.in/corporate/xbrl/INTEGRATED_FILING_INDAS_1569856_10112025044845_WEB.xml",
+     "period_end": "2025-09-30",
+     "ebitda_margin": 11.46,
+     "revenue_yoy": null
+    },
+    {
+     "period": "Q3FY26",
+     "revenue": 5018.06,
+     "pat": 300.48,
+     "source": "https://nsearchives.nseindia.in/corporate/xbrl/INTEGRATED_FILING_INDAS_1618972_05022026033910_WEB.xml",
+     "period_end": "2025-12-31",
+     "ebitda_margin": 11.03,
+     "revenue_yoy": null
+    },
+    {
+     "period": "Q4FY26",
+     "revenue": 5336.41,
+     "pat": 351.76,
+     "source": "https://nsearchives.nseindia.in/corporate/xbrl/INTEGRATED_FILING_INDAS_1668431_16052026093718_WEB.xml",
+     "period_end": "2026-03-31",
+     "ebitda_margin": 11.3,
+     "revenue_yoy": null
+    },
+    {
+     "period": "Q1FY27",
+     "revenue": 5556.85,
+     "pat": 315.51,
+     "source": "https://nsearchives.nseindia.in/corporate/xbrl/INTEGRATED_FILING_INDAS_1707667_04082026051508_WEB.xml",
+     "period_end": "2026-06-30",
+     "ebitda_margin": 10.29,
+     "revenue_yoy": null
+    },
+    {
+     "period": "Q2FY27",
+     "revenue": 6655.42,
+     "pat": 440.81,
+     "source": "https://nsearchives.nseindia.in/corporate/xbrl/INTEGRATED_FILING_INDAS_1753993_05112026065545_WEB.xml",
+     "period_end": "2026-09-30",
+     "ebitda_margin": 11.02,
+     "revenue_yoy": 38.3
+    }
+   ],
+   "ledger": [],
+   "has_ledger": false,
+   "credibility": {
+    "delivered": 0,
+    "resolved": 0
+   },
+   "thesis": {
+    "management": [],
+    "investor": []
+   },
+   "recent_filings": [
+    {
+     "id": "UNOMINDA-unclassified-2026-11-13",
+     "title": "Copy of Newspaper Publication",
+     "at": "2026-11-13T18:15:14+05:30",
+     "tier": "collapsed",
+     "url": "https://nsearchives.nseindia.in/corporate/MINDAIND1_13112026181423_NWIntimation.pdf"
+    },
+    {
+     "id": "UNOMINDA-earnings_call-2026-11-11",
+     "title": "Transcript of Earnings Call held on November 05, 2026",
+     "at": "2026-11-11T15:15:24+05:30",
+     "tier": "collapsed",
+     "url": "https://nsearchives.nseindia.in/corporate/MINDAIND1_11112026151509_Intimationcovering_transcript.pdf"
+    },
+    {
+     "id": "UNOMINDA-investor_meetings-2026-11-11",
+     "title": "Schedule of meet",
+     "at": "2026-11-11T12:47:06+05:30",
+     "tier": "collapsed",
+     "url": "https://nsearchives.nseindia.in/corporate/MINDAIND1_11112026124637_Intimation11112026.pdf"
+    },
+    {
+     "id": "UNOMINDA-unclassified-2026-11-06",
+     "title": "Copy of Newspaper clippings for the publication of unaudited standalone and consolidated financial results of the Company for the quarter and half year ended on September 30, 2026.",
+     "at": "2026-11-06T11:06:09+05:30",
+     "tier": "collapsed",
+     "url": "https://nsearchives.nseindia.in/corporate/MINDAIND1_06112026110550_Intimation_Newspaper_publication.pdf"
+    },
+    {
+     "id": "UNOMINDA-earnings_call-2026-11-05",
+     "title": "Link of Recording of the earnings call held today i.e. November 05, 2026.",
+     "at": "2026-11-05T20:29:30+05:30",
+     "tier": "collapsed",
+     "url": "https://nsearchives.nseindia.in/corporate/MINDAIND1_05112026202917_Intimation_Audio_call.pdf"
+    },
+    {
+     "id": "UNOMINDA-investor_meetings-2026-11-05",
+     "title": "Investor Presentation",
+     "at": "2026-11-05T14:31:57+05:30",
+     "tier": "collapsed",
+     "url": "https://nsearchives.nseindia.in/corporate/MINDAIND1_05112026143119_Intimation_InvestorpresentationF.pdf"
+    },
+    {
+     "id": "UNOMINDA-management_change-2026-11-05",
+     "title": "Change in Senior Management Personnel",
+     "at": "2026-11-05T12:52:25+05:30",
+     "tier": "worth_a_read",
+     "url": "https://nsearchives.nseindia.in/corporate/MINDAIND1_05112026125215_Outcomef.pdf"
+    },
+    {
+     "id": "UNOMINDA-capex-2026-11-05",
+     "title": "Capacity addition for its Sunroof Division",
+     "at": "2026-11-05T12:50:13+05:30",
+     "tier": "worth_a_read",
+     "url": "https://nsearchives.nseindia.in/corporate/MINDAIND1_05112026124958_Outcomef.pdf"
+    },
+    {
+     "id": "UNOMINDA-results-2026-11-05",
+     "title": "UNO Minda Limited has submitted to the Exchange, the financial results for the period ended September 30, 2026.",
+     "at": "2026-11-05T12:46:32+05:30",
+     "tier": "needs_you",
+     "url": "https://nsearchives.nseindia.in/corporate/MINDAIND1_05112026124457_Outcomef.pdf"
+    },
+    {
+     "id": "UNOMINDA-press_release-2026-11-05",
+     "title": "Outcome of Committee Meeting held on November 05, 2026.",
+     "at": "2026-11-05T10:06:26+05:30",
+     "tier": "collapsed",
+     "url": "https://nsearchives.nseindia.in/corporate/MINDAIND1_05112026100611_ESOPGRANTINTIMATION05112026.pdf"
+    }
+   ],
+   "needs_you": false,
+   "last_event": {
+    "title": "Copy of Newspaper Publication",
+    "at": "2026-11-13T18:15:14+05:30",
+    "tier": "collapsed"
+   }
+  },
+  "AUROPHARMA": {
+   "symbol": "AUROPHARMA",
+   "name": "Aurobindo Pharma Limited",
+   "sector": "Pharma",
+   "role": "portfolio;ledger",
+   "basis": "consolidated",
+   "results_source": "https://nsearchives.nseindia.in/corporate/xbrl/INTEGRATED_FILING_INDAS_1753288_04112026104818_WEB.xml",
+   "price": {
+    "close": 1823.2,
+    "day_change": 0.89,
+    "as_of": "2026-11-13"
+   },
+   "quarters": [
+    {
+     "period": "Q4FY25",
+     "revenue": 8382.12,
+     "pat": 902.83,
+     "source": "https://nsearchives.nseindia.in/corporate/xbrl/INTEGRATED_FILING_INDAS_1452169_27052025120119_WEB.xml",
+     "period_end": "2025-03-31",
+     "ebitda_margin": 21.38,
+     "revenue_yoy": null
+    },
+    {
+     "period": "Q1FY26",
+     "revenue": 7868.14,
+     "pat": 824.2,
+     "source": "https://nsearchives.nseindia.in/corporate/xbrl/INTEGRATED_FILING_INDAS_1502271_04082025085737_WEB.xml",
+     "period_end": "2025-06-30",
+     "ebitda_margin": 20.37,
+     "revenue_yoy": null
+    },
+    {
+     "period": "Q2FY26",
+     "revenue": 8285.7,
+     "pat": 848.13,
+     "source": "https://nsearchives.nseindia.in/corporate/xbrl/INTEGRATED_FILING_INDAS_1566250_05112025094600_WEB.xml",
+     "period_end": "2025-09-30",
+     "ebitda_margin": 20.25,
+     "revenue_yoy": null
+    },
+    {
+     "period": "Q3FY26",
+     "revenue": 8645.9,
+     "pat": 909.8,
+     "source": "https://nsearchives.nseindia.in/corporate/xbrl/INTEGRATED_FILING_INDAS_1622074_09022026091042_WEB.xml",
+     "period_end": "2025-12-31",
+     "ebitda_margin": 20.51,
+     "revenue_yoy": null
+    },
+    {
+     "period": "Q4FY26",
+     "revenue": 8853.34,
+     "pat": 920.84,
+     "source": "https://nsearchives.nseindia.in/corporate/xbrl/INTEGRATED_FILING_INDAS_1671039_21052026101258_WEB.xml",
+     "period_end": "2026-03-31",
+     "ebitda_margin": 19.8,
+     "revenue_yoy": 5.6
+    },
+    {
+     "period": "Q1FY27",
+     "revenue": 9150.35,
+     "pat": 1032.03,
+     "source": "https://nsearchives.nseindia.in/corporate/xbrl/INTEGRATED_FILING_INDAS_1708706_05082026091312_WEB.xml",
+     "period_end": "2026-06-30",
+     "ebitda_margin": 20.56,
+     "revenue_yoy": 16.3
+    },
+    {
+     "period": "Q2FY27",
+     "revenue": 10263.29,
+     "pat": 1123.84,
+     "source": "https://nsearchives.nseindia.in/corporate/xbrl/INTEGRATED_FILING_INDAS_1753288_04112026104818_WEB.xml",
+     "period_end": "2026-09-30",
+     "ebitda_margin": 21.0,
+     "revenue_yoy": 23.9
+    }
+   ],
+   "ledger": [
+    {
+     "statement_verbatim": "Based on our current production level, we expect to produce more than 10,000 metric tonnes on annualised basis over the next 12 months.",
+     "speaker_role": "CFO",
+     "metric": "capacity",
+     "scope": "Pen-G",
+     "unit": "metric tonnes",
+     "deadline_period": "Q3FY27",
+     "hedged": true,
+     "target_high": null,
+     "target_low": 10000,
+     "symbol": "AUROPHARMA",
+     "said_at": "2026-02-16",
+     "page": 5,
+     "match": "exact",
+     "source": "https://nsearchives.nseindia.in/corporate/AUROPHARMA_16022026112327_LtrToSEsTranscriptEarningCall16022026.pdf",
+     "id": "AUROPHARMA-2026-02-16-2",
+     "status": "unverifiable",
+     "evidence": "not a reported financial line (checked by hand or in later calls)"
+    },
+    {
+     "statement_verbatim": "I think, other than the biologics CapEx which I mentioned, where we are trying to work… I mean aligning with a strategy of the biologics, I don’t think we will be incurring anything beyond around USD 150 to 200 million, because we are not planning for any greenfield.",
+     "speaker_role": "CFO",
+     "metric": "capex_amount",
+     "scope": "company ex-biologics",
+     "unit": "USD million",
+     "deadline_period": "FY27",
+     "hedged": true,
+     "target_high": 200,
+     "target_low": 150,
+     "symbol": "AUROPHARMA",
+     "said_at": "2026-02-16",
+     "page": 20,
+     "match": "exact",
+     "source": "https://nsearchives.nseindia.in/corporate/AUROPHARMA_16022026112327_LtrToSEsTranscriptEarningCall16022026.pdf",
+     "id": "AUROPHARMA-2026-02-16-5",
+     "status": "unverifiable",
+     "evidence": "not a reported financial line (checked by hand or in later calls)"
+    },
+    {
+     "statement_verbatim": "Yeah, Jigar, the CapEx, as Satakarni says USD 100 to 120 million type, probably we may be incurring anywhere between 80 to 120 million in the current… the next two years.",
+     "speaker_role": "CFO",
+     "metric": "capex_amount",
+     "scope": "biologics CDMO",
+     "unit": "USD million",
+     "deadline_period": "FY28",
+     "hedged": true,
+     "target_high": 120,
+     "target_low": 80,
+     "symbol": "AUROPHARMA",
+     "said_at": "2026-02-16",
+     "page": 20,
+     "match": "exact",
+     "source": "https://nsearchives.nseindia.in/corporate/AUROPHARMA_16022026112327_LtrToSEsTranscriptEarningCall16022026.pdf",
+     "id": "AUROPHARMA-2026-02-16-6",
+     "status": "unverifiable",
+     "evidence": "not a reported financial line (checked by hand or in later calls)"
+    },
+    {
+     "statement_verbatim": "Taken together, these initiatives provide strong earnings growth visibility and reinforce our confidence in achieving our internal EBITDA margin target of mostly on the higher side of 20% to 21% for FY26.",
+     "speaker_role": "CFO",
+     "metric": "ebitda_margin",
+     "scope": "company",
+     "unit": "percent",
+     "deadline_period": "FY26",
+     "hedged": true,
+     "target_high": 21,
+     "target_low": 20,
+     "symbol": "AUROPHARMA",
+     "said_at": "2026-02-16",
+     "page": 7,
+     "match": "exact",
+     "source": "https://nsearchives.nseindia.in/corporate/AUROPHARMA_16022026112327_LtrToSEsTranscriptEarningCall16022026.pdf",
+     "id": "AUROPHARMA-2026-02-16-4",
+     "status": "delivered",
+     "evidence": "actual 20.23% (full period)"
+    },
+    {
+     "statement_verbatim": "Consistent execution across key European markets firmly underpins our trajectory to exceed 1 billion in annual European revenue by close of FY26.",
+     "speaker_role": "CFO",
+     "metric": "other",
+     "scope": "Europe",
+     "unit": "EUR billion",
+     "deadline_period": "FY26",
+     "hedged": true,
+     "target_high": null,
+     "target_low": 1,
+     "symbol": "AUROPHARMA",
+     "said_at": "2026-02-16",
+     "page": 4,
+     "match": "exact",
+     "source": "https://nsearchives.nseindia.in/corporate/AUROPHARMA_16022026112327_LtrToSEsTranscriptEarningCall16022026.pdf",
+     "id": "AUROPHARMA-2026-02-16-1",
+     "status": "unverifiable",
+     "evidence": "not a reported financial line (checked by hand or in later calls)"
+    },
+    {
+     "statement_verbatim": "We expect to ramp it up to nearly 65 to 70% by March ‘26 against the last year average of 42%.",
+     "speaker_role": "CFO",
+     "metric": "utilisation",
+     "scope": "Pen-G and 6APA and Amoxicillin",
+     "unit": "percent",
+     "deadline_period": "Q4FY26",
+     "hedged": true,
+     "target_high": 70,
+     "target_low": 65,
+     "symbol": "AUROPHARMA",
+     "said_at": "2026-02-16",
+     "page": 6,
+     "match": "exact",
+     "source": "https://nsearchives.nseindia.in/corporate/AUROPHARMA_16022026112327_LtrToSEsTranscriptEarningCall16022026.pdf",
+     "id": "AUROPHARMA-2026-02-16-3",
+     "status": "unverifiable",
+     "evidence": "not a reported financial line (checked by hand or in later calls)"
+    },
+    {
+     "statement_verbatim": "We expect to close the commissioning of the facility in 2029.",
+     "speaker_role": "CEO - Aurobindo Biosimilars, Vaccines, Peptides Businesses",
+     "metric": "commissioning_date",
+     "scope": "greenfield drug substance manufacturing facility",
+     "unit": "date",
+     "deadline_period": "FY30",
+     "hedged": true,
+     "target_high": null,
+     "target_low": null,
+     "symbol": "AUROPHARMA",
+     "said_at": "2026-05-27",
+     "page": 9,
+     "match": "exact",
+     "source": "https://nsearchives.nseindia.in/corporate/AUROPHARMA_27052026182247_LtrToSEsTranscriptEarningCall27052026.pdf",
+     "id": "AUROPHARMA-2026-05-27-4",
+     "status": "unverifiable",
+     "evidence": "not a reported financial line (checked by hand or in later calls)"
+    },
+    {
+     "statement_verbatim": "We expect EBITDA margins to sustain and progressively improve to north of 21%, reflecting the scale of our operations, execution capabilities and leveraging the new business lever.",
+     "speaker_role": "CFO",
+     "metric": "ebitda_margin",
+     "scope": "company",
+     "unit": "percent",
+     "deadline_period": "FY27",
+     "hedged": true,
+     "target_high": null,
+     "target_low": 21.0,
+     "symbol": "AUROPHARMA",
+     "said_at": "2026-05-27",
+     "page": 6,
+     "match": "exact",
+     "source": "https://nsearchives.nseindia.in/corporate/AUROPHARMA_27052026182247_LtrToSEsTranscriptEarningCall27052026.pdf",
+     "id": "AUROPHARMA-2026-05-27-1",
+     "status": "at_risk",
+     "evidence": "actual 20.79% (year to date Q1FY27–Q2FY27)"
+    },
+    {
+     "statement_verbatim": "So, we are definitely trying to achieve the double digit growth. And, of course, considering the current geopolitical situations, we have taken it bit conservatively but we are confident it will be minimum double digit.",
+     "speaker_role": "CEO, Europe Formulations Business",
+     "metric": "revenue_growth",
+     "scope": "Europe formulations",
+     "unit": "percent",
+     "deadline_period": "FY27",
+     "hedged": true,
+     "target_high": null,
+     "target_low": 10.0,
+     "symbol": "AUROPHARMA",
+     "said_at": "2026-05-27",
+     "page": 9,
+     "match": "exact",
+     "source": "https://nsearchives.nseindia.in/corporate/AUROPHARMA_27052026182247_LtrToSEsTranscriptEarningCall27052026.pdf",
+     "id": "AUROPHARMA-2026-05-27-3",
+     "status": "unverifiable",
+     "evidence": "segment-level (Europe formulations): segment numbers not parsed yet"
+    },
+    {
+     "statement_verbatim": "Based on current operating levels, we expect, annualized production, Pen-G production, to exceed 10,000 metric tons with a capacity utilization level exceeding 80% at consistent yields.",
+     "speaker_role": "CFO",
+     "metric": "utilisation",
+     "scope": "Pen-G",
+     "unit": "percent",
+     "deadline_period": "unspecified",
+     "hedged": true,
+     "target_high": null,
+     "target_low": 80.0,
+     "symbol": "AUROPHARMA",
+     "said_at": "2026-05-27",
+     "page": 6,
+     "match": "exact",
+     "source": "https://nsearchives.nseindia.in/corporate/AUROPHARMA_27052026182247_LtrToSEsTranscriptEarningCall27052026.pdf",
+     "id": "AUROPHARMA-2026-05-27-2",
+     "status": "unverifiable",
+     "evidence": "not a reported financial line (checked by hand or in later calls)"
+    },
+    {
+     "statement_verbatim": "And we expect around 200 million will be the run rates for the year, and we’ll continue to do that.",
+     "speaker_role": "CFO",
+     "metric": "capex_amount",
+     "scope": "company",
+     "unit": "USD million",
+     "deadline_period": "FY27",
+     "hedged": true,
+     "target_high": 200,
+     "target_low": 200,
+     "symbol": "AUROPHARMA",
+     "said_at": "2026-11-11",
+     "page": 16,
+     "match": "exact",
+     "source": "https://nsearchives.nseindia.in/corporate/AUROPHARMA_11112026130442_LtrToSEsTranscriptEarningCall11112026.pdf",
+     "id": "AUROPHARMA-2026-11-11-5",
+     "status": "unverifiable",
+     "evidence": "not a reported financial line (checked by hand or in later calls)"
+    },
+    {
+     "statement_verbatim": "We reiterate our FY guidance with the double-digit revenue growth, EBITDA margins north of 21% and absolute EBITDA in excess of 8,000 crore, with a potential upside from positive outperformance in our high-value strategic business areas.",
+     "speaker_role": "CFO",
+     "metric": "ebitda_margin",
+     "scope": "company",
+     "unit": "percent",
+     "deadline_period": "FY27",
+     "hedged": true,
+     "target_high": null,
+     "target_low": 21,
+     "symbol": "AUROPHARMA",
+     "said_at": "2026-11-11",
+     "page": 6,
+     "match": "exact",
+     "source": "https://nsearchives.nseindia.in/corporate/AUROPHARMA_11112026130442_LtrToSEsTranscriptEarningCall11112026.pdf",
+     "id": "AUROPHARMA-2026-11-11-2",
+     "status": "at_risk",
+     "evidence": "actual 20.79% (year to date Q1FY27–Q2FY27)"
+    },
+    {
+     "statement_verbatim": "We remain fully confident in our ability to further expand our EBITDA margin to upwards of 22% in the coming years [FY28], supported by resilience of our core business and increasing contribution from strategic growth drivers.",
+     "speaker_role": "CFO",
+     "metric": "ebitda_margin",
+     "scope": "company",
+     "unit": "percent",
+     "deadline_period": "FY28",
+     "hedged": true,
+     "target_high": null,
+     "target_low": 22,
+     "symbol": "AUROPHARMA",
+     "said_at": "2026-11-11",
+     "page": 6,
+     "match": "exact",
+     "source": "https://nsearchives.nseindia.in/corporate/AUROPHARMA_11112026130442_LtrToSEsTranscriptEarningCall11112026.pdf",
+     "id": "AUROPHARMA-2026-11-11-4",
+     "status": "unverifiable",
+     "evidence": "financials for this period not in the snapshot"
+    },
+    {
+     "statement_verbatim": "We reiterate our FY guidance with the double-digit revenue growth, EBITDA margins north of 21% and absolute EBITDA in excess of 8,000 crore, with a potential upside from positive outperformance in our high-value strategic business areas.",
+     "speaker_role": "CFO",
+     "metric": "other",
+     "scope": "company",
+     "unit": "INR crore",
+     "deadline_period": "FY27",
+     "hedged": true,
+     "target_high": null,
+     "target_low": 8000,
+     "symbol": "AUROPHARMA",
+     "said_at": "2026-11-11",
+     "page": 6,
+     "match": "exact",
+     "source": "https://nsearchives.nseindia.in/corporate/AUROPHARMA_11112026130442_LtrToSEsTranscriptEarningCall11112026.pdf",
+     "id": "AUROPHARMA-2026-11-11-3",
+     "status": "unverifiable",
+     "evidence": "not a reported financial line (checked by hand or in later calls)"
+    },
+    {
+     "statement_verbatim": "We reiterate our FY guidance with the double-digit revenue growth, EBITDA margins north of 21% and absolute EBITDA in excess of 8,000 crore, with a potential upside from positive outperformance in our high-value strategic business areas.",
+     "speaker_role": "CFO",
+     "metric": "revenue_growth",
+     "scope": "company",
+     "unit": "percent",
+     "deadline_period": "FY27",
+     "hedged": true,
+     "target_high": null,
+     "target_low": 10,
+     "symbol": "AUROPHARMA",
+     "said_at": "2026-11-11",
+     "page": 6,
+     "match": "exact",
+     "source": "https://nsearchives.nseindia.in/corporate/AUROPHARMA_11112026130442_LtrToSEsTranscriptEarningCall11112026.pdf",
+     "id": "AUROPHARMA-2026-11-11-1",
+     "status": "on_track",
+     "evidence": "actual 20.2% YoY (year to date Q1FY27–Q2FY27)"
+    }
+   ],
+   "has_ledger": true,
+   "credibility": {
+    "delivered": 1,
+    "resolved": 1
+   },
+   "thesis": {
+    "management": [
+     {
+      "id": "AUROPHARMA-2026-11-11-2",
+      "text": "EBITDA margin at least 21%",
+      "deadline": "FY27",
+      "stance": "contradicts",
+      "evidence": "actual 20.79% (year to date Q1FY27–Q2FY27)",
+      "status": "at_risk"
+     },
+     {
+      "id": "AUROPHARMA-2026-11-11-1",
+      "text": "Revenue growth at least 10%",
+      "deadline": "FY27",
+      "stance": "supports",
+      "evidence": "actual 20.2% YoY (year to date Q1FY27–Q2FY27)",
+      "status": "on_track"
+     },
+     {
+      "id": "AUROPHARMA-2026-02-16-4",
+      "text": "EBITDA margin 20–21%",
+      "deadline": "FY26",
+      "stance": "supports",
+      "evidence": "actual 20.23% (full period)",
+      "status": "delivered"
+     }
+    ],
+    "investor": [
+     {
+      "id": "inv-auro-1",
+      "text": "EBITDA margin stays at or above 20% this year",
+      "deadline": "FY27",
+      "stance": "supports",
+      "evidence": "20.79% year to date (Q1FY27–Q2FY27)",
+      "demo": true
+     }
+    ]
+   },
+   "recent_filings": [
+    {
+     "id": "AUROPHARMA-earnings_call-2026-11-11",
+     "title": "Transcript",
+     "at": "2026-11-11T13:05:10+05:30",
+     "tier": "collapsed",
+     "url": "https://nsearchives.nseindia.in/corporate/AUROPHARMA_11112026130442_LtrToSEsTranscriptEarningCall11112026.pdf"
+    },
+    {
+     "id": "AUROPHARMA-press_release-2026-11-11",
+     "title": "Apitoria Unit 2, an API manufacturing facility of Apitoria Pharma Private Limited., a subsidiary of the Company, receives Establishment Inspection Report from US FDA with classification as Voluntary Action Indicated",
+     "at": "2026-11-11T11:29:06+05:30",
+     "tier": "collapsed",
+     "url": "https://nsearchives.nseindia.in/corporate/AUROPHARMA_11112026112206_LtrToSEsApitoriaUnit2USFDA11112026.pdf"
+    },
+    {
+     "id": "AUROPHARMA-investor_meetings-2026-11-09",
+     "title": "Schedule of meet",
+     "at": "2026-11-09T14:46:39+05:30",
+     "tier": "collapsed",
+     "url": "https://nsearchives.nseindia.in/corporate/AUROPHARMA_09112026144557_LtrToSEsInvestorMeetJM16112026JMfin09112026.pdf"
+    },
+    {
+     "id": "AUROPHARMA-unclassified-2026-11-06",
+     "title": "Copy of financial results published in newspapers.",
+     "at": "2026-11-06T11:27:37+05:30",
+     "tier": "collapsed",
+     "url": "https://nsearchives.nseindia.in/corporate/AUROPHARMA_06112026112647_LtrToSEsQ2UFRpublished06112026.pdf"
+    },
+    {
+     "id": "AUROPHARMA-management_change-2026-11-04",
+     "title": "Change in Director(s) of the company.",
+     "at": "2026-11-04T20:42:39+05:30",
+     "tier": "worth_a_read",
+     "url": "https://nsearchives.nseindia.in/corporate/AUROPHARMA_04112026204230_LtrToSEsReappointmentofMrKumar04112026.pdf"
+    },
+    {
+     "id": "AUROPHARMA-M&A-2026-11-04",
+     "title": "Amalgamation/Merger of Auroactive Pharma Private Limited with Apitoria Pharma Private Limited wholly owned subsidiaries of the Company.",
+     "at": "2026-11-04T20:25:02+05:30",
+     "tier": "worth_a_read",
+     "url": "https://nsearchives.nseindia.in/corporate/AUROPHARMA_04112026202447_LtrToSEAuroactiveApitoriaMerger04112026.pdf"
+    },
+    {
+     "id": "AUROPHARMA-unclassified-2026-11-04",
+     "title": "Record date for the purpose of Dividend is 11-Nov-2026.",
+     "at": "2026-11-04T20:13:02+05:30",
+     "tier": "collapsed",
+     "url": "https://nsearchives.nseindia.in/corporate/AUROPHARMA_04112026201247_LtrToSEsDividendUpdate04112026.pdf"
+    },
+    {
+     "id": "AUROPHARMA-investor_meetings-2026-11-04",
+     "title": "Investor Presentation",
+     "at": "2026-11-04T20:11:04+05:30",
+     "tier": "collapsed",
+     "url": "https://nsearchives.nseindia.in/corporate/AUROPHARMA_04112026201054_LtrToSEsInvestorPresentation04112026.pdf"
+    },
+    {
+     "id": "AUROPHARMA-press_release-2026-11-04",
+     "title": "A press release dated November 04, 2026, titled \"Press release on Q2 FY27 Financial Results.\".",
+     "at": "2026-11-04T20:09:09+05:30",
+     "tier": "collapsed",
+     "url": "https://nsearchives.nseindia.in/corporate/AUROPHARMA_04112026200852_LtrToSEsPressRelease04112026.pdf"
+    },
+    {
+     "id": "AUROPHARMA-results-2026-11-04",
+     "title": "Aurobindo Pharma Limited has submitted to the Exchange, the financial results for the period ended September 30, 2026.",
+     "at": "2026-11-04T19:53:46+05:30",
+     "tier": "needs_you",
+     "url": "https://nsearchives.nseindia.in/corporate/AUROPHARMA_04112026194825_LtrToSEsOutcomeOfBM04112026.pdf"
+    }
+   ],
+   "needs_you": false,
+   "last_event": {
+    "title": "volume 2.1× its 20-day average",
+    "at": "2026-11-11T15:30:00+05:30",
+    "tier": "worth_a_read"
+   }
+  },
+  "LUPIN": {
+   "symbol": "LUPIN",
+   "name": "Lupin Limited",
+   "sector": "Pharma",
+   "role": "portfolio",
+   "basis": "consolidated",
+   "results_source": "https://nsearchives.nseindia.in/corporate/xbrl/INTEGRATED_FILING_INDAS_1752380_04112026013306_WEB.xml",
+   "price": {
+    "close": 1980.3,
+    "day_change": -1.72,
+    "as_of": "2026-11-13"
+   },
+   "quarters": [
+    {
+     "period": "Q2FY26",
+     "revenue": 7047.51,
+     "pat": 1484.83,
+     "source": "https://nsearchives.nseindia.in/corporate/xbrl/INTEGRATED_FILING_INDAS_1567369_06112025080309_WEB.xml",
+     "period_end": "2025-09-30",
+     "ebitda_margin": 33.22,
+     "revenue_yoy": null
+    },
+    {
+     "period": "Q3FY26",
+     "revenue": 7167.52,
+     "pat": 1180.51,
+     "source": "https://nsearchives.nseindia.in/corporate/xbrl/INTEGRATED_FILING_INDAS_1624718_12022026100049_WEB.xml",
+     "period_end": "2025-12-31",
+     "ebitda_margin": 31.56,
+     "revenue_yoy": null
+    },
+    {
+     "period": "Q4FY26",
+     "revenue": 7474.66,
+     "pat": 1468.67,
+     "source": "https://nsearchives.nseindia.in/corporate/xbrl/INTEGRATED_FILING_INDAS_1664747_07052026113234_WEB.xml",
+     "period_end": "2026-03-31",
+     "ebitda_margin": 33.25,
+     "revenue_yoy": null
+    },
+    {
+     "period": "Q1FY27",
+     "revenue": 8276.89,
+     "pat": 1416.98,
+     "source": "https://nsearchives.nseindia.in/corporate/xbrl/INTEGRATED_FILING_INDAS_1709478_06082026102614_WEB.xml",
+     "period_end": "2026-06-30",
+     "ebitda_margin": 29.6,
+     "revenue_yoy": null
+    },
+    {
+     "period": "Q2FY27",
+     "revenue": 7827.26,
+     "pat": 1155.3,
+     "source": "https://nsearchives.nseindia.in/corporate/xbrl/INTEGRATED_FILING_INDAS_1752380_04112026013306_WEB.xml",
+     "period_end": "2026-09-30",
+     "ebitda_margin": 26.12,
+     "revenue_yoy": 11.1
+    }
+   ],
+   "ledger": [],
+   "has_ledger": false,
+   "credibility": {
+    "delivered": 0,
+    "resolved": 0
+   },
+   "thesis": {
+    "management": [],
+    "investor": []
+   },
+   "recent_filings": [
+    {
+     "id": "LUPIN-press_release-2026-11-12",
+     "title": "A press release dated November 12, 2026, titled \"Lupin Announces European Launch of Biosimilar Ranibizumab\".",
+     "at": "2026-11-12T11:39:56+05:30",
+     "tier": "collapsed",
+     "url": "https://nsearchives.nseindia.in/corporate/Lupin2_12112026113810_SELetterPressRelease.pdf"
+    },
+    {
+     "id": "LUPIN-earnings_call-2026-11-06",
+     "title": "Transcript of Q2 FY2027 Earnings Conference Call.",
+     "at": "2026-11-06T20:38:37+05:30",
+     "tier": "collapsed",
+     "url": "https://nsearchives.nseindia.in/corporate/Lupin2_06112026203743_SE_Intimation_of_Investor_Meet_Transcript.pdf"
+    },
+    {
+     "id": "LUPIN-unclassified-2026-11-05",
+     "title": "Copies of Newspaper Publication regarding Unaudited Financial Results of the Company for the quarter and half year ended September 30, 2026.",
+     "at": "2026-11-05T16:38:30+05:30",
+     "tier": "collapsed",
+     "url": "https://nsearchives.nseindia.in/corporate/Lupin2_05112026163455_SEintimationletter.pdf"
+    },
+    {
+     "id": "LUPIN-earnings_call-2026-11-04",
+     "title": "Link of Recording.",
+     "at": "2026-11-04T21:11:59+05:30",
+     "tier": "collapsed",
+     "url": "https://nsearchives.nseindia.in/corporate/Lupin2_04112026210945_SE_Intimation_Audio_Link_Q2_FY27.pdf"
+    },
+    {
+     "id": "LUPIN-investor_meetings-2026-11-04",
+     "title": "Investor Presentation",
+     "at": "2026-11-04T01:49:55+05:30",
+     "tier": "collapsed",
+     "url": "https://nsearchives.nseindia.in/corporate/Lupin2_04112026014841_SE_Intimation_Investor_Presentation_04112026.pdf"
+    },
+    {
+     "id": "LUPIN-press_release-2026-11-04",
+     "title": "A press release dated November 04, 2026, titled \"Lupin Q2 FY2027 Results \".",
+     "at": "2026-11-04T01:44:23+05:30",
+     "tier": "collapsed",
+     "url": "https://nsearchives.nseindia.in/corporate/Lupin2_04112026014246_SE_Intimation_Press_Release_04112026.pdf"
+    },
+    {
+     "id": "LUPIN-management_change-2026-11-04",
+     "title": "Change in Director(s) of the company.",
+     "at": "2026-11-04T01:12:08+05:30",
+     "tier": "worth_a_read",
+     "url": "https://nsearchives.nseindia.in/corporate/Lupin2_04112026011040_SE_Intimation_appointment_of_AG.pdf"
+    },
+    {
+     "id": "LUPIN-results-2026-11-04",
+     "title": "Lupin Limited has submitted to the Exchange, the Standalone and Consolidated Unaudited Financial Results for the quarter and half year ended September 30, 2026.",
+     "at": "2026-11-04T00:44:51+05:30",
+     "tier": "needs_you",
+     "url": "https://nsearchives.nseindia.in/corporate/Lupin2_04112026004100_SE_Outcome_UFR_Intimation.pdf"
+    },
+    {
+     "id": "LUPIN-press_release-2026-11-03",
+     "title": "A press release dated November 03, 2026, titled \"Lupin Launches Raltegravir Tablets, USP, 600 mg in the United States\".",
+     "at": "2026-11-03T19:34:01+05:30",
+     "tier": "collapsed",
+     "url": "https://nsearchives.nseindia.in/corporate/Lupin2_03112026193332_SEletterpressrelease.pdf"
+    },
+    {
+     "id": "LUPIN-press_release-2026-11-02",
+     "title": "A press release dated November 02, 2026, titled \"Lupin Receives U.S. FDA Approval for Amifampridine Tablets\".",
+     "at": "2026-11-02T18:05:51+05:30",
+     "tier": "collapsed",
+     "url": "https://nsearchives.nseindia.in/corporate/Lupin2_02112026175800_SELetterPressRelease.pdf"
+    }
+   ],
+   "needs_you": false,
+   "last_event": {
+    "title": "A press release dated November 12, 2026, titled \"Lupin Announces European Launch of Biosimilar Ranibizumab\".",
+    "at": "2026-11-12T11:39:56+05:30",
+    "tier": "collapsed"
+   }
+  },
+  "MEDANTA": {
+   "symbol": "MEDANTA",
+   "name": "Global Health Limited",
+   "sector": "Healthcare",
+   "role": "portfolio",
+   "basis": "consolidated",
+   "results_source": "https://nsearchives.nseindia.in/corporate/xbrl/INTEGRATED_FILING_INDAS_1751853_03112026044819_WEB.xml",
+   "price": {
+    "close": 1454.0,
+    "day_change": 0.99,
+    "as_of": "2026-11-13"
+   },
+   "quarters": [
+    {
+     "period": "Q2FY26",
+     "revenue": 1099.22,
+     "pat": 158.4,
+     "source": "https://nsearchives.nseindia.in/corporate/xbrl/INTEGRATED_FILING_INDAS_1568483_07112025072531_WEB.xml",
+     "period_end": "2025-09-30",
+     "ebitda_margin": 21.01,
+     "revenue_yoy": null
+    },
+    {
+     "period": "Q3FY26",
+     "revenue": 1121.05,
+     "pat": 95.03,
+     "source": "https://nsearchives.nseindia.in/corporate/xbrl/INTEGRATED_FILING_INDAS_1618009_04022026040529_WEB.xml",
+     "period_end": "2025-12-31",
+     "ebitda_margin": 19.38,
+     "revenue_yoy": null
+    },
+    {
+     "period": "Q4FY26",
+     "revenue": 1159.05,
+     "pat": 141.65,
+     "source": "https://nsearchives.nseindia.in/corporate/xbrl/INTEGRATED_FILING_INDAS_1667160_14052026061031_WEB.xml",
+     "period_end": "2026-03-31",
+     "ebitda_margin": 21.03,
+     "revenue_yoy": null
+    },
+    {
+     "period": "Q1FY27",
+     "revenue": 1304.05,
+     "pat": 157.25,
+     "source": "https://nsearchives.nseindia.in/corporate/xbrl/INTEGRATED_FILING_INDAS_1705109_30072026035912_WEB.xml",
+     "period_end": "2026-06-30",
+     "ebitda_margin": 21.99,
+     "revenue_yoy": null
+    },
+    {
+     "period": "Q2FY27",
+     "revenue": 1469.04,
+     "pat": 219.14,
+     "source": "https://nsearchives.nseindia.in/corporate/xbrl/INTEGRATED_FILING_INDAS_1751853_03112026044819_WEB.xml",
+     "period_end": "2026-09-30",
+     "ebitda_margin": 25.19,
+     "revenue_yoy": 33.6
+    }
+   ],
+   "ledger": [],
+   "has_ledger": false,
+   "credibility": {
+    "delivered": 0,
+    "resolved": 0
+   },
+   "thesis": {
+    "management": [],
+    "investor": []
+   },
+   "recent_filings": [
+    {
+     "id": "MEDANTA-investor_meetings-2026-11-14",
+     "title": "Investor Presentation",
+     "at": "2026-11-14T12:44:46+05:30",
+     "tier": "collapsed",
+     "url": "https://nsearchives.nseindia.in/corporate/MEDANTA21_14112026124431_GHLANALYSTSMEETNOVEMBER142026SIGNED.pdf"
+    },
+    {
+     "id": "MEDANTA-investor_meetings-2026-11-10",
+     "title": "Schedule of meet",
+     "at": "2026-11-10T16:06:39+05:30",
+     "tier": "collapsed",
+     "url": "https://nsearchives.nseindia.in/corporate/MEDANTA21_10112026160241_GHLANALYSTSMEETNOVEMBER102026SIGNED.pdf"
+    },
+    {
+     "id": "MEDANTA-earnings_call-2026-11-10",
+     "title": "Transcript",
+     "at": "2026-11-10T11:41:17+05:30",
+     "tier": "collapsed",
+     "url": "https://nsearchives.nseindia.in/corporate/MEDANTA21_10112026114048_GHLTRANSCRIPTSINTNOV2026SIGNED.pdf"
+    },
+    {
+     "id": "MEDANTA-earnings_call-2026-11-04",
+     "title": "Link of Recording",
+     "at": "2026-11-04T16:57:30+05:30",
+     "tier": "collapsed",
+     "url": "https://nsearchives.nseindia.in/corporate/MEDANTA21_04112026165710_GHLAUDIORECORDINGINTIMATIONNOVEMBER042026Signed.pdf"
+    },
+    {
+     "id": "MEDANTA-unclassified-2026-11-04",
+     "title": "Copy of Newspaper Publication",
+     "at": "2026-11-04T12:32:57+05:30",
+     "tier": "collapsed",
+     "url": "https://nsearchives.nseindia.in/corporate/MEDANTA21_04112026123237_GHLNEWSPAPERADVERNOVEMBER042026Signed.pdf"
+    },
+    {
+     "id": "MEDANTA-investor_meetings-2026-11-03",
+     "title": "Investor Presentation",
+     "at": "2026-11-03T17:27:36+05:30",
+     "tier": "collapsed",
+     "url": "https://nsearchives.nseindia.in/corporate/MEDANTA21_03112026172712_GHLINVESTORPRESENTATIONNOV032026SIGNED.pdf"
+    },
+    {
+     "id": "MEDANTA-press_release-2026-11-03",
+     "title": "A press release dated November 03, 2026, titled \"Press release for the Results of Second Quarter & Half Year ended September 30, 2026.\"",
+     "at": "2026-11-03T17:25:18+05:30",
+     "tier": "collapsed",
+     "url": "https://nsearchives.nseindia.in/corporate/MEDANTA21_03112026172432_GHLPRESSRELEASENOVEMBER032026SIGNED.pdf"
+    },
+    {
+     "id": "MEDANTA-capex-2026-11-03",
+     "title": "Capacity addition",
+     "at": "2026-11-03T16:22:19+05:30",
+     "tier": "worth_a_read",
+     "url": "https://nsearchives.nseindia.in/corporate/MEDANTA21_03112026162207_GHLOUTCOMEOFBMNOV032026SIGNED.pdf"
+    },
+    {
+     "id": "MEDANTA-results-2026-11-03",
+     "title": "Global Health Limited has submitted to the Exchange, the financial results for the period ended September 30, 2026.",
+     "at": "2026-11-03T16:06:37+05:30",
+     "tier": "needs_you",
+     "url": "https://nsearchives.nseindia.in/corporate/MEDANTA21_03112026160317_GHLOUTCOMEOFBMNOV032026SIGNED.pdf"
+    },
+    {
+     "id": "MEDANTA-management_change-2026-11-02",
+     "title": "Change in Management",
+     "at": "2026-11-02T17:26:44+05:30",
+     "tier": "collapsed",
+     "url": "https://nsearchives.nseindia.in/corporate/MEDANTA21_02112026172623_GHLResignationofSMPNOVEMBER022026SIGNED.pdf"
+    }
+   ],
+   "needs_you": false,
+   "last_event": {
+    "title": "Investor Presentation",
+    "at": "2026-11-14T12:44:46+05:30",
+    "tier": "collapsed"
+   }
+  },
+  "TEXRAIL": {
+   "symbol": "TEXRAIL",
+   "name": "Texmaco Rail & Engineering Limited",
+   "sector": "Capital goods",
+   "role": "portfolio",
+   "basis": "consolidated",
+   "results_source": "https://nsearchives.nseindia.in/corporate/xbrl/INTEGRATED_FILING_INDAS_1753889_05112026062622_WEB.xml",
+   "price": {
+    "close": 111.15,
+    "day_change": -1.91,
+    "as_of": "2026-11-13"
+   },
+   "quarters": [
+    {
+     "period": "Q2FY26",
+     "revenue": 1258.1,
+     "pat": 63.92,
+     "source": "https://nsearchives.nseindia.in/corporate/xbrl/INTEGRATED_FILING_INDAS_1571205_11112025050720_WEB.xml",
+     "period_end": "2025-09-30",
+     "ebitda_margin": 9.89,
+     "revenue_yoy": null
+    },
+    {
+     "period": "Q3FY26",
+     "revenue": 1041.6,
+     "pat": 42.27,
+     "source": "https://nsearchives.nseindia.in/corporate/xbrl/INTEGRATED_FILING_INDAS_1621576_09022026044310_WEB.xml",
+     "period_end": "2025-12-31",
+     "ebitda_margin": 8.51,
+     "revenue_yoy": null
+    },
+    {
+     "period": "Q4FY26",
+     "revenue": 1166.97,
+     "pat": 58.04,
+     "source": "https://nsearchives.nseindia.in/corporate/xbrl/INTEGRATED_FILING_INDAS_1666193_12052026082510_WEB.xml",
+     "period_end": "2026-03-31",
+     "ebitda_margin": 9.12,
+     "revenue_yoy": null
+    },
+    {
+     "period": "Q1FY27",
+     "revenue": 756.68,
+     "pat": 50.07,
+     "source": "https://nsearchives.nseindia.in/corporate/xbrl/INTEGRATED_FILING_INDAS_1707191_03082026070801_WEB.xml",
+     "period_end": "2026-06-30",
+     "ebitda_margin": 7.53,
+     "revenue_yoy": null
+    },
+    {
+     "period": "Q2FY27",
+     "revenue": 867.75,
+     "pat": 111.04,
+     "source": "https://nsearchives.nseindia.in/corporate/xbrl/INTEGRATED_FILING_INDAS_1753889_05112026062622_WEB.xml",
+     "period_end": "2026-09-30",
+     "ebitda_margin": 8.6,
+     "revenue_yoy": -31.0
+    }
+   ],
+   "ledger": [],
+   "has_ledger": false,
+   "credibility": {
+    "delivered": 0,
+    "resolved": 0
+   },
+   "thesis": {
+    "management": [],
+    "investor": []
+   },
+   "recent_filings": [
+    {
+     "id": "TEXRAIL-press_release-2026-11-14",
+     "title": "Bagging/Receiving of orders/contracts",
+     "at": "2026-11-14T12:10:49+05:30",
+     "tier": "collapsed",
+     "url": "https://nsearchives.nseindia.in/corporate/TEXRAIL_14112026120920_TexRailReceiptofOrderNWR14112026Signed.pdf"
+    },
+    {
+     "id": "TEXRAIL-earnings_call-2026-11-11",
+     "title": "Link of Recording",
+     "at": "2026-11-11T17:12:37+05:30",
+     "tier": "collapsed",
+     "url": "https://nsearchives.nseindia.in/corporate/TEXRAIL_11112026171217_TexRailAudioRecording11112026Signed.pdf"
+    },
+    {
+     "id": "TEXRAIL-press_release-2026-11-11",
+     "title": "Investor Presentation for the quarter and half year ended 30th September, 2026",
+     "at": "2026-11-11T09:57:08+05:30",
+     "tier": "collapsed",
+     "url": "https://nsearchives.nseindia.in/corporate/TEXRAIL_11112026095643_EarningsPresentation11112026SIGNED.pdf"
+    },
+    {
+     "id": "TEXRAIL-press_release-2026-11-05",
+     "title": "Receipt of Orders worth Rs. 428.55 Crores in aggregate (incl. taxes) from Ultratech Cement Ltd, Jujhar Logistics & Travels Ltd and APL Logistics Vascor Automotive Pvt. Ltd.",
+     "at": "2026-11-05T21:25:38+05:30",
+     "tier": "collapsed",
+     "url": "https://nsearchives.nseindia.in/corporate/TEXRAIL_05112026212458_OrderUJA05112026Signed.pdf"
+    },
+    {
+     "id": "TEXRAIL-management_change-2026-11-05",
+     "title": "Change in Director(s) of the company.",
+     "at": "2026-11-05T14:59:13+05:30",
+     "tier": "collapsed",
+     "url": "https://nsearchives.nseindia.in/corporate/TEXRAIL_05112026145903_TexRailBMOutcome05112026Signed.pdf"
+    },
+    {
+     "id": "TEXRAIL-results-2026-11-05",
+     "title": "Texmaco Rail & Engineering Limited has submitted to the Exchange, the financial results for the period ended September 30, 2026.",
+     "at": "2026-11-05T14:52:03+05:30",
+     "tier": "needs_you",
+     "url": "https://nsearchives.nseindia.in/corporate/TEXRAIL_05112026145026_TexRailBMOutcome05112026Signed.pdf"
+    },
+    {
+     "id": "TEXRAIL-investor_meetings-2026-11-04",
+     "title": "Schedule of meet",
+     "at": "2026-11-04T18:54:18+05:30",
+     "tier": "collapsed",
+     "url": "https://nsearchives.nseindia.in/corporate/TEXRAIL_04112026185314_TexrailSEInvestorCall111126.pdf"
+    },
+    {
+     "id": "TEXRAIL-credit_rating-2026-10-31",
+     "title": "Credit Rating",
+     "at": "2026-10-31T22:53:19+05:30",
+     "tier": "worth_a_read",
+     "url": "https://nsearchives.nseindia.in/corporate/TEXRAIL_31102026225259_SECREDITRATING31102026.pdf"
+    }
+   ],
+   "needs_you": false,
+   "last_event": {
+    "title": "Bagging/Receiving of orders/contracts",
+    "at": "2026-11-14T12:10:49+05:30",
+    "tier": "collapsed"
+   }
+  },
+  "THERMAX": {
+   "symbol": "THERMAX",
+   "name": "Thermax Limited",
+   "sector": "Capital goods",
+   "role": "portfolio",
+   "basis": "consolidated",
+   "results_source": "https://nsearchives.nseindia.in/corporate/xbrl/INTEGRATED_FILING_INDAS_1753918_05112026063454_WEB.xml",
+   "price": {
+    "close": 2776.2,
+    "day_change": 1.98,
+    "as_of": "2026-11-13"
+   },
+   "quarters": [
+    {
+     "period": "Q2FY26",
+     "revenue": 2473.9,
+     "pat": 119.4,
+     "source": "https://nsearchives.nseindia.in/corporate/xbrl/INTEGRATED_FILING_INDAS_1571267_11112025054529_WEB.xml",
+     "period_end": "2025-09-30",
+     "ebitda_margin": 6.95,
+     "revenue_yoy": null
+    },
+    {
+     "period": "Q3FY26",
+     "revenue": 2634.68,
+     "pat": 205.01,
+     "source": "https://nsearchives.nseindia.in/corporate/xbrl/INTEGRATED_FILING_INDAS_1616637_02022026074824_WEB.xml",
+     "period_end": "2025-12-31",
+     "ebitda_margin": 9.67,
+     "revenue_yoy": null
+    },
+    {
+     "period": "Q4FY26",
+     "revenue": 3428.04,
+     "pat": 244.4,
+     "source": "https://nsearchives.nseindia.in/corporate/xbrl/INTEGRATED_FILING_INDAS_1664624_07052026074732_WEB.xml",
+     "period_end": "2026-03-31",
+     "ebitda_margin": 10.92,
+     "revenue_yoy": null
+    },
+    {
+     "period": "Q1FY27",
+     "revenue": 2302.73,
+     "pat": 21.79,
+     "source": "https://nsearchives.nseindia.in/corporate/xbrl/INTEGRATED_FILING_INDAS_1705307_30072026053358_WEB.xml",
+     "period_end": "2026-06-30",
+     "ebitda_margin": 2.98,
+     "revenue_yoy": null
+    },
+    {
+     "period": "Q2FY27",
+     "revenue": 2755.87,
+     "pat": 113.11,
+     "source": "https://nsearchives.nseindia.in/corporate/xbrl/INTEGRATED_FILING_INDAS_1753918_05112026063454_WEB.xml",
+     "period_end": "2026-09-30",
+     "ebitda_margin": 7.04,
+     "revenue_yoy": 11.4
+    }
+   ],
+   "ledger": [],
+   "has_ledger": false,
+   "credibility": {
+    "delivered": 0,
+    "resolved": 0
+   },
+   "thesis": {
+    "management": [],
+    "investor": []
+   },
+   "recent_filings": [
+    {
+     "id": "THERMAX-press_release-2026-11-13",
+     "title": "'Change in Registered Office of RTA '.",
+     "at": "2026-11-13T16:57:28+05:30",
+     "tier": "collapsed",
+     "url": "https://nsearchives.nseindia.in/corporate/THERMAXNSE_13112026165615_SeintimationKFinCorporateofficeshifting.pdf"
+    },
+    {
+     "id": "THERMAX-investor_meetings-2026-11-13",
+     "title": "Schedule of meet",
+     "at": "2026-11-13T16:52:55+05:30",
+     "tier": "collapsed",
+     "url": "https://nsearchives.nseindia.in/corporate/THERMAXNSE_13112026165232_SEIntimationInvestors_Meet.pdf"
+    },
+    {
+     "id": "THERMAX-earnings_call-2026-11-12",
+     "title": "Transcript",
+     "at": "2026-11-12T09:37:11+05:30",
+     "tier": "collapsed",
+     "url": "https://nsearchives.nseindia.in/corporate/THERMAXNSE_12112026093647_SEintimationtranscriptQ2.pdf"
+    },
+    {
+     "id": "THERMAX-management_change-2026-11-09",
+     "title": "Cessation of Mr Harsh Mariwala as Non- Executive Independent Director of the company w.e.f. November 09, 2026.",
+     "at": "2026-11-09T18:38:36+05:30",
+     "tier": "collapsed",
+     "url": "https://nsearchives.nseindia.in/corporate/THERMAXNSE_09112026183820_SEIntimation_HCM_Cessation.pdf"
+    },
+    {
+     "id": "THERMAX-unclassified-2026-11-09",
+     "title": "Retirement",
+     "at": "2026-11-09T18:37:00+05:30",
+     "tier": "collapsed",
+     "url": "https://nsearchives.nseindia.in/corporate/THERMAXNSE_09112026183642_SEIntimation_HCM_Cessation.pdf"
+    },
+    {
+     "id": "THERMAX-unclassified-2026-11-06",
+     "title": "Copy of Newspaper Publication",
+     "at": "2026-11-06T14:40:14+05:30",
+     "tier": "collapsed",
+     "url": "https://nsearchives.nseindia.in/corporate/THERMAXNSE_06112026144004_TL_NewspaperAdv_Q2.pdf"
+    },
+    {
+     "id": "THERMAX-earnings_call-2026-11-06",
+     "title": "Link of Recording",
+     "at": "2026-11-06T14:34:25+05:30",
+     "tier": "collapsed",
+     "url": "https://nsearchives.nseindia.in/corporate/THERMAXNSE_06112026143413_TL_Audiorecordinginvestorcall_Q2.pdf"
+    },
+    {
+     "id": "THERMAX-investor_meetings-2026-11-05",
+     "title": "Investor Presentation",
+     "at": "2026-11-05T18:20:26+05:30",
+     "tier": "collapsed",
+     "url": "https://nsearchives.nseindia.in/corporate/THERMAXNSE_05112026181951_SEintimationInvestorPrez.pdf"
+    },
+    {
+     "id": "THERMAX-results-2026-11-05",
+     "title": "Thermax Limited has submitted to the Exchange, the financial results for the period ended September 30, 2026.",
+     "at": "2026-11-05T18:02:05+05:30",
+     "tier": "worth_a_read",
+     "url": "https://nsearchives.nseindia.in/corporate/THERMAXNSE_05112026180056_SEIntimationBMOutcome.pdf"
+    },
+    {
+     "id": "THERMAX-unclassified-2026-11-05",
+     "title": "Action(s) taken or orders passed",
+     "at": "2026-11-05T15:27:12+05:30",
+     "tier": "collapsed",
+     "url": "https://nsearchives.nseindia.in/corporate/THERMAXNSE_05112026152702_SEIntimationGSTPenalty_Nov2026.pdf"
+    }
+   ],
+   "needs_you": false,
+   "last_event": {
+    "title": "'Change in Registered Office of RTA '.",
+    "at": "2026-11-13T16:57:28+05:30",
+    "tier": "collapsed"
+   }
+  },
+  "GRSE": {
+   "symbol": "GRSE",
+   "name": "Garden Reach Shipbuilders & Engineers Limited",
+   "sector": "Defence shipbuilding",
+   "role": "portfolio",
+   "basis": "standalone",
+   "results_source": "https://nsearchives.nseindia.in/corporate/xbrl/INTEGRATED_FILING_INDAS_1756048_11112026032721_WEB.xml",
+   "price": {
+    "close": 2184.8,
+    "day_change": -1.21,
+    "as_of": "2026-11-13"
+   },
+   "quarters": [
+    {
+     "period": "Q2FY26",
+     "revenue": 1677.38,
+     "pat": 153.79,
+     "source": "https://nsearchives.nseindia.in/corporate/xbrl/INTEGRATED_FILING_INDAS_1564979_04112025062359_WEB.xml",
+     "period_end": "2025-09-30",
+     "ebitda_margin": 9.31,
+     "revenue_yoy": null
+    },
+    {
+     "period": "Q3FY26",
+     "revenue": 1895.69,
+     "pat": 170.77,
+     "source": "https://nsearchives.nseindia.in/corporate/xbrl/INTEGRATED_FILING_INDAS_1612034_28012026062718_WEB.xml",
+     "period_end": "2025-12-31",
+     "ebitda_margin": 9.07,
+     "revenue_yoy": null
+    },
+    {
+     "period": "Q4FY26",
+     "revenue": 2119.21,
+     "pat": 303.2,
+     "source": "https://nsearchives.nseindia.in/corporate/xbrl/INTEGRATED_FILING_INDAS_1660572_28042026072749_WEB.xml",
+     "period_end": "2026-03-31",
+     "ebitda_margin": 16.77,
+     "revenue_yoy": null
+    },
+    {
+     "period": "Q1FY27",
+     "revenue": 1814.62,
+     "pat": 172.84,
+     "source": "https://nsearchives.nseindia.in/corporate/xbrl/INTEGRATED_FILING_INDAS_1703769_29072026020422_WEB.xml",
+     "period_end": "2026-06-30",
+     "ebitda_margin": 8.22,
+     "revenue_yoy": null
+    },
+    {
+     "period": "Q2FY27",
+     "revenue": 1826.69,
+     "pat": 171.97,
+     "source": "https://nsearchives.nseindia.in/corporate/xbrl/INTEGRATED_FILING_INDAS_1756048_11112026032721_WEB.xml",
+     "period_end": "2026-09-30",
+     "ebitda_margin": 10.7,
+     "revenue_yoy": 8.9
+    }
+   ],
+   "ledger": [],
+   "has_ledger": false,
+   "credibility": {
+    "delivered": 0,
+    "resolved": 0
+   },
+   "thesis": {
+    "management": [],
+    "investor": []
+   },
+   "recent_filings": [
+    {
+     "id": "GRSE-earnings_call-2026-11-14",
+     "title": "In terms of Regulation 30 read with Para A of Part A of Schedule lll of the Securities and Exchange Board of India (Listing Obligations and Disclosure Requirements) Regulations, 2015, we wish to inform that Conference Call for Investors and Analysts is scheduled to be held on Thursday, 19th November, 2026 at 03.30 P.M. to discuss the Company s Q2 & H1 FY 27 results and the road ahead. The details of the Conference Call are attached herewith.During the aforesaid call, the Management will comment on the Unaudited Financial Results and Operations for the Quarter Ended 30th Sep, 2026 and road ahead.This is for your information and record.",
+     "at": "2026-11-14T10:31:36+05:30",
+     "tier": "collapsed",
+     "url": "https://nsearchives.nseindia.in/corporate/GRSE_14112026103104_Intimation_Investors_and_Analyst_Meeting_Q2_H1_FY_26_27.pdf"
+    },
+    {
+     "id": "GRSE-press_release-2026-11-11",
+     "title": "A press release dated November 11, 2026, titled \"Press Release Performance Review of Q2 & H1 FY27 - GRSE Strengthens Financial Performance, Registers Impressive Growth in Q2 & H1 FY27\".",
+     "at": "2026-11-11T17:37:35+05:30",
+     "tier": "collapsed",
+     "url": "https://nsearchives.nseindia.in/corporate/GRSE_11112026173726_Press_Release_for_Q2_FY_2026-27.pdf"
+    },
+    {
+     "id": "GRSE-results-2026-11-11",
+     "title": "Garden Reach Shipbuilders & Engineers Limited has submitted to the Exchange, the financial results for the period ended September 30, 2026.",
+     "at": "2026-11-11T14:47:22+05:30",
+     "tier": "worth_a_read",
+     "url": "https://nsearchives.nseindia.in/corporate/GRSE_11112026144558_GRSE_-_Unaudited_Financial_Results_-_Q2_FY_26-27.pdf"
+    },
+    {
+     "id": "GRSE-press_release-2026-11-02",
+     "title": "In continuance of our earlier letter no. GRSE/BD-69/CA/14/25-26 dated 22 May 2025 on the subject matter GRSE become L1 to NGC Project and in terms of Regulation 30 and other applicable provisions of the Securities and Exchange Board of India (Listing Obligations and Disclosure Requirements) Regulations, 2015, as amended, we wish to inform you that the Company has signed a contract with the Indian Navy in New Delhi today for the construction of five Next Generation Corvettes (NGCs). The contract, valued at approximately Rs. 32,000 Crore.Copy of the press release is enclosed herewith.This is for your information and record",
+     "at": "2026-11-02T16:40:54+05:30",
+     "tier": "collapsed",
+     "url": "https://nsearchives.nseindia.in/corporate/GRSE_02112026164033_Corp_Ann__Press_Release_regarding_signing_of_contract_for_5_NGCs.pdf"
+    },
+    {
+     "id": "GRSE-management_change-2026-11-02",
+     "title": "Change in Director(s) of the company.",
+     "at": "2026-11-02T15:13:59+05:30",
+     "tier": "worth_a_read",
+     "url": "https://nsearchives.nseindia.in/corporate/GRSE_02112026151337_Appointment_of_Shri_Laishram_Meenabanta_Singh_ID.pdf"
+    }
+   ],
+   "needs_you": false,
+   "last_event": {
+    "title": "In terms of Regulation 30 read with Para A of Part A of Schedule lll of the Securities and Exchange Board of India (Listing Obligations and Disclosure Requirements) Regulations, 2015, we wish to inform that Conference Call for Investors and Analysts is scheduled to be held on Thursday, 19th November, 2026 at 03.30 P.M. to discuss the Company s Q2 & H1 FY 27 results and the road ahead. The details of the Conference Call are attached herewith.During the aforesaid call, the Management will comment on the Unaudited Financial Results and Operations for the Quarter Ended 30th Sep, 2026 and road ahead.This is for your information and record.",
+    "at": "2026-11-14T10:31:36+05:30",
+    "tier": "collapsed"
+   }
+  },
+  "KEC": {
+   "symbol": "KEC",
+   "name": "KEC International Limited",
+   "sector": "Transmission",
+   "role": "portfolio",
+   "basis": "consolidated",
+   "results_source": "https://nsearchives.nseindia.in/corporate/xbrl/INTEGRATED_FILING_INDAS_1751525_02112026092732_WEB.xml",
+   "price": {
+    "close": 333.65,
+    "day_change": -1.95,
+    "as_of": "2026-11-13"
+   },
+   "quarters": [
+    {
+     "period": "Q2FY26",
+     "revenue": 6091.56,
+     "pat": 160.75,
+     "source": "https://nsearchives.nseindia.in/corporate/xbrl/INTEGRATED_FILING_INDAS_1570528_10112025092259_WEB.xml",
+     "period_end": "2025-09-30",
+     "ebitda_margin": 7.07,
+     "revenue_yoy": null
+    },
+    {
+     "period": "Q3FY26",
+     "revenue": 6001.35,
+     "pat": 127.46,
+     "source": "https://nsearchives.nseindia.in/corporate/xbrl/INTEGRATED_FILING_INDAS_1614720_30012026051553_WEB.xml",
+     "period_end": "2025-12-31",
+     "ebitda_margin": 7.16,
+     "revenue_yoy": null
+    },
+    {
+     "period": "Q4FY26",
+     "revenue": 6389.75,
+     "pat": 192.79,
+     "source": "https://nsearchives.nseindia.in/corporate/xbrl/INTEGRATED_FILING_INDAS_1668450_16052026105416_WEB.xml",
+     "period_end": "2026-03-31",
+     "ebitda_margin": 7.01,
+     "revenue_yoy": null
+    },
+    {
+     "period": "Q1FY27",
+     "revenue": 5023.54,
+     "pat": 72.62,
+     "source": "https://nsearchives.nseindia.in/corporate/xbrl/INTEGRATED_FILING_INDAS_1711271_10082026070214_WEB.xml",
+     "period_end": "2026-06-30",
+     "ebitda_margin": 5.79,
+     "revenue_yoy": null
+    },
+    {
+     "period": "Q2FY27",
+     "revenue": 5467.71,
+     "pat": 29.74,
+     "source": "https://nsearchives.nseindia.in/corporate/xbrl/INTEGRATED_FILING_INDAS_1751525_02112026092732_WEB.xml",
+     "period_end": "2026-09-30",
+     "ebitda_margin": 4.96,
+     "revenue_yoy": -10.2
+    }
+   ],
+   "ledger": [],
+   "has_ledger": false,
+   "credibility": {
+    "delivered": 0,
+    "resolved": 0
+   },
+   "thesis": {
+    "management": [],
+    "investor": []
+   },
+   "recent_filings": [
+    {
+     "id": "KEC-investor_meetings-2026-11-12",
+     "title": "Schedule of meet",
+     "at": "2026-11-12T18:21:56+05:30",
+     "tier": "collapsed",
+     "url": "https://nsearchives.nseindia.in/corporate/KEC_12112026182139_AnalystMeetIntimation.pdf"
+    },
+    {
+     "id": "KEC-unclassified-2026-11-07",
+     "title": "Copy of Newspaper Publication on Notice of Postal Ballot and information related to remote e-voting",
+     "at": "2026-11-07T14:39:51+05:30",
+     "tier": "collapsed",
+     "url": "https://nsearchives.nseindia.in/corporate/KEC_07112026143922_SEIntimation_Newspaper.pdf"
+    },
+    {
+     "id": "KEC-agm_egm-2026-11-06",
+     "title": "The Notice of Postal Ballot is enclosed herewith",
+     "at": "2026-11-06T18:20:00+05:30",
+     "tier": "collapsed",
+     "url": "https://nsearchives.nseindia.in/corporate/KEC_06112026181927_SEPostalBallotIntimation.pdf"
+    },
+    {
+     "id": "KEC-earnings_call-2026-11-06",
+     "title": "Transcript of the Earnings Conference Call held on Tuesday, November 03, 2026, for the Unaudited Financial Results of the Company for the quarter and half year ended September 30, 2026, has been made available on the Company's website.",
+     "at": "2026-11-06T15:52:03+05:30",
+     "tier": "collapsed",
+     "url": "https://nsearchives.nseindia.in/corporate/KEC_06112026155134_SE_Intimation_Transcript.pdf"
+    },
+    {
+     "id": "KEC-unclassified-2026-11-04",
+     "title": "Please find enclosed herewith copies of newspaper advertisements published regarding Unaudited Financial Results of the Company for the quarter and half year ended September 30, 2026.",
+     "at": "2026-11-04T15:23:18+05:30",
+     "tier": "collapsed",
+     "url": "https://nsearchives.nseindia.in/corporate/KEC_04112026152248_SEintimation.pdf"
+    },
+    {
+     "id": "KEC-earnings_call-2026-11-03",
+     "title": "Audio Recording of the Earnings Conference Call held today i.e. November 03, 2026, at 10:00 a.m. (IST), for the Unaudited Financial Results of the Company for the quarter and half year ended September 30, 2026, has been made available on the Company's website.",
+     "at": "2026-11-03T17:56:02+05:30",
+     "tier": "collapsed",
+     "url": "https://nsearchives.nseindia.in/corporate/KEC_03112026175244_SE_Intimation.pdf"
+    },
+    {
+     "id": "KEC-investor_meetings-2026-11-02",
+     "title": "Investor Presentation",
+     "at": "2026-11-02T21:22:18+05:30",
+     "tier": "collapsed",
+     "url": "https://nsearchives.nseindia.in/corporate/KEC_02112026212142_SE_Intimation_Investor_Presentation_Q2_FY27.pdf"
+    },
+    {
+     "id": "KEC-press_release-2026-11-02",
+     "title": "Please find enclosed herewith a copy of the Press Release on the Unaudited Financial Results of the Company for the quarter and half year ended September 30, 2026.",
+     "at": "2026-11-02T21:18:22+05:30",
+     "tier": "collapsed",
+     "url": "https://nsearchives.nseindia.in/corporate/KEC_02112026211750_SE_intimation_PressRelease.pdf"
+    },
+    {
+     "id": "KEC-management_change-2026-11-02",
+     "title": "The Board of Directors of the Company at its meeting held today i.e. November 02, 2026, inter alia, approved the appointment of Mr. Anant Vardhan Goenka as an Additional Director (Non-Executive, Non-Independent) effective November 02, 2026.",
+     "at": "2026-11-02T21:14:06+05:30",
+     "tier": "worth_a_read",
+     "url": "https://nsearchives.nseindia.in/corporate/KEC_02112026211334_SE_Intimation_Appointment_of_director.pdf"
+    },
+    {
+     "id": "KEC-results-2026-11-02",
+     "title": "The Unaudited Financial Results for the quarter and half year ended September 30, 2026, along with the Limited Review Reports of the Statutory Auditors are enclosed.",
+     "at": "2026-11-02T21:09:59+05:30",
+     "tier": "needs_you",
+     "url": "https://nsearchives.nseindia.in/corporate/KEC_02112026210430_SE_intimation_BM_outcome_Results.pdf"
+    }
+   ],
+   "needs_you": false,
+   "last_event": {
+    "title": "Schedule of meet",
+    "at": "2026-11-12T18:21:56+05:30",
+    "tier": "collapsed"
+   }
+  },
+  "NCC": {
+   "symbol": "NCC",
+   "name": "NCC Limited",
+   "sector": "Construction",
+   "role": "portfolio",
+   "basis": "consolidated",
+   "results_source": "https://nsearchives.nseindia.in/corporate/xbrl/INTEGRATED_FILING_INDAS_1754093_05112026073640_WEB.xml",
+   "price": {
+    "close": 134.58,
+    "day_change": -0.96,
+    "as_of": "2026-11-13"
+   },
+   "quarters": [
+    {
+     "period": "Q2FY26",
+     "revenue": 4543.01,
+     "pat": 167.33,
+     "source": "https://nsearchives.nseindia.in/corporate/xbrl/INTEGRATED_FILING_INDAS_1567225_06112025065245_WEB.xml",
+     "period_end": "2025-09-30",
+     "ebitda_margin": 8.66,
+     "revenue_yoy": null
+    },
+    {
+     "period": "Q3FY26",
+     "revenue": 4868.29,
+     "pat": 135.22,
+     "source": "https://nsearchives.nseindia.in/corporate/xbrl/INTEGRATED_FILING_INDAS_1619329_05022026061020_WEB.xml",
+     "period_end": "2025-12-31",
+     "ebitda_margin": 8.96,
+     "revenue_yoy": null
+    },
+    {
+     "period": "Q4FY26",
+     "revenue": 6232.71,
+     "pat": 216.77,
+     "source": "https://nsearchives.nseindia.in/corporate/xbrl/INTEGRATED_FILING_INDAS_1719935_01092026061126_WEB.xml",
+     "period_end": "2026-03-31",
+     "ebitda_margin": 8.83,
+     "revenue_yoy": null
+    },
+    {
+     "period": "Q1FY27",
+     "revenue": 5811.83,
+     "pat": 228.9,
+     "source": "https://nsearchives.nseindia.in/corporate/xbrl/INTEGRATED_FILING_INDAS_1709230_06082026063437_WEB.xml",
+     "period_end": "2026-06-30",
+     "ebitda_margin": 9.38,
+     "revenue_yoy": null
+    },
+    {
+     "period": "Q2FY27",
+     "revenue": 6014.67,
+     "pat": 198.84,
+     "source": "https://nsearchives.nseindia.in/corporate/xbrl/INTEGRATED_FILING_INDAS_1754093_05112026073640_WEB.xml",
+     "period_end": "2026-09-30",
+     "ebitda_margin": 8.79,
+     "revenue_yoy": 32.4
+    }
+   ],
+   "ledger": [],
+   "has_ledger": false,
+   "credibility": {
+    "delivered": 0,
+    "resolved": 0
+   },
+   "thesis": {
+    "management": [],
+    "investor": []
+   },
+   "recent_filings": [
+    {
+     "id": "NCC-earnings_call-2026-11-10",
+     "title": "Transcript",
+     "at": "2026-11-10T12:13:22+05:30",
+     "tier": "collapsed",
+     "url": "https://nsearchives.nseindia.in/corporate/NCC_10112026121249_Transcript_10Nov26.pdf"
+    },
+    {
+     "id": "NCC-earnings_call-2026-11-06",
+     "title": "Link of Recording of the Conference call held today.",
+     "at": "2026-11-06T16:06:54+05:30",
+     "tier": "collapsed",
+     "url": "https://nsearchives.nseindia.in/corporate/NCC_06112026160507_Audio_Recording_of_the_Coference_call.pdf"
+    },
+    {
+     "id": "NCC-unclassified-2026-11-06",
+     "title": "Copy of Newspaper Publication",
+     "at": "2026-11-06T14:46:58+05:30",
+     "tier": "collapsed",
+     "url": "https://nsearchives.nseindia.in/corporate/NCC_06112026144639_Newpaper_publication_6Nov26.pdf"
+    },
+    {
+     "id": "NCC-investor_meetings-2026-11-05",
+     "title": "Presentation",
+     "at": "2026-11-05T20:02:07+05:30",
+     "tier": "collapsed",
+     "url": "https://nsearchives.nseindia.in/corporate/NCC_05112026200150_Disclosure_of_Investor_Presentation.pdf"
+    },
+    {
+     "id": "NCC-management_change-2026-11-05",
+     "title": "Re-appointment of Sri A A V Ranga Raju as Managing Director of the company w.e.f. April 01, 2027.",
+     "at": "2026-11-05T18:17:59+05:30",
+     "tier": "collapsed",
+     "url": "https://nsearchives.nseindia.in/corporate/NCC_05112026181328_Outcome_of_the_Board_Meeting.pdf"
+    },
+    {
+     "id": "NCC-unclassified-2026-11-05",
+     "title": "The Amendment to AOA/MOA of the company.",
+     "at": "2026-11-05T18:00:51+05:30",
+     "tier": "collapsed",
+     "url": "https://nsearchives.nseindia.in/corporate/NCC_05112026180022_Outcome_of_the_Board_Meeting.pdf"
+    },
+    {
+     "id": "NCC-results-2026-11-05",
+     "title": "NCC Limited has submitted to the Exchange, the financial results for the period ended September 30, 2026.",
+     "at": "2026-11-05T17:40:44+05:30",
+     "tier": "needs_you",
+     "url": "https://nsearchives.nseindia.in/corporate/NCC_05112026173840_Outcome_of_the_Board_Meeting.pdf"
+    },
+    {
+     "id": "NCC-press_release-2026-10-31",
+     "title": "Bagging/Receiving of orders/contracts",
+     "at": "2026-10-31T17:18:53+05:30",
+     "tier": "collapsed",
+     "url": "https://nsearchives.nseindia.in/corporate/NCC_31102026171838_Reg_30_31Oct.pdf"
+    }
+   ],
+   "needs_you": false,
+   "last_event": {
+    "title": "volume 3.1× its 20-day average",
+    "at": "2026-11-11T15:30:00+05:30",
+    "tier": "worth_a_read"
+   }
+  },
+  "TATAPOWER": {
+   "symbol": "TATAPOWER",
+   "name": "Tata Power Company Limited",
+   "sector": "Power",
+   "role": "portfolio;appointment_backup",
+   "basis": "consolidated",
+   "results_source": "https://nsearchives.nseindia.in/corporate/xbrl/INTEGRATED_FILING_INDAS_1756234_11112026070341_WEB.xml",
+   "price": {
+    "close": 348.0,
+    "day_change": -2.52,
+    "as_of": "2026-11-13"
+   },
+   "quarters": [
+    {
+     "period": "Q2FY26",
+     "revenue": 15544.91,
+     "pat": 1245.39,
+     "source": "https://nsearchives.nseindia.in/corporate/xbrl/INTEGRATED_FILING_INDAS_1571448_11112025064023_WEB.xml",
+     "period_end": "2025-09-30",
+     "ebitda_margin": 21.24,
+     "revenue_yoy": null
+    },
+    {
+     "period": "Q3FY26",
+     "revenue": 13948.41,
+     "pat": 1194.33,
+     "source": "https://nsearchives.nseindia.in/corporate/xbrl/INTEGRATED_FILING_INDAS_1618185_04022026052514_WEB.xml",
+     "period_end": "2025-12-31",
+     "ebitda_margin": 21.9,
+     "revenue_yoy": null
+    },
+    {
+     "period": "Q4FY26",
+     "revenue": 14900.2,
+     "pat": 1415.52,
+     "source": "https://nsearchives.nseindia.in/corporate/xbrl/INTEGRATED_FILING_INDAS_1666126_12052026065920_WEB.xml",
+     "period_end": "2026-03-31",
+     "ebitda_margin": 17.44,
+     "revenue_yoy": null
+    },
+    {
+     "period": "Q1FY27",
+     "revenue": 19051.26,
+     "pat": 1400.86,
+     "source": "https://nsearchives.nseindia.in/corporate/xbrl/INTEGRATED_FILING_INDAS_1702185_27072026053807_WEB.xml",
+     "period_end": "2026-06-30",
+     "ebitda_margin": 21.07,
+     "revenue_yoy": null
+    },
+    {
+     "period": "Q2FY27",
+     "revenue": 19635.94,
+     "pat": 1652.04,
+     "source": "https://nsearchives.nseindia.in/corporate/xbrl/INTEGRATED_FILING_INDAS_1756234_11112026070341_WEB.xml",
+     "period_end": "2026-09-30",
+     "ebitda_margin": 18.67,
+     "revenue_yoy": 26.3
+    }
+   ],
+   "ledger": [],
+   "has_ledger": false,
+   "credibility": {
+    "delivered": 0,
+    "resolved": 0
+   },
+   "thesis": {
+    "management": [],
+    "investor": []
+   },
+   "recent_filings": [
+    {
+     "id": "TATAPOWER-unclassified-2026-11-12",
+     "title": "Copy of Newspaper Publication pertaining Financial Results for Quarter and half year ended September 30, 2026",
+     "at": "2026-11-12T14:30:56+05:30",
+     "tier": "collapsed",
+     "url": "https://nsearchives.nseindia.in/corporate/VPTPCL_12112026143001_new3.pdf"
+    },
+    {
+     "id": "TATAPOWER-earnings_call-2026-11-11",
+     "title": "Link of Recording",
+     "at": "2026-11-11T20:35:57+05:30",
+     "tier": "collapsed",
+     "url": "https://nsearchives.nseindia.in/corporate/VPTPCL_11112026203424_Analyst_Call.pdf"
+    },
+    {
+     "id": "TATAPOWER-management_change-2026-11-11",
+     "title": "Appointment of Mr Sanjay Kumar Banga as additional Executive Director of the company w.e.f. November 11, 2026.",
+     "at": "2026-11-11T19:01:38+05:30",
+     "tier": "needs_you",
+     "url": "https://nsearchives.nseindia.in/corporate/KSTPCL_11112026190124_MD_APPT_-_Reg_30.pdf"
+    },
+    {
+     "id": "TATAPOWER-capex-2026-11-11",
+     "title": "Capacity addition",
+     "at": "2026-11-11T17:42:13+05:30",
+     "tier": "worth_a_read",
+     "url": "https://nsearchives.nseindia.in/corporate/VPTPCL_11112026174200_Reg_30_Capacity_Addition_Shirwata.pdf"
+    },
+    {
+     "id": "TATAPOWER-press_release-2026-11-11",
+     "title": "A press release dated November 11, 2026, titled \"Press Release issued by the Company on the Audited Standalone Financial Results and Unaudited Consolidated Financial Results of the Company for the quarter and half year ended September 30, 2026.\".",
+     "at": "2026-11-11T17:39:57+05:30",
+     "tier": "collapsed",
+     "url": "https://nsearchives.nseindia.in/corporate/VPTPCL_11112026173937_Press_Release.pdf"
+    },
+    {
+     "id": "TATAPOWER-results-2026-11-11",
+     "title": "Tata Power Company Limited has submitted to the Exchange, the financial results for the period ended September 30, 2026.",
+     "at": "2026-11-11T17:20:19+05:30",
+     "tier": "needs_you",
+     "url": "https://nsearchives.nseindia.in/corporate/VPTPCL_11112026172001_outcome_final.pdf"
+    },
+    {
+     "id": "TATAPOWER-unclassified-2026-11-11",
+     "title": "Grant of 6488790 Options.",
+     "at": "2026-11-11T13:45:36+05:30",
+     "tier": "collapsed",
+     "url": "https://nsearchives.nseindia.in/corporate/VPTPCL_11112026134527_ESOP_Grant_SE_letter_1126.pdf"
+    },
+    {
+     "id": "TATAPOWER-investor_meetings-2026-11-11",
+     "title": "Schedule of meet",
+     "at": "2026-11-11T09:57:50+05:30",
+     "tier": "collapsed",
+     "url": "https://nsearchives.nseindia.in/corporate/VPTPCL_11112026095652_Letter_to_SE_Analyst_Meet.pdf"
+    },
+    {
+     "id": "TATAPOWER-press_release-2026-11-07",
+     "title": "General Updates",
+     "at": "2026-11-07T18:40:29+05:30",
+     "tier": "collapsed",
+     "url": "https://nsearchives.nseindia.in/corporate/VPTPCL_07112026184018_reg_30_07-11-2026.pdf"
+    },
+    {
+     "id": "TATAPOWER-press_release-2026-11-05",
+     "title": "A press release dated November 05, 2026, titled \"Tata Power Renewables Commissions 300 MW Project for SECI in Karnataka\".",
+     "at": "2026-11-05T10:34:26+05:30",
+     "tier": "collapsed",
+     "url": "https://nsearchives.nseindia.in/corporate/KSTPCL_05112026103413_PR.pdf"
+    }
+   ],
+   "needs_you": true,
+   "last_event": {
+    "title": "Appointment of Mr Sanjay Kumar Banga as additional Executive Director of the company w.e.f. November 11, 2026.",
+    "at": "2026-11-11T19:01:38+05:30",
+    "tier": "needs_you"
+   }
+  },
+  "DEEPAKFERT": {
+   "symbol": "DEEPAKFERT",
+   "name": "Deepak Fertilizers and Petrochemicals Corporation Limited",
+   "sector": "Chemicals",
+   "role": "portfolio",
+   "basis": "consolidated",
+   "results_source": "https://nsearchives.nseindia.in/corporate/xbrl/INTEGRATED_FILING_INDAS_1758106_13112026110730_WEB.xml",
+   "price": {
+    "close": 1261.8,
+    "day_change": 0.3,
+    "as_of": "2026-11-13"
+   },
+   "quarters": [
+    {
+     "period": "Q2FY26",
+     "revenue": 3005.83,
+     "pat": 214.02,
+     "source": "https://nsearchives.nseindia.in/corporate/xbrl/INTEGRATED_FILING_INDAS_1566125_05112025073445_WEB.xml",
+     "period_end": "2025-09-30",
+     "ebitda_margin": 15.42,
+     "revenue_yoy": null
+    },
+    {
+     "period": "Q3FY26",
+     "revenue": 2830.07,
+     "pat": 141.49,
+     "source": "https://nsearchives.nseindia.in/corporate/xbrl/INTEGRATED_FILING_INDAS_1614515_30012026041408_WEB.xml",
+     "period_end": "2025-12-31",
+     "ebitda_margin": 12.48,
+     "revenue_yoy": null
+    },
+    {
+     "period": "Q4FY26",
+     "revenue": 3011.38,
+     "pat": 139.39,
+     "source": "https://nsearchives.nseindia.in/corporate/xbrl/INTEGRATED_FILING_INDAS_1675445_28052026093634_WEB.xml",
+     "period_end": "2026-03-31",
+     "ebitda_margin": 11.76,
+     "revenue_yoy": null
+    },
+    {
+     "period": "Q1FY27",
+     "revenue": 3256.26,
+     "pat": 490.04,
+     "source": "https://nsearchives.nseindia.in/corporate/xbrl/INTEGRATED_FILING_INDAS_1704932_30072026015808_WEB.xml",
+     "period_end": "2026-06-30",
+     "ebitda_margin": 25.96,
+     "revenue_yoy": null
+    }
+   ],
+   "ledger": [],
+   "has_ledger": false,
+   "credibility": {
+    "delivered": 0,
+    "resolved": 0
+   },
+   "thesis": {
+    "management": [],
+    "investor": []
+   },
+   "recent_filings": [
+    {
+     "id": "DEEPAKFERT-unclassified-2026-11-14",
+     "title": "Copy of Newspaper Publication for Unaudited Financial Results of the Company for the quarter and half year ended 30th September, 2026.",
+     "at": "2026-11-14T18:22:49+05:30",
+     "tier": "collapsed",
+     "url": "https://nsearchives.nseindia.in/corporate/DEEPAKFERT1_14112026182224_IntimationNewspaperPublication.pdf"
+    },
+    {
+     "id": "DEEPAKFERT-press_release-2026-11-14",
+     "title": "Update on ITAT appeal against the Company Outcome of Appeals",
+     "at": "2026-11-14T12:28:16+05:30",
+     "tier": "collapsed",
+     "url": "https://nsearchives.nseindia.in/corporate/DEEPAKFERT1_14112026122655_Intimation_to_Stock_Exchanges_-_ITAT_Appeal_Outcome_-14112026.pdf"
+    },
+    {
+     "id": "DEEPAKFERT-press_release-2026-11-13",
+     "title": "A press release dated November 13, 2026, titled \"Press Release on Unaudited Financial Results for the quarter and half year ended 30th September 2026\".",
+     "at": "2026-11-13T20:59:10+05:30",
+     "tier": "collapsed",
+     "url": "https://nsearchives.nseindia.in/corporate/DEEPAKFERT1_13112026205832_Results_Signed_1.pdf"
+    },
+    {
+     "id": "DEEPAKFERT-investor_meetings-2026-11-13",
+     "title": "Investor Presentation",
+     "at": "2026-11-13T20:55:14+05:30",
+     "tier": "collapsed",
+     "url": "https://nsearchives.nseindia.in/corporate/DEEPAKFERT1_13112026204919_Results_Signed_1.pdf"
+    },
+    {
+     "id": "DEEPAKFERT-results-2026-11-13",
+     "title": "Deepak Fertilizers And Petrochemicals Corporation Limited has submitted to the Exchange, the financial results for the quarter and half year ended September 30, 2026.",
+     "at": "2026-11-13T20:46:10+05:30",
+     "tier": "worth_a_read",
+     "url": "https://nsearchives.nseindia.in/corporate/DEEPAKFERT1_13112026203559_Results_Signed_1.pdf"
+    },
+    {
+     "id": "DEEPAKFERT-M&A-2026-11-10",
+     "title": "Incorporation of new step-down wholly owned subsidiary of the Company.",
+     "at": "2026-11-10T14:32:58+05:30",
+     "tier": "worth_a_read",
+     "url": "https://nsearchives.nseindia.in/corporate/DEEPAKFERT1_10112026143149_SE_-_Intimation_-_MNSL.pdf"
+    },
+    {
+     "id": "DEEPAKFERT-investor_meetings-2026-11-06",
+     "title": "Schedule of meet",
+     "at": "2026-11-06T19:15:07+05:30",
+     "tier": "collapsed",
+     "url": "https://nsearchives.nseindia.in/corporate/DEEPAKFERT1_06112026191353_IntimationEarningsCall.pdf"
+    },
+    {
+     "id": "DEEPAKFERT-M&A-2026-11-05",
+     "title": "Incorporation of a wholly owned subsidiary company limited by guarantee under Section 8 of the Companies Act, 2013 viz Prayas Institute for Future Readiness",
+     "at": "2026-11-05T17:41:42+05:30",
+     "tier": "worth_a_read",
+     "url": "https://nsearchives.nseindia.in/corporate/DEEPAKFERT2_05112026174040_IntimationPrayas.pdf"
+    }
+   ],
+   "needs_you": false,
+   "last_event": {
+    "title": "Copy of Newspaper Publication for Unaudited Financial Results of the Company for the quarter and half year ended 30th September, 2026.",
+    "at": "2026-11-14T18:22:49+05:30",
+    "tier": "collapsed"
+   }
+  },
+  "SUDARSCHEM": {
+   "symbol": "SUDARSCHEM",
+   "name": "Sudarshan Chemical Industries Limited",
+   "sector": "Chemicals",
+   "role": "portfolio",
+   "basis": "consolidated",
+   "results_source": "https://nsearchives.nseindia.in/corporate/xbrl/INTEGRATED_FILING_INDAS_1754942_06112026060433_WEB.xml",
+   "price": {
+    "close": 1157.65,
+    "day_change": -1.94,
+    "as_of": "2026-11-13"
+   },
+   "quarters": [
+    {
+     "period": "Q2FY26",
+     "revenue": 2387.4,
+     "pat": 19.3,
+     "source": "https://nsearchives.nseindia.in/corporate/xbrl/INTEGRATED_FILING_INDAS_1572762_12112025074443_WEB.xml",
+     "period_end": "2025-09-30",
+     "ebitda_margin": 5.54,
+     "revenue_yoy": null
+    },
+    {
+     "period": "Q3FY26",
+     "revenue": 2103.0,
+     "pat": -116.0,
+     "source": "https://nsearchives.nseindia.in/corporate/xbrl/INTEGRATED_FILING_INDAS_1624613_12022026080753_WEB.xml",
+     "period_end": "2025-12-31",
+     "ebitda_margin": 1.8,
+     "revenue_yoy": null
+    },
+    {
+     "period": "Q4FY26",
+     "revenue": 2789.9,
+     "pat": 82.5,
+     "source": "https://nsearchives.nseindia.in/corporate/xbrl/INTEGRATED_FILING_INDAS_1672830_25052026105404_WEB.xml",
+     "period_end": "2026-03-31",
+     "ebitda_margin": 8.15,
+     "revenue_yoy": null
+    },
+    {
+     "period": "Q1FY27",
+     "revenue": 2642.1,
+     "pat": 103.4,
+     "source": "https://nsearchives.nseindia.in/corporate/xbrl/INTEGRATED_FILING_INDAS_1713120_12082026083817_WEB.xml",
+     "period_end": "2026-06-30",
+     "ebitda_margin": 9.8,
+     "revenue_yoy": null
+    },
+    {
+     "period": "Q2FY27",
+     "revenue": 2742.6,
+     "pat": 30.5,
+     "source": "https://nsearchives.nseindia.in/corporate/xbrl/INTEGRATED_FILING_INDAS_1754942_06112026060433_WEB.xml",
+     "period_end": "2026-09-30",
+     "ebitda_margin": 9.74,
+     "revenue_yoy": 14.9
+    }
+   ],
+   "ledger": [],
+   "has_ledger": false,
+   "credibility": {
+    "delivered": 0,
+    "resolved": 0
+   },
+   "thesis": {
+    "management": [],
+    "investor": []
+   },
+   "recent_filings": [
+    {
+     "id": "SUDARSCHEM-investor_meetings-2026-11-11",
+     "title": "Schedule of meet",
+     "at": "2026-11-11T14:48:31+05:30",
+     "tier": "collapsed",
+     "url": "https://nsearchives.nseindia.in/corporate/SUDARSCHEM_11112026144820_SUDARSHANCallInvite13112026Signed.pdf"
+    },
+    {
+     "id": "SUDARSCHEM-unclassified-2026-11-09",
+     "title": "Copy of Newspaper Publication",
+     "at": "2026-11-09T10:24:25+05:30",
+     "tier": "collapsed",
+     "url": "https://nsearchives.nseindia.in/corporate/SUDARSCHEM_09112026102418_Q2FY27NewspaperAdvtSigned.pdf"
+    },
+    {
+     "id": "SUDARSCHEM-investor_meetings-2026-11-06",
+     "title": "Investor Presentation",
+     "at": "2026-11-06T14:53:45+05:30",
+     "tier": "collapsed",
+     "url": "https://nsearchives.nseindia.in/corporate/SUDARSCHEM_06112026145332_SUDARSHANInvestorPresentationSept2026SIGNED.pdf"
+    },
+    {
+     "id": "SUDARSCHEM-press_release-2026-11-06",
+     "title": "Authorized Officials to Determine Materiality of an Event or Information",
+     "at": "2026-11-06T14:19:48+05:30",
+     "tier": "collapsed",
+     "url": "https://nsearchives.nseindia.in/corporate/SUDARSCHEM_06112026141937_SUDARSHANOutcomeofBM06112026_v1SIGNED.pdf"
+    },
+    {
+     "id": "SUDARSCHEM-unclassified-2026-11-06",
+     "title": "Change in Company Secretary/Compliance Officer",
+     "at": "2026-11-06T14:16:39+05:30",
+     "tier": "collapsed",
+     "url": "https://nsearchives.nseindia.in/corporate/SUDARSCHEM_06112026141622_SUDARSHANOutcomeofBM06112026_v1SIGNED.pdf"
+    },
+    {
+     "id": "SUDARSCHEM-management_change-2026-11-06",
+     "title": "Appointment of Mr Amit Deshpande as Company Secretary & Compliance Officer of the company w.e.f. November 06, 2026.",
+     "at": "2026-11-06T14:14:36+05:30",
+     "tier": "collapsed",
+     "url": "https://nsearchives.nseindia.in/corporate/SUDARSCHEM_06112026141412_SUDARSHANOutcomeofBM06112026_v1SIGNED.pdf"
+    },
+    {
+     "id": "SUDARSCHEM-results-2026-11-06",
+     "title": "Sudarshan Chemical Industries Limited has submitted to the Exchange, the financial results for the period ended September 30, 2026.",
+     "at": "2026-11-06T14:08:18+05:30",
+     "tier": "needs_you",
+     "url": "https://nsearchives.nseindia.in/corporate/SUDARSCHEM_06112026140757_SUDARSHANOutcomeofBM06112026_v1SIGNED.pdf"
+    },
+    {
+     "id": "SUDARSCHEM-investor_meetings-2026-11-03",
+     "title": "Schedule of meet",
+     "at": "2026-11-03T18:07:59+05:30",
+     "tier": "collapsed",
+     "url": "https://nsearchives.nseindia.in/corporate/SUDARSCHEM_03112026180740_Q2FY27AnalystCallIntimation03112026Signed.pdf"
+    },
+    {
+     "id": "SUDARSCHEM-M&A-2026-11-02",
+     "title": "Sale or disposal",
+     "at": "2026-11-02T18:54:01+05:30",
+     "tier": "worth_a_read",
+     "url": "https://nsearchives.nseindia.in/corporate/SUDARSCHEM_02112026185351_SaleofVP402112026Signed.pdf"
+    }
+   ],
+   "needs_you": true,
+   "last_event": {
+    "title": "volume 3.1× its 20-day average; price +10.5% on the day",
+    "at": "2026-11-11T15:30:00+05:30",
+    "tier": "needs_you"
+   }
+  },
+  "JUBLFOOD": {
+   "symbol": "JUBLFOOD",
+   "name": "Jubilant Foodworks Limited",
+   "sector": "Consumer",
+   "role": "portfolio",
+   "basis": "consolidated",
+   "results_source": "https://nsearchives.nseindia.in/corporate/xbrl/INTEGRATED_FILING_INDAS_1754883_06112026053355_WEB.xml",
+   "price": {
+    "close": 437.75,
+    "day_change": -0.51,
+    "as_of": "2026-11-13"
+   },
+   "quarters": [
+    {
+     "period": "Q2FY26",
+     "revenue": 2340.15,
+     "pat": 194.6,
+     "source": "https://nsearchives.nseindia.in/corporate/xbrl/INTEGRATED_FILING_INDAS_1574115_13112025073450_WEB.xml",
+     "period_end": "2025-09-30",
+     "ebitda_margin": 20.35,
+     "revenue_yoy": null
+    },
+    {
+     "period": "Q3FY26",
+     "revenue": 2437.22,
+     "pat": 72.88,
+     "source": "https://nsearchives.nseindia.in/corporate/xbrl/INTEGRATED_FILING_INDAS_1622602_10022026054557_WEB.xml",
+     "period_end": "2025-12-31",
+     "ebitda_margin": 19.79,
+     "revenue_yoy": null
+    },
+    {
+     "period": "Q4FY26",
+     "revenue": 2499.47,
+     "pat": 82.42,
+     "source": "https://nsearchives.nseindia.in/corporate/xbrl/INTEGRATED_FILING_INDAS_1670174_20052026072204_WEB.xml",
+     "period_end": "2026-03-31",
+     "ebitda_margin": 19.4,
+     "revenue_yoy": null
+    },
+    {
+     "period": "Q1FY27",
+     "revenue": 2569.65,
+     "pat": 100.03,
+     "source": "https://nsearchives.nseindia.in/corporate/xbrl/INTEGRATED_FILING_INDAS_1713499_13082026043458_WEB.xml",
+     "period_end": "2026-06-30",
+     "ebitda_margin": 19.45,
+     "revenue_yoy": null
+    },
+    {
+     "period": "Q2FY27",
+     "revenue": 2607.89,
+     "pat": 111.59,
+     "source": "https://nsearchives.nseindia.in/corporate/xbrl/INTEGRATED_FILING_INDAS_1754883_06112026053355_WEB.xml",
+     "period_end": "2026-09-30",
+     "ebitda_margin": 19.56,
+     "revenue_yoy": 11.4
+    }
+   ],
+   "ledger": [],
+   "has_ledger": false,
+   "credibility": {
+    "delivered": 0,
+    "resolved": 0
+   },
+   "thesis": {
+    "management": [],
+    "investor": []
+   },
+   "recent_filings": [
+    {
+     "id": "JUBLFOOD-earnings_call-2026-11-13",
+     "title": "Transcript of Conference Call for Q2FY27 Results",
+     "at": "2026-11-13T13:33:14+05:30",
+     "tier": "collapsed",
+     "url": "https://nsearchives.nseindia.in/corporate/JUBLFOOD_13112026133207_SETranscriptQ2FY27.pdf"
+    },
+    {
+     "id": "JUBLFOOD-unclassified-2026-11-07",
+     "title": "Copy of Newspaper Publication",
+     "at": "2026-11-07T13:44:40+05:30",
+     "tier": "collapsed",
+     "url": "https://nsearchives.nseindia.in/corporate/JUBLFOOD_07112026134253_SEintimationforNewspaperPublication06112026.pdf"
+    },
+    {
+     "id": "JUBLFOOD-earnings_call-2026-11-06",
+     "title": "Audio recording of Conference Call",
+     "at": "2026-11-06T18:27:50+05:30",
+     "tier": "collapsed",
+     "url": "https://nsearchives.nseindia.in/corporate/JUBLFOOD_06112026182730_CoveringAudioRecordingQ2FY26.pdf"
+    },
+    {
+     "id": "JUBLFOOD-management_change-2026-11-06",
+     "title": "An update on the change in date of resignation of the Company Secretary",
+     "at": "2026-11-06T16:58:52+05:30",
+     "tier": "collapsed",
+     "url": "https://nsearchives.nseindia.in/corporate/JUBLFOOD_06112026165837_SEIntimationchangeindateofCS.pdf"
+    },
+    {
+     "id": "JUBLFOOD-press_release-2026-11-06",
+     "title": "Letter to Shareholders on Financial Results",
+     "at": "2026-11-06T15:26:58+05:30",
+     "tier": "collapsed",
+     "url": "https://nsearchives.nseindia.in/corporate/JUBLFOOD_06112026152646_LettertoShareholders.pdf"
+    },
+    {
+     "id": "JUBLFOOD-unclassified-2026-11-06",
+     "title": "Change in Auditors of the company.",
+     "at": "2026-11-06T15:23:58+05:30",
+     "tier": "collapsed",
+     "url": "https://nsearchives.nseindia.in/corporate/JUBLFOOD_06112026152348_SEIntimationAuditorAppointment.pdf"
+    },
+    {
+     "id": "JUBLFOOD-results-2026-11-06",
+     "title": "Jubilant Foodworks Limited has submitted to the Exchange, the financial results for the period ended September 30, 2026.",
+     "at": "2026-11-06T15:20:30+05:30",
+     "tier": "needs_you",
+     "url": "https://nsearchives.nseindia.in/corporate/JUBLFOOD_06112026152011_FOutcome_of_BM.pdf"
+    },
+    {
+     "id": "JUBLFOOD-unclassified-2026-11-05",
+     "title": "Submission of Copies of Newspaper Publication",
+     "at": "2026-11-05T12:48:55+05:30",
+     "tier": "collapsed",
+     "url": "https://nsearchives.nseindia.in/corporate/JUBLFOOD_05112026124846_SEIntimationRelodgementNov26.pdf"
+    }
+   ],
+   "needs_you": false,
+   "last_event": {
+    "title": "Transcript of Conference Call for Q2FY27 Results",
+    "at": "2026-11-13T13:33:14+05:30",
+    "tier": "collapsed"
+   }
+  },
+  "VOLTAS": {
+   "symbol": "VOLTAS",
+   "name": "Voltas Limited",
+   "sector": "Consumer durables",
+   "role": "portfolio;appointment;ledger",
+   "basis": "consolidated",
+   "results_source": "https://nsearchives.nseindia.in/corporate/xbrl/INTEGRATED_FILING_INDAS_1755186_06112026085901_WEB.xml",
+   "price": {
+    "close": 1133.1,
+    "day_change": 1.65,
+    "as_of": "2026-11-13"
+   },
+   "quarters": [
+    {
+     "period": "Q4FY25",
+     "revenue": 4767.56,
+     "pat": 235.69,
+     "source": "https://nsearchives.nseindia.in/corporate/xbrl/INTEGRATED_FILING_INDAS_1433501_07052025102915_WEB.xml",
+     "period_end": "2025-03-31",
+     "ebitda_margin": 6.98,
+     "revenue_yoy": null
+    },
+    {
+     "period": "Q1FY26",
+     "revenue": 3938.58,
+     "pat": 140.61,
+     "source": "https://nsearchives.nseindia.in/corporate/xbrl/INTEGRATED_FILING_INDAS_1507536_08082025081638_WEB.xml",
+     "period_end": "2025-06-30",
+     "ebitda_margin": 4.53,
+     "revenue_yoy": null
+    },
+    {
+     "period": "Q2FY26",
+     "revenue": 2347.32,
+     "pat": 31.5,
+     "source": "https://nsearchives.nseindia.in/corporate/xbrl/INTEGRATED_FILING_INDAS_1574474_13112025095958_WEB.xml",
+     "period_end": "2025-09-30",
+     "ebitda_margin": 3.0,
+     "revenue_yoy": null
+    },
+    {
+     "period": "Q3FY26",
+     "revenue": 3070.77,
+     "pat": 84.46,
+     "source": "https://nsearchives.nseindia.in/corporate/xbrl/INTEGRATED_FILING_INDAS_1613541_29012026064753_WEB.xml",
+     "period_end": "2025-12-31",
+     "ebitda_margin": 5.77,
+     "revenue_yoy": null
+    },
+    {
+     "period": "Q4FY26",
+     "revenue": 4887.83,
+     "pat": 113.43,
+     "source": "https://nsearchives.nseindia.in/corporate/xbrl/INTEGRATED_FILING_INDAS_1667446_14052026105304_WEB.xml",
+     "period_end": "2026-03-31",
+     "ebitda_margin": 4.51,
+     "revenue_yoy": 2.5
+    },
+    {
+     "period": "Q1FY27",
+     "revenue": 4673.5,
+     "pat": 212.76,
+     "source": "https://nsearchives.nseindia.in/corporate/xbrl/INTEGRATED_FILING_INDAS_1715051_14082026080841_WEB.xml",
+     "period_end": "2026-06-30",
+     "ebitda_margin": 5.68,
+     "revenue_yoy": 18.7
+    },
+    {
+     "period": "Q2FY27",
+     "revenue": 2706.57,
+     "pat": 47.71,
+     "source": "https://nsearchives.nseindia.in/corporate/xbrl/INTEGRATED_FILING_INDAS_1755186_06112026085901_WEB.xml",
+     "period_end": "2026-09-30",
+     "ebitda_margin": 4.72,
+     "revenue_yoy": 15.3
+    }
+   ],
+   "ledger": [
+    {
+     "statement_verbatim": "And the Chennai plant, we have built a capacity of 1 million units, which we are in the process of expanding to 1.5 million capacity in another 1-2 months.",
+     "speaker_role": "Managing Director",
+     "metric": "capacity",
+     "scope": "Chennai plant",
+     "unit": "million units",
+     "deadline_period": "Q4FY26",
+     "hedged": false,
+     "target_high": 1.5,
+     "target_low": 1.5,
+     "symbol": "VOLTAS",
+     "said_at": "2026-02-03",
+     "page": 17,
+     "match": "exact",
+     "source": "https://nsearchives.nseindia.in/corporate/VOLTAS_RB_03022026194154_SEIntimation.pdf",
+     "id": "VOLTAS-2026-02-03-1",
+     "status": "unverifiable",
+     "evidence": "not a reported financial line (checked by hand or in later calls)"
+    },
+    {
+     "statement_verbatim": "Our sense is that this summer season, we would have maximized the capacity utilization to almost between 85% to 90% or so, Mr. Jain.",
+     "speaker_role": "Managing Director",
+     "metric": "utilisation",
+     "scope": "Chennai plant",
+     "unit": "percent",
+     "deadline_period": "Q1FY27",
+     "hedged": true,
+     "target_high": 90.0,
+     "target_low": 85.0,
+     "symbol": "VOLTAS",
+     "said_at": "2026-02-03",
+     "page": 17,
+     "match": "exact",
+     "source": "https://nsearchives.nseindia.in/corporate/VOLTAS_RB_03022026194154_SEIntimation.pdf",
+     "id": "VOLTAS-2026-02-03-2",
+     "status": "unverifiable",
+     "evidence": "not a reported financial line (checked by hand or in later calls)"
+    },
+    {
+     "statement_verbatim": "As far as the Segment B- Electro-Mechanical Projects and Services is concerned, we have maintained that we would, on a longer-term basis, maintain margins closer to the 4%-6% which has been the range that we have been talking.",
+     "speaker_role": "CFO",
+     "metric": "ebitda_margin",
+     "scope": "Electro-Mechanical Projects and Services",
+     "unit": "percent",
+     "deadline_period": "unspecified",
+     "hedged": true,
+     "target_high": 6.0,
+     "target_low": 4.0,
+     "symbol": "VOLTAS",
+     "said_at": "2026-11-12",
+     "page": 9,
+     "match": "exact",
+     "source": "https://nsearchives.nseindia.in/corporate/VOLTAS_RB_12112026215516_SEIntimationtranscriptsigned.pdf",
+     "id": "VOLTAS-2026-11-12-1",
+     "status": "unverifiable",
+     "evidence": "segment-level (Electro-Mechanical Projects and Services): segment numbers not parsed yet"
+    },
+    {
+     "statement_verbatim": "Our idea is to get an EBITDA break-even sometime by next financial year, and I think directionally we are going towards that.",
+     "speaker_role": "Managing Director",
+     "metric": "ebitda_margin",
+     "scope": "Voltbek",
+     "unit": "percent",
+     "deadline_period": "FY28",
+     "hedged": true,
+     "target_high": 0.0,
+     "target_low": 0.0,
+     "symbol": "VOLTAS",
+     "said_at": "2026-11-12",
+     "page": 12,
+     "match": "exact",
+     "source": "https://nsearchives.nseindia.in/corporate/VOLTAS_RB_12112026215516_SEIntimationtranscriptsigned.pdf",
+     "id": "VOLTAS-2026-11-12-2",
+     "status": "unverifiable",
+     "evidence": "segment-level (Voltbek): segment numbers not parsed yet"
+    }
+   ],
+   "has_ledger": true,
+   "credibility": {
+    "delivered": 0,
+    "resolved": 0
+   },
+   "thesis": {
+    "management": [],
+    "investor": [
+     {
+      "id": "inv-voltas-1",
+      "text": "EBITDA margin stays at or above 6% this year",
+      "deadline": "FY27",
+      "stance": "contradicts",
+      "evidence": "5.33% year to date (Q1FY27–Q2FY27)",
+      "demo": true
+     }
+    ]
+   },
+   "recent_filings": [
+    {
+     "id": "VOLTAS-earnings_call-2026-11-12",
+     "title": "Transcript",
+     "at": "2026-11-12T21:55:28+05:30",
+     "tier": "collapsed",
+     "url": "https://nsearchives.nseindia.in/corporate/VOLTAS_RB_12112026215516_SEIntimationtranscriptsigned.pdf"
+    },
+    {
+     "id": "VOLTAS-earnings_call-2026-11-06",
+     "title": "Link of Recording",
+     "at": "2026-11-06T21:14:59+05:30",
+     "tier": "collapsed",
+     "url": "https://nsearchives.nseindia.in/corporate/VOLTAS_RB_06112026211403_SEIntimationAudioRecording.pdf"
+    },
+    {
+     "id": "VOLTAS-investor_meetings-2026-11-06",
+     "title": "Investor Presentation",
+     "at": "2026-11-06T18:09:56+05:30",
+     "tier": "collapsed",
+     "url": "https://nsearchives.nseindia.in/corporate/VOLTAS_RB_06112026180943_SEIntimationsigned.pdf"
+    },
+    {
+     "id": "VOLTAS-press_release-2026-11-06",
+     "title": "A press release dated November 06, 2026, titled \"Voltas Delivers Steady Q2 FY27 Performance, on the back of market leadership and Execution Excellence\".",
+     "at": "2026-11-06T17:47:42+05:30",
+     "tier": "collapsed",
+     "url": "https://nsearchives.nseindia.in/corporate/VOLTAS_RB_06112026174401_01_Financial_Results_signed.pdf"
+    },
+    {
+     "id": "VOLTAS-management_change-2026-11-06",
+     "title": "Appointment of Mr Jayant Balan as Managing Director of the company w.e.f. 25th May, 2027.",
+     "at": "2026-11-06T17:31:30+05:30",
+     "tier": "needs_you",
+     "url": "https://nsearchives.nseindia.in/corporate/VOLTAS_RB_06112026172057_02SE_Directorssigned.pdf"
+    },
+    {
+     "id": "VOLTAS-unclassified-2026-11-06",
+     "title": "Change in Auditors of the company.",
+     "at": "2026-11-06T17:08:25+05:30",
+     "tier": "collapsed",
+     "url": "https://nsearchives.nseindia.in/corporate/VOLTAS_RB_06112026170542_03_Auditor_appointment_signed.pdf"
+    },
+    {
+     "id": "VOLTAS-results-2026-11-06",
+     "title": "Voltas Limited has submitted to the Exchange, the financial results for the period ended September 30, 2026.",
+     "at": "2026-11-06T16:59:40+05:30",
+     "tier": "needs_you",
+     "url": "https://nsearchives.nseindia.in/corporate/VOLTAS_RB_06112026165511_01_Financial_Results_signed.pdf"
+    },
+    {
+     "id": "VOLTAS-investor_meetings-2026-11-03",
+     "title": "Schedule of meet",
+     "at": "2026-11-03T17:31:59+05:30",
+     "tier": "collapsed",
+     "url": "https://nsearchives.nseindia.in/corporate/VOLTAS_RB_03112026173122_SE_Intimation.pdf"
+    }
+   ],
+   "needs_you": false,
+   "last_event": {
+    "title": "Transcript",
+    "at": "2026-11-12T21:55:28+05:30",
+    "tier": "collapsed"
+   }
+  },
+  "AURIONPRO": {
+   "symbol": "AURIONPRO",
+   "name": "Aurionpro Solutions Limited",
+   "sector": "IT",
+   "role": "portfolio",
+   "basis": "consolidated",
+   "results_source": "https://nsearchives.nseindia.in/corporate/xbrl/INTEGRATED_FILING_INDAS_1750825_31102026083737_WEB.xml",
+   "price": {
+    "close": 586.85,
+    "day_change": -1.59,
+    "as_of": "2026-11-13"
+   },
+   "quarters": [
+    {
+     "period": "Q2FY26",
+     "revenue": 357.67,
+     "pat": 55.85,
+     "source": "https://nsearchives.nseindia.in/corporate/xbrl/INTEGRATED_FILING_INDAS_1564305_03112025110639_WEB.xml",
+     "period_end": "2025-09-30",
+     "ebitda_margin": 20.12,
+     "revenue_yoy": null
+    },
+    {
+     "period": "Q3FY26",
+     "revenue": 371.03,
+     "pat": 43.94,
+     "source": "https://nsearchives.nseindia.in/corporate/xbrl/INTEGRATED_FILING_INDAS_1618441_04022026065214_WEB.xml",
+     "period_end": "2025-12-31",
+     "ebitda_margin": 20.32,
+     "revenue_yoy": null
+    },
+    {
+     "period": "Q4FY26",
+     "revenue": 345.57,
+     "pat": 61.36,
+     "source": "https://nsearchives.nseindia.in/corporate/xbrl/INTEGRATED_FILING_INDAS_1697775_21072026112518_WEB.xml",
+     "period_end": "2026-03-31",
+     "ebitda_margin": 19.33,
+     "revenue_yoy": null
+    },
+    {
+     "period": "Q1FY27",
+     "revenue": 358.07,
+     "pat": 45.03,
+     "source": "https://nsearchives.nseindia.in/corporate/xbrl/INTEGRATED_FILING_INDAS_1702529_27072026092954_WEB.xml",
+     "period_end": "2026-06-30",
+     "ebitda_margin": 17.17,
+     "revenue_yoy": null
+    },
+    {
+     "period": "Q2FY27",
+     "revenue": 414.98,
+     "pat": 50.2,
+     "source": "https://nsearchives.nseindia.in/corporate/xbrl/INTEGRATED_FILING_INDAS_1750825_31102026083737_WEB.xml",
+     "period_end": "2026-09-30",
+     "ebitda_margin": 17.16,
+     "revenue_yoy": 16.0
+    }
+   ],
+   "ledger": [],
+   "has_ledger": false,
+   "credibility": {
+    "delivered": 0,
+    "resolved": 0
+   },
+   "thesis": {
+    "management": [],
+    "investor": []
+   },
+   "recent_filings": [
+    {
+     "id": "AURIONPRO-earnings_call-2026-11-05",
+     "title": "Transcript of Earnings call held on November 02, 2026.",
+     "at": "2026-11-05T15:34:46+05:30",
+     "tier": "collapsed",
+     "url": "https://nsearchives.nseindia.in/corporate/AURIONPRO_05112026153420_ASL_Earnings_Call_Transcript_sd.pdf"
+    },
+    {
+     "id": "AURIONPRO-earnings_call-2026-11-02",
+     "title": "Link of Recording of Earnings Call held on November 02, 2026",
+     "at": "2026-11-02T16:37:12+05:30",
+     "tier": "collapsed",
+     "url": "https://nsearchives.nseindia.in/corporate/AURIONPRO_02112026163647_ASL_Earnings_Call_Recording_September_sd.pdf"
+    },
+    {
+     "id": "AURIONPRO-unclassified-2026-11-02",
+     "title": "Copy of Newspaper Publication regarding unaudited financial statements for the quarter and half year ended September 30, 2026",
+     "at": "2026-11-02T13:23:13+05:30",
+     "tier": "collapsed",
+     "url": "https://nsearchives.nseindia.in/corporate/AURIONPRO_02112026132237_ASL_Newspaper_advt_September2026_sd.pdf"
+    },
+    {
+     "id": "AURIONPRO-investor_meetings-2026-11-01",
+     "title": "Investor Presentation",
+     "at": "2026-11-01T14:20:15+05:30",
+     "tier": "collapsed",
+     "url": "https://nsearchives.nseindia.in/corporate/AURIONPRO_01112026142000_ASL_Q2_Investor_Presentation_SD.pdf"
+    },
+    {
+     "id": "AURIONPRO-press_release-2026-10-31",
+     "title": "A press release dated October 31, 2026, titled \"Press release relating to announcement of unaudited financial results of the Company for the quarter and half year ended September 30, 2026.\".",
+     "at": "2026-10-31T20:22:09+05:30",
+     "tier": "collapsed",
+     "url": "https://nsearchives.nseindia.in/corporate/AURIONPRO_31102026202131_ASL_Press_Release_Q2FY27_sd.pdf"
+    },
+    {
+     "id": "AURIONPRO-M&A-2026-10-31",
+     "title": "Scheme of Amalgamation of Three Wholly Owned Subsidiaries with Aurionpro Solutions Limited.",
+     "at": "2026-10-31T20:13:09+05:30",
+     "tier": "worth_a_read",
+     "url": "https://nsearchives.nseindia.in/corporate/AURIONPRO_31102026201253_ASL_Outcome_of_Board_Meeting_Merger_sd.pdf"
+    },
+    {
+     "id": "AURIONPRO-results-2026-10-31",
+     "title": "Aurionpro Solutions Limited has submitted to the Exchange, the financial results for the quarter and half year ended September 30, 2026.",
+     "at": "2026-10-31T20:08:18+05:30",
+     "tier": "needs_you",
+     "url": "https://nsearchives.nseindia.in/corporate/AURIONPRO_31102026200551_ASL_Outcome_of_the_Board_Meeting_31102026Final_sd.pdf"
+    }
+   ],
+   "needs_you": false,
+   "last_event": {
+    "title": "Transcript of Earnings call held on November 02, 2026.",
+    "at": "2026-11-05T15:34:46+05:30",
+    "tier": "collapsed"
+   }
+  },
+  "TATASTEEL": {
+   "symbol": "TATASTEEL",
+   "name": "Tata Steel Limited",
+   "sector": "Metals",
+   "role": "portfolio",
+   "basis": "consolidated",
+   "results_source": "https://nsearchives.nseindia.in/corporate/xbrl/INTEGRATED_FILING_INDAS_1755442_07112026053333_WEB.xml",
+   "price": {
+    "close": 186.68,
+    "day_change": -0.7,
+    "as_of": "2026-11-13"
+   },
+   "quarters": [
+    {
+     "period": "Q2FY26",
+     "revenue": 58689.29,
+     "pat": 3183.09,
+     "source": "https://nsearchives.nseindia.in/corporate/xbrl/INTEGRATED_FILING_INDAS_1572729_12112025073451_WEB.xml",
+     "period_end": "2025-09-30",
+     "ebitda_margin": 15.16,
+     "revenue_yoy": null
+    },
+    {
+     "period": "Q3FY26",
+     "revenue": 57002.4,
+     "pat": 2730.37,
+     "source": "https://nsearchives.nseindia.in/corporate/xbrl/INTEGRATED_FILING_INDAS_1620658_06022026080314_WEB.xml",
+     "period_end": "2025-12-31",
+     "ebitda_margin": 14.38,
+     "revenue_yoy": null
+    },
+    {
+     "period": "Q4FY26",
+     "revenue": 63270.13,
+     "pat": 2965.0,
+     "source": "https://nsearchives.nseindia.in/corporate/xbrl/INTEGRATED_FILING_INDAS_1668010_15052026080236_WEB.xml",
+     "period_end": "2026-03-31",
+     "ebitda_margin": 15.53,
+     "revenue_yoy": null
+    },
+    {
+     "period": "Q1FY27",
+     "revenue": 60794.29,
+     "pat": 2385.24,
+     "source": "https://nsearchives.nseindia.in/corporate/xbrl/INTEGRATED_FILING_INDAS_1705622_30072026075610_WEB.xml",
+     "period_end": "2026-06-30",
+     "ebitda_margin": 15.24,
+     "revenue_yoy": null
+    },
+    {
+     "period": "Q2FY27",
+     "revenue": 65436.24,
+     "pat": 3699.59,
+     "source": "https://nsearchives.nseindia.in/corporate/xbrl/INTEGRATED_FILING_INDAS_1755442_07112026053333_WEB.xml",
+     "period_end": "2026-09-30",
+     "ebitda_margin": 16.1,
+     "revenue_yoy": 11.5
+    }
+   ],
+   "ledger": [],
+   "has_ledger": false,
+   "credibility": {
+    "delivered": 0,
+    "resolved": 0
+   },
+   "thesis": {
+    "management": [],
+    "investor": []
+   },
+   "recent_filings": [
+    {
+     "id": "TATASTEEL-earnings_call-2026-11-12",
+     "title": "Transcript",
+     "at": "2026-11-12T22:19:55+05:30",
+     "tier": "collapsed",
+     "url": "https://nsearchives.nseindia.in/corporate/NIDHIFADNAVIS_12112026221915_BSENSE_Signed.pdf"
+    },
+    {
+     "id": "TATASTEEL-investor_meetings-2026-11-12",
+     "title": "Intimation of Schedule of Analyst / Institutional Investor Meeting under the Securities and Exchange Board of India (Listing Obligations and Disclosure Requirements) Regulations, 2015, as amended",
+     "at": "2026-11-12T16:53:41+05:30",
+     "tier": "collapsed",
+     "url": "https://nsearchives.nseindia.in/corporate/NIDHIFADNAVIS_12112026165318_BSENSE_Signed.pdf"
+    },
+    {
+     "id": "TATASTEEL-unclassified-2026-11-09",
+     "title": "Newspaper Advertisement Disclosure under Regulation 30 of the Securities and Exchange Board of India (Listing Obligations and Disclosure Requirements) Regulations, 2015 ( SEBI Listing Regulations )",
+     "at": "2026-11-09T14:16:12+05:30",
+     "tier": "collapsed",
+     "url": "https://nsearchives.nseindia.in/corporate/NIDHIFADNAVIS_09112026141442_BSENSE_Signed.pdf"
+    },
+    {
+     "id": "TATASTEEL-earnings_call-2026-11-07",
+     "title": "Link of Recording",
+     "at": "2026-11-07T16:58:42+05:30",
+     "tier": "collapsed",
+     "url": "https://nsearchives.nseindia.in/corporate/SAKSHIKAPUR_07112026165801_BSENSE_Signed.pdf"
+    },
+    {
+     "id": "TATASTEEL-M&A-2026-11-07",
+     "title": "Acquisition of 38,222 equity shares of face value &#8377;10/- each in Creative Port Development Private Limited ( CPDPL ) due to conversion of 25,10,830 Optionally Convertible Redeemable Preference Shares of CPDPL, as per terms of issue",
+     "at": "2026-11-07T15:45:33+05:30",
+     "tier": "worth_a_read",
+     "url": "https://nsearchives.nseindia.in/corporate/NIDHIFADNAVIS_07112026154336_NSEBSE_CPDPL.pdf"
+    },
+    {
+     "id": "TATASTEEL-investor_meetings-2026-11-07",
+     "title": "Investor Presentation",
+     "at": "2026-11-07T13:23:05+05:30",
+     "tier": "collapsed",
+     "url": "https://nsearchives.nseindia.in/corporate/NIDHIFADNAVIS_07112026132213_BSENSEPRANDIR.pdf"
+    },
+    {
+     "id": "TATASTEEL-press_release-2026-11-07",
+     "title": "A press release dated November 07, 2026, titled 'Tata Steel reports Consolidated EBITDA of Rs 10,665 crores for the quarter and Rs 20,035 crores for the half year ended September 30, 2026'.",
+     "at": "2026-11-07T13:21:16+05:30",
+     "tier": "collapsed",
+     "url": "https://nsearchives.nseindia.in/corporate/NIDHIFADNAVIS_07112026132017_BSENSEPRANDIR.pdf"
+    },
+    {
+     "id": "TATASTEEL-unclassified-2026-11-07",
+     "title": "Retirement of Mr. Noel Naval Tata as the Non-Executive, Non-Independent Director and Vice Chairman of the Board",
+     "at": "2026-11-07T13:17:42+05:30",
+     "tier": "collapsed",
+     "url": "https://nsearchives.nseindia.in/corporate/NIDHIFADNAVIS_07112026131701_BOARDOUTCOME-NOV7.pdf"
+    },
+    {
+     "id": "TATASTEEL-results-2026-11-07",
+     "title": "Tata Steel Limited has submitted to the Exchange, the financial results for the quarter and half year ended September 30, 2026.",
+     "at": "2026-11-07T13:06:33+05:30",
+     "tier": "worth_a_read",
+     "url": "https://nsearchives.nseindia.in/corporate/NIDHIFADNAVIS_07112026130531_BOARDOUTCOME-NOV7.pdf"
+    },
+    {
+     "id": "TATASTEEL-M&A-2026-11-03",
+     "title": "Effective Date of the Scheme of Amalgamation amongst Tata Steel Limited and Rujuvalika Investments Limited, wholly owned subsidiary, and their respective shareholders",
+     "at": "2026-11-03T12:46:35+05:30",
+     "tier": "worth_a_read",
+     "url": "https://nsearchives.nseindia.in/corporate/NIDHIFADNAVIS_03112026124351_BSENSE.pdf"
+    }
+   ],
+   "needs_you": false,
+   "last_event": {
+    "title": "Transcript",
+    "at": "2026-11-12T22:19:55+05:30",
+    "tier": "collapsed"
+   }
+  },
+  "TITAN": {
+   "symbol": "TITAN",
+   "name": "Titan Company Limited",
+   "sector": "Consumer",
+   "role": "research",
+   "basis": "consolidated",
+   "results_source": "https://nsearchives.nseindia.in/corporate/xbrl/INTEGRATED_FILING_INDAS_1754035_05112026071123_WEB.xml",
+   "price": {
+    "close": 4844.9,
+    "day_change": -1.56,
+    "as_of": "2026-11-13"
+   },
+   "quarters": [
+    {
+     "period": "Q2FY26",
+     "revenue": 18725.0,
+     "pat": 1120.0,
+     "source": "https://nsearchives.nseindia.in/corporate/xbrl/INTEGRATED_FILING_INDAS_1564284_03112025103706_WEB.xml",
+     "period_end": "2025-09-30",
+     "ebitda_margin": 10.01,
+     "revenue_yoy": null
+    },
+    {
+     "period": "Q3FY26",
+     "revenue": 25416.0,
+     "pat": 1684.0,
+     "source": "https://nsearchives.nseindia.in/corporate/xbrl/INTEGRATED_FILING_INDAS_1622765_10022026065219_WEB.xml",
+     "period_end": "2025-12-31",
+     "ebitda_margin": 10.67,
+     "revenue_yoy": null
+    },
+    {
+     "period": "Q4FY26",
+     "revenue": 26920.0,
+     "pat": 1179.0,
+     "source": "https://nsearchives.nseindia.in/corporate/xbrl/INTEGRATED_FILING_INDAS_1665068_08052026074730_WEB.xml",
+     "period_end": "2026-03-31",
+     "ebitda_margin": 7.2,
+     "revenue_yoy": null
+    },
+    {
+     "period": "Q1FY27",
+     "revenue": 21356.0,
+     "pat": 1777.0,
+     "source": "https://nsearchives.nseindia.in/corporate/xbrl/INTEGRATED_FILING_INDAS_1710081_07082026064307_WEB.xml",
+     "period_end": "2026-06-30",
+     "ebitda_margin": 13.53,
+     "revenue_yoy": null
+    },
+    {
+     "period": "Q2FY27",
+     "revenue": 20614.0,
+     "pat": 2392.73,
+     "source": "https://nsearchives.nseindia.in/corporate/xbrl/INTEGRATED_FILING_INDAS_1754035_05112026071123_WEB.xml",
+     "period_end": "2026-09-30",
+     "ebitda_margin": 14.48,
+     "revenue_yoy": 10.1
+    }
+   ],
+   "ledger": [],
+   "has_ledger": false,
+   "credibility": {
+    "delivered": 0,
+    "resolved": 0
+   },
+   "thesis": {
+    "management": [],
+    "investor": []
+   },
+   "recent_filings": [],
+   "needs_you": false,
+   "last_event": null
+  },
+  "ASTRAL": {
+   "symbol": "ASTRAL",
+   "name": "Astral Limited",
+   "sector": "Building products",
+   "role": "research",
+   "basis": "consolidated",
+   "results_source": "https://nsearchives.nseindia.in/corporate/xbrl/INTEGRATED_FILING_INDAS_1754338_05112026102124_WEB.xml",
+   "price": {
+    "close": 1254.0,
+    "day_change": -1.65,
+    "as_of": "2026-11-13"
+   },
+   "quarters": [
+    {
+     "period": "Q2FY26",
+     "revenue": 1577.4,
+     "pat": 134.8,
+     "source": "https://nsearchives.nseindia.in/corporate/xbrl/INTEGRATED_FILING_INDAS_1566191_05112025082105_WEB.xml",
+     "period_end": "2025-09-30",
+     "ebitda_margin": 16.28,
+     "revenue_yoy": null
+    },
+    {
+     "period": "Q3FY26",
+     "revenue": 1541.5,
+     "pat": 107.7,
+     "source": "https://nsearchives.nseindia.in/corporate/xbrl/INTEGRATED_FILING_INDAS_1619564_05022026075421_WEB.xml",
+     "period_end": "2025-12-31",
+     "ebitda_margin": 15.39,
+     "revenue_yoy": null
+    },
+    {
+     "period": "Q4FY26",
+     "revenue": 2088.5,
+     "pat": 213.0,
+     "source": "https://nsearchives.nseindia.in/corporate/xbrl/INTEGRATED_FILING_INDAS_1668969_18052026084804_WEB.xml",
+     "period_end": "2026-03-31",
+     "ebitda_margin": 18.33,
+     "revenue_yoy": null
+    },
+    {
+     "period": "Q1FY27",
+     "revenue": 1578.0,
+     "pat": 120.2,
+     "source": "https://nsearchives.nseindia.in/corporate/xbrl/INTEGRATED_FILING_INDAS_1712963_12082026070826_WEB.xml",
+     "period_end": "2026-06-30",
+     "ebitda_margin": 14.65,
+     "revenue_yoy": null
+    },
+    {
+     "period": "Q2FY27",
+     "revenue": 1988.3,
+     "pat": 127.3,
+     "source": "https://nsearchives.nseindia.in/corporate/xbrl/INTEGRATED_FILING_INDAS_1754338_05112026102124_WEB.xml",
+     "period_end": "2026-09-30",
+     "ebitda_margin": 13.1,
+     "revenue_yoy": 26.0
+    }
+   ],
+   "ledger": [],
+   "has_ledger": false,
+   "credibility": {
+    "delivered": 0,
+    "resolved": 0
+   },
+   "thesis": {
+    "management": [],
+    "investor": []
+   },
+   "recent_filings": [],
+   "needs_you": false,
+   "last_event": null
+  },
+  "BHARATFORG": {
+   "symbol": "BHARATFORG",
+   "name": "Bharat Forge Limited",
+   "sector": "Auto parts",
+   "role": "research",
+   "basis": "consolidated",
+   "results_source": "https://nsearchives.nseindia.in/corporate/xbrl/INTEGRATED_FILING_INDAS_1753991_05112026065454_WEB.xml",
+   "price": {
+    "close": 1750.5,
+    "day_change": -0.54,
+    "as_of": "2026-11-13"
+   },
+   "quarters": [
+    {
+     "period": "Q2FY26",
+     "revenue": 4031.93,
+     "pat": 299.28,
+     "source": "https://nsearchives.nseindia.in/corporate/xbrl/INTEGRATED_FILING_INDAS_1571493_11112025065417_WEB.xml",
+     "period_end": "2025-09-30",
+     "ebitda_margin": 18.0,
+     "revenue_yoy": null
+    },
+    {
+     "period": "Q3FY26",
+     "revenue": 4342.93,
+     "pat": 272.8,
+     "source": "https://nsearchives.nseindia.in/corporate/xbrl/INTEGRATED_FILING_INDAS_1624124_12022026043827_WEB.xml",
+     "period_end": "2025-12-31",
+     "ebitda_margin": 17.27,
+     "revenue_yoy": null
+    },
+    {
+     "period": "Q4FY26",
+     "revenue": 4528.04,
+     "pat": 233.45,
+     "source": "https://nsearchives.nseindia.in/corporate/xbrl/INTEGRATED_FILING_INDAS_1664728_07052026104447_WEB.xml",
+     "period_end": "2026-03-31",
+     "ebitda_margin": 17.19,
+     "revenue_yoy": null
+    },
+    {
+     "period": "Q1FY27",
+     "revenue": 4639.94,
+     "pat": -89.89,
+     "source": "https://nsearchives.nseindia.in/corporate/xbrl/INTEGRATED_FILING_INDAS_1711215_10082026063159_WEB.xml",
+     "period_end": "2026-06-30",
+     "ebitda_margin": 15.29,
+     "revenue_yoy": null
+    },
+    {
+     "period": "Q2FY27",
+     "revenue": 4869.97,
+     "pat": 278.68,
+     "source": "https://nsearchives.nseindia.in/corporate/xbrl/INTEGRATED_FILING_INDAS_1753991_05112026065454_WEB.xml",
+     "period_end": "2026-09-30",
+     "ebitda_margin": 15.76,
+     "revenue_yoy": 20.8
+    }
+   ],
+   "ledger": [],
+   "has_ledger": false,
+   "credibility": {
+    "delivered": 0,
+    "resolved": 0
+   },
+   "thesis": {
+    "management": [],
+    "investor": []
+   },
+   "recent_filings": [],
+   "needs_you": false,
+   "last_event": null
+  },
+  "PIIND": {
+   "symbol": "PIIND",
+   "name": "PI Industries Limited",
+   "sector": "Agrochemicals",
+   "role": "research",
+   "basis": "consolidated",
+   "results_source": "https://nsearchives.nseindia.in/corporate/xbrl/INTEGRATED_FILING_INDAS_1753165_04112026083604_WEB.xml",
+   "price": {
+    "close": 1714.8,
+    "day_change": -1.46,
+    "as_of": "2026-11-13"
+   },
+   "quarters": [
+    {
+     "period": "Q2FY26",
+     "revenue": 1872.3,
+     "pat": 409.3,
+     "source": "https://nsearchives.nseindia.in/corporate/xbrl/INTEGRATED_FILING_INDAS_1571369_11112025061607_WEB.xml",
+     "period_end": "2025-09-30",
+     "ebitda_margin": 28.91,
+     "revenue_yoy": null
+    },
+    {
+     "period": "Q3FY26",
+     "revenue": 1375.7,
+     "pat": 311.3,
+     "source": "https://nsearchives.nseindia.in/corporate/xbrl/INTEGRATED_FILING_INDAS_1624540_12022026073542_WEB.xml",
+     "period_end": "2025-12-31",
+     "ebitda_margin": 21.97,
+     "revenue_yoy": null
+    },
+    {
+     "period": "Q4FY26",
+     "revenue": 1565.2,
+     "pat": 200.2,
+     "source": "https://nsearchives.nseindia.in/corporate/xbrl/INTEGRATED_FILING_INDAS_1669690_19052026112733_WEB.xml",
+     "period_end": "2026-03-31",
+     "ebitda_margin": 21.52,
+     "revenue_yoy": null
+    },
+    {
+     "period": "Q1FY27",
+     "revenue": 1702.3,
+     "pat": 244.2,
+     "source": "https://nsearchives.nseindia.in/corporate/xbrl/INTEGRATED_FILING_INDAS_1712141_11082026075112_WEB.xml",
+     "period_end": "2026-06-30",
+     "ebitda_margin": 21.58,
+     "revenue_yoy": null
+    },
+    {
+     "period": "Q2FY27",
+     "revenue": 1701.8,
+     "pat": 122.2,
+     "source": "https://nsearchives.nseindia.in/corporate/xbrl/INTEGRATED_FILING_INDAS_1753165_04112026083604_WEB.xml",
+     "period_end": "2026-09-30",
+     "ebitda_margin": 13.67,
+     "revenue_yoy": -9.1
+    }
+   ],
+   "ledger": [],
+   "has_ledger": false,
+   "credibility": {
+    "delivered": 0,
+    "resolved": 0
+   },
+   "thesis": {
+    "management": [],
+    "investor": []
+   },
+   "recent_filings": [],
+   "needs_you": false,
+   "last_event": null
+  }
+ }
+}

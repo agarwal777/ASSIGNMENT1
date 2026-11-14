@@ -1,0 +1,4 @@
+symbol,id,text,metric,operator,target,deadline,source
+VOLTAS,inv-voltas-1,EBITDA margin stays at or above 6% this year,ebitda_margin,>=,6,FY27,investor
+M&M,inv-mm-1,EBITDA margin stays at or above 15% this year,ebitda_margin,>=,15,FY27,investor
+AUROPHARMA,inv-auro-1,EBITDA margin stays at or above 20% this year,ebitda_margin,>=,20,FY27,investor

@@ -10,3 +10,4 @@ seed/docs/
 seed/raw/
 seed/probe/
 seed/xbrl/
+seed/llm_cache/

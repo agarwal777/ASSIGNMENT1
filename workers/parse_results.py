@@ -54,6 +54,7 @@ def fetch(client, url: str) -> bytes:
 def main() -> None:
     ap = argparse.ArgumentParser()
     ap.add_argument("--symbols", nargs="*")
+    ap.add_argument("--quarters", type=int, default=QUARTERS)
     args = ap.parse_args()
     with (SEED / "portfolio.csv").open(encoding="utf-8") as f:
         companies = [c for c in csv.DictReader(f)
@@ -77,7 +78,7 @@ def main() -> None:
         by_qe: dict[date, dict] = {}
         for f in filings:
             by_qe.setdefault(f["qe"], f)
-        qes = sorted(by_qe, reverse=True)[:QUARTERS]
+        qes = sorted(by_qe, reverse=True)[:args.quarters]
         parsed = {}
         for qe in qes:
             try:
@@ -120,6 +121,12 @@ def main() -> None:
               f"(YoY {h['ebitda_margin']['yoy_bps']} bps)  PAT ₹{m['pat']['value_cr']:,} cr"
               + (f"  ⚠ {'; '.join(h['warnings'])}" if h["warnings"] else ""))
 
+    if args.symbols:
+        # Partial run: replace only these companies' rows, keep everyone else's.
+        old_results = json.loads((SEED / "results.json").read_text(encoding="utf-8"))
+        results = {**{k: v for k, v in old_results.items() if k not in args.symbols}, **results}
+        old_facts = list(csv.DictReader((SEED / "facts.csv").open(encoding="utf-8")))
+        facts = [f for f in old_facts if f["symbol"] not in args.symbols] + facts
     (SEED / "results.json").write_text(json.dumps(results, indent=1), encoding="utf-8")
     with (SEED / "facts.csv").open("w", newline="", encoding="utf-8") as f:
         w = csv.DictWriter(f, fieldnames=list(facts[0].keys()))

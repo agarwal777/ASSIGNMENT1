@@ -12,11 +12,12 @@ import { useSheetNav } from "@/lib/sheet";
 // vaul (~25 KB gzipped) loads only when a sheet is first opened, not with every screen.
 const Sheet = dynamic(() => import("@/components/shell/Sheet"));
 const CallSheet = dynamic(() => import("@/components/people/CallSheet"));
+const QuoteSheet = dynamic(() => import("@/components/company/QuoteSheet"));
 
 /**
- * Renders whichever sheet the URL names (?sheet=source|formula). Mounted once in the shell inside
- * <Suspense>, because reading search params makes this subtree client-rendered (Next 16).
- * Call and quote sheets register here in later blocks.
+ * Renders whichever sheet the URL names (?sheet=source|formula|call|quote). Mounted once in the
+ * shell inside <Suspense>, because reading search params makes this subtree client-rendered (Next 16).
+ * Every sheet's code loads on first use, so screens don't pay for sheets they never open.
  */
 export default function SheetHost() {
   const q = useSearchParams();
@@ -29,6 +30,9 @@ export default function SheetHost() {
   const [call, setCall] = useState<{ event: string; contact: string } | null>(null);
   const ev = q.get("event"), ct = q.get("contact");
   if (sheet === "call" && ev && ct && (call?.event !== ev || call?.contact !== ct)) setCall({ event: ev, contact: ct });
+  const [quote, setQuote] = useState<string | null>(null);
+  const pr = q.get("promise");
+  if (sheet === "quote" && pr && pr !== quote) setQuote(pr);
   if (!used && !sheet) return null;
   const doc = q.get("doc") ?? "";
   const label = q.get("label") ?? copy.sheet.untitledSource;
@@ -69,6 +73,7 @@ export default function SheetHost() {
         <CallSheet open={sheet === "call"} onClose={close} eventId={call.event} contactId={call.contact}
           day={q.get("date") ?? undefined} />
       )}
+      {quote && <QuoteSheet open={sheet === "quote"} onClose={close} promiseId={quote} />}
     </>
   );
 }
