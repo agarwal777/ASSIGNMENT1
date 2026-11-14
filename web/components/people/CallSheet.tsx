@@ -4,7 +4,7 @@ import { useEffect, useRef, useState } from "react";
 import { Check, Copy } from "lucide-react";
 import { ProbableBadge } from "@/components/people/PathLine";
 import Sheet from "@/components/shell/Sheet";
-import { DEFAULT_AS_OF, asOfFor, callOpener, callQuestions, dayOf, getEvent } from "@/lib/api";
+import { LATEST_DAY, asOfFor, callOpener, callQuestions, getEvent } from "@/lib/api";
 import { copy } from "@/lib/copy";
 import { date } from "@/lib/format";
 import type { Suggestion } from "@/lib/network";
@@ -15,7 +15,7 @@ import { loadNetwork } from "@/lib/vault";
  * Why this person, when you last spoke, three questions and a draft opener (FRONTEND.md §5.5).
  * Everything is computed on the device from the investor's own contacts; nothing is sent anywhere.
  */
-export default function CallSheet({ open, onClose, eventId, contactId, day = dayOf(DEFAULT_AS_OF) }: {
+export default function CallSheet({ open, onClose, eventId, contactId, day = LATEST_DAY }: {
   open: boolean; onClose: () => void; eventId: string; contactId: string; day?: string;
 }) {
   const event = getEvent(eventId);

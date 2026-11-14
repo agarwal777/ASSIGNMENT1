@@ -3,19 +3,18 @@
 import { useEffect, useMemo, useState, useSyncExternalStore } from "react";
 import { usePathname, useRouter, useSearchParams } from "next/navigation";
 import Link from "next/link";
-import { ChevronLeft, ChevronRight, Settings } from "lucide-react";
+import { Settings } from "lucide-react";
 import TopBar from "@/components/shell/TopBar";
+import DayStrip from "@/components/today/DayStrip";
 import EventCard from "@/components/today/EventCard";
 import Num from "@/components/trust/Num";
 import { SourceLink } from "@/components/trust/SourceLink";
-import { DEFAULT_AS_OF, EVENT_RANGE, SCORING_NOTE, asOfFor, dayOf, getDigest } from "@/lib/api";
+import { BRIEF_DAYS, DATA_TO_DAY, LATEST_DAY, RESULTS_WEEK_DAY, SCORING_NOTE, asOfFor, getDigest } from "@/lib/api";
 import { copy } from "@/lib/copy";
 import { date, time } from "@/lib/format";
 import type { Contact } from "@/lib/network";
 import { withPerson } from "@/lib/people";
 import { loadNetwork } from "@/lib/vault";
-
-const DAY = 24 * 3600_000;
 
 const WINDOWS = [{ key: "24h", hours: 24 }, { key: "7d", hours: 168 }] as const;
 
@@ -48,7 +47,9 @@ export default function TodayView() {
   const q = useSearchParams();
   const router = useRouter();
   const pathname = usePathname();
-  const day = q.get("date") ?? dayOf(DEFAULT_AS_OF);
+  const asked = q.get("date");
+  const day = asked && BRIEF_DAYS.includes(asked) ? asked : LATEST_DAY;
+  const latest = day === LATEST_DAY;
   const win = WINDOWS.find((w) => w.key === q.get("window")) ?? WINDOWS[0];
   const asOf = asOfFor(day);
 
@@ -81,8 +82,8 @@ export default function TodayView() {
     if (v === null) p.delete(k); else p.set(k, v);
     router.replace(p.toString() ? `${pathname}?${p}` : pathname, { scroll: false });
   };
-  const firstDay = dayOf(EVENT_RANGE.first), lastDay = dayOf(new Date(new Date(EVENT_RANGE.last).getTime() + DAY).toISOString());
-  const shift = (n: number) => setParam("date", dayOf(new Date(new Date(asOf).getTime() + n * DAY).toISOString()));
+  const counts = useMemo(() => Object.fromEntries(BRIEF_DAYS.map((d) => [d, getDigest(asOfFor(d), 24).needsYou.length])), []);
+  const pick = (d: string) => setParam("date", d === LATEST_DAY ? null : d);
   const worth = showAllWorth ? digest.worthARead : digest.worthARead.slice(0, 10);
 
   return (
@@ -92,15 +93,21 @@ export default function TodayView() {
           <Settings size={20} aria-hidden />
         </Link>} />
 
-      {/* Replay banner: always shown, because every view of this prototype replays filed data. */}
-      <div className="sticky top-14 z-20 flex items-center justify-between border-b border-line bg-accent/10 px-2 backdrop-blur">
-        <button onClick={() => shift(-1)} disabled={day <= firstDay} aria-label={copy.today.prevDay}
-          className="flex h-11 w-11 items-center justify-center text-accent disabled:opacity-30"><ChevronLeft size={20} aria-hidden /></button>
-        <p className="text-center text-[13px] font-medium text-accent">
-          {copy.today.viewing(date(asOf, asOf))} <span className="font-normal text-ink-2">· {copy.today.replay}</span>
-        </p>
-        <button onClick={() => shift(1)} disabled={day >= lastDay} aria-label={copy.today.nextDay}
-          className="flex h-11 w-11 items-center justify-center text-accent disabled:opacity-30"><ChevronRight size={20} aria-hidden /></button>
+      {/* Date: the latest brief by default; older dates are labelled as a replay. */}
+      <div className="sticky top-14 z-20 border-b border-line bg-bg/95 backdrop-blur">
+        <div className="flex min-h-11 items-center justify-between gap-2 px-4">
+          <p className="text-[13px] font-medium text-accent">
+            {latest
+              ? <>{copy.today.latest} <span className="font-normal text-ink-2">· {copy.today.dataTo(date(asOfFor(DATA_TO_DAY), asOf))}</span></>
+              : <>{copy.today.viewing(date(asOf, asOf))} <span className="font-normal text-ink-2">· {copy.today.replay}</span></>}
+          </p>
+          <button type="button" onClick={() => pick(RESULTS_WEEK_DAY)} aria-pressed={day === RESULTS_WEEK_DAY}
+            className={`min-h-9 shrink-0 rounded-full border px-3 text-[13px] font-medium ${
+              day === RESULTS_WEEK_DAY ? "border-accent bg-accent/10 text-accent" : "border-line text-ink-2"}`}>
+            {copy.today.resultsWeek}
+          </button>
+        </div>
+        <DayStrip days={BRIEF_DAYS} counts={counts} selected={day} onPick={pick} />
       </div>
 
       <div className="px-4 pb-6">

@@ -9,7 +9,6 @@ import { bps as fmtBps, pct as fmtPct } from "@/lib/format";
 import type { DigestEvent } from "@/lib/digest";
 import type { Card, DigestResponse, MetricRow, NumValue, SourceRef, StatTile, Trend } from "@/lib/types";
 
-export const DEFAULT_AS_OF: string = digestData.default_as_of;
 export const SCORING_NOTE: string = digestData.scoring_note;
 const EVENTS = digestData.events as unknown as DigestEvent[];
 export const EVENT_RANGE = {
@@ -28,6 +27,26 @@ export const asOfFor = (day: string) => `${day}T08:00:00+05:30`;
 export const dayOf = (iso: string) => new Date(new Date(iso).getTime() + 5.5 * 3600_000).toISOString().slice(0, 10);
 
 export const getEvent = (id: string): DigestEvent | undefined => EVENTS.find((e) => e.id === id);
+
+const addDays = (day: string, n: number) => new Date(Date.parse(`${day}T00:00:00Z`) + n * 864e5).toISOString().slice(0, 10);
+/** The day of the latest filing in the snapshot ("2026-11-14"): the data runs to here. */
+export const DATA_TO_DAY = dayOf(EVENTS.filter((e) => e.kind === "filing").reduce((m, e) => (e.at > m ? e.at : m), ""));
+/** The latest brief: 08:00 the morning after the latest filing. Today opens here. */
+export const LATEST_DAY = addDays(DATA_TO_DAY, 1);
+export const DEFAULT_AS_OF = asOfFor(LATEST_DAY);
+export const FIRST_DAY = addDays(dayOf(EVENT_RANGE.first), 1);
+/** The week most results landed in this snapshot. */
+export const RESULTS_WEEK_DAY = "2026-11-06";
+/** Every brief date the snapshot can show, oldest first. */
+export const BRIEF_DAYS: string[] = (() => {
+  const out: string[] = [];
+  for (let d = FIRST_DAY; d <= LATEST_DAY; d = addDays(d, 1)) out.push(d);
+  return out;
+})();
+/** Companies with a "needs you" card in each day's 24-hour brief: Portfolio uses the same answer as Today. */
+export function needsYouByDay(): Record<string, string[]> {
+  return Object.fromEntries(BRIEF_DAYS.map((d) => [d, [...new Set(getDigest(asOfFor(d), 24).needsYou.map((c) => c.companySymbol))]]));
+}
 
 /**
  * Three questions for a call, from the event's public evidence only (templates, no model).

@@ -45,7 +45,9 @@ export default function TrendChart({ trend }: { trend: Trend }) {
             ))}
           </>
         )}
-        <text x={Math.min(cx(last), W - 4)} y={y(pts[last].value) - 7} textAnchor="end" className="fill-ink text-[11px] font-medium">
+        {/* Label above the last point, or below it when the line comes down into it (so it never sits on the line). */}
+        <text x={Math.min(cx(last), W - 4)} textAnchor="end" className="fill-ink text-[11px] font-medium"
+          y={last > 0 && pts[last - 1].value > pts[last].value && !bars ? Math.min(y(pts[last].value) + 17, BOTTOM - 3) : y(pts[last].value) - 7}>
           {fmt(pts[last].value)}
         </text>
         {pts.map((p, i) => (

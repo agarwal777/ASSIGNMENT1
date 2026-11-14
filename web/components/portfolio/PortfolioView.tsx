@@ -15,7 +15,7 @@ import { loadNetwork } from "@/lib/vault";
 type Filter = "all" | "needs" | "behind" | "moves";
 const MATCH: Record<Filter, (r: PortfolioRow) => boolean> = {
   all: () => true,
-  needs: (r) => r.needsYou,
+  needs: (r) => r.needsYou,   // set from Today's date below
   behind: (r) => r.thesis.some((t) => isProblem(t.status)),
   moves: (r) => Boolean(r.move),
 };
@@ -24,9 +24,12 @@ const countsText = (items: { status: Status }[]) =>
   statusCounts(items).map(({ status, n }) => copy.portfolio.tag(n, STATUS[status].label)).join(" · ");
 
 /** Portfolio: one stacked bar of every tracked claim, filter chips that double as the summary, rows that expand in place. */
-export default function PortfolioView({ rows, refDate }: { rows: PortfolioRow[]; refDate: string }) {
+export default function PortfolioView({ rows: base, refDate, needs }: { rows: PortfolioRow[]; refDate: string; needs: string[] }) {
   const [filter, setFilter] = useState<Filter>("all");
   const [open, setOpen] = useState<string | null>(null);
+  // "Needs you" = a card in Today's brief for the same date; those companies come first.
+  const rows = base.map((r) => ({ ...r, needsYou: needs.includes(r.symbol) }))
+    .sort((a, b) => Number(b.needsYou) - Number(a.needsYou));
   const all = rows.flatMap((r) => r.thesis);
   const shown = rows.filter(MATCH[filter]);
 
