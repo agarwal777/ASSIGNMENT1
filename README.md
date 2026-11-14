@@ -181,11 +181,51 @@ missing.
 | Bull vs bear, free-text agent | Not built (needs the model; free tier rate-limited) |
 | Assumption editor, custom window, WhatsApp share, swipe feedback, service worker, Playwright | Cut for time; demo assumptions are seeded and labelled |
 | JS budget | §12 asked for < 150 KB gzipped; the Next 16 + React 19 framework alone is ≈ 152 KB. `/today` is 217 KB, a Company page 190 KB (`web/scripts/js-budget.mjs`) |
-| Triage evaluation (precision/recall on labelled filings) | Not done; weights are a stated heuristic |
 | Overlap scoring | TypeScript in the browser instead of SQL, so the network never leaves the device |
 | Market caps | Size labels are judgement; the yfinance lookup returned nothing |
 
-## 10. Run it
+## 10. Evaluation (README v2 §16)
+
+Everything below is in `eval/`, reproducible with fixed seeds. Misses are reported, not tuned away.
+
+**Triage** (`eval/triage_results.md`). 40 portfolio filings, sampled across FINN's three buckets with
+a fixed seed, shuffled, FINN's verdict and category hidden, labelled by the author ("would I want this
+in front of me?"). The weights were fixed before the labels existed.
+
+| FINN's call | Precision | Recall |
+|---|---|---|
+| Shown (needs you + worth a read) | 0.54 (14/26) | 0.67 (14/21) |
+| Needs you only | 0.46 (6/13) | 0.29 (6/21) |
+
+The largest disagreement is about results: the labeller marked all six quarterly-results filings in the
+sample as not material, while FINN puts results first (as ENAM's reference does). Several filings the
+labeller marked material were folded by FINN: an earnings-call recording, two investor-meeting
+schedules, an articles-of-association amendment, a newspaper publication, M&M's results press release
+and an Aurobindo plant update. The last two are clear FINN misses: press releases score low by
+category, and a press release *about results* is not grouped with the results card. With n = 40 and one
+labeller, read these as directional.
+
+**Promise extraction** (`eval/promise_spotcheck.csv`). 20 of the 30 promises (fixed seed) checked
+field by field against the transcript, by the coding assistant rather than the author:
+
+| Field | Correct |
+|---|---|
+| Quote is verbatim | 20/20 (enforced in code) |
+| Is a measurable management target | 20/20 |
+| Target value and unit | 20/20 |
+| Scope | 19/20 |
+| Metric | 18/20 ("pre-sales" labelled order book; Tech Mahindra's EBIT target labelled EBITDA) |
+| Deadline | 16/20 strict, 19/20 lenient (one wrong quarter; three calendar-year targets that straddle two fiscal years) |
+
+**Unseen tickers** (`eval/unseen_tickers.csv`, live Vercel function): Dixon 2.7 s and Polycab 2.3 s
+(prices + 5 quarters of XBRL results), HDFC Bank 1.0 s (lender: results skipped by design), an unknown
+symbol rejected in 0.5 s.
+
+**Privacy** (`workers/tests/test_privacy.py`): the model router refuses every network field before any
+request is made; the extraction prompt contains none; no demo contact's name appears in any logged or
+cached model traffic.
+
+## 11. Run it
 
 ```bash
 # web (Node 20+)
@@ -201,11 +241,11 @@ workers/.venv/Scripts/python workers/build_digest.py && workers/.venv/Scripts/py
 Supabase: run `db/migrations/0001_init.sql`, then `db/seed_network.sql`; enable anonymous sign-ins;
 put the URL and anon key in `web/.env.local`. Gemini (extraction only): `GEMINI_API_KEY` in `.env.local`.
 
-**Tests:** `workers/.venv/Scripts/python -m pytest workers/tests` (25: parser on a real M&M filing,
-EBITDA rules, classifier, alerts) · `node --test web/scripts/network.test.mjs` (7) ·
+**Tests:** `workers/.venv/Scripts/python -m pytest workers/tests` (34: parser on a real M&M filing,
+EBITDA rules, classifier, alerts, privacy) · `node --test web/scripts/network.test.mjs` (7) ·
 `node --test web/scripts/format.test.mjs` (4) · `node --env-file=web/.env.local web/scripts/rls_test.mjs`.
 
-## 11. Next
+## 12. Next
 
 Segment-level XBRL parsing (unlocks most of the ledger) · finish extraction on a paid tier · lender
 results card (NII, PPOP, PAT) · thesis editor with evidence re-check · bull vs bear with citation
