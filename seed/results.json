@@ -1,0 +1,718 @@
+{
+ "M&M": {
+  "period": "Q2FY27",
+  "basis": "standalone",
+  "metrics": {
+   "revenue": {
+    "value_cr": 44281.88,
+    "qoq_pct": 5.5,
+    "yoy_pct": 26.2
+   },
+   "ebitda": {
+    "value_cr": 6717.51,
+    "qoq_pct": 30.4,
+    "yoy_pct": 3.9
+   },
+   "pbt": {
+    "value_cr": 6637.89,
+    "qoq_pct": 39.0,
+    "yoy_pct": 9.4
+   },
+   "pat": {
+    "value_cr": 5101.62,
+    "qoq_pct": 38.4,
+    "yoy_pct": 12.9
+   }
+  },
+  "ebitda_margin": {
+   "pct": 15.17,
+   "qoq_bps": 290,
+   "yoy_bps": -327
+  },
+  "warnings": [],
+  "source": "https://nsearchives.nseindia.in/corporate/xbrl/INTEGRATED_FILING_INDAS_1753613_05112026052243_WEB.xml"
+ },
+ "ASHOKLEY": {
+  "period": "Q2FY27",
+  "basis": "consolidated",
+  "metrics": {
+   "revenue": {
+    "value_cr": 17029.87,
+    "qoq_pct": 30.3,
+    "yoy_pct": 35.4
+   },
+   "ebitda": {
+    "value_cr": 2776.29,
+    "qoq_pct": 15.2,
+    "yoy_pct": 13.7
+   },
+   "pbt": {
+    "value_cr": 1258.07,
+    "qoq_pct": 33.3,
+    "yoy_pct": 12.7
+   },
+   "pat": {
+    "value_cr": 891.45,
+    "qoq_pct": 33.5,
+    "yoy_pct": 8.8
+   }
+  },
+  "ebitda_margin": {
+   "pct": 16.3,
+   "qoq_bps": -214,
+   "yoy_bps": -311
+  },
+  "warnings": [],
+  "source": "https://nsearchives.nseindia.in/corporate/xbrl/INTEGRATED_FILING_INDAS_1758732_14112026091104_WEB.xml"
+ },
+ "UNOMINDA": {
+  "period": "Q2FY27",
+  "basis": "consolidated",
+  "metrics": {
+   "revenue": {
+    "value_cr": 6655.42,
+    "qoq_pct": 19.8,
+    "yoy_pct": 38.3
+   },
+   "ebitda": {
+    "value_cr": 733.27,
+    "qoq_pct": 28.3,
+    "yoy_pct": 32.9
+   },
+   "pbt": {
+    "value_cr": 511.02,
+    "qoq_pct": 43.8,
+    "yoy_pct": 47.7
+   },
+   "pat": {
+    "value_cr": 440.81,
+    "qoq_pct": 39.7,
+    "yoy_pct": 36.6
+   }
+  },
+  "ebitda_margin": {
+   "pct": 11.02,
+   "qoq_bps": 73,
+   "yoy_bps": -44
+  },
+  "warnings": [],
+  "source": "https://nsearchives.nseindia.in/corporate/xbrl/INTEGRATED_FILING_INDAS_1753993_05112026065545_WEB.xml"
+ },
+ "AUROPHARMA": {
+  "period": "Q2FY27",
+  "basis": "consolidated",
+  "metrics": {
+   "revenue": {
+    "value_cr": 10263.29,
+    "qoq_pct": 12.2,
+    "yoy_pct": 23.9
+   },
+   "ebitda": {
+    "value_cr": 2155.75,
+    "qoq_pct": 14.6,
+    "yoy_pct": 28.5
+   },
+   "pbt": {
+    "value_cr": 1690.61,
+    "qoq_pct": 11.5,
+    "yoy_pct": 32.7
+   },
+   "pat": {
+    "value_cr": 1123.84,
+    "qoq_pct": 8.9,
+    "yoy_pct": 32.5
+   }
+  },
+  "ebitda_margin": {
+   "pct": 21.0,
+   "qoq_bps": 44,
+   "yoy_bps": 75
+  },
+  "warnings": [],
+  "source": "https://nsearchives.nseindia.in/corporate/xbrl/INTEGRATED_FILING_INDAS_1753288_04112026104818_WEB.xml"
+ },
+ "LUPIN": {
+  "period": "Q2FY27",
+  "basis": "consolidated",
+  "metrics": {
+   "revenue": {
+    "value_cr": 7827.26,
+    "qoq_pct": -5.4,
+    "yoy_pct": 11.1
+   },
+   "ebitda": {
+    "value_cr": 2044.41,
+    "qoq_pct": -16.5,
+    "yoy_pct": -12.7
+   },
+   "pbt": {
+    "value_cr": 1579.59,
+    "qoq_pct": -21.7,
+    "yoy_pct": -21.3
+   },
+   "pat": {
+    "value_cr": 1155.3,
+    "qoq_pct": -18.5,
+    "yoy_pct": -22.2
+   }
+  },
+  "ebitda_margin": {
+   "pct": 26.12,
+   "qoq_bps": -348,
+   "yoy_bps": -710
+  },
+  "warnings": [],
+  "source": "https://nsearchives.nseindia.in/corporate/xbrl/INTEGRATED_FILING_INDAS_1752380_04112026013306_WEB.xml"
+ },
+ "MEDANTA": {
+  "period": "Q2FY27",
+  "basis": "consolidated",
+  "metrics": {
+   "revenue": {
+    "value_cr": 1469.04,
+    "qoq_pct": 12.7,
+    "yoy_pct": 33.6
+   },
+   "ebitda": {
+    "value_cr": 370.11,
+    "qoq_pct": 29.1,
+    "yoy_pct": 60.3
+   },
+   "pbt": {
+    "value_cr": 294.83,
+    "qoq_pct": 38.2,
+    "yoy_pct": 47.6
+   },
+   "pat": {
+    "value_cr": 219.14,
+    "qoq_pct": 39.4,
+    "yoy_pct": 38.3
+   }
+  },
+  "ebitda_margin": {
+   "pct": 25.19,
+   "qoq_bps": 320,
+   "yoy_bps": 418
+  },
+  "warnings": [],
+  "source": "https://nsearchives.nseindia.in/corporate/xbrl/INTEGRATED_FILING_INDAS_1751853_03112026044819_WEB.xml"
+ },
+ "TEXRAIL": {
+  "period": "Q2FY27",
+  "basis": "consolidated",
+  "metrics": {
+   "revenue": {
+    "value_cr": 867.75,
+    "qoq_pct": 14.7,
+    "yoy_pct": -31.0
+   },
+   "ebitda": {
+    "value_cr": 74.64,
+    "qoq_pct": 30.9,
+    "yoy_pct": -40.0
+   },
+   "pbt": {
+    "value_cr": 123.48,
+    "qoq_pct": 224.0,
+    "yoy_pct": 35.4
+   },
+   "pat": {
+    "value_cr": 111.04,
+    "qoq_pct": 121.8,
+    "yoy_pct": 73.7
+   }
+  },
+  "ebitda_margin": {
+   "pct": 8.6,
+   "qoq_bps": 107,
+   "yoy_bps": -129
+  },
+  "warnings": [
+   "exceptional items of \u20b976.01 cr this quarter"
+  ],
+  "source": "https://nsearchives.nseindia.in/corporate/xbrl/INTEGRATED_FILING_INDAS_1753889_05112026062622_WEB.xml"
+ },
+ "THERMAX": {
+  "period": "Q2FY27",
+  "basis": "consolidated",
+  "metrics": {
+   "revenue": {
+    "value_cr": 2755.87,
+    "qoq_pct": 19.7,
+    "yoy_pct": 11.4
+   },
+   "ebitda": {
+    "value_cr": 194.14,
+    "qoq_pct": 182.9,
+    "yoy_pct": 12.9
+   },
+   "pbt": {
+    "value_cr": 168.86,
+    "qoq_pct": 300.7,
+    "yoy_pct": -2.8
+   },
+   "pat": {
+    "value_cr": 113.11,
+    "qoq_pct": 419.1,
+    "yoy_pct": -5.3
+   }
+  },
+  "ebitda_margin": {
+   "pct": 7.04,
+   "qoq_bps": 406,
+   "yoy_bps": 9
+  },
+  "warnings": [],
+  "source": "https://nsearchives.nseindia.in/corporate/xbrl/INTEGRATED_FILING_INDAS_1753918_05112026063454_WEB.xml"
+ },
+ "GRSE": {
+  "period": "Q2FY27",
+  "basis": "standalone",
+  "metrics": {
+   "revenue": {
+    "value_cr": 1826.69,
+    "qoq_pct": 0.7,
+    "yoy_pct": 8.9
+   },
+   "ebitda": {
+    "value_cr": 195.49,
+    "qoq_pct": 31.0,
+    "yoy_pct": 25.2
+   },
+   "pbt": {
+    "value_cr": 231.62,
+    "qoq_pct": 0.0,
+    "yoy_pct": 10.6
+   },
+   "pat": {
+    "value_cr": 171.97,
+    "qoq_pct": -0.5,
+    "yoy_pct": 11.8
+   }
+  },
+  "ebitda_margin": {
+   "pct": 10.7,
+   "qoq_bps": 248,
+   "yoy_bps": 139
+  },
+  "warnings": [],
+  "source": "https://nsearchives.nseindia.in/corporate/xbrl/INTEGRATED_FILING_INDAS_1756048_11112026032721_WEB.xml"
+ },
+ "KEC": {
+  "period": "Q2FY27",
+  "basis": "consolidated",
+  "metrics": {
+   "revenue": {
+    "value_cr": 5467.71,
+    "qoq_pct": 8.8,
+    "yoy_pct": -10.2
+   },
+   "ebitda": {
+    "value_cr": 271.28,
+    "qoq_pct": -6.7,
+    "yoy_pct": -37.0
+   },
+   "pbt": {
+    "value_cr": 40.88,
+    "qoq_pct": -54.5,
+    "yoy_pct": -80.8
+   },
+   "pat": {
+    "value_cr": 29.74,
+    "qoq_pct": -59.0,
+    "yoy_pct": -81.5
+   }
+  },
+  "ebitda_margin": {
+   "pct": 4.96,
+   "qoq_bps": -83,
+   "yoy_bps": -211
+  },
+  "warnings": [],
+  "source": "https://nsearchives.nseindia.in/corporate/xbrl/INTEGRATED_FILING_INDAS_1751525_02112026092732_WEB.xml"
+ },
+ "NCC": {
+  "period": "Q2FY27",
+  "basis": "consolidated",
+  "metrics": {
+   "revenue": {
+    "value_cr": 6014.67,
+    "qoq_pct": 3.5,
+    "yoy_pct": 32.4
+   },
+   "ebitda": {
+    "value_cr": 528.46,
+    "qoq_pct": -3.1,
+    "yoy_pct": 34.4
+   },
+   "pbt": {
+    "value_cr": 268.99,
+    "qoq_pct": -12.8,
+    "yoy_pct": 30.2
+   },
+   "pat": {
+    "value_cr": 198.84,
+    "qoq_pct": -13.1,
+    "yoy_pct": 18.8
+   }
+  },
+  "ebitda_margin": {
+   "pct": 8.79,
+   "qoq_bps": -59,
+   "yoy_bps": 13
+  },
+  "warnings": [],
+  "source": "https://nsearchives.nseindia.in/corporate/xbrl/INTEGRATED_FILING_INDAS_1754093_05112026073640_WEB.xml"
+ },
+ "TATAPOWER": {
+  "period": "Q2FY27",
+  "basis": "consolidated",
+  "metrics": {
+   "revenue": {
+    "value_cr": 19635.94,
+    "qoq_pct": 3.1,
+    "yoy_pct": 26.3
+   },
+   "ebitda": {
+    "value_cr": 3666.85,
+    "qoq_pct": -8.6,
+    "yoy_pct": 11.1
+   },
+   "pbt": {
+    "value_cr": 1442.91,
+    "qoq_pct": -16.8,
+    "yoy_pct": 8.8
+   },
+   "pat": {
+    "value_cr": 1652.04,
+    "qoq_pct": 17.9,
+    "yoy_pct": 32.7
+   }
+  },
+  "ebitda_margin": {
+   "pct": 18.67,
+   "qoq_bps": -240,
+   "yoy_bps": -257
+  },
+  "warnings": [
+   "PAT does not reconcile with PBT, tax and associates; discontinued operations or minority items may be present",
+   "exceptional items of \u20b9119.18 cr this quarter"
+  ],
+  "source": "https://nsearchives.nseindia.in/corporate/xbrl/INTEGRATED_FILING_INDAS_1756234_11112026070341_WEB.xml"
+ },
+ "DEEPAKFERT": {
+  "period": null,
+  "basis": "consolidated",
+  "metrics": {},
+  "ebitda_margin": {},
+  "warnings": [
+   "latest results (2026-09-30) filed, but quarterly numbers are not machine-readable in the XBRL"
+  ],
+  "source": "https://nsearchives.nseindia.in/corporate/xbrl/INTEGRATED_FILING_INDAS_1758106_13112026110730_WEB.xml"
+ },
+ "SUDARSCHEM": {
+  "period": "Q2FY27",
+  "basis": "consolidated",
+  "metrics": {
+   "revenue": {
+    "value_cr": 2742.6,
+    "qoq_pct": 3.8,
+    "yoy_pct": 14.9
+   },
+   "ebitda": {
+    "value_cr": 267.1,
+    "qoq_pct": 3.2,
+    "yoy_pct": 102.0
+   },
+   "pbt": {
+    "value_cr": 63.6,
+    "qoq_pct": -55.9,
+    "yoy_pct": 214.9
+   },
+   "pat": {
+    "value_cr": 30.5,
+    "qoq_pct": -70.5,
+    "yoy_pct": 58.0
+   }
+  },
+  "ebitda_margin": {
+   "pct": 9.74,
+   "qoq_bps": -6,
+   "yoy_bps": 420
+  },
+  "warnings": [
+   "exceptional items of \u20b9-82.90 cr this quarter"
+  ],
+  "source": "https://nsearchives.nseindia.in/corporate/xbrl/INTEGRATED_FILING_INDAS_1754942_06112026060433_WEB.xml"
+ },
+ "JUBLFOOD": {
+  "period": "Q2FY27",
+  "basis": "consolidated",
+  "metrics": {
+   "revenue": {
+    "value_cr": 2607.89,
+    "qoq_pct": 1.5,
+    "yoy_pct": 11.4
+   },
+   "ebitda": {
+    "value_cr": 510.03,
+    "qoq_pct": 2.0,
+    "yoy_pct": 7.1
+   },
+   "pbt": {
+    "value_cr": 159.04,
+    "qoq_pct": 8.0,
+    "yoy_pct": 2.3
+   },
+   "pat": {
+    "value_cr": 111.59,
+    "qoq_pct": 11.6,
+    "yoy_pct": -42.7
+   }
+  },
+  "ebitda_margin": {
+   "pct": 19.56,
+   "qoq_bps": 11,
+   "yoy_bps": -79
+  },
+  "warnings": [],
+  "source": "https://nsearchives.nseindia.in/corporate/xbrl/INTEGRATED_FILING_INDAS_1754883_06112026053355_WEB.xml"
+ },
+ "VOLTAS": {
+  "period": "Q2FY27",
+  "basis": "consolidated",
+  "metrics": {
+   "revenue": {
+    "value_cr": 2706.57,
+    "qoq_pct": -42.1,
+    "yoy_pct": 15.3
+   },
+   "ebitda": {
+    "value_cr": 127.86,
+    "qoq_pct": -51.8,
+    "yoy_pct": 81.6
+   },
+   "pbt": {
+    "value_cr": 124.03,
+    "qoq_pct": -61.6,
+    "yoy_pct": 36.8
+   },
+   "pat": {
+    "value_cr": 47.71,
+    "qoq_pct": -77.6,
+    "yoy_pct": 51.5
+   }
+  },
+  "ebitda_margin": {
+   "pct": 4.72,
+   "qoq_bps": -96,
+   "yoy_bps": 172
+  },
+  "warnings": [],
+  "source": "https://nsearchives.nseindia.in/corporate/xbrl/INTEGRATED_FILING_INDAS_1755186_06112026085901_WEB.xml"
+ },
+ "AURIONPRO": {
+  "period": "Q2FY27",
+  "basis": "consolidated",
+  "metrics": {
+   "revenue": {
+    "value_cr": 414.98,
+    "qoq_pct": 15.9,
+    "yoy_pct": 16.0
+   },
+   "ebitda": {
+    "value_cr": 71.21,
+    "qoq_pct": 15.8,
+    "yoy_pct": -1.1
+   },
+   "pbt": {
+    "value_cr": 61.16,
+    "qoq_pct": 16.9,
+    "yoy_pct": -12.0
+   },
+   "pat": {
+    "value_cr": 50.2,
+    "qoq_pct": 11.5,
+    "yoy_pct": -10.1
+   }
+  },
+  "ebitda_margin": {
+   "pct": 17.16,
+   "qoq_bps": -1,
+   "yoy_bps": -296
+  },
+  "warnings": [],
+  "source": "https://nsearchives.nseindia.in/corporate/xbrl/INTEGRATED_FILING_INDAS_1750825_31102026083737_WEB.xml"
+ },
+ "TATASTEEL": {
+  "period": "Q2FY27",
+  "basis": "consolidated",
+  "metrics": {
+   "revenue": {
+    "value_cr": 65436.24,
+    "qoq_pct": 7.6,
+    "yoy_pct": 11.5
+   },
+   "ebitda": {
+    "value_cr": 10533.07,
+    "qoq_pct": 13.7,
+    "yoy_pct": 18.4
+   },
+   "pbt": {
+    "value_cr": 5342.88,
+    "qoq_pct": 42.8,
+    "yoy_pct": 28.1
+   },
+   "pat": {
+    "value_cr": 3699.59,
+    "qoq_pct": 55.1,
+    "yoy_pct": 16.2
+   }
+  },
+  "ebitda_margin": {
+   "pct": 16.1,
+   "qoq_bps": 86,
+   "yoy_bps": 94
+  },
+  "warnings": [
+   "exceptional items of \u20b9348.68 cr this quarter"
+  ],
+  "source": "https://nsearchives.nseindia.in/corporate/xbrl/INTEGRATED_FILING_INDAS_1755442_07112026053333_WEB.xml"
+ },
+ "TITAN": {
+  "period": "Q2FY27",
+  "basis": "consolidated",
+  "metrics": {
+   "revenue": {
+    "value_cr": 20614.0,
+    "qoq_pct": -3.5,
+    "yoy_pct": 10.1
+   },
+   "ebitda": {
+    "value_cr": 2984.0,
+    "qoq_pct": 3.3,
+    "yoy_pct": 59.1
+   },
+   "pbt": {
+    "value_cr": 3001.0,
+    "qoq_pct": 23.7,
+    "yoy_pct": 97.3
+   },
+   "pat": {
+    "value_cr": 2392.73,
+    "qoq_pct": 34.6,
+    "yoy_pct": 113.6
+   }
+  },
+  "ebitda_margin": {
+   "pct": 14.48,
+   "qoq_bps": 95,
+   "yoy_bps": 447
+  },
+  "warnings": [],
+  "source": "https://nsearchives.nseindia.in/corporate/xbrl/INTEGRATED_FILING_INDAS_1754035_05112026071123_WEB.xml"
+ },
+ "ASTRAL": {
+  "period": "Q2FY27",
+  "basis": "consolidated",
+  "metrics": {
+   "revenue": {
+    "value_cr": 1988.3,
+    "qoq_pct": 26.0,
+    "yoy_pct": 26.0
+   },
+   "ebitda": {
+    "value_cr": 260.5,
+    "qoq_pct": 12.7,
+    "yoy_pct": 1.4
+   },
+   "pbt": {
+    "value_cr": 171.9,
+    "qoq_pct": 5.6,
+    "yoy_pct": -4.4
+   },
+   "pat": {
+    "value_cr": 127.3,
+    "qoq_pct": 5.9,
+    "yoy_pct": -5.6
+   }
+  },
+  "ebitda_margin": {
+   "pct": 13.1,
+   "qoq_bps": -155,
+   "yoy_bps": -318
+  },
+  "warnings": [
+   "exceptional items of \u20b9-9.50 cr this quarter"
+  ],
+  "source": "https://nsearchives.nseindia.in/corporate/xbrl/INTEGRATED_FILING_INDAS_1754338_05112026102124_WEB.xml"
+ },
+ "BHARATFORG": {
+  "period": "Q2FY27",
+  "basis": "consolidated",
+  "metrics": {
+   "revenue": {
+    "value_cr": 4869.97,
+    "qoq_pct": 5.0,
+    "yoy_pct": 20.8
+   },
+   "ebitda": {
+    "value_cr": 767.67,
+    "qoq_pct": 8.2,
+    "yoy_pct": 5.8
+   },
+   "pbt": {
+    "value_cr": 423.95,
+    "qoq_pct": 661.0,
+    "yoy_pct": -7.5
+   },
+   "pat": {
+    "value_cr": 278.68,
+    "qoq_pct": null,
+    "yoy_pct": -6.9
+   }
+  },
+  "ebitda_margin": {
+   "pct": 15.76,
+   "qoq_bps": 47,
+   "yoy_bps": -224
+  },
+  "warnings": [
+   "exceptional items of \u20b9-24.57 cr this quarter"
+  ],
+  "source": "https://nsearchives.nseindia.in/corporate/xbrl/INTEGRATED_FILING_INDAS_1753991_05112026065454_WEB.xml"
+ },
+ "PIIND": {
+  "period": "Q2FY27",
+  "basis": "consolidated",
+  "metrics": {
+   "revenue": {
+    "value_cr": 1701.8,
+    "qoq_pct": -0.0,
+    "yoy_pct": -9.1
+   },
+   "ebitda": {
+    "value_cr": 232.7,
+    "qoq_pct": -36.7,
+    "yoy_pct": -57.0
+   },
+   "pbt": {
+    "value_cr": 180.5,
+    "qoq_pct": -43.6,
+    "yoy_pct": -65.5
+   },
+   "pat": {
+    "value_cr": 122.2,
+    "qoq_pct": -50.0,
+    "yoy_pct": -70.1
+   }
+  },
+  "ebitda_margin": {
+   "pct": 13.67,
+   "qoq_bps": -791,
+   "yoy_bps": -1524
+  },
+  "warnings": [],
+  "source": "https://nsearchives.nseindia.in/corporate/xbrl/INTEGRATED_FILING_INDAS_1753165_04112026083604_WEB.xml"
+ }
+}

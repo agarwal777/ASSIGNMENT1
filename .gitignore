@@ -9,3 +9,4 @@ __pycache__/
 seed/docs/
 seed/raw/
 seed/probe/
+seed/xbrl/

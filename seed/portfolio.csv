@@ -1,23 +1,23 @@
-symbol,sector,role,size_guess,is_lender
-M&M,Autos,portfolio;ledger,large,false
-ASHOKLEY,Autos,portfolio,large,false
-UNOMINDA,Auto parts,portfolio,mid,false
-AUROPHARMA,Pharma,portfolio;ledger,large,false
-LUPIN,Pharma,portfolio,large,false
-MEDANTA,Healthcare,portfolio,mid,false
-TEXRAIL,Capital goods,portfolio,small,false
-THERMAX,Capital goods,portfolio,mid,false
-GRSE,Defence shipbuilding,portfolio,mid,false
-KEC,Transmission,portfolio,mid,false
-NCC,Construction,portfolio,mid,false
-TATAPOWER,Power,portfolio;appointment_backup,large,false
-DEEPAKFERT,Chemicals,portfolio,mid,false
-SUDARSCHEM,Chemicals,portfolio,small,false
-JUBLFOOD,Consumer,portfolio,mid,false
-VOLTAS,Consumer durables,portfolio;appointment;ledger,mid,false
-AURIONPRO,IT,portfolio,small,false
-TATASTEEL,Metals,portfolio,large,false
-TITAN,Consumer,research,large,false
-ASTRAL,Building products,research,mid,false
-BHARATFORG,Auto parts,research,large,false
-PIIND,Agrochemicals,research,mid,false
+symbol,sector,role,size_guess,is_lender,results_basis
+M&M,Autos,portfolio;ledger,large,false,standalone
+ASHOKLEY,Autos,portfolio,large,false,consolidated
+UNOMINDA,Auto parts,portfolio,mid,false,consolidated
+AUROPHARMA,Pharma,portfolio;ledger,large,false,consolidated
+LUPIN,Pharma,portfolio,large,false,consolidated
+MEDANTA,Healthcare,portfolio,mid,false,consolidated
+TEXRAIL,Capital goods,portfolio,small,false,consolidated
+THERMAX,Capital goods,portfolio,mid,false,consolidated
+GRSE,Defence shipbuilding,portfolio,mid,false,consolidated
+KEC,Transmission,portfolio,mid,false,consolidated
+NCC,Construction,portfolio,mid,false,consolidated
+TATAPOWER,Power,portfolio;appointment_backup,large,false,consolidated
+DEEPAKFERT,Chemicals,portfolio,mid,false,consolidated
+SUDARSCHEM,Chemicals,portfolio,small,false,consolidated
+JUBLFOOD,Consumer,portfolio,mid,false,consolidated
+VOLTAS,Consumer durables,portfolio;appointment;ledger,mid,false,consolidated
+AURIONPRO,IT,portfolio,small,false,consolidated
+TATASTEEL,Metals,portfolio,large,false,consolidated
+TITAN,Consumer,research,large,false,consolidated
+ASTRAL,Building products,research,mid,false,consolidated
+BHARATFORG,Auto parts,research,large,false,consolidated
+PIIND,Agrochemicals,research,mid,false,consolidated

@@ -103,9 +103,13 @@ def pick_docs(companies: list[dict]) -> list[tuple[str, str, dict]]:
     for c in companies:
         sym = c["symbol"]
         mine = [r for r in recent if r.get("symbol") == sym and r.get("attchmntFile")]
-        res = [r for r in mine if RESULTS_RE.search(r.get("attchmntText") or "")]
+        # The statements live in the board-meeting outcome filing, not in press releases,
+        # newspaper ads or call notices that merely mention results. Prefer the largest one.
+        res = [r for r in mine if RESULTS_RE.search(r.get("attchmntText") or "")
+               and re.search(r"outcome of board meeting|financial result|integrated filing",
+                             r.get("desc") or "", re.I)]
         if res:
-            picks.append((sym, "results", res[0]))  # feed is newest-first
+            picks.append((sym, "results", max(res, key=_size_kb)))
         if roles(c) & {"appointment", "appointment_backup"}:
             for r in mine:
                 if re.search(r"appointment|change in management", r.get("desc") or "", re.I):
@@ -145,6 +149,12 @@ def step_docs(companies: list[dict], client) -> None:
               f"{m.get('text_chars')} chars{'  ← NO TEXT LAYER' if m.get('text_chars') == 0 else ''}")
         manifest_path.write_text(json.dumps(manifest, indent=1), encoding="utf-8")
         time.sleep(PAUSE_S)
+
+
+def _size_kb(r: dict) -> float:
+    s = (r.get("fileSize") or r.get("attFileSize") or "0").upper()
+    n = float(re.sub(r"[^\d.]", "", s) or 0)
+    return n * 1024 if "MB" in s else n
 
 
 def _pdf_stats(path: Path) -> dict:
