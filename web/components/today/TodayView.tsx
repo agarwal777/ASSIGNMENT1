@@ -2,7 +2,8 @@
 
 import { useEffect, useMemo, useState } from "react";
 import { usePathname, useRouter, useSearchParams } from "next/navigation";
-import { ChevronLeft, ChevronRight } from "lucide-react";
+import Link from "next/link";
+import { ChevronLeft, ChevronRight, Settings } from "lucide-react";
 import TopBar from "@/components/shell/TopBar";
 import EventCard from "@/components/today/EventCard";
 import Num from "@/components/trust/Num";
@@ -44,7 +45,10 @@ export default function TodayView() {
 
   return (
     <>
-      <TopBar title={copy.today.title} />
+      <TopBar title={copy.today.title} right={
+        <Link href="/settings" aria-label={copy.settings.open} className="-mr-2 flex h-11 w-11 items-center justify-center text-ink-2">
+          <Settings size={20} aria-hidden />
+        </Link>} />
 
       {/* Replay banner: always shown, because every view of this prototype replays filed data. */}
       <div className="sticky top-14 z-20 flex items-center justify-between border-b border-line bg-accent/10 px-2 backdrop-blur">
