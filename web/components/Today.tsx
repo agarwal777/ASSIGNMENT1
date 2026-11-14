@@ -50,7 +50,7 @@ export default function Today({ digest }: { digest: Digest }) {
   const shift = (days: number) => setAsOf((d) => new Date(d.getTime() + days * DAY));
 
   return (
-    <main className="mx-auto w-full max-w-md px-4 pb-24 pt-6">
+    <main className="w-full px-4 pb-8 pt-6">
       <header className="border-b border-ink/15 pb-4">
         <div className="flex items-baseline justify-between">
           <h1 className="font-serif text-3xl tracking-tight">FINN</h1>

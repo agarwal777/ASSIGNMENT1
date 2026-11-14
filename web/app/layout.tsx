@@ -1,26 +1,31 @@
 import type { Metadata, Viewport } from "next";
-import { Geist, Geist_Mono, Source_Serif_4 } from "next/font/google";
+import { Inter, Newsreader } from "next/font/google";
 import "./globals.css";
 
-const geistSans = Geist({ variable: "--font-geist-sans", subsets: ["latin"] });
-const geistMono = Geist_Mono({ variable: "--font-geist-mono", subsets: ["latin"] });
-const serif = Source_Serif_4({ variable: "--font-serif", subsets: ["latin"] });
+// Body: Inter. Card headlines: Newsreader (the "newspaper" signal). Latin subset only.
+const inter = Inter({ variable: "--font-inter", subsets: ["latin"], display: "swap" });
+const newsreader = Newsreader({
+  variable: "--font-newsreader", subsets: ["latin"], weight: ["500"], display: "swap",
+});
 
 export const metadata: Metadata = {
   title: "FINN",
-  description: "Financial Investment Agent — what changed, why it matters, who to ask.",
+  description: "What changed in your portfolio, whether it breaks your thesis, and who you know who can explain it.",
 };
 
 export const viewport: Viewport = {
+  width: "device-width",
+  initialScale: 1,
+  viewportFit: "cover",
   themeColor: [
-    { media: "(prefers-color-scheme: light)", color: "#fbfaf7" },
-    { media: "(prefers-color-scheme: dark)", color: "#12110f" },
+    { media: "(prefers-color-scheme: light)", color: "#fafaf7" },
+    { media: "(prefers-color-scheme: dark)", color: "#121211" },
   ],
 };
 
 export default function RootLayout({ children }: LayoutProps<"/">) {
   return (
-    <html lang="en" className={`${geistSans.variable} ${geistMono.variable} ${serif.variable} h-full antialiased`}>
+    <html lang="en" className={`${inter.variable} ${newsreader.variable} h-full antialiased`}>
       <body className="min-h-full">{children}</body>
     </html>
   );

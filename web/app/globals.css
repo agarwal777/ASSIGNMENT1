@@ -1,31 +1,62 @@
 @import "tailwindcss";
 
-/* One accent, reserved for "needs attention" and negative moves. Newspaper, not terminal. */
+/* Design tokens: FRONTEND.md §4.2. Warm paper, one accent, semantic stance colours. */
 :root {
-  --paper: #fbfaf7;
-  --ink: #1b1a17;
-  --accent: #b4321f;
+  --bg: #fafaf7;
+  --surface: #ffffff;
+  --ink: #1a1a18;
+  --ink-2: #5f5e5a;
+  --ink-3: #8a8983;
+  --line: #e6e4dd;
+  --accent: #3c3489;
+  --supports: #0f6e56;
+  --contradicts: #a32d2d;
+  --unclear: #854f0b;
 }
 
 @media (prefers-color-scheme: dark) {
   :root {
-    --paper: #12110f;
-    --ink: #ece9e2;
-    --accent: #ff7a63;
+    --bg: #121211;
+    --surface: #1c1c1a;
+    --ink: #ececE8;
+    --ink-2: #a8a79f;
+    --ink-3: #7a7973;
+    --line: #2c2c29;
+    --accent: #afa9ec;
+    --supports: #5dcaa5;
+    --contradicts: #f09595;
+    --unclear: #ef9f27;
   }
 }
 
 @theme inline {
-  --color-paper: var(--paper);
+  --color-bg: var(--bg);
+  --color-surface: var(--surface);
   --color-ink: var(--ink);
+  --color-ink-2: var(--ink-2);
+  --color-ink-3: var(--ink-3);
+  --color-line: var(--line);
   --color-accent: var(--accent);
-  --font-sans: var(--font-geist-sans);
-  --font-mono: var(--font-geist-mono);
-  --font-serif: var(--font-serif);
+  --color-supports: var(--supports);
+  --color-contradicts: var(--contradicts);
+  --color-unclear: var(--unclear);
+  /* Temporary alias for the pre-B3 Today screen; removed when Today is rebuilt. */
+  --color-paper: var(--bg);
+  --font-sans: var(--font-inter);
+  --font-serif: var(--font-newsreader);
 }
 
 body {
-  background: var(--paper);
+  background: var(--bg);
   color: var(--ink);
-  font-family: var(--font-geist-sans), system-ui, sans-serif;
+  font-family: var(--font-inter), system-ui, sans-serif;
+  font-size: 15px;
+  line-height: 22px;
+  -webkit-tap-highlight-color: transparent;
+}
+
+.tabular { font-variant-numeric: tabular-nums; }
+
+@media (prefers-reduced-motion: reduce) {
+  *, *::before, *::after { animation-duration: 0.01ms !important; transition-duration: 0.01ms !important; }
 }

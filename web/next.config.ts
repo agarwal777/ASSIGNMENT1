@@ -1,6 +1,10 @@
 import type { NextConfig } from "next";
 
 const nextConfig: NextConfig = {
+  async redirects() {
+    // FRONTEND.md §3: "/" opens the brief. Config-level so no page has to render a redirect.
+    return [{ source: "/", destination: "/today", permanent: false }];
+  },
   async rewrites() {
     // Local dev only: on Vercel, vercel.json routes /api/py/* to the Python service.
     if (process.env.NODE_ENV !== "development") return [];
