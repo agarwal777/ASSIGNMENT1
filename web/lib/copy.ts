@@ -127,6 +127,7 @@ export const copy = {
     noFiling: (h: number) => `No filing in the last ${h} hours.`,
     priceSource: "Source: end-of-day prices",
     oneDay: "1 day",
+    latestQuarter: "latest",
     allNumbers: "All numbers",
     trendLabel: (metric: string, from: string, to: string, values: string) => `${metric}, ${from} to ${to}: ${values}`,
     trendTitle: (metric: string, n: number) => `${metric}, last ${n} quarters`,

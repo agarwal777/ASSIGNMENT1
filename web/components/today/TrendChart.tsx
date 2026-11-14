@@ -6,8 +6,8 @@ const W = 300, H = 84, PAD_X = 18, TOP = 18, BOTTOM = 66;
 
 /**
  * The key metric over the last 3–5 quarters, hand-written SVG. Revenue is drawn as bars from zero
- * (length = amount); a margin as a line (level). Only the latest value is labelled on the chart;
- * every value is in the aria-label and in each point's tooltip.
+ * (length = amount); a margin as a line (level). The latest value is in the caption (a label on the
+ * chart collided with the line); every value is in the aria-label and in each point's tooltip.
  */
 export default function TrendChart({ trend }: { trend: Trend }) {
   const pts = trend.points;
@@ -25,7 +25,7 @@ export default function TrendChart({ trend }: { trend: Trend }) {
 
   return (
     <figure className="m-0 mt-3">
-      <figcaption className="text-[13px] text-ink-3">{copy.card.trendTitle(trend.label, pts.length)}</figcaption>
+      <figcaption className="text-[13px] text-ink-3">{copy.card.trendTitle(trend.label, pts.length)} · <span className="font-medium text-ink">{fmt(pts[last].value)}</span> {copy.card.latestQuarter}</figcaption>
       <svg viewBox={`0 0 ${W} ${H}`} role="img" aria-label={label} className="mt-1 block h-auto w-full">
         <line x1={PAD_X} x2={W - PAD_X} y1={BOTTOM} y2={BOTTOM} className="stroke-line" strokeWidth={1} />
         {bars ? pts.map((p, i) => (
@@ -45,11 +45,6 @@ export default function TrendChart({ trend }: { trend: Trend }) {
             ))}
           </>
         )}
-        {/* Label above the last point, or below it when the line comes down into it (so it never sits on the line). */}
-        <text x={Math.min(cx(last), W - 4)} textAnchor="end" className="fill-ink text-[11px] font-medium"
-          y={last > 0 && pts[last - 1].value > pts[last].value && !bars ? Math.min(y(pts[last].value) + 17, BOTTOM - 3) : y(pts[last].value) - 7}>
-          {fmt(pts[last].value)}
-        </text>
         {pts.map((p, i) => (
           <text key={p.period} x={cx(i)} y={H - 4} textAnchor="middle" className="fill-ink-3 text-[10px]">
             {fmtPeriod(p.period)}
