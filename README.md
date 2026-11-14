@@ -48,7 +48,7 @@ true**, and if not, what to ask and whom. So FINN is organised around beliefs an
 |---|---|---|
 | **Push** | Daily brief with replay (any day 31 Oct–15 Nov), 24h / 7-day windows, scored and bucketed cards, folded routine filings, reading-time estimate with its formula | 11,147 NSE announcements (251 for the portfolio), 1 year of prices, 21 of 22 companies' Q2 FY27 results parsed from XBRL |
 | **Push → Network** | Management-change card with the appointee's career from the filing, second-degree path, call sheet | Voltas Reg. 30 filing (brief profile + Annexure A); 28 synthetic contacts |
-| **Pull** | Company page: credibility line, thesis strip, promise timeline (said → deadline), quote sheet, 7-quarter snapshot, next question with people | Promise Ledger: 23 verified promises from 7 of 12 transcripts (Aurobindo, M&M, Voltas) |
+| **Pull** | Company page: credibility line, thesis strip, promise timeline (said → deadline), quote sheet, 7-quarter snapshot, next question with people | Promise Ledger: 30 verified promises from 9 of 12 transcripts (Aurobindo, M&M, Voltas) |
 | **Pull, any ticker** | Ask: search 2,635 NSE symbols; unseen companies processed live by a Python function | NSE integrated-filing XBRL + prices, from Vercel's servers |
 | **Network** | Who to ask on every card and Company page; "Who knows…" search; keep-warm nudges | Matching runs in the browser over the investor's own rows |
 
@@ -147,9 +147,9 @@ the previous session and the move (weekends count).
 **Routing, as it actually happened:** `gemini-3.5-flash-lite` returned 1 weak promise (and an `Infinity`
 target) where `gemini-3.8-flash` found 6 verified ones on the same transcript; 3.8 was too slow
 (6–20 min, timeouts), so extraction runs on `gemini-3.6-flash` with 3.8 as fallback.
-**Spend: ₹0** (free tier). 11 live calls, about 179k input and 9k output tokens, plus 11 cache hits
-(`seed/llm_calls.jsonl`). The free tier's 503/429 limits are the main reason 5 of 12 transcripts are
-still missing.
+**Spend: ₹0** (free tier). 12 live calls, about 194k input and 10k output tokens, plus 14 cache hits
+(`seed/llm_calls.jsonl`). The free tier's 503/429 limits are why 3 of 12 transcripts are still
+missing.
 
 ## 8. Cloud
 
@@ -164,7 +164,7 @@ still missing.
 
 | Item | Status |
 |---|---|
-| Promise Ledger coverage | 7 of 12 transcripts so far (free-tier quota); 19 of 23 promises are segment-level or non-financial, shown as "Can't check yet" with the reason. Segment parsing from XBRL is the next step. |
+| Promise Ledger coverage | 9 of 12 transcripts (free-tier quota stopped the other 3); 26 of 30 promises are segment-level or non-financial, shown as "Can't check yet" with the reason. Segment parsing from XBRL is the next step. |
 | Status rule | Strict range check: Aurobindo said "mostly on the **higher** side of 20–21%" and delivered 20.23%, marked Delivered. Qualifiers are shown in the quote, not scored. |
 | Bull vs bear, free-text agent | Not built (needs the model; free tier rate-limited) |
 | Assumption editor, custom window, WhatsApp share, swipe feedback, service worker, Playwright | Cut for time; demo assumptions are seeded and labelled |

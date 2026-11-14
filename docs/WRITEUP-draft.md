@@ -1,7 +1,7 @@
 <!--
 DRAFT for the covering email. Rewrite it in your own words before sending; it is a structured
 starting point, not a finished letter. Facts below match the README and the live app as of the last
-commit. Items marked [[FILL]] are filled in once the ledger extraction finishes.
+commit, including the final ledger extraction run.
 
 Before sending, check yourself:
 - Recipient and subject line exactly as the brief states. The brief's subject reads
@@ -53,13 +53,13 @@ all answer one question: is the thesis still true, and if not, what should I ask
 - Security & privacy: RLS per user, anonymous demo users, synthetic contacts, no model sees the network;
   encryption and consent flows are designed but not built.
 - LLMs: Gemini free tier. Flash-Lite was too weak on the first transcript; 3.8 Flash too slow; 3.6 Flash
-  with 3.8 fallback. Spend ₹0; [[FILL: calls/tokens]].
+  with 3.8 fallback. Spend ₹0; 12 live calls, about 194k input and 10k output tokens.
 - Cloud: Next.js and a Python function on Vercel; Supabase for the private vault.
 
 **What I left out, honestly**
 
-- Ledger covers [[FILL: n]] of 12 transcripts (free-tier quota); most promises are segment-level and
-  shown as "can't check yet" until segment parsing exists.
+- Ledger covers 9 of 12 transcripts (free-tier quota); 26 of its 30 promises are segment-level or
+  non-financial and shown as "can't check yet" until segment parsing exists.
 - Bull vs bear, the free-text agent and the thesis editor are not built.
 - The status rule is a strict range check and ignores qualifiers like "higher side of".
 - The 150 KB JS target isn't met: the framework alone is ~152 KB.
