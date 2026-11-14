@@ -29,6 +29,8 @@ export type DigestEvent = {
   /** The thesis item this event bears on most (behind or missed first), from workers/thesis.py. */
   thesis?: { id: string; text: string; deadline: string; metric: string; stance: "supports" | "contradicts" | "neutral" | "insufficient";
     status: "on_track" | "behind" | "met" | "missed" | "cant_check";
+    target_low?: number | null; target_high?: number | null; actual?: number | null;
+    quarters_reported?: number | null; quarters_total?: number | null;
     evidence: string; source: "investor" | "management"; demo?: boolean }[];
   /** Management's guidance for this fiscal year next to the year-to-date actual. */
   promise_check?: { promise_id: string; guided_low: number; guided_high: number | null; unit: string; actual: number;

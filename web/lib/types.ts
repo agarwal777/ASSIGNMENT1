@@ -17,7 +17,7 @@ export interface CardBase {
   id: string; companySymbol: string; companyName: string; category: string; at: string;
   headline: string; score: number; reasons: string[];
   assumption?: { ref: AssumptionRef; stance: Stance; rationale?: string; epistemic: Epistemic;
-                status?: PromiseStatus /* redesign: one status vocabulary */ };
+                status?: PromiseStatus /* redesign: one status vocabulary */; claim?: Claim /* redesign: bullet chart */ };
   person?: PersonRef; question?: string; sources: SourceRef[];
 }
 export interface MetricRow { metric: 'revenue' | 'ebitda' | 'ebitda_margin' | 'pbt' | 'pat'; value: NumValue; qoq?: NumValue; yoy?: NumValue; }
@@ -51,7 +51,12 @@ export interface LedgerPromise {
   status: PromiseStatus; evidence: string; actual?: NumValue; revisedBy?: string;
 }
 export interface QuarterRow { period: string; revenue?: NumValue; ebitdaMargin?: NumValue; pat?: NumValue; revenueYoy?: NumValue; }
-export interface ThesisItem { ref: AssumptionRef; stance: Stance; status: PromiseStatus; evidence?: string; editable?: boolean }
+/** A checkable claim as numbers, for the bullet chart: actual so far against the target. */
+export interface Claim {
+  metric: string; unit: 'pct' | 'pct_yoy'; deadline: string; status: PromiseStatus;
+  target: number; targetHigh?: number; actual?: number; quartersReported?: number; quartersTotal?: number;
+}
+export interface ThesisItem { ref: AssumptionRef; stance: Stance; status: PromiseStatus; evidence?: string; editable?: boolean; claim?: Claim }
 
 export interface CompanyPayload {
   mode: 'full' | 'reduced';

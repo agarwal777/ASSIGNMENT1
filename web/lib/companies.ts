@@ -1,6 +1,7 @@
 // Server-side only: imported by server components (Portfolio, Company), so companies.json never
 // reaches a client bundle. Maps the snapshot into the CompanyPayload / PortfolioRow contracts.
 import data from "@/data/companies.json";
+import { type RawClaimFields, toClaim } from "@/lib/claims";
 import { isProblem, STATUS_ORDER } from "@/lib/status";
 import type {
   CompanyPayload, LedgerPromise, NumValue, PortfolioRow, PromiseStatus, QuarterRow, SourceRef, Stance, ThesisItem,
@@ -12,7 +13,7 @@ type RawPromise = {
   speaker_role: string; page: number; source: string; target_low?: number | null; target_high?: number | null;
   unit: string; status: string; evidence: string; revised_by?: string;
 };
-type RawItem = { id: string; text: string; deadline: string; stance: string; status: string; evidence: string };
+type RawItem = RawClaimFields & { id: string; text: string; deadline: string; stance: string; status: string; evidence: string };
 
 const COMPANIES = data.companies as Record<string, Raw>;
 export const SNAPSHOT_AS_OF: string = data.as_of;
@@ -53,7 +54,7 @@ function ledger(sym: string, r: Raw): LedgerPromise[] {
 }
 
 const item = (source: "management" | "investor") => (i: RawItem): ThesisItem => ({
-  ref: { id: i.id, text: i.text, source, deadline: i.deadline }, stance: i.stance as Stance, status: i.status as PromiseStatus, evidence: i.evidence,
+  ref: { id: i.id, text: i.text, source, deadline: i.deadline }, stance: i.stance as Stance, status: i.status as PromiseStatus, evidence: i.evidence, claim: toClaim(i),
 });
 
 function nextQuestion(r: Raw): string {

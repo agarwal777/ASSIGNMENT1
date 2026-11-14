@@ -4,6 +4,7 @@ import { ChevronLeft } from "lucide-react";
 import LedgerTimeline from "@/components/company/LedgerTimeline";
 import NextQuestion from "@/components/company/NextQuestion";
 import SnapshotTable from "@/components/company/SnapshotTable";
+import BulletChart from "@/components/trust/BulletChart";
 import StatusPill from "@/components/trust/StatusPill";
 import Num from "@/components/trust/Num";
 import { SourceLink } from "@/components/trust/SourceLink";
@@ -120,7 +121,8 @@ function ThesisRow({ title, items, empty, demo }: { title: string; items: Thesis
                   {i.ref.deadline && <span className="text-ink-3"> · {copy.card.by} {period(i.ref.deadline)}</span>}
                 </p>
               </div>
-              {i.evidence && <p className="mt-1 text-[13px] text-ink-2">{i.evidence}</p>}
+              {i.claim ? <div className="mt-2"><BulletChart claim={i.claim} label={i.ref.text} /></div>
+                : i.evidence && <p className="mt-1 text-[13px] text-ink-2">{i.evidence}</p>}
               {demo && <p className="mt-1 text-[11px] text-ink-3">{copy.company.demoAssumption}</p>}
             </li>
           ))}

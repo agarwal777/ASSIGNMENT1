@@ -1,3 +1,5 @@
+import BulletChart from "@/components/trust/BulletChart";
+import type { Claim } from "@/lib/types";
 import TopBar from "@/components/shell/TopBar";
 import EpistemicTag from "@/components/trust/EpistemicTag";
 import Num from "@/components/trust/Num";
@@ -18,6 +20,14 @@ const probableVariant: Card = mgmt.variant === "management_change" ? {
 } : mgmt;
 
 // Review page for building blocks. Card variants are added here as each block lands (B2+).
+const BULLETS: { label: string; claim: Claim }[] = [
+  { label: "EBITDA margin at least 16%", claim: { metric: "ebitda_margin", unit: "pct", deadline: "FY27", status: "on_track", target: 16, actual: 17.2, quartersReported: 2, quartersTotal: 4 } },
+  { label: "EBITDA margin at least 15%", claim: { metric: "ebitda_margin", unit: "pct", deadline: "FY27", status: "behind", target: 15, actual: 13.8, quartersReported: 2, quartersTotal: 4 } },
+  { label: "EBITDA margin 20–21%", claim: { metric: "ebitda_margin", unit: "pct", deadline: "FY26", status: "met", target: 20, targetHigh: 21, actual: 20.2, quartersReported: 4, quartersTotal: 4 } },
+  { label: "Revenue growth at least 10%", claim: { metric: "revenue_growth", unit: "pct_yoy", deadline: "FY27", status: "behind", target: 10, actual: -3.4, quartersReported: 3, quartersTotal: 4 } },
+  { label: "EBITDA margin at least 12%", claim: { metric: "ebitda_margin", unit: "pct", deadline: "FY28", status: "cant_check", target: 12 } },
+];
+
 export default function DevCards() {
   const results = digestFixture.needsYou[0];
   const nums: [string, NumValue, boolean?][] = results.variant === "results"
@@ -54,6 +64,13 @@ export default function DevCards() {
               <Num v={{ value: 42, kind: "count", epistemic: "UNKNOWN" }} />
             </li>
           </ul>
+        </section>
+
+        <section>
+          <h2 className="mb-2 text-[13px] font-medium text-ink-2">Bullet charts: on track · behind · range met · negative growth · no data</h2>
+          <div className="space-y-4 rounded-[12px] border border-line bg-surface p-3">
+            {BULLETS.map((b) => <BulletChart key={b.label} claim={b.claim} label={b.label} />)}
+          </div>
         </section>
 
         <section>

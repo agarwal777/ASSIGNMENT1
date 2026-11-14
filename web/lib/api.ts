@@ -3,6 +3,7 @@
 // added on the device (lib/network.ts) because it never leaves their session.
 import digestData from "@/data/digest.json";
 import executivesData from "@/data/executives.json";
+import { toClaim } from "@/lib/claims";
 import { bps as fmtBps, pct as fmtPct } from "@/lib/format";
 import type { DigestEvent } from "@/lib/digest";
 import type { Card, DigestResponse, MetricRow, NumValue, SourceRef } from "@/lib/types";
@@ -176,7 +177,7 @@ export function toCard(e: DigestEvent): Card {
   const t = e.thesis?.[0];
   const assumption = t ? {
     ref: { id: t.id, text: t.text, source: t.source, deadline: t.deadline },
-    stance: t.stance, status: t.status, rationale: t.evidence, epistemic: "CALCULATED" as const,
+    stance: t.stance, status: t.status, claim: toClaim(t), rationale: t.evidence, epistemic: "CALCULATED" as const,
   } : undefined;
   if (e.results?.metrics && Object.keys(e.results.metrics).length) {
     const pc = e.promise_check;
