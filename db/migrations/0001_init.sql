@@ -150,7 +150,7 @@ create table evidence_links (
   rationale text, confidence numeric, created_by text
 );
 
-create table overlaps (
+create table network_overlaps (   -- not "overlaps": OVERLAPS is a reserved word in Postgres
   user_id uuid not null default auth.uid() references auth.users(id) on delete cascade,
   contact_id uuid not null references contacts(id) on delete cascade,
   executive_id uuid not null references executives(id) on delete cascade,
@@ -185,7 +185,7 @@ begin
 
   -- Private vault: own rows only, for every operation.
   foreach t in array array['contacts','contact_stints','theses','assumptions',
-                           'evidence_links','overlaps','event_scores'] loop
+                           'evidence_links','network_overlaps','event_scores'] loop
     execute format('alter table %I enable row level security', t);
     execute format(
       'create policy own_rows on %I for all to authenticated
