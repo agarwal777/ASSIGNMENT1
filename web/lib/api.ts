@@ -9,6 +9,7 @@ import { toClaim } from "@/lib/claims";
 import { DEFAULT_THRESHOLDS, moveEvents, type MovesData, type Thresholds } from "@/lib/moves";
 import { copy } from "@/lib/copy";
 import { bps as fmtBps, pct as fmtPct } from "@/lib/format";
+import { distinctLabels } from "@/lib/sourceLabels";
 import type { DigestEvent } from "@/lib/digest";
 import type { Card, DigestResponse, MetricRow, NumValue, SourceRef, StatTile, Trend } from "@/lib/types";
 
@@ -226,9 +227,9 @@ export function toCard(e: DigestEvent): Card {
   const base = {
     id: e.id, companySymbol: e.symbol, companyName: e.name, category: e.category, at: e.at,
     score: e.score, reasons: e.reasons, question: questionFor(e),
-    sources: [src, ...e.related.slice(0, 1).map((x) => ({ documentId: x.url, label: `${e.symbol}: ${x.title}`, publishedAt: e.at }))]
+    sources: distinctLabels([src, ...e.related.slice(0, 1).map((x) => ({ documentId: x.url, label: `${e.symbol}: ${x.title}`, publishedAt: e.at }))]
       .filter((x): x is SourceRef => !!x && !!x.documentId)
-      .filter((x, i, all) => all.findIndex((y) => y.documentId === x.documentId) === i),   // one link per document
+      .filter((x, i, all) => all.findIndex((y) => y.documentId === x.documentId) === i)),   // one link per document, told apart
   };
   const t = e.thesis?.[0];
   const assumption = t ? {

@@ -7,18 +7,20 @@ import Sheet from "@/components/shell/Sheet";
 import { LATEST_DAY, asOfFor, callOpener, callQuestions, getEvent } from "@/lib/api";
 import { copy } from "@/lib/copy";
 import { date } from "@/lib/format";
-import type { Suggestion } from "@/lib/network";
-import { suggestionsFor } from "@/lib/people";
+import { whoKnows, type Suggestion } from "@/lib/network";
+import { executives, fracYear, orgs, suggestionsFor } from "@/lib/people";
 import { loadNetwork } from "@/lib/vault";
 
 /**
  * Why this person, when you last spoke, three questions and a draft opener (FRONTEND.md §5.5).
+ * Opened from an event (questions about that event) or from Ask's "Who knows" with no event
+ * (`about` is what was searched: questions about that person or organisation).
  * Everything is computed on the device from the investor's own contacts; nothing is sent anywhere.
  */
-export default function CallSheet({ open, onClose, eventId, contactId, day = LATEST_DAY }: {
-  open: boolean; onClose: () => void; eventId: string; contactId: string; day?: string;
+export default function CallSheet({ open, onClose, eventId, about, contactId, day = LATEST_DAY, asOf }: {
+  open: boolean; onClose: () => void; eventId?: string; about?: string; contactId: string; day?: string; asOf?: string;
 }) {
-  const event = getEvent(eventId);
+  const event = eventId ? getEvent(eventId) : undefined;
   const [s, setS] = useState<Suggestion | null | undefined>(undefined); // undefined = loading
   const [copied, setCopied] = useState<"idle" | "done" | "failed">("idle");
   const openerRef = useRef<HTMLParagraphElement>(null);
@@ -40,24 +42,27 @@ export default function CallSheet({ open, onClose, eventId, contactId, day = LAT
     navigator.clipboard.writeText(text).then(() => setCopied("done")).catch(() => { selectIt(); setCopied("failed"); });
   };
 
+  const when = asOf ?? asOfFor(day);
   useEffect(() => {
-    if (!event || !contactId) return;
+    if ((!event && !about) || !contactId) return;
     let live = true;
     loadNetwork()
       .then((contacts) => {
-        const found = suggestionsFor(event.symbol, event.id, contacts, asOfFor(day)).find((x) => x.contact.id === contactId);
-        if (live) setS(found ?? null);
+        const all = event ? suggestionsFor(event.symbol, event.id, contacts, when)
+          : whoKnows(about!, contacts, executives, orgs, fracYear(when));
+        if (live) setS(all.find((x) => x.contact.id === contactId) ?? null);
       })
       .catch(() => { if (live) setS(null); });
     return () => { live = false; };
-  }, [event, contactId, day]);
+  }, [event, about, contactId, when]);
 
   const name = s?.contact.name ?? copy.call.loadingName;
-  const opener = event && s ? callOpener(event, s.contact.name) : "";
+  const opener = !s ? "" : event ? callOpener(event, s.contact.name) : copy.call.aboutOpener(s.contact.name, about!);
+  const questions = !s ? [] : event ? callQuestions(event, s.via) : copy.call.aboutQuestions(about!);
 
   return (
-    <Sheet open={open} onClose={onClose} kicker={copy.call.kicker(event?.symbol ?? "")} title={s === null ? copy.call.notFoundTitle : name}>
-      {!event || s === null ? (
+    <Sheet open={open} onClose={onClose} kicker={copy.call.kicker(event?.symbol ?? about ?? "")} title={s === null ? copy.call.notFoundTitle : name}>
+      {(!event && !about) || s === null ? (
         <p className="text-[15px] text-ink-2">{copy.call.notFound}</p>
       ) : s === undefined ? (
         <div aria-busy="true" className="space-y-2">
@@ -69,13 +74,13 @@ export default function CallSheet({ open, onClose, eventId, contactId, day = LAT
           <h3 className="text-[13px] font-medium text-ink-3">{copy.call.why}</h3>
           <p className="mt-1 text-[15px]">{s.reason}{s.probable && <> <ProbableBadge /></>}</p>
           <p className="mt-1 text-[13px] text-ink-2">
-            {s.contact.lastContacted ? copy.call.lastSpoke(date(s.contact.lastContacted, asOfFor(day))) : copy.call.neverLogged}
+            {s.contact.lastContacted ? copy.call.lastSpoke(date(s.contact.lastContacted, when)) : copy.call.neverLogged}
             {s.keepWarm && <span className="block">{copy.call.reconnect}</span>}
           </p>
 
           <h3 className="mt-4 text-[13px] font-medium text-ink-3">{copy.call.questions}</h3>
           <ol className="mt-1 list-decimal space-y-2 pl-5 text-[15px] leading-[22px]">
-            {callQuestions(event, s.via).map((q) => <li key={q}>{q}</li>)}
+            {questions.map((q) => <li key={q}>{q}</li>)}
           </ol>
 
           <h3 className="mt-4 text-[13px] font-medium text-ink-3">{copy.call.opener}</h3>

@@ -2,7 +2,8 @@
 
 import { useEffect, useMemo, useRef, useState } from "react";
 import { usePathname, useRouter, useSearchParams } from "next/navigation";
-import { Check, CircleDashed, Loader, Minus, Search, X } from "lucide-react";
+import { Check, ChevronRight, CircleDashed, Loader, Minus, Search, X } from "lucide-react";
+import QuarterCharts from "@/components/company/QuarterCharts";
 import SnapshotTable from "@/components/company/SnapshotTable";
 import { ProbableBadge } from "@/components/people/PathLine";
 import Num from "@/components/trust/Num";
@@ -10,6 +11,7 @@ import { copy } from "@/lib/copy";
 import { toQuarterRows, type EnsureEvent, type EnsuredCompany } from "@/lib/ensure";
 import { whoKnows, type Suggestion } from "@/lib/network";
 import { executives, fracYear, orgs } from "@/lib/people";
+import { useSheetNav } from "@/lib/sheet";
 import { useNdjsonStream } from "@/lib/useNdjsonStream";
 import { loadNetwork } from "@/lib/vault";
 
@@ -170,7 +172,11 @@ function Reduced({ c }: { c: EnsuredCompany }) {
           <h3 className="mb-1 text-[13px] font-medium text-ink-2">
             {copy.company.snapshot(rows.length)}{c.basis && <span className="font-normal text-ink-3"> · {copy.company.basis(c.basis)}</span>}
           </h3>
-          <SnapshotTable rows={rows} />
+          <QuarterCharts rows={rows} />
+          <details className="mt-3 rounded-[8px] border border-line">
+            <summary className="flex min-h-11 cursor-pointer items-center px-3 text-[13px] font-medium text-ink-2">{copy.company.allQuarters}</summary>
+            <div className="px-3 pb-2"><SnapshotTable rows={rows} /></div>
+          </details>
           {rows.some((r) => !r.revenueYoy) && <p className="mt-1 text-[12px] text-ink-3">{copy.ask.noYoy}</p>}
         </section>
       )}
@@ -183,6 +189,7 @@ function Reduced({ c }: { c: EnsuredCompany }) {
 function WhoKnows({ asOf, initial }: { asOf: string; initial: string }) {
   const [text, setText] = useState(initial);
   const [found, setFound] = useState<Suggestion[] | null>(null);
+  const { open } = useSheetNav();
   const tooShort = text.trim().length < 2;
   const results = tooShort ? null : found;   // derived, so no state reset inside the effect
   useEffect(() => {
@@ -210,10 +217,17 @@ function WhoKnows({ asOf, initial }: { asOf: string; initial: string }) {
       {results && results.length > 0 && (
         <ol className="mt-3 divide-y divide-line rounded-[12px] border border-line bg-surface">
           {results.slice(0, 8).map((s) => (
-            <li key={s.contact.id} className="px-3 py-2">
-              <p className="text-[15px] font-medium">{s.contact.name}{s.probable && <> <ProbableBadge /></>}</p>
-              <p className="text-[13px] text-ink-2">{s.reason}</p>
-              {s.keepWarm && <p className="text-[13px] text-ink-3">{copy.call.reconnect}</p>}
+            <li key={s.contact.id}>
+              <button type="button" onClick={() => open("call", { contact: s.contact.id, about: text.trim(), at: asOf })}
+                aria-label={copy.people.openCallSheet(s.contact.name)}
+                className="flex min-h-11 w-full items-center gap-2 px-3 py-2 text-left">
+                <span className="min-w-0 flex-1">
+                  <span className="block text-[15px] font-medium">{s.contact.name}{s.probable && <> <ProbableBadge /></>}</span>
+                  <span className="block text-[13px] text-ink-2">{s.reason}</span>
+                  {s.keepWarm && <span className="block text-[13px] text-ink-3">{copy.call.reconnect}</span>}
+                </span>
+                <ChevronRight size={18} aria-hidden className="shrink-0 text-ink-3" />
+              </button>
             </li>
           ))}
         </ol>

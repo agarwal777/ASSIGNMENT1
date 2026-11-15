@@ -28,9 +28,11 @@ export default function SheetHost() {
   const [used, setUsed] = useState(false);
   if (sheet && !used) setUsed(true);
   // Remember the last call so the sheet can animate out after its params leave the URL.
-  const [call, setCall] = useState<{ event: string; contact: string } | null>(null);
-  const ev = q.get("event"), ct = q.get("contact");
-  if (sheet === "call" && ev && ct && (call?.event !== ev || call?.contact !== ct)) setCall({ event: ev, contact: ct });
+  // With an event (Today, Company) or, from Ask's "Who knows", about what was searched.
+  const [call, setCall] = useState<{ event: string; contact: string; about: string } | null>(null);
+  const ev = q.get("event") ?? "", ct = q.get("contact"), ab = q.get("about") ?? "";
+  if (sheet === "call" && ct && (ev || ab) && (call?.event !== ev || call?.contact !== ct || call?.about !== ab))
+    setCall({ event: ev, contact: ct, about: ab });
   const [quote, setQuote] = useState<string | null>(null);
   const pr = q.get("promise");
   if (sheet === "quote" && pr && pr !== quote) setQuote(pr);
@@ -102,8 +104,8 @@ export default function SheetHost() {
       </Sheet>
 
       {call && (
-        <CallSheet open={sheet === "call"} onClose={close} eventId={call.event} contactId={call.contact}
-          day={q.get("date") ?? undefined} />
+        <CallSheet open={sheet === "call"} onClose={close} eventId={call.event || undefined} about={call.about || undefined}
+          contactId={call.contact} day={q.get("date") ?? undefined} asOf={q.get("at") ?? undefined} />
       )}
       {quote && <QuoteSheet open={sheet === "quote"} onClose={close} promiseId={quote} />}
     </>

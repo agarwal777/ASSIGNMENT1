@@ -1,3 +1,4 @@
+import { notFound } from "next/navigation";
 import BulletChart from "@/components/trust/BulletChart";
 import type { Claim } from "@/lib/types";
 import TopBar from "@/components/shell/TopBar";
@@ -29,6 +30,8 @@ const BULLETS: { label: string; claim: Claim }[] = [
 ];
 
 export default function DevCards() {
+  // A review page for building blocks with fixture data: local development only.
+  if (process.env.NODE_ENV === "production") notFound();
   const results = digestFixture.needsYou[0];
   const nums: [string, NumValue, boolean?][] = results.variant === "results"
     ? results.metrics.flatMap((m) => [

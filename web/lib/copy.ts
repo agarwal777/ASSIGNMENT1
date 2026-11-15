@@ -248,6 +248,14 @@ export const copy = {
     copied: "Copied",
     copyFailed: "Couldn't reach the clipboard. The opener is selected: copy it from your keyboard or long-press menu.",
     compliance: "Ask for context and interpretation of public information, never for unpublished price-sensitive information.",
+    // From Ask's "Who knows" (no event): about the person or organisation that was searched.
+    aboutQuestions: (q: string) => [
+      `What should an investor understand about ${q} that isn't in the public filings?`,
+      `What has changed around ${q} in the last year, as far as the industry can see?`,
+      `Who else would you speak to for a view on ${q}?`,
+    ],
+    aboutOpener: (contactName: string, q: string) =>
+      `Hi ${contactName.split(" ")[0]}, hope you're well. I'm looking at ${q} and I'd value your read on the industry context. Do you have 15 minutes this week?`,
     privacy: "Matched on your device from your own contacts (read from your private rows); no server step or model saw them. Demo network: all people are synthetic.",
   },
   people: {

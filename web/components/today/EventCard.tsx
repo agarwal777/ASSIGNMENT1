@@ -1,3 +1,4 @@
+import Link from "next/link";
 import PathLine from "@/components/people/PathLine";
 import PersonChip from "@/components/people/PersonChip";
 import StintList from "@/components/people/StintList";
@@ -28,7 +29,8 @@ export default function EventCard({ card, refDate, networkLoaded = false, review
       className={`rounded-[12px] border border-line bg-surface p-4 transition-opacity ${reviewed ? "opacity-55" : ""}`}>
       {/* 1 · meta */}
       <p className="flex flex-wrap items-center gap-x-1.5 text-[13px] font-medium text-ink-3">
-        <span className="text-ink">{card.companyName}</span>
+        <Link href={`/company/${encodeURIComponent(card.companySymbol)}`}
+          className="-my-3 inline-flex min-h-11 items-center text-ink underline decoration-line underline-offset-4">{card.companyName}</Link>
         <span aria-hidden>·</span>
         <span>{copy.category[card.category] ?? card.category}</span>
         <span aria-hidden>·</span>
