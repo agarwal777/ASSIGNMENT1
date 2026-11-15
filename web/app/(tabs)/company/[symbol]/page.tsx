@@ -12,7 +12,7 @@ import StatusPill from "@/components/trust/StatusPill";
 import Num from "@/components/trust/Num";
 import { SourceLink } from "@/components/trust/SourceLink";
 import { shortName, SNAPSHOT_AS_OF, companySymbols, getCompany, hasLedgerData } from "@/lib/companies";
-import { DATA_TO_DAY } from "@/lib/api";
+import { DATA_TO_DAY, DEFAULT_AS_OF } from "@/lib/api";
 import { copy } from "@/lib/copy";
 import { date, period } from "@/lib/format";
 import type { ThesisItem } from "@/lib/types";
@@ -78,7 +78,7 @@ export default async function CompanyPage({ params }: { params: Promise<{ symbol
         <section aria-labelledby="ledger" className="mt-6">
           <h2 id="ledger" className="scroll-mt-16 text-[13px] font-medium text-ink-2">{copy.company.ledger}</h2>
           {c.ledger.length > 0
-            ? <div className="mt-2"><LedgerTimeline promises={c.ledger} asOf={SNAPSHOT_AS_OF} /></div>
+            ? <div className="mt-2"><LedgerTimeline promises={c.ledger} asOf={DEFAULT_AS_OF} /* the latest brief, as on Today */ /></div>
             : <p className="mt-2 text-[15px] leading-[22px] text-ink-2">{hasLedgerData(c.symbol) ? copy.company.noPromises
               : c.transcripts?.since ? copy.company.transcriptsOffline(shortName(c.name), c.transcripts.count, date(`${c.transcripts.since}T12:00:00+05:30`))
               : copy.company.noTranscripts}</p>}

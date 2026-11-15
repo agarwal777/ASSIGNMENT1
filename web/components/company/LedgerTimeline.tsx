@@ -31,6 +31,7 @@ function target(p: LedgerPromise): string {
   return ["USD", "EUR", "INR"].includes(cur) ? `${cur} ${value} ${rest.join(" ")}` : `${value} ${g.unit}`;
 }
 const month = (iso: string) => new Date(iso).toLocaleDateString("en-IN", { month: "short", year: "numeric" });
+const day = (d: Date) => d.toLocaleDateString("en-IN", { day: "numeric", month: "short", year: "numeric", timeZone: "Asia/Kolkata" });
 
 type Group = { key: string; items: LedgerPromise[]; latest: LedgerPromise };
 
@@ -61,7 +62,7 @@ export default function LedgerTimeline({ promises, asOf }: { promises: LedgerPro
   const ends = promises.map((p) => deadlineDate(p.deadline)?.getTime() ?? new Date(p.saidAt).getTime() + 90 * 864e5);
   const t0 = Math.min(...said), t1 = Math.min(Math.max(...ends, new Date(asOf).getTime()), new Date("2028-03-31").getTime());
   const x = (t: number) => Math.max(0, Math.min(100, ((t - t0) / (t1 - t0 || 1)) * 100));
-  const scale = { x, now: x(new Date(asOf).getTime()) };
+  const scale = { x, now: x(new Date(asOf).getTime()), today: day(new Date(asOf)) };
 
   return (
     <div>
@@ -81,7 +82,7 @@ export default function LedgerTimeline({ promises, asOf }: { promises: LedgerPro
   );
 }
 
-function Row({ g, scale }: { g: Group; scale: { x: (t: number) => number; now: number } }) {
+function Row({ g, scale }: { g: Group; scale: { x: (t: number) => number; now: number; today: string } }) {
   const { open } = useSheetNav();
   const p = g.latest;
   const end = deadlineDate(p.deadline);
@@ -89,10 +90,15 @@ function Row({ g, scale }: { g: Group; scale: { x: (t: number) => number; now: n
   const b = scale.x(end?.getTime() ?? new Date(p.saidAt).getTime() + 90 * 864e5);
   const s = STATUS[p.status];
   const solid = p.status === "met" || p.status === "missed";
+  const metric = `${copy.ledger.metric[p.metric] ?? p.metric}${p.scope !== "company" ? ` (${p.scope})` : ""}`;
+  // The bar as words: what was promised, its status, and the dates the bar spans.
+  const barLabel = copy.ledger.barLabel(metric, target(p), s.label, month(g.items[0].saidAt),
+    end ? `${day(end)} (${fmtPeriod(p.deadline)})` : null, scale.today, g.items.length);
   return (
     <li className="rounded-[8px] px-1 py-1.5">
       <div className="flex items-start justify-between gap-2">
-        <button type="button" onClick={() => open("quote", { promise: p.id })} className="min-h-11 min-w-0 text-left">
+        <button type="button" onClick={() => open("quote", { promise: p.id })} className="min-h-11 min-w-0 text-left"
+          aria-label={copy.ledger.openQuote(metric, target(p), end ? fmtPeriod(p.deadline) : copy.ledger.noDeadline)}>
           <span className="block text-[15px] font-medium leading-5">
             {copy.ledger.metric[p.metric] ?? p.metric}
             {p.scope !== "company" && <span className="font-normal text-ink-3"> · {p.scope}</span>}
@@ -103,7 +109,7 @@ function Row({ g, scale }: { g: Group; scale: { x: (t: number) => number; now: n
         </button>
         <StatusPill status={p.status} />
       </div>
-      <svg viewBox="0 0 100 10" preserveAspectRatio="none" className="mt-1 h-2.5 w-full overflow-visible" aria-hidden>
+      <svg viewBox="0 0 100 10" preserveAspectRatio="none" className="mt-1 h-2.5 w-full overflow-visible" role="img" aria-label={barLabel}>
         <line x1={0} x2={100} y1={5} y2={5} className="stroke-line" strokeWidth={1} vectorEffect="non-scaling-stroke" />
         <rect x={a} y={1.5} width={Math.max(1.5, b - a)} height={7} rx={2}
           className={`${solid ? s.fill : "fill-none"} ${s.stroke}`} strokeWidth={1.5}

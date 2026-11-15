@@ -204,6 +204,9 @@ export const copy = {
     } as Record<string, string>,
     said: (d: string) => `Said ${d}`,
     reiterated: (d: string) => `reiterated ${d}`,
+    barLabel: (metric: string, target: string, status: string, said: string, due: string | null, today: string, n: number) =>
+      `${metric}, ${target}: ${status}. First said ${said}${n > 1 ? ` (${n} statements)` : ""}; ${due ? `deadline ${due}` : "no deadline given"}; today is ${today}.`,
+    openQuote: (metric: string, target: string, due: string) => `${metric}, ${target}, due ${due}: open the quote`,
     revised: (d: string, t: string) => `revised ${d} to ${t}`,
     noTarget: "no number given",
     noneCheckable: "None of management's promises can be checked against reported numbers yet.",
