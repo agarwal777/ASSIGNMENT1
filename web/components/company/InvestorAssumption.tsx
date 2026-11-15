@@ -1,9 +1,11 @@
 "use client";
 
 import { useEffect, useState } from "react";
+import dynamic from "next/dynamic";
 import { useSearchParams } from "next/navigation";
 import { Pencil } from "lucide-react";
-import Sheet from "@/components/shell/Sheet";
+// vaul (~20 KB gzipped) loads when the editor is first opened, not with every Company page.
+const Sheet = dynamic(() => import("@/components/shell/Sheet"));
 import BulletChart from "@/components/trust/BulletChart";
 import StatusPill from "@/components/trust/StatusPill";
 import {

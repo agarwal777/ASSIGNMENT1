@@ -186,7 +186,7 @@ has no cache or cap yet. Both are being added (`docs/reviews/2026-11-15_hardenin
 | Free-text agent | Not built |
 | Assumption editor | Built for one investor assumption per company (metric, condition, target, deadline), saved per user; the edit shows on the Company page only for now |
 | Custom window, WhatsApp share, swipe feedback, service worker, Playwright | Cut for time |
-| JS budget | §12 asked for < 150 KB gzipped; the Next 16 + React 19 framework alone is ≈ 152 KB. `/today` is 217 KB, a Company page 190 KB (`web/scripts/js-budget.mjs`) |
+| JS budget | §12 asked for < 150 KB gzipped on `/today`; **not met**. Every page first loads a 175 KB baseline (Next 16 + React 19 and the root layout, measured as what the bare 404 page loads). `/today` is 255 KB: the baseline plus 80 KB, of which ≈ 39 KB is snapshot data kept in the browser so the date strip and your own alert thresholds work without a server round trip. A Company page is 206 KB (the sheet library now loads on first open: −20 KB), Portfolio 199 KB, Ask 202 KB, Settings 195 KB. Measured 15 Nov 2026 with `npm run budget` after `npm run build` |
 | Overlap scoring | TypeScript in the browser instead of SQL, so the network never leaves the device |
 | Market caps | Size labels are judgement; the yfinance lookup returned nothing |
 
@@ -254,9 +254,9 @@ workers/.venv/Scripts/python workers/build_digest.py && workers/.venv/Scripts/py
 Supabase: run `db/migrations/0001_init.sql`, then `db/seed_network.sql`; enable anonymous sign-ins;
 put the URL and anon key in `web/.env.local`. Gemini (extraction only): `GEMINI_API_KEY` in `.env.local`.
 
-**Tests:** `workers/.venv/Scripts/python -m pytest workers/tests` (34: parser on a real M&M filing,
-EBITDA rules, classifier, alerts, privacy) · `node --test web/scripts/network.test.mjs` (7) ·
-`node --test web/scripts/format.test.mjs` (4) · `node --env-file=web/.env.local web/scripts/rls_test.mjs`.
+**Tests (run by hand; no CI):** `workers/.venv/Scripts/python -m pytest workers/tests` (48) · in `web/`:
+`npm test` (27) · `npm run budget` (JS size of `/today`, after `npm run build`; exits 1 while over budget) ·
+`node --env-file=web/.env.local web/scripts/rls_test.mjs` (row-level security, against the live database).
 
 ## 12. Next
 
