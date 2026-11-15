@@ -140,6 +140,13 @@ WEB_DATA = Path("web/data")
 MOVES_FROM = "2026-08-15"   # ≥ 20 sessions of lookback + 30 for the volume strip before the 31 Oct window
 
 
+def dedupe_key(sym: str, day: str, subject: str | None) -> str:
+    """Company + IST day + subject, lower-cased with punctuation removed: the same disclosure filed on
+    NSE and BSE gets the same key."""
+    subj = re.sub(r"[^a-z0-9]+", " ", (subject or "").lower()).strip()
+    return f"{sym}|{day}|{subj}"
+
+
 def write_moves(syms: set[str], filed_at: dict, names: dict, sector: dict) -> None:
     """Inputs for re-scoring price/volume moves on the device with the investor's own thresholds
     (web/lib/moves.ts mirrors alerts.detect and the move scoring above; a test checks they agree)."""
@@ -214,7 +221,10 @@ def main() -> None:
               "sector": sector.get(sym), "kind": "filing", "category": cat,
               "at": lead["_when"].isoformat() + "+05:30", "title": lead.get("desc"),
               "summary": summary(lead.get("attchmntText")), "url": lead.get("attchmntFile"),
-              "related": [{"title": x.get("desc"), "url": x.get("attchmntFile")} for x in rows[1:]]}
+              "related": [{"title": x.get("desc"), "url": x.get("attchmntFile")} for x in rows[1:]],
+              # Room for a second exchange: where it came from, and a key that matches the same filing on
+              # another exchange (company + day + subject), so adding BSE later is a data change.
+              "source_exchange": "NSE", "dedupe_key": dedupe_key(sym, day, lead.get("desc"))}
         if cat == "management_change":
             if re.search(r"re-?appointment|continuation|redesignat", text, re.I) \
                     and not re.search(r"(?<!re-)(?<!re)appointment of", text, re.I):

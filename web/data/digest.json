@@ -1,5 +1,5 @@
 {
- "generated_at": "2026-11-15T18:15:52",
+ "generated_at": "2026-11-15T18:24:27",
  "default_as_of": "2026-11-06T08:00:00+05:30",
  "scoring_note": "score = (0.35·materiality + 0.25·surprise + 0.30·thesis) / 0.90; your network adds up to 0.10 on your device and only reorders cards. Weights are a starting heuristic",
  "events": [
@@ -15,6 +15,8 @@
    "summary": "Board of Directors at its meeting held on November 14, 2026, declared Interim Dividend of Re. 1 per equity share.",
    "url": "https://nsearchives.nseindia.in/corporate/ASHOKLEYLAND_14112026201537_ALOutcomeofBMNov142026.pdf",
    "related": [],
+   "source_exchange": "NSE",
+   "dedupe_key": "ASHOKLEY|2026-11-14|dividend",
    "components": {
     "M": 0.3,
     "S": 0.0,
@@ -40,6 +42,8 @@
    "summary": "Appointment of Mr. Venkatesan Venkataraman as Additional Director in the category of Non-Executive Non-Independent Director of the company w.e.f. November 14, 2026.",
    "url": "https://nsearchives.nseindia.in/corporate/ASHOKLEYLAND_14112026201346_ALOutcomeofBMNov142026VVAppt.pdf",
    "related": [],
+   "source_exchange": "NSE",
+   "dedupe_key": "ASHOKLEY|2026-11-14|appointment",
    "components": {
     "M": 0.3,
     "S": 0.0,
@@ -65,6 +69,8 @@
    "summary": "Record date for the purpose of Dividend is 20-Nov-2026.",
    "url": "https://nsearchives.nseindia.in/corporate/ASHOKLEYLAND_14112026200910_ALOutcomeofBMNov142026.pdf",
    "related": [],
+   "source_exchange": "NSE",
+   "dedupe_key": "ASHOKLEY|2026-11-14|record date",
    "components": {
     "M": 0.05,
     "S": 0.0,
@@ -90,6 +96,8 @@
    "summary": "Ashok Leyland Limited has submitted to the Exchange, the financial results for the period ended September 30, 2026.",
    "url": "https://nsearchives.nseindia.in/corporate/ASHOKLEYLAND_14112026200621_ALOutcomeofBMNov142026.pdf",
    "related": [],
+   "source_exchange": "NSE",
+   "dedupe_key": "ASHOKLEY|2026-11-14|outcome of board meeting",
    "results": {
     "period": "Q2FY27",
     "basis": "consolidated",
@@ -228,6 +236,8 @@
    "summary": "Copy of Newspaper Publication for Unaudited Financial Results of the Company for the quarter and half year ended 30th September, 2026.",
    "url": "https://nsearchives.nseindia.in/corporate/DEEPAKFERT1_14112026182224_IntimationNewspaperPublication.pdf",
    "related": [],
+   "source_exchange": "NSE",
+   "dedupe_key": "DEEPAKFERT|2026-11-14|copy of newspaper publication",
    "components": {
     "M": 0.05,
     "S": 0.0,
@@ -253,6 +263,8 @@
    "summary": "Investor Presentation",
    "url": "https://nsearchives.nseindia.in/corporate/MEDANTA21_14112026124431_GHLANALYSTSMEETNOVEMBER142026SIGNED.pdf",
    "related": [],
+   "source_exchange": "NSE",
+   "dedupe_key": "MEDANTA|2026-11-14|investor presentation",
    "components": {
     "M": 0.15,
     "S": 0.0,
@@ -278,6 +290,8 @@
    "summary": "Update on ITAT appeal against the Company Outcome of Appeals",
    "url": "https://nsearchives.nseindia.in/corporate/DEEPAKFERT1_14112026122655_Intimation_to_Stock_Exchanges_-_ITAT_Appeal_Outcome_-14112026.pdf",
    "related": [],
+   "source_exchange": "NSE",
+   "dedupe_key": "DEEPAKFERT|2026-11-14|general updates",
    "components": {
     "M": 0.35,
     "S": 0.0,
@@ -308,6 +322,8 @@
      "url": "https://nsearchives.nseindia.in/corporate/TEXRAIL_14112026195553_TexRailReceiptofOrderIVC14112026Signed.pdf"
     }
    ],
+   "source_exchange": "NSE",
+   "dedupe_key": "TEXRAIL|2026-11-14|bagging receiving of orders contracts",
    "components": {
     "M": 0.35,
     "S": 0.0,
@@ -333,6 +349,8 @@
    "summary": "In terms of Regulation 30 read with Para A of Part A of Schedule lll of the Securities and Exchange Board of India (Listing Obligations and Disclosure Requirements) Regulations, 2015, we wish to inform that Conference Call for Investors and Analysts is scheduled to be held on Thursday, 19th November, 2026 at 03.30 P.M. to discuss the Company s Q2 & H1 FY 27 results and the road ahead. The details of the Conference Call are attached herewith.During the aforesaid call, the Management will comment on the Unaudited Financial Results and Operations for the Quarter Ended 30th Sep, 2026 and road ahead.This is for your information and record.",
    "url": "https://nsearchives.nseindia.in/corporate/GRSE_14112026103104_Intimation_Investors_and_Analyst_Meeting_Q2_H1_FY_26_27.pdf",
    "related": [],
+   "source_exchange": "NSE",
+   "dedupe_key": "GRSE|2026-11-14|analysts institutional investor meet con call updates",
    "components": {
     "M": 0.25,
     "S": 0.0,
@@ -358,6 +376,8 @@
    "summary": "'Transfer Of Equity Shares by Mahindra & Mahindra Employees Stock Option Trust to the Stock Option Grantees'.",
    "url": "https://nsearchives.nseindia.in/corporate/Deepak_13112026212813_Employeeslist13112026.pdf",
    "related": [],
+   "source_exchange": "NSE",
+   "dedupe_key": "M&M|2026-11-13|updates",
    "components": {
     "M": 0.35,
     "S": 0.0,
@@ -383,6 +403,8 @@
    "summary": "A press release dated November 13, 2026, titled \"Press Release on Unaudited Financial Results for the quarter and half year ended 30th September 2026\".",
    "url": "https://nsearchives.nseindia.in/corporate/DEEPAKFERT1_13112026205832_Results_Signed_1.pdf",
    "related": [],
+   "source_exchange": "NSE",
+   "dedupe_key": "DEEPAKFERT|2026-11-13|press release",
    "components": {
     "M": 0.35,
     "S": 0.0,
@@ -408,6 +430,8 @@
    "summary": "Investor Presentation",
    "url": "https://nsearchives.nseindia.in/corporate/DEEPAKFERT1_13112026204919_Results_Signed_1.pdf",
    "related": [],
+   "source_exchange": "NSE",
+   "dedupe_key": "DEEPAKFERT|2026-11-13|investor presentation",
    "components": {
     "M": 0.15,
     "S": 0.0,
@@ -433,6 +457,8 @@
    "summary": "Deepak Fertilizers And Petrochemicals Corporation Limited has submitted to the Exchange, the financial results for the quarter and half year ended September 30, 2026.",
    "url": "https://nsearchives.nseindia.in/corporate/DEEPAKFERT1_13112026203559_Results_Signed_1.pdf",
    "related": [],
+   "source_exchange": "NSE",
+   "dedupe_key": "DEEPAKFERT|2026-11-13|outcome of board meeting",
    "components": {
     "M": 0.9,
     "S": 0.0,
@@ -458,6 +484,8 @@
    "summary": "Copy of Newspaper Publication",
    "url": "https://nsearchives.nseindia.in/corporate/MINDAIND1_13112026181423_NWIntimation.pdf",
    "related": [],
+   "source_exchange": "NSE",
+   "dedupe_key": "UNOMINDA|2026-11-13|copy of newspaper publication",
    "components": {
     "M": 0.05,
     "S": 0.0,
@@ -483,6 +511,8 @@
    "summary": "'Change in Registered Office of RTA '.",
    "url": "https://nsearchives.nseindia.in/corporate/THERMAXNSE_13112026165615_SeintimationKFinCorporateofficeshifting.pdf",
    "related": [],
+   "source_exchange": "NSE",
+   "dedupe_key": "THERMAX|2026-11-13|updates",
    "components": {
     "M": 0.35,
     "S": 0.0,
@@ -508,6 +538,8 @@
    "summary": "Schedule of meet",
    "url": "https://nsearchives.nseindia.in/corporate/THERMAXNSE_13112026165232_SEIntimationInvestors_Meet.pdf",
    "related": [],
+   "source_exchange": "NSE",
+   "dedupe_key": "THERMAX|2026-11-13|analysts institutional investor meet con call updates",
    "components": {
     "M": 0.15,
     "S": 0.0,
@@ -533,6 +565,8 @@
    "summary": "Transcript of Conference Call for Q2FY27 Results",
    "url": "https://nsearchives.nseindia.in/corporate/JUBLFOOD_13112026133207_SETranscriptQ2FY27.pdf",
    "related": [],
+   "source_exchange": "NSE",
+   "dedupe_key": "JUBLFOOD|2026-11-13|analysts institutional investor meet con call updates",
    "components": {
     "M": 0.25,
     "S": 0.0,
@@ -558,6 +592,8 @@
    "summary": "Transcript",
    "url": "https://nsearchives.nseindia.in/corporate/NIDHIFADNAVIS_12112026221915_BSENSE_Signed.pdf",
    "related": [],
+   "source_exchange": "NSE",
+   "dedupe_key": "TATASTEEL|2026-11-12|analysts institutional investor meet con call updates",
    "components": {
     "M": 0.25,
     "S": 0.0,
@@ -583,6 +619,8 @@
    "summary": "Transcript",
    "url": "https://nsearchives.nseindia.in/corporate/VOLTAS_RB_12112026215516_SEIntimationtranscriptsigned.pdf",
    "related": [],
+   "source_exchange": "NSE",
+   "dedupe_key": "VOLTAS|2026-11-12|analysts institutional investor meet con call updates",
    "components": {
     "M": 0.25,
     "S": 0.0,
@@ -608,6 +646,8 @@
    "summary": "Schedule of meet",
    "url": "https://nsearchives.nseindia.in/corporate/KEC_12112026182139_AnalystMeetIntimation.pdf",
    "related": [],
+   "source_exchange": "NSE",
+   "dedupe_key": "KEC|2026-11-12|analysts institutional investor meet con call updates",
    "components": {
     "M": 0.15,
     "S": 0.0,
@@ -633,6 +673,8 @@
    "summary": "Participation in Investor Meeting",
    "url": "https://nsearchives.nseindia.in/corporate/AmitDodani_12112026173022_ConclusionofAnalystMeet12112026.pdf",
    "related": [],
+   "source_exchange": "NSE",
+   "dedupe_key": "M&M|2026-11-12|analysts institutional investor meet con call updates",
    "components": {
     "M": 0.15,
     "S": 0.0,
@@ -658,6 +700,8 @@
    "summary": "The Production, Sales and Export figures of the Company for the Month of October 2026",
    "url": "https://nsearchives.nseindia.in/corporate/AmitDodani_12112026171250_MonthlyReportOct2026.pdf",
    "related": [],
+   "source_exchange": "NSE",
+   "dedupe_key": "M&M|2026-11-12|general updates",
    "components": {
     "M": 0.35,
     "S": 0.0,
@@ -683,6 +727,8 @@
    "summary": "Intimation of Schedule of Analyst / Institutional Investor Meeting under the Securities and Exchange Board of India (Listing Obligations and Disclosure Requirements) Regulations, 2015, as amended",
    "url": "https://nsearchives.nseindia.in/corporate/NIDHIFADNAVIS_12112026165318_BSENSE_Signed.pdf",
    "related": [],
+   "source_exchange": "NSE",
+   "dedupe_key": "TATASTEEL|2026-11-12|analysts institutional investor meet con call updates",
    "components": {
     "M": 0.15,
     "S": 0.0,
@@ -770,6 +816,8 @@
    "summary": "Copy of Newspaper Publication pertaining Financial Results for Quarter and half year ended September 30, 2026",
    "url": "https://nsearchives.nseindia.in/corporate/VPTPCL_12112026143001_new3.pdf",
    "related": [],
+   "source_exchange": "NSE",
+   "dedupe_key": "TATAPOWER|2026-11-12|copy of newspaper publication",
    "components": {
     "M": 0.05,
     "S": 0.0,
@@ -795,6 +843,8 @@
    "summary": "A press release dated November 12, 2026, titled \"Lupin Announces European Launch of Biosimilar Ranibizumab\".",
    "url": "https://nsearchives.nseindia.in/corporate/Lupin2_12112026113810_SELetterPressRelease.pdf",
    "related": [],
+   "source_exchange": "NSE",
+   "dedupe_key": "LUPIN|2026-11-12|press release",
    "components": {
     "M": 0.35,
     "S": 0.0,
@@ -820,6 +870,8 @@
    "summary": "Transcript",
    "url": "https://nsearchives.nseindia.in/corporate/THERMAXNSE_12112026093647_SEintimationtranscriptQ2.pdf",
    "related": [],
+   "source_exchange": "NSE",
+   "dedupe_key": "THERMAX|2026-11-12|analysts institutional investor meet con call updates",
    "components": {
     "M": 0.25,
     "S": 0.0,
@@ -845,6 +897,8 @@
    "summary": "Link of Recording",
    "url": "https://nsearchives.nseindia.in/corporate/VPTPCL_11112026203424_Analyst_Call.pdf",
    "related": [],
+   "source_exchange": "NSE",
+   "dedupe_key": "TATAPOWER|2026-11-11|analysts institutional investor meet con call updates",
    "components": {
     "M": 0.25,
     "S": 0.0,
@@ -870,6 +924,8 @@
    "summary": "Appointment of Mr Sanjay Kumar Banga as additional Executive Director of the company w.e.f. November 11, 2026.",
    "url": "https://nsearchives.nseindia.in/corporate/KSTPCL_11112026190124_MD_APPT_-_Reg_30.pdf",
    "related": [],
+   "source_exchange": "NSE",
+   "dedupe_key": "TATAPOWER|2026-11-11|appointment",
    "components": {
     "M": 0.85,
     "S": 0.5,
@@ -895,6 +951,8 @@
    "summary": "Transcript of M&M Analyst Meet Q2F27",
    "url": "https://nsearchives.nseindia.in/corporate/AmitDodani_11112026185839_Intimation_Transcript_Q2F27_Earningscall_05112026.pdf",
    "related": [],
+   "source_exchange": "NSE",
+   "dedupe_key": "M&M|2026-11-11|analysts institutional investor meet con call updates",
    "components": {
     "M": 0.25,
     "S": 0.0,
@@ -920,6 +978,8 @@
    "summary": "Capacity addition",
    "url": "https://nsearchives.nseindia.in/corporate/VPTPCL_11112026174200_Reg_30_Capacity_Addition_Shirwata.pdf",
    "related": [],
+   "source_exchange": "NSE",
+   "dedupe_key": "TATAPOWER|2026-11-11|capacity addition",
    "components": {
     "M": 0.7,
     "S": 0.0,
@@ -950,6 +1010,8 @@
      "url": "https://nsearchives.nseindia.in/corporate/VPTPCL_11112026192204_Regulation_30_KMP.pdf"
     }
    ],
+   "source_exchange": "NSE",
+   "dedupe_key": "TATAPOWER|2026-11-11|press release",
    "components": {
     "M": 0.35,
     "S": 0.0,
@@ -975,6 +1037,8 @@
    "summary": "A press release dated November 11, 2026, titled \"Press Release Performance Review of Q2 & H1 FY27 - GRSE Strengthens Financial Performance, Registers Impressive Growth in Q2 & H1 FY27\".",
    "url": "https://nsearchives.nseindia.in/corporate/GRSE_11112026173726_Press_Release_for_Q2_FY_2026-27.pdf",
    "related": [],
+   "source_exchange": "NSE",
+   "dedupe_key": "GRSE|2026-11-11|press release",
    "components": {
     "M": 0.35,
     "S": 0.0,
@@ -1000,6 +1064,8 @@
    "summary": "Tata Power Company Limited has submitted to the Exchange, the financial results for the period ended September 30, 2026.",
    "url": "https://nsearchives.nseindia.in/corporate/VPTPCL_11112026172001_outcome_final.pdf",
    "related": [],
+   "source_exchange": "NSE",
+   "dedupe_key": "TATAPOWER|2026-11-11|outcome of board meeting",
    "results": {
     "period": "Q2FY27",
     "basis": "consolidated",
@@ -1142,6 +1208,8 @@
    "summary": "Link of Recording",
    "url": "https://nsearchives.nseindia.in/corporate/TEXRAIL_11112026171217_TexRailAudioRecording11112026Signed.pdf",
    "related": [],
+   "source_exchange": "NSE",
+   "dedupe_key": "TEXRAIL|2026-11-11|analysts institutional investor meet con call updates",
    "components": {
     "M": 0.25,
     "S": 0.0,
@@ -1603,6 +1671,8 @@
    "summary": "Transcript of Earnings Call held on November 05, 2026",
    "url": "https://nsearchives.nseindia.in/corporate/MINDAIND1_11112026151509_Intimationcovering_transcript.pdf",
    "related": [],
+   "source_exchange": "NSE",
+   "dedupe_key": "UNOMINDA|2026-11-11|analysts institutional investor meet con call updates",
    "components": {
     "M": 0.25,
     "S": 0.0,
@@ -1628,6 +1698,8 @@
    "summary": "Schedule of meet",
    "url": "https://nsearchives.nseindia.in/corporate/AmitDodani_11112026145521_UpcomingAnalystMeet16112026.pdf",
    "related": [],
+   "source_exchange": "NSE",
+   "dedupe_key": "M&M|2026-11-11|analysts institutional investor meet con call updates",
    "components": {
     "M": 0.15,
     "S": 0.0,
@@ -1653,6 +1725,8 @@
    "summary": "Schedule of meet",
    "url": "https://nsearchives.nseindia.in/corporate/SUDARSCHEM_11112026144820_SUDARSHANCallInvite13112026Signed.pdf",
    "related": [],
+   "source_exchange": "NSE",
+   "dedupe_key": "SUDARSCHEM|2026-11-11|analysts institutional investor meet con call updates",
    "components": {
     "M": 0.15,
     "S": 0.0,
@@ -1683,6 +1757,8 @@
      "url": "https://nsearchives.nseindia.in/corporate/GRSE_11112026153634_GRSE_-_Unaudited_Financial_Results_-_Q2_FY_26-27.pdf"
     }
    ],
+   "source_exchange": "NSE",
+   "dedupe_key": "GRSE|2026-11-11|outcome of board meeting",
    "results": {
     "period": "Q2FY27",
     "basis": "standalone",
@@ -1820,6 +1896,8 @@
    "summary": "Grant of 6488790 Options.",
    "url": "https://nsearchives.nseindia.in/corporate/VPTPCL_11112026134527_ESOP_Grant_SE_letter_1126.pdf",
    "related": [],
+   "source_exchange": "NSE",
+   "dedupe_key": "TATAPOWER|2026-11-11|esop esos esps",
    "components": {
     "M": 0.05,
     "S": 0.0,
@@ -1845,6 +1923,8 @@
    "summary": "Transcript",
    "url": "https://nsearchives.nseindia.in/corporate/AUROPHARMA_11112026130442_LtrToSEsTranscriptEarningCall11112026.pdf",
    "related": [],
+   "source_exchange": "NSE",
+   "dedupe_key": "AUROPHARMA|2026-11-11|analysts institutional investor meet con call updates",
    "components": {
     "M": 0.25,
     "S": 0.0,
@@ -1870,6 +1950,8 @@
    "summary": "Schedule of meet",
    "url": "https://nsearchives.nseindia.in/corporate/MINDAIND1_11112026124637_Intimation11112026.pdf",
    "related": [],
+   "source_exchange": "NSE",
+   "dedupe_key": "UNOMINDA|2026-11-11|analysts institutional investor meet con call updates",
    "components": {
     "M": 0.15,
     "S": 0.0,
@@ -1900,6 +1982,8 @@
      "url": "https://nsearchives.nseindia.in/corporate/AUROPHARMA_11112026203007_LtrToSEsLannetUSFDA11112026.pdf"
     }
    ],
+   "source_exchange": "NSE",
+   "dedupe_key": "AUROPHARMA|2026-11-11|general updates",
    "components": {
     "M": 0.8,
     "S": 0.3,
@@ -1930,6 +2014,8 @@
      "url": "https://nsearchives.nseindia.in/corporate/VPTPCL_11112026173256_Analyst_Presentation_Q2_FY27.pdf"
     }
    ],
+   "source_exchange": "NSE",
+   "dedupe_key": "TATAPOWER|2026-11-11|analysts institutional investor meet con call updates",
    "components": {
     "M": 0.15,
     "S": 0.0,
@@ -1955,6 +2041,8 @@
    "summary": "Investor Presentation for the quarter and half year ended 30th September, 2026",
    "url": "https://nsearchives.nseindia.in/corporate/TEXRAIL_11112026095643_EarningsPresentation11112026SIGNED.pdf",
    "related": [],
+   "source_exchange": "NSE",
+   "dedupe_key": "TEXRAIL|2026-11-11|general updates",
    "components": {
     "M": 0.35,
     "S": 0.0,
@@ -1980,6 +2068,8 @@
    "summary": "Schedule of Earnings Call",
    "url": "https://nsearchives.nseindia.in/corporate/ASHOKLEYLAND_10112026185030_45Earningsconcallintimation_16Nov26PDF.pdf",
    "related": [],
+   "source_exchange": "NSE",
+   "dedupe_key": "ASHOKLEY|2026-11-10|analysts institutional investor meet con call updates",
    "components": {
     "M": 0.25,
     "S": 0.0,
@@ -2018,6 +2108,8 @@
      "url": "https://nsearchives.nseindia.in/corporate/MEDANTA21_10112026160319_GHLANALYSTSMEETNOVEMBER102026SIGNED.pdf"
     }
    ],
+   "source_exchange": "NSE",
+   "dedupe_key": "MEDANTA|2026-11-10|analysts institutional investor meet con call updates",
    "components": {
     "M": 0.15,
     "S": 0.0,
@@ -2043,6 +2135,8 @@
    "summary": "Incorporation of new step-down wholly owned subsidiary of the Company.",
    "url": "https://nsearchives.nseindia.in/corporate/DEEPAKFERT1_10112026143149_SE_-_Intimation_-_MNSL.pdf",
    "related": [],
+   "source_exchange": "NSE",
+   "dedupe_key": "DEEPAKFERT|2026-11-10|acquisition",
    "components": {
     "M": 0.85,
     "S": 0.0,
@@ -2068,6 +2162,8 @@
    "summary": "Transcript",
    "url": "https://nsearchives.nseindia.in/corporate/NCC_10112026121249_Transcript_10Nov26.pdf",
    "related": [],
+   "source_exchange": "NSE",
+   "dedupe_key": "NCC|2026-11-10|analysts institutional investor meet con call updates",
    "components": {
     "M": 0.25,
     "S": 0.0,
@@ -2093,6 +2189,8 @@
    "summary": "Transcript",
    "url": "https://nsearchives.nseindia.in/corporate/MEDANTA21_10112026114048_GHLTRANSCRIPTSINTNOV2026SIGNED.pdf",
    "related": [],
+   "source_exchange": "NSE",
+   "dedupe_key": "MEDANTA|2026-11-10|analysts institutional investor meet con call updates",
    "components": {
     "M": 0.25,
     "S": 0.0,
@@ -2118,6 +2216,8 @@
    "summary": "Cessation of Mr Harsh Mariwala as Non- Executive Independent Director of the company w.e.f. November 09, 2026.",
    "url": "https://nsearchives.nseindia.in/corporate/THERMAXNSE_09112026183820_SEIntimation_HCM_Cessation.pdf",
    "related": [],
+   "source_exchange": "NSE",
+   "dedupe_key": "THERMAX|2026-11-09|cessation",
    "components": {
     "M": 0.3,
     "S": 0.0,
@@ -2143,6 +2243,8 @@
    "summary": "Retirement",
    "url": "https://nsearchives.nseindia.in/corporate/THERMAXNSE_09112026183642_SEIntimation_HCM_Cessation.pdf",
    "related": [],
+   "source_exchange": "NSE",
+   "dedupe_key": "THERMAX|2026-11-09|retirement",
    "components": {
     "M": 0.05,
     "S": 0.0,
@@ -2485,6 +2587,8 @@
      "url": "https://nsearchives.nseindia.in/corporate/AUROPHARMA_09112026144815_LtrToSEsInvestorMeetAvendus17112026JMfin09112026.pdf"
     }
    ],
+   "source_exchange": "NSE",
+   "dedupe_key": "AUROPHARMA|2026-11-09|analysts institutional investor meet con call updates",
    "components": {
     "M": 0.15,
     "S": 0.0,
@@ -2510,6 +2614,8 @@
    "summary": "Newspaper Advertisement Disclosure under Regulation 30 of the Securities and Exchange Board of India (Listing Obligations and Disclosure Requirements) Regulations, 2015 ( SEBI Listing Regulations )",
    "url": "https://nsearchives.nseindia.in/corporate/NIDHIFADNAVIS_09112026141442_BSENSE_Signed.pdf",
    "related": [],
+   "source_exchange": "NSE",
+   "dedupe_key": "TATASTEEL|2026-11-09|copy of newspaper publication",
    "components": {
     "M": 0.05,
     "S": 0.0,
@@ -2535,6 +2641,8 @@
    "summary": "Copy of Newspaper Publication",
    "url": "https://nsearchives.nseindia.in/corporate/SUDARSCHEM_09112026102418_Q2FY27NewspaperAdvtSigned.pdf",
    "related": [],
+   "source_exchange": "NSE",
+   "dedupe_key": "SUDARSCHEM|2026-11-09|copy of newspaper publication",
    "components": {
     "M": 0.05,
     "S": 0.0,
@@ -2560,6 +2668,8 @@
    "summary": "General Updates",
    "url": "https://nsearchives.nseindia.in/corporate/VPTPCL_07112026184018_reg_30_07-11-2026.pdf",
    "related": [],
+   "source_exchange": "NSE",
+   "dedupe_key": "TATAPOWER|2026-11-07|general updates",
    "components": {
     "M": 0.35,
     "S": 0.0,
@@ -2585,6 +2695,8 @@
    "summary": "Link of Recording",
    "url": "https://nsearchives.nseindia.in/corporate/SAKSHIKAPUR_07112026165801_BSENSE_Signed.pdf",
    "related": [],
+   "source_exchange": "NSE",
+   "dedupe_key": "TATASTEEL|2026-11-07|analysts institutional investor meet con call updates",
    "components": {
     "M": 0.25,
     "S": 0.0,
@@ -2610,6 +2722,8 @@
    "summary": "Acquisition of 38,222 equity shares of face value &#8377;10/- each in Creative Port Development Private Limited ( CPDPL ) due to conversion of 25,10,830 Optionally Convertible Redeemable Preference Shares of CPDPL, as per terms of issue",
    "url": "https://nsearchives.nseindia.in/corporate/NIDHIFADNAVIS_07112026154336_NSEBSE_CPDPL.pdf",
    "related": [],
+   "source_exchange": "NSE",
+   "dedupe_key": "TATASTEEL|2026-11-07|acquisition",
    "components": {
     "M": 0.85,
     "S": 0.0,
@@ -2635,6 +2749,8 @@
    "summary": "Copy of Newspaper Publication on Notice of Postal Ballot and information related to remote e-voting",
    "url": "https://nsearchives.nseindia.in/corporate/KEC_07112026143922_SEIntimation_Newspaper.pdf",
    "related": [],
+   "source_exchange": "NSE",
+   "dedupe_key": "KEC|2026-11-07|copy of newspaper publication",
    "components": {
     "M": 0.05,
     "S": 0.0,
@@ -2660,6 +2776,8 @@
    "summary": "Copy of Newspaper Publication",
    "url": "https://nsearchives.nseindia.in/corporate/JUBLFOOD_07112026134253_SEintimationforNewspaperPublication06112026.pdf",
    "related": [],
+   "source_exchange": "NSE",
+   "dedupe_key": "JUBLFOOD|2026-11-07|copy of newspaper publication",
    "components": {
     "M": 0.05,
     "S": 0.0,
@@ -2685,6 +2803,8 @@
    "summary": "Investor Presentation",
    "url": "https://nsearchives.nseindia.in/corporate/NIDHIFADNAVIS_07112026132213_BSENSEPRANDIR.pdf",
    "related": [],
+   "source_exchange": "NSE",
+   "dedupe_key": "TATASTEEL|2026-11-07|investor presentation",
    "components": {
     "M": 0.15,
     "S": 0.0,
@@ -2715,6 +2835,8 @@
      "url": "https://nsearchives.nseindia.in/corporate/NIDHIFADNAVIS_07112026134209_Outcome_of_BM.pdf"
     }
    ],
+   "source_exchange": "NSE",
+   "dedupe_key": "TATASTEEL|2026-11-07|press release",
    "components": {
     "M": 0.35,
     "S": 0.0,
@@ -2745,6 +2867,8 @@
      "url": "https://nsearchives.nseindia.in/corporate/NIDHIFADNAVIS_07112026134722_Outcome_of_BM.pdf"
     }
    ],
+   "source_exchange": "NSE",
+   "dedupe_key": "TATASTEEL|2026-11-07|retirement",
    "components": {
     "M": 0.05,
     "S": 0.0,
@@ -2770,6 +2894,8 @@
    "summary": "Tata Steel Limited has submitted to the Exchange, the financial results for the quarter and half year ended September 30, 2026.",
    "url": "https://nsearchives.nseindia.in/corporate/NIDHIFADNAVIS_07112026130531_BOARDOUTCOME-NOV7.pdf",
    "related": [],
+   "source_exchange": "NSE",
+   "dedupe_key": "TATASTEEL|2026-11-07|outcome of board meeting",
    "results": {
     "period": "Q2FY27",
     "basis": "consolidated",
@@ -2909,6 +3035,8 @@
    "summary": "Link of Recording",
    "url": "https://nsearchives.nseindia.in/corporate/VOLTAS_RB_06112026211403_SEIntimationAudioRecording.pdf",
    "related": [],
+   "source_exchange": "NSE",
+   "dedupe_key": "VOLTAS|2026-11-06|analysts institutional investor meet con call updates",
    "components": {
     "M": 0.25,
     "S": 0.0,
@@ -2934,6 +3062,8 @@
    "summary": "Transcript of Q2 FY2027 Earnings Conference Call.",
    "url": "https://nsearchives.nseindia.in/corporate/Lupin2_06112026203743_SE_Intimation_of_Investor_Meet_Transcript.pdf",
    "related": [],
+   "source_exchange": "NSE",
+   "dedupe_key": "LUPIN|2026-11-06|analysts institutional investor meet con call updates",
    "components": {
     "M": 0.25,
     "S": 0.0,
@@ -2959,6 +3089,8 @@
    "summary": "Schedule of meet",
    "url": "https://nsearchives.nseindia.in/corporate/DEEPAKFERT1_06112026191353_IntimationEarningsCall.pdf",
    "related": [],
+   "source_exchange": "NSE",
+   "dedupe_key": "DEEPAKFERT|2026-11-06|analysts institutional investor meet con call updates",
    "components": {
     "M": 0.15,
     "S": 0.0,
@@ -2984,6 +3116,8 @@
    "summary": "Audio recording of Conference Call",
    "url": "https://nsearchives.nseindia.in/corporate/JUBLFOOD_06112026182730_CoveringAudioRecordingQ2FY26.pdf",
    "related": [],
+   "source_exchange": "NSE",
+   "dedupe_key": "JUBLFOOD|2026-11-06|analysts institutional investor meet con call updates",
    "components": {
     "M": 0.25,
     "S": 0.0,
@@ -3009,6 +3143,8 @@
    "summary": "The Notice of Postal Ballot is enclosed herewith",
    "url": "https://nsearchives.nseindia.in/corporate/KEC_06112026181927_SEPostalBallotIntimation.pdf",
    "related": [],
+   "source_exchange": "NSE",
+   "dedupe_key": "KEC|2026-11-06|shareholders meeting",
    "components": {
     "M": 0.15,
     "S": 0.0,
@@ -3034,6 +3170,8 @@
    "summary": "Investor Presentation",
    "url": "https://nsearchives.nseindia.in/corporate/VOLTAS_RB_06112026180943_SEIntimationsigned.pdf",
    "related": [],
+   "source_exchange": "NSE",
+   "dedupe_key": "VOLTAS|2026-11-06|investor presentation",
    "components": {
     "M": 0.15,
     "S": 0.0,
@@ -3059,6 +3197,8 @@
    "summary": "A press release dated November 06, 2026, titled \"Voltas Delivers Steady Q2 FY27 Performance, on the back of market leadership and Execution Excellence\".",
    "url": "https://nsearchives.nseindia.in/corporate/VOLTAS_RB_06112026174401_01_Financial_Results_signed.pdf",
    "related": [],
+   "source_exchange": "NSE",
+   "dedupe_key": "VOLTAS|2026-11-06|press release",
    "components": {
     "M": 0.35,
     "S": 0.0,
@@ -3097,6 +3237,8 @@
      "url": "https://nsearchives.nseindia.in/corporate/VOLTAS_RB_06112026171132_02SE_Directorssigned.pdf"
     }
    ],
+   "source_exchange": "NSE",
+   "dedupe_key": "VOLTAS|2026-11-06|appointment",
    "components": {
     "M": 0.85,
     "S": 0.5,
@@ -3128,6 +3270,8 @@
      "url": "https://nsearchives.nseindia.in/corporate/VOLTAS_RB_06112026171317_02SE_Directorssigned.pdf"
     }
    ],
+   "source_exchange": "NSE",
+   "dedupe_key": "VOLTAS|2026-11-06|change in auditors",
    "components": {
     "M": 0.05,
     "S": 0.0,
@@ -3162,6 +3306,8 @@
      "url": "https://nsearchives.nseindia.in/corporate/VOLTAS_RB_06112026165554_02SE_Directorssigned.pdf"
     }
    ],
+   "source_exchange": "NSE",
+   "dedupe_key": "VOLTAS|2026-11-06|outcome of board meeting",
    "results": {
     "period": "Q2FY27",
     "basis": "consolidated",
@@ -3323,6 +3469,8 @@
      "url": "https://nsearchives.nseindia.in/corporate/JUBLFOOD_ROID_104150_KMP_Doc.zip"
     }
    ],
+   "source_exchange": "NSE",
+   "dedupe_key": "JUBLFOOD|2026-11-06|resignation",
    "components": {
     "M": 0.3,
     "S": 0.0,
@@ -3348,6 +3496,8 @@
    "summary": "Link of Recording of the Conference call held today.",
    "url": "https://nsearchives.nseindia.in/corporate/NCC_06112026160507_Audio_Recording_of_the_Coference_call.pdf",
    "related": [],
+   "source_exchange": "NSE",
+   "dedupe_key": "NCC|2026-11-06|analysts institutional investor meet con call updates",
    "components": {
     "M": 0.25,
     "S": 0.0,
@@ -3373,6 +3523,8 @@
    "summary": "Transcript of the Earnings Conference Call held on Tuesday, November 03, 2026, for the Unaudited Financial Results of the Company for the quarter and half year ended September 30, 2026, has been made available on the Company's website.",
    "url": "https://nsearchives.nseindia.in/corporate/KEC_06112026155134_SE_Intimation_Transcript.pdf",
    "related": [],
+   "source_exchange": "NSE",
+   "dedupe_key": "KEC|2026-11-06|analysts institutional investor meet con call updates",
    "components": {
     "M": 0.25,
     "S": 0.0,
@@ -3398,6 +3550,8 @@
    "summary": "Acquisition",
    "url": "https://nsearchives.nseindia.in/corporate/AmitDodani_06112026153559_SEIntimationSMLRightsIssue.pdf",
    "related": [],
+   "source_exchange": "NSE",
+   "dedupe_key": "M&M|2026-11-06|acquisition",
    "components": {
     "M": 0.85,
     "S": 0.0,
@@ -3797,6 +3951,8 @@
    "summary": "Letter to Shareholders on Financial Results",
    "url": "https://nsearchives.nseindia.in/corporate/JUBLFOOD_06112026152646_LettertoShareholders.pdf",
    "related": [],
+   "source_exchange": "NSE",
+   "dedupe_key": "JUBLFOOD|2026-11-06|general updates",
    "components": {
     "M": 0.35,
     "S": 0.0,
@@ -3822,6 +3978,8 @@
    "summary": "Change in Auditors of the company.",
    "url": "https://nsearchives.nseindia.in/corporate/JUBLFOOD_06112026152348_SEIntimationAuditorAppointment.pdf",
    "related": [],
+   "source_exchange": "NSE",
+   "dedupe_key": "JUBLFOOD|2026-11-06|change in auditors",
    "components": {
     "M": 0.05,
     "S": 0.0,
@@ -3847,6 +4005,8 @@
    "summary": "Jubilant Foodworks Limited has submitted to the Exchange, the financial results for the period ended September 30, 2026.",
    "url": "https://nsearchives.nseindia.in/corporate/JUBLFOOD_06112026152011_FOutcome_of_BM.pdf",
    "related": [],
+   "source_exchange": "NSE",
+   "dedupe_key": "JUBLFOOD|2026-11-06|outcome of board meeting",
    "results": {
     "period": "Q2FY27",
     "basis": "consolidated",
@@ -3989,6 +4149,8 @@
      "url": "https://nsearchives.nseindia.in/corporate/SUDARSCHEM_06112026145629_SUDARSHANInvestorPresentationSept2026SIGNED.pdf"
     }
    ],
+   "source_exchange": "NSE",
+   "dedupe_key": "SUDARSCHEM|2026-11-06|investor presentation",
    "components": {
     "M": 0.15,
     "S": 0.0,
@@ -4014,6 +4176,8 @@
    "summary": "Copy of Newspaper Publication",
    "url": "https://nsearchives.nseindia.in/corporate/NCC_06112026144639_Newpaper_publication_6Nov26.pdf",
    "related": [],
+   "source_exchange": "NSE",
+   "dedupe_key": "NCC|2026-11-06|copy of newspaper publication",
    "components": {
     "M": 0.05,
     "S": 0.0,
@@ -4039,6 +4203,8 @@
    "summary": "Copy of Newspaper Publication",
    "url": "https://nsearchives.nseindia.in/corporate/THERMAXNSE_06112026144004_TL_NewspaperAdv_Q2.pdf",
    "related": [],
+   "source_exchange": "NSE",
+   "dedupe_key": "THERMAX|2026-11-06|copy of newspaper publication",
    "components": {
     "M": 0.05,
     "S": 0.0,
@@ -4064,6 +4230,8 @@
    "summary": "Link of Recording",
    "url": "https://nsearchives.nseindia.in/corporate/THERMAXNSE_06112026143413_TL_Audiorecordinginvestorcall_Q2.pdf",
    "related": [],
+   "source_exchange": "NSE",
+   "dedupe_key": "THERMAX|2026-11-06|analysts institutional investor meet con call updates",
    "components": {
     "M": 0.25,
     "S": 0.0,
@@ -4089,6 +4257,8 @@
    "summary": "Authorized Officials to Determine Materiality of an Event or Information",
    "url": "https://nsearchives.nseindia.in/corporate/SUDARSCHEM_06112026141937_SUDARSHANOutcomeofBM06112026_v1SIGNED.pdf",
    "related": [],
+   "source_exchange": "NSE",
+   "dedupe_key": "SUDARSCHEM|2026-11-06|general updates",
    "components": {
     "M": 0.35,
     "S": 0.0,
@@ -4119,6 +4289,8 @@
      "url": "https://nsearchives.nseindia.in/corporate/SUDARSCHEM_06112026142223_SUDARSHAN-DisclosureunderReg30-ESOPGrantintimationSIGNED.pdf"
     }
    ],
+   "source_exchange": "NSE",
+   "dedupe_key": "SUDARSCHEM|2026-11-06|change in company secretary compliance officer",
    "components": {
     "M": 0.05,
     "S": 0.0,
@@ -4144,6 +4316,8 @@
    "summary": "Appointment of Mr Amit Deshpande as Company Secretary & Compliance Officer of the company w.e.f. November 06, 2026.",
    "url": "https://nsearchives.nseindia.in/corporate/SUDARSCHEM_06112026141412_SUDARSHANOutcomeofBM06112026_v1SIGNED.pdf",
    "related": [],
+   "source_exchange": "NSE",
+   "dedupe_key": "SUDARSCHEM|2026-11-06|appointment",
    "components": {
     "M": 0.3,
     "S": 0.0,
@@ -4169,6 +4343,8 @@
    "summary": "Sudarshan Chemical Industries Limited has submitted to the Exchange, the financial results for the period ended September 30, 2026.",
    "url": "https://nsearchives.nseindia.in/corporate/SUDARSCHEM_06112026140757_SUDARSHANOutcomeofBM06112026_v1SIGNED.pdf",
    "related": [],
+   "source_exchange": "NSE",
+   "dedupe_key": "SUDARSCHEM|2026-11-06|outcome of board meeting",
    "results": {
     "period": "Q2FY27",
     "basis": "consolidated",
@@ -4309,6 +4485,8 @@
    "summary": "Copy of financial results published in newspapers.",
    "url": "https://nsearchives.nseindia.in/corporate/AUROPHARMA_06112026112647_LtrToSEsQ2UFRpublished06112026.pdf",
    "related": [],
+   "source_exchange": "NSE",
+   "dedupe_key": "AUROPHARMA|2026-11-06|copy of newspaper publication",
    "components": {
     "M": 0.05,
     "S": 0.0,
@@ -4334,6 +4512,8 @@
    "summary": "Copy of Newspaper clippings for the publication of unaudited standalone and consolidated financial results of the Company for the quarter and half year ended on September 30, 2026.",
    "url": "https://nsearchives.nseindia.in/corporate/MINDAIND1_06112026110550_Intimation_Newspaper_publication.pdf",
    "related": [],
+   "source_exchange": "NSE",
+   "dedupe_key": "UNOMINDA|2026-11-06|copy of newspaper publication",
    "components": {
     "M": 0.05,
     "S": 0.0,
@@ -4359,6 +4539,8 @@
    "summary": "Copy of Newspaper Publication",
    "url": "https://nsearchives.nseindia.in/corporate/ferozebaria_06112026105344_IntimationofNewspaperPublication06112026.pdf",
    "related": [],
+   "source_exchange": "NSE",
+   "dedupe_key": "M&M|2026-11-06|copy of newspaper publication",
    "components": {
     "M": 0.05,
     "S": 0.0,
@@ -4384,6 +4566,8 @@
    "summary": "Receipt of Orders worth Rs. 428.55 Crores in aggregate (incl. taxes) from Ultratech Cement Ltd, Jujhar Logistics & Travels Ltd and APL Logistics Vascor Automotive Pvt. Ltd.",
    "url": "https://nsearchives.nseindia.in/corporate/TEXRAIL_05112026212458_OrderUJA05112026Signed.pdf",
    "related": [],
+   "source_exchange": "NSE",
+   "dedupe_key": "TEXRAIL|2026-11-05|bagging receiving of orders contracts",
    "components": {
     "M": 0.35,
     "S": 0.0,
@@ -4409,6 +4593,8 @@
    "summary": "Link of Audio-Video recording of M&M Analyst Meet Q2FY27 Earnings Conference Call",
    "url": "https://nsearchives.nseindia.in/corporate/AmitDodani_05112026203607_IntimationofAudiorecordingofanalystmeet_Q2F27_05112026.pdf",
    "related": [],
+   "source_exchange": "NSE",
+   "dedupe_key": "M&M|2026-11-05|analysts institutional investor meet con call updates",
    "components": {
     "M": 0.25,
     "S": 0.0,
@@ -4434,6 +4620,8 @@
    "summary": "Link of Recording of the earnings call held today i.e. November 05, 2026.",
    "url": "https://nsearchives.nseindia.in/corporate/MINDAIND1_05112026202917_Intimation_Audio_call.pdf",
    "related": [],
+   "source_exchange": "NSE",
+   "dedupe_key": "UNOMINDA|2026-11-05|analysts institutional investor meet con call updates",
    "components": {
     "M": 0.25,
     "S": 0.0,
@@ -4459,6 +4647,8 @@
    "summary": "Presentation",
    "url": "https://nsearchives.nseindia.in/corporate/NCC_05112026200150_Disclosure_of_Investor_Presentation.pdf",
    "related": [],
+   "source_exchange": "NSE",
+   "dedupe_key": "NCC|2026-11-05|analysts institutional investor meet con call updates",
    "components": {
     "M": 0.15,
     "S": 0.0,
@@ -4484,6 +4674,8 @@
    "summary": "Investor Presentation",
    "url": "https://nsearchives.nseindia.in/corporate/THERMAXNSE_05112026181951_SEintimationInvestorPrez.pdf",
    "related": [],
+   "source_exchange": "NSE",
+   "dedupe_key": "THERMAX|2026-11-05|investor presentation",
    "components": {
     "M": 0.15,
     "S": 0.0,
@@ -4518,6 +4710,8 @@
      "url": "https://nsearchives.nseindia.in/corporate/NCC_05112026181742_Outcome_of_the_Board_Meeting.pdf"
     }
    ],
+   "source_exchange": "NSE",
+   "dedupe_key": "NCC|2026-11-05|appointment",
    "components": {
     "M": 0.35,
     "S": 0.0,
@@ -4548,6 +4742,8 @@
      "url": "https://nsearchives.nseindia.in/corporate/ASHOKLEYLAND_05112026180822_44ALupdatesonHLFL.pdf"
     }
    ],
+   "source_exchange": "NSE",
+   "dedupe_key": "ASHOKLEY|2026-11-05|other restructuring",
    "components": {
     "M": 0.85,
     "S": 0.0,
@@ -4573,6 +4769,8 @@
    "summary": "Thermax Limited has submitted to the Exchange, the financial results for the period ended September 30, 2026.",
    "url": "https://nsearchives.nseindia.in/corporate/THERMAXNSE_05112026180056_SEIntimationBMOutcome.pdf",
    "related": [],
+   "source_exchange": "NSE",
+   "dedupe_key": "THERMAX|2026-11-05|outcome of board meeting",
    "results": {
     "period": "Q2FY27",
     "basis": "consolidated",
@@ -4710,6 +4908,8 @@
    "summary": "The Amendment to AOA/MOA of the company.",
    "url": "https://nsearchives.nseindia.in/corporate/NCC_05112026180022_Outcome_of_the_Board_Meeting.pdf",
    "related": [],
+   "source_exchange": "NSE",
+   "dedupe_key": "NCC|2026-11-05|amendment to aoa moa",
    "components": {
     "M": 0.05,
     "S": 0.0,
@@ -4735,6 +4935,8 @@
    "summary": "Incorporation of a wholly owned subsidiary company limited by guarantee under Section 8 of the Companies Act, 2013 viz Prayas Institute for Future Readiness",
    "url": "https://nsearchives.nseindia.in/corporate/DEEPAKFERT2_05112026174040_IntimationPrayas.pdf",
    "related": [],
+   "source_exchange": "NSE",
+   "dedupe_key": "DEEPAKFERT|2026-11-05|acquisition",
    "components": {
     "M": 0.85,
     "S": 0.0,
@@ -4760,6 +4962,8 @@
    "summary": "NCC Limited has submitted to the Exchange, the financial results for the period ended September 30, 2026.",
    "url": "https://nsearchives.nseindia.in/corporate/NCC_05112026173840_Outcome_of_the_Board_Meeting.pdf",
    "related": [],
+   "source_exchange": "NSE",
+   "dedupe_key": "NCC|2026-11-05|outcome of board meeting",
    "results": {
     "period": "Q2FY27",
     "basis": "consolidated",
@@ -4897,6 +5101,8 @@
    "summary": "Copies of Newspaper Publication regarding Unaudited Financial Results of the Company for the quarter and half year ended September 30, 2026.",
    "url": "https://nsearchives.nseindia.in/corporate/Lupin2_05112026163455_SEintimationletter.pdf",
    "related": [],
+   "source_exchange": "NSE",
+   "dedupe_key": "LUPIN|2026-11-05|copy of newspaper publication",
    "components": {
     "M": 0.05,
     "S": 0.0,
@@ -4927,6 +5133,8 @@
      "url": "https://nsearchives.nseindia.in/corporate/AmitDodani_05112026183350_SEIntimationRPT_H1F27_05112026.pdf"
     }
    ],
+   "source_exchange": "NSE",
+   "dedupe_key": "M&M|2026-11-05|copy of newspaper publication",
    "components": {
     "M": 0.05,
     "S": 0.0,
@@ -4952,6 +5160,8 @@
    "summary": "Transcript of Earnings call held on November 02, 2026.",
    "url": "https://nsearchives.nseindia.in/corporate/AURIONPRO_05112026153420_ASL_Earnings_Call_Transcript_sd.pdf",
    "related": [],
+   "source_exchange": "NSE",
+   "dedupe_key": "AURIONPRO|2026-11-05|analysts institutional investor meet con call updates",
    "components": {
     "M": 0.25,
     "S": 0.0,
@@ -5353,6 +5563,8 @@
    "summary": "Action(s) taken or orders passed",
    "url": "https://nsearchives.nseindia.in/corporate/THERMAXNSE_05112026152702_SEIntimationGSTPenalty_Nov2026.pdf",
    "related": [],
+   "source_exchange": "NSE",
+   "dedupe_key": "THERMAX|2026-11-05|action s taken or orders passed",
    "components": {
     "M": 0.05,
     "S": 0.0,
@@ -5383,6 +5595,8 @@
      "url": "https://nsearchives.nseindia.in/corporate/TEXRAIL_05112026150234_TexRailBMOutcome05112026Signed.pdf"
     }
    ],
+   "source_exchange": "NSE",
+   "dedupe_key": "TEXRAIL|2026-11-05|change in director s",
    "components": {
     "M": 0.35,
     "S": 0.0,
@@ -5408,6 +5622,8 @@
    "summary": "Texmaco Rail & Engineering Limited has submitted to the Exchange, the financial results for the period ended September 30, 2026.",
    "url": "https://nsearchives.nseindia.in/corporate/TEXRAIL_05112026145026_TexRailBMOutcome05112026Signed.pdf",
    "related": [],
+   "source_exchange": "NSE",
+   "dedupe_key": "TEXRAIL|2026-11-05|outcome of board meeting",
    "results": {
     "period": "Q2FY27",
     "basis": "consolidated",
@@ -5553,6 +5769,8 @@
      "url": "https://nsearchives.nseindia.in/corporate/MINDAIND1_05112026143522_Intimation_InvestorpresentationF.pdf"
     }
    ],
+   "source_exchange": "NSE",
+   "dedupe_key": "UNOMINDA|2026-11-05|investor presentation",
    "components": {
     "M": 0.15,
     "S": 0.0,
@@ -5583,6 +5801,8 @@
      "url": "https://nsearchives.nseindia.in/corporate/AmitDodani_05112026191034_UpcomingAnalystMeet12112026.pdf"
     }
    ],
+   "source_exchange": "NSE",
+   "dedupe_key": "M&M|2026-11-05|investor presentation",
    "components": {
     "M": 0.15,
     "S": 0.0,
@@ -5613,6 +5833,8 @@
      "url": "https://nsearchives.nseindia.in/corporate/Pooja_05112026130646_Outcome5Nov.pdf"
     }
    ],
+   "source_exchange": "NSE",
+   "dedupe_key": "M&M|2026-11-05|change in management",
    "components": {
     "M": 0.3,
     "S": 0.0,
@@ -5643,6 +5865,8 @@
      "url": "https://nsearchives.nseindia.in/corporate/AmitDodani_05112026133302_PresentationtobemadetoPressAnalyst.pdf"
     }
    ],
+   "source_exchange": "NSE",
+   "dedupe_key": "M&M|2026-11-05|press release",
    "components": {
     "M": 0.35,
     "S": 0.0,
@@ -5677,6 +5901,8 @@
      "url": "https://nsearchives.nseindia.in/corporate/Pooja_05112026130154_Outcome5Nov.pdf"
     }
    ],
+   "source_exchange": "NSE",
+   "dedupe_key": "M&M|2026-11-05|outcome of board meeting",
    "results": {
     "period": "Q2FY27",
     "basis": "standalone",
@@ -5833,6 +6059,8 @@
    "summary": "Change in Senior Management Personnel",
    "url": "https://nsearchives.nseindia.in/corporate/MINDAIND1_05112026125215_Outcomef.pdf",
    "related": [],
+   "source_exchange": "NSE",
+   "dedupe_key": "UNOMINDA|2026-11-05|change in management",
    "components": {
     "M": 0.8,
     "S": 0.0,
@@ -5858,6 +6086,8 @@
    "summary": "Capacity addition for its Sunroof Division",
    "url": "https://nsearchives.nseindia.in/corporate/MINDAIND1_05112026124958_Outcomef.pdf",
    "related": [],
+   "source_exchange": "NSE",
+   "dedupe_key": "UNOMINDA|2026-11-05|capacity addition",
    "components": {
     "M": 0.7,
     "S": 0.0,
@@ -5883,6 +6113,8 @@
    "summary": "Submission of Copies of Newspaper Publication",
    "url": "https://nsearchives.nseindia.in/corporate/JUBLFOOD_05112026124846_SEIntimationRelodgementNov26.pdf",
    "related": [],
+   "source_exchange": "NSE",
+   "dedupe_key": "JUBLFOOD|2026-11-05|copy of newspaper publication",
    "components": {
     "M": 0.05,
     "S": 0.0,
@@ -5908,6 +6140,8 @@
    "summary": "UNO Minda Limited has submitted to the Exchange, the financial results for the period ended September 30, 2026.",
    "url": "https://nsearchives.nseindia.in/corporate/MINDAIND1_05112026124457_Outcomef.pdf",
    "related": [],
+   "source_exchange": "NSE",
+   "dedupe_key": "UNOMINDA|2026-11-05|outcome of board meeting",
    "results": {
     "period": "Q2FY27",
     "basis": "consolidated",
@@ -6046,6 +6280,8 @@
    "summary": "A press release dated November 05, 2026, titled \"Tata Power Renewables Commissions 300 MW Project for SECI in Karnataka\".",
    "url": "https://nsearchives.nseindia.in/corporate/KSTPCL_05112026103413_PR.pdf",
    "related": [],
+   "source_exchange": "NSE",
+   "dedupe_key": "TATAPOWER|2026-11-05|press release",
    "components": {
     "M": 0.35,
     "S": 0.0,
@@ -6076,6 +6312,8 @@
      "url": "https://nsearchives.nseindia.in/corporate/MINDAIND1_05112026142535_Intimation_Pressreleasef.pdf"
     }
    ],
+   "source_exchange": "NSE",
+   "dedupe_key": "UNOMINDA|2026-11-05|committee meeting updates",
    "components": {
     "M": 0.35,
     "S": 0.0,
@@ -6101,6 +6339,8 @@
    "summary": "Link of Recording.",
    "url": "https://nsearchives.nseindia.in/corporate/Lupin2_04112026210945_SE_Intimation_Audio_Link_Q2_FY27.pdf",
    "related": [],
+   "source_exchange": "NSE",
+   "dedupe_key": "LUPIN|2026-11-04|analysts institutional investor meet con call updates",
    "components": {
     "M": 0.25,
     "S": 0.0,
@@ -6126,6 +6366,8 @@
    "summary": "Change in Director(s) of the company.",
    "url": "https://nsearchives.nseindia.in/corporate/AUROPHARMA_04112026204230_LtrToSEsReappointmentofMrKumar04112026.pdf",
    "related": [],
+   "source_exchange": "NSE",
+   "dedupe_key": "AUROPHARMA|2026-11-04|change in director s",
    "components": {
     "M": 0.8,
     "S": 0.0,
@@ -6156,6 +6398,8 @@
      "url": "https://nsearchives.nseindia.in/corporate/AUROPHARMA_04112026203119_LtrToSEsOwnershipTransferRussia04112026.pdf"
     }
    ],
+   "source_exchange": "NSE",
+   "dedupe_key": "AUROPHARMA|2026-11-04|amalgamation merger",
    "components": {
     "M": 0.85,
     "S": 0.0,
@@ -6181,6 +6425,8 @@
    "summary": "Record date for the purpose of Dividend is 11-Nov-2026.",
    "url": "https://nsearchives.nseindia.in/corporate/AUROPHARMA_04112026201247_LtrToSEsDividendUpdate04112026.pdf",
    "related": [],
+   "source_exchange": "NSE",
+   "dedupe_key": "AUROPHARMA|2026-11-04|record date",
    "components": {
     "M": 0.05,
     "S": 0.0,
@@ -6206,6 +6452,8 @@
    "summary": "Investor Presentation",
    "url": "https://nsearchives.nseindia.in/corporate/AUROPHARMA_04112026201054_LtrToSEsInvestorPresentation04112026.pdf",
    "related": [],
+   "source_exchange": "NSE",
+   "dedupe_key": "AUROPHARMA|2026-11-04|investor presentation",
    "components": {
     "M": 0.15,
     "S": 0.0,
@@ -6231,6 +6479,8 @@
    "summary": "A press release dated November 04, 2026, titled \"Press release on Q2 FY27 Financial Results.\".",
    "url": "https://nsearchives.nseindia.in/corporate/AUROPHARMA_04112026200852_LtrToSEsPressRelease04112026.pdf",
    "related": [],
+   "source_exchange": "NSE",
+   "dedupe_key": "AUROPHARMA|2026-11-04|press release",
    "components": {
     "M": 0.35,
     "S": 0.0,
@@ -6256,6 +6506,8 @@
    "summary": "Aurobindo Pharma Limited has submitted to the Exchange, the financial results for the period ended September 30, 2026.",
    "url": "https://nsearchives.nseindia.in/corporate/AUROPHARMA_04112026194825_LtrToSEsOutcomeOfBM04112026.pdf",
    "related": [],
+   "source_exchange": "NSE",
+   "dedupe_key": "AUROPHARMA|2026-11-04|outcome of board meeting",
    "results": {
     "period": "Q2FY27",
     "basis": "consolidated",
@@ -6425,6 +6677,8 @@
    "summary": "Credit Rating",
    "url": "https://nsearchives.nseindia.in/corporate/ferozebaria_04112026194248_CARE04112026.pdf",
    "related": [],
+   "source_exchange": "NSE",
+   "dedupe_key": "M&M|2026-11-04|credit rating",
    "components": {
     "M": 0.6,
     "S": 0.0,
@@ -6450,6 +6704,8 @@
    "summary": "Schedule of meet",
    "url": "https://nsearchives.nseindia.in/corporate/TEXRAIL_04112026185314_TexrailSEInvestorCall111126.pdf",
    "related": [],
+   "source_exchange": "NSE",
+   "dedupe_key": "TEXRAIL|2026-11-04|analysts institutional investor meet con call updates",
    "components": {
     "M": 0.15,
     "S": 0.0,
@@ -6475,6 +6731,8 @@
    "summary": "Link of Recording",
    "url": "https://nsearchives.nseindia.in/corporate/MEDANTA21_04112026165710_GHLAUDIORECORDINGINTIMATIONNOVEMBER042026Signed.pdf",
    "related": [],
+   "source_exchange": "NSE",
+   "dedupe_key": "MEDANTA|2026-11-04|analysts institutional investor meet con call updates",
    "components": {
     "M": 0.25,
     "S": 0.0,
@@ -6876,6 +7134,8 @@
    "summary": "Please find enclosed herewith copies of newspaper advertisements published regarding Unaudited Financial Results of the Company for the quarter and half year ended September 30, 2026.",
    "url": "https://nsearchives.nseindia.in/corporate/KEC_04112026152248_SEintimation.pdf",
    "related": [],
+   "source_exchange": "NSE",
+   "dedupe_key": "KEC|2026-11-04|copy of newspaper publication",
    "components": {
     "M": 0.05,
     "S": 0.0,
@@ -6901,6 +7161,8 @@
    "summary": "Copy of Newspaper Publication",
    "url": "https://nsearchives.nseindia.in/corporate/MEDANTA21_04112026123237_GHLNEWSPAPERADVERNOVEMBER042026Signed.pdf",
    "related": [],
+   "source_exchange": "NSE",
+   "dedupe_key": "MEDANTA|2026-11-04|copy of newspaper publication",
    "components": {
     "M": 0.05,
     "S": 0.0,
@@ -6926,6 +7188,8 @@
    "summary": "Investor Presentation",
    "url": "https://nsearchives.nseindia.in/corporate/Lupin2_04112026014841_SE_Intimation_Investor_Presentation_04112026.pdf",
    "related": [],
+   "source_exchange": "NSE",
+   "dedupe_key": "LUPIN|2026-11-04|investor presentation",
    "components": {
     "M": 0.15,
     "S": 0.0,
@@ -6951,6 +7215,8 @@
    "summary": "A press release dated November 04, 2026, titled \"Lupin Q2 FY2027 Results \".",
    "url": "https://nsearchives.nseindia.in/corporate/Lupin2_04112026014246_SE_Intimation_Press_Release_04112026.pdf",
    "related": [],
+   "source_exchange": "NSE",
+   "dedupe_key": "LUPIN|2026-11-04|press release",
    "components": {
     "M": 0.35,
     "S": 0.0,
@@ -6976,6 +7242,8 @@
    "summary": "Change in Director(s) of the company.",
    "url": "https://nsearchives.nseindia.in/corporate/Lupin2_04112026011040_SE_Intimation_appointment_of_AG.pdf",
    "related": [],
+   "source_exchange": "NSE",
+   "dedupe_key": "LUPIN|2026-11-04|change in director s",
    "components": {
     "M": 0.8,
     "S": 0.0,
@@ -7001,6 +7269,8 @@
    "summary": "Lupin Limited has submitted to the Exchange, the Standalone and Consolidated Unaudited Financial Results for the quarter and half year ended September 30, 2026.",
    "url": "https://nsearchives.nseindia.in/corporate/Lupin2_04112026004100_SE_Outcome_UFR_Intimation.pdf",
    "related": [],
+   "source_exchange": "NSE",
+   "dedupe_key": "LUPIN|2026-11-04|outcome of board meeting",
    "results": {
     "period": "Q2FY27",
     "basis": "consolidated",
@@ -7138,6 +7408,8 @@
    "summary": "A press release dated November 03, 2026, titled \"Lupin Launches Raltegravir Tablets, USP, 600 mg in the United States\".",
    "url": "https://nsearchives.nseindia.in/corporate/Lupin2_03112026193332_SEletterpressrelease.pdf",
    "related": [],
+   "source_exchange": "NSE",
+   "dedupe_key": "LUPIN|2026-11-03|press release",
    "components": {
     "M": 0.35,
     "S": 0.0,
@@ -7163,6 +7435,8 @@
    "summary": "Schedule of meet",
    "url": "https://nsearchives.nseindia.in/corporate/SUDARSCHEM_03112026180740_Q2FY27AnalystCallIntimation03112026Signed.pdf",
    "related": [],
+   "source_exchange": "NSE",
+   "dedupe_key": "SUDARSCHEM|2026-11-03|analysts institutional investor meet con call updates",
    "components": {
     "M": 0.15,
     "S": 0.0,
@@ -7188,6 +7462,8 @@
    "summary": "Audio Recording of the Earnings Conference Call held today i.e. November 03, 2026, at 10:00 a.m. (IST), for the Unaudited Financial Results of the Company for the quarter and half year ended September 30, 2026, has been made available on the Company's website.",
    "url": "https://nsearchives.nseindia.in/corporate/KEC_03112026175244_SE_Intimation.pdf",
    "related": [],
+   "source_exchange": "NSE",
+   "dedupe_key": "KEC|2026-11-03|analysts institutional investor meet con call updates",
    "components": {
     "M": 0.25,
     "S": 0.0,
@@ -7213,6 +7489,8 @@
    "summary": "Schedule of meet",
    "url": "https://nsearchives.nseindia.in/corporate/VOLTAS_RB_03112026173122_SE_Intimation.pdf",
    "related": [],
+   "source_exchange": "NSE",
+   "dedupe_key": "VOLTAS|2026-11-03|analysts institutional investor meet con call updates",
    "components": {
     "M": 0.15,
     "S": 0.0,
@@ -7238,6 +7516,8 @@
    "summary": "Investor Presentation",
    "url": "https://nsearchives.nseindia.in/corporate/MEDANTA21_03112026172712_GHLINVESTORPRESENTATIONNOV032026SIGNED.pdf",
    "related": [],
+   "source_exchange": "NSE",
+   "dedupe_key": "MEDANTA|2026-11-03|investor presentation",
    "components": {
     "M": 0.15,
     "S": 0.0,
@@ -7263,6 +7543,8 @@
    "summary": "A press release dated November 03, 2026, titled \"Press release for the Results of Second Quarter & Half Year ended September 30, 2026.\"",
    "url": "https://nsearchives.nseindia.in/corporate/MEDANTA21_03112026172432_GHLPRESSRELEASENOVEMBER032026SIGNED.pdf",
    "related": [],
+   "source_exchange": "NSE",
+   "dedupe_key": "MEDANTA|2026-11-03|press release",
    "components": {
     "M": 0.35,
     "S": 0.0,
@@ -7288,6 +7570,8 @@
    "summary": "Capacity addition",
    "url": "https://nsearchives.nseindia.in/corporate/MEDANTA21_03112026162207_GHLOUTCOMEOFBMNOV032026SIGNED.pdf",
    "related": [],
+   "source_exchange": "NSE",
+   "dedupe_key": "MEDANTA|2026-11-03|capacity addition",
    "components": {
     "M": 0.7,
     "S": 0.0,
@@ -7313,6 +7597,8 @@
    "summary": "The change in the address of the Corporate Office of the Registrar to an Issue and Share Transfer Agent'.",
    "url": "https://nsearchives.nseindia.in/corporate/Deepak_03112026160659_SE_Intimation_Change_of_Kfintech_Corporate_Office.pdf",
    "related": [],
+   "source_exchange": "NSE",
+   "dedupe_key": "M&M|2026-11-03|updates",
    "components": {
     "M": 0.35,
     "S": 0.0,
@@ -7338,6 +7624,8 @@
    "summary": "Global Health Limited has submitted to the Exchange, the financial results for the period ended September 30, 2026.",
    "url": "https://nsearchives.nseindia.in/corporate/MEDANTA21_03112026160317_GHLOUTCOMEOFBMNOV032026SIGNED.pdf",
    "related": [],
+   "source_exchange": "NSE",
+   "dedupe_key": "MEDANTA|2026-11-03|outcome of board meeting",
    "results": {
     "period": "Q2FY27",
     "basis": "consolidated",
@@ -7732,6 +8020,8 @@
      "url": "https://nsearchives.nseindia.in/corporate/NIDHIFADNAVIS_03112026124745_BSENSE.pdf"
     }
    ],
+   "source_exchange": "NSE",
+   "dedupe_key": "TATASTEEL|2026-11-03|scheme of arrangement",
    "components": {
     "M": 0.85,
     "S": 0.0,
@@ -7757,6 +8047,8 @@
    "summary": "Investor Presentation",
    "url": "https://nsearchives.nseindia.in/corporate/KEC_02112026212142_SE_Intimation_Investor_Presentation_Q2_FY27.pdf",
    "related": [],
+   "source_exchange": "NSE",
+   "dedupe_key": "KEC|2026-11-02|investor presentation",
    "components": {
     "M": 0.15,
     "S": 0.0,
@@ -7782,6 +8074,8 @@
    "summary": "Please find enclosed herewith a copy of the Press Release on the Unaudited Financial Results of the Company for the quarter and half year ended September 30, 2026.",
    "url": "https://nsearchives.nseindia.in/corporate/KEC_02112026211750_SE_intimation_PressRelease.pdf",
    "related": [],
+   "source_exchange": "NSE",
+   "dedupe_key": "KEC|2026-11-02|press release",
    "components": {
     "M": 0.35,
     "S": 0.0,
@@ -7807,6 +8101,8 @@
    "summary": "The Board of Directors of the Company at its meeting held today i.e. November 02, 2026, inter alia, approved the appointment of Mr. Anant Vardhan Goenka as an Additional Director (Non-Executive, Non-Independent) effective November 02, 2026.",
    "url": "https://nsearchives.nseindia.in/corporate/KEC_02112026211334_SE_Intimation_Appointment_of_director.pdf",
    "related": [],
+   "source_exchange": "NSE",
+   "dedupe_key": "KEC|2026-11-02|appointment",
    "components": {
     "M": 0.8,
     "S": 0.0,
@@ -7832,6 +8128,8 @@
    "summary": "The Unaudited Financial Results for the quarter and half year ended September 30, 2026, along with the Limited Review Reports of the Statutory Auditors are enclosed.",
    "url": "https://nsearchives.nseindia.in/corporate/KEC_02112026210430_SE_intimation_BM_outcome_Results.pdf",
    "related": [],
+   "source_exchange": "NSE",
+   "dedupe_key": "KEC|2026-11-02|outcome of board meeting",
    "results": {
     "period": "Q2FY27",
     "basis": "consolidated",
@@ -7971,6 +8269,8 @@
    "summary": "Sale or disposal",
    "url": "https://nsearchives.nseindia.in/corporate/SUDARSCHEM_02112026185351_SaleofVP402112026Signed.pdf",
    "related": [],
+   "source_exchange": "NSE",
+   "dedupe_key": "SUDARSCHEM|2026-11-02|sale or disposal",
    "components": {
     "M": 0.85,
     "S": 0.0,
@@ -7996,6 +8296,8 @@
    "summary": "A press release dated November 02, 2026, titled \"Lupin Receives U.S. FDA Approval for Amifampridine Tablets\".",
    "url": "https://nsearchives.nseindia.in/corporate/Lupin2_02112026175800_SELetterPressRelease.pdf",
    "related": [],
+   "source_exchange": "NSE",
+   "dedupe_key": "LUPIN|2026-11-02|press release",
    "components": {
     "M": 0.35,
     "S": 0.0,
@@ -8026,6 +8328,8 @@
      "url": "https://nsearchives.nseindia.in/corporate/MEDANTA_ROID_103012_KMP_Doc.zip"
     }
    ],
+   "source_exchange": "NSE",
+   "dedupe_key": "MEDANTA|2026-11-02|change in management",
    "components": {
     "M": 0.3,
     "S": 0.0,
@@ -8051,6 +8355,8 @@
    "summary": "Grant of 314000 Options.",
    "url": "https://nsearchives.nseindia.in/corporate/MEDANTA21_02112026172430_GHLResignationofSMPNOVEMBER022026SIGNED.pdf",
    "related": [],
+   "source_exchange": "NSE",
+   "dedupe_key": "MEDANTA|2026-11-02|esop esos esps",
    "components": {
     "M": 0.05,
     "S": 0.0,
@@ -8076,6 +8382,8 @@
    "summary": "Schedule of meet",
    "url": "https://nsearchives.nseindia.in/corporate/KSTPCL_02112026171009_Analyst_Call_Q2FY27.pdf",
    "related": [],
+   "source_exchange": "NSE",
+   "dedupe_key": "TATAPOWER|2026-11-02|analysts institutional investor meet con call updates",
    "components": {
     "M": 0.15,
     "S": 0.0,
@@ -8106,6 +8414,8 @@
      "url": "https://nsearchives.nseindia.in/corporate/GRSE_02112026171922_Corp_Ann_Signing_of_contract_for_5_NGCs.pdf"
     }
    ],
+   "source_exchange": "NSE",
+   "dedupe_key": "GRSE|2026-11-02|press release",
    "components": {
     "M": 0.35,
     "S": 0.0,
@@ -8131,6 +8441,8 @@
    "summary": "Link of Recording of Earnings Call held on November 02, 2026",
    "url": "https://nsearchives.nseindia.in/corporate/AURIONPRO_02112026163647_ASL_Earnings_Call_Recording_September_sd.pdf",
    "related": [],
+   "source_exchange": "NSE",
+   "dedupe_key": "AURIONPRO|2026-11-02|analysts institutional investor meet con call updates",
    "components": {
     "M": 0.25,
     "S": 0.0,
@@ -8530,6 +8842,8 @@
    "summary": "Change in Director(s) of the company.",
    "url": "https://nsearchives.nseindia.in/corporate/GRSE_02112026151337_Appointment_of_Shri_Laishram_Meenabanta_Singh_ID.pdf",
    "related": [],
+   "source_exchange": "NSE",
+   "dedupe_key": "GRSE|2026-11-02|change in director s",
    "components": {
     "M": 0.8,
     "S": 0.0,
@@ -8555,6 +8869,8 @@
    "summary": "Copy of Newspaper Publication regarding unaudited financial statements for the quarter and half year ended September 30, 2026",
    "url": "https://nsearchives.nseindia.in/corporate/AURIONPRO_02112026132237_ASL_Newspaper_advt_September2026_sd.pdf",
    "related": [],
+   "source_exchange": "NSE",
+   "dedupe_key": "AURIONPRO|2026-11-02|copy of newspaper publication",
    "components": {
     "M": 0.05,
     "S": 0.0,
@@ -8580,6 +8896,8 @@
    "summary": "Schedule of meet",
    "url": "https://nsearchives.nseindia.in/corporate/THERMAXNSE_02112026113522_SEinitimation_sd.pdf",
    "related": [],
+   "source_exchange": "NSE",
+   "dedupe_key": "THERMAX|2026-11-02|analysts institutional investor meet con call updates",
    "components": {
     "M": 0.15,
     "S": 0.0,
@@ -8605,6 +8923,8 @@
    "summary": "Monthly Business Updates for the month of October 2026",
    "url": "https://nsearchives.nseindia.in/corporate/ASHOKLEYLAND_02112026083345_42salesvolumeOct2026PDF.pdf",
    "related": [],
+   "source_exchange": "NSE",
+   "dedupe_key": "ASHOKLEY|2026-11-02|monthly business updates",
    "components": {
     "M": 0.35,
     "S": 0.0,
@@ -8630,6 +8950,8 @@
    "summary": "The rescheduling of earnings call to discuss the operational and financial performance for Q2 & H1FY27.",
    "url": "https://nsearchives.nseindia.in/corporate/MINDAIND1_01112026181529_Intimation_update_in_earnings_call_signed.pdf",
    "related": [],
+   "source_exchange": "NSE",
+   "dedupe_key": "UNOMINDA|2026-11-01|analysts institutional investor meet con call updates",
    "components": {
     "M": 0.25,
     "S": 0.0,
@@ -8655,6 +8977,8 @@
    "summary": "Investor Presentation",
    "url": "https://nsearchives.nseindia.in/corporate/AURIONPRO_01112026142000_ASL_Q2_Investor_Presentation_SD.pdf",
    "related": [],
+   "source_exchange": "NSE",
+   "dedupe_key": "AURIONPRO|2026-11-01|investor presentation",
    "components": {
     "M": 0.15,
     "S": 0.0,
@@ -8680,6 +9004,8 @@
    "summary": "Monthly Business Updates for the month of October 2026",
    "url": "https://nsearchives.nseindia.in/corporate/ferozebaria_01112026101454_SEIntimationNovember2026PR.pdf",
    "related": [],
+   "source_exchange": "NSE",
+   "dedupe_key": "M&M|2026-11-01|monthly business updates",
    "components": {
     "M": 0.35,
     "S": 0.0,
@@ -8705,6 +9031,8 @@
    "summary": "Credit Rating",
    "url": "https://nsearchives.nseindia.in/corporate/TEXRAIL_31102026225259_SECREDITRATING31102026.pdf",
    "related": [],
+   "source_exchange": "NSE",
+   "dedupe_key": "TEXRAIL|2026-10-31|credit rating",
    "components": {
     "M": 0.6,
     "S": 0.0,
@@ -8730,6 +9058,8 @@
    "summary": "A press release dated October 31, 2026, titled \"Press release relating to announcement of unaudited financial results of the Company for the quarter and half year ended September 30, 2026.\".",
    "url": "https://nsearchives.nseindia.in/corporate/AURIONPRO_31102026202131_ASL_Press_Release_Q2FY27_sd.pdf",
    "related": [],
+   "source_exchange": "NSE",
+   "dedupe_key": "AURIONPRO|2026-10-31|press release",
    "components": {
     "M": 0.35,
     "S": 0.0,
@@ -8755,6 +9085,8 @@
    "summary": "Scheme of Amalgamation of Three Wholly Owned Subsidiaries with Aurionpro Solutions Limited.",
    "url": "https://nsearchives.nseindia.in/corporate/AURIONPRO_31102026201253_ASL_Outcome_of_Board_Meeting_Merger_sd.pdf",
    "related": [],
+   "source_exchange": "NSE",
+   "dedupe_key": "AURIONPRO|2026-10-31|amalgamation merger",
    "components": {
     "M": 0.85,
     "S": 0.0,
@@ -8780,6 +9112,8 @@
    "summary": "Aurionpro Solutions Limited has submitted to the Exchange, the financial results for the quarter and half year ended September 30, 2026.",
    "url": "https://nsearchives.nseindia.in/corporate/AURIONPRO_31102026200551_ASL_Outcome_of_the_Board_Meeting_31102026Final_sd.pdf",
    "related": [],
+   "source_exchange": "NSE",
+   "dedupe_key": "AURIONPRO|2026-10-31|outcome of board meeting",
    "results": {
     "period": "Q2FY27",
     "basis": "consolidated",
@@ -8917,6 +9251,8 @@
    "summary": "Bagging/Receiving of orders/contracts",
    "url": "https://nsearchives.nseindia.in/corporate/NCC_31102026171838_Reg_30_31Oct.pdf",
    "related": [],
+   "source_exchange": "NSE",
+   "dedupe_key": "NCC|2026-10-31|bagging receiving of orders contracts",
    "components": {
     "M": 0.35,
     "S": 0.0,
@@ -8947,6 +9283,8 @@
      "url": "https://nsearchives.nseindia.in/corporate/MEDANTA_ROID_102803_KMP_Doc.zip"
     }
    ],
+   "source_exchange": "NSE",
+   "dedupe_key": "MEDANTA|2026-10-31|cessation",
    "components": {
     "M": 0.3,
     "S": 0.0,

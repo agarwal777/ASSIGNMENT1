@@ -82,7 +82,9 @@ all answer one question: is the thesis still true, and if not, what should I ask
   segment-level or non-financial and shown as "can't check yet" until segment parsing exists.
 - Most appointment filings give no years, so links through new appointees are marked "probable"; no
   supplier links, because no source names a company's suppliers.
-- No real push to the phone (no notifications or scheduled refresh); NSE only, not BSE.
+- No real push to the phone (no notifications or scheduled refresh).
+- NSE only: BSE's feed blocks scripts and its data products are paid. A one-week check of 3 dual-listed
+  companies found all 23 BSE announcements on NSE too; filings keep a source and a dedupe key for a second feed.
 - The status rule is a strict range check and ignores qualifiers like "higher side of".
 - The 150 KB JS target isn't met: the framework baseline alone is ~175 KB; Today is 255 KB.
 

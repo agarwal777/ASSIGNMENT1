@@ -116,7 +116,7 @@ flowchart LR
 
 | Source | How | Stored as |
 |---|---|---|
-| NSE corporate announcements | `/api/corporate-announcements` JSON, fetched from a laptop, 14-day window, raw feed kept. **NSE only**; BSE duplicates were not fetched | `seed/filings/*.json` → `web/data/digest.json` |
+| NSE corporate announcements | `/api/corporate-announcements` JSON, fetched from a laptop, 14-day window, raw feed kept. **NSE only** (BSE blocks scripts; spot-check in §9); each event keeps `source_exchange` and a `dedupe_key` | `seed/filings/*.json` → `web/data/digest.json` |
 | Quarterly results | NSE `/api/integrated-filing-results` → Ind AS XBRL, parsed deterministically (`workers/parsers/xbrl_results.py`); units read from the filing, non-rupee facts refused | `seed/facts.csv`, `seed/results.json` |
 | Prices | yfinance (batch); Yahoo chart endpoint via `httpx` (live function) | `seed/prices.csv` → `web/data/prices.json`, `moves.json` |
 | Transcripts | Earnings-call transcripts **filed with NSE** (not screener.in: one primary source, no scraping terms) | PDFs local only; promises in `seed/promises.json` |
@@ -226,7 +226,7 @@ missing. Successful live generations are logged in Supabase `llm_calls` and are 
 | Executive profiles | 16 appointees across 11 filings; 8 have a career in their filing, the rest (and 5 cessations) show the plain card. Most filings give no years, so links through them show as "probable". A career card shows on Today when the appointment reaches Needs you (or Management is set to Alert) |
 | Network | Synthetic, 34 contacts at portfolio and research companies and their peers. Theme search and an expertise map use the contacts' tags. No supplier links (no source names a supplier; see below), education almost absent. Keep-warm is "6+ months since you spoke", not tied to a former employer's news |
 | Real push | Nothing is sent to the phone: no notifications, no scheduled refresh (the snapshot is a replay) |
-| BSE | Not fetched; NSE only |
+| BSE | Not fetched: BSE's announcements API refuses scripted requests (403) and its data products are paid. A one-week spot-check of 3 dual-listed companies found every one of 23 BSE announcements on NSE too, filed within minutes ([`docs/reviews/bse-spotcheck.md`](docs/reviews/bse-spotcheck.md)); a BSE-only company would need BSE. Each filing carries `source_exchange` and a `dedupe_key` (company + day + subject), so a licensed BSE feed would be a data change |
 | Status rule | Strict range check: Aurobindo said "mostly on the **higher** side of 20–21%" and delivered 20.23%, marked Met. Qualifiers are shown in the quote, not scored |
 | General chat agent | Not built on purpose: the question box answers one company from its own sources, never from outside knowledge |
 | Assumption editor | One investor assumption per company (metric, condition, target, deadline), saved per user; shown on Today, Portfolio and the Company page |
