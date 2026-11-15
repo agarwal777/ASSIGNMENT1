@@ -48,6 +48,7 @@ def _xml(facts: dict[str, float], start="2026-07-01", end="2026-09-30") -> bytes
             f'xmlns:in-bse-fin="http://example/in-bse-fin">'
             f'<xbrli:context id="Q"><xbrli:entity/><xbrli:period><xbrli:startDate>{start}'
             f'</xbrli:startDate><xbrli:endDate>{end}</xbrli:endDate></xbrli:period></xbrli:context>'
+            f'<xbrli:unit id="INR"><xbrli:measure>iso4217:INR</xbrli:measure></xbrli:unit>'
             f'{body}</xbrli:xbrl>').encode()
 
 

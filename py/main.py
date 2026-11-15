@@ -24,7 +24,7 @@ from fastapi import FastAPI
 from fastapi.responses import JSONResponse, StreamingResponse
 from pydantic import BaseModel
 
-from xbrl_results import headline, parse
+from xbrl_results import UnsupportedUnits, headline, parse
 
 app = FastAPI(title="finn-py")
 SYMBOLS: dict[str, str] = json.loads((Path(__file__).parent / "nse_symbols.json").read_text(encoding="utf-8"))
@@ -82,7 +82,7 @@ def basis_of(label: str | None) -> str | None:
 QUARTERS = 8   # 8 filings so the latest 4 quarters each have a same-quarter-last-year comparison
 
 
-def _results(c: httpx.Client, symbol: str, deadline: float) -> tuple[list[dict], str | None, str]:
+def _results(c: httpx.Client, symbol: str, deadline: float, refused: list[str] | None = None) -> tuple[list[dict], str | None, str]:
     """One basis per company: consolidated when the company files it, else standalone. A quarter falls
     back to the other basis only if its preferred filing is missing, and is marked; YoY is computed only
     between quarters of the same basis, so the two are never mixed in one number."""
@@ -108,6 +108,11 @@ def _results(c: httpx.Client, symbol: str, deadline: float) -> tuple[list[dict],
             xr = c.get(x["xbrl"], headers={**UA, "Accept": "*/*"})
             xr.raise_for_status()
             parsed.append((parse(xr.content), x["xbrl"], other if fallback else basis, fallback))
+        except UnsupportedUnits:
+            # Not in rupees: refused on purpose (never mis-scaled); reported to the user, not hidden.
+            if refused is not None:
+                refused.append(qe)
+            continue
         except Exception:
             continue
 
@@ -144,6 +149,10 @@ def _results(c: httpx.Client, symbol: str, deadline: float) -> tuple[list[dict],
                     res = parse(xr.content)
                     if res.period_label == label:
                         by_label[label] = (res, x["xbrl"], other if fb else basis, fb)
+                except UnsupportedUnits:
+                    if refused is not None:
+                        refused.append(label)
+                    continue
                 except Exception:
                     continue
         except Exception:
@@ -199,10 +208,13 @@ def ensure(symbol: str) -> Iterator[str]:
     else:
         yield _line({"type": "step", "id": "results", "status": "running"})
         try:
-            quarters, latest, basis = _results(c, sym, deadline)
+            refused: list[str] = []
+            quarters, latest, basis = _results(c, sym, deadline, refused)
             company.update(quarters=quarters, basis=basis)
             yield _line({"type": "step", "id": "results", "status": "done" if quarters else "failed",
-                         "detail": f"{len(quarters)} quarters, latest {latest}" if quarters else "no machine-readable results"})
+                         "detail": (f"{len(quarters)} quarters, latest {latest}"
+                                    + (f"; {len(refused)} not in rupees, skipped" if refused else "")) if quarters
+                                   else "unsupported_units" if refused else "no machine-readable results"})
         except Exception as e:
             company["notes"].append("results_unreachable")
             yield _line({"type": "step", "id": "results", "status": "failed", "detail": type(e).__name__})

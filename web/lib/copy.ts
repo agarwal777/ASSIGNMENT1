@@ -69,6 +69,7 @@ export const copy = {
     steps: { validate: "Find the company on NSE", prices: "Daily prices for the last year", results: "Results from the exchange XBRL filings", transcripts: "Earnings-call transcripts" } as Record<string, string>,
     stepDetail: (id: string, d: string) =>
       id === "results" && d === "lender" ? "Skipped: EBITDA isn't meaningful for lenders"
+      : id === "results" && d === "unsupported_units" ? "Results are filed in a format FINN can't read yet (not in rupees), so none are shown rather than risk wrong numbers"
       : id === "transcripts" && /found; promise extraction/.test(d) ? `${d.split(" ")[0]} found; promise extraction runs offline in this prototype`
       : d,
     elapsed: (s: number) => `${s} s`,

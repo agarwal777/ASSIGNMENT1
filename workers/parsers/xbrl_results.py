@@ -34,6 +34,12 @@ ASSOC_PREFIX = "ShareOfProfitLossOfAssociatesAndJointVentures"
 RECONCILE_TOL_CR = 1.0  # ₹1 cr tolerance for rounding in the PAT reconciliation
 
 
+class UnsupportedUnits(ValueError):
+    """A line the parser reads is not reported in Indian rupees. Refuse rather than mis-scale it.
+    (`decimals` is only the stated rounding precision in XBRL, e.g. -5 = nearest lakh; it never
+    changes the value, so it is not checked.)"""
+
+
 @dataclass
 class QuarterResult:
     period_end: date
@@ -101,6 +107,13 @@ def parse(xml_bytes: bytes) -> QuarterResult:
         raise ValueError("no quarterly context found")
     period_end = contexts[next(iter(quarter_ids))][1]
 
+    # Units: id → measure (e.g. "INR" → "iso4217:INR"). Only the lines this parser reads are checked.
+    units: dict[str, str] = {}
+    for el in root:
+        if _local(el.tag) == "unit":
+            measures = [m.text.strip() for m in el.iter() if _local(m.tag) == "measure" and m.text]
+            units[el.get("id")] = measures[0] if len(measures) == 1 else "/".join(measures)
+
     basis = "consolidated"
     vals: dict[str, float] = {}
     assoc = 0.0
@@ -110,6 +123,10 @@ def parse(xml_bytes: bytes) -> QuarterResult:
             basis = "consolidated" if "consol" in el.text.lower() else "standalone"
         if el.get("contextRef") not in quarter_ids or el.text is None:
             continue
+        if name in ELEMENTS or name.startswith(ASSOC_PREFIX):
+            measure = units.get(el.get("unitRef"), "")
+            if measure.split(":")[-1].upper() != "INR":
+                raise UnsupportedUnits(f"{name} is reported in {measure or 'an undeclared unit'}, not INR")
         try:
             v = float(el.text) / CRORE
         except ValueError:
@@ -138,9 +155,15 @@ def parse(xml_bytes: bytes) -> QuarterResult:
             r.warnings.append("PAT does not reconcile with PBT, tax and associates; "
                               "discontinued operations or minority items may be present")
 
-    pbe = r.pbe if r.pbe is not None else r.pbt
-    if r.pbe is None:
-        r.warnings.append("no profit-before-exceptional line; EBITDA uses PBT")
+    # Start from profit before exceptional items, so one-offs drop out without guessing their sign.
+    # Without that line, PBT is the same number only when there are no exceptional items; otherwise
+    # we would have to guess whether they were a gain or a loss, so EBITDA is left out for the quarter.
+    pbe = r.pbe
+    if pbe is None and r.pbt is not None and not r.exceptional:
+        pbe = r.pbt
+        r.warnings.append("no profit-before-exceptional line; no exceptional items, so EBITDA uses PBT")
+    elif pbe is None and r.exceptional:
+        r.warnings.append("no profit-before-exceptional line and exceptional items present; EBITDA not computed")
     needed = (pbe, r.finance_costs, r.dna, r.other_income)
     if all(x is not None for x in needed):
         e = pbe + r.finance_costs + r.dna - r.other_income
@@ -149,7 +172,7 @@ def parse(xml_bytes: bytes) -> QuarterResult:
         r.ebitda = round(e, 2)
         if r.revenue:
             r.ebitda_margin_pct = round(100 * r.ebitda / r.revenue, 2)
-    else:
+    elif pbe is not None:
         r.warnings.append("missing a line needed for EBITDA")
     if r.exceptional:
         r.warnings.append(f"exceptional items of ₹{r.exceptional:,.2f} cr this quarter")

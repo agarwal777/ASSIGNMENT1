@@ -12,10 +12,11 @@ XML = b"""<?xml version="1.0"?>
 <xbrli:xbrl xmlns:xbrli="http://www.xbrl.org/2003/instance" xmlns:in-bse-fin="http://www.bseindia.com/xbrl/fin/2020-03-31/in-bse-fin">
   <xbrli:context id="OneD"><xbrli:entity/><xbrli:period><xbrli:startDate>2024-10-01</xbrli:startDate><xbrli:endDate>2024-12-31</xbrli:endDate></xbrli:period></xbrli:context>
   <xbrli:context id="FourD"><xbrli:entity/><xbrli:period><xbrli:startDate>2024-10-01</xbrli:startDate><xbrli:endDate>2024-12-31</xbrli:endDate></xbrli:period></xbrli:context>
-  <in-bse-fin:RevenueFromOperations contextRef="OneD">33689100000</in-bse-fin:RevenueFromOperations>
-  <in-bse-fin:RevenueFromOperations contextRef="FourD">99991700000</in-bse-fin:RevenueFromOperations>
-  <in-bse-fin:ProfitBeforeTax contextRef="OneD">7400000000</in-bse-fin:ProfitBeforeTax>
-  <in-bse-fin:ProfitBeforeTax contextRef="FourD">22000000000</in-bse-fin:ProfitBeforeTax>
+  <xbrli:unit id="INR"><xbrli:measure>iso4217:INR</xbrli:measure></xbrli:unit>
+  <in-bse-fin:RevenueFromOperations contextRef="OneD" unitRef="INR">33689100000</in-bse-fin:RevenueFromOperations>
+  <in-bse-fin:RevenueFromOperations contextRef="FourD" unitRef="INR">99991700000</in-bse-fin:RevenueFromOperations>
+  <in-bse-fin:ProfitBeforeTax contextRef="OneD" unitRef="INR">7400000000</in-bse-fin:ProfitBeforeTax>
+  <in-bse-fin:ProfitBeforeTax contextRef="FourD" unitRef="INR">22000000000</in-bse-fin:ProfitBeforeTax>
 </xbrli:xbrl>"""
 
 
