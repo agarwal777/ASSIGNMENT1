@@ -62,7 +62,7 @@ export interface LedgerPromise {
   guided?: { low?: number; high?: number; unit: string };
   status: PromiseStatus; evidence: string; actual?: NumValue; revisedBy?: string;
 }
-export interface QuarterRow { period: string; revenue?: NumValue; ebitdaMargin?: NumValue; pat?: NumValue; revenueYoy?: NumValue; }
+export interface QuarterRow { period: string; note?: string /* basis when it differs from the company's */; revenue?: NumValue; ebitdaMargin?: NumValue; pat?: NumValue; revenueYoy?: NumValue; }
 /** A checkable claim as numbers, for the bullet chart: actual so far against the target. */
 export interface Claim {
   metric: string; unit: 'pct' | 'pct_yoy'; deadline: string; status: PromiseStatus;

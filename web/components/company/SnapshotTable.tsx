@@ -17,7 +17,11 @@ export default function SnapshotTable({ rows }: { rows: QuarterRow[] }) {
         <thead>
           <tr className="text-[13px] text-ink-3">
             <th scope="col" className="sticky left-0 bg-bg pr-3 text-left font-medium" />
-            {rows.map((q) => <th key={q.period} scope="col" className="whitespace-nowrap px-2 text-right font-medium">{period(q.period)}</th>)}
+            {rows.map((q) => (
+              <th key={q.period} scope="col" className="whitespace-nowrap px-2 text-right font-medium">
+                {period(q.period)}{q.note && <span aria-label={copy.company.basisNote(q.note)} title={copy.company.basisNote(q.note)}>*</span>}
+              </th>
+            ))}
           </tr>
         </thead>
         <tbody>
@@ -32,6 +36,9 @@ export default function SnapshotTable({ rows }: { rows: QuarterRow[] }) {
           ))}
         </tbody>
       </table>
+      {rows.some((q) => q.note) && (
+        <p className="mt-1 text-[12px] text-ink-3">* {copy.company.basisNote(rows.find((q) => q.note)!.note!)}</p>
+      )}
     </div>
   );
 }

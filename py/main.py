@@ -71,38 +71,94 @@ def _nse() -> httpx.Client:
     return c
 
 
+def basis_of(label: str | None) -> str | None:
+    """NSE's label → basis. "Non-Consolidated" contains "consol", so test for standalone first."""
+    v = (label or "").lower()
+    if "non" in v or "standalone" in v:
+        return "standalone"
+    return "consolidated" if "consol" in v else None
+
+
+QUARTERS = 8   # 8 filings so the latest 4 quarters each have a same-quarter-last-year comparison
+
+
 def _results(c: httpx.Client, symbol: str, deadline: float) -> tuple[list[dict], str | None, str]:
+    """One basis per company: consolidated when the company files it, else standalone. A quarter falls
+    back to the other basis only if its preferred filing is missing, and is marked; YoY is computed only
+    between quarters of the same basis, so the two are never mixed in one number."""
     r = c.get(f"{NSE}/api/integrated-filing-results", params={"index": "equities", "symbol": symbol, "period": "Quarterly"})
     r.raise_for_status()
     rows = r.json()
     rows = rows if isinstance(rows, list) else rows.get("data", [])
-    filings = [x for x in rows if x.get("xbrl") and "INDAS" in x["xbrl"] and x.get("consolidated")]
-    basis = "consolidated" if any("consol" in x["consolidated"].lower() for x in filings) else "standalone"
-    filings = [x for x in filings if (("consol" in x["consolidated"].lower()) == (basis == "consolidated"))]
-    by_qe: dict[str, dict] = {}
-    for x in filings:
-        by_qe.setdefault(x["qe_Date"], x)
-    ordered = sorted(by_qe.items(), key=lambda kv: datetime.strptime(kv[0].title(), "%d-%b-%Y"), reverse=True)[:5]
-    parsed = {}
-    for qe, x in ordered:
+    by_qe: dict[str, dict[str, dict]] = {}
+    for x in rows:
+        b = basis_of(x.get("consolidated"))
+        if x.get("xbrl") and "INDAS" in x["xbrl"] and b:
+            by_qe.setdefault(x["qe_Date"], {}).setdefault(b, x)   # newest first in NSE's list: keep the first
+    recent = sorted(by_qe, key=lambda qe: datetime.strptime(qe.title(), "%d-%b-%Y"), reverse=True)[:QUARTERS]
+    basis = "consolidated" if any("consolidated" in by_qe[qe] for qe in recent) else "standalone"
+    other = "standalone" if basis == "consolidated" else "consolidated"
+
+    parsed: list[tuple] = []
+    for qe in recent:
         if time.monotonic() > deadline:
             break
+        x, fallback = (by_qe[qe][basis], False) if basis in by_qe[qe] else (by_qe[qe][other], True)
         try:
             xr = c.get(x["xbrl"], headers={**UA, "Accept": "*/*"})
             xr.raise_for_status()
-            parsed[qe] = (parse(xr.content), x["xbrl"])
+            parsed.append((parse(xr.content), x["xbrl"], other if fallback else basis, fallback))
         except Exception:
             continue
+
+    by_label = {res.period_label: (res, src, b, fb) for res, src, b, fb in parsed}
+
+    # Integrated filing only starts mid-2025, so a year-ago quarter may only exist in NSE's older
+    # financial-results feed. Fetch just the ones the latest 4 quarters need, same basis first.
+    latest4 = sorted(by_label, key=lambda k: by_label[k][0].period_end)[-4:]
+    need = {f"Q{k[1]}FY{int(k[-2:]) - 1:02d}" for k in latest4} - set(by_label)
+    if need and time.monotonic() < deadline:
+        try:
+            old = c.get(f"{NSE}/api/corporates-financial-results",
+                        params={"index": "equities", "symbol": symbol, "period": "Quarterly"})
+            old.raise_for_status()
+            orows = old.json()
+            orows = orows if isinstance(orows, list) else orows.get("data", [])
+            by_end: dict[str, dict[str, dict]] = {}
+            for x in orows:
+                b = basis_of(x.get("consolidated"))
+                if x.get("xbrl") and b and x.get("toDate"):
+                    by_end.setdefault(x["toDate"].title(), {}).setdefault(b, x)
+            for label in sorted(need):
+                if time.monotonic() > deadline:
+                    break
+                q, fy = int(label[1]), 2000 + int(label[-2:])
+                end = {1: f"30-Jun-{fy - 1}", 2: f"30-Sep-{fy - 1}", 3: f"31-Dec-{fy - 1}", 4: f"31-Mar-{fy}"}[q]
+                cands = by_end.get(end, {})
+                if not cands:
+                    continue
+                x, fb = (cands[basis], False) if basis in cands else (cands[other], True)
+                try:
+                    xr = c.get(x["xbrl"], headers={**UA, "Accept": "*/*"})
+                    xr.raise_for_status()
+                    res = parse(xr.content)
+                    if res.period_label == label:
+                        by_label[label] = (res, x["xbrl"], other if fb else basis, fb)
+                except Exception:
+                    continue
+        except Exception:
+            pass
+
     quarters = []
-    by_label = {res.period_label: (res, src) for res, src in parsed.values()}
-    for label, (res, src) in sorted(by_label.items(), key=lambda kv: kv[1][0].period_end):
-        prev = f"Q{label[1]}FY{int(label[-2:]) - 1:02d}"
-        prev_rev = by_label.get(prev, (None, None))[0]
+    for label, (res, src, b, fb) in sorted(by_label.items(), key=lambda kv: kv[1][0].period_end):
+        prev = by_label.get(f"Q{label[1]}FY{int(label[-2:]) - 1:02d}")
+        same = prev is not None and prev[2] == b
         quarters.append({"period": label, "period_end": res.period_end.isoformat(), "revenue": res.revenue,
                          "pat": res.pat, "ebitda_margin": res.ebitda_margin_pct, "source": src,
-                         "revenue_yoy": round(100 * (res.revenue - prev_rev.revenue) / prev_rev.revenue, 1)
-                         if prev_rev and prev_rev.revenue and res.revenue else None})
-    latest = next(iter(parsed.values()))[0] if parsed else None
+                         "basis": b, "basis_fallback": fb,
+                         "revenue_yoy": round(100 * (res.revenue - prev[0].revenue) / prev[0].revenue, 1)
+                         if same and prev[0].revenue and res.revenue else None})
+    latest = parsed[0][0] if parsed else None
     return quarters, (headline(latest, None, None)["period"] if latest else None), basis
 
 

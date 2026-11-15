@@ -94,6 +94,11 @@ def parse(xml_bytes: bytes) -> QuarterResult:
     # The quarter context: duration of roughly three months
     quarter_ids = {cid for cid, (s, e) in contexts.items()
                    if s is not None and 80 <= (e - s).days <= 95}
+    # Older (pre-integrated) BSE/NSE files label the year-to-date context ("FourD") with the quarter's
+    # dates too; "One…" is the current quarter in both formats, so prefer it when present.
+    ones = {cid for cid in quarter_ids if cid.startswith("One")}
+    if ones:
+        quarter_ids = ones
     if not quarter_ids:
         raise ValueError("no quarterly context found")
     period_end = contexts[next(iter(quarter_ids))][1]

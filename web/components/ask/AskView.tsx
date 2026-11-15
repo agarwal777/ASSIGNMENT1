@@ -167,8 +167,11 @@ function Reduced({ c }: { c: EnsuredCompany }) {
       </p>
       {rows.length > 0 && (
         <section className="mt-4">
-          <h3 className="mb-1 text-[13px] font-medium text-ink-2">{copy.company.snapshot(rows.length)}</h3>
+          <h3 className="mb-1 text-[13px] font-medium text-ink-2">
+            {copy.company.snapshot(rows.length)}{c.basis && <span className="font-normal text-ink-3"> · {copy.company.basis(c.basis)}</span>}
+          </h3>
           <SnapshotTable rows={rows} />
+          {rows.some((r) => !r.revenueYoy) && <p className="mt-1 text-[12px] text-ink-3">{copy.ask.noYoy}</p>}
         </section>
       )}
       {c.elapsed_s != null && <p className="mt-3 text-[11px] text-ink-3">{copy.ask.readIn(c.elapsed_s)}</p>}
