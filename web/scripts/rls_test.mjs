@@ -50,4 +50,21 @@ assert.equal(del.data?.length ?? 0, 0, "B must not delete A's contacts");
 const tmpl = await b.c.schema("demo").from("contacts").select("id");
 assert.ok(tmpl.error, "demo schema must not be exposed");
 
-console.log("RLS test passed: cross-user read, insert, update, delete all blocked.");
+// 6. Alert thresholds and edited assumptions (migration 0002) are private too.
+const aSet = await a.c.from("user_settings").upsert({ user_id: a.id, volume_multiple: 3.5, price_move_pct: 4 }, { onConflict: "user_id" }).select();
+assert.ifError(aSet.error);
+const aAs = await a.c.from("user_assumptions").upsert({ user_id: a.id, symbol: "VOLTAS", assumption_id: "rls-test",
+  metric: "ebitda_margin", operator: ">=", target: 7, deadline: "FY27" }, { onConflict: "user_id,symbol,assumption_id" }).select();
+assert.ifError(aAs.error);
+const bSet = await b.c.from("user_settings").select("user_id").eq("user_id", a.id);
+assert.equal(bSet.data?.length ?? 0, 0, "B must not read A's thresholds");
+const bAs = await b.c.from("user_assumptions").select("symbol").eq("user_id", a.id);
+assert.equal(bAs.data?.length ?? 0, 0, "B must not read A's assumptions");
+const bForge = await b.c.from("user_settings").upsert({ user_id: a.id, volume_multiple: 9 }, { onConflict: "user_id" });
+assert.ok(bForge.error, "B must not write A's thresholds");
+const bUpd = await b.c.from("user_assumptions").update({ target: 1 }).eq("user_id", a.id).select();
+assert.equal(bUpd.data?.length ?? 0, 0, "B must not change A's assumptions");
+const still = await a.c.from("user_settings").select("volume_multiple").single();
+assert.equal(Number(still.data.volume_multiple), 3.5, "A's thresholds unchanged by B");
+
+console.log("RLS test passed: contacts, stints, thresholds and assumptions — cross-user read, insert, update, delete all blocked.");

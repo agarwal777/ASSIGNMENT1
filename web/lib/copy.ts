@@ -241,7 +241,7 @@ export const copy = {
     copied: "Copied",
     copyFailed: "Couldn't reach the clipboard. The opener is selected: copy it from your keyboard or long-press menu.",
     compliance: "Ask for context and interpretation of public information, never for unpublished price-sensitive information.",
-    privacy: "Matched on your device from your own contacts; no model saw them. Demo network: all people are synthetic.",
+    privacy: "Matched on your device from your own contacts (read from your private rows); no server step or model saw them. Demo network: all people are synthetic.",
   },
   people: {
     openCallSheet: (name: string) => `${name}: open call sheet`,
@@ -279,8 +279,8 @@ export const copy = {
     ],
     privacyTitle: "Your network",
     privacy: [
-      "Your contacts live in your own private rows; no other user can read them.",
-      "Matching runs on your device. No model ever sees your network.",
+      "Your contacts live in your own private database rows (row-level security): only your signed-in session can read them, and no other user can.",
+      "This browser loads them and matches them to companies and people here, on your device. No FINN server step and no model sees your network.",
       "FINN drafts openers; you send them. It never contacts anyone.",
     ],
     demoTitle: "Demo",
