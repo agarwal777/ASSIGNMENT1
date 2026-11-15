@@ -5,9 +5,12 @@ import { useRouter } from "next/navigation";
 import { useEffect, useState } from "react";
 import { ChevronDown, ChevronRight } from "lucide-react";
 import PersonChip from "@/components/people/PersonChip";
+import ScreenBar from "@/components/portfolio/ScreenBar";
+import Num from "@/components/trust/Num";
+import { EMPTY_SCREEN, matches, metricsOf, numericActive, sortRows, type Screen } from "@/lib/screen";
 import BulletChart from "@/components/trust/BulletChart";
 import { copy } from "@/lib/copy";
-import { date, pct, ratio } from "@/lib/format";
+import { date, pct, period as fmtPeriod, ratio } from "@/lib/format";
 import { isProblem, STATUS, STATUS_ORDER, statusCounts, type Status } from "@/lib/status";
 import type { PersonRef, PortfolioRow } from "@/lib/types";
 import { loadNetwork } from "@/lib/vault";
@@ -32,6 +35,7 @@ export default function PortfolioView({ rows: base, refDate, needs: serverNeeds,
 }) {
   const [filter, setFilter] = useState<Filter>("all");
   const [open, setOpen] = useState<string | null>(null);
+  const [screen, setScreen] = useState<Screen>(EMPTY_SCREEN);
   // Moves are re-detected with the investor's saved thresholds; the server's rows use the defaults.
   const moves = useMovesAtThresholds(movesSince);
   const needs = useNeedsAtSettings(day) ?? serverNeeds;
@@ -40,15 +44,22 @@ export default function PortfolioView({ rows: base, refDate, needs: serverNeeds,
   const rows = base.map((r) => withEdit({ ...r, needsYou: needs.includes(r.symbol), move: moves ? moves[r.symbol] : r.move }, saved))
     .sort((a, b) => Number(b.needsYou) - Number(a.needsYou));
   const all = rows.flatMap((r) => r.thesis);
-  const shown = rows.filter(MATCH[filter]);
+  // Search and filters narrow the list first; the status chips then count within it.
+  const screened = rows.filter((r) => matches(r, screen));
+  const shown = sortRows(screened.filter(MATCH[filter]), screen.sort);
+  const sectors = [...new Set(rows.map((r) => r.sector))].sort();
+  const showMetrics = numericActive(screen);
 
   return (
     <div className="px-4 pb-6">
       <ClaimsBar items={all} />
 
-      <div role="group" aria-label={copy.portfolio.filterLabel} className="mt-4 flex flex-wrap gap-2">
+      <ScreenBar screen={screen} onChange={(s) => { setScreen(s); setOpen(null); }} sectors={sectors}
+        shown={screened.length} total={rows.length} />
+
+      <div role="group" aria-label={copy.portfolio.filterLabel} className="mt-3 flex flex-wrap gap-2">
         {(Object.keys(MATCH) as Filter[]).map((f) => {
-          const n = rows.filter(MATCH[f]).length;
+          const n = screened.filter(MATCH[f]).length;
           const on = filter === f;
           return (
             <button key={f} type="button" aria-pressed={on} onClick={() => { setFilter(f); setOpen(null); }}
@@ -62,7 +73,7 @@ export default function PortfolioView({ rows: base, refDate, needs: serverNeeds,
 
       <ul className="mt-3 divide-y divide-line overflow-hidden rounded-[12px] border border-line bg-surface">
         {shown.map((r) => (
-          <Row key={r.symbol} r={r} refDate={refDate} open={open === r.symbol}
+          <Row key={r.symbol} r={r} refDate={refDate} open={open === r.symbol} showMetrics={showMetrics}
             onToggle={() => setOpen(open === r.symbol ? null : r.symbol)} />
         ))}
         {shown.length === 0 && <li className="p-4 text-[15px] text-ink-2">{copy.portfolio.noneMatch}</li>}
@@ -112,7 +123,23 @@ function Tags({ r }: { r: PortfolioRow }) {
   );
 }
 
-function Row({ r, refDate, open, onToggle }: { r: PortfolioRow; refDate: string; open: boolean; onToggle: () => void }) {
+/** The screen's numbers for one row: latest quarter, YoY against the same quarter a year earlier. */
+function MetricsLine({ r }: { r: PortfolioRow }) {
+  const m = metricsOf(r.quarters);
+  const t = copy.portfolio.screen;
+  if (!m) return <span className="block text-[13px] text-ink-3">{copy.card.notAvailable}</span>;
+  const f = (what: string) => `${what}, ${fmtPeriod(m.period)} vs the same quarter a year earlier (XBRL results)`;
+  return (
+    <span className="block text-[13px] text-ink-2">
+      {t.metricsLabel(fmtPeriod(m.period))}{" "}
+      {m.margin != null && <>{t.margin} <Num v={{ value: m.margin, kind: "pct", epistemic: "CALCULATED", formula: "EBITDA ÷ revenue" }} signed={false} /></>}
+      {m.revenueYoy != null && <> · {t.revenue} <Num v={{ value: m.revenueYoy, kind: "pct", epistemic: "CALCULATED", formula: f("(revenue − revenue a year earlier) ÷ revenue a year earlier") }} /> {t.yoy}</>}
+      {m.marginYoyBps != null && <> · {t.marginChange} <Num v={{ value: m.marginYoyBps, kind: "bps", epistemic: "CALCULATED", formula: f("EBITDA margin − EBITDA margin a year earlier") }} /></>}
+    </span>
+  );
+}
+
+function Row({ r, refDate, open, onToggle, showMetrics = false }: { r: PortfolioRow; refDate: string; open: boolean; onToggle: () => void; showMetrics?: boolean }) {
   const router = useRouter();
   const href = `/company/${encodeURIComponent(r.symbol)}`;
   const claims = [...r.claims].sort((a, b) => STATUS_ORDER.indexOf(a.claim.status) - STATUS_ORDER.indexOf(b.claim.status));
@@ -127,6 +154,7 @@ function Row({ r, refDate, open, onToggle }: { r: PortfolioRow; refDate: string;
             <span className="truncate text-[15px] font-medium">{r.shortName}</span>
           </span>
           <span className="block truncate text-[13px] text-ink-3">{r.symbol} · {r.sector}</span>
+          {showMetrics && <MetricsLine r={r} />}
           {r.headline && (
             <span className="mt-1 block font-serif text-[16px] leading-[22px]">
               {r.headline.text} <span className="font-sans text-[12px] text-ink-3">· {date(r.headline.at, refDate)}</span>

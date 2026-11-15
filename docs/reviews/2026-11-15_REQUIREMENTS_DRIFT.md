@@ -58,3 +58,12 @@ reviewers read the writeup first.
 
 Mobile feel, design quality and end-to-end runs (E1–E4) need the live site; these were checked by hand
 at 375 px during steps 1–9. Whether the GitHub repository is public was not checked.
+
+## 5. After the fixes (re-run, 15 Nov)
+
+Fixed since: A2 (custom window), A3c (per-type Alert / As scored / Mute; needs migration 0005), A3b
+(Portfolio "Needs you" at the saved settings), A8 (classifier docstring), and every item in §1 (README and
+writeup rewritten; the AI build-history link is still for the owner to add). A fresh-context re-run of the
+drift check on the rewritten README and writeup found six Minor wording errors (replay range, "reworded",
+"every call logged", where the workers read their keys); all six are corrected. Still open, and stated in
+README §9: annual reports, BSE, executive profiles beyond Voltas, network gaps, real push.

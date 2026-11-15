@@ -26,7 +26,7 @@ Please find my submission for the FINN build challenge.
 FINN treats the investor's reason for owning a stock as the central object. Push, Pull and the Network
 all answer one question: is the thesis still true, and if not, what should I ask and whom?
 
-- **Push:** a finite morning brief over real NSE filings (any day 31 Oct–15 Nov 2026, window 24 h, 7 days
+- **Push:** a finite morning brief over real NSE filings (any day 1–15 Nov 2026, window 24 h, 7 days
   or custom). At most five cards; each leads with a verdict computed from the numbers, shows Revenue /
   EBITDA / PBT / PAT QoQ and YoY parsed from the XBRL filing, and ends with one person and one question.
   Routine filings are folded and counted. The investor sets what "unusual" means (volume ×, ± % in a day)
@@ -39,6 +39,8 @@ all answer one question: is the thesis still true, and if not, what should I ask
   Behind at 20.79% year to date. Every quote is verified word for word against the PDF. The Company page
   adds quarter charts, a year of prices with filings and alerts marked, a cited bull vs bear, and a
   question box that answers only from that company's primary sources.
+- **Portfolio:** search by name, symbol or sector; filter and sort by the latest quarter's EBITDA margin,
+  revenue growth YoY or margin change.
 - **Any ticker:** Ask processes a company I didn't pick (e.g. Dixon, Polycab) live from NSE in 2–3 s.
 - **Network, directly:** "Who knows…" ranks contacts for a person or an organisation; each name opens a call sheet.
 
@@ -66,7 +68,7 @@ all answer one question: is the thesis still true, and if not, what should I ask
   deletes them (cascading), a consent step for imported contacts, encryption of contact fields, named accounts.
 - LLMs: Gemini free tier. Flash-Lite was too weak on the first transcript, 3.8 Flash too slow; 3.6 Flash
   with 3.8 fallback. Spend ₹0; 12 live extraction calls, about 194k input and 10k output tokens; live
-  calls are cached, capped and logged.
+  generations are cached, capped, and logged when they succeed.
 - Cloud: Next.js, its API routes and a Python function on Vercel; Supabase for private rows and the answer
   cache; Gemini called from the laptop and from the API routes.
 
