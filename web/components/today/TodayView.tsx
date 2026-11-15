@@ -229,6 +229,10 @@ function withEdit(c: Card, saved: Saved): Card {
   const s = saved[c.companySymbol];
   if (!s || !c.assumption || c.assumption.ref.source !== "investor") return c;
   const chk = checkAssumption(s, rowsFromCompact(QUARTERS_COMPACT[c.companySymbol]), DATA_TO_DAY);
-  return { ...c, assumption: { ...c.assumption, ref: { ...c.assumption.ref, text: assumptionText(s), deadline: s.deadline },
+  // The offline question was written for the seed's status; ask the one that fits the edited status.
+  const metric = s.metric === "ebitda_margin" ? "EBITDA margin" : "revenue growth";
+  const short = chk.status === "behind" || chk.status === "missed";
+  const question = short ? copy.card.askShortfall(metric) : chk.status === "cant_check" ? c.question : copy.card.askHolding(metric);
+  return { ...c, question, assumption: { ...c.assumption, ref: { ...c.assumption.ref, text: assumptionText(s), deadline: s.deadline },
     status: chk.status, claim: chk.claim, rationale: chk.evidence, edited: true } };
 }

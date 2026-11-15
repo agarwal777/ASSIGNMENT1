@@ -116,6 +116,8 @@ export const copy = {
   card: {
     ask: "Ask:",
     editedByYou: "your edit",
+    askShortfall: (m: string) => `Is the shortfall in ${m} cyclical, or has something changed in the business?`,
+    askHolding: (m: string) => `What is holding ${m} up this year, and what would most likely break it?`,
     by: "by",
     value: "Value",
     qoq: "QoQ",
