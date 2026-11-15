@@ -11,7 +11,7 @@ import { date, pct, ratio } from "@/lib/format";
 import { isProblem, STATUS, STATUS_ORDER, statusCounts, type Status } from "@/lib/status";
 import type { PersonRef, PortfolioRow } from "@/lib/types";
 import { loadNetwork } from "@/lib/vault";
-import { DEFAULT_THRESHOLDS, moveEvents, type MovesData, type Thresholds } from "@/lib/moves";
+import { DEFAULT_THRESHOLDS, isDefault, moveEvents, type MovesData, type Thresholds } from "@/lib/moves";
 import { loadThresholds, onThresholds } from "@/lib/settings";
 import { assumptionText, checkAssumption, loadAssumptions, onAssumptions, rowsFromCompact, type Saved } from "@/lib/assumption";
 
@@ -27,13 +27,14 @@ const countsText = (items: { status: Status }[]) =>
   statusCounts(items).map(({ status, n }) => copy.portfolio.tag(n, STATUS[status].label)).join(" · ");
 
 /** Portfolio: one stacked bar of every tracked claim, filter chips that double as the summary, rows that expand in place. */
-export default function PortfolioView({ rows: base, refDate, needs, movesSince }: {
-  rows: PortfolioRow[]; refDate: string; needs: string[]; movesSince: string;
+export default function PortfolioView({ rows: base, refDate, needs: serverNeeds, day, movesSince }: {
+  rows: PortfolioRow[]; refDate: string; needs: string[]; day?: string; movesSince: string;
 }) {
   const [filter, setFilter] = useState<Filter>("all");
   const [open, setOpen] = useState<string | null>(null);
   // Moves are re-detected with the investor's saved thresholds; the server's rows use the defaults.
   const moves = useMovesAtThresholds(movesSince);
+  const needs = useNeedsAtSettings(day) ?? serverNeeds;
   const saved = useSavedAssumptions();
   // "Needs you" = a card in Today's brief for the same date; those companies come first.
   const rows = base.map((r) => withEdit({ ...r, needsYou: needs.includes(r.symbol), move: moves ? moves[r.symbol] : r.move }, saved))
@@ -208,6 +209,22 @@ function useMovesAtThresholds(since: string): Record<string, PortfolioRow["move"
       volumeMultiple: e.move.volume_multiple ?? undefined, at: e.at, eventId: e.id };
   }
   return out;
+}
+
+/** Companies in Needs you for this brief at the investor's saved settings; null = defaults (the server's answer is right).
+ *  The digest code loads only when the settings differ from the defaults. */
+function useNeedsAtSettings(day?: string): string[] | null {
+  const [thr, setThr] = useState<Thresholds>(DEFAULT_THRESHOLDS);
+  const [out, setOut] = useState<{ key: string; needs: string[] } | null>(null);
+  useEffect(() => { loadThresholds().then(setThr); return onThresholds(setThr); }, []);
+  const key = `${day}|${JSON.stringify(thr)}`;
+  useEffect(() => {
+    if (!day || isDefault(thr)) return;
+    let live = true;
+    import("@/lib/api").then((m) => { if (live) setOut({ key, needs: m.needsYouByDay(thr)[day] ?? [] }); });
+    return () => { live = false; };
+  }, [day, thr, key]);
+  return !day || isDefault(thr) || out?.key !== key ? null : out.needs;
 }
 
 function useSavedAssumptions(): Saved {

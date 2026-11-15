@@ -1,5 +1,6 @@
 import ResetDemo from "@/components/settings/ResetDemo";
 import ThresholdForm from "@/components/settings/ThresholdForm";
+import TypePrefs from "@/components/settings/TypePrefs";
 import TopBar from "@/components/shell/TopBar";
 import { asOfFor, DATA_TO_DAY } from "@/lib/api";
 import { copy } from "@/lib/copy";
@@ -16,6 +17,12 @@ export default function SettingsPage() {
           <h2 className="text-[13px] font-medium text-ink-2">{s.alerts}</h2>
           <p className="mt-1 text-[13px] text-ink-3">{s.thresholdsNote}</p>
           <div className="mt-2"><ThresholdForm /></div>
+        </section>
+
+        <section>
+          <h2 className="text-[13px] font-medium text-ink-2">{s.typesTitle}</h2>
+          <p className="mt-1 text-[13px] text-ink-3">{s.typesNote}</p>
+          <div className="mt-2"><TypePrefs /></div>
         </section>
 
         <section>

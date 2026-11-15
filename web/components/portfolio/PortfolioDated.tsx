@@ -11,5 +11,5 @@ export default function PortfolioDated({ rows, refDate, needsByDay, movesSince }
   const asked = useSearchParams().get("date");
   const days = Object.keys(needsByDay).sort();
   const day = asked && needsByDay[asked] ? asked : days[days.length - 1];
-  return <PortfolioView rows={rows} refDate={refDate} needs={needsByDay[day] ?? []} movesSince={movesSince} />;
+  return <PortfolioView rows={rows} refDate={refDate} needs={needsByDay[day] ?? []} day={day} movesSince={movesSince} />;
 }

@@ -9,7 +9,7 @@ import DayStrip from "@/components/today/DayStrip";
 import EventCard from "@/components/today/EventCard";
 import Num from "@/components/trust/Num";
 import { SourceLink } from "@/components/trust/SourceLink";
-import { BRIEF_DAYS, DATA_TO_DAY, LATEST_DAY, QUARTERS_COMPACT, RESULTS_WEEK_DAY, SCORING_NOTE, asOfFor, getDigest } from "@/lib/api";
+import { BRIEF_DAYS, DATA_TO_DAY, EARLIEST_DAY, LATEST_DAY, QUARTERS_COMPACT, RESULTS_WEEK_DAY, SCORING_NOTE, asOfFor, getDigest } from "@/lib/api";
 import { assumptionText, checkAssumption, loadAssumptions, onAssumptions, rowsFromCompact, type Saved } from "@/lib/assumption";
 import type { Card } from "@/lib/types";
 import { copy } from "@/lib/copy";
@@ -20,7 +20,7 @@ import { loadNetwork } from "@/lib/vault";
 import { DEFAULT_THRESHOLDS, type Thresholds } from "@/lib/moves";
 import { loadThresholds, onThresholds } from "@/lib/settings";
 
-const WINDOWS = [{ key: "24h", hours: 24 }, { key: "7d", hours: 168 }] as const;
+const WINDOWS = [{ key: "24h", hours: 24 }, { key: "7d", hours: 168 }, { key: "custom", hours: 0 }] as const;
 
 /**
  * Reviewed card ids, per replay date, in localStorage. Storage can be missing or blocked (private
@@ -56,6 +56,11 @@ export default function TodayView() {
   const latest = day === LATEST_DAY;
   const win = WINDOWS.find((w) => w.key === q.get("window")) ?? WINDOWS[0];
   const asOf = asOfFor(day);
+  // Custom window: from the start of a chosen day (IST) to this brief. Days before the snapshot aren't offered.
+  const sinceDays = [EARLIEST_DAY, ...BRIEF_DAYS].filter((d, i, all) => d < day && all.indexOf(d) === i);
+  const askedSince = q.get("since");
+  const since = askedSince && sinceDays.includes(askedSince) ? askedSince : sinceDays.at(-3) ?? sinceDays[0] ?? day;
+  const hours = win.key === "custom" ? (new Date(asOf).getTime() - new Date(`${since}T00:00:00+05:30`).getTime()) / 3600_000 : win.hours;
 
   const [contacts, setContacts] = useState<Contact[] | null>(null);
   const [networkError, setNetworkError] = useState(false);
@@ -75,7 +80,7 @@ export default function TodayView() {
     writeRaw(day, JSON.stringify(ids));
   };
 
-  const digest = useMemo(() => getDigest(asOf, win.hours, thr), [asOf, win.hours, thr]);
+  const digest = useMemo(() => getDigest(asOf, hours, thr), [asOf, hours, thr]);
   // README §6.2 network bonus N, computed here because the network never leaves the device:
   // N = 1 when a contact's link strength is ≥ 0.5. It adds 0.10 and only reorders "Needs you".
   const cards = useMemo(() => digest.needsYou
@@ -144,6 +149,17 @@ export default function TodayView() {
             </button>
           ))}
         </div>
+        {win.key === "custom" && (
+          <div className="mt-2 flex flex-wrap items-center gap-2 text-[13px] text-ink-2">
+            <label htmlFor="since">{copy.today.customFrom}</label>
+            <select id="since" value={since} onChange={(e) => setParam("since", e.target.value)}
+              className="min-h-11 rounded-[8px] border border-line bg-surface px-2 text-[15px] text-ink">
+              {sinceDays.map((d) => <option key={d} value={d}>{date(`${d}T00:00:00+05:30`, asOf)}</option>)}
+            </select>
+            <span>{copy.today.customTo(date(asOf, asOf), time(asOf))}</span>
+            <span className="basis-full text-[12px] text-ink-3">{copy.today.customNote(date(`${EARLIEST_DAY}T00:00:00+05:30`))}</span>
+          </div>
+        )}
 
         {/* Needs you */}
         <section aria-labelledby="needs" className="mt-6">

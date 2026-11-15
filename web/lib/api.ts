@@ -41,6 +41,8 @@ export const DATA_TO_DAY = dayOf(EVENTS.filter((e) => e.kind === "filing").reduc
 export const LATEST_DAY = addDays(DATA_TO_DAY, 1);
 export const DEFAULT_AS_OF = asOfFor(LATEST_DAY);
 export const FIRST_DAY = addDays(dayOf(EVENT_RANGE.first), 1);
+/** The earliest day a custom window can start: the first day with an event in the snapshot. */
+export const EARLIEST_DAY = dayOf(EVENT_RANGE.first);
 /** The week most results landed in this snapshot. */
 export const RESULTS_WEEK_DAY = "2026-11-06";
 /** Every brief date the snapshot can show, oldest first. */
@@ -49,9 +51,10 @@ export const BRIEF_DAYS: string[] = (() => {
   for (let d = FIRST_DAY; d <= LATEST_DAY; d = addDays(d, 1)) out.push(d);
   return out;
 })();
-/** Companies with a "needs you" card in each day's 24-hour brief: Portfolio uses the same answer as Today. */
-export function needsYouByDay(): Record<string, string[]> {
-  return Object.fromEntries(BRIEF_DAYS.map((d) => [d, [...new Set(getDigest(asOfFor(d), 24).needsYou.map((c) => c.companySymbol))]]));
+/** Companies with a "needs you" card in each day's 24-hour brief: Portfolio uses the same answer as Today
+ *  (the server uses the defaults; the browser re-runs this with the investor's saved settings). */
+export function needsYouByDay(t?: Thresholds): Record<string, string[]> {
+  return Object.fromEntries(BRIEF_DAYS.map((d) => [d, [...new Set(getDigest(asOfFor(d), 24, t).needsYou.map((c) => c.companySymbol))]]));
 }
 
 /**
@@ -294,7 +297,16 @@ export function eventsFor(t: Thresholds = DEFAULT_THRESHOLDS): DigestEvent[] {
 export function getDigest(asOf: string, hours: number, t?: Thresholds): DigestResponse & { all: DigestEvent[] } {
   const end = new Date(asOf).getTime();
   const start = end - hours * 3600_000;
-  const inWin = eventsFor(t).filter((e) => { const x = new Date(e.at).getTime(); return x > start && x <= end; });
+  // The investor's per-type preferences: "alert" puts a type in Needs you (even routine ones),
+  // "mute" keeps it out of Needs you (it still shows under Worth a read). Moves follow the thresholds.
+  const inWin = eventsFor(t).filter((e) => { const x = new Date(e.at).getTime(); return x > start && x <= end; })
+    .map((e) => {
+      const p = t?.types?.[e.category];
+      if (p === "alert" && e.bucket !== "needs_you")
+        return { ...e, bucket: "needs_you" as const, reasons: [...e.reasons, copy.today.yourAlert(copy.category[e.category] ?? e.category)] };
+      if (p === "mute" && e.bucket === "needs_you") return { ...e, bucket: "worth_a_read" as const };
+      return e;
+    });
   const by = (b: DigestEvent["bucket"]) => inWin.filter((e) => e.bucket === b).sort((a, z) => z.score - a.score);
   const needs = by("needs_you");
   const top = needs.slice(0, 5);

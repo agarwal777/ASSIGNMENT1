@@ -21,17 +21,24 @@ export function onThresholds(l: (t: Thresholds) => void): () => void {
 async function fetchThresholds(): Promise<Thresholds> {
   const { ensureDemoSession, supabase } = await import("@/lib/supabase");
   await ensureDemoSession();
-  const { data, error } = await supabase.from("user_settings").select("volume_multiple, price_move_pct").maybeSingle();
+  // "*" so a database without migration 0005 (no type_prefs column) still loads the thresholds.
+  const { data, error } = await supabase.from("user_settings").select("*").maybeSingle();
   if (error) throw error;
-  return data ? { volumeMultiple: Number(data.volume_multiple), priceMovePct: Number(data.price_move_pct) } : DEFAULT_THRESHOLDS;
+  if (!data) return DEFAULT_THRESHOLDS;
+  const types = (data.type_prefs ?? {}) as Record<string, "alert" | "mute">;
+  return { volumeMultiple: Number(data.volume_multiple), priceMovePct: Number(data.price_move_pct), types };
 }
 
-export async function saveThresholds(t: Thresholds): Promise<void> {
+/** Saves a change merged into the current settings, so saving thresholds keeps type preferences and vice versa. */
+export async function saveThresholds(change: Partial<Thresholds>): Promise<void> {
   const { ensureDemoSession, supabase } = await import("@/lib/supabase");
   const uid = await ensureDemoSession();
-  const { error } = await supabase.from("user_settings").upsert(
-    { user_id: uid, volume_multiple: t.volumeMultiple, price_move_pct: t.priceMovePct, updated_at: new Date().toISOString() },
-    { onConflict: "user_id" });
+  const t: Thresholds = { ...(current ?? (await loadThresholds())), ...change };
+  const row: Record<string, unknown> = { user_id: uid, volume_multiple: t.volumeMultiple, price_move_pct: t.priceMovePct,
+    updated_at: new Date().toISOString() };
+  // Only written when there is something to write, so threshold saves work before migration 0005 is run.
+  if (change.types || Object.keys(t.types ?? {}).length) row.type_prefs = t.types ?? {};
+  const { error } = await supabase.from("user_settings").upsert(row, { onConflict: "user_id" });
   if (error) throw error;
   current = t;
   cached = Promise.resolve(t);
