@@ -45,7 +45,8 @@ export default function EventCard({ card, refDate, networkLoaded = false, review
       {/* 4 · claims */}
       {card.assumption && (
         <ClaimBlock status={card.assumption.status ?? statusFromStance(card.assumption.stance)} text={card.assumption.ref.text}
-          deadline={card.assumption.ref.deadline} claim={card.assumption.claim} rationale={card.assumption.rationale} />
+          deadline={card.assumption.ref.deadline} claim={card.assumption.claim} rationale={card.assumption.rationale}
+          edited={card.assumption.edited} />
       )}
       {guidance && card.variant === "results" && (
         <ClaimBlock status={guidance.claim.status} text={guidance.text} deadline={guidance.claim.deadline} claim={guidance.claim}
@@ -112,8 +113,8 @@ function guidanceClaim(pc: PromiseCheck, period: string): { text: string; claim:
   };
 }
 
-function ClaimBlock({ status, text, deadline, claim, rationale, source, refDate }: {
-  status: Status; text: string; deadline?: string; claim?: Claim; rationale?: string; source?: SourceRef; refDate?: string;
+function ClaimBlock({ status, text, deadline, claim, rationale, source, refDate, edited }: {
+  status: Status; text: string; deadline?: string; claim?: Claim; rationale?: string; source?: SourceRef; refDate?: string; edited?: boolean;
 }) {
   return (
     <div className="mt-3">
@@ -121,6 +122,7 @@ function ClaimBlock({ status, text, deadline, claim, rationale, source, refDate 
         <StatusPill status={status} />
         <p className="min-w-0 text-[15px] leading-[22px]">
           {text}{deadline && <span className="text-ink-3"> · {copy.card.by} {deadline}</span>}
+          {edited && <span className="text-ink-3"> · {copy.card.editedByYou}</span>}
         </p>
       </div>
       {claim ? <div className="mt-2"><BulletChart claim={claim} label={text} /></div>

@@ -9,7 +9,9 @@ import DayStrip from "@/components/today/DayStrip";
 import EventCard from "@/components/today/EventCard";
 import Num from "@/components/trust/Num";
 import { SourceLink } from "@/components/trust/SourceLink";
-import { BRIEF_DAYS, DATA_TO_DAY, LATEST_DAY, RESULTS_WEEK_DAY, SCORING_NOTE, asOfFor, getDigest } from "@/lib/api";
+import { BRIEF_DAYS, DATA_TO_DAY, LATEST_DAY, QUARTERS_COMPACT, RESULTS_WEEK_DAY, SCORING_NOTE, asOfFor, getDigest } from "@/lib/api";
+import { assumptionText, checkAssumption, loadAssumptions, onAssumptions, rowsFromCompact, type Saved } from "@/lib/assumption";
+import type { Card } from "@/lib/types";
 import { copy } from "@/lib/copy";
 import { date, time } from "@/lib/format";
 import type { Contact } from "@/lib/network";
@@ -62,6 +64,9 @@ export default function TodayView() {
   // The investor's alert thresholds re-score price/volume moves (Settings); defaults until loaded.
   const [thr, setThr] = useState<Thresholds>(DEFAULT_THRESHOLDS);
   useEffect(() => { loadThresholds().then(setThr); return onThresholds(setThr); }, []);
+  // The investor's saved assumption edits: a card's status and chart follow them; ranking stays as built.
+  const [saved, setSaved] = useState<Saved>({});
+  useEffect(() => { loadAssumptions().then(setSaved); return onAssumptions(setSaved); }, []);
   // The server renders "nothing reviewed"; the device's stored list takes over after hydration.
   const reviewedRaw = useSyncExternalStore(subscribe, () => readRaw(day), () => "[]");
   const reviewedIds = useMemo(() => parseIds(reviewedRaw), [reviewedRaw]);
@@ -74,13 +79,14 @@ export default function TodayView() {
   // README §6.2 network bonus N, computed here because the network never leaves the device:
   // N = 1 when a contact's link strength is ≥ 0.5. It adds 0.10 and only reorders "Needs you".
   const cards = useMemo(() => digest.needsYou
+    .map((c) => withEdit(c, saved))
     .map((c) => withPerson(c, contacts, asOf, copy.people.you))
     .map((c) => {
       const n = c.person && c.person.strength >= 0.5 ? 1 : 0;
       return { c: n ? { ...c, reasons: [...c.reasons, copy.today.networkReason] } : c, final: 0.9 * c.score + 0.1 * n };
     })
     .sort((a, b) => b.final - a.final)
-    .map((x) => x.c), [digest, contacts, asOf]);
+    .map((x) => x.c), [digest, contacts, asOf, saved]);
 
   const setParam = (k: string, v: string | null) => {
     const p = new URLSearchParams(q.toString());
@@ -216,4 +222,13 @@ function ReviewProgress({ done, total }: { done: number; total: number }) {
       <p className="mt-1 text-[13px] text-ink-2">{copy.card.progress(done, total)}</p>
     </div>
   );
+}
+
+/** Replace a card's investor assumption with the investor's saved edit, re-checked on the device. */
+function withEdit(c: Card, saved: Saved): Card {
+  const s = saved[c.companySymbol];
+  if (!s || !c.assumption || c.assumption.ref.source !== "investor") return c;
+  const chk = checkAssumption(s, rowsFromCompact(QUARTERS_COMPACT[c.companySymbol]), DATA_TO_DAY);
+  return { ...c, assumption: { ...c.assumption, ref: { ...c.assumption.ref, text: assumptionText(s), deadline: s.deadline },
+    status: chk.status, claim: chk.claim, rationale: chk.evidence, edited: true } };
 }

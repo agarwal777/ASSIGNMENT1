@@ -109,6 +109,21 @@ def inputs(sym: str, period: str | None) -> dict | None:
     return out if period in out["facts"] else None
 
 
+def compact_quarters(syms: set[str], n: int = 8) -> dict[str, list]:
+    out = {}
+    for sym in sorted(syms):
+        qs = sorted({p for (s_, p) in FACTS_RAW if s_ == sym and len(p) == 6 and p.startswith("Q")}, key=qkey)[-n:]
+        rows = []
+        for q in qs:
+            m = FACTS_RAW[(sym, q)]
+            rev, eb = m.get("revenue"), m.get("ebitda")
+            rows.append([q, round(rev, 2) if rev is not None else None,
+                         round(100 * eb / rev, 2) if rev and eb is not None else None])
+        if rows:
+            out[sym] = rows
+    return out
+
+
 def trend(fx: dict, period: str | None, n: int = 5) -> list[dict]:
     """Up to n quarters ending at this results period, for the card's small trend chart."""
     if not period or not period.startswith("Q"):
@@ -303,7 +318,10 @@ def main() -> None:
         "default_as_of": DEFAULT_AS_OF,
         "scoring_note": "score = (0.35·materiality + 0.25·surprise + 0.30·thesis) / 0.90; your network adds up to "
                         "0.10 on your device and only reorders cards. Weights are a starting heuristic",
-        "events": events}, ensure_ascii=False, indent=1), encoding="utf-8")
+        "events": events,
+        # Compact quarters per company, so an edited investor assumption can be re-checked on the device
+        # (Today and Portfolio) with the same rule as workers/thesis.py: [period, revenue ₹ cr, EBITDA margin %].
+        "quarters": compact_quarters(syms)}, ensure_ascii=False, indent=1), encoding="utf-8")
     write_moves(syms, filed_at, names, sector)
     by = defaultdict(int)
     for e in events:

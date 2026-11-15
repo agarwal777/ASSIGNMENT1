@@ -2,7 +2,7 @@
 // reaches a client bundle. Maps the snapshot into the CompanyPayload / PortfolioRow contracts.
 import data from "@/data/companies.json";
 import executivesData from "@/data/executives.json";
-import { companySignals, filingHeadline } from "@/lib/api";
+import { companySignals, DATA_TO_DAY, filingHeadline, QUARTERS_COMPACT } from "@/lib/api";
 import { type RawClaimFields, toClaim } from "@/lib/claims";
 import { isProblem, STATUS_ORDER } from "@/lib/status";
 import type {
@@ -84,7 +84,7 @@ export function getCompany(symbol: string): CompanyPayload | null {
     credibility: r.credibility,
     transcripts: r.transcripts,
     thesis: { management: (r.thesis.management as RawItem[]).map(item("management")),
-      investor: (r.thesis.investor as RawItem[]).map((i) => ({ ...item("investor")(i), editable: false })) },
+      investor: (r.thesis.investor as RawItem[]).map((i) => ({ ...item("investor")(i), editable: true })) },
     ledger: ledger(r.symbol, r),
     quarters: quarters(r.symbol, r),
     nextQuestion: { text: nextQuestion(r), people: [] },
@@ -124,14 +124,16 @@ function nextEvent(r: Raw): PortfolioRow["nextEvent"] {
 
 export function getPortfolio(): PortfolioRow[] {
   const rows: PortfolioRow[] = Object.values(COMPANIES).filter((r) => r.role.split(";").includes("portfolio")).map((r) => {
-    const items = [...(r.thesis.investor as RawItem[]), ...(r.thesis.management as RawItem[])];
+    const items = [...(r.thesis.investor as RawItem[]).map((i) => ({ ...i, src: "investor" as const })),
+      ...(r.thesis.management as RawItem[]).map((i) => ({ ...i, src: "management" as const }))];
     const sig = companySignals(r.symbol);
     return {
     symbol: r.symbol, name: r.name, shortName: shortName(r.name), sector: r.sector,
-    claims: items.flatMap((i) => { const claim = toClaim(i); return claim ? [{ label: i.text, claim }] : []; }),
+    claims: items.flatMap((i) => { const claim = toClaim(i); return claim ? [{ label: i.text, claim, source: i.src }] : []; }),
+    quarters: QUARTERS_COMPACT[r.symbol], dataTo: DATA_TO_DAY,
     headline: sig.headline, move: sig.move, eventId: sig.eventId, nextEvent: nextEvent(r),
     transcripts: r.transcripts,
-    thesis: [...(r.thesis.investor as RawItem[]), ...(r.thesis.management as RawItem[])].map((i) => ({ status: i.status as PromiseStatus })),
+    thesis: items.map((i) => ({ status: i.status as PromiseStatus, source: i.src })),
     credibility: r.credibility.resolved > 0 ? r.credibility : undefined,
     lastEvent: r.last_event ? { title: r.last_event.title, at: r.last_event.at,
       tier: r.last_event.tier as "needs_you" | "worth_a_read" | "collapsed" } : undefined,

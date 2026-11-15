@@ -19,7 +19,8 @@ export interface CardBase {
   id: string; companySymbol: string; companyName: string; category: string; at: string;
   headline: string; score: number; reasons: string[];
   assumption?: { ref: AssumptionRef; stance: Stance; rationale?: string; epistemic: Epistemic;
-                status?: PromiseStatus /* redesign: one status vocabulary */; claim?: Claim /* redesign: bullet chart */ };
+                status?: PromiseStatus /* redesign: one status vocabulary */; claim?: Claim /* redesign: bullet chart */;
+                edited?: boolean /* the investor's own saved edit, re-checked on the device */ };
   person?: PersonRef; question?: string; sources: SourceRef[];
   tiles?: StatTile[] /* redesign: lead stats */; trend?: Trend /* redesign: 3–5 quarter trend */;
 }
@@ -86,8 +87,10 @@ export interface CompanyPayload {
 
 export interface PortfolioRow {
   symbol: string; name: string; shortName: string; sector: string;
-  thesis: { status: PromiseStatus }[];
-  claims: { label: string; claim: Claim }[];
+  thesis: { status: PromiseStatus; source: 'investor' | 'management' }[];
+  claims: { label: string; claim: Claim; source: 'investor' | 'management'; edited?: boolean }[];
+  /** Compact quarters [period, revenue, margin] and the check date, to re-check an edited assumption. */
+  quarters?: [string, number | null, number | null][]; dataTo?: string;
   /** Latest important filing (never routine), as a written headline. */
   headline?: { text: string; at: string; eventId: string };
   move?: { returnPct?: number; volumeMultiple?: number; at: string; eventId: string };

@@ -106,7 +106,7 @@ const names = ["Acme Polymers", "Northwind Appliances", "Lumen Cables", "Orbit F
   "Nimbus Software", "Oakline Chemicals", "Pioneer Steel"];
 export const portfolioFixture: PortfolioRow[] = names.map((n, i) => ({
   symbol: n.split(" ")[0].toUpperCase(), name: `${n} (example)`, shortName: n, claims: [], transcripts: { count: 4, since: "2025-11-01" }, sector: ["Chemicals", "Consumer durables", "Cables", "Food", "Pharma"][i % 5],
-  thesis: [{ status: i < 2 ? "behind" : "on_track" }, { status: i % 3 === 0 ? "cant_check" : "met" }, { status: "missed" }],
+  thesis: [{ status: i < 2 ? "behind" : "on_track", source: "investor" }, { status: i % 3 === 0 ? "cant_check" : "met", source: "management" }, { status: "missed", source: "management" }],
   credibility: i % 4 === 3 ? undefined : { met: 5 - (i % 3), resolved: 8 },
   lastEvent: { title: i < 3 ? "Needs you" : "Routine filing", at: "2026-11-05T12:00:00+05:30", tier: i < 3 ? "needs_you" : "collapsed" },
   needsYou: i < 3,

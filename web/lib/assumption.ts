@@ -47,14 +47,51 @@ export function checkAssumption(a: AssumptionInput, quarters: QuarterRow[], data
   };
 }
 
-/** The investor's saved edit for this company, if any (db/migrations/0002, RLS own rows). */
-export async function loadSavedAssumption(symbol: string): Promise<(AssumptionInput & { id: string }) | null> {
+/** [period, revenue ₹ cr, EBITDA margin %] as shipped in digest.json → the rows checkAssumption reads. */
+export type CompactQuarter = [string, number | null, number | null];
+export function rowsFromCompact(rows: CompactQuarter[] | undefined): QuarterRow[] {
+  return (rows ?? []).map(([period, revenue, margin]) => ({
+    period,
+    revenue: revenue != null ? { value: revenue, kind: "inr_cr", epistemic: "EXTRACTED" } : undefined,
+    ebitdaMargin: margin != null ? { value: margin, kind: "pct", epistemic: "CALCULATED" } : undefined,
+  }));
+}
+
+// ── The investor's saved assumptions: one private row per company (db/migrations/0002, RLS own rows).
+// Loaded once per page and shared: a save notifies every screen (Today, Portfolio, Company), the same
+// pattern as lib/settings.ts. Each screen re-checks the edit with checkAssumption on the device.
+export type Saved = Record<string, AssumptionInput & { id: string }>;
+let cached: Promise<Saved> | null = null;
+let current: Saved | null = null;
+const listeners = new Set<(s: Saved) => void>();
+const notify = () => { if (current) listeners.forEach((l) => l(current!)); };
+
+export function loadAssumptions(): Promise<Saved> {
+  // Notify on first load too, so a screen that subscribed before the rows arrived gets them.
+  cached ??= fetchAll().then((s) => { current = s; notify(); return s; }).catch(() => { cached = null; return {}; });
+  return cached;
+}
+
+export function onAssumptions(l: (s: Saved) => void): () => void {
+  listeners.add(l);
+  if (current) l(current);
+  return () => { listeners.delete(l); };
+}
+
+/** Reset demo: forget the in-memory copy so every screen falls back to the seed assumptions. */
+export function resetAssumptions(): void {
+  current = {};
+  cached = Promise.resolve(current);
+  notify();
+}
+
+async function fetchAll(): Promise<Saved> {
   const { ensureDemoSession, supabase } = await import("@/lib/supabase");
   await ensureDemoSession();
-  const { data, error } = await supabase.from("user_assumptions")
-    .select("assumption_id, metric, operator, target, deadline").eq("symbol", symbol).maybeSingle();
+  const { data, error } = await supabase.from("user_assumptions").select("symbol, assumption_id, metric, operator, target, deadline");
   if (error) throw error;
-  return data ? { id: data.assumption_id, metric: data.metric, operator: data.operator, target: Number(data.target), deadline: data.deadline } : null;
+  return Object.fromEntries((data ?? []).map((r) => [r.symbol,
+    { id: r.assumption_id, metric: r.metric, operator: r.operator, target: Number(r.target), deadline: r.deadline }]));
 }
 
 export async function saveAssumption(symbol: string, id: string, a: AssumptionInput): Promise<AssumptionInput> {
@@ -66,5 +103,9 @@ export async function saveAssumption(symbol: string, id: string, a: AssumptionIn
       updated_at: new Date().toISOString() },
     { onConflict: "user_id,symbol,assumption_id" }).select("metric, operator, target, deadline").single();
   if (error) throw error;
-  return { metric: data.metric, operator: data.operator, target: Number(data.target), deadline: data.deadline };
+  const stored: AssumptionInput = { metric: data.metric, operator: data.operator, target: Number(data.target), deadline: data.deadline };
+  current = { ...(current ?? (await loadAssumptions())), [symbol]: { ...stored, id } };
+  cached = Promise.resolve(current);
+  notify();
+  return stored;
 }

@@ -13,6 +13,7 @@ import type { PersonRef, PortfolioRow } from "@/lib/types";
 import { loadNetwork } from "@/lib/vault";
 import { DEFAULT_THRESHOLDS, moveEvents, type MovesData, type Thresholds } from "@/lib/moves";
 import { loadThresholds, onThresholds } from "@/lib/settings";
+import { assumptionText, checkAssumption, loadAssumptions, onAssumptions, rowsFromCompact, type Saved } from "@/lib/assumption";
 
 type Filter = "all" | "needs" | "behind" | "moves";
 const MATCH: Record<Filter, (r: PortfolioRow) => boolean> = {
@@ -33,8 +34,9 @@ export default function PortfolioView({ rows: base, refDate, needs, movesSince }
   const [open, setOpen] = useState<string | null>(null);
   // Moves are re-detected with the investor's saved thresholds; the server's rows use the defaults.
   const moves = useMovesAtThresholds(movesSince);
+  const saved = useSavedAssumptions();
   // "Needs you" = a card in Today's brief for the same date; those companies come first.
-  const rows = base.map((r) => ({ ...r, needsYou: needs.includes(r.symbol), move: moves ? moves[r.symbol] : r.move }))
+  const rows = base.map((r) => withEdit({ ...r, needsYou: needs.includes(r.symbol), move: moves ? moves[r.symbol] : r.move }, saved))
     .sort((a, b) => Number(b.needsYou) - Number(a.needsYou));
   const all = rows.flatMap((r) => r.thesis);
   const shown = rows.filter(MATCH[filter]);
@@ -206,4 +208,20 @@ function useMovesAtThresholds(since: string): Record<string, PortfolioRow["move"
       volumeMultiple: e.move.volume_multiple ?? undefined, at: e.at, eventId: e.id };
   }
   return out;
+}
+
+function useSavedAssumptions(): Saved {
+  const [saved, setSaved] = useState<Saved>({});
+  useEffect(() => { loadAssumptions().then(setSaved); return onAssumptions(setSaved); }, []);
+  return saved;
+}
+
+/** The investor's saved edit replaces the row's investor claim (or adds one), re-checked on the device. */
+function withEdit(r: PortfolioRow, saved: Saved): PortfolioRow {
+  const s = saved[r.symbol];
+  if (!s || !r.dataTo) return r;
+  const chk = checkAssumption(s, rowsFromCompact(r.quarters), r.dataTo);
+  return { ...r,
+    claims: [{ label: assumptionText(s), claim: chk.claim, source: "investor", edited: true }, ...r.claims.filter((c) => c.source !== "investor")],
+    thesis: [{ status: chk.status, source: "investor" }, ...r.thesis.filter((t) => t.source !== "investor")] };
 }

@@ -13,6 +13,8 @@ import type { DigestEvent } from "@/lib/digest";
 import type { Card, DigestResponse, MetricRow, NumValue, SourceRef, StatTile, Trend } from "@/lib/types";
 
 export const SCORING_NOTE: string = digestData.scoring_note;
+/** Compact quarters per company (from workers/build_digest.py), for re-checking an edited assumption. */
+export const QUARTERS_COMPACT = (digestData as unknown as { quarters: Record<string, [string, number | null, number | null][]> }).quarters;
 const EVENTS = digestData.events as unknown as DigestEvent[];
 export const EVENT_RANGE = {
   first: EVENTS.reduce((m, e) => (e.at < m ? e.at : m), EVENTS[0].at),

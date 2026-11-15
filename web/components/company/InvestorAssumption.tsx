@@ -1,51 +1,54 @@
 "use client";
 
 import { useEffect, useState } from "react";
+import { useSearchParams } from "next/navigation";
 import { Pencil } from "lucide-react";
 import Sheet from "@/components/shell/Sheet";
 import BulletChart from "@/components/trust/BulletChart";
 import StatusPill from "@/components/trust/StatusPill";
 import {
-  assumptionText, checkAssumption, DEADLINES, loadSavedAssumption, METRICS, saveAssumption, type AssumptionInput,
+  assumptionText, checkAssumption, DEADLINES, loadAssumptions, METRICS, onAssumptions, saveAssumption, type AssumptionInput,
 } from "@/lib/assumption";
 import { copy } from "@/lib/copy";
+import { useSheetNav } from "@/lib/sheet";
 import type { QuarterRow, ThesisItem } from "@/lib/types";
 
-type Base = { id: string; input: AssumptionInput | null; item?: ThesisItem };
-
 /**
- * "Your assumptions": one editable investor assumption per company. Saving updates the bullet chart and
- * status at once (optimistic), stores the row, then re-checks against what the database returned.
+ * "Your assumptions": one editable investor assumption per company. The editor is a URL sheet
+ * (?sheet=assumption), so the back gesture closes it. Saving updates this card at once (optimistic),
+ * stores the row, and notifies Today and Portfolio through the shared store in lib/assumption.ts.
  */
 export default function InvestorAssumption({ symbol, items, quarters, dataTo, seed }: {
   symbol: string; items: ThesisItem[]; quarters: QuarterRow[]; dataTo: string; seed: AssumptionInput | null;
 }) {
-  const base: Base = { id: items[0]?.ref.id ?? `inv-${symbol.toLowerCase()}-1`, input: seed, item: items[0] };
-  const [mine, setMine] = useState<AssumptionInput | null>(null);
-  const [open, setOpen] = useState(false);
+  const id = items[0]?.ref.id ?? `inv-${symbol.toLowerCase()}-1`;
+  const [stored, setStored] = useState<AssumptionInput | null>(null);
+  const [pending, setPending] = useState<AssumptionInput | null>(null);
   const [state, setState] = useState<"idle" | "saving" | "saved" | "failed">("idle");
+  const open = useSearchParams().get("sheet") === "assumption";
+  const { open: openSheet, close } = useSheetNav();
   const a = copy.assumption;
 
   useEffect(() => {
-    let live = true;
-    loadSavedAssumption(symbol).then((r) => { if (live && r) setMine(r); }).catch(() => { /* seed stays */ });
-    return () => { live = false; };
+    loadAssumptions();
+    return onAssumptions((all) => setStored(all[symbol] ?? null));
   }, [symbol]);
 
-  const current = mine ?? base.input;
+  const mine = pending ?? stored;
+  const current = mine ?? seed;
   const checked = current ? checkAssumption(current, quarters, dataTo) : null;
 
   const save = async (next: AssumptionInput) => {
-    const before = mine;
-    setMine(next);            // optimistic: chart and status move now
-    setOpen(false);
+    setPending(next);         // optimistic: chart and status move now
+    close();
     setState("saving");
     try {
-      setMine(await saveAssumption(symbol, base.id, next));   // re-check against the stored row
+      await saveAssumption(symbol, id, next);   // the store notifies every screen with the stored row
       setState("saved");
     } catch {
-      setMine(before);
       setState("failed");
+    } finally {
+      setPending(null);
     }
   };
 
@@ -53,7 +56,7 @@ export default function InvestorAssumption({ symbol, items, quarters, dataTo, se
     <div className="mt-2">
       <div className="flex items-center justify-between">
         <h3 className="text-[13px] text-ink-3">{copy.company.yourAssumptions}</h3>
-        <button type="button" onClick={() => setOpen(true)} aria-label={current ? a.edit : a.add}
+        <button type="button" onClick={() => openSheet("assumption", {})} aria-label={current ? a.edit : a.add}
           className="-mr-2 flex h-11 w-11 items-center justify-center rounded-full text-accent">
           <Pencil size={18} aria-hidden />
         </button>
@@ -62,7 +65,7 @@ export default function InvestorAssumption({ symbol, items, quarters, dataTo, se
         <div className="mt-1 rounded-[12px] border border-line bg-surface p-3">
           <div className="flex items-start gap-2">
             <StatusPill status={checked.status} />
-            <p className="min-w-0 text-[15px] leading-[22px]">{mine ? assumptionText(current) : base.item?.ref.text ?? assumptionText(current)}</p>
+            <p className="min-w-0 text-[15px] leading-[22px]">{mine ? assumptionText(current) : items[0]?.ref.text ?? assumptionText(current)}</p>
           </div>
           <div className="mt-2"><BulletChart claim={checked.claim} label={assumptionText(current)} /></div>
         </div>
@@ -70,7 +73,7 @@ export default function InvestorAssumption({ symbol, items, quarters, dataTo, se
       <p role="status" aria-live="polite" className={`mt-1 min-h-5 text-[13px] ${state === "failed" ? "text-contradicts" : "text-ink-3"}`}>
         {state === "saving" ? a.saving : state === "saved" ? a.saved : state === "failed" ? a.failed : ""}
       </p>
-      <Sheet open={open} onClose={() => setOpen(false)} title={current ? a.edit : a.add} kicker={a.kicker}>
+      <Sheet open={open} onClose={close} title={current ? a.edit : a.add} kicker={a.kicker}>
         {open && <Form initial={current ?? { metric: "ebitda_margin", operator: ">=", target: 10, deadline: "FY27" }} onSave={save} />}
       </Sheet>
     </div>

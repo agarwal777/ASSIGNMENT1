@@ -1,3 +1,4 @@
+import { Suspense } from "react";
 import Link from "next/link";
 import { notFound } from "next/navigation";
 import { ChevronLeft } from "lucide-react";
@@ -69,9 +70,12 @@ export default async function CompanyPage({ params }: { params: Promise<{ symbol
           <h2 id="thesis" className="text-[13px] font-medium text-ink-2">{copy.company.thesis}</h2>
           <ThesisRow title={copy.company.managementClaims} items={c.thesis.management}
             empty={hasLedgerData(c.symbol) ? copy.company.noManagementClaims : copy.company.noClaimsWithoutTranscripts} />
-          <InvestorAssumption symbol={c.symbol} items={c.thesis.investor} quarters={c.quarters} dataTo={DATA_TO_DAY}
+          {/* Reads ?sheet=assumption, so it sits in a Suspense boundary; the fallback is the same card. */}
+          <Suspense fallback={<p className="mt-3 text-[13px] text-ink-3">{copy.company.yourAssumptions}</p>}>
+            <InvestorAssumption symbol={c.symbol} items={c.thesis.investor} quarters={c.quarters} dataTo={DATA_TO_DAY}
             seed={seed && (seed.metric === "ebitda_margin" || seed.metric === "revenue_growth")
               ? { metric: seed.metric, operator: ">=", target: seed.target, deadline: seed.deadline } : null} />
+          </Suspense>
         </section>
 
         {/* 4 · promised vs delivered */}

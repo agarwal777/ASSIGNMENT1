@@ -115,6 +115,7 @@ export const copy = {
   },
   card: {
     ask: "Ask:",
+    editedByYou: "your edit",
     by: "by",
     value: "Value",
     qoq: "QoQ",

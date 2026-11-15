@@ -16,7 +16,7 @@ export function sourceParams(s: SourceRef): Record<string, string | number | und
     excerpt: s.text ? s.text.slice(0, 600) : undefined };
 }
 
-export type SheetName = "source" | "formula" | "call" | "quote";
+export type SheetName = "source" | "formula" | "call" | "quote" | "assumption";
 const SHEET_KEYS = ["sheet", "doc", "page", "label", "at", "text", "event", "contact", "promise", "src", "calc", "el", "per", "unit", "val", "excerpt"];
 
 let openedInApp = false; // true when the current sheet was opened by a tap (so back() is safe)
