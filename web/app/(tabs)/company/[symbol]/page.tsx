@@ -2,6 +2,7 @@ import Link from "next/link";
 import { notFound } from "next/navigation";
 import { ChevronLeft } from "lucide-react";
 import BullBear from "@/components/company/BullBear";
+import InvestorAssumption from "@/components/company/InvestorAssumption";
 import LedgerTimeline from "@/components/company/LedgerTimeline";
 import NextQuestion from "@/components/company/NextQuestion";
 import QuarterCharts from "@/components/company/QuarterCharts";
@@ -11,6 +12,7 @@ import StatusPill from "@/components/trust/StatusPill";
 import Num from "@/components/trust/Num";
 import { SourceLink } from "@/components/trust/SourceLink";
 import { shortName, SNAPSHOT_AS_OF, companySymbols, getCompany, hasLedgerData } from "@/lib/companies";
+import { DATA_TO_DAY } from "@/lib/api";
 import { copy } from "@/lib/copy";
 import { date, period } from "@/lib/format";
 import type { ThesisItem } from "@/lib/types";
@@ -26,6 +28,8 @@ export default async function CompanyPage({ params }: { params: Promise<{ symbol
   if (!c) notFound();
   const eventId = c.recentFilings.find((f) => f.tier === "needs_you")?.id ?? c.recentFilings[0]?.id;
   const cred = c.credibility;
+  // The demo assumption (seed/theses.csv, all "at or above"); the investor's own edit replaces it on the device.
+  const seed = c.thesis.investor[0]?.claim;
   const important = c.recentFilings.filter((f) => f.tier !== "collapsed");
   const routine = c.recentFilings.filter((f) => f.tier === "collapsed");
 
@@ -65,7 +69,9 @@ export default async function CompanyPage({ params }: { params: Promise<{ symbol
           <h2 id="thesis" className="text-[13px] font-medium text-ink-2">{copy.company.thesis}</h2>
           <ThesisRow title={copy.company.managementClaims} items={c.thesis.management}
             empty={hasLedgerData(c.symbol) ? copy.company.noManagementClaims : copy.company.noClaimsWithoutTranscripts} />
-          <ThesisRow title={copy.company.yourAssumptions} items={c.thesis.investor} empty={copy.company.noAssumptions} />
+          <InvestorAssumption symbol={c.symbol} items={c.thesis.investor} quarters={c.quarters} dataTo={DATA_TO_DAY}
+            seed={seed && (seed.metric === "ebitda_margin" || seed.metric === "revenue_growth")
+              ? { metric: seed.metric, operator: ">=", target: seed.target, deadline: seed.deadline } : null} />
         </section>
 
         {/* 4 · promised vs delivered */}
