@@ -187,12 +187,14 @@ output; nothing plans, calls tools or acts for the investor.
 
 ### Cloud
 
-| Part | Runs on | Why |
-|---|---|---|
-| Web app (Next.js) and the two model routes | Vercel | Pages are prerendered; server-only keys stay off the phone |
-| Live read of an unseen ticker | Vercel Python function, streaming progress | Same deployment; within a 90-second budget |
-| Private data, answer cache, call log | Supabase (Postgres + anonymous auth) | Row-level security built in; free tier |
-| Ingestion and offline extraction | Batch job on my laptop, output committed | Sources are too unreliable for the demo to depend on |
+- **Web app (Next.js) and the two model routes run on Vercel.** Pages are prerendered, and the server-only
+  keys stay off the phone.
+- **The live read of an unseen ticker runs as a Python function on Vercel.** It streams progress, sits in
+  the same deployment, and works within a 90-second budget.
+- **Private data, the answer cache and the call log live in Supabase (Postgres with anonymous sign-in).**
+  Row-level security is built in, and the free tier is enough.
+- **Ingestion and offline extraction run as a batch job on my laptop, with the output committed.** The
+  sources are too unreliable for the demo to depend on.
 
 ## 4. What I deliberately left out
 
