@@ -48,3 +48,12 @@ def test_no_contact_name_in_model_traffic():
     blob = "\n".join(texts)
     leaked = sorted(n for n in names if n in blob)
     assert not leaked, f"contact names found in model traffic: {leaked}"
+
+
+def test_typescript_deny_list_matches_python():
+    """The live bull-vs-bear route (web/lib/numcheck.ts) must refuse exactly the fields the router refuses."""
+    import re
+    ts = (ROOT / "web" / "lib" / "numcheck.ts").read_text(encoding="utf-8")
+    ts_fields = set(re.search(r"NETWORK_FIELDS\s*=\s*/.b\(([^)]*)\)", ts).group(1).split("|"))  # "/\b(" in TS
+    py_fields = set(re.search(r"\(([^)]*)\)", llm.NETWORK_FIELDS.pattern).group(1).split("|"))
+    assert ts_fields == py_fields, f"deny-lists differ: {ts_fields ^ py_fields}"

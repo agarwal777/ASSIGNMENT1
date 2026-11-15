@@ -1,7 +1,7 @@
 # FINN hardening: close the loopholes found by the drift report (v2)
 
 Status: revised after the EGM review (`docs/reviews/hardening-review/consolidated_review_report.md`).
-Owner decisions taken 15 Nov 2026: bull vs bear stays **live** with a minimal guard; **CI** is added.
+Owner decisions taken 15 Nov 2026: bull vs bear stays **live** with a minimal guard; **no CI** (decided during step 2, reversing the earlier yes).
 No open decisions remain. Nothing here is built yet.
 
 ## Context
@@ -41,7 +41,7 @@ After the redesign and nine fixes (commits `ef3ad83`…`076f8ab`), the drift rep
   Ranking stays as computed offline. *Check:* pure-function test + manual check on the deployed app.
 - G5 (L8) The parser refuses a fact it reads whose unit is not INR, and Ask says "results in an
   unsupported format". *Check:* parser tests incl. the real M&M fixture unchanged.
-- G6 (L12) A push runs pytest, the Node tests and the type check. *Check:* a green run on GitHub.
+- G6 (L12) Withdrawn: no CI by owner decision. Tests stay manual; the README says how to run them.
 
 Non-goals (documented in the README as not built, with reasons): Postgres as the app's read path and
 per-user `event_scores`; promise extraction for unseen tickers; Playwright end-to-end tests; service
@@ -160,7 +160,7 @@ UI steps checked on the deployed link at 375 px; others by their tests.
 | 4 Assumption | M `web/lib/assumption.ts`, `workers/build_digest.py`, `web/lib/digest.ts`, `web/lib/api.ts`, `web/components/today/EventCard.tsx`, `web/components/portfolio/PortfolioView.tsx`, `web/app/(tabs)/portfolio/page.tsx`, `web/components/company/InvestorAssumption.tsx`, `web/components/trust/SheetHost.tsx`, `web/lib/sheet.ts`, `web/lib/companies.ts`; C `web/scripts/override.test.mjs` | Edit on Company → same status on Today and Portfolio (deployed) |
 | 5 Correctness | M `web/components/settings/ResetDemo.tsx`, `web/lib/settings.ts`, `web/lib/types.ts`, `web/lib/format.ts`, `web/lib/companies.ts`, `web/app/(tabs)/company/[symbol]/page.tsx`, `web/components/ask/AskView.tsx`, `web/fixtures/index.ts`, `workers/thesis.py`, Settings page; C `db/migrations/0004_promise_status.sql` | Reset clears both tables; ₹169.20 shown; tests pass |
 | 6 Housekeeping/UX | D `web/app/status`; M `web/app/(tabs)/dev/cards/page.tsx`, `EventCard.tsx`, `AskView.tsx`, `web/components/people/CallSheet.tsx`, `SheetHost.tsx` | `/status` 404; card name opens Company; "Who knows" opens a sheet |
-| 7 CI | C `.github/workflows/ci.yml`; M `web/package.json` (`test`, `budget`) | Green run on GitHub |
+| 7 CI | Dropped by owner decision (no CI). M `web/package.json` (`test`, `budget` scripts) moves to step 8 | — |
 | 8 Measure | run `npm run budget`; M `README.md` | Number recorded |
 | 9 Final docs | M `README.md`, `docs/WRITEUP-draft.md`; one-line banner on `docs/FRONTEND.md`, `docs/design-v2.md` | Drift re-run: zero Blocker/Major on README/writeup |
 
