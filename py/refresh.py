@@ -112,6 +112,7 @@ def _results_block(c: httpx.Client, symbol: str, deadline: float, quarters_by_la
 # ── the run ─────────────────────────────────────────────────────────────────────────────────────────
 def run(*, nse_client, quarters_by_label, ua: str, write: bool = True, today: datetime | None = None) -> dict:
     t0 = time.monotonic()
+    started = datetime.now(timezone.utc).isoformat()
     deadline = t0 + BUDGET_S
     now = today or datetime.now(IST)
     sb = _sb() if write else None
@@ -200,7 +201,7 @@ def run(*, nse_client, quarters_by_label, ua: str, write: bool = True, today: da
 
     try:
         httpx.post(f"{base}/refresh_runs", headers={**h, "Prefer": "return=minimal"}, timeout=10, content=json.dumps({
-            "finished_at": datetime.now(timezone.utc).isoformat(), "ok": summary["ok"],
+            "started_at": started, "finished_at": datetime.now(timezone.utc).isoformat(), "ok": summary["ok"],
             "window_from": summary["window_from"], "window_to": summary["window_to"],
             "events": len(events), "prices": len(prices), "deploy": summary.get("deploy", deploy),
             "notes": "; ".join(notes)[:2000] or None})).raise_for_status()
