@@ -76,8 +76,12 @@ function apiKey(): string | undefined {
 }
 
 /** One side, validated: every kept sentence cites a real evidence item and its figures appear in it. */
-export async function side(which: "bear" | "bull", name: string, items: Evidence[]): Promise<SideResult> {
-  const text = prompt(which, name, items);
+export function side(which: "bear" | "bull", name: string, items: Evidence[]): Promise<SideResult> {
+  return validated(prompt(which, name, items), items);
+}
+
+/** Send a prompt over numbered evidence; keep only sentences that cite real items and whose figures appear in them. */
+export async function validated(text: string, items: Evidence[]): Promise<SideResult> {
   if (NETWORK_FIELDS.test(text)) throw new Error("refused: payload contains investor-network fields");
   const key = apiKey();
   if (!key) throw new Error("no model key configured on the server");

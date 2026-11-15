@@ -3,6 +3,7 @@ import Link from "next/link";
 import { notFound } from "next/navigation";
 import { ChevronLeft } from "lucide-react";
 import BullBear from "@/components/company/BullBear";
+import CompanyQuestion from "@/components/company/CompanyQuestion";
 import InvestorAssumption from "@/components/company/InvestorAssumption";
 import LedgerTimeline from "@/components/company/LedgerTimeline";
 import NextQuestion from "@/components/company/NextQuestion";
@@ -126,6 +127,14 @@ export default async function CompanyPage({ params }: { params: Promise<{ symbol
           <section aria-labelledby="bullbear" className="mt-6">
             <h2 id="bullbear" className="mb-2 text-[13px] font-medium text-ink-2">{copy.bullBear.title}</h2>
             <BullBear symbol={c.symbol} />
+          </section>
+        )}
+
+        {/* 7b · a cited question about this company */}
+        {c.quarters.length > 0 && (
+          <section aria-labelledby="question" className="mt-6">
+            <h2 id="question" className="mb-2 text-[13px] font-medium text-ink-2">{copy.question.title}</h2>
+            <CompanyQuestion symbol={c.symbol} name={shortName(c.name)} />
           </section>
         )}
 
