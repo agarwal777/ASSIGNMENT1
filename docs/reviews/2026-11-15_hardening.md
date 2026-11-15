@@ -123,9 +123,7 @@ assumption: <status>". Investor items become `editable: true`. The editor moves 
 
 ### 4.4 Housekeeping and delivery (L11-L14)
 Delete `web/app/status`. `/dev/cards` calls `notFound()` when `NODE_ENV === "production"`.
-CI `.github/workflows/ci.yml`: Python 3.12, `pip install -r workers/requirements.txt`, `pytest workers/tests`;
-Node 24 in `web/`: `npm ci`, `npm test` (= `node --test scripts/*.test.mjs`, which excludes `rls_test.mjs`),
-`npx tsc --noEmit`. No secrets; `next build` is left to Vercel. Measure Today's gzipped JS with
+No CI (owner decision); tests run by hand: `pytest workers/tests` and `npm test` in `web/`. Measure Today's gzipped JS with
 `web/scripts/js-budget.mjs` (budget 150 KB, the script's default) and record the number in the README.
 Card company name links to the Company page; "Who knows" results open an event-less call sheet
 (questions and opener about the person's employer, no event context).
@@ -145,11 +143,10 @@ Card company name links to the Company page; "Who knows" results open an event-l
 | Gemini overloaded on a cold cache | Existing retries; nothing stored; message + Try again | Cold companies may fail at peak |
 | Validator drops correct sentences | Count shown; drop rate measured on the snapshot before shipping | Fewer sentences |
 | Parser refuses a real filing | Real M&M fixture must still parse; refusal shows a clear message | A new format needs a fix |
-| CI logs public | No secrets configured | None known |
 
 ## 7. Implementation plan
 Order: Blocker docs fix → bull vs bear (L2-L4) → parser (L8) → assumption (L5) → correctness (L6, L7,
-L9, L10) → housekeeping/UX (L11, L14) → CI (L12) → measure (L13) → final docs (L1b). One commit each;
+L9, L10) → housekeeping/UX (L11, L14) → measure (L13) → final docs (L1b). One commit each;
 UI steps checked on the deployed link at 375 px; others by their tests.
 
 | Step | Files (C = create, M = modify, D = delete) | Done when |
