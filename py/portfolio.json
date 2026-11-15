@@ -1,0 +1,137 @@
+{
+ "_note": "Generated from seed/portfolio.csv for the daily refresh (py/refresh.py). Regenerate if the portfolio changes.",
+ "companies": [
+  {
+   "symbol": "M&M",
+   "name": "Mahindra & Mahindra Limited",
+   "sector": "Autos",
+   "portfolio": true
+  },
+  {
+   "symbol": "ASHOKLEY",
+   "name": "Ashok Leyland Limited",
+   "sector": "Autos",
+   "portfolio": true
+  },
+  {
+   "symbol": "UNOMINDA",
+   "name": "UNO Minda Limited",
+   "sector": "Auto parts",
+   "portfolio": true
+  },
+  {
+   "symbol": "AUROPHARMA",
+   "name": "Aurobindo Pharma Limited",
+   "sector": "Pharma",
+   "portfolio": true
+  },
+  {
+   "symbol": "LUPIN",
+   "name": "Lupin Limited",
+   "sector": "Pharma",
+   "portfolio": true
+  },
+  {
+   "symbol": "MEDANTA",
+   "name": "Global Health Limited",
+   "sector": "Healthcare",
+   "portfolio": true
+  },
+  {
+   "symbol": "TEXRAIL",
+   "name": "Texmaco Rail & Engineering Limited",
+   "sector": "Capital goods",
+   "portfolio": true
+  },
+  {
+   "symbol": "THERMAX",
+   "name": "Thermax Limited",
+   "sector": "Capital goods",
+   "portfolio": true
+  },
+  {
+   "symbol": "GRSE",
+   "name": "Garden Reach Shipbuilders & Engineers Limited",
+   "sector": "Defence shipbuilding",
+   "portfolio": true
+  },
+  {
+   "symbol": "KEC",
+   "name": "KEC International Limited",
+   "sector": "Transmission",
+   "portfolio": true
+  },
+  {
+   "symbol": "NCC",
+   "name": "NCC Limited",
+   "sector": "Construction",
+   "portfolio": true
+  },
+  {
+   "symbol": "TATAPOWER",
+   "name": "Tata Power Company Limited",
+   "sector": "Power",
+   "portfolio": true
+  },
+  {
+   "symbol": "DEEPAKFERT",
+   "name": "Deepak Fertilizers and Petrochemicals Corporation Limited",
+   "sector": "Chemicals",
+   "portfolio": true
+  },
+  {
+   "symbol": "SUDARSCHEM",
+   "name": "Sudarshan Chemical Industries Limited",
+   "sector": "Chemicals",
+   "portfolio": true
+  },
+  {
+   "symbol": "JUBLFOOD",
+   "name": "Jubilant Foodworks Limited",
+   "sector": "Consumer",
+   "portfolio": true
+  },
+  {
+   "symbol": "VOLTAS",
+   "name": "Voltas Limited",
+   "sector": "Consumer durables",
+   "portfolio": true
+  },
+  {
+   "symbol": "AURIONPRO",
+   "name": "Aurionpro Solutions Limited",
+   "sector": "IT",
+   "portfolio": true
+  },
+  {
+   "symbol": "TATASTEEL",
+   "name": "Tata Steel Limited",
+   "sector": "Metals",
+   "portfolio": true
+  },
+  {
+   "symbol": "TITAN",
+   "name": "Titan Company Limited",
+   "sector": "Consumer",
+   "portfolio": false
+  },
+  {
+   "symbol": "ASTRAL",
+   "name": "Astral Limited",
+   "sector": "Building products",
+   "portfolio": false
+  },
+  {
+   "symbol": "BHARATFORG",
+   "name": "Bharat Forge Limited",
+   "sector": "Auto parts",
+   "portfolio": false
+  },
+  {
+   "symbol": "PIIND",
+   "name": "PI Industries Limited",
+   "sector": "Agrochemicals",
+   "portfolio": false
+  }
+ ]
+}

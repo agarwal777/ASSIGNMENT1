@@ -12,6 +12,7 @@ No model runs here: promise extraction stays offline in this prototype (free-tie
 from __future__ import annotations
 
 import json
+import os
 import re
 import sys
 import time
@@ -20,7 +21,7 @@ from pathlib import Path
 from typing import Iterator
 
 import httpx
-from fastapi import FastAPI
+from fastapi import FastAPI, Request
 from fastapi.responses import JSONResponse, StreamingResponse
 from pydantic import BaseModel
 
@@ -86,6 +87,23 @@ def _results(c: httpx.Client, symbol: str, deadline: float, refused: list[str] |
     """One basis per company: consolidated when the company files it, else standalone. A quarter falls
     back to the other basis only if its preferred filing is missing, and is marked; YoY is computed only
     between quarters of the same basis, so the two are never mixed in one number."""
+    by_label, parsed, basis = quarters_by_label(c, symbol, deadline, refused)
+    quarters = []
+    for label, (res, src, b, fb) in sorted(by_label.items(), key=lambda kv: kv[1][0].period_end):
+        prev = by_label.get(f"Q{label[1]}FY{int(label[-2:]) - 1:02d}")
+        same = prev is not None and prev[2] == b
+        quarters.append({"period": label, "period_end": res.period_end.isoformat(), "revenue": res.revenue,
+                         "pat": res.pat, "ebitda_margin": res.ebitda_margin_pct, "source": src,
+                         "basis": b, "basis_fallback": fb,
+                         "revenue_yoy": round(100 * (res.revenue - prev[0].revenue) / prev[0].revenue, 1)
+                         if same and prev[0].revenue and res.revenue else None})
+    latest = parsed[0][0] if parsed else None
+    return quarters, (headline(latest, None, None)["period"] if latest else None), basis
+
+
+def quarters_by_label(c: httpx.Client, symbol: str, deadline: float, refused: list[str] | None = None):
+    """Parsed quarters keyed by label ("Q2FY27") → (QuarterResult, xbrl url, basis, fell back?), plus the raw
+    parsed list (newest first) and the company's basis. Shared by Ask and the daily refresh."""
     r = c.get(f"{NSE}/api/integrated-filing-results", params={"index": "equities", "symbol": symbol, "period": "Quarterly"})
     r.raise_for_status()
     rows = r.json()
@@ -158,17 +176,7 @@ def _results(c: httpx.Client, symbol: str, deadline: float, refused: list[str] |
         except Exception:
             pass
 
-    quarters = []
-    for label, (res, src, b, fb) in sorted(by_label.items(), key=lambda kv: kv[1][0].period_end):
-        prev = by_label.get(f"Q{label[1]}FY{int(label[-2:]) - 1:02d}")
-        same = prev is not None and prev[2] == b
-        quarters.append({"period": label, "period_end": res.period_end.isoformat(), "revenue": res.revenue,
-                         "pat": res.pat, "ebitda_margin": res.ebitda_margin_pct, "source": src,
-                         "basis": b, "basis_fallback": fb,
-                         "revenue_yoy": round(100 * (res.revenue - prev[0].revenue) / prev[0].revenue, 1)
-                         if same and prev[0].revenue and res.revenue else None})
-    latest = parsed[0][0] if parsed else None
-    return quarters, (headline(latest, None, None)["period"] if latest else None), basis
+    return by_label, parsed, basis
 
 
 def _transcripts(c: httpx.Client, symbol: str) -> int:
@@ -233,6 +241,19 @@ def ensure(symbol: str) -> Iterator[str]:
     company["elapsed_s"] = round(time.monotonic() - start, 1)
     # No ledger for unseen tickers yet, so the result is always the reduced view.
     yield _line({"type": "done", "mode": "reduced", "company": company})
+
+
+@app.get("/api/py/refresh")
+def refresh(request: Request, dry: int = 0):
+    """Daily refresh, called by Vercel Cron with `Authorization: Bearer <CRON_SECRET>`. `?dry=1` computes
+    without writing, and is allowed only off Vercel (local testing)."""
+    import refresh as job
+    if dry and not os.environ.get("VERCEL"):
+        return job.run(nse_client=_nse, quarters_by_label=quarters_by_label, ua=UA["User-Agent"], write=False)
+    secret = os.environ.get("CRON_SECRET")
+    if not secret or request.headers.get("authorization") != f"Bearer {secret}":
+        return JSONResponse({"error": "unauthorized"}, status_code=401)
+    return job.run(nse_client=_nse, quarters_by_label=quarters_by_label, ua=UA["User-Agent"])
 
 
 @app.post("/api/py/ensure_company")
