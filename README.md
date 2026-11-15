@@ -197,12 +197,19 @@ in front of me?"). The weights were fixed before the labels existed.
 | Shown (needs you + worth a read) | 0.54 (14/26) | 0.67 (14/21) |
 | Needs you only | 0.46 (6/13) | 0.29 (6/21) |
 
+These are the blind figures. After review, US FDA inspection outcomes and other regulator actions were
+made material (litigation/regulatory) in `workers/classify.py`. That change was prompted partly by
+sample item #33 (Aurobindo's Apitoria Unit 2 VAI, labelled material, previously folded), so the re-run
+(`eval/triage_results.md`: shown 0.56 (15/27) precision, 0.71 (15/21) recall; needs-you unchanged) is
+no longer blind for that item and is not the headline.
+
 The largest disagreement is about results: the labeller marked all six quarterly-results filings in the
 sample as not material, while FINN puts results first (as ENAM's reference does). Several filings the
 labeller marked material were folded by FINN: an earnings-call recording, two investor-meeting
 schedules, an articles-of-association amendment, a newspaper publication, M&M's results press release
-and an Aurobindo plant update. The last two are clear FINN misses: press releases score low by
-category, and a press release *about results* is not grouped with the results card. With n = 40 and one
+and an Aurobindo plant update (a US FDA inspection outcome, since fixed; see above). Both were clear
+FINN misses: press releases score low by category, and a press release *about results* is not grouped
+with the results card. With n = 40 and one
 labeller, read these as directional.
 
 **Promise extraction** (`eval/promise_spotcheck.csv`). 20 of the 30 promises (fixed seed) checked

@@ -1,5 +1,5 @@
 {
- "generated_at": "2026-11-15T04:14:39",
+ "generated_at": "2026-11-15T14:13:12",
  "default_as_of": "2026-11-06T08:00:00+05:30",
  "scoring_note": "score = (0.35·materiality + 0.25·surprise + 0.30·thesis) / 0.90; your network adds up to 0.10 on your device and only reorders cards. Weights are a starting heuristic",
  "events": [
@@ -1728,12 +1728,12 @@
    "bucket": "collapsed"
   },
   {
-   "id": "AUROPHARMA-press_release-2026-11-11",
+   "id": "AUROPHARMA-litigation-2026-11-11",
    "symbol": "AUROPHARMA",
    "name": "Aurobindo Pharma Limited",
    "sector": "Pharma",
    "kind": "filing",
-   "category": "press_release",
+   "category": "litigation",
    "at": "2026-11-11T11:29:06+05:30",
    "title": "General Updates",
    "summary": "Apitoria Unit 2, an API manufacturing facility of Apitoria Pharma Private Limited., a subsidiary of the Company, receives Establishment Inspection Report from US FDA with classification as Voluntary Action Indicated",
@@ -1745,17 +1745,17 @@
     }
    ],
    "components": {
-    "M": 0.35,
-    "S": 0.0,
+    "M": 0.8,
+    "S": 0.3,
     "T": 0.4,
     "N": null
    },
-   "score": 0.269,
+   "score": 0.528,
    "reasons": [
-    "press release"
+    "regulator inspection outcome"
    ],
    "thesis": [],
-   "bucket": "collapsed"
+   "bucket": "worth_a_read"
   },
   {
    "id": "TATAPOWER-investor_meetings-2026-11-11",

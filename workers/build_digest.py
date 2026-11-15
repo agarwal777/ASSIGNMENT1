@@ -22,7 +22,7 @@ from datetime import datetime
 from pathlib import Path
 
 from alerts import _filing_dates
-from classify import MATERIALITY, classify
+from classify import MATERIALITY, classify, regulatory
 from thesis import load as load_thesis, promise_check, thesis_for
 
 SEED = Path("seed")
@@ -182,6 +182,14 @@ def main() -> None:
             reasons += rs
         elif cat == "results":
             reasons.append("numbers not machine-readable in the filing")
+        if cat == "litigation":
+            reg = regulatory(text)
+            if reg == "severe":
+                s = 0.8
+                reasons.append("regulator action (warning letter, import alert, OAI or Form 483)")
+            elif reg == "outcome":
+                s = 0.3
+                reasons.append("regulator inspection outcome")
         if cat == "credit_rating" and re.search(r"downgrad", text, re.I):
             m, s = 0.9, 1.0
             reasons.append("credit rating downgrade")

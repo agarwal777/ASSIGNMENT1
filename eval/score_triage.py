@@ -16,14 +16,17 @@ from pathlib import Path
 E = Path("eval")
 labels = list(csv.DictReader((E / "labels_to_fill.csv").open(encoding="utf-8-sig")))
 key = json.loads((E / "sample_key.json").read_text(encoding="utf-8"))
-bucket = {e["id"]: e["bucket"] for e in json.loads(Path("web/data/digest.json").read_text(encoding="utf-8"))["events"]}
+events = json.loads(Path("web/data/digest.json").read_text(encoding="utf-8"))["events"]
+bucket = {e["id"]: e["bucket"] for e in events}
+# Event ids include the category, so a re-classified filing gets a new id; its NSE link doesn't change.
+by_link = {u: e["bucket"] for e in events for u in [e.get("url")] + [x["url"] for x in e.get("related", [])] if u}
 
 rows = []
 for r in labels:
     lab = (r["material_yes_no"] or "").strip().lower()[:1]
     if lab not in ("y", "n"):
         continue
-    rows.append((lab == "y", bucket[key[r["n"]]], r))
+    rows.append((lab == "y", by_link.get(r["link"]) or bucket[key[r["n"]]], r))
 if not rows:
     raise SystemExit("No labels yet: fill material_yes_no with y or n in eval/labels_to_fill.csv")
 
@@ -41,7 +44,10 @@ def report(name: str, says_material) -> list[str]:
 
 
 out = [f"# Triage evaluation\n\nn = {len(rows)} filings labelled blind (FINN's bucket hidden), sampled with a fixed "
-       f"seed across FINN's three buckets.\n"]
+       f"seed across FINN's three buckets.\n",
+       "Blind run (before any rule changes): shown precision 0.54 (14/26), recall 0.67 (14/21); needs-you precision "
+       "0.46 (6/13), recall 0.29 (6/21). The figures below re-run the current rules; regulator actions became material "
+       "after item #33 was seen, so they are not blind for that item.\n"]
 out += report("Shown (needs you + worth a read) vs folded", lambda b: b in ("needs_you", "worth_a_read"))
 out += report("Needs you only", lambda b: b == "needs_you")
 misses = [(m, b, r) for m, b, r in rows if m != (b in ("needs_you", "worth_a_read"))]

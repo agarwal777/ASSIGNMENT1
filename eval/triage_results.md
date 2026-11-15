@@ -2,12 +2,14 @@
 
 n = 40 filings labelled blind (FINN's bucket hidden), sampled with a fixed seed across FINN's three buckets.
 
-**Shown (needs you + worth a read) vs folded**: precision 0.54 (14/26), recall 0.67 (14/21)
+Blind run (before any rule changes): shown precision 0.54 (14/26), recall 0.67 (14/21); needs-you precision 0.46 (6/13), recall 0.29 (6/21). The figures below re-run the current rules; regulator actions became material after item #33 was seen, so they are not blind for that item.
+
+**Shown (needs you + worth a read) vs folded**: precision 0.56 (15/27), recall 0.71 (15/21)
 
 | | labelled material | labelled not material |
 |---|---|---|
-| FINN shows it | 14 | 12 |
-| FINN folds / doesn't flag | 7 | 7 |
+| FINN shows it | 15 | 12 |
+| FINN folds / doesn't flag | 6 | 7 |
 
 **Needs you only**: precision 0.46 (6/13), recall 0.29 (6/21)
 
@@ -31,7 +33,6 @@ n = 40 filings labelled blind (FINN's bucket hidden), sampled with a fixed seed 
 - #27 Aurobindo Pharma Limited: *Outcome of Board Meeting* → labelled not material, FINN needs you
 - #31 Tata Power Company Limited: *Analysts/Institutional Investor Meet/Con. Call Updates* → labelled material, FINN collapsed
 - #32 UNO Minda Limited: *Copy of Newspaper Publication* → labelled material, FINN collapsed
-- #33 Aurobindo Pharma Limited: *General Updates* → labelled material, FINN collapsed
 - #36 Texmaco Rail & Engineering Limited: *Outcome of Board Meeting* → labelled not material, FINN needs you
 - #37 Sudarshan Chemical Industries Limited: *Outcome of Board Meeting* → labelled not material, FINN needs you
 - #38 Tata Power Company Limited: *Appointment* → labelled not material, FINN worth a read

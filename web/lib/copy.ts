@@ -148,7 +148,7 @@ export const copy = {
   },
   category: {
     results: "Results", management_change: "Management", "M&A": "M&A", fund_raise: "Fund raise",
-    litigation: "Litigation", credit_rating: "Credit rating", earnings_call: "Earnings call",
+    litigation: "Litigation or regulatory", credit_rating: "Credit rating", earnings_call: "Earnings call",
     investor_meetings: "Investor meetings", press_release: "Press release", dividend: "Dividend",
     capex: "Capex", agm_egm: "AGM or EGM", unclassified: "Routine", pledging: "Pledging",
     unexplained_move: "Unexplained move", price_volume: "Price and volume",
@@ -257,7 +257,7 @@ export const copy = {
     saveFailed: "Couldn't save just now. Your change isn't stored yet; try again.",
     thresholdsNote: "Today and Portfolio re-score price and volume moves with these values.",
     always: "Always shown, never folded",
-    alwaysList: "Results, M&A, litigation and pledging. Top-management changes score high on their own.",
+    alwaysList: "Results, M&A, litigation and regulator actions (for example US FDA inspection outcomes), and pledging. Top-management changes score high on their own.",
     dataTitle: "Where the data comes from",
     data: [
       "Filings and results: NSE announcements and XBRL results filings (primary sources).",

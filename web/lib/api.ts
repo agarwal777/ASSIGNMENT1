@@ -320,6 +320,16 @@ export function getDigest(asOf: string, hours: number, t?: Thresholds): DigestRe
 /** A short headline for a filing that isn't results or a known appointment: from the NSE subject,
  *  never the raw exchange text (which is long, legal and often a company's own boilerplate). */
 function subjectHeadline(e: DigestEvent): string {
+  if (e.category === "litigation") {
+    const t = `${e.summary} ${e.related.map((r) => r.title).join(" ")}`;
+    const fda = /\bu\.?s\.? ?fda\b|\busfda\b/i.test(t) ? "US FDA" : "Regulator";
+    const outcome = [[/official action indicated|\boai\b/i, "Official Action Indicated"], [/voluntary action indicated|\bvai\b/i, "Voluntary Action Indicated"],
+      [/no action indicated|\bnai\b/i, "No Action Indicated"], [/warning letter/i, "warning letter"], [/import alert/i, "import alert"],
+      [/form[- ]?483|\b483\b/i, "Form 483 observations"]] as const;
+    const hit = outcome.find(([re]) => re.test(t));
+    if (hit) return hit[1].includes("Indicated") ? `${fda} inspection: ${hit[1]}` : `${fda} ${hit[1]}`;
+    if (/inspection/i.test(t)) return `${fda} inspection outcome`;
+  }
   return copy.subjectHeadline[e.title] ?? `${copy.category[e.category] ?? "Company"} filing`;
 }
 
