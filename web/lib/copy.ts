@@ -455,7 +455,7 @@ export const copy = {
     cap: "Today's limit for new bull vs bear write-ups is reached. Companies already written stay available; try this one tomorrow.",
     busy: "Another visitor is writing this one right now. Try again in a minute.",
     notConfigured: "Bull vs bear isn't switched on for this deployment yet.",
-    note: "Written by a model from primary sources only: exchange results and earnings-call transcripts (annual reports aren't in the snapshot yet). A sentence is kept only if it cites a source and every rupee, percentage and bps figure in it appears in that source. One copy per company is shared by all visitors. Tap a number for its source.",
+    note: "Written by a model from primary sources only: exchange results and earnings-call transcripts. A sentence is kept only if it cites a source and every rupee, percentage and bps figure in it appears in that source. One copy per company is shared by all visitors. Tap a number for its source.",
   },
   /** NSE subject → a short written headline for filings without a template (never the raw text). */
   subjectHeadline: {

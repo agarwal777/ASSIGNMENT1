@@ -105,3 +105,13 @@ test("peers: sourced link first, then same NSE industry, then our classification
   assert.match(reason("B"), /competitor, our classification/);
   assert.match(reason("C"), /a supplier of Voltas in its related-party filing \(p\. 4\)/);
 });
+
+test("themes match whole words: 'titan' is not the tag 'IT'", async () => {
+  const { whoKnows } = await import("../lib/network.ts");
+  const c = [{ id: "a", name: "Aakash G.", closeness: 4, lastContacted: "2026-08-21", tags: ["IT", "banking technology"], stints: [] },
+             { id: "b", name: "Ishaan K.", closeness: 4, lastContacted: "2026-10-05", tags: ["specialty chemicals"], stints: [] }];
+  assert.deepEqual(whoKnows("Titan", c, [], orgs, AS_OF).map((s) => s.contact.name), []);
+  assert.deepEqual(whoKnows("IT", c, [], orgs, AS_OF).map((s) => s.contact.name), ["Aakash G."]);
+  assert.deepEqual(whoKnows("chemicals", c, [], orgs, AS_OF).map((s) => s.contact.name), ["Ishaan K."]);
+  assert.deepEqual(whoKnows("banking", c, [], orgs, AS_OF).map((s) => s.contact.name), ["Aakash G."]);
+});

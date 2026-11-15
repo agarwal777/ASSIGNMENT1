@@ -8,8 +8,8 @@ import type { PersonRef } from "@/lib/types";
 import { loadNetwork } from "@/lib/vault";
 
 /** The question worth asking next, and up to two people from your own network who could answer it. */
-export default function NextQuestion({ text, symbol, eventId, asOf }: {
-  text: string; symbol: string; eventId?: string; asOf: string;
+export default function NextQuestion({ text, symbol, eventId, asOf, company }: {
+  text: string; symbol: string; eventId?: string; asOf: string; company?: string;
 }) {
   const [people, setPeople] = useState<PersonRef[] | null>(null);
   useEffect(() => {
@@ -26,7 +26,7 @@ export default function NextQuestion({ text, symbol, eventId, asOf }: {
       <div className="mt-2 space-y-1">
         {people === null && <p className="text-[13px] text-ink-3">{copy.company.findingPeople}</p>}
         {people?.length === 0 && <p className="text-[13px] text-ink-3">{copy.company.noPeople}</p>}
-        {eventId && people?.map((p) => <PersonChip key={p.contactId} person={p} eventId={eventId} />)}
+        {people?.map((p) => <PersonChip key={p.contactId} person={p} eventId={eventId} about={company ?? symbol} asOf={asOf} />)}
       </div>
     </div>
   );

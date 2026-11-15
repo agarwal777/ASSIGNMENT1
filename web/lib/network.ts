@@ -134,7 +134,10 @@ export function whoKnows(query: string, contacts: Contact[], executives: Executi
   }
   // Themes: a contact the investor tagged with the searched theme (e.g. "specialty chemicals").
   for (const c of contacts) {
-    const tag = c.tags.find((t) => t.toLowerCase().includes(q) || (q.length >= 4 && q.includes(t.toLowerCase())));
+    // Whole words only: "titan" must not match the tag "IT"; "chemicals" matches "specialty chemicals".
+    const words = (s: string) => ` ${s.toLowerCase().split(/[^a-z0-9]+/).filter(Boolean).join(" ")} `;
+    const has = (hay: string, needle: string) => words(needle).trim() !== "" && words(hay).includes(words(needle));
+    const tag = c.tags.find((t) => (q.length >= 3 && has(t, q)) || has(q, t));
     if (!tag) continue;
     const now = c.stints.find((s) => s.end == null && s.function !== "education") ?? c.stints.at(-1);
     out.push({ contact: c, kind: "expertise", probable: false, keepWarm: keepWarm(c, asOf),

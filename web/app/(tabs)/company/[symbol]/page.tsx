@@ -130,7 +130,7 @@ export default async function CompanyPage({ params }: { params: Promise<{ symbol
         {c.nextQuestion && (
           <section aria-labelledby="next" className="mt-6">
             <h2 id="next" className="mb-2 text-[13px] font-medium text-ink-2">{copy.company.nextQuestion}</h2>
-            <NextQuestion text={c.nextQuestion.text} symbol={c.symbol} eventId={eventId} asOf={SNAPSHOT_AS_OF} />
+            <NextQuestion text={c.nextQuestion.text} symbol={c.symbol} eventId={eventId} asOf={SNAPSHOT_AS_OF} company={shortName(c.name)} />
             <LinksNote symbol={c.symbol} />
           </section>
         )}
