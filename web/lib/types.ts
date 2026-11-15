@@ -100,6 +100,10 @@ export interface PortfolioRow {
   credibility?: { met: number; resolved: number };
   lastEvent?: { title: string; at: string; tier: 'needs_you' | 'worth_a_read' | 'collapsed' };
   needsYou: boolean;
+  /** In the demo portfolio (the starting point); the investor's edits replace it. */
+  demo?: boolean;
+  /** "research": in FINN's snapshot but not in the demo portfolio; its filings were not fetched. */
+  research?: boolean;
 }
 
 export interface PathResult { target: string; people: (PersonRef & { kind: 'second_degree' | 'alumni' | 'peer'; probable: boolean })[] }

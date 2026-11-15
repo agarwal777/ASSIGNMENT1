@@ -5,6 +5,7 @@ import { useRouter } from "next/navigation";
 import { useEffect, useState } from "react";
 import { ChevronDown, ChevronRight } from "lucide-react";
 import PersonChip from "@/components/people/PersonChip";
+import PortfolioEditor from "@/components/portfolio/PortfolioEditor";
 import ScreenBar from "@/components/portfolio/ScreenBar";
 import Num from "@/components/trust/Num";
 import { EMPTY_SCREEN, matches, metricsOf, numericActive, sortRows, type Screen } from "@/lib/screen";
@@ -15,7 +16,7 @@ import { isProblem, STATUS, STATUS_ORDER, statusCounts, type Status } from "@/li
 import type { PersonRef, PortfolioRow } from "@/lib/types";
 import { loadNetwork } from "@/lib/vault";
 import { DEFAULT_THRESHOLDS, isDefault, moveEvents, type MovesData, type Thresholds } from "@/lib/moves";
-import { loadThresholds, onThresholds } from "@/lib/settings";
+import { loadThresholds, onThresholds, saveThresholds } from "@/lib/settings";
 import { assumptionText, checkAssumption, loadAssumptions, onAssumptions, rowsFromCompact, type Saved } from "@/lib/assumption";
 
 type Filter = "all" | "needs" | "behind" | "moves";
@@ -36,12 +37,26 @@ export default function PortfolioView({ rows: base, refDate, needs: serverNeeds,
   const [filter, setFilter] = useState<Filter>("all");
   const [open, setOpen] = useState<string | null>(null);
   const [screen, setScreen] = useState<Screen>(EMPTY_SCREEN);
+  // The investor's portfolio (saved with their settings); until they edit it, the demo portfolio.
+  const [mine, setMine] = useState<string[] | null>(null);
+  useEffect(() => { loadThresholds().then((t) => setMine(t.portfolio ?? null)); return onThresholds((t) => setMine(t.portfolio ?? null)); }, []);
+  const [editing, setEditing] = useState(false);
+  const [saveState, setSaveState] = useState<"idle" | "saving" | "saved" | "failed">("idle");
+  const symbols = mine ?? base.filter((r) => r.demo).map((r) => r.symbol);
+  const setPortfolio = (next: string[] | null) => {
+    const before = mine;
+    setMine(next);
+    setSaveState("saving");
+    // A failed save goes back to what is stored, so the screen never shows an unsaved portfolio.
+    saveThresholds({ portfolio: next }).then(() => setSaveState("saved")).catch(() => { setMine(before); setSaveState("failed"); });
+  };
+  const liveOnly = symbols.filter((s) => !base.some((r) => r.symbol === s));
   // Moves are re-detected with the investor's saved thresholds; the server's rows use the defaults.
   const moves = useMovesAtThresholds(movesSince);
   const needs = useNeedsAtSettings(day) ?? serverNeeds;
   const saved = useSavedAssumptions();
   // "Needs you" = a card in Today's brief for the same date; those companies come first.
-  const rows = base.map((r) => withEdit({ ...r, needsYou: needs.includes(r.symbol), move: moves ? moves[r.symbol] : r.move }, saved))
+  const rows = base.filter((r) => symbols.includes(r.symbol)).map((r) => withEdit({ ...r, needsYou: needs.includes(r.symbol), move: moves ? moves[r.symbol] : r.move }, saved))
     .sort((a, b) => Number(b.needsYou) - Number(a.needsYou));
   const all = rows.flatMap((r) => r.thesis);
   // Search and filters narrow the list first; the status chips then count within it.
@@ -52,6 +67,12 @@ export default function PortfolioView({ rows: base, refDate, needs: serverNeeds,
 
   return (
     <div className="px-4 pb-6">
+      <div className="flex items-center justify-between pt-2">
+        <span className="text-[13px] text-ink-3">{copy.portfolio.countLine(symbols.length)}</span>
+        <button type="button" onClick={() => setEditing(!editing)} aria-expanded={editing} aria-controls="portfolio-editor"
+          className="min-h-11 text-[13px] font-medium text-accent">{editing ? copy.portfolio.done : copy.portfolio.edit}</button>
+      </div>
+      {editing && <PortfolioEditor all={base} symbols={symbols} edited={mine !== null} onChange={setPortfolio} state={saveState} />}
       <ClaimsBar items={all} />
 
       <ScreenBar screen={screen} onChange={(s) => { setScreen(s); setOpen(null); }} sectors={sectors}
@@ -78,6 +99,22 @@ export default function PortfolioView({ rows: base, refDate, needs: serverNeeds,
         ))}
         {shown.length === 0 && <li className="p-4 text-[15px] text-ink-2">{copy.portfolio.noneMatch}</li>}
       </ul>
+      {liveOnly.length > 0 && (
+        <section className="mt-4">
+          <h2 className="text-[13px] font-medium text-ink-2">{copy.portfolio.liveRowsTitle}</h2>
+          <ul className="mt-1 divide-y divide-line rounded-[12px] border border-line bg-surface">
+            {liveOnly.map((s) => (
+              <li key={s}>
+                <Link href={`/ask?q=${encodeURIComponent(s)}`} className="flex min-h-11 items-center gap-3 px-4 py-2">
+                  <span className="min-w-0 flex-1"><span className="block text-[15px] font-medium">{s}</span>
+                    <span className="block text-[13px] text-ink-3">{copy.portfolio.liveRowNote}</span></span>
+                  <ChevronRight size={18} aria-hidden className="shrink-0 text-ink-3" />
+                </Link>
+              </li>
+            ))}
+          </ul>
+        </section>
+      )}
       <p className="pt-4 text-[13px] text-ink-3">{copy.portfolio.syntheticNote}</p>
     </div>
   );

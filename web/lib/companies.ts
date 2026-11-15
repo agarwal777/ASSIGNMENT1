@@ -125,8 +125,10 @@ function nextEvent(r: Raw): PortfolioRow["nextEvent"] {
   return out.sort((a, b) => a.at.localeCompare(b.at))[0];
 }
 
-export function getPortfolio(): PortfolioRow[] {
-  const rows: PortfolioRow[] = Object.values(COMPANIES).filter((r) => r.role.split(";").includes("portfolio")).map((r) => {
+/** Rows for the demo portfolio, or (all = true) for every company in FINN's snapshot. */
+export function getPortfolio(all = false): PortfolioRow[] {
+  const inDemo = (r: Raw) => r.role.split(";").includes("portfolio");
+  const rows: PortfolioRow[] = Object.values(COMPANIES).filter((r) => all || inDemo(r)).map((r) => {
     const items = [...(r.thesis.investor as RawItem[]).map((i) => ({ ...i, src: "investor" as const })),
       ...(r.thesis.management as RawItem[]).map((i) => ({ ...i, src: "management" as const }))];
     const sig = companySignals(r.symbol);
@@ -140,7 +142,7 @@ export function getPortfolio(): PortfolioRow[] {
     credibility: r.credibility.resolved > 0 ? r.credibility : undefined,
     lastEvent: r.last_event ? { title: r.last_event.title, at: r.last_event.at,
       tier: r.last_event.tier as "needs_you" | "worth_a_read" | "collapsed" } : undefined,
-    needsYou: r.needs_you,
+    needsYou: r.needs_you, demo: inDemo(r), research: !inDemo(r),
   }; });
   const contradicted = (r: PortfolioRow) => r.thesis.filter((t) => isProblem(t.status)).length;
   return rows.sort((a, b) => Number(b.needsYou) - Number(a.needsYou) || contradicted(b) - contradicted(a) || a.name.localeCompare(b.name));

@@ -302,6 +302,7 @@ export function getDigest(asOf: string, hours: number, t?: Thresholds): DigestRe
   // The investor's per-type preferences: "alert" puts a type in Needs you (even routine ones),
   // "mute" keeps it out of Needs you (it still shows under Worth a read). Moves follow the thresholds.
   const inWin = eventsFor(t).filter((e) => { const x = new Date(e.at).getTime(); return x > start && x <= end; })
+    .filter((e) => !t?.portfolio || t.portfolio.includes(e.symbol))   // your portfolio, once you have edited it
     .map((e) => {
       const p = t?.types?.[e.category];
       if (p === "alert" && e.bucket !== "needs_you")

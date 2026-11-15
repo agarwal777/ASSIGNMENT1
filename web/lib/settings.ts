@@ -26,7 +26,8 @@ async function fetchThresholds(): Promise<Thresholds> {
   if (error) throw error;
   if (!data) return DEFAULT_THRESHOLDS;
   const types = (data.type_prefs ?? {}) as Record<string, "alert" | "mute">;
-  return { volumeMultiple: Number(data.volume_multiple), priceMovePct: Number(data.price_move_pct), types };
+  const portfolio = Array.isArray(data.portfolio) ? (data.portfolio as string[]) : null;
+  return { volumeMultiple: Number(data.volume_multiple), priceMovePct: Number(data.price_move_pct), types, portfolio };
 }
 
 /** Saves a change merged into the current settings, so saving thresholds keeps type preferences and vice versa. */
@@ -38,6 +39,8 @@ export async function saveThresholds(change: Partial<Thresholds>): Promise<void>
     updated_at: new Date().toISOString() };
   // Only written when there is something to write, so threshold saves work before migration 0005 is run.
   if (change.types || Object.keys(t.types ?? {}).length) row.type_prefs = t.types ?? {};
+  // Only written once the investor edits it, so other saves work before migration 0006 is run.
+  if (change.portfolio !== undefined || t.portfolio) row.portfolio = t.portfolio ?? null;
   const { error } = await supabase.from("user_settings").upsert(row, { onConflict: "user_id" });
   if (error) throw error;
   current = t;

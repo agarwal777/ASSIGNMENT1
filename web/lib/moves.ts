@@ -6,12 +6,14 @@ import type { DigestEvent } from "@/lib/digest";
 export type TypePref = "alert" | "mute";
 /** The investor's alert settings: move thresholds, and per announcement type "alert" (always put it in
  *  Needs you) or "mute" (never in Needs you; it still shows below). A type not listed is scored as built. */
-export type Thresholds = { volumeMultiple: number; priceMovePct: number; types?: Record<string, TypePref> };
+export type Thresholds = { volumeMultiple: number; priceMovePct: number; types?: Record<string, TypePref>;
+  /** The investor's own portfolio (NSE symbols); absent = the demo portfolio. */
+  portfolio?: string[] | null };
 /** Announcement types the investor can set a preference for (price/volume moves have their own thresholds). */
 export const ALERT_TYPES = ["results", "M&A", "management_change", "litigation", "fund_raise", "capex",
   "credit_rating", "pledging", "insider_trading", "dividend", "press_release"] as const;
 export const isDefault = (t: Thresholds) => t.volumeMultiple === DEFAULT_THRESHOLDS.volumeMultiple
-  && t.priceMovePct === DEFAULT_THRESHOLDS.priceMovePct && !Object.keys(t.types ?? {}).length;
+  && t.priceMovePct === DEFAULT_THRESHOLDS.priceMovePct && !Object.keys(t.types ?? {}).length && !t.portfolio;
 export const DEFAULT_THRESHOLDS: Thresholds = { volumeMultiple: 2.0, priceMovePct: 5.0 };
 export const THRESHOLD_LIMITS = { volume: { min: 1.2, step: 0.1 }, price: { min: 0.5, step: 0.5 } };
 
