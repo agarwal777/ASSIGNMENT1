@@ -1,5 +1,7 @@
 # FINN — Frontend plan
 
+> **Plan, not the current state.** Written before the build; what exists is in the README, and README §9 lists every difference.
+
 Companion to `README.md` (v2). This document specifies everything the investor touches: navigation, screens, components, design system, data contracts, states, performance, and the build order inside the 24-hour plan.
 
 **Design stance in one line:** a newspaper front page that ends, not a trading terminal that scrolls forever. Verdict first, evidence one tap away, one person and one question at the bottom of every card.

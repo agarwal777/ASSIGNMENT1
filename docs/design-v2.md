@@ -1,5 +1,7 @@
 # FINN — a memory that argues back
 
+> **Plan, not the current state.** Written before the build; what exists is in the README, and README §9 lists every difference.
+
 > **FINN (Financial Investment Agent)** remembers why you own each stock, notices when primary filings contradict that belief, tells you the next question worth asking, and tells you who in your own network can answer it.
 
 **Core loop:** `Belief → Evidence → Question → Person → Updated belief`

@@ -2,7 +2,7 @@
 
 Order matters: the first matching rule wins, so specific rules come before broad ones.
 Rules look at NSE's subject ("desc") first, then the filing text ("attchmntText").
-Anything unmatched is `unclassified`; a small model handles only that residue later.
+Anything unmatched is `unclassified` (scored as routine); no model is used for classification.
 """
 from __future__ import annotations
 

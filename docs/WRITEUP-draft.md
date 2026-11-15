@@ -1,13 +1,14 @@
 <!--
 DRAFT for the covering email. Rewrite it in your own words before sending; it is a structured
-starting point, not a finished letter. Facts below match the README and the live app as of the last
-commit, including the final ledger extraction run.
+starting point, not a finished letter. Facts below match the README and the live app as of 15 Nov 2026.
 
 Before sending, check yourself:
 - Recipient and subject line exactly as the brief states. The brief's subject reads
   "IIT Delhi – Founding AI Engineer - 2027"; confirm with ENAM whether that applies to you.
-- Links: live app, public repo, and your exported AI build history.
+- Links: live app, public repo (confirm it is public), and your exported AI build history
+  (the brief requires it; the line below is still a placeholder).
 - Venue/employer policy on disclosing AI assistance (the build history covers this).
+- Migrations 0004 and 0005 have been run in Supabase, so every Settings control works on the live link.
 -->
 
 **Subject:** (as specified in the brief)
@@ -18,58 +19,71 @@ Please find my submission for the FINN build challenge.
 
 - **Live prototype (phone):** https://assignment1-eta-dun.vercel.app — no login
 - **Repository:** https://github.com/agarwal777/ASSIGNMENT1
-- **AI build history:** [link to exported sessions]
+- **AI build history:** [ADD BEFORE SENDING: link to exported Claude Code sessions]
 
 **What I built**
 
 FINN treats the investor's reason for owning a stock as the central object. Push, Pull and the Network
 all answer one question: is the thesis still true, and if not, what should I ask and whom?
 
-- **Push:** a finite morning brief replaying real NSE filings (6–7 Nov 2026). At most five cards; each
-  leads with a verdict computed from the numbers, shows Revenue / EBITDA / PBT / PAT QoQ and YoY parsed
-  from the XBRL filing, and ends with one person and one question. Routine filings are folded and counted.
+- **Push:** a finite morning brief over real NSE filings (any day 31 Oct–15 Nov 2026, window 24 h, 7 days
+  or custom). At most five cards; each leads with a verdict computed from the numbers, shows Revenue /
+  EBITDA / PBT / PAT QoQ and YoY parsed from the XBRL filing, and ends with one person and one question.
+  Routine filings are folded and counted. The investor sets what "unusual" means (volume ×, ± % in a day)
+  and, per announcement type, Alert / As scored / Mute.
 - **Network inside Push:** Voltas named Jayant Balan as MD. The card shows his career from the filing's
   own brief profile and the path You → Rohan M. → Jayant Balan (overlapped at Voltbek, 2019–22), with a
   call sheet: why him, three questions, a draft opener.
 - **Pull:** a Promise Ledger from earnings-call transcripts. Example: Aurobindo guided a 20–21% FY26
-  EBITDA margin and delivered 20.23% (four reported quarters); its FY27 "north of 21%" target is at risk
-  at 20.79% year to date. Every quote is verified word for word against the PDF.
-- **Any ticker:** Ask processes a company I didn't pick (e.g. Dixon, Havells) live from NSE in 2–3 s.
+  EBITDA margin and delivered 20.23% (four reported quarters, Met); its FY27 "north of 21%" target is
+  Behind at 20.79% year to date. Every quote is verified word for word against the PDF. The Company page
+  adds quarter charts, a year of prices with filings and alerts marked, a cited bull vs bear, and a
+  question box that answers only from that company's primary sources.
+- **Any ticker:** Ask processes a company I didn't pick (e.g. Dixon, Polycab) live from NSE in 2–3 s.
+- **Network, directly:** "Who knows…" ranks contacts for a person or an organisation; each name opens a call sheet.
 
 **Key decisions and trade-offs**
 
 1. Numbers never come from a model. XBRL + Python, cross-checked against the companies' own result
    PDFs (Lupin 8/8, Aurobindo 8/8 line items). Headlines are templates over those numbers.
-2. Two model steps only: finding promises in transcripts (offline, one cached call per transcript, quotes
-   verified against the source) and a live bull vs bear on the Company page in which every sentence must
-   cite primary-source evidence. Everything else is rules and formulas with stated reasons.
-3. The network never leaves the investor: Supabase row-level security (tested), matching in the
-   browser, and an LLM router that refuses network fields.
-4. Snapshot first: the demo replays committed data, so it works even when NSE or the model is down.
+2. Three model steps, each with a guard: finding promises in transcripts (offline, one cached call per
+   transcript, quotes verified against the source); bull vs bear and the company question (live), where a
+   sentence is kept only if it cites numbered primary-source evidence and every figure in it appears in
+   that evidence. Everything else is rules and formulas with stated reasons.
+3. The network never leaves the investor: Supabase row-level security (tested), matching in the browser,
+   a deny-list that refuses network fields before any model call, and a question box that refuses a
+   question naming a contact.
+4. Snapshot first: the brief and company pages replay committed data, so they work even when NSE or the
+   model is down. The live model features are cached per company (and per question) and share a daily cap.
 
 **Architecture** (diagram in the README)
 
 - Pipelines: laptop workers pull NSE announcements, XBRL results, prices and NSE-filed transcripts;
-  outputs are committed as JSON; the app reads them (prerendered server pages).
-- Security & privacy: RLS per user, anonymous demo users, synthetic contacts, no model sees the network;
-  encryption and consent flows are designed but not built.
-- LLMs: Gemini free tier. Flash-Lite was too weak on the first transcript; 3.8 Flash too slow; 3.6 Flash
-  with 3.8 fallback. Spend ₹0; 12 live extraction calls, about 194k input and 10k output tokens. Bull vs
-  bear also calls Gemini live from Vercel; those calls are not counted here yet.
-- Cloud: Next.js and a Python function on Vercel; Supabase for the private vault.
+  outputs are committed as JSON; the app reads them. A name in a filing is linked to a contact by
+  canonical employer name and overlapping dates, with a strength formula and "probable" when dates are missing.
+- Security & privacy: RLS per user, anonymous demo users, synthetic contacts, no model sees the network.
+  Retention today: until the visitor resets the demo. For real use: contacts kept until the investor
+  deletes them (cascading), a consent step for imported contacts, encryption of contact fields, named accounts.
+- LLMs: Gemini free tier. Flash-Lite was too weak on the first transcript, 3.8 Flash too slow; 3.6 Flash
+  with 3.8 fallback. Spend ₹0; 12 live extraction calls, about 194k input and 10k output tokens; live
+  calls are cached, capped and logged.
+- Cloud: Next.js, its API routes and a Python function on Vercel; Supabase for private rows and the answer
+  cache; Gemini called from the laptop and from the API routes.
 
 **What I left out, honestly**
 
-- Ledger covers 9 of 12 transcripts (free-tier quota); 26 of its 30 promises are segment-level or
-  non-financial and shown as "can't check yet" until segment parsing exists.
-- The free-text agent and a multi-assumption thesis editor are not built; one investor assumption per
-  company is editable. Bull vs bear is live but does not yet check its numbers against the evidence or
-  share a cache across visitors (in progress).
+- Annual reports aren't ingested, so there is no balance sheet, cash-flow or segment view; Pull uses XBRL
+  results and transcripts only.
+- The Ledger covers 3 companies (9 of 12 transcripts, free-tier quota); 26 of its 30 promises are
+  segment-level or non-financial and shown as "can't check yet" until segment parsing exists.
+- Only one appointment (Voltas) has an executive career card; the network has no expertise map, no
+  suppliers, and nobody at the research companies.
+- No real push to the phone (no notifications or scheduled refresh); NSE only, not BSE.
 - The status rule is a strict range check and ignores qualifiers like "higher side of".
-- The 150 KB JS target isn't met: the framework alone is ~152 KB.
+- The 150 KB JS target isn't met: the framework baseline alone is ~175 KB; Today is 255 KB.
 
-**Next:** segment-level XBRL parsing, a lender results card, thesis editing with evidence re-check, and
-scheduled ingestion from an Indian-region runner.
+**Next:** annual-report and segment parsing, executive-profile extraction from every appointment filing,
+an expertise map, a lender results card, and scheduled ingestion with notifications from an Indian-region runner.
 
 Thank you for the interesting problem.
 
