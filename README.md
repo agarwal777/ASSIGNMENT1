@@ -15,7 +15,7 @@ Built for the ENAM Founding AI Engineer Build Challenge (Push · Pull · Network
 
 ## 1. Two minutes on a phone
 
-1. **Today** opens on the latest brief (15 Nov, 08:00 IST; data to 14 Nov). Tap **Results week** to jump
+1. **Today** opens on the latest brief (the committed snapshot runs to 14 Nov; the daily refresh adds each new day). Tap **Results week** to jump
    to 6 Nov: `28 filings · 4 need you`. Each card leads with a verdict built from the numbers ("Revenue
    down 31.0% YoY; profit after tax up 73.7%"); every figure opens its NSE XBRL source or its formula.
    Routine filings are folded and counted; the brief ends. The window can be 24 h, 7 days or **Custom**
@@ -92,6 +92,8 @@ flowchart LR
     A -->|"public evidence only"| G["Gemini"]
     A <-->|"service key, server only"| SBS[("Supabase server tables\nanswer cache, daily cap, llm_calls")]
     P --> NSE["NSE + prices\n(live, for unseen tickers)"]
+    C["Vercel Cron, daily\n/api/py/refresh"] -->|"new filings + prices"| SBS
+    C -->|"deploy hook"| N
     PH <-->|"RLS: own rows only"| SB[("Supabase private rows\ncontacts, stints, settings,\nassumptions")]
 ```
 
@@ -110,9 +112,11 @@ flowchart LR
 3. **The network never leaves the investor.** Contacts live in Supabase behind row-level security;
    matching runs in the browser; explanations, questions and openers are templates. The question box
    refuses, in the browser, a question that names someone in your network.
-4. **Snapshot first, live where it adds something.** Today, Portfolio and the Company page's data never
-   depend on a live source. Live: Ask for an unseen ticker (degrades to a reduced view), and the two model
-   features (served from a shared cache when the same request was made before).
+4. **Snapshot first, refreshed daily, live where it adds something.** Today, Portfolio and the Company
+   page's data never depend on a live source at request time. A daily job adds new filings and prices
+   after market close and rebuilds the app (below); if it fails, the previous day's data stays. Live: Ask
+   for an unseen ticker (degrades to a reduced view), and the two model features (served from a shared
+   cache when the same request was made before).
 
 ### Data pipelines
 
@@ -126,6 +130,7 @@ flowchart LR
 | Annual-report PDFs | Not ingested; the statements come from the XBRL above (see §9) | — |
 | Executives | Each appointment filing's brief profile, extracted by the model with the exact sentence per stint; a stint is kept only if that sentence is found word for word in the PDF (`workers/extract_executives.py`; the two Voltas entries were transcribed by hand) | `web/data/executives.json` |
 | Network | Synthetic CSV → SQL template → copied per visitor | Supabase `contacts`, `contact_stints` |
+| Daily refresh | Vercel Cron (14:00 UTC = 19:30 IST, within the hour on the free plan) → `GET /api/py/refresh` (`py/refresh.py`, requires `Authorization: Bearer CRON_SECRET`): one bulk NSE announcements call since the last good run, scored by `digest_core.py` (a tested COPY of the batch code; T = the base 0.4, events marked `fresh`), results filings parsed from XBRL, Yahoo prices for all 22 companies; upserted to Supabase, run logged, Deploy Hook called if anything is new. The build step `web/scripts/merge-fresh.mjs` merges the rows into the JSON (deduped by id and dedupe key; new moves via the app's own `moveEvents`). A failed filings fetch is logged as not OK, so the next run retries the same days | Supabase `market_events`, `market_prices`, `refresh_runs` (public read) → merged into `web/data/*.json` at build |
 
 **Linking a name in a filing to the network** (`web/lib/network.ts`). Each employer name is canonicalised
 (legal suffixes removed, then an alias table, `web/data/orgs.json`), so "Voltbek Home Appliances Pvt Ltd"
@@ -219,8 +224,9 @@ re-run keep their Flash-Lite extraction (marked per entry; every quote is still 
 | Next.js app and API routes (bull vs bear, company question) | Vercel | Prerendered pages, zero config; the API routes hold the server-only keys |
 | `ensure_company` | Vercel Python function (Vercel Services routes `/api/py/*`) | Same project; no idle sleep; 90 s internal budget |
 | Private rows and server tables | Supabase (Postgres + anonymous auth) | RLS, free tier |
-| Model | Google Gemini API (free tier) | Called from the laptop (extraction) and from the Vercel API routes (live features) |
-| Ingestion, extraction | Laptop, committed snapshot | Exchange sites and the free model tier are unreliable; the demo must not depend on them |
+| Model | Google Gemini API (free tier) | Called from the laptop (extraction) and from the Vercel API routes (live features); the daily refresh uses no model |
+| Daily refresh | Vercel Cron → Python function, then a Deploy Hook rebuild | Free plan: one run a day; rebuilding only when there is new data keeps the app a set of prerendered files |
+| History, extraction | Laptop, committed snapshot | A year of history and model extraction are heavy and the free model tier is unreliable; the demo must not depend on them |
 
 ## 9. Deliberately left out, and differences from the plan or the brief
 
@@ -231,7 +237,7 @@ re-run keep their Flash-Lite extraction (marked per entry; every quote is still 
 | Unseen tickers | Prices and the last few quarters of results (5 for Dixon); no ledger, bull vs bear or question box (those need the batch evidence) |
 | Executive profiles | 16 appointees across 11 filings; 8 have a career in their filing, the rest (and 5 cessations) show the plain card. Most filings give no years, so links through them show as "probable". A career card shows on Today when the appointment reaches Needs you (or Management is set to Alert) |
 | Network | Synthetic, 34 contacts at portfolio and research companies and their peers. Theme search and an expertise map use the contacts' tags. Supplier and customer links only where a related-party filing names them (M&M's H1 FY27 filing: 46 suppliers, 37 customers, group companies only); peers by NSE industry for 47 listed companies; the rest of our own peer list is labelled "our classification". Education almost absent. Keep-warm is "6+ months since you spoke", not tied to a former employer's news |
-| Real push | Nothing is sent to the phone: no notifications, no scheduled refresh (the snapshot is a replay) |
+| Real push | Nothing is sent to the phone. Data refreshes once a day after market close (end-of-day, not intraday). New transcripts, appointment profiles and balance sheets still need the laptop pipeline; fresh filings get the base thesis score, not the full thesis check |
 | BSE | Not fetched: BSE's announcements API refuses scripted requests (403) and its data products are paid. A one-week spot-check of 3 dual-listed companies found every one of 23 BSE announcements on NSE too, filed within minutes ([`docs/reviews/bse-spotcheck.md`](docs/reviews/bse-spotcheck.md)); a BSE-only company would need BSE. Each filing carries `source_exchange` and a `dedupe_key` (company + day + subject), so a licensed BSE feed would be a data change |
 | Status rule | Every checkable metric (EBITDA margin, revenue and PAT growth) is higher-is-better: met / on track means at or above the bottom of the guided range, and a result above the range says "above the guided range" (Lupin guided 24–25% and is at 27.9%: On track). A target stated as an amount (₹ crore, US$, "1.2x") is not judged as a percentage. Qualifiers like "higher side of" are shown in the quote, not scored |
 | General chat agent | Not built on purpose: the question box answers one company from its own sources, never from outside knowledge |
@@ -309,22 +315,22 @@ workers/.venv/Scripts/python workers/extract_executives.py # appointment filings
 ```
 
 **Supabase:** run the migrations in order in the SQL Editor (`db/migrations/0001_init.sql` to
-`0006_user_portfolio.sql`; 0004–0006 are safe to re-run), then `db/seed_network.sql` (re-run it after the network changes; it re-seeds every visitor); enable anonymous
+`0007_market_refresh.sql`; 0004–0007 are safe to re-run), then `db/seed_network.sql` (re-run it after the network changes; it re-seeds every visitor); enable anonymous
 sign-ins. **Environment:** `web/.env.local` holds `NEXT_PUBLIC_SUPABASE_URL` and
 `NEXT_PUBLIC_SUPABASE_ANON_KEY`. The server-only keys, `GEMINI_API_KEY` and `SUPABASE_SERVICE_ROLE_KEY`
 (never with a `NEXT_PUBLIC_` prefix), go in Vercel's environment variables; optional `BULL_BEAR_DAILY_CAP`,
-`MODEL_SMALL`, `MODEL_FALLBACK`. Without the service key, a production build shows the live model features
+`MODEL_SMALL`, `MODEL_FALLBACK`. For the daily refresh, also `CRON_SECRET` (16+ letters and digits) and `DEPLOY_HOOK_URL` (Vercel → Settings → Git → Deploy Hooks, branch `main`); redeploy after adding them. Without the service key, a production build shows the live model features
 as not switched on; `npm run dev` generates them uncached. The workers read `GEMINI_API_KEY` and `MODEL_SMALL` from the repository-root `.env.local` (not `web/.env.local`); `MODEL_FALLBACK` only from the process environment.
 
-**Tests (run by hand; no CI):** `workers/.venv/Scripts/python -m pytest workers/tests` (53) · in `web/`:
-`npm test` (33) · `npm run budget` (JS size of `/today`, after `npm run build`; exits 1 while over budget) ·
+**Tests (run by hand; no CI):** `workers/.venv/Scripts/python -m pytest workers/tests` (54) · in `web/`:
+`npm test` (35) · `npm run budget` (JS size of `/today`, after `npm run build`; exits 1 while over budget) ·
 `node --env-file=web/.env.local web/scripts/rls_test.mjs` (row-level security, against the live database).
 
 ## 12. Next
 
 Annual-report narrative (MD&A, notes) · use the segment figures now parsed to check the ledger's segment
 promises (unlocks most of it) · finish extraction on a paid tier · lender results card (NII, PPOP, PAT) · multi-assumption thesis editor ·
-scheduled ingestion and notifications from an Indian-region runner · triage evaluation with more labellers.
+extend the daily refresh to new transcripts and appointment filings, and send notifications · triage evaluation with more labellers.
 
 ---
 

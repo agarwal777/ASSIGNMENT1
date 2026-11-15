@@ -50,17 +50,20 @@ It has the three layers the brief asks for:
   best person to call and why. A call sheet gives three questions and a draft message, which the investor
   sends themselves. "Who knows…" answers direct queries by person, company or theme.
 
-The demo uses 18 portfolio companies and 4 research companies. It covers 31 Oct–14 Nov 2026: 11,147 NSE
-announcements (251 for the portfolio), a year of daily prices, and recent results for 21 of the 22
-companies. The network of 34 contacts is synthetic.
+The demo uses 18 portfolio companies and 4 research companies. A batch snapshot covers 31 Oct–14 Nov 2026:
+11,147 NSE announcements (251 for the portfolio), a year of daily prices, and recent results for 21 of the
+22 companies. Since then, a daily cloud job adds each evening's new filings and closing prices on its own.
+The network of 34 contacts is synthetic.
 
 ## 2. Key decisions and trade-offs
 
-**Batch snapshot instead of a live feed.** Exchange websites block automated requests unpredictably, and
-free-tier model APIs fail often. A demo that breaks was the worst outcome, so all public data is fetched
-and processed in batch and committed with the app as JSON. The app reads files and cannot break because a
-source is down. The trade-off is that FINN replays a fixed two-week window and does not watch the market,
-and "push" happens when the app is opened, not as a phone notification.
+**A committed snapshot plus a daily refresh, not a live feed.** Exchange websites block automated requests
+unpredictably, and free-tier model APIs fail often. A demo that breaks was the worst outcome, so the heavy
+work (a year of history, transcripts, model extraction) is done in batch and committed with the app as JSON.
+The app reads files and cannot break because a source is down. On top of that, a scheduled job runs once a
+day after market close, fetches new filings and prices, and rebuilds the app with them. If a day's fetch
+fails, the app simply keeps the previous day's data. The trade-off: FINN is end-of-day, not intraday, and
+"push" happens when the app is opened, not as a phone notification.
 
 **Deterministic code for numbers, models only for language.** Every number on screen comes from parsing a
 filing or from a formula, never from a model, and each figure links to its source fact or its formula.
@@ -86,9 +89,10 @@ the thresholds re-ranks without a server call. That puts about 39 KB of data int
  XBRL results      ├─► Python workers ─► read the JSON  ◄────────────────────►   investor's settings
  daily prices      │   (rules, parsers,  API routes: bull/bear, question ──► Gemini   · matches the network
  call transcripts  ┘   formulas, cached  Python function: any ticker ──► NSE live    locally
-                       model calls) ─► JSON                    │                        │
+                       model calls) ─► JSON  DAILY CRON: NSE + Yahoo ─► rows ─► rebuild
+                                                               │                        │
                                                                ▼                        ▼
-                                  SUPABASE (Postgres): private per-user rows (RLS), shared answer cache
+                     SUPABASE (Postgres): private per-user rows (RLS), shared answer cache, fresh market data
 ```
 
 ### Data pipelines
@@ -134,6 +138,21 @@ the thresholds re-ranks without a server call. That puts about 39 KB of data int
   over one week I compared BSE's public pages by hand, and all 23 BSE announcements were also on NSE. Each
   filing record keeps its source exchange and a dedupe key (company + date + subject), so adding a second
   feed later is a data change, not a redesign.
+- **Daily refresh.** Once a day, after market close, Vercel's scheduler calls a Python endpoint, which
+  rejects any request without the right secret. The job runs in four steps:
+  - **Fetch.** One bulk call gets NSE announcements since the last successful run, kept for the portfolio
+    companies, and closing prices for all 22 companies come from Yahoo in parallel.
+  - **Score.** Filings are classified, grouped and scored by the same module as the batch pipeline; a test
+    keeps the two copies identical. A new results filing is parsed from XBRL into a full results card.
+  - **Store.** The rows go into Supabase, and every run is logged. If the filings fetch fails, the run is
+    logged as failed, so the next run retries the same days.
+  - **Rebuild.** If anything is new, the job triggers a redeploy. The build step merges the new rows into the
+    app's data, deduplicating by id and dedupe key, and detects new price and volume moves with the same code
+    the app uses.
+
+  On a test day it produced the same events, scores and results numbers as the batch pipeline. One
+  difference: fresh filings get FINN's base thesis-relevance score, because the full check against tracked
+  targets needs the offline promise ledger.
 
 ### Security and privacy
 
@@ -183,7 +202,7 @@ On cost:
   for a few profiles stopped by the rate limit, which are marked.
 
 There are no agents. Each model call is a single step in a pipeline with fixed inputs and a validated
-output; nothing plans, calls tools or acts for the investor.
+output; nothing plans, calls tools or acts for the investor. The daily refresh uses no model at all.
 
 ### Cloud
 
@@ -191,14 +210,20 @@ output; nothing plans, calls tools or acts for the investor.
   keys stay off the phone.
 - **The live read of an unseen ticker runs as a Python function on Vercel.** It streams progress, sits in
   the same deployment, and works within a 90-second budget.
-- **Private data, the answer cache and the call log live in Supabase (Postgres with anonymous sign-in).**
-  Row-level security is built in, and the free tier is enough.
-- **Ingestion and offline extraction run as a batch job on my laptop, with the output committed.** The
-  sources are too unreliable for the demo to depend on.
+- **The daily refresh runs on Vercel Cron**, once a day at 19:30 IST. The free plan allows one run a day,
+  started within the hour. It calls a Deploy Hook to rebuild only when there is new data.
+- **Private data, the answer cache, the call log and the fresh market data live in Supabase (Postgres with
+  anonymous sign-in).** Row-level security is built in: market data is readable by anyone, investor data
+  only by its owner. The free tier is enough.
+- **The one-time history and the model extraction run as a batch job on my laptop, with the output
+  committed.** They are heavy and the free model tier is unreliable, so the demo shouldn't depend on them
+  at runtime.
 
 ## 4. What I deliberately left out
 
-- **Real-time push.** No scheduled ingestion or phone notifications; the brief replays a fixed window.
+- **Intraday data and phone notifications.** The refresh is end-of-day, once a day. Promises, executive
+  profiles and balance sheets from newly filed documents still need the laptop pipeline, because they use the
+  model or a year of history.
 - **Most promise checks.** Of 94 extracted promises (23 transcripts, 14 companies), 84 concern a business
   segment, capacity, a date or an amount, so 10 can be checked against reported totals today. Eight
   companies have no ledger because no transcript, or only a covering letter, was filed.
@@ -210,11 +235,11 @@ output; nothing plans, calls tools or acts for the investor.
 
 1. Check segment-level promises against the segment revenue I already parse, which would make most of the
    ledger checkable.
-2. Move ingestion to a daily scheduled job and send real notifications.
+2. Extend the daily job to new transcripts and appointment filings, and send real notifications.
 3. Read the annual report's narrative sections.
 4. Add a results card for banks and lenders, where EBITDA doesn't apply.
 
-Testing: 86 automated tests (Python and TypeScript), run by hand, plus a row-level-security test against
+Testing: 89 automated tests (Python and TypeScript), run by hand, plus a row-level-security test against
 the live database.
 
 I built FINN with Claude Code as a coding assistant; the build history shows how I broke the work down,
