@@ -1,5 +1,5 @@
 {
- "generated_at": "2026-11-15T03:30:01",
+ "generated_at": "2026-11-15T04:14:39",
  "default_as_of": "2026-11-06T08:00:00+05:30",
  "scoring_note": "score = (0.35·materiality + 0.25·surprise + 0.30·thesis) / 0.90; your network adds up to 0.10 on your device and only reorders cards. Weights are a starting heuristic",
  "events": [

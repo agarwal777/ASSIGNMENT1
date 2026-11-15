@@ -15,6 +15,8 @@ import { date, time } from "@/lib/format";
 import type { Contact } from "@/lib/network";
 import { withPerson } from "@/lib/people";
 import { loadNetwork } from "@/lib/vault";
+import { DEFAULT_THRESHOLDS, type Thresholds } from "@/lib/moves";
+import { loadThresholds, onThresholds } from "@/lib/settings";
 
 const WINDOWS = [{ key: "24h", hours: 24 }, { key: "7d", hours: 168 }] as const;
 
@@ -57,6 +59,9 @@ export default function TodayView() {
   const [networkError, setNetworkError] = useState(false);
   const [showAllWorth, setShowAllWorth] = useState(false);
   useEffect(() => { loadNetwork().then(setContacts).catch(() => setNetworkError(true)); }, []);
+  // The investor's alert thresholds re-score price/volume moves (Settings); defaults until loaded.
+  const [thr, setThr] = useState<Thresholds>(DEFAULT_THRESHOLDS);
+  useEffect(() => { loadThresholds().then(setThr); return onThresholds(setThr); }, []);
   // The server renders "nothing reviewed"; the device's stored list takes over after hydration.
   const reviewedRaw = useSyncExternalStore(subscribe, () => readRaw(day), () => "[]");
   const reviewedIds = useMemo(() => parseIds(reviewedRaw), [reviewedRaw]);
@@ -65,7 +70,7 @@ export default function TodayView() {
     writeRaw(day, JSON.stringify(ids));
   };
 
-  const digest = useMemo(() => getDigest(asOf, win.hours), [asOf, win.hours]);
+  const digest = useMemo(() => getDigest(asOf, win.hours, thr), [asOf, win.hours, thr]);
   // README §6.2 network bonus N, computed here because the network never leaves the device:
   // N = 1 when a contact's link strength is ≥ 0.5. It adds 0.10 and only reorders "Needs you".
   const cards = useMemo(() => digest.needsYou
@@ -82,7 +87,7 @@ export default function TodayView() {
     if (v === null) p.delete(k); else p.set(k, v);
     router.replace(p.toString() ? `${pathname}?${p}` : pathname, { scroll: false });
   };
-  const counts = useMemo(() => Object.fromEntries(BRIEF_DAYS.map((d) => [d, getDigest(asOfFor(d), 24).needsYou.length])), []);
+  const counts = useMemo(() => Object.fromEntries(BRIEF_DAYS.map((d) => [d, getDigest(asOfFor(d), 24, thr).needsYou.length])), [thr]);
   const pick = (d: string) => setParam("date", d === LATEST_DAY ? null : d);
   const worth = showAllWorth ? digest.worthARead : digest.worthARead.slice(0, 10);
 

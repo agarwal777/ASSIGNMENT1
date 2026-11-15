@@ -3,7 +3,9 @@
 // added on the device (lib/network.ts) because it never leaves their session.
 import digestData from "@/data/digest.json";
 import executivesData from "@/data/executives.json";
+import movesData from "@/data/moves.json";
 import { toClaim } from "@/lib/claims";
+import { DEFAULT_THRESHOLDS, moveEvents, type MovesData, type Thresholds } from "@/lib/moves";
 import { copy } from "@/lib/copy";
 import { bps as fmtBps, pct as fmtPct } from "@/lib/format";
 import type { DigestEvent } from "@/lib/digest";
@@ -270,10 +272,21 @@ export function toCard(e: DigestEvent): Card {
 }
 
 // ── digest ───────────────────────────────────────────────────────────────────────────
-export function getDigest(asOf: string, hours: number): DigestResponse & { all: DigestEvent[] } {
+/** Snapshot events with price/volume moves re-detected at the investor's thresholds (defaults = as built). */
+const withMoves = new Map<string, DigestEvent[]>();
+export function eventsFor(t: Thresholds = DEFAULT_THRESHOLDS): DigestEvent[] {
+  const k = `${t.volumeMultiple}|${t.priceMovePct}`;
+  if (!withMoves.has(k)) {
+    withMoves.set(k, k === `${DEFAULT_THRESHOLDS.volumeMultiple}|${DEFAULT_THRESHOLDS.priceMovePct}` ? EVENTS
+      : [...EVENTS.filter((e) => e.kind !== "move"), ...moveEvents(movesData as unknown as MovesData, t)]);
+  }
+  return withMoves.get(k)!;
+}
+
+export function getDigest(asOf: string, hours: number, t?: Thresholds): DigestResponse & { all: DigestEvent[] } {
   const end = new Date(asOf).getTime();
   const start = end - hours * 3600_000;
-  const inWin = EVENTS.filter((e) => { const t = new Date(e.at).getTime(); return t > start && t <= end; });
+  const inWin = eventsFor(t).filter((e) => { const x = new Date(e.at).getTime(); return x > start && x <= end; });
   const by = (b: DigestEvent["bucket"]) => inWin.filter((e) => e.bucket === b).sort((a, z) => z.score - a.score);
   const needs = by("needs_you");
   const top = needs.slice(0, 5);
@@ -322,6 +335,9 @@ export function filingHeadline(id: string): string | undefined {
  * What the Portfolio row shows for a company, up to the end of the snapshot: the latest *important*
  * filing (never a routine one) as a headline, and an unusual price/volume move from the last 7 days.
  */
+/** Moves shown on Portfolio are from this instant on (the last 7 days of the snapshot). */
+export const MOVES_SINCE = new Date(new Date(EVENT_RANGE.last).getTime() - 7 * 864e5).toISOString();
+
 export function companySignals(symbol: string) {
   const end = new Date(EVENT_RANGE.last).getTime(), weekStart = end - 7 * 864e5;
   const ev = EVENTS.filter((e) => e.symbol === symbol).sort((a, b) => b.at.localeCompare(a.at));

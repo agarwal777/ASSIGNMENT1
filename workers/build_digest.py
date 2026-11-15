@@ -21,6 +21,7 @@ from collections import defaultdict
 from datetime import datetime
 from pathlib import Path
 
+from alerts import _filing_dates
 from classify import MATERIALITY, classify
 from thesis import load as load_thesis, promise_check, thesis_for
 
@@ -83,6 +84,29 @@ def trend(fx: dict, period: str | None, n: int = 5) -> list[dict]:
         rev, eb = fx.get((q, "revenue")), fx.get((q, "ebitda"))
         out.append({"period": q, "revenue": rev, "ebitda_margin": round(100 * eb / rev, 2) if rev and eb is not None else None})
     return out
+
+
+WEB_DATA = Path("web/data")
+MOVES_FROM = "2026-08-15"   # ≥ 20 sessions of lookback + 30 for the volume strip before the 31 Oct window
+
+
+def write_moves(syms: set[str], filed_at: dict, names: dict, sector: dict) -> None:
+    """Inputs for re-scoring price/volume moves on the device with the investor's own thresholds
+    (web/lib/moves.ts mirrors alerts.detect and the move scoring above; a test checks they agree)."""
+    series: dict[str, list] = defaultdict(list)
+    for r in csv.DictReader((SEED / "prices.csv").open(encoding="utf-8")):
+        if r["symbol"] in syms and r["date"] >= MOVES_FROM:
+            series[r["symbol"]].append([r["date"], float(r["close"]), int(r["volume"])])
+    filed = _filing_dates()
+    window_start = min((d for ds in filed.values() for d in ds), default=None)
+    (WEB_DATA / "moves.json").write_text(json.dumps({
+        "window_start": window_start.isoformat() if window_start else None,
+        "names": {k: names.get(k, k) for k in sorted(syms)}, "sector": {k: sector.get(k) for k in sorted(syms)},
+        "alerts_from": "2026-10-31",
+        "series": {k: sorted(v) for k, v in series.items()},
+        "filed_days": {k: sorted(d.isoformat() for d in v) for k, v in filed.items() if k in syms},
+        "filed_at": {k: sorted(t.isoformat() for t in v) for k, v in filed_at.items()},
+    }, separators=(",", ":")), encoding="utf-8")
 
 
 def main() -> None:
@@ -235,6 +259,7 @@ def main() -> None:
         "scoring_note": "score = (0.35·materiality + 0.25·surprise + 0.30·thesis) / 0.90; your network adds up to "
                         "0.10 on your device and only reorders cards. Weights are a starting heuristic",
         "events": events}, ensure_ascii=False, indent=1), encoding="utf-8")
+    write_moves(syms, filed_at, names, sector)
     by = defaultdict(int)
     for e in events:
         by[e["bucket"]] += 1

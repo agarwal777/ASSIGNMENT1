@@ -11,6 +11,8 @@ import { date, pct, ratio } from "@/lib/format";
 import { isProblem, STATUS, STATUS_ORDER, statusCounts, type Status } from "@/lib/status";
 import type { PersonRef, PortfolioRow } from "@/lib/types";
 import { loadNetwork } from "@/lib/vault";
+import { DEFAULT_THRESHOLDS, moveEvents, type MovesData, type Thresholds } from "@/lib/moves";
+import { loadThresholds, onThresholds } from "@/lib/settings";
 
 type Filter = "all" | "needs" | "behind" | "moves";
 const MATCH: Record<Filter, (r: PortfolioRow) => boolean> = {
@@ -24,11 +26,15 @@ const countsText = (items: { status: Status }[]) =>
   statusCounts(items).map(({ status, n }) => copy.portfolio.tag(n, STATUS[status].label)).join(" · ");
 
 /** Portfolio: one stacked bar of every tracked claim, filter chips that double as the summary, rows that expand in place. */
-export default function PortfolioView({ rows: base, refDate, needs }: { rows: PortfolioRow[]; refDate: string; needs: string[] }) {
+export default function PortfolioView({ rows: base, refDate, needs, movesSince }: {
+  rows: PortfolioRow[]; refDate: string; needs: string[]; movesSince: string;
+}) {
   const [filter, setFilter] = useState<Filter>("all");
   const [open, setOpen] = useState<string | null>(null);
+  // Moves are re-detected with the investor's saved thresholds; the server's rows use the defaults.
+  const moves = useMovesAtThresholds(movesSince);
   // "Needs you" = a card in Today's brief for the same date; those companies come first.
-  const rows = base.map((r) => ({ ...r, needsYou: needs.includes(r.symbol) }))
+  const rows = base.map((r) => ({ ...r, needsYou: needs.includes(r.symbol), move: moves ? moves[r.symbol] : r.move }))
     .sort((a, b) => Number(b.needsYou) - Number(a.needsYou));
   const all = rows.flatMap((r) => r.thesis);
   const shown = rows.filter(MATCH[filter]);
@@ -182,4 +188,22 @@ function Person({ r, refDate }: { r: PortfolioRow; refDate: string }) {
   if (state.person === undefined) return <p className="text-[13px] text-ink-3">{copy.portfolio.findingPerson}</p>;
   if (state.person === null || !r.eventId) return <p className="text-[13px] text-ink-2">{copy.portfolio.noPerson(r.shortName)}</p>;
   return <PersonChip person={state.person} eventId={r.eventId} />;
+}
+
+/** Latest move per company in the last 7 days at the saved thresholds; null = defaults (server rows are right). */
+function useMovesAtThresholds(since: string): Record<string, PortfolioRow["move"]> | null {
+  const [thr, setThr] = useState<Thresholds>(DEFAULT_THRESHOLDS);
+  const [data, setData] = useState<MovesData | null>(null);
+  useEffect(() => { loadThresholds().then(setThr); return onThresholds(setThr); }, []);
+  const custom = thr.volumeMultiple !== DEFAULT_THRESHOLDS.volumeMultiple || thr.priceMovePct !== DEFAULT_THRESHOLDS.priceMovePct;
+  useEffect(() => {
+    if (custom && !data) import("@/data/moves.json").then((m) => setData(m.default as unknown as MovesData));
+  }, [custom, data]);
+  if (!custom || !data) return null;
+  const out: Record<string, PortfolioRow["move"]> = {};
+  for (const e of moveEvents(data, thr).filter((x) => new Date(x.at).getTime() > new Date(since).getTime()).sort((a, b) => b.at.localeCompare(a.at))) {
+    if (!out[e.symbol] && e.move) out[e.symbol] = { returnPct: e.move.return_pct ?? undefined,
+      volumeMultiple: e.move.volume_multiple ?? undefined, at: e.at, eventId: e.id };
+  }
+  return out;
 }
