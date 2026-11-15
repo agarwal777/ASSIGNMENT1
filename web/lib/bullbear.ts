@@ -15,6 +15,8 @@ export type Evidence = { n: number; text: string; source: SourceRef };
 export type Sentence = { text: string; citations: SourceRef[] };
 export type SideResult = { sentences: Sentence[]; dropped: number; model: string; tokensIn: number; tokensOut: number };
 
+// Bump when the prompt changes, so cached copies written under the old prompt are regenerated.
+const PROMPT_VERSION = "p2-status-words";
 const ENDPOINT = (m: string) => `https://generativelanguage.googleapis.com/v1beta/models/${m}:generateContent`;
 
 /** Numbered evidence for one company: last 4 reported quarters, then management's checkable words. */
@@ -41,7 +43,7 @@ export function evidenceFor(symbol: string): { name: string; items: Evidence[] }
 
 /** Cache key part: the exact evidence the model sees, plus the validator version. */
 export function evidenceHash(items: Evidence[]): string {
-  return createHash("sha256").update(VALIDATOR_VERSION + "\n" + items.map((e) => `[${e.n}] ${e.text}`).join("\n")).digest("hex");
+  return createHash("sha256").update(`${VALIDATOR_VERSION}|${PROMPT_VERSION}\n` + items.map((e) => `[${e.n}] ${e.text}`).join("\n")).digest("hex");
 }
 
 const SCHEMA = {
@@ -58,6 +60,7 @@ function prompt(side: "bear" | "bull", name: string, items: Evidence[]): string 
     `Write 3 or 4 short sentences, one point each. ${side === "bear" ? "Focus on risks, shortfalls and what could go wrong." : "Focus on strengths, delivery and what could go right."}`,
     "For every sentence, list in `cites` the evidence numbers it relies on. Do not write citation numbers in the text.",
     "Write every figure in digits exactly as it appears in the evidence you cite (for example ₹10,263 cr, 23.9%). Do not compute new figures such as differences or basis-point changes.",
+    "Describe a promise's status only with the word the evidence gives (Met, Missed, On track, Behind, Can't check yet). A target whose deadline has not passed can be behind, never missed.",
     "If the evidence does not support a point, leave it out. Fewer sentences are better than unsupported ones.",
     "", "Evidence:", ...items.map((e) => `[${e.n}] ${e.text}`),
   ].join("\n");
