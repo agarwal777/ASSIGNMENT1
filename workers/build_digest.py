@@ -74,6 +74,41 @@ def qkey(q: str) -> tuple[int, int]:
     return int(q[-2:]), int(q[1])
 
 
+FACT_SRC: dict[tuple[str, str], str] = {}     # (symbol, period) → the XBRL file the period's facts came from
+FACTS_RAW: dict[tuple[str, str], dict[str, float]] = defaultdict(dict)
+INPUT_METRICS = ("revenue", "ebitda", "pbt", "pat", "exceptional", "finance_costs", "dna", "other_income", "associates")
+
+
+def load_fact_sources() -> None:
+    for r in csv.DictReader((SEED / "facts.csv").open(encoding="utf-8")):
+        FACT_SRC[(r["symbol"], r["period"])] = r["source"]
+        FACTS_RAW[(r["symbol"], r["period"])][r["metric"]] = float(r["value_cr"])
+
+
+def prev_q(p: str) -> str:
+    q, fy = int(p[1]), int(p[-2:])
+    return f"Q4FY{fy - 1:02d}" if q == 1 else f"Q{q - 1}FY{fy:02d}"
+
+
+def inputs(sym: str, period: str | None) -> dict | None:
+    """The reported facts behind a results card's growth and margin numbers, with their XBRL files,
+    so the formula sheet can show real inputs. EBITDA's associates placement is decided by arithmetic,
+    as in the parser (associates inside PBT when subtracting them reproduces the stored EBITDA)."""
+    if not period or not period.startswith("Q"):
+        return None
+    out: dict = {"periods": {"cur": period, "qoq": prev_q(period), "yoy": f"Q{period[1]}FY{int(period[-2:]) - 1:02d}"},
+                 "facts": {}, "sources": {}, "assoc_inside": {}}
+    for p in out["periods"].values():
+        m = FACTS_RAW.get((sym, p))
+        if not m:
+            continue
+        out["facts"][p] = {k: m[k] for k in INPUT_METRICS if k in m}
+        out["sources"][p] = FACT_SRC.get((sym, p))
+        base = m.get("pbt", 0) - m.get("exceptional", 0) + m.get("finance_costs", 0) + m.get("dna", 0) - m.get("other_income", 0)
+        out["assoc_inside"][p] = "ebitda" in m and abs(base - m["ebitda"]) >= 0.05 and abs(base - m.get("associates", 0) - m["ebitda"]) < 0.05
+    return out if period in out["facts"] else None
+
+
 def trend(fx: dict, period: str | None, n: int = 5) -> list[dict]:
     """Up to n quarters ending at this results period, for the card's small trend chart."""
     if not period or not period.startswith("Q"):
@@ -222,6 +257,7 @@ def main() -> None:
 
     # Thesis relevance (T): link results to the investor's thesis, add management's own guidance check.
     facts, ledger, theses = load_thesis()
+    load_fact_sources()
     for ev in events:
         sym = ev["symbol"]
         fx, led = facts.get(sym, {}), ledger.get(sym, {})
@@ -239,6 +275,7 @@ def main() -> None:
                 ev["reasons"].insert(0, (f"{word} your assumption" if top["source"] == "investor"
                                          else f"{word} management's guidance") if hit else "touches your thesis")
             ev["trend"] = trend(fx, res.get("period"))
+            ev["inputs"] = inputs(sym, res.get("period"))
             pc = promise_check(fx, led, res.get("period"))
             if pc:
                 ev["promise_check"] = pc

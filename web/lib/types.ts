@@ -7,8 +7,10 @@
 export type Stance = 'supports' | 'contradicts' | 'neutral' | 'insufficient';
 export type Epistemic = 'SAID' | 'EXTRACTED' | 'CALCULATED' | 'INFERRED' | 'UNKNOWN';
 
-export interface SourceRef { documentId: string; page?: number; span?: [number, number]; label: string; publishedAt: string; }
-export interface NumValue { value: number; kind: 'inr_cr' | 'pct' | 'bps' | 'ratio' | 'count'; epistemic: Epistemic; source?: SourceRef; formula?: string; }
+export interface SourceRef { documentId: string; page?: number; span?: [number, number]; label: string; publishedAt: string;
+  fact?: XbrlFact /* redesign: XBRL element behind a number */; text?: string /* verbatim excerpt, when we hold it */ }
+export interface NumValue { value: number; kind: 'inr_cr' | 'pct' | 'bps' | 'ratio' | 'count'; epistemic: Epistemic; source?: SourceRef; formula?: string;
+  calc?: Calc /* redesign: the formula with its real inputs */ }
 
 export interface PersonRef { contactId: string; displayName: string; reason: string; strength: number; confirmed: boolean; }
 export interface AssumptionRef { id: string; text: string; source: 'management' | 'investor'; deadline?: string; }
@@ -42,6 +44,10 @@ export interface DigestResponse {
 }
 
 // ── 2. Additions following the §7.2 pattern ────────────────────────────────────────
+/** One reported XBRL fact: element name, the period it covers, unit and the value as filed. */
+export interface XbrlFact { element: string; period: string; unit: string; value: number }
+/** A formula with its real inputs; each input can open its source. */
+export interface Calc { name: string; parts: (string | { text: string; source?: SourceRef })[]; result: string }
 /** A lead stat on a card: the value, and its change with the period it is measured over. */
 export interface StatTile { label: string; value: NumValue; signedValue?: boolean; delta?: NumValue; deltaPeriod?: string }
 /** The key metric over the last 3–5 quarters, oldest first. */

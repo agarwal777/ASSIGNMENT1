@@ -1,5 +1,5 @@
 {
- "generated_at": "2026-11-15T14:13:12",
+ "generated_at": "2026-11-15T14:20:39",
  "default_as_of": "2026-11-06T08:00:00+05:30",
  "scoring_note": "score = (0.35·materiality + 0.25·surprise + 0.30·thesis) / 0.90; your network adds up to 0.10 on your device and only reorders cards. Weights are a starting heuristic",
  "events": [
@@ -161,6 +161,58 @@
      "ebitda_margin": 16.3
     }
    ],
+   "inputs": {
+    "periods": {
+     "cur": "Q2FY27",
+     "qoq": "Q1FY27",
+     "yoy": "Q2FY26"
+    },
+    "facts": {
+     "Q2FY27": {
+      "revenue": 17029.87,
+      "ebitda": 2776.29,
+      "pbt": 1258.07,
+      "pat": 891.45,
+      "exceptional": 0.0,
+      "finance_costs": 1343.64,
+      "dna": 318.39,
+      "other_income": 143.81,
+      "associates": 29.09
+     },
+     "Q1FY27": {
+      "revenue": 13069.59,
+      "ebitda": 2410.07,
+      "pbt": 943.58,
+      "pat": 667.77,
+      "exceptional": 0.0,
+      "finance_costs": 1340.6,
+      "dna": 314.54,
+      "other_income": 188.65,
+      "associates": 6.14
+     },
+     "Q2FY26": {
+      "revenue": 12576.86,
+      "ebitda": 2441.2,
+      "pbt": 1115.97,
+      "pat": 819.7,
+      "exceptional": -40.0,
+      "finance_costs": 1152.02,
+      "dna": 268.1,
+      "other_income": 134.89,
+      "associates": 8.04
+     }
+    },
+    "sources": {
+     "Q2FY27": "https://nsearchives.nseindia.in/corporate/xbrl/INTEGRATED_FILING_INDAS_1758732_14112026091104_WEB.xml",
+     "Q1FY27": "https://nsearchives.nseindia.in/corporate/xbrl/INTEGRATED_FILING_INDAS_1714908_14082026065518_WEB.xml",
+     "Q2FY26": "https://nsearchives.nseindia.in/corporate/xbrl/INTEGRATED_FILING_INDAS_1572985_12112025091144_WEB.xml"
+    },
+    "assoc_inside": {
+     "Q2FY27": false,
+     "Q1FY27": false,
+     "Q2FY26": false
+    }
+   },
    "thesis": [],
    "bucket": "needs_you"
   },
@@ -1023,6 +1075,58 @@
      "ebitda_margin": 18.67
     }
    ],
+   "inputs": {
+    "periods": {
+     "cur": "Q2FY27",
+     "qoq": "Q1FY27",
+     "yoy": "Q2FY26"
+    },
+    "facts": {
+     "Q2FY27": {
+      "revenue": 19635.94,
+      "ebitda": 3666.85,
+      "pbt": 1442.91,
+      "pat": 1652.04,
+      "exceptional": 119.18,
+      "finance_costs": 1384.93,
+      "dna": 1286.55,
+      "other_income": 328.36,
+      "associates": 486.8
+     },
+     "Q1FY27": {
+      "revenue": 19051.26,
+      "ebitda": 4013.29,
+      "pbt": 1735.04,
+      "pat": 1400.86,
+      "exceptional": 0.0,
+      "finance_costs": 1406.78,
+      "dna": 1259.86,
+      "other_income": 388.39,
+      "associates": 241.39
+     },
+     "Q2FY26": {
+      "revenue": 15544.91,
+      "ebitda": 3301.95,
+      "pbt": 1326.66,
+      "pat": 1245.39,
+      "exceptional": 0.0,
+      "finance_costs": 1318.65,
+      "dna": 1162.05,
+      "other_income": 505.41,
+      "associates": 129.08
+     }
+    },
+    "sources": {
+     "Q2FY27": "https://nsearchives.nseindia.in/corporate/xbrl/INTEGRATED_FILING_INDAS_1756234_11112026070341_WEB.xml",
+     "Q1FY27": "https://nsearchives.nseindia.in/corporate/xbrl/INTEGRATED_FILING_INDAS_1702185_27072026053807_WEB.xml",
+     "Q2FY26": "https://nsearchives.nseindia.in/corporate/xbrl/INTEGRATED_FILING_INDAS_1571448_11112025064023_WEB.xml"
+    },
+    "assoc_inside": {
+     "Q2FY27": false,
+     "Q1FY27": false,
+     "Q2FY26": false
+    }
+   },
    "thesis": [],
    "bucket": "needs_you"
   },
@@ -1649,6 +1753,58 @@
      "ebitda_margin": 10.7
     }
    ],
+   "inputs": {
+    "periods": {
+     "cur": "Q2FY27",
+     "qoq": "Q1FY27",
+     "yoy": "Q2FY26"
+    },
+    "facts": {
+     "Q2FY27": {
+      "revenue": 1826.69,
+      "ebitda": 195.49,
+      "pbt": 231.62,
+      "pat": 171.97,
+      "exceptional": 0.0,
+      "finance_costs": 8.54,
+      "dna": 14.28,
+      "other_income": 58.95,
+      "associates": 0.0
+     },
+     "Q1FY27": {
+      "revenue": 1814.62,
+      "ebitda": 149.22,
+      "pbt": 231.53,
+      "pat": 172.84,
+      "exceptional": 0.0,
+      "finance_costs": 3.76,
+      "dna": 13.5,
+      "other_income": 99.57,
+      "associates": 0.0
+     },
+     "Q2FY26": {
+      "revenue": 1677.38,
+      "ebitda": 156.16,
+      "pbt": 209.36,
+      "pat": 153.79,
+      "exceptional": 0.0,
+      "finance_costs": 3.62,
+      "dna": 11.87,
+      "other_income": 68.69,
+      "associates": 0.0
+     }
+    },
+    "sources": {
+     "Q2FY27": "https://nsearchives.nseindia.in/corporate/xbrl/INTEGRATED_FILING_INDAS_1756048_11112026032721_WEB.xml",
+     "Q1FY27": "https://nsearchives.nseindia.in/corporate/xbrl/INTEGRATED_FILING_INDAS_1703769_29072026020422_WEB.xml",
+     "Q2FY26": "https://nsearchives.nseindia.in/corporate/xbrl/INTEGRATED_FILING_INDAS_1564979_04112025062359_WEB.xml"
+    },
+    "assoc_inside": {
+     "Q2FY27": false,
+     "Q1FY27": false,
+     "Q2FY26": false
+    }
+   },
    "thesis": [],
    "bucket": "worth_a_read"
   },
@@ -2686,6 +2842,58 @@
      "ebitda_margin": 16.1
     }
    ],
+   "inputs": {
+    "periods": {
+     "cur": "Q2FY27",
+     "qoq": "Q1FY27",
+     "yoy": "Q2FY26"
+    },
+    "facts": {
+     "Q2FY27": {
+      "revenue": 65436.24,
+      "ebitda": 10533.07,
+      "pbt": 5342.88,
+      "pat": 3699.59,
+      "exceptional": 348.68,
+      "finance_costs": 2005.32,
+      "dna": 3781.83,
+      "other_income": 248.28,
+      "associates": 112.27
+     },
+     "Q1FY27": {
+      "revenue": 60794.29,
+      "ebitda": 9264.34,
+      "pbt": 3741.38,
+      "pat": 2385.24,
+      "exceptional": -345.48,
+      "finance_costs": 1770.51,
+      "dna": 3639.65,
+      "other_income": 232.68,
+      "associates": 96.15
+     },
+     "Q2FY26": {
+      "revenue": 58689.29,
+      "ebitda": 8896.54,
+      "pbt": 4171.72,
+      "pat": 3183.09,
+      "exceptional": -420.41,
+      "finance_costs": 1774.96,
+      "dna": 2893.0,
+      "other_income": 363.55,
+      "associates": 50.75
+     }
+    },
+    "sources": {
+     "Q2FY27": "https://nsearchives.nseindia.in/corporate/xbrl/INTEGRATED_FILING_INDAS_1755442_07112026053333_WEB.xml",
+     "Q1FY27": "https://nsearchives.nseindia.in/corporate/xbrl/INTEGRATED_FILING_INDAS_1705622_30072026075610_WEB.xml",
+     "Q2FY26": "https://nsearchives.nseindia.in/corporate/xbrl/INTEGRATED_FILING_INDAS_1572729_12112025073451_WEB.xml"
+    },
+    "assoc_inside": {
+     "Q2FY27": false,
+     "Q1FY27": false,
+     "Q2FY26": false
+    }
+   },
    "thesis": [],
    "bucket": "worth_a_read"
   },
@@ -3026,6 +3234,58 @@
      "ebitda_margin": 4.72
     }
    ],
+   "inputs": {
+    "periods": {
+     "cur": "Q2FY27",
+     "qoq": "Q1FY27",
+     "yoy": "Q2FY26"
+    },
+    "facts": {
+     "Q2FY27": {
+      "revenue": 2706.57,
+      "ebitda": 127.86,
+      "pbt": 124.03,
+      "pat": 47.71,
+      "exceptional": 0.0,
+      "finance_costs": 19.77,
+      "dna": 23.57,
+      "other_income": 39.51,
+      "associates": -41.1
+     },
+     "Q1FY27": {
+      "revenue": 4673.5,
+      "ebitda": 265.52,
+      "pbt": 322.7,
+      "pat": 212.76,
+      "exceptional": 0.0,
+      "finance_costs": 12.75,
+      "dna": 21.31,
+      "other_income": 91.24,
+      "associates": -37.24
+     },
+     "Q2FY26": {
+      "revenue": 2347.32,
+      "ebitda": 70.41,
+      "pbt": 90.64,
+      "pat": 31.5,
+      "exceptional": 0.0,
+      "finance_costs": 19.96,
+      "dna": 24.42,
+      "other_income": 64.61,
+      "associates": -36.52
+     }
+    },
+    "sources": {
+     "Q2FY27": "https://nsearchives.nseindia.in/corporate/xbrl/INTEGRATED_FILING_INDAS_1755186_06112026085901_WEB.xml",
+     "Q1FY27": "https://nsearchives.nseindia.in/corporate/xbrl/INTEGRATED_FILING_INDAS_1715051_14082026080841_WEB.xml",
+     "Q2FY26": "https://nsearchives.nseindia.in/corporate/xbrl/INTEGRATED_FILING_INDAS_1574474_13112025095958_WEB.xml"
+    },
+    "assoc_inside": {
+     "Q2FY27": false,
+     "Q1FY27": false,
+     "Q2FY26": false
+    }
+   },
    "thesis": [
     {
      "id": "inv-voltas-1",
@@ -3657,6 +3917,58 @@
      "ebitda_margin": 19.56
     }
    ],
+   "inputs": {
+    "periods": {
+     "cur": "Q2FY27",
+     "qoq": "Q1FY27",
+     "yoy": "Q2FY26"
+    },
+    "facts": {
+     "Q2FY27": {
+      "revenue": 2607.89,
+      "ebitda": 510.03,
+      "pbt": 159.04,
+      "pat": 111.59,
+      "exceptional": 0.0,
+      "finance_costs": 111.86,
+      "dna": 261.37,
+      "other_income": 19.17,
+      "associates": 3.07
+     },
+     "Q1FY27": {
+      "revenue": 2569.65,
+      "ebitda": 499.79,
+      "pbt": 147.25,
+      "pat": 100.03,
+      "exceptional": 0.0,
+      "finance_costs": 120.27,
+      "dna": 255.03,
+      "other_income": 18.69,
+      "associates": 4.07
+     },
+     "Q2FY26": {
+      "revenue": 2340.15,
+      "ebitda": 476.18,
+      "pbt": 155.39,
+      "pat": 194.6,
+      "exceptional": 0.0,
+      "finance_costs": 105.71,
+      "dna": 230.31,
+      "other_income": 15.23,
+      "associates": 2.37
+     }
+    },
+    "sources": {
+     "Q2FY27": "https://nsearchives.nseindia.in/corporate/xbrl/INTEGRATED_FILING_INDAS_1754883_06112026053355_WEB.xml",
+     "Q1FY27": "https://nsearchives.nseindia.in/corporate/xbrl/INTEGRATED_FILING_INDAS_1713499_13082026043458_WEB.xml",
+     "Q2FY26": "https://nsearchives.nseindia.in/corporate/xbrl/INTEGRATED_FILING_INDAS_1574115_13112025073450_WEB.xml"
+    },
+    "assoc_inside": {
+     "Q2FY27": true,
+     "Q1FY27": true,
+     "Q2FY26": false
+    }
+   },
    "thesis": [],
    "bucket": "needs_you"
   },
@@ -3930,6 +4242,58 @@
      "ebitda_margin": 9.74
     }
    ],
+   "inputs": {
+    "periods": {
+     "cur": "Q2FY27",
+     "qoq": "Q1FY27",
+     "yoy": "Q2FY26"
+    },
+    "facts": {
+     "Q2FY27": {
+      "revenue": 2742.6,
+      "ebitda": 267.1,
+      "pbt": 63.6,
+      "pat": 30.5,
+      "exceptional": -82.9,
+      "finance_costs": 41.7,
+      "dna": 93.8,
+      "other_income": 14.9,
+      "associates": 7.8
+     },
+     "Q1FY27": {
+      "revenue": 2642.1,
+      "ebitda": 258.8,
+      "pbt": 144.2,
+      "pat": 103.4,
+      "exceptional": 0.0,
+      "finance_costs": 40.5,
+      "dna": 93.1,
+      "other_income": 19.0,
+      "associates": 13.2
+     },
+     "Q2FY26": {
+      "revenue": 2387.4,
+      "ebitda": 132.2,
+      "pbt": 20.2,
+      "pat": 19.3,
+      "exceptional": 0.0,
+      "finance_costs": 43.6,
+      "dna": 97.2,
+      "other_income": 28.8,
+      "associates": 9.3
+     }
+    },
+    "sources": {
+     "Q2FY27": "https://nsearchives.nseindia.in/corporate/xbrl/INTEGRATED_FILING_INDAS_1754942_06112026060433_WEB.xml",
+     "Q1FY27": "https://nsearchives.nseindia.in/corporate/xbrl/INTEGRATED_FILING_INDAS_1713120_12082026083817_WEB.xml",
+     "Q2FY26": "https://nsearchives.nseindia.in/corporate/xbrl/INTEGRATED_FILING_INDAS_1572762_12112025074443_WEB.xml"
+    },
+    "assoc_inside": {
+     "Q2FY27": false,
+     "Q1FY27": false,
+     "Q2FY26": false
+    }
+   },
    "thesis": [],
    "bucket": "needs_you"
   },
@@ -4279,6 +4643,58 @@
      "ebitda_margin": 7.04
     }
    ],
+   "inputs": {
+    "periods": {
+     "cur": "Q2FY27",
+     "qoq": "Q1FY27",
+     "yoy": "Q2FY26"
+    },
+    "facts": {
+     "Q2FY27": {
+      "revenue": 2755.87,
+      "ebitda": 194.14,
+      "pbt": 168.86,
+      "pat": 113.11,
+      "exceptional": 0.0,
+      "finance_costs": 36.92,
+      "dna": 70.15,
+      "other_income": 81.79,
+      "associates": 0.0
+     },
+     "Q1FY27": {
+      "revenue": 2302.73,
+      "ebitda": 68.62,
+      "pbt": 42.14,
+      "pat": 21.79,
+      "exceptional": 0.0,
+      "finance_costs": 35.15,
+      "dna": 59.52,
+      "other_income": 68.19,
+      "associates": 0.0
+     },
+     "Q2FY26": {
+      "revenue": 2473.9,
+      "ebitda": 172.03,
+      "pbt": 173.8,
+      "pat": 119.4,
+      "exceptional": 0.0,
+      "finance_costs": 32.17,
+      "dna": 51.47,
+      "other_income": 85.41,
+      "associates": -0.13
+     }
+    },
+    "sources": {
+     "Q2FY27": "https://nsearchives.nseindia.in/corporate/xbrl/INTEGRATED_FILING_INDAS_1753918_05112026063454_WEB.xml",
+     "Q1FY27": "https://nsearchives.nseindia.in/corporate/xbrl/INTEGRATED_FILING_INDAS_1705307_30072026053358_WEB.xml",
+     "Q2FY26": "https://nsearchives.nseindia.in/corporate/xbrl/INTEGRATED_FILING_INDAS_1571267_11112025054529_WEB.xml"
+    },
+    "assoc_inside": {
+     "Q2FY27": false,
+     "Q1FY27": false,
+     "Q2FY26": false
+    }
+   },
    "thesis": [],
    "bucket": "worth_a_read"
   },
@@ -4414,6 +4830,58 @@
      "ebitda_margin": 8.79
     }
    ],
+   "inputs": {
+    "periods": {
+     "cur": "Q2FY27",
+     "qoq": "Q1FY27",
+     "yoy": "Q2FY26"
+    },
+    "facts": {
+     "Q2FY27": {
+      "revenue": 6014.67,
+      "ebitda": 528.46,
+      "pbt": 268.99,
+      "pat": 198.84,
+      "exceptional": 0.0,
+      "finance_costs": 211.33,
+      "dna": 75.15,
+      "other_income": 27.01,
+      "associates": 0.86
+     },
+     "Q1FY27": {
+      "revenue": 5811.83,
+      "ebitda": 545.12,
+      "pbt": 308.44,
+      "pat": 228.9,
+      "exceptional": 0.0,
+      "finance_costs": 198.02,
+      "dna": 69.31,
+      "other_income": 30.65,
+      "associates": 3.2
+     },
+     "Q2FY26": {
+      "revenue": 4543.01,
+      "ebitda": 393.31,
+      "pbt": 206.63,
+      "pat": 167.33,
+      "exceptional": 0.0,
+      "finance_costs": 171.82,
+      "dna": 56.91,
+      "other_income": 42.05,
+      "associates": 1.99
+     }
+    },
+    "sources": {
+     "Q2FY27": "https://nsearchives.nseindia.in/corporate/xbrl/INTEGRATED_FILING_INDAS_1754093_05112026073640_WEB.xml",
+     "Q1FY27": "https://nsearchives.nseindia.in/corporate/xbrl/INTEGRATED_FILING_INDAS_1709230_06082026063437_WEB.xml",
+     "Q2FY26": "https://nsearchives.nseindia.in/corporate/xbrl/INTEGRATED_FILING_INDAS_1567225_06112025065245_WEB.xml"
+    },
+    "assoc_inside": {
+     "Q2FY27": false,
+     "Q1FY27": false,
+     "Q2FY26": false
+    }
+   },
    "thesis": [],
    "bucket": "needs_you"
   },
@@ -5013,6 +5481,58 @@
      "ebitda_margin": 8.6
     }
    ],
+   "inputs": {
+    "periods": {
+     "cur": "Q2FY27",
+     "qoq": "Q1FY27",
+     "yoy": "Q2FY26"
+    },
+    "facts": {
+     "Q2FY27": {
+      "revenue": 867.75,
+      "ebitda": 74.64,
+      "pbt": 123.48,
+      "pat": 111.04,
+      "exceptional": 76.01,
+      "finance_costs": 24.87,
+      "dna": 12.99,
+      "other_income": 10.69,
+      "associates": 2.6
+     },
+     "Q1FY27": {
+      "revenue": 756.68,
+      "ebitda": 57.0,
+      "pbt": 38.11,
+      "pat": 50.07,
+      "exceptional": 0.0,
+      "finance_costs": 25.08,
+      "dna": 12.34,
+      "other_income": 18.53,
+      "associates": 4.39
+     },
+     "Q2FY26": {
+      "revenue": 1258.1,
+      "ebitda": 124.41,
+      "pbt": 91.18,
+      "pat": 63.92,
+      "exceptional": 0.0,
+      "finance_costs": 30.2,
+      "dna": 11.07,
+      "other_income": 8.04,
+      "associates": 6.97
+     }
+    },
+    "sources": {
+     "Q2FY27": "https://nsearchives.nseindia.in/corporate/xbrl/INTEGRATED_FILING_INDAS_1753889_05112026062622_WEB.xml",
+     "Q1FY27": "https://nsearchives.nseindia.in/corporate/xbrl/INTEGRATED_FILING_INDAS_1707191_03082026070801_WEB.xml",
+     "Q2FY26": "https://nsearchives.nseindia.in/corporate/xbrl/INTEGRATED_FILING_INDAS_1571205_11112025050720_WEB.xml"
+    },
+    "assoc_inside": {
+     "Q2FY27": false,
+     "Q1FY27": false,
+     "Q2FY26": false
+    }
+   },
    "thesis": [],
    "bucket": "needs_you"
   },
@@ -5229,6 +5749,58 @@
      "ebitda_margin": 15.17
     }
    ],
+   "inputs": {
+    "periods": {
+     "cur": "Q2FY27",
+     "qoq": "Q1FY27",
+     "yoy": "Q2FY26"
+    },
+    "facts": {
+     "Q2FY27": {
+      "revenue": 44281.88,
+      "ebitda": 6717.51,
+      "pbt": 6637.89,
+      "pat": 5101.62,
+      "exceptional": 0.0,
+      "finance_costs": 66.72,
+      "dna": 1074.42,
+      "other_income": 1061.52,
+      "associates": 0.0
+     },
+     "Q1FY27": {
+      "revenue": 41958.76,
+      "ebitda": 5149.57,
+      "pbt": 4775.89,
+      "pat": 3684.97,
+      "exceptional": 0.0,
+      "finance_costs": 99.73,
+      "dna": 1050.33,
+      "other_income": 776.38,
+      "associates": 0.0
+     },
+     "Q2FY26": {
+      "revenue": 35079.82,
+      "ebitda": 6467.44,
+      "pbt": 6069.45,
+      "pat": 4520.52,
+      "exceptional": 0.0,
+      "finance_costs": 58.99,
+      "dna": 1040.64,
+      "other_income": 701.64,
+      "associates": 0.0
+     }
+    },
+    "sources": {
+     "Q2FY27": "https://nsearchives.nseindia.in/corporate/xbrl/INTEGRATED_FILING_INDAS_1753613_05112026052243_WEB.xml",
+     "Q1FY27": "https://nsearchives.nseindia.in/corporate/xbrl/INTEGRATED_FILING_INDAS_1705128_30072026041112_WEB.xml",
+     "Q2FY26": "https://nsearchives.nseindia.in/corporate/xbrl/INTEGRATED_FILING_INDAS_1565188_04112025075712_WEB.xml"
+    },
+    "assoc_inside": {
+     "Q2FY27": false,
+     "Q1FY27": false,
+     "Q2FY26": false
+    }
+   },
    "thesis": [
     {
      "id": "inv-mm-1",
@@ -5407,6 +5979,58 @@
      "ebitda_margin": 11.02
     }
    ],
+   "inputs": {
+    "periods": {
+     "cur": "Q2FY27",
+     "qoq": "Q1FY27",
+     "yoy": "Q2FY26"
+    },
+    "facts": {
+     "Q2FY27": {
+      "revenue": 6655.42,
+      "ebitda": 733.27,
+      "pbt": 511.02,
+      "pat": 440.81,
+      "exceptional": 0.0,
+      "finance_costs": 48.7,
+      "dna": 178.05,
+      "other_income": 4.5,
+      "associates": 59.77
+     },
+     "Q1FY27": {
+      "revenue": 5556.85,
+      "ebitda": 571.68,
+      "pbt": 355.3,
+      "pat": 315.51,
+      "exceptional": 0.0,
+      "finance_costs": 46.06,
+      "dna": 176.63,
+      "other_income": 6.31,
+      "associates": 47.55
+     },
+     "Q2FY26": {
+      "revenue": 4814.03,
+      "ebitda": 551.76,
+      "pbt": 345.88,
+      "pat": 322.79,
+      "exceptional": 0.0,
+      "finance_costs": 45.39,
+      "dna": 173.42,
+      "other_income": 12.93,
+      "associates": 63.37
+     }
+    },
+    "sources": {
+     "Q2FY27": "https://nsearchives.nseindia.in/corporate/xbrl/INTEGRATED_FILING_INDAS_1753993_05112026065545_WEB.xml",
+     "Q1FY27": "https://nsearchives.nseindia.in/corporate/xbrl/INTEGRATED_FILING_INDAS_1707667_04082026051508_WEB.xml",
+     "Q2FY26": "https://nsearchives.nseindia.in/corporate/xbrl/INTEGRATED_FILING_INDAS_1569856_10112025044845_WEB.xml"
+    },
+    "assoc_inside": {
+     "Q2FY27": false,
+     "Q1FY27": false,
+     "Q2FY26": false
+    }
+   },
    "thesis": [],
    "bucket": "needs_you"
   },
@@ -5703,6 +6327,58 @@
      "ebitda_margin": 21.0
     }
    ],
+   "inputs": {
+    "periods": {
+     "cur": "Q2FY27",
+     "qoq": "Q1FY27",
+     "yoy": "Q2FY26"
+    },
+    "facts": {
+     "Q2FY27": {
+      "revenue": 10263.29,
+      "ebitda": 2155.75,
+      "pbt": 1690.61,
+      "pat": 1123.84,
+      "exceptional": 0.0,
+      "finance_costs": 102.21,
+      "dna": 531.15,
+      "other_income": 168.22,
+      "associates": -2.94
+     },
+     "Q1FY27": {
+      "revenue": 9150.35,
+      "ebitda": 1881.06,
+      "pbt": 1516.63,
+      "pat": 1032.03,
+      "exceptional": -40.18,
+      "finance_costs": 101.66,
+      "dna": 486.82,
+      "other_income": 264.23,
+      "associates": -1.54
+     },
+     "Q2FY26": {
+      "revenue": 8285.7,
+      "ebitda": 1678.1,
+      "pbt": 1274.26,
+      "pat": 848.13,
+      "exceptional": 0.0,
+      "finance_costs": 95.24,
+      "dna": 429.19,
+      "other_income": 120.59,
+      "associates": 1.66
+     }
+    },
+    "sources": {
+     "Q2FY27": "https://nsearchives.nseindia.in/corporate/xbrl/INTEGRATED_FILING_INDAS_1753288_04112026104818_WEB.xml",
+     "Q1FY27": "https://nsearchives.nseindia.in/corporate/xbrl/INTEGRATED_FILING_INDAS_1708706_05082026091312_WEB.xml",
+     "Q2FY26": "https://nsearchives.nseindia.in/corporate/xbrl/INTEGRATED_FILING_INDAS_1566250_05112025094600_WEB.xml"
+    },
+    "assoc_inside": {
+     "Q2FY27": false,
+     "Q1FY27": false,
+     "Q2FY26": false
+    }
+   },
    "promise_check": {
     "promise_id": "AUROPHARMA-2026-11-11-2",
     "guided_low": 21.0,
@@ -6395,6 +7071,58 @@
      "ebitda_margin": 26.12
     }
    ],
+   "inputs": {
+    "periods": {
+     "cur": "Q2FY27",
+     "qoq": "Q1FY27",
+     "yoy": "Q2FY26"
+    },
+    "facts": {
+     "Q2FY27": {
+      "revenue": 7827.26,
+      "ebitda": 2044.41,
+      "pbt": 1579.59,
+      "pat": 1155.3,
+      "exceptional": 0.0,
+      "finance_costs": 105.71,
+      "dna": 485.9,
+      "other_income": 126.79,
+      "associates": 0.01
+     },
+     "Q1FY27": {
+      "revenue": 8276.89,
+      "ebitda": 2449.55,
+      "pbt": 2017.38,
+      "pat": 1416.98,
+      "exceptional": 0.0,
+      "finance_costs": 109.64,
+      "dna": 452.85,
+      "other_income": 130.32,
+      "associates": -0.02
+     },
+     "Q2FY26": {
+      "revenue": 7047.51,
+      "ebitda": 2341.33,
+      "pbt": 2006.97,
+      "pat": 1484.83,
+      "exceptional": 0.0,
+      "finance_costs": 107.59,
+      "dna": 316.77,
+      "other_income": 90.0,
+      "associates": 0.0
+     }
+    },
+    "sources": {
+     "Q2FY27": "https://nsearchives.nseindia.in/corporate/xbrl/INTEGRATED_FILING_INDAS_1752380_04112026013306_WEB.xml",
+     "Q1FY27": "https://nsearchives.nseindia.in/corporate/xbrl/INTEGRATED_FILING_INDAS_1709478_06082026102614_WEB.xml",
+     "Q2FY26": "https://nsearchives.nseindia.in/corporate/xbrl/INTEGRATED_FILING_INDAS_1567369_06112025080309_WEB.xml"
+    },
+    "assoc_inside": {
+     "Q2FY27": false,
+     "Q1FY27": false,
+     "Q2FY26": false
+    }
+   },
    "thesis": [],
    "bucket": "needs_you"
   },
@@ -6682,6 +7410,58 @@
      "ebitda_margin": 25.19
     }
    ],
+   "inputs": {
+    "periods": {
+     "cur": "Q2FY27",
+     "qoq": "Q1FY27",
+     "yoy": "Q2FY26"
+    },
+    "facts": {
+     "Q2FY27": {
+      "revenue": 1469.04,
+      "ebitda": 370.11,
+      "pbt": 294.83,
+      "pat": 219.14,
+      "exceptional": 0.0,
+      "finance_costs": 28.09,
+      "dna": 70.8,
+      "other_income": 23.61,
+      "associates": 0.0
+     },
+     "Q1FY27": {
+      "revenue": 1304.05,
+      "ebitda": 286.76,
+      "pbt": 213.26,
+      "pat": 157.25,
+      "exceptional": 0.0,
+      "finance_costs": 26.68,
+      "dna": 68.98,
+      "other_income": 22.16,
+      "associates": 0.0
+     },
+     "Q2FY26": {
+      "revenue": 1099.22,
+      "ebitda": 230.94,
+      "pbt": 199.81,
+      "pat": 158.4,
+      "exceptional": 15.98,
+      "finance_costs": 17.11,
+      "dna": 49.73,
+      "other_income": 19.73,
+      "associates": 0.0
+     }
+    },
+    "sources": {
+     "Q2FY27": "https://nsearchives.nseindia.in/corporate/xbrl/INTEGRATED_FILING_INDAS_1751853_03112026044819_WEB.xml",
+     "Q1FY27": "https://nsearchives.nseindia.in/corporate/xbrl/INTEGRATED_FILING_INDAS_1705109_30072026035912_WEB.xml",
+     "Q2FY26": "https://nsearchives.nseindia.in/corporate/xbrl/INTEGRATED_FILING_INDAS_1568483_07112025072531_WEB.xml"
+    },
+    "assoc_inside": {
+     "Q2FY27": false,
+     "Q1FY27": false,
+     "Q2FY26": false
+    }
+   },
    "thesis": [],
    "bucket": "needs_you"
   },
@@ -7124,6 +7904,58 @@
      "ebitda_margin": 4.96
     }
    ],
+   "inputs": {
+    "periods": {
+     "cur": "Q2FY27",
+     "qoq": "Q1FY27",
+     "yoy": "Q2FY26"
+    },
+    "facts": {
+     "Q2FY27": {
+      "revenue": 5467.71,
+      "ebitda": 271.28,
+      "pbt": 40.88,
+      "pat": 29.74,
+      "exceptional": 0.0,
+      "finance_costs": 190.66,
+      "dna": 53.01,
+      "other_income": 13.27,
+      "associates": 0.0
+     },
+     "Q1FY27": {
+      "revenue": 5023.54,
+      "ebitda": 290.81,
+      "pbt": 89.9,
+      "pat": 72.62,
+      "exceptional": 0.0,
+      "finance_costs": 164.03,
+      "dna": 50.82,
+      "other_income": 13.94,
+      "associates": 0.0
+     },
+     "Q2FY26": {
+      "revenue": 6091.56,
+      "ebitda": 430.41,
+      "pbt": 212.98,
+      "pat": 160.75,
+      "exceptional": 0.0,
+      "finance_costs": 171.49,
+      "dna": 50.57,
+      "other_income": 4.63,
+      "associates": 0.0
+     }
+    },
+    "sources": {
+     "Q2FY27": "https://nsearchives.nseindia.in/corporate/xbrl/INTEGRATED_FILING_INDAS_1751525_02112026092732_WEB.xml",
+     "Q1FY27": "https://nsearchives.nseindia.in/corporate/xbrl/INTEGRATED_FILING_INDAS_1711271_10082026070214_WEB.xml",
+     "Q2FY26": "https://nsearchives.nseindia.in/corporate/xbrl/INTEGRATED_FILING_INDAS_1570528_10112025092259_WEB.xml"
+    },
+    "assoc_inside": {
+     "Q2FY27": false,
+     "Q1FY27": false,
+     "Q2FY26": false
+    }
+   },
    "thesis": [],
    "bucket": "needs_you"
   },
@@ -8018,6 +8850,58 @@
      "ebitda_margin": 17.16
     }
    ],
+   "inputs": {
+    "periods": {
+     "cur": "Q2FY27",
+     "qoq": "Q1FY27",
+     "yoy": "Q2FY26"
+    },
+    "facts": {
+     "Q2FY27": {
+      "revenue": 414.98,
+      "ebitda": 71.21,
+      "pbt": 61.16,
+      "pat": 50.2,
+      "exceptional": 0.0,
+      "finance_costs": 4.96,
+      "dna": 13.64,
+      "other_income": 8.55,
+      "associates": 0.0
+     },
+     "Q1FY27": {
+      "revenue": 358.07,
+      "ebitda": 61.48,
+      "pbt": 52.32,
+      "pat": 45.03,
+      "exceptional": 0.0,
+      "finance_costs": 4.44,
+      "dna": 11.4,
+      "other_income": 6.68,
+      "associates": 0.0
+     },
+     "Q2FY26": {
+      "revenue": 357.67,
+      "ebitda": 71.97,
+      "pbt": 69.47,
+      "pat": 55.85,
+      "exceptional": 0.0,
+      "finance_costs": 1.33,
+      "dna": 10.94,
+      "other_income": 9.77,
+      "associates": 0.0
+     }
+    },
+    "sources": {
+     "Q2FY27": "https://nsearchives.nseindia.in/corporate/xbrl/INTEGRATED_FILING_INDAS_1750825_31102026083737_WEB.xml",
+     "Q1FY27": "https://nsearchives.nseindia.in/corporate/xbrl/INTEGRATED_FILING_INDAS_1702529_27072026092954_WEB.xml",
+     "Q2FY26": "https://nsearchives.nseindia.in/corporate/xbrl/INTEGRATED_FILING_INDAS_1564305_03112025110639_WEB.xml"
+    },
+    "assoc_inside": {
+     "Q2FY27": false,
+     "Q1FY27": false,
+     "Q2FY26": false
+    }
+   },
    "thesis": [],
    "bucket": "worth_a_read"
   },

@@ -4,6 +4,7 @@
 import digestData from "@/data/digest.json";
 import executivesData from "@/data/executives.json";
 import movesData from "@/data/moves.json";
+import { makeCalc } from "@/lib/calc";
 import { toClaim } from "@/lib/claims";
 import { DEFAULT_THRESHOLDS, moveEvents, type MovesData, type Thresholds } from "@/lib/moves";
 import { copy } from "@/lib/copy";
@@ -156,25 +157,29 @@ function metrics(e: DigestEvent, src: SourceRef | null): MetricRow[] {
   const r = e.results!;
   const xbrl: SourceRef = { documentId: r.source, label: `${e.symbol}: ${r.period} results (XBRL, ${r.basis})`, publishedAt: e.at };
   const rows: MetricRow[] = [];
+  const c = makeCalc(e);
+  const withCalc = (n: NumValue | undefined, calc: ReturnType<typeof c.growth>) => (n && calc ? { ...n, calc } : n);
   const add = (metric: MetricRow["metric"], key: "revenue" | "ebitda" | "pbt" | "pat", label: string) => {
     const m = r.metrics[key];
     if (!m || m.value_cr == null) return;
+    const fact = r.period ? c.src(r.period, key) : undefined;   // the XBRL element behind an extracted value
     rows.push({
       metric,
       value: key === "ebitda"
-        ? { value: m.value_cr, kind: "inr_cr", epistemic: "CALCULATED", formula: EBITDA_FORMULA, source: xbrl }
-        : { value: m.value_cr, kind: "inr_cr", epistemic: "EXTRACTED", source: xbrl },
-      qoq: growth(m.qoq_pct, `${label} QoQ`),
-      yoy: growth(m.yoy_pct, `${label} YoY`),
+        ? { value: m.value_cr, kind: "inr_cr", epistemic: "CALCULATED", formula: EBITDA_FORMULA, source: xbrl, calc: c.ebitda(m.value_cr) }
+        : { value: m.value_cr, kind: "inr_cr", epistemic: "EXTRACTED", source: fact ?? xbrl },
+      qoq: withCalc(growth(m.qoq_pct, `${label} QoQ`), c.growth(key, "qoq", m.qoq_pct)),
+      yoy: withCalc(growth(m.yoy_pct, `${label} YoY`), c.growth(key, "yoy", m.yoy_pct)),
     });
   };
   add("revenue", "revenue", "Revenue");
   add("ebitda", "ebitda", "EBITDA");
   if (r.ebitda_margin.pct != null) rows.push({
     metric: "ebitda_margin",
-    value: { value: r.ebitda_margin.pct, kind: "pct", epistemic: "CALCULATED", formula: "EBITDA ÷ revenue", source: xbrl },
-    qoq: marginMove(r.ebitda_margin.qoq_bps, "last quarter"),
-    yoy: marginMove(r.ebitda_margin.yoy_bps, "in the same quarter last year"),
+    value: { value: r.ebitda_margin.pct, kind: "pct", epistemic: "CALCULATED", formula: "EBITDA ÷ revenue", source: xbrl,
+      calc: c.marginValue(r.ebitda_margin.pct) },
+    qoq: withCalc(marginMove(r.ebitda_margin.qoq_bps, "last quarter"), c.marginMove("qoq", r.ebitda_margin.qoq_bps)),
+    yoy: withCalc(marginMove(r.ebitda_margin.yoy_bps, "in the same quarter last year"), c.marginMove("yoy", r.ebitda_margin.yoy_bps)),
   });
   add("pbt", "pbt", "PBT");
   add("pat", "pat", "PAT");

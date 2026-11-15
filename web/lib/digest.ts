@@ -24,6 +24,9 @@ export type DigestEvent = {
   related: { title: string; url: string }[];
   results?: RawResults;
   trend?: { period: string; revenue: number | null; ebitda_margin: number | null }[];
+  /** Reported facts behind the card's growth and margin numbers (this quarter, last quarter, a year ago). */
+  inputs?: { periods: { cur: string; qoq: string; yoy: string }; facts: Record<string, Record<string, number>>;
+    sources: Record<string, string | null>; assoc_inside: Record<string, boolean> } | null;
   move?: { volume_multiple: number | null; return_pct: number | null };
   volume30d?: number[];
   no_filing_hours?: number | null;

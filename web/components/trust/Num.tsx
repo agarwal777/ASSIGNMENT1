@@ -1,7 +1,7 @@
 "use client";
 
 import { formatValue, spoken } from "@/lib/format";
-import { useSheetNav } from "@/lib/sheet";
+import { sourceParams, useSheetNav } from "@/lib/sheet";
 import type { NumValue } from "@/lib/types";
 
 /**
@@ -16,10 +16,11 @@ export default function Num({ v, signed = true, className = "", tone = false }: 
   const text = formatValue(v.kind, v.value, signed);
   const label = spoken(v.kind, v.value, signed);
   const color = tone && signed ? (v.value < 0 ? "text-contradicts" : "") : "";
-  const action = v.formula
-    ? () => open("formula", { text: v.formula, label: v.source?.label, doc: v.source?.documentId, at: v.source?.publishedAt })
+  const action = v.formula || v.calc
+    ? () => open("formula", { text: v.formula, calc: v.calc ? JSON.stringify(v.calc) : undefined,
+        label: v.source?.label, doc: v.source?.documentId, at: v.source?.publishedAt })
     : v.source
-      ? () => open("source", { doc: v.source!.documentId, page: v.source!.page, label: v.source!.label, at: v.source!.publishedAt })
+      ? () => open("source", sourceParams(v.source!))
       : null;
 
   if (!action) {
