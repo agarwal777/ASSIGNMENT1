@@ -165,3 +165,17 @@ Migration numbers: `0003_bull_bear_cache.sql` (step 2: cache table, daily counte
 policies) and `0004_promise_status.sql` (step 5). Owner steps: run each migration before its step
 deploys; add `SUPABASE_SERVICE_ROLE_KEY` (and optionally `BULL_BEAR_DAILY_CAP`) in Vercel before step 2
 deploys. The route returns a clear "not configured" message if the key or table is missing.
+
+## Addendum (15 Nov 2026, owner requests during implementation)
+- **Step 6 also covers:** charts (revenue bars, EBITDA margin line, tap a quarter) in Ask's
+  "Promises and numbers" view for unseen tickers, with the table behind "All quarters"; distinct labels
+  when two source links share a filing subject.
+- **Step 7 (new): price chart.** A one-year daily close chart on the Company page with FINN's events
+  marked on it (results, management changes, unusual moves, regulator actions), from the prices already
+  in the snapshot. No live ticks: FINN is a research brief, not a trading screen, and real-time NSE data
+  is licensed.
+- **Step 8 (new): cited question box.** "Ask about this company" on the Company page. Answers come only
+  from that company's numbered primary-source evidence, through the bull-vs-bear pipeline: deny-list,
+  citation and figure checks, `llm_calls` log, and the same global daily cap. Answers are cached per
+  company + question + evidence hash. Not a general chatbot: no answer without a citation.
+- Measure (old 8) and final docs (old 9) follow as steps 9 and 10.
