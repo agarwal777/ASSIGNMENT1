@@ -29,7 +29,7 @@ export interface PromiseCheck { promiseId: string; guidedLow: number; guidedHigh
 
 export type Card =
   | (CardBase & { variant: 'results'; period: string; metrics: MetricRow[]; exceptional?: NumValue; promiseCheck?: PromiseCheck })
-  | (CardBase & { variant: 'management_change'; personName: string; role: string; effective: string; profileQuote?: string;
+  | (CardBase & { variant: 'management_change'; personName: string; role: string; effective?: string; profileQuote?: string;
                   stints: { org: string; role?: string; from?: string; to?: string }[];
                   path?: { steps: string[]; strength: number; confirmed: boolean; explanation: string } })
   | (CardBase & { variant: 'anomaly'; volumeRatio?: NumValue; priceChange?: NumValue; volume30d: number[]; noFilingHours: number })

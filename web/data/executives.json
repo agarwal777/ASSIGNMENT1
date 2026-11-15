@@ -1,38 +1,870 @@
 {
-  "_note": "Public data: executives named in exchange filings. Stints are taken from the filing's 'Brief Profile' (Reg. 30 Annexure A). For the prototype they were transcribed by hand from the cited sentences; production uses small-model extraction into the same schema. Years only: the filing gives no months.",
-  "executives": [
+ "_note": "Public data: executives named in exchange filings. Voltas entries were transcribed by hand; the others are extracted by workers/extract_executives.py from each appointment filing, keeping a stint only if its source sentence is found word for word in the PDF. Years only: filings give no months.",
+ "executives": [
+  {
+   "id": "jayant-balan",
+   "name": "Jayant Balan",
+   "din": "03480708",
+   "company": "VOLTAS",
+   "role": "Managing Director (from 25 May 2027); MD Designate and Head – Room Air Conditioner Business now",
+   "title": "Managing Director",
+   "effective": "2027-05-25",
+   "profile_quote": "Mr. Balan joined the Tata Group in 1999 as part of the Tata Administrative Service and moved to Voltas in 2001.",
+   "events": [
+    "VOLTAS-management_change-2026-11-06"
+   ],
+   "source": "https://nsearchives.nseindia.in/corporate/VOLTAS_RB_06112026171534_02SE_Directorssigned.pdf",
+   "stints": [
     {
-      "id": "jayant-balan",
-      "name": "Jayant Balan",
-      "din": "03480708",
-      "company": "VOLTAS",
-      "role": "Managing Director (from 25 May 2027); MD Designate and Head – Room Air Conditioner Business now",
-      "title": "Managing Director",
-      "effective": "2027-05-25",
-      "profile_quote": "Mr. Balan joined the Tata Group in 1999 as part of the Tata Administrative Service and moved to Voltas in 2001.",
-      "events": ["VOLTAS-management_change-2026-11-06"],
-      "source": "https://nsearchives.nseindia.in/corporate/VOLTAS_RB_06112026171534_02SE_Directorssigned.pdf",
-      "stints": [
-        {"org": "Tata Administrative Service", "role": "TAS officer", "function": "general_management", "start": "1999", "end": "2001", "quote": "joined the Tata Group in 1999 as part of the Tata Administrative Service and moved to Voltas in 2001"},
-        {"org": "Voltas", "role": "Leadership roles: manufacturing, supply chain, strategy, international operations, consumer durables", "function": "general_management", "start": "2001", "end": null, "quote": "moved to Voltas in 2001. Over past two and a half decades, Mr. Balan has held leadership roles across manufacturing, supply chain, strategy, international operations, and consumer durables"},
-        {"org": "Voltbek Home Appliances", "role": "CEO", "function": "general_management", "start": "2019", "end": "2026", "quote": "serving as CEO of Voltbek Home Appliances Private Limited since 2019 before transitioning to the role of Head – Room Air Conditioner Business of the Company in January 2026"},
-        {"org": "SP Jain Institute of Management & Research", "role": "PGDM", "function": "education", "start": null, "end": null, "quote": "Mechanical Engineer and PGDM from SP Jain Institute of Management & Research"}
-      ]
+     "org": "Tata Administrative Service",
+     "role": "TAS officer",
+     "function": "general_management",
+     "start": "1999",
+     "end": "2001",
+     "quote": "joined the Tata Group in 1999 as part of the Tata Administrative Service and moved to Voltas in 2001"
     },
     {
-      "id": "venkatesalu-palaniswamy",
-      "name": "Venkatesalu Palaniswamy",
-      "din": "02190892",
-      "company": "VOLTAS",
-      "role": "Additional Director (Non-Independent, Non-Executive) from 12 Nov 2026; MD of Trent",
-      "events": ["VOLTAS-management_change-2026-11-06"],
-      "source": "https://nsearchives.nseindia.in/corporate/VOLTAS_RB_06112026171534_02SE_Directorssigned.pdf",
-      "stints": [
-        {"org": "Tata Administrative Service", "role": "TAS officer", "function": "finance", "start": "2001", "end": "2008", "end_inferred": true, "quote": "associated with Tata Administrative Services since 2001 and was formerly with Tata Sons Limited as a part of the Group Finance team"},
-        {"org": "Tata Sons", "role": "Group Finance", "function": "finance", "start": "2001", "end": "2008", "end_inferred": true, "quote": "formerly with Tata Sons Limited as a part of the Group Finance team"},
-        {"org": "Trent", "role": "ED & CEO, then Managing Director", "function": "general_management", "start": "2008", "end": null, "quote": "He joined Trent in 2008"},
-        {"org": "Symbiosis Institute of International Business", "role": "Master's in Management", "function": "education", "start": null, "end": null, "quote": "Master's in Management from Symbiosis (SIIB) Pune"}
-      ]
+     "org": "Voltas",
+     "role": "Leadership roles: manufacturing, supply chain, strategy, international operations, consumer durables",
+     "function": "general_management",
+     "start": "2001",
+     "end": null,
+     "quote": "moved to Voltas in 2001. Over past two and a half decades, Mr. Balan has held leadership roles across manufacturing, supply chain, strategy, international operations, and consumer durables"
+    },
+    {
+     "org": "Voltbek Home Appliances",
+     "role": "CEO",
+     "function": "general_management",
+     "start": "2019",
+     "end": "2026",
+     "quote": "serving as CEO of Voltbek Home Appliances Private Limited since 2019 before transitioning to the role of Head – Room Air Conditioner Business of the Company in January 2026"
+    },
+    {
+     "org": "SP Jain Institute of Management & Research",
+     "role": "PGDM",
+     "function": "education",
+     "start": null,
+     "end": null,
+     "quote": "Mechanical Engineer and PGDM from SP Jain Institute of Management & Research"
     }
-  ]
+   ]
+  },
+  {
+   "id": "venkatesalu-palaniswamy",
+   "name": "Venkatesalu Palaniswamy",
+   "din": "02190892",
+   "company": "VOLTAS",
+   "role": "Additional Director (Non-Independent, Non-Executive) from 12 Nov 2026; MD of Trent",
+   "events": [
+    "VOLTAS-management_change-2026-11-06"
+   ],
+   "source": "https://nsearchives.nseindia.in/corporate/VOLTAS_RB_06112026171534_02SE_Directorssigned.pdf",
+   "stints": [
+    {
+     "org": "Tata Administrative Service",
+     "role": "TAS officer",
+     "function": "finance",
+     "start": "2001",
+     "end": "2008",
+     "end_inferred": true,
+     "quote": "associated with Tata Administrative Services since 2001 and was formerly with Tata Sons Limited as a part of the Group Finance team"
+    },
+    {
+     "org": "Tata Sons",
+     "role": "Group Finance",
+     "function": "finance",
+     "start": "2001",
+     "end": "2008",
+     "end_inferred": true,
+     "quote": "formerly with Tata Sons Limited as a part of the Group Finance team"
+    },
+    {
+     "org": "Trent",
+     "role": "ED & CEO, then Managing Director",
+     "function": "general_management",
+     "start": "2008",
+     "end": null,
+     "quote": "He joined Trent in 2008"
+    },
+    {
+     "org": "Symbiosis Institute of International Business",
+     "role": "Master's in Management",
+     "function": "education",
+     "start": null,
+     "end": null,
+     "quote": "Master's in Management from Symbiosis (SIIB) Pune"
+    }
+   ]
+  },
+  {
+   "id": "venkatesan-venkataraman",
+   "name": "Venkatesan Venkataraman",
+   "din": "09635261",
+   "company": "ASHOKLEY",
+   "role": "Additional Director in the capacity of Non-Executive Non-Independent Director",
+   "title": "Additional Director in the capacity of Non-Executive Non-Independent Director",
+   "effective": "2026-11-14",
+   "profile_quote": "Mr. V Venkatesan is a British national and an accomplished automotive industry executive with more than 45 years of experience in the commercial vehicle sector.",
+   "events": [
+    "ASHOKLEY-management_change-2026-11-14"
+   ],
+   "source": "https://nsearchives.nseindia.in/corporate/ASHOKLEYLAND_14112026201346_ALOutcomeofBMNov142026VVAppt.pdf",
+   "extracted": true,
+   "stints": [
+    {
+     "org": "Ashok Leyland",
+     "role": "Graduate Trainee",
+     "function": "engineering",
+     "start": null,
+     "end": null,
+     "quote": "Mr. V Venkatesan began his career with Ashok Leyland as a Graduate Trainee and subsequently held leadership positions across several functions.",
+     "page": 2
+    },
+    {
+     "org": "Hinduja Automotive Limited",
+     "role": "President",
+     "function": "general_management",
+     "start": null,
+     "end": null,
+     "quote": "He is currently President of Hinduja Automotive Limited and serves on its Board of Directors.",
+     "page": 2
+    },
+    {
+     "org": "Avia Motors",
+     "role": "Chief Operating Officer",
+     "function": "operations",
+     "start": null,
+     "end": null,
+     "quote": "He managed the transaction from target identification through execution and subsequently served as Chief Operating Officer during the initial phase, helping stabilise the company’s operations.",
+     "page": 2
+    },
+    {
+     "org": "Boston Consulting Group",
+     "role": "Collaborator",
+     "function": "strategy",
+     "start": null,
+     "end": null,
+     "quote": "Beyond his corporate responsibilities, Mr. V Venkatesan collaborated with Boston Consulting Group to develop the blueprint for “Road to School,” Ashok Leyland’s flagship corporate social responsibility initiative.",
+     "page": 3
+    }
+   ]
+  },
+  {
+   "id": "sanjay-banga",
+   "name": "Sanjay Banga",
+   "din": "07785948",
+   "company": "TATAPOWER",
+   "role": "Additional Director and CEO Designate",
+   "title": "Additional Director and CEO Designate",
+   "effective": "2026-11-11",
+   "profile_quote": "Mr. Sanjay Banga is the Chief Executive Officer and Managing Director of Tata Power Renewable Energy Limited and currently holds the position of President – Renewables of The Tata Power Company Limited (“Tata Power”).",
+   "events": [
+    "TATAPOWER-management_change-2026-11-11"
+   ],
+   "source": "https://nsearchives.nseindia.in/corporate/KSTPCL_11112026190124_MD_APPT_-_Reg_30.pdf",
+   "extracted": true,
+   "stints": [
+    {
+     "org": "Tata Power Renewable Energy Limited",
+     "role": "Chief Executive Officer and Managing Director",
+     "function": "general_management",
+     "start": null,
+     "end": null,
+     "quote": "Mr. Sanjay Banga is the Chief Executive Officer and Managing Director of Tata Power Renewable Energy Limited and currently holds the position of President – Renewables of The Tata Power Company Limited (“Tata Power”).",
+     "page": 2
+    },
+    {
+     "org": "The Tata Power Company Limited",
+     "role": "President – Renewables",
+     "function": "general_management",
+     "start": null,
+     "end": null,
+     "quote": "Mr. Sanjay Banga is the Chief Executive Officer and Managing Director of Tata Power Renewable Energy Limited and currently holds the position of President – Renewables of The Tata Power Company Limited (“Tata Power”).",
+     "page": 2
+    },
+    {
+     "org": "Transmission and Distribution businesses",
+     "role": "President",
+     "function": "general_management",
+     "start": null,
+     "end": null,
+     "quote": "Mr. Banga previously served as President of the Transmission and Distribution businesses.",
+     "page": 2
+    },
+    {
+     "org": "Tata Power Delhi Distribution Limited",
+     "role": "Chief Executive Officer",
+     "function": "general_management",
+     "start": null,
+     "end": null,
+     "quote": "Mr. Banga also served as the Chief Executive Officer of Tata Power Delhi Distribution Limited (TPDDL), a notable Public-Private Partnership (JV) between Tata Power and the Government of the National Capital Territory of Delhi.",
+     "page": 2
+    },
+    {
+     "org": "National Thermal Power Corporation Limited",
+     "role": "Engineer Trainee",
+     "function": "engineering",
+     "start": "1989",
+     "end": "1995",
+     "quote": "Mr. Banga began his career as an Engineer Trainee at National Thermal Power Corporation Limited (NTPC), where he was involved in the operation and commissioning of super thermal power projects from 1989 to 1995.",
+     "page": 2
+    },
+    {
+     "org": "Reliance Energy",
+     "role": "Employee",
+     "function": "operations",
+     "start": "1996",
+     "end": "2003",
+     "quote": "Before joining TPDDL in 2003, he worked with Reliance Energy (formerly BSES Limited) from 1996 to 2003, with responsibilities covering operations, maintenance, planning, design and project engineering for thermal power projects.",
+     "page": 2
+    },
+    {
+     "org": "National Institute of Technology, Kurukshetra",
+     "role": "Student",
+     "function": "education",
+     "start": null,
+     "end": null,
+     "quote": "Mr. Banga is an alumnus of the National Institute of Technology, Kurukshetra, and holds a Master of Business Administration degree from the Faculty of Management Studies, University of Delhi.",
+     "page": 2
+    },
+    {
+     "org": "Faculty of Management Studies, University of Delhi",
+     "role": "Student",
+     "function": "education",
+     "start": null,
+     "end": null,
+     "quote": "Mr. Banga is an alumnus of the National Institute of Technology, Kurukshetra, and holds a Master of Business Administration degree from the Faculty of Management Studies, University of Delhi.",
+     "page": 2
+    },
+    {
+     "org": "Harvard Business School",
+     "role": "Student",
+     "function": "education",
+     "start": null,
+     "end": null,
+     "quote": "He has also completed the Senior Executive Leadership Program at Harvard Business School and holds alumni status.",
+     "page": 2
+    }
+   ]
+  },
+  {
+   "id": "amit-deshpande",
+   "name": "Amit Deshpande",
+   "din": null,
+   "company": "SUDARSCHEM",
+   "role": "Company Secretary and Compliance Officer, Nodal Officer and Key Managerial Personnel",
+   "title": "Company Secretary and Compliance Officer, Nodal Officer and Key Managerial Personnel",
+   "effective": "2026-11-06",
+   "profile_quote": null,
+   "events": [
+    "SUDARSCHEM-management_change-2026-11-06"
+   ],
+   "source": "https://nsearchives.nseindia.in/corporate/SUDARSCHEM_06112026141412_SUDARSHANOutcomeofBM06112026_v1SIGNED.pdf",
+   "extracted": true,
+   "stints": []
+  },
+  {
+   "id": "a-a-v-ranga-raju",
+   "name": "A A V Ranga Raju",
+   "din": "00019161",
+   "company": "NCC",
+   "role": "Managing Director",
+   "title": "Managing Director",
+   "effective": null,
+   "profile_quote": null,
+   "events": [
+    "NCC-management_change-2026-11-05"
+   ],
+   "source": "https://nsearchives.nseindia.in/corporate/NCC_05112026181328_Outcome_of_the_Board_Meeting.pdf",
+   "extracted": true,
+   "stints": []
+  },
+  {
+   "id": "a-g-k-raju",
+   "name": "A G K Raju",
+   "din": "00019100",
+   "company": "NCC",
+   "role": "Executive Director",
+   "title": "Executive Director",
+   "effective": null,
+   "profile_quote": null,
+   "events": [
+    "NCC-management_change-2026-11-05"
+   ],
+   "source": "https://nsearchives.nseindia.in/corporate/NCC_05112026181328_Outcome_of_the_Board_Meeting.pdf",
+   "extracted": true,
+   "stints": []
+  },
+  {
+   "id": "j-v-ranga-raju",
+   "name": "J V Ranga Raju",
+   "din": "00020547",
+   "company": "NCC",
+   "role": "Whole-time Director",
+   "title": "Whole-time Director",
+   "effective": null,
+   "profile_quote": null,
+   "events": [
+    "NCC-management_change-2026-11-05"
+   ],
+   "source": "https://nsearchives.nseindia.in/corporate/NCC_05112026181328_Outcome_of_the_Board_Meeting.pdf",
+   "extracted": true,
+   "stints": []
+  },
+  {
+   "id": "udyavar-vittal-kamath",
+   "name": "Udyavar Vittal Kamath",
+   "din": "00648897",
+   "company": "TEXRAIL",
+   "role": "Executive Director",
+   "title": "Executive Director",
+   "effective": "2027-02-01",
+   "profile_quote": "Mr. Udyavar Vittal Kamath, an Electrical Engineering graduate, was a founder director of Bright Power Projects (India) Private Limited (\"Bright Power\").",
+   "events": [
+    "TEXRAIL-management_change-2026-11-05"
+   ],
+   "source": "https://nsearchives.nseindia.in/corporate/TEXRAIL_05112026145903_TexRailBMOutcome05112026Signed.pdf",
+   "extracted": true,
+   "stints": [
+    {
+     "org": "Bright Power Projects (India) Private Limited",
+     "role": "Founder Director",
+     "function": "general_management",
+     "start": null,
+     "end": null,
+     "quote": "Mr. Udyavar Vittal Kamath, an Electrical Engineering graduate, was a founder director of Bright Power Projects (India) Private Limited (\"Bright Power\").",
+     "page": 10
+    },
+    {
+     "org": "MIT-Manipal",
+     "role": "Student",
+     "function": "education",
+     "start": "1986",
+     "end": "1986",
+     "quote": "After completion of his Electrical Engineering degree in the year 1986 from MIT-Manipal, he has acquired more than 30 years of vast experience in the field of Railway Electrification business and other electrical engineering service industry, well recognised in the field.",
+     "page": 10
+    },
+    {
+     "org": "Texmaco Rail & Engineering Limited",
+     "role": "Executive Director",
+     "function": "operations",
+     "start": null,
+     "end": null,
+     "quote": "He has been associated with the Company more than nine years, during which he has significantly contributed in growth of business and in execution of Railway business including track laying and S&T business.",
+     "page": 10
+    }
+   ]
+  },
+  {
+   "id": "nitesh-minda",
+   "name": "Nitesh Minda",
+   "din": null,
+   "company": "UNOMINDA",
+   "role": "Appointee",
+   "title": null,
+   "effective": "2026-11-05",
+   "profile_quote": "Mr. Nitesh Minda will transition into a new role as Chief Executive officer-SCS Domain of the Company",
+   "events": [
+    "UNOMINDA-management_change-2026-11-05"
+   ],
+   "source": "https://nsearchives.nseindia.in/corporate/MINDAIND1_05112026125215_Outcomef.pdf",
+   "extracted": true,
+   "stints": []
+  },
+  {
+   "id": "kartikeya-joshi",
+   "name": "Kartikeya Joshi",
+   "din": null,
+   "company": "UNOMINDA",
+   "role": "Appointee",
+   "title": null,
+   "effective": "2026-11-05",
+   "profile_quote": "Elevation of Mr. Kartikeya Joshi to the role of Chief Marketing Officer (CMO) of the Company",
+   "events": [
+    "UNOMINDA-management_change-2026-11-05"
+   ],
+   "source": "https://nsearchives.nseindia.in/corporate/MINDAIND1_05112026125215_Outcomef.pdf",
+   "extracted": true,
+   "stints": []
+  },
+  {
+   "id": "amit-jain",
+   "name": "Amit Jain",
+   "din": null,
+   "company": "UNOMINDA",
+   "role": "Appointee",
+   "title": null,
+   "effective": null,
+   "profile_quote": "Additional charge to Mr. Amit Jain, re-designated as Group Chief Growth and Technology Officer (CGTO)",
+   "events": [
+    "UNOMINDA-management_change-2026-11-05"
+   ],
+   "source": "https://nsearchives.nseindia.in/corporate/MINDAIND1_05112026125215_Outcomef.pdf",
+   "extracted": true,
+   "stints": []
+  },
+  {
+   "id": "mangalam-ramasubramanian-kumar",
+   "name": "Mangalam Ramasubramanian Kumar",
+   "din": "03628755",
+   "company": "AUROPHARMA",
+   "role": "Non-executive and Independent Director",
+   "title": "Non-executive and Independent Director",
+   "effective": "2027-04-01",
+   "profile_quote": "Mr. Mangalam Ramasubramanian Kumar is a Science graduate from University of Madras.",
+   "events": [
+    "AUROPHARMA-management_change-2026-11-04"
+   ],
+   "source": "https://nsearchives.nseindia.in/corporate/AUROPHARMA_04112026204230_LtrToSEsReappointmentofMrKumar04112026.pdf",
+   "extracted": true,
+   "stints": [
+    {
+     "org": "University of Madras",
+     "role": "Science graduate",
+     "function": "education",
+     "start": null,
+     "end": null,
+     "quote": "Mr. Mangalam Ramasubramanian Kumar is a Science graduate from University of Madras.",
+     "page": 2
+    },
+    {
+     "org": "LIC of India",
+     "role": "Chairman",
+     "function": "general_management",
+     "start": "2019",
+     "end": "2023",
+     "quote": "He served as Chairman, LIC of India from March 2019 to March 2023.",
+     "page": 2
+    },
+    {
+     "org": "LIC of India",
+     "role": "Direct Recruit Officer",
+     "function": "general_management",
+     "start": "1983",
+     "end": null,
+     "quote": "He joined LIC of India in 1983 as a Direct Recruit Officer.",
+     "page": 2
+    },
+    {
+     "org": "LIC of India",
+     "role": "Head of Zones",
+     "function": "general_management",
+     "start": null,
+     "end": null,
+     "quote": "In a career spanning more than three and a half decades, he has had the unique privilege of heading three Zones of LIC of India, viz. Southern Zone, North Central Zone and Northern Zone, head quartered at Chennai, Kanpur and Delhi, respectively.",
+     "page": 2
+    },
+    {
+     "org": "LIC of India",
+     "role": "Executive Director",
+     "function": "hr",
+     "start": null,
+     "end": null,
+     "quote": "As an Executive Director, he headed the Personnel Department as well as the Pension and Group Insurance vertical of the Corporation.",
+     "page": 2
+    },
+    {
+     "org": "LIC Housing Finance Ltd.",
+     "role": "Non-Executive Chairman",
+     "function": "general_management",
+     "start": null,
+     "end": null,
+     "quote": "In addition to being Chairman of LIC, he was also the Non-Executive Chairman of LIC Housing Finance Ltd., LIC Pension Fund Ltd, LIC Mutual Fund AMC Ltd., LIC Cards Services Ltd., IDBI Bank, LIC Singapore Pte. Ltd., LIC Lanka Ltd., LIC (International) BSC, Bahrain, LIC Nepal. Ltd.",
+     "page": 3
+    },
+    {
+     "org": "LIC Pension Fund Ltd",
+     "role": "Non-Executive Chairman",
+     "function": "general_management",
+     "start": null,
+     "end": null,
+     "quote": "In addition to being Chairman of LIC, he was also the Non-Executive Chairman of LIC Housing Finance Ltd., LIC Pension Fund Ltd, LIC Mutual Fund AMC Ltd., LIC Cards Services Ltd., IDBI Bank, LIC Singapore Pte. Ltd., LIC Lanka Ltd., LIC (International) BSC, Bahrain, LIC Nepal. Ltd.",
+     "page": 3
+    },
+    {
+     "org": "LIC Mutual Fund AMC Ltd.",
+     "role": "Non-Executive Chairman",
+     "function": "general_management",
+     "start": null,
+     "end": null,
+     "quote": "In addition to being Chairman of LIC, he was also the Non-Executive Chairman of LIC Housing Finance Ltd., LIC Pension Fund Ltd, LIC Mutual Fund AMC Ltd., LIC Cards Services Ltd., IDBI Bank, LIC Singapore Pte. Ltd., LIC Lanka Ltd., LIC (International) BSC, Bahrain, LIC Nepal. Ltd.",
+     "page": 3
+    },
+    {
+     "org": "LIC Cards Services Ltd.",
+     "role": "Non-Executive Chairman",
+     "function": "general_management",
+     "start": null,
+     "end": null,
+     "quote": "In addition to being Chairman of LIC, he was also the Non-Executive Chairman of LIC Housing Finance Ltd., LIC Pension Fund Ltd, LIC Mutual Fund AMC Ltd., LIC Cards Services Ltd., IDBI Bank, LIC Singapore Pte. Ltd., LIC Lanka Ltd., LIC (International) BSC, Bahrain, LIC Nepal. Ltd.",
+     "page": 3
+    },
+    {
+     "org": "IDBI Bank",
+     "role": "Non-Executive Chairman",
+     "function": "general_management",
+     "start": null,
+     "end": null,
+     "quote": "In addition to being Chairman of LIC, he was also the Non-Executive Chairman of LIC Housing Finance Ltd., LIC Pension Fund Ltd, LIC Mutual Fund AMC Ltd., LIC Cards Services Ltd., IDBI Bank, LIC Singapore Pte. Ltd., LIC Lanka Ltd., LIC (International) BSC, Bahrain, LIC Nepal. Ltd.",
+     "page": 3
+    },
+    {
+     "org": "LIC Singapore Pte. Ltd.",
+     "role": "Non-Executive Chairman",
+     "function": "general_management",
+     "start": null,
+     "end": null,
+     "quote": "In addition to being Chairman of LIC, he was also the Non-Executive Chairman of LIC Housing Finance Ltd., LIC Pension Fund Ltd, LIC Mutual Fund AMC Ltd., LIC Cards Services Ltd., IDBI Bank, LIC Singapore Pte. Ltd., LIC Lanka Ltd., LIC (International) BSC, Bahrain, LIC Nepal. Ltd.",
+     "page": 3
+    },
+    {
+     "org": "LIC Lanka Ltd.",
+     "role": "Non-Executive Chairman",
+     "function": "general_management",
+     "start": null,
+     "end": null,
+     "quote": "In addition to being Chairman of LIC, he was also the Non-Executive Chairman of LIC Housing Finance Ltd., LIC Pension Fund Ltd, LIC Mutual Fund AMC Ltd., LIC Cards Services Ltd., IDBI Bank, LIC Singapore Pte. Ltd., LIC Lanka Ltd., LIC (International) BSC, Bahrain, LIC Nepal. Ltd.",
+     "page": 3
+    },
+    {
+     "org": "LIC (International) BSC, Bahrain",
+     "role": "Non-Executive Chairman",
+     "function": "general_management",
+     "start": null,
+     "end": null,
+     "quote": "In addition to being Chairman of LIC, he was also the Non-Executive Chairman of LIC Housing Finance Ltd., LIC Pension Fund Ltd, LIC Mutual Fund AMC Ltd., LIC Cards Services Ltd., IDBI Bank, LIC Singapore Pte. Ltd., LIC Lanka Ltd., LIC (International) BSC, Bahrain, LIC Nepal. Ltd.",
+     "page": 3
+    },
+    {
+     "org": "LIC Nepal. Ltd.",
+     "role": "Non-Executive Chairman",
+     "function": "general_management",
+     "start": null,
+     "end": null,
+     "quote": "In addition to being Chairman of LIC, he was also the Non-Executive Chairman of LIC Housing Finance Ltd., LIC Pension Fund Ltd, LIC Mutual Fund AMC Ltd., LIC Cards Services Ltd., IDBI Bank, LIC Singapore Pte. Ltd., LIC Lanka Ltd., LIC (International) BSC, Bahrain, LIC Nepal. Ltd.",
+     "page": 3
+    },
+    {
+     "org": "Kenindia Assurance Co. Ltd, Kenya",
+     "role": "Director",
+     "function": "general_management",
+     "start": null,
+     "end": null,
+     "quote": "He also held position as Director on the Board of Kenindia Assurance Co. Ltd, Kenya and ACC Ltd., India.",
+     "page": 3
+    },
+    {
+     "org": "ACC Ltd., India",
+     "role": "Director",
+     "function": "general_management",
+     "start": null,
+     "end": null,
+     "quote": "He also held position as Director on the Board of Kenindia Assurance Co. Ltd, Kenya and ACC Ltd., India.",
+     "page": 3
+    },
+    {
+     "org": "National Insurance Academy",
+     "role": "Chairman of the Governing Board",
+     "function": "education",
+     "start": null,
+     "end": null,
+     "quote": "He was also Chairman of the Governing Board of National Insurance Academy, President of Insurance Institute of India and Chairman of Council of Insurance Ombudsman.",
+     "page": 3
+    },
+    {
+     "org": "Insurance Institute of India",
+     "role": "President",
+     "function": "education",
+     "start": null,
+     "end": null,
+     "quote": "He was also Chairman of the Governing Board of National Insurance Academy, President of Insurance Institute of India and Chairman of Council of Insurance Ombudsman.",
+     "page": 3
+    },
+    {
+     "org": "Council of Insurance Ombudsman",
+     "role": "Chairman",
+     "function": "regulatory",
+     "start": null,
+     "end": null,
+     "quote": "He was also Chairman of the Governing Board of National Insurance Academy, President of Insurance Institute of India and Chairman of Council of Insurance Ombudsman.",
+     "page": 3
+    },
+    {
+     "org": "Cholamandalam Investment and Finance Company Limited",
+     "role": "Director",
+     "function": "finance",
+     "start": null,
+     "end": null,
+     "quote": "Currently, he is Director on the Board of Cholamandalam Investment and Finance Company Limited, Aurobindo Pharma Usa Inc., and Non-executive Chairman of Bank of India.",
+     "page": 3
+    },
+    {
+     "org": "Aurobindo Pharma Usa Inc.",
+     "role": "Director",
+     "function": "general_management",
+     "start": null,
+     "end": null,
+     "quote": "Currently, he is Director on the Board of Cholamandalam Investment and Finance Company Limited, Aurobindo Pharma Usa Inc., and Non-executive Chairman of Bank of India.",
+     "page": 3
+    },
+    {
+     "org": "Bank of India",
+     "role": "Non-executive Chairman",
+     "function": "finance",
+     "start": null,
+     "end": null,
+     "quote": "Currently, he is Director on the Board of Cholamandalam Investment and Finance Company Limited, Aurobindo Pharma Usa Inc., and Non-executive Chairman of Bank of India.",
+     "page": 3
+    }
+   ]
+  },
+  {
+   "id": "akhil-gupta",
+   "name": "Akhil Gupta",
+   "din": "00028728",
+   "company": "LUPIN",
+   "role": "Additional Director (Non-Executive, Independent)",
+   "title": "Additional Director (Non-Executive, Independent)",
+   "effective": "2026-11-03",
+   "profile_quote": "Mr. Akhil Gupta is a qualified Chartered Accountant with over four decades of professional experience and has completed the Advanced Management Program from the Harvard Business School at Harvard University, Boston, Massachusetts.",
+   "events": [
+    "LUPIN-management_change-2026-11-04"
+   ],
+   "source": "https://nsearchives.nseindia.in/corporate/Lupin2_04112026011040_SE_Intimation_appointment_of_AG.pdf",
+   "extracted": true,
+   "stints": [
+    {
+     "org": "Harvard University",
+     "role": "Student",
+     "function": "education",
+     "start": null,
+     "end": null,
+     "quote": "Mr. Akhil Gupta is a qualified Chartered Accountant with over four decades of professional experience and has completed the Advanced Management Program from the Harvard Business School at Harvard University, Boston, Massachusetts.",
+     "page": 2
+    },
+    {
+     "org": "360 ONE WAM Limited",
+     "role": "Non-Executive Independent Chairman",
+     "function": "general_management",
+     "start": null,
+     "end": null,
+     "quote": "He is the Non-Executive Independent Chairman of 360 ONE WAM Limited, Coforge Limited and Valuedrive Technologies Limited.",
+     "page": 2
+    },
+    {
+     "org": "Coforge Limited",
+     "role": "Non-Executive Independent Chairman",
+     "function": "general_management",
+     "start": null,
+     "end": null,
+     "quote": "He is the Non-Executive Independent Chairman of 360 ONE WAM Limited, Coforge Limited and Valuedrive Technologies Limited.",
+     "page": 2
+    },
+    {
+     "org": "Valuedrive Technologies Limited",
+     "role": "Non-Executive Independent Chairman",
+     "function": "general_management",
+     "start": null,
+     "end": null,
+     "quote": "He is the Non-Executive Independent Chairman of 360 ONE WAM Limited, Coforge Limited and Valuedrive Technologies Limited.",
+     "page": 2
+    },
+    {
+     "org": "Lodha Developers Limited",
+     "role": "Independent Director",
+     "function": "general_management",
+     "start": null,
+     "end": null,
+     "quote": "He holds office as an Independent Director on the Board of Lodha Developers Limited, Zepto Limited and Nominee Director of Acevector Limited.",
+     "page": 2
+    },
+    {
+     "org": "Zepto Limited",
+     "role": "Independent Director",
+     "function": "general_management",
+     "start": null,
+     "end": null,
+     "quote": "He holds office as an Independent Director on the Board of Lodha Developers Limited, Zepto Limited and Nominee Director of Acevector Limited.",
+     "page": 2
+    },
+    {
+     "org": "Acevector Limited",
+     "role": "Nominee Director",
+     "function": "general_management",
+     "start": null,
+     "end": null,
+     "quote": "He holds office as an Independent Director on the Board of Lodha Developers Limited, Zepto Limited and Nominee Director of Acevector Limited.",
+     "page": 2
+    },
+    {
+     "org": "Telecom Sector Skill Council",
+     "role": "President",
+     "function": "general_management",
+     "start": null,
+     "end": null,
+     "quote": "He is the President of the Telecom Sector Skill Council, Ex-Chairman of Digital Infrastructure Providers Association, member of CII National Committee on Telecom & Broadband, member of CII Task Force on Insolvency and Bankruptcy and has been a member of the Advisory Committee on Service Providers of Insolvency and Bankruptcy Board of India and Sub Committee of Insolvency Law Committee, Government of India.",
+     "page": 2
+    },
+    {
+     "org": "Digital Infrastructure Providers Association",
+     "role": "Chairman",
+     "function": "general_management",
+     "start": null,
+     "end": null,
+     "quote": "He is the President of the Telecom Sector Skill Council, Ex-Chairman of Digital Infrastructure Providers Association, member of CII National Committee on Telecom & Broadband, member of CII Task Force on Insolvency and Bankruptcy and has been a member of the Advisory Committee on Service Providers of Insolvency and Bankruptcy Board of India and Sub Committee of Insolvency Law Committee, Government of India.",
+     "page": 2
+    },
+    {
+     "org": "Inversion Advisory Services",
+     "role": "Chairman",
+     "function": "general_management",
+     "start": null,
+     "end": null,
+     "quote": "He is also the Chairman of Inversion Advisory Services, where he advises number of prominent companies in diverse sectors like Infrastructure, Renewable Energy, Automobiles, Tourism, Consulate Services and Footwear.",
+     "page": 2
+    },
+    {
+     "org": "Bharti Enterprises Limited",
+     "role": "Vice Chairman",
+     "function": "general_management",
+     "start": null,
+     "end": null,
+     "quote": "He is the former Vice Chairman of Bharti Enterprises Limited and played a pivotal role in Bharti’s phenomenal growth right since inception - both organically and by way of various acquisitions.",
+     "page": 3
+    }
+   ]
+  },
+  {
+   "id": "anant-vardhan-goenka",
+   "name": "Anant Vardhan Goenka",
+   "din": "02089850",
+   "company": "KEC",
+   "role": "Additional Director (Non-Executive, Non-Independent)",
+   "title": "Additional Director (Non-Executive, Non-Independent)",
+   "effective": "2026-11-02",
+   "profile_quote": "Mr. Anant Vardhan Goenka is the Vice Chairman of RPG Enterprises.",
+   "events": [
+    "KEC-management_change-2026-11-02"
+   ],
+   "source": "https://nsearchives.nseindia.in/corporate/KEC_02112026211334_SE_Intimation_Appointment_of_director.pdf",
+   "extracted": true,
+   "stints": [
+    {
+     "org": "RPG Enterprises",
+     "role": "Vice Chairman",
+     "function": "general_management",
+     "start": null,
+     "end": null,
+     "quote": "Mr. Anant Vardhan Goenka is the Vice Chairman of RPG Enterprises.",
+     "page": 2
+    },
+    {
+     "org": "CEAT Limited",
+     "role": "Vice Chairman",
+     "function": "general_management",
+     "start": null,
+     "end": null,
+     "quote": "He also serves on the boards of CEAT Limited and Zensar Technologies Limited as Vice Chairman of the respective boards.",
+     "page": 2
+    },
+    {
+     "org": "Zensar Technologies Limited",
+     "role": "Vice Chairman",
+     "function": "general_management",
+     "start": null,
+     "end": null,
+     "quote": "He also serves on the boards of CEAT Limited and Zensar Technologies Limited as Vice Chairman of the respective boards.",
+     "page": 2
+    },
+    {
+     "org": "CEAT Limited",
+     "role": "Employee",
+     "function": "general_management",
+     "start": null,
+     "end": null,
+     "quote": "Mr. Goenka has over 23 years of experience during which he has worked in CEAT Limited, KEC International Limited and Hindustan Unilever Limited.",
+     "page": 2
+    },
+    {
+     "org": "KEC International Limited",
+     "role": "Employee",
+     "function": "general_management",
+     "start": null,
+     "end": null,
+     "quote": "Mr. Goenka has over 23 years of experience during which he has worked in CEAT Limited, KEC International Limited and Hindustan Unilever Limited.",
+     "page": 2
+    },
+    {
+     "org": "Hindustan Unilever Limited",
+     "role": "Employee",
+     "function": "general_management",
+     "start": null,
+     "end": null,
+     "quote": "Mr. Goenka has over 23 years of experience during which he has worked in CEAT Limited, KEC International Limited and Hindustan Unilever Limited.",
+     "page": 2
+    },
+    {
+     "org": "CEAT Limited",
+     "role": "Managing Director & CEO",
+     "function": "general_management",
+     "start": "2012",
+     "end": "2023",
+     "quote": "He was the Managing Director & CEO of CEAT Limited through a transformative 10-year period from 2012 to 2023, during which CEAT saw a 25-times increase in market capitalization.",
+     "page": 2
+    },
+    {
+     "org": "FICCI (Federation of Indian Chambers of Commerce and Industry)",
+     "role": "President",
+     "function": "general_management",
+     "start": null,
+     "end": null,
+     "quote": "He is the current President of FICCI (Federation of Indian Chambers of Commerce and Industry) and has previously served as Chairman of Automotive Tyre Manufacturers' Association (ATMA).",
+     "page": 2
+    },
+    {
+     "org": "Automotive Tyre Manufacturers' Association (ATMA)",
+     "role": "Chairman",
+     "function": "general_management",
+     "start": null,
+     "end": null,
+     "quote": "He is the current President of FICCI (Federation of Indian Chambers of Commerce and Industry) and has previously served as Chairman of Automotive Tyre Manufacturers' Association (ATMA).",
+     "page": 2
+    },
+    {
+     "org": "Kellogg School of Management",
+     "role": "Master of Business Administration",
+     "function": "education",
+     "start": null,
+     "end": null,
+     "quote": "Mr. Goenka holds a Master of Business Administration from the Kellogg School of Management and a BS (Economics) from the Wharton School of the University of Pennsylvania.",
+     "page": 2
+    },
+    {
+     "org": "Wharton School of the University of Pennsylvania",
+     "role": "BS (Economics)",
+     "function": "education",
+     "start": null,
+     "end": null,
+     "quote": "Mr. Goenka holds a Master of Business Administration from the Kellogg School of Management and a BS (Economics) from the Wharton School of the University of Pennsylvania.",
+     "page": 2
+    }
+   ]
+  },
+  {
+   "id": "laishram-meenabanta-singh",
+   "name": "Laishram Meenabanta Singh",
+   "din": "12027613",
+   "company": "GRSE",
+   "role": "Part-Time Non-Official Director (Independent Director)",
+   "title": "Part-Time Non-Official Director (Independent Director)",
+   "effective": "2026-11-02",
+   "profile_quote": "Shri Laishram Meenabanta Singh holds a Master’s degree in Linguistics.",
+   "events": [
+    "GRSE-management_change-2026-11-02"
+   ],
+   "source": "https://nsearchives.nseindia.in/corporate/GRSE_02112026151337_Appointment_of_Shri_Laishram_Meenabanta_Singh_ID.pdf",
+   "extracted": true,
+   "stints": []
+  }
+ ]
 }

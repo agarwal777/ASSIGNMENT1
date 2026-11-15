@@ -156,7 +156,7 @@ function Evidence({ card, refDate }: { card: Card; refDate?: string }) {
         <div className="mt-2">
           <p className="text-[15px]">
             <span className="font-medium">{card.personName}</span>
-            <span className="text-ink-2"> · {card.role} · {copy.card.effective} {date(card.effective, refDate)}</span>
+            <span className="text-ink-2"> · {card.role}{card.effective && <> · {copy.card.effective} {date(card.effective, refDate)}</>}</span>
           </p>
           {card.profileQuote && (
             <blockquote className="mt-2 border-l-2 border-line pl-3 text-[15px] italic leading-[22px] text-ink-2">

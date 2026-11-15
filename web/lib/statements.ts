@@ -59,7 +59,8 @@ export type StatementsView = {
 export function statementsFor(symbol: string): StatementsView | null {
   const s = DATA[symbol];
   if (!s?.periods.length) return null;
-  const ps = s.periods;
+  // Latest first: on a phone the newest period is the one in view; older ones scroll in.
+  const ps = [...s.periods].reverse();
   const src = (p: Raw, field: string, which: "balance" | "flow"): SourceRef => {
     const filed = xbrlFiledOn(p.source);
     const raw = which === "balance" ? p.balance[field] : p.flow[field];
@@ -135,7 +136,7 @@ export function statementsFor(symbol: string): StatementsView | null {
     }) },
   ];
 
-  const segP = [...ps].reverse().find((p) => p.segments.some((x) => x.revenue_ytd != null));
+  const segP = ps.find((p) => p.segments.some((x) => x.revenue_ytd != null));
   let segments: StatementsView["segments"] = null;
   if (segP) {
     const items = segP.segments.filter((x) => x.revenue_ytd != null && x.revenue_ytd > 0 && !NOT_A_SEGMENT.test(x.name));

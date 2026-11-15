@@ -253,11 +253,13 @@ export function toCard(e: DigestEvent): Card {
         quote: { documentId: pc.source, page: pc.page, label: `${e.symbol}: earnings call transcript`, publishedAt: pc.said_at },
       } : undefined };
   }
-  const exec = EXECS.find((x) => x.events.includes(e.id) && x.effective);
+  // An appointee with a career extracted from the filing; one with a stated effective date first.
+  const exec = EXECS.filter((x) => x.events.includes(e.id) && x.stints.length)
+    .sort((a, b) => Number(Boolean(b.effective)) - Number(Boolean(a.effective)))[0];
   if (e.category === "management_change" && exec) {
     return { ...base, variant: "management_change",
       headline: `${exec.name} named ${exec.title ?? "to the board"}`,
-      personName: exec.name, role: exec.title ?? exec.role, effective: exec.effective!,
+      personName: exec.name, role: exec.title ?? exec.role, effective: exec.effective ?? undefined,
       profileQuote: exec.profile_quote,
       stints: exec.stints.map((s) => ({ org: s.org, role: s.role ?? undefined,
         from: s.start ?? undefined, to: s.start ? (s.end ?? undefined) : undefined })) };

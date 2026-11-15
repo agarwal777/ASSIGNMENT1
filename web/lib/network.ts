@@ -27,7 +27,7 @@ export type Suggestion = {
 
 const SUFFIX = /\b(ltd|limited|pvt|private|plc|inc|co)\b\.?/gi;
 export function canonical(org: string, orgs: Pick<Orgs, "aliases">): string {
-  const trimmed = org.replace(SUFFIX, "").replace(/\s+/g, " ").trim();
+  const trimmed = org.replace(SUFFIX, "").replace(/^the\s+/i, "").replace(/\s+/g, " ").trim();
   return orgs.aliases[trimmed] ?? trimmed;
 }
 

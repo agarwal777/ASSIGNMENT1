@@ -313,6 +313,7 @@ export const copy = {
     you: "You",
     now: "now",
     yearsNotStated: "years not stated",
+    moreStints: (n: number) => `${n} more from the filing`,
     probable: "probable",
     strength: (d: number) => `Link strength ${d} of 4`,
   },
