@@ -18,13 +18,13 @@ export function SourceLink({ s, refDate, oneLine = false }: { s: SourceRef; refD
   );
 }
 
-/** [n]-style citation chip at the end of a sentence → source sheet. */
+/** [n]-style citation chip at the end of a sentence → source sheet. 44 px tall to tap, without stretching the line. */
 export function CitationChip({ n, s }: { n: number; s: SourceRef }) {
   const { open } = useSheetNav();
   return (
     <button type="button" aria-label={`Source ${n}: ${s.label}`}
       onClick={() => open("source", { doc: s.documentId, page: s.page, label: s.label, at: s.publishedAt })}
-      className="ml-0.5 inline-flex min-h-11 min-w-8 items-center justify-center align-baseline text-[11px] font-medium text-accent">
+      className="-my-3 ml-0.5 inline-flex min-h-11 min-w-7 items-center justify-center align-baseline text-[11px] font-medium text-accent">
       [{n}]
     </button>
   );
