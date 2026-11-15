@@ -9,7 +9,7 @@ import { ProbableBadge } from "@/components/people/PathLine";
 import Num from "@/components/trust/Num";
 import { copy } from "@/lib/copy";
 import { toQuarterRows, type EnsureEvent, type EnsuredCompany } from "@/lib/ensure";
-import { whoKnows, type Suggestion } from "@/lib/network";
+import { expertiseMap, whoKnows, type Contact, type Suggestion } from "@/lib/network";
 import { executives, fracYear, orgs } from "@/lib/people";
 import { useSheetNav } from "@/lib/sheet";
 import { useNdjsonStream } from "@/lib/useNdjsonStream";
@@ -190,6 +190,10 @@ function WhoKnows({ asOf, initial }: { asOf: string; initial: string }) {
   const [text, setText] = useState(initial);
   const [found, setFound] = useState<Suggestion[] | null>(null);
   const { open } = useSheetNav();
+  // The expertise map shows while the box is empty; it needs the network, loaded once.
+  const [network, setNetwork] = useState<Contact[] | null>(null);
+  useEffect(() => { let live = true; loadNetwork().then((c) => { if (live) setNetwork(c); }).catch(() => {}); return () => { live = false; }; }, []);
+  const themes = useMemo(() => (network ? expertiseMap(network) : []), [network]);
   const tooShort = text.trim().length < 2;
   const results = tooShort ? null : found;   // derived, so no state reset inside the effect
   useEffect(() => {
@@ -212,6 +216,23 @@ function WhoKnows({ asOf, initial }: { asOf: string; initial: string }) {
             <li key={s}><button onClick={() => setText(s)} className="min-h-11 rounded-full border border-line px-3 text-[13px]">{s}</button></li>
           ))}
         </ul>
+      )}
+      {!text && themes.length > 0 && (
+        <section aria-labelledby="expertise" className="mt-5">
+          <h3 id="expertise" className="text-[13px] font-medium text-ink-2">{copy.ask.expertiseTitle}</h3>
+          <p className="text-[12px] text-ink-3">{copy.ask.expertiseNote}</p>
+          <ul className="mt-2 flex flex-wrap gap-2">
+            {themes.map((t) => (
+              <li key={t.theme}>
+                <button type="button" onClick={() => setText(t.theme)} title={t.people.join(", ")}
+                  aria-label={`${t.theme}: ${copy.ask.expertisePeople(t.people.length)}`}
+                  className="flex min-h-11 items-center gap-1.5 rounded-full border border-line bg-surface px-3 text-[13px]">
+                  {t.theme}<span className="rounded-full bg-accent/10 px-1.5 text-[11px] font-medium text-accent">{t.people.length}</span>
+                </button>
+              </li>
+            ))}
+          </ul>
+        </section>
       )}
       {results && results.length === 0 && <p className="mt-3 text-[15px] text-ink-2">{copy.ask.whoNone}</p>}
       {results && results.length > 0 && (

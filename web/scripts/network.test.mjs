@@ -69,3 +69,21 @@ test("whoToAsk ranks a second-degree link, alumni and a competitor peer", () => 
   assert.match(r[0].reason, /Overlapped with Jayant Balan at Voltbek Home Appliances, 2019–2022/);
   assert.equal(r.find((s) => s.contact.id === "b").keepWarm?.startsWith("Last spoke Nov 2025"), true);
 });
+
+test("themes: who knows a theme, and the expertise map", async () => {
+  const { whoKnows, expertiseMap } = await import("../lib/network.ts");
+  const people = [
+    { id: "a", name: "Ishaan K.", closeness: 4, lastContacted: "2026-10-05", tags: ["specialty chemicals", "pigments"],
+      stints: [{ org: "Clariant", role: "Head of Applications", function: "r_and_d", start: "2020-01-01", end: null, datesKnown: true }] },
+    { id: "b", name: "Ritu A.", closeness: 2, lastContacted: "2025-04-18", tags: ["agrochemicals", "specialty chemicals"],
+      stints: [{ org: "UPL", role: "Head of Process Chemistry", function: "r_and_d", start: "2018-12-01", end: null, datesKnown: true }] },
+    { id: "c", name: "Rohan M.", closeness: 4, lastContacted: "2026-09-10", tags: ["consumer durables"], stints: [] },
+  ];
+  const hits = whoKnows("specialty chemicals", people, [], orgs, AS_OF);
+  assert.deepEqual(hits.map((h) => h.contact.name), ["Ishaan K.", "Ritu A."]);   // closer contact first
+  assert.equal(hits[0].kind, "expertise");
+  assert.match(hits[0].reason, /go-to on specialty chemicals: now Head of Applications at Clariant/);
+  const map = expertiseMap(people);
+  assert.deepEqual(map[0], { theme: "specialty chemicals", people: ["Ishaan K.", "Ritu A."] });
+  assert.equal(map.length, 4);
+});

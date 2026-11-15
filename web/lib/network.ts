@@ -21,7 +21,7 @@ export type Orgs = {
 };
 export type Overlap = { strength: number; confirmed: boolean; org: string; from?: number; to?: number; years?: number; education?: boolean };
 export type Suggestion = {
-  contact: Contact; score: number; kind: "second_degree" | "alumni" | "peer"; reason: string;
+  contact: Contact; score: number; kind: "second_degree" | "alumni" | "peer" | "expertise"; reason: string;
   probable: boolean; keepWarm: string | null; via?: string;
 };
 
@@ -127,12 +127,33 @@ export function whoKnows(query: string, contacts: Contact[], executives: Executi
         reason: `${s.end == null ? "At" : "Worked at"} ${org} ${yr(s.start)}–${s.end ? yr(s.end) : "now"} (${s.role ?? s.function})` });
     }
   }
+  // Themes: a contact the investor tagged with the searched theme (e.g. "specialty chemicals").
+  for (const c of contacts) {
+    const tag = c.tags.find((t) => t.toLowerCase().includes(q) || (q.length >= 4 && q.includes(t.toLowerCase())));
+    if (!tag) continue;
+    const now = c.stints.find((s) => s.end == null && s.function !== "education") ?? c.stints.at(-1);
+    out.push({ contact: c, kind: "expertise", probable: false, keepWarm: keepWarm(c, asOf),
+      score: round(0.5 * (0.5 + c.closeness / 10)),
+      reason: `Your go-to on ${tag}${now ? `: ${now.end == null ? "now" : "was"} ${now.role ?? now.function} at ${canonical(now.org, orgs)}` : ""}` });
+  }
   const best = new Map<string, Suggestion>();
   for (const s of out) {
     const prev = best.get(s.contact.id);
     if (!prev || s.score > prev.score) best.set(s.contact.id, s);
   }
   return [...best.values()].sort((a, b) => b.score - a.score);
+}
+
+/** Expertise map: every theme the investor's contacts are tagged with, and who covers it. */
+export function expertiseMap(contacts: Contact[]): { theme: string; people: string[] }[] {
+  const m = new Map<string, string[]>();
+  for (const c of contacts) for (const t of c.tags) {
+    const k = t.trim();
+    if (!k) continue;
+    m.set(k, [...(m.get(k) ?? []), c.name]);
+  }
+  return [...m.entries()].map(([theme, people]) => ({ theme, people }))
+    .sort((a, b) => b.people.length - a.people.length || a.theme.localeCompare(b.theme));
 }
 
 /** Ranked people to ask about an event at `symbol`, optionally involving executives. */

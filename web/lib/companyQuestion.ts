@@ -7,6 +7,7 @@ import { getCompany } from "@/lib/companies";
 import { date, inr } from "@/lib/format";
 import { priceSeries } from "@/lib/priceChart";
 import { normalizeQuestion } from "@/lib/questionGuard";
+import { statementEvidence } from "@/lib/statements";
 
 // Bump when the prompt or the evidence recipe changes, so stored answers are regenerated.
 const QA_VERSION = "qa-1";
@@ -20,6 +21,7 @@ export function questionEvidence(symbol: string): { name: string; items: Evidenc
   const add = (text: string, source: Evidence["source"]) => { if (source.documentId) items.push({ n: items.length + 1, text, source }); };
   for (const f of c.recentFilings.filter((x) => x.tier !== "collapsed").slice(0, 8))
     add(`Filed on NSE on ${date(f.at)}: ${f.headline ?? f.title}.`, f.source);
+  for (const e of statementEvidence(symbol)) add(e.text, e.source);
   const p = priceSeries(symbol);
   if (p) {
     const closes = p.points.map(([, v]) => v);

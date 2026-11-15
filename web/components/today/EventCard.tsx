@@ -39,6 +39,10 @@ export default function EventCard({ card, refDate, networkLoaded = false, review
 
       {/* 2 · verdict */}
       <h3 id={`${card.id}-h`} className="mt-1 font-serif text-[19px] font-medium leading-[26px]">{card.headline}</h3>
+      {/* An Alert setting (Settings) put this card here: say so, so the ranking is never a mystery. */}
+      {card.reasons.filter((r) => r.startsWith("you asked to be alerted")).map((r) => (
+        <p key={r} className="mt-0.5 text-[13px] font-medium text-accent">{r[0].toUpperCase() + r.slice(1)}</p>
+      ))}
 
       {/* 3 · lead stats, trend */}
       {card.tiles && <StatTiles tiles={card.tiles} />}

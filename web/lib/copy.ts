@@ -108,9 +108,12 @@ export const copy = {
     readIn: (s: number) => `Read from primary sources in ${s} s.`,
     noYoy: "— Revenue YoY: NSE lists no same-basis results for that quarter a year earlier (often March 2025, when companies moved to integrated filing), so FINN doesn't compare across bases.",
     whoLabel: "Person or company",
-    whoPlaceholder: "A person or a company",
+    whoPlaceholder: "A person, a company or a theme",
     whoSuggestions: ["Jayant Balan", "Voltas", "Tata Sons", "Lupin"],
     whoNone: "No one in your network matches yet.",
+    expertiseTitle: "Expertise in your network",
+    expertiseNote: "Themes from the tags on your contacts. Tap one to see who to call.",
+    expertisePeople: (n: number) => `${n} ${n === 1 ? "person" : "people"}`,
   },
   sheet: {
     close: "Close",
@@ -204,6 +207,14 @@ export const copy = {
     summary: (d0: string, c0: string, d1: string, c1: string, lo: string, hi: string, n: number) =>
       `Daily closing price from ${d0} (${c0}) to ${d1} (${c1}); low ${lo}, high ${hi}. ${n} events marked; the list is below.`,
     note: "End-of-day closes from the snapshot, not live prices. Marks: results filed on NSE (the time is in the XBRL filing), earnings calls quoted in the promise ledger, and FINN alerts from the briefs. A mark on a non-trading day sits on the next session.",
+  },
+  statements: {
+    title: "Balance sheet and cash",
+    segments: (period: string) => `Revenue by segment, ${period}`,
+    segmentsLabel: (parts: string) => `Revenue by segment: ${parts}`,
+    balance: "Balance sheet",
+    cash: "Cash flow",
+    note: (basis: string) => `From the ${basis} annual and half-year results filings (XBRL): the audited balance sheet and cash-flow statement each March, the reviewed ones each September. Day counts use revenue, not cost of goods. Tap a number for its filing or formula.`,
   },
   company: {
     met: "Met",
@@ -399,7 +410,7 @@ export const copy = {
     notConfigured: "Model answers aren't switched on for this deployment yet.",
     noEvidence: "There isn't enough primary-source evidence for this company yet.",
     failed: (why: string) => `Couldn't answer just now (${why}). Try again.`,
-    note: "Answered by a model from this company's primary sources only: exchange results, earnings-call transcripts, recent NSE filings and end-of-day prices. Every sentence cites its source and every figure must appear in it, or the sentence is dropped. Not advice. Questions and answers are stored and shown to anyone who asks the same thing, so don't include private information.",
+    note: "Answered by a model from this company's primary sources only: exchange results (including the balance sheet, cash flow and segments), earnings-call transcripts, recent NSE filings and end-of-day prices. Every sentence cites its source and every figure must appear in it, or the sentence is dropped. Not advice. Questions and answers are stored and shown to anyone who asks the same thing, so don't include private information.",
   },
   bullBear: {
     title: "Bull vs bear",

@@ -8,6 +8,7 @@ import InvestorAssumption from "@/components/company/InvestorAssumption";
 import LedgerTimeline from "@/components/company/LedgerTimeline";
 import NextQuestion from "@/components/company/NextQuestion";
 import PriceChart from "@/components/company/PriceChart";
+import Statements from "@/components/company/Statements";
 import QuarterCharts from "@/components/company/QuarterCharts";
 import SnapshotTable from "@/components/company/SnapshotTable";
 import BulletChart from "@/components/trust/BulletChart";
@@ -18,6 +19,7 @@ import { shortName, SNAPSHOT_AS_OF, companySymbols, getCompany, hasLedgerData } 
 import { DATA_TO_DAY, DEFAULT_AS_OF } from "@/lib/api";
 import { copy } from "@/lib/copy";
 import { priceSeries } from "@/lib/priceChart";
+import { statementsFor } from "@/lib/statements";
 import { date, period } from "@/lib/format";
 import type { ThesisItem } from "@/lib/types";
 
@@ -37,6 +39,7 @@ export default async function CompanyPage({ params }: { params: Promise<{ symbol
   const important = c.recentFilings.filter((f) => f.tier !== "collapsed");
   const routine = c.recentFilings.filter((f) => f.tier === "collapsed");
   const prices = priceSeries(c.symbol);
+  const statements = statementsFor(c.symbol);
 
   return (
     <article>
@@ -105,6 +108,14 @@ export default async function CompanyPage({ params }: { params: Promise<{ symbol
             </>
           ) : <p className="text-[15px] text-ink-2">{copy.company.noQuarters}</p>}
         </section>
+
+        {/* 5a · balance sheet, cash flow, segment mix (annual and half-year XBRL filings) */}
+        {statements && (
+          <section aria-labelledby="statements" className="mt-6">
+            <h2 id="statements" className="mb-2 text-[13px] font-medium text-ink-2">{copy.statements.title}</h2>
+            <Statements v={statements} />
+          </section>
+        )}
 
         {/* 5b · price over the snapshot year, with FINN's dated events */}
         {prices && (

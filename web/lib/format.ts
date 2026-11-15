@@ -33,7 +33,7 @@ export function bps(v: number): string {
 
 /** Ratio alerts. 2.6× */
 export function ratio(v: number): string {
-  return `${v.toLocaleString("en-IN", { minimumFractionDigits: 1, maximumFractionDigits: 1 })}×`;
+  return `${v < 0 ? MINUS : ""}${Math.abs(v).toLocaleString("en-IN", { minimumFractionDigits: 1, maximumFractionDigits: 1 })}×`;
 }
 
 export function count(v: number): string {
