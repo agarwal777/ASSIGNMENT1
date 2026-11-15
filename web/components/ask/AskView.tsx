@@ -158,7 +158,7 @@ function Reduced({ c }: { c: EnsuredCompany }) {
     <div className="mt-2">
       {c.price && (
         <p className="text-[13px] text-ink-2">
-          {c.symbol} · ₹<Num v={{ value: c.price.close, kind: "count", epistemic: "SAID" }} />{" "}
+          {c.symbol} · <Num v={{ value: c.price.close, kind: "inr", epistemic: "EXTRACTED" }} signed={false} />{" "}
           <Num v={{ value: c.price.day_change, kind: "pct", epistemic: "CALCULATED", formula: "(close − previous close) ÷ previous close" }} />
         </p>
       )}

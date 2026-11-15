@@ -76,7 +76,10 @@ export function getCompany(symbol: string): CompanyPayload | null {
   const r = COMPANIES[symbol];
   if (!r) return null;
   const p = r.price as { close: number; day_change: number; as_of: string } | null;
-  const close: NumValue | undefined = p ? { value: p.close, kind: "count", epistemic: "SAID" } : undefined;
+  // End-of-day close, read from market data (not a company statement): rupees with paise, with its source.
+  const close: NumValue | undefined = p ? { value: p.close, kind: "inr", epistemic: "EXTRACTED",
+    source: { documentId: `https://finance.yahoo.com/quote/${encodeURIComponent(r.symbol)}.NS/history`,
+      label: `${r.symbol}: end-of-day close (Yahoo Finance)`, publishedAt: `${p.as_of}T15:30:00+05:30` } } : undefined;
   return {
     mode: "full", symbol: r.symbol, name: r.name, sector: r.sector,
     price: p && close ? { close, asOf: p.as_of,

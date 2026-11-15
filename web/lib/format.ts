@@ -15,6 +15,11 @@ export function inrCr(v: number): string {
   return `${v < 0 ? MINUS : ""}₹${s} cr`;
 }
 
+/** A share price: rupees with paise, Indian grouping. ₹169.20 · ₹1,823.20 */
+export function inr(v: number): string {
+  return `${v < 0 ? MINUS : ""}₹${Math.abs(v).toLocaleString("en-IN", { minimumFractionDigits: 2, maximumFractionDigits: 2 })}`;
+}
+
 /** Percent with 1 decimal. Signed for growth, unsigned for levels like a margin. */
 export function pct(v: number, signed = true): string {
   const s = `${Math.abs(v).toLocaleString("en-IN", { minimumFractionDigits: 1, maximumFractionDigits: 1 })}%`;
@@ -56,9 +61,10 @@ export function time(iso: string): string {
 }
 
 /** Display text for a NumValue-like input. Growth % is signed unless `signed` is false. */
-export function formatValue(kind: "inr_cr" | "pct" | "bps" | "ratio" | "count", value: number, signed = true): string {
+export function formatValue(kind: "inr_cr" | "inr" | "pct" | "bps" | "ratio" | "count", value: number, signed = true): string {
   switch (kind) {
     case "inr_cr": return inrCr(value);
+    case "inr": return inr(value);
     case "pct": return pct(value, signed);
     case "bps": return bps(value);
     case "ratio": return ratio(value);
@@ -67,11 +73,12 @@ export function formatValue(kind: "inr_cr" | "pct" | "bps" | "ratio" | "count", 
 }
 
 /** Words for screen readers: "2,628.5 crore rupees", "up 12.4 percent". */
-export function spoken(kind: "inr_cr" | "pct" | "bps" | "ratio" | "count", value: number, signed = true): string {
+export function spoken(kind: "inr_cr" | "inr" | "pct" | "bps" | "ratio" | "count", value: number, signed = true): string {
   const a = Math.abs(value).toLocaleString("en-IN", { maximumFractionDigits: 1 });
   const dir = !signed ? "" : value > 0 ? "up " : value < 0 ? "down " : "";
   switch (kind) {
     case "inr_cr": return `${value < 0 ? "minus " : ""}${a} crore rupees`;
+    case "inr": return `${value < 0 ? "minus " : ""}${Math.abs(value).toLocaleString("en-IN", { minimumFractionDigits: 2, maximumFractionDigits: 2 })} rupees`;
     case "pct": return `${dir}${a} percent`;
     case "bps": return `${dir}${a} basis points`;
     case "ratio": return `${a} times`;

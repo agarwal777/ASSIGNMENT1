@@ -277,12 +277,13 @@ export const copy = {
     always: "Always shown, never folded",
     alwaysList: "Results, M&A, litigation and regulator actions (for example US FDA inspection outcomes), and pledging. Top-management changes score high on their own.",
     dataTitle: "Where the data comes from",
+    dates: (d: string) => `Dates: Today opens on the latest brief (data to ${d}); earlier dates replay the snapshot.`,
     data: [
       "Filings and results: NSE announcements and XBRL results filings (primary sources).",
       "Prices: end-of-day close and volume (Yahoo Finance).",
       "Promises: management's words in NSE-filed earnings-call transcripts, quoted verbatim and checked against the PDF.",
       "Executive careers: the brief profile in the company's own appointment filing.",
-      "Dates: Today opens on the latest brief (data to 14 November 2026); earlier dates replay the snapshot.",
+      
     ],
     privacyTitle: "Your network",
     privacy: [
@@ -291,9 +292,9 @@ export const copy = {
       "FINN drafts openers; you send them. It never contacts anyone.",
     ],
     demoTitle: "Demo",
-    reset: "Reset demo network",
+    reset: "Reset demo",
     resetting: "Resetting…",
-    resetDone: "Done. Your demo network is back to its starting state.",
+    resetDone: "Done. Your demo network, alert thresholds and assumptions are back to their starting state.",
     resetFailed: "Couldn't reset just now. Try again in a moment.",
   },
   errors: {

@@ -48,7 +48,7 @@ export default async function CompanyPage({ params }: { params: Promise<{ symbol
           {c.symbol} · {c.sector}
           {c.price && (
             <span className="ml-2 text-ink-2">
-              ₹<Num v={c.price.close} /> <Num v={c.price.dayChange} /> <span className="text-ink-3">· {date(`${c.price.asOf}T15:30:00+05:30`, SNAPSHOT_AS_OF)}</span>
+              <Num v={c.price.close} signed={false} /> <Num v={c.price.dayChange} /> <span className="text-ink-3">· {date(`${c.price.asOf}T15:30:00+05:30`, SNAPSHOT_AS_OF)}</span>
             </span>
           )}
         </p>

@@ -9,7 +9,7 @@ export type Epistemic = 'SAID' | 'EXTRACTED' | 'CALCULATED' | 'INFERRED' | 'UNKN
 
 export interface SourceRef { documentId: string; page?: number; span?: [number, number]; label: string; publishedAt: string;
   fact?: XbrlFact /* redesign: XBRL element behind a number */; text?: string /* verbatim excerpt, when we hold it */ }
-export interface NumValue { value: number; kind: 'inr_cr' | 'pct' | 'bps' | 'ratio' | 'count'; epistemic: Epistemic; source?: SourceRef; formula?: string;
+export interface NumValue { value: number; kind: 'inr_cr' | 'inr' | 'pct' | 'bps' | 'ratio' | 'count'; epistemic: Epistemic; source?: SourceRef; formula?: string;
   calc?: Calc /* redesign: the formula with its real inputs */ }
 
 export interface PersonRef { contactId: string; displayName: string; reason: string; strength: number; confirmed: boolean; }

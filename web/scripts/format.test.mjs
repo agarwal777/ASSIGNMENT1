@@ -1,7 +1,7 @@
 // Run: node --test web/scripts/format.test.mjs
 import { test } from "node:test";
 import assert from "node:assert/strict";
-import { inrCr, pct, bps, ratio, period, date, time, formatValue } from "../lib/format.ts";
+import { inr, inrCr, pct, bps, ratio, period, date, time, formatValue } from "../lib/format.ts";
 
 const M = "−";
 
@@ -34,4 +34,11 @@ test("dates in IST, year only outside the reference year", () => {
   assert.equal(date("2026-11-05T14:52:00+05:30", "2026-11-06T08:00:00+05:30"), "5 Nov");
   assert.equal(date("2025-11-20T10:00:00+05:30", "2026-11-06T08:00:00+05:30"), "20 Nov 2025");
   assert.equal(time("2026-11-05T14:52:00+05:30"), "14:52");
+});
+
+test("share price: rupees with paise, Indian grouping", () => {
+  assert.equal(inr(169.2), "₹169.20");
+  assert.equal(inr(1823.2), "₹1,823.20");
+  assert.equal(inr(123456.789), "₹1,23,456.79");
+  assert.equal(formatValue("inr", 1823.2), "₹1,823.20");
 });

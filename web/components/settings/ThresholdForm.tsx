@@ -3,7 +3,7 @@
 import { useEffect, useRef, useState } from "react";
 import { copy } from "@/lib/copy";
 import { DEFAULT_THRESHOLDS, THRESHOLD_LIMITS, type Thresholds } from "@/lib/moves";
-import { loadThresholds, saveThresholds } from "@/lib/settings";
+import { loadThresholds, onThresholds, saveThresholds } from "@/lib/settings";
 
 type State = "loading" | "idle" | "saving" | "saved" | "invalid" | "failed";
 
@@ -21,7 +21,9 @@ export default function ThresholdForm() {
       setV({ volume: t.volumeMultiple.toFixed(1), price: t.priceMovePct.toFixed(1) });
       setState("idle");
     });
-    return () => { live = false; };
+    // A reset elsewhere on the page puts the inputs back to the defaults.
+    const off = onThresholds((t) => { if (live) setV({ volume: t.volumeMultiple.toFixed(1), price: t.priceMovePct.toFixed(1) }); });
+    return () => { live = false; off(); };
   }, []);
 
   const parse = (x: { volume: string; price: string }): Thresholds | null => {

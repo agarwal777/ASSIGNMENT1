@@ -19,7 +19,15 @@ SEED, WEB = Path("seed"), Path("web/data")
 # "met"/"missed" only once the deadline has passed; before that a shortfall is "behind".
 STATUS_TO_STANCE = {"met": "supports", "on_track": "supports", "missed": "contradicts",
                     "behind": "contradicts", "cant_check": "insufficient"}
-SNAPSHOT_DATE = "2026-11-15"
+def _latest_filing_day() -> str:
+    """The day of the latest filing in the snapshot (as the app's DATA_TO_DAY): met/missed are judged
+    against what was known then, so Python and the app agree on the boundary."""
+    from datetime import datetime as _dt
+    rows = json.loads((SEED / "filings" / "recent.json").read_text(encoding="utf-8"))
+    return max(_dt.strptime(r["an_dt"][:11], "%d-%b-%Y").date() for r in rows if r.get("an_dt")).isoformat()
+
+
+SNAPSHOT_DATE = _latest_filing_day()
 
 
 def fy_end(fy: str) -> str:

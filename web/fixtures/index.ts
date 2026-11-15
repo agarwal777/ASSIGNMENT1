@@ -114,7 +114,7 @@ export const portfolioFixture: PortfolioRow[] = names.map((n, i) => ({
 
 export const companyFixture: CompanyPayload = {
   mode: "full", symbol: "ACMEPOLY", name: "Acme Polymers (example)", sector: "Chemicals",
-  price: { close: { value: 500, kind: "count", epistemic: "SAID" }, dayChange: { value: -2, kind: "pct", epistemic: "CALCULATED", formula: "(close − previous close) ÷ previous close" }, asOf: "2026-11-05T15:30:00+05:30" },
+  price: { close: { value: 500, kind: "inr", epistemic: "EXTRACTED" }, dayChange: { value: -2, kind: "pct", epistemic: "CALCULATED", formula: "(close − previous close) ÷ previous close" }, asOf: "2026-11-05T15:30:00+05:30" },
   credibility: { met: 5, resolved: 8 },
   thesis: {
     management: [{ ref: { id: "fx-m1", text: "EBITDA margin 16–18%", source: "management", deadline: "FY27" }, stance: "contradicts", status: "behind", evidence: "15.0% year to date" }],

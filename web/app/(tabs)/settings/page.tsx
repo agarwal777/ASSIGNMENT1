@@ -1,6 +1,7 @@
 import ResetDemo from "@/components/settings/ResetDemo";
 import ThresholdForm from "@/components/settings/ThresholdForm";
 import TopBar from "@/components/shell/TopBar";
+import { asOfFor, DATA_TO_DAY } from "@/lib/api";
 import { copy } from "@/lib/copy";
 
 // Alert thresholds are editable and saved per user (RLS); the rest shows the rules FINN applies,
@@ -26,6 +27,7 @@ export default function SettingsPage() {
           <h2 className="text-[13px] font-medium text-ink-2">{s.dataTitle}</h2>
           <ul className="mt-1 list-disc space-y-1 pl-5 text-[15px] leading-[22px]">
             {s.data.map((d) => <li key={d}>{d}</li>)}
+            <li>{s.dates(new Date(asOfFor(DATA_TO_DAY)).toLocaleDateString("en-IN", { day: "numeric", month: "long", year: "numeric", timeZone: "Asia/Kolkata" }))}</li>
           </ul>
         </section>
 

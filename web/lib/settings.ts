@@ -37,3 +37,10 @@ export async function saveThresholds(t: Thresholds): Promise<void> {
   cached = Promise.resolve(t);
   listeners.forEach((l) => l(t));
 }
+
+/** Reset demo: back to the brief's defaults on every open screen. */
+export function resetThresholds(): void {
+  current = DEFAULT_THRESHOLDS;
+  cached = Promise.resolve(current);
+  listeners.forEach((l) => l(DEFAULT_THRESHOLDS));
+}
