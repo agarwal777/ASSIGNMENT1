@@ -84,7 +84,9 @@ flowchart LR
    components, so their data never ships to the browser.
 2. **Deterministic before probabilistic.** Numbers come from XBRL and Python; filing categories from rules;
    triage scores, overlap strengths and promise statuses from formulas with stated reasons. A model is used
-   in exactly one place: finding promises in transcripts.
+   in two places: finding promises in transcripts (offline, in the workers) and writing the cited bull vs
+   bear on the Company page (live, `web/app/api/bull-bear/route.ts`). No model produces a number the app
+   computes.
 3. **The network never leaves the investor.** Contacts live in Supabase behind row-level security;
    matching runs in the browser; explanations, questions and openers are templates.
 4. **Snapshot first, live where it matters.** The demo never depends on a live source, except Ask for an
@@ -155,13 +157,15 @@ filed between the previous session and the move (weekends count).
 | Revenue, EBITDA, PBT, PAT, QoQ/YoY, margins, alerts, scores, overlaps, promise status | Python / TypeScript, no model |
 | Filing classification | Rules (17 categories from ENAM's reference) |
 | Promise extraction | Gemini, one call per transcript, JSON schema, cached by content hash |
+| Bull vs bear (Company page) | Gemini, live on Vercel, two calls per company (bear, then bull) over numbered primary-source evidence; uncited sentences are dropped (`web/lib/bullbear.ts`) |
 
 **Routing, as it actually happened:** `gemini-3.5-flash-lite` returned 1 weak promise (and an `Infinity`
 target) where `gemini-3.8-flash` found 6 verified ones on the same transcript; 3.8 was too slow
 (6–20 min, timeouts), so extraction runs on `gemini-3.6-flash` with 3.8 as fallback.
 **Spend: ₹0** (free tier). 12 live calls, about 194k input and 10k output tokens, plus 14 cache hits
 (`seed/llm_calls.jsonl`). The free tier's 503/429 limits are why 3 of 12 transcripts are still
-missing.
+missing. These figures cover extraction only: bull-vs-bear calls are not logged yet, and the live route
+has no cache or cap yet. Both are being added (`docs/reviews/2026-11-15_hardening.md`, step 2).
 
 ## 8. Cloud
 
@@ -178,8 +182,10 @@ missing.
 |---|---|
 | Promise Ledger coverage | 9 of 12 transcripts (free-tier quota stopped the other 3); 26 of 30 promises are segment-level or non-financial, shown as "Can't check yet" with the reason. Segment parsing from XBRL is the next step. |
 | Status rule | Strict range check: Aurobindo said "mostly on the **higher** side of 20–21%" and delivered 20.23%, marked Delivered. Qualifiers are shown in the quote, not scored. |
-| Bull vs bear, free-text agent | Not built (needs the model; free tier rate-limited) |
-| Assumption editor, custom window, WhatsApp share, swipe feedback, service worker, Playwright | Cut for time; demo assumptions are seeded and labelled |
+| Bull vs bear | Built: live, cited, on the Company page. Not yet built: number checking, a shared cache and a daily cap (in progress) |
+| Free-text agent | Not built |
+| Assumption editor | Built for one investor assumption per company (metric, condition, target, deadline), saved per user; the edit shows on the Company page only for now |
+| Custom window, WhatsApp share, swipe feedback, service worker, Playwright | Cut for time |
 | JS budget | §12 asked for < 150 KB gzipped; the Next 16 + React 19 framework alone is ≈ 152 KB. `/today` is 217 KB, a Company page 190 KB (`web/scripts/js-budget.mjs`) |
 | Overlap scoring | TypeScript in the browser instead of SQL, so the network never leaves the device |
 | Market caps | Size labels are judgement; the yfinance lookup returned nothing |
@@ -255,8 +261,8 @@ EBITDA rules, classifier, alerts, privacy) · `node --test web/scripts/network.t
 ## 12. Next
 
 Segment-level XBRL parsing (unlocks most of the ledger) · finish extraction on a paid tier · lender
-results card (NII, PPOP, PAT) · thesis editor with evidence re-check · bull vs bear with citation
-enforcement · scheduled ingestion from an Indian-region runner · triage evaluation on labelled filings.
+results card (NII, PPOP, PAT) · multi-assumption thesis editor · bull vs bear number checking and
+shared cache (in progress) · scheduled ingestion from an Indian-region runner · triage evaluation on labelled filings.
 
 ---
 

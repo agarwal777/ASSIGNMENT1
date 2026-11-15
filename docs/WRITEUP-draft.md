@@ -40,8 +40,9 @@ all answer one question: is the thesis still true, and if not, what should I ask
 
 1. Numbers never come from a model. XBRL + Python, cross-checked against the companies' own result
    PDFs (Lupin 8/8, Aurobindo 8/8 line items). Headlines are templates over those numbers.
-2. One model step only: finding promises in transcripts, one cached call per transcript, with quotes
-   verified against the source. Everything else is rules and formulas with stated reasons.
+2. Two model steps only: finding promises in transcripts (offline, one cached call per transcript, quotes
+   verified against the source) and a live bull vs bear on the Company page in which every sentence must
+   cite primary-source evidence. Everything else is rules and formulas with stated reasons.
 3. The network never leaves the investor: Supabase row-level security (tested), matching in the
    browser, and an LLM router that refuses network fields.
 4. Snapshot first: the demo replays committed data, so it works even when NSE or the model is down.
@@ -53,14 +54,17 @@ all answer one question: is the thesis still true, and if not, what should I ask
 - Security & privacy: RLS per user, anonymous demo users, synthetic contacts, no model sees the network;
   encryption and consent flows are designed but not built.
 - LLMs: Gemini free tier. Flash-Lite was too weak on the first transcript; 3.8 Flash too slow; 3.6 Flash
-  with 3.8 fallback. Spend ₹0; 12 live calls, about 194k input and 10k output tokens.
+  with 3.8 fallback. Spend ₹0; 12 live extraction calls, about 194k input and 10k output tokens. Bull vs
+  bear also calls Gemini live from Vercel; those calls are not counted here yet.
 - Cloud: Next.js and a Python function on Vercel; Supabase for the private vault.
 
 **What I left out, honestly**
 
 - Ledger covers 9 of 12 transcripts (free-tier quota); 26 of its 30 promises are segment-level or
   non-financial and shown as "can't check yet" until segment parsing exists.
-- Bull vs bear, the free-text agent and the thesis editor are not built.
+- The free-text agent and a multi-assumption thesis editor are not built; one investor assumption per
+  company is editable. Bull vs bear is live but does not yet check its numbers against the evidence or
+  share a cache across visitors (in progress).
 - The status rule is a strict range check and ignores qualifiers like "higher side of".
 - The 150 KB JS target isn't met: the framework alone is ~152 KB.
 
