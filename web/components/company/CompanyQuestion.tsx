@@ -76,7 +76,7 @@ export default function CompanyQuestion({ symbol, name }: { symbol: string; name
       {ans && !busy && (
         <section aria-live="polite" className="mt-3 rounded-[12px] border border-line bg-surface p-3">
           <h3 className="flex items-start justify-between gap-2 text-[13px] font-medium text-ink-2">
-            <span className="min-w-0">{ans.question}</span> <EpistemicTag e="INFERRED" />
+            <span className="min-w-0">{ans.question}</span> <span className="shrink-0"><EpistemicTag e="INFERRED" /></span>
           </h3>
           {ans.sentences.length > 0 ? (
             <p className="mt-1 text-[15px] leading-[22px]">
