@@ -61,6 +61,8 @@ export default function BullBear({ symbol }: { symbol: string }) {
           {(["bear", "bull"] as const).map((side) => {
             const list = shown?.[side] ?? [];
             const pending = stream.running && (side === "bear" ? list.length === 0 : (shown?.bull.length ?? 0) === 0);
+            // After a failure, an empty side was never written: show nothing rather than "no point supported".
+            if (!list.length && !pending && error) return null;
             return (
               <section key={side} aria-label={b[side]} className="rounded-[12px] border border-line bg-surface p-3">
                 <h3 className="text-[13px] font-medium text-ink-2">{b[side]}</h3>
