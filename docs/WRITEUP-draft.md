@@ -37,19 +37,21 @@ all answer one question: is the thesis still true, and if not, what should I ask
 - **Pull:** a Promise Ledger from earnings-call transcripts. Example: Aurobindo guided a 20–21% FY26
   EBITDA margin and delivered 20.23% (four reported quarters, Met); its FY27 "north of 21%" target is
   Behind at 20.79% year to date. Every quote is verified word for word against the PDF. The Company page
-  adds quarter charts, a year of prices with filings and alerts marked, a cited bull vs bear, and a
+  adds the balance sheet, cash flow and segment mix from the annual and half-year XBRL filings, quarter charts, a year of prices with filings and alerts marked, a cited bull vs bear, and a
   question box that answers only from that company's primary sources.
 - **Portfolio:** search by name, symbol or sector; filter and sort by the latest quarter's EBITDA margin,
   revenue growth YoY or margin change.
 - **Any ticker:** Ask processes a company I didn't pick (e.g. Dixon, Polycab) live from NSE in 2–3 s.
-- **Network, directly:** "Who knows…" ranks contacts for a person or an organisation; each name opens a call sheet.
+- **Network, directly:** "Who knows…" ranks contacts for a person, an organisation or a theme, with an
+  expertise map of the whole network; each name opens a call sheet. Appointees' careers are read from their
+  appointment filings, so a new director at Tata Power links to a contact who worked there.
 
 **Key decisions and trade-offs**
 
 1. Numbers never come from a model. XBRL + Python, cross-checked against the companies' own result
    PDFs (Lupin 8/8, Aurobindo 8/8 line items). Headlines are templates over those numbers.
-2. Three model steps, each with a guard: finding promises in transcripts (offline, one cached call per
-   transcript, quotes verified against the source); bull vs bear and the company question (live), where a
+2. Four model steps, each with a guard: finding promises in transcripts and reading appointees' careers
+   from their filings (offline, cached, every quote verified against the PDF); bull vs bear and the company question (live), where a
    sentence is kept only if it cites numbered primary-source evidence and every figure in it appears in
    that evidence. Everything else is rules and formulas with stated reasons.
 3. The network never leaves the investor: Supabase row-level security (tested), matching in the browser,
@@ -74,18 +76,18 @@ all answer one question: is the thesis still true, and if not, what should I ask
 
 **What I left out, honestly**
 
-- Annual reports aren't ingested, so there is no balance sheet, cash-flow or segment view; Pull uses XBRL
-  results and transcripts only.
+- The annual report's narrative (MD&A, notes) isn't read; its financial statements come from the XBRL
+  results filings instead.
 - The Ledger covers 3 companies (9 of 12 transcripts, free-tier quota); 26 of its 30 promises are
   segment-level or non-financial and shown as "can't check yet" until segment parsing exists.
-- Only one appointment (Voltas) has an executive career card; the network has no expertise map, no
-  suppliers, and nobody at the research companies.
+- Most appointment filings give no years, so links through new appointees are marked "probable"; no
+  supplier links, because no source names a company's suppliers.
 - No real push to the phone (no notifications or scheduled refresh); NSE only, not BSE.
 - The status rule is a strict range check and ignores qualifiers like "higher side of".
 - The 150 KB JS target isn't met: the framework baseline alone is ~175 KB; Today is 255 KB.
 
-**Next:** annual-report and segment parsing, executive-profile extraction from every appointment filing,
-an expertise map, a lender results card, and scheduled ingestion with notifications from an Indian-region runner.
+**Next:** the annual report's narrative, checking segment promises against the segment figures now parsed,
+a lender results card, and scheduled ingestion with notifications from an Indian-region runner.
 
 Thank you for the interesting problem.
 

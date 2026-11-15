@@ -27,12 +27,15 @@ Built for the ENAM Founding AI Engineer Build Challenge (Push · Pull · Network
 3. **Portfolio**: search by name, symbol or sector, and filter or sort by the latest quarter's EBITDA
    margin, revenue growth YoY or margin change (Filters). Then **Aurobindo Pharma**: in Feb 2026 the CFO guided an FY26 EBITDA margin of 20–21%
    (transcript page 7); the four reported FY26 quarters give **20.23%: Met**. The FY27 "north of 21%"
-   target is **Behind** at 20.79% year to date. Tap any promise for the verbatim quote. Below: a year of
+   target is **Behind** at 20.79% year to date. Tap any promise for the verbatim quote. Below: the balance
+   sheet and cash flow (net cash, receivable and inventory days, free cash flow, cash conversion) and the
+   revenue mix by segment, from the annual and half-year filings; a year of
    closing prices with results, earnings calls and FINN alerts marked; **Bull vs bear**; and **Ask about
    this company**, a question answered only from its primary sources, every sentence cited.
 4. **Ask → "Dixon Technologies"** (not in the portfolio): a live checklist reads a year of prices and five
    quarters of results straight from NSE in about 3 seconds, then charts them. **Who knows… → "Voltas"**
-   ranks your contacts; tap a name for a call sheet.
+   ranks your contacts; tap a name for a call sheet. With the box empty, **Who knows** shows an expertise map
+   (themes from your contacts' tags → who covers them); "specialty chemicals" lists your go-to people.
 5. **Settings**: your own thresholds for an unusual move (volume × average, ± % in a day) and, per
    announcement type, **Alert / As scored / Mute**. Today and Portfolio re-rank as you change them.
 
@@ -54,10 +57,10 @@ true**, and if not, what to ask and whom. So FINN is organised around beliefs an
 | Layer | Working workflow | Real data behind it |
 |---|---|---|
 | **Push** | Daily brief with replay (any day 1–15 Nov); 24 h, 7-day or custom window; scored and bucketed cards; folded routine filings; reading-time estimate with its formula; your own move thresholds and per-type Alert / Mute, saved per user | 11,147 NSE announcements (251 for the portfolio), 1 year of prices, 21 of 22 companies' Q2 FY27 results parsed from XBRL |
-| **Push → Network** | Management-change card with the appointee's career from the filing, second-degree path, call sheet | Voltas Reg. 30 filing (brief profile + Annexure A); 28 synthetic contacts |
-| **Pull** | Portfolio search and screen (sector; minimum EBITDA margin, revenue growth YoY, margin change; sort). Company page: credibility line, thesis strip with your editable assumption, promise timeline (said → deadline), quote sheet, quarter charts, one-year price chart with events, next question with people, bull vs bear, cited question box | Promise Ledger: 30 verified promises from 9 of 12 transcripts (Aurobindo, M&M, Voltas) |
+| **Push → Network** | Management-change card with the appointee's career from the filing, second-degree path, call sheet | 16 appointees from 11 appointment filings (careers for 8; the rest give none); 34 synthetic contacts |
+| **Pull** | Portfolio search and screen (sector; minimum EBITDA margin, revenue growth YoY, margin change; sort). Company page: credibility line, balance sheet, cash flow and segment mix, thesis strip with your editable assumption, promise timeline (said → deadline), quote sheet, quarter charts, one-year price chart with events, next question with people, bull vs bear, cited question box | Promise Ledger: 30 verified promises from 9 of 12 transcripts (Aurobindo, M&M, Voltas); balance sheet and cash flow for all 22 companies (68 periods) from annual and half-year XBRL filings |
 | **Pull, any ticker** | Ask: search 2,635 NSE symbols; unseen companies processed live by a Python function; reduced view with quarter charts | NSE integrated-filing XBRL + prices, from Vercel's servers |
-| **Network** | Who to ask on every card and Company page; "Who knows…" search with a call sheet per name; keep-warm note (6+ months since you spoke) | Matching runs in the browser over the investor's own rows |
+| **Network** | Who to ask on every card and Company page; "Who knows…" by person, company or theme, with a call sheet per name; an expertise map; keep-warm note (6+ months since you spoke) | Matching runs in the browser over the investor's own rows |
 
 Portfolio: 18 non-financial NSE companies across autos, auto parts, pharma, healthcare, capital goods,
 defence shipbuilding, transmission, construction, power, chemicals, consumer, consumer durables, IT and
@@ -97,8 +100,9 @@ flowchart LR
    snapshot in the browser so date changes and your thresholds re-rank instantly (the cost: §9, JS budget).
 2. **Deterministic before probabilistic.** Numbers come from XBRL and Python; filing categories from rules;
    triage scores, overlap strengths and promise statuses from formulas with stated reasons. A model is used
-   in **three** places: finding promises in transcripts (offline, in the workers), writing the cited bull
-   vs bear (live), and answering a question about one company (live). No model produces a number the app
+   in **four** places: finding promises in transcripts and reading executives' careers from appointment
+   filings (both offline, in the workers, every quote checked against the PDF), writing the cited bull vs
+   bear (live), and answering a question about one company (live). No model produces a number the app
    shows as data: in the two live steps, a sentence is kept only if it cites numbered evidence and every
    rupee, percentage and bps figure in it appears in what it cites.
 3. **The network never leaves the investor.** Contacts live in Supabase behind row-level security;
@@ -116,8 +120,9 @@ flowchart LR
 | Quarterly results | NSE `/api/integrated-filing-results` → Ind AS XBRL, parsed deterministically (`workers/parsers/xbrl_results.py`); units read from the filing, non-rupee facts refused | `seed/facts.csv`, `seed/results.json` |
 | Prices | yfinance (batch); Yahoo chart endpoint via `httpx` (live function) | `seed/prices.csv` → `web/data/prices.json`, `moves.json` |
 | Transcripts | Earnings-call transcripts **filed with NSE** (not screener.in: one primary source, no scraping terms) | PDFs local only; promises in `seed/promises.json` |
-| Annual reports | **Not ingested** (see §9) | — |
-| Executives | The appointment filing's brief profile; stints transcribed by hand with the source sentence | `web/data/executives.json` |
+| Balance sheet, cash flow, segments | The annual (31 March, audited) and half-year (30 September) results filings already fetched as XBRL, parsed deterministically (`workers/parsers/xbrl_statements.py`; units checked). These are the same statements an annual report prints | `web/data/statements.json` |
+| Annual-report PDFs | Not ingested; the statements come from the XBRL above (see §9) | — |
+| Executives | Each appointment filing's brief profile, extracted by the model with the exact sentence per stint; a stint is kept only if that sentence is found word for word in the PDF (`workers/extract_executives.py`; the two Voltas entries were transcribed by hand) | `web/data/executives.json` |
 | Network | Synthetic CSV → SQL template → copied per visitor | Supabase `contacts`, `contact_stints` |
 
 **Linking a name in a filing to the network** (`web/lib/network.ts`). Each employer name is canonicalised
@@ -183,6 +188,7 @@ Moves are "unexplained" only if nothing was filed between the previous session a
 | Revenue, EBITDA, PBT, PAT, QoQ/YoY, margins, alerts, scores, overlaps, promise status | Python / TypeScript, no model |
 | Filing classification | Rules (17 categories from ENAM's reference) |
 | Promise extraction (offline) | Gemini, one call per transcript, JSON schema, cached by content hash (`workers/llm.py`) |
+| Executive careers (offline) | Gemini, one call per appointment filing, same router; stints kept only if their sentence is in the PDF |
 | Bull vs bear (live) | Gemini, two calls per company (bear, then bull) over numbered primary-source evidence (`web/lib/bullbear.ts`) |
 | Ask about this company (live) | Gemini, one call per new question over the same evidence plus recent filings and prices (`web/lib/companyQuestion.ts`) |
 
@@ -214,11 +220,11 @@ missing. Successful live generations are logged in Supabase `llm_calls` and are 
 
 | Item | Status |
 |---|---|
-| Annual reports | **Not used.** The brief grounds Pull in annual reports + transcripts; FINN uses exchange XBRL results and NSE-filed transcripts only. So there is no balance sheet, cash-flow or cash-conversion view, no segments or revenue mix, and no multi-year trajectory (quarters only) |
+| Annual reports | The annual report's financial statements are covered: balance sheet, cash flow and segment revenue come from the annual and half-year XBRL results filings (the same audited figures). Not covered: the annual report's narrative (MD&A, risks, related-party notes, contingent liabilities), so there is no written business description, and the trajectory covers 2 years of statements and 8 quarters, not 5 years |
 | Promise Ledger coverage | 3 companies (Aurobindo, M&M, Voltas), 9 of 12 transcripts (free-tier quota stopped the other 3); 26 of 30 promises are segment-level or non-financial, shown as "Can't check yet" with the reason. The research companies have no ledger. Segment parsing from XBRL is the next step |
 | Unseen tickers | Prices and the last few quarters of results (5 for Dixon); no ledger, bull vs bear or question box (those need the batch evidence) |
-| Executive profiles | One appointment (Voltas, 2 people) has a career card; the other 15 management changes show the plain card. Profiles were transcribed by hand from the filing; no extraction worker yet |
-| Network | Synthetic, 28 contacts at portfolio companies and their peers; nobody at the research companies. No expertise map by theme (contact tags are stored but not used), no supplier links, education almost absent. Keep-warm is "6+ months since you spoke", not tied to a former employer's news |
+| Executive profiles | 16 appointees across 11 filings; 8 have a career in their filing, the rest (and 5 cessations) show the plain card. Most filings give no years, so links through them show as "probable". A career card shows on Today when the appointment reaches Needs you (or Management is set to Alert) |
+| Network | Synthetic, 34 contacts at portfolio and research companies and their peers. Theme search and an expertise map use the contacts' tags. No supplier links (no source names a supplier; see below), education almost absent. Keep-warm is "6+ months since you spoke", not tied to a former employer's news |
 | Real push | Nothing is sent to the phone: no notifications, no scheduled refresh (the snapshot is a replay) |
 | BSE | Not fetched; NSE only |
 | Status rule | Strict range check: Aurobindo said "mostly on the **higher** side of 20–21%" and delivered 20.23%, marked Met. Qualifiers are shown in the quote, not scored |
@@ -291,25 +297,26 @@ py/.venv/Scripts/python -m uvicorn main:app --app-dir py --port 8000
 # data pipeline (optional; the snapshot is committed)
 python -m venv workers/.venv && workers/.venv/Scripts/python -m pip install -r workers/requirements.txt
 workers/.venv/Scripts/python workers/build_digest.py && workers/.venv/Scripts/python workers/build_companies.py
+workers/.venv/Scripts/python workers/build_statements.py   # balance sheet, cash flow, segments
+workers/.venv/Scripts/python workers/extract_executives.py # appointment filings → careers (model, cached)
 ```
 
 **Supabase:** run the migrations in order in the SQL Editor (`db/migrations/0001_init.sql` to
-`0005_alert_types.sql`; 0004 and 0005 are safe to re-run), then `db/seed_network.sql`; enable anonymous
+`0005_alert_types.sql`; 0004 and 0005 are safe to re-run), then `db/seed_network.sql` (re-run it after the network changes; it re-seeds every visitor); enable anonymous
 sign-ins. **Environment:** `web/.env.local` holds `NEXT_PUBLIC_SUPABASE_URL` and
 `NEXT_PUBLIC_SUPABASE_ANON_KEY`. The server-only keys, `GEMINI_API_KEY` and `SUPABASE_SERVICE_ROLE_KEY`
 (never with a `NEXT_PUBLIC_` prefix), go in Vercel's environment variables; optional `BULL_BEAR_DAILY_CAP`,
 `MODEL_SMALL`, `MODEL_FALLBACK`. Without the service key, a production build shows the live model features
 as not switched on; `npm run dev` generates them uncached. The workers read `GEMINI_API_KEY` and `MODEL_SMALL` from the repository-root `.env.local` (not `web/.env.local`); `MODEL_FALLBACK` only from the process environment.
 
-**Tests (run by hand; no CI):** `workers/.venv/Scripts/python -m pytest workers/tests` (48) · in `web/`:
-`npm test` (30) · `npm run budget` (JS size of `/today`, after `npm run build`; exits 1 while over budget) ·
+**Tests (run by hand; no CI):** `workers/.venv/Scripts/python -m pytest workers/tests` (50) · in `web/`:
+`npm test` (31) · `npm run budget` (JS size of `/today`, after `npm run build`; exits 1 while over budget) ·
 `node --env-file=web/.env.local web/scripts/rls_test.mjs` (row-level security, against the live database).
 
 ## 12. Next
 
-Annual-report ingestion (balance sheet, cash flow, segments) · segment-level XBRL parsing (unlocks most of
-the ledger) · executive-profile extraction from every appointment filing · finish extraction on a paid tier ·
-an expertise map from contact tags · lender results card (NII, PPOP, PAT) · multi-assumption thesis editor ·
+Annual-report narrative (MD&A, notes) · use the segment figures now parsed to check the ledger's segment
+promises (unlocks most of it) · finish extraction on a paid tier · lender results card (NII, PPOP, PAT) · multi-assumption thesis editor ·
 scheduled ingestion and notifications from an Indian-region runner · triage evaluation with more labellers.
 
 ---
