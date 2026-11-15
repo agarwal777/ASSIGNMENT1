@@ -166,6 +166,19 @@ export const copy = {
     capex: "Capex", agm_egm: "AGM or EGM", unclassified: "Routine", pledging: "Pledging",
     unexplained_move: "Unexplained move", price_volume: "Price and volume",
   } as Record<string, string>,
+  price: {
+    title: "Price, last year",
+    overYear: "Over the year",
+    range: (lo: string, hi: string) => `range ${lo}–${hi}`,
+    close: "close",
+    kinds: { results: "Results filed", call: "Earnings call", alert: "FINN alert" },
+    allMarks: (n: number) => `Marked on the chart (${n})`,
+    onDay: (d: string) => `on ${d}, shown on the next session`,
+    openBrief: "Open that brief",
+    summary: (d0: string, c0: string, d1: string, c1: string, lo: string, hi: string, n: number) =>
+      `Daily closing price from ${d0} (${c0}) to ${d1} (${c1}); low ${lo}, high ${hi}. ${n} events marked; the list is below.`,
+    note: "End-of-day closes from the snapshot, not live prices. Marks: results filed on NSE (the time is in the XBRL filing), earnings calls quoted in the promise ledger, and FINN alerts from the briefs. A mark on a non-trading day sits on the next session.",
+  },
   company: {
     met: "Met",
     of: "of",

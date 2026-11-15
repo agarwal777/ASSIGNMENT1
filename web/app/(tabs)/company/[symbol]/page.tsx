@@ -6,6 +6,7 @@ import BullBear from "@/components/company/BullBear";
 import InvestorAssumption from "@/components/company/InvestorAssumption";
 import LedgerTimeline from "@/components/company/LedgerTimeline";
 import NextQuestion from "@/components/company/NextQuestion";
+import PriceChart from "@/components/company/PriceChart";
 import QuarterCharts from "@/components/company/QuarterCharts";
 import SnapshotTable from "@/components/company/SnapshotTable";
 import BulletChart from "@/components/trust/BulletChart";
@@ -15,6 +16,7 @@ import { SourceLink } from "@/components/trust/SourceLink";
 import { shortName, SNAPSHOT_AS_OF, companySymbols, getCompany, hasLedgerData } from "@/lib/companies";
 import { DATA_TO_DAY, DEFAULT_AS_OF } from "@/lib/api";
 import { copy } from "@/lib/copy";
+import { priceSeries } from "@/lib/priceChart";
 import { date, period } from "@/lib/format";
 import type { ThesisItem } from "@/lib/types";
 
@@ -33,6 +35,7 @@ export default async function CompanyPage({ params }: { params: Promise<{ symbol
   const seed = c.thesis.investor[0]?.claim;
   const important = c.recentFilings.filter((f) => f.tier !== "collapsed");
   const routine = c.recentFilings.filter((f) => f.tier === "collapsed");
+  const prices = priceSeries(c.symbol);
 
   return (
     <article>
@@ -101,6 +104,14 @@ export default async function CompanyPage({ params }: { params: Promise<{ symbol
             </>
           ) : <p className="text-[15px] text-ink-2">{copy.company.noQuarters}</p>}
         </section>
+
+        {/* 5b · price over the snapshot year, with FINN's dated events */}
+        {prices && (
+          <section aria-labelledby="price" className="mt-6">
+            <h2 id="price" className="mb-1 text-[13px] font-medium text-ink-2">{copy.price.title}</h2>
+            <PriceChart s={prices} />
+          </section>
+        )}
 
         {/* 6 · next question and people */}
         {c.nextQuestion && (

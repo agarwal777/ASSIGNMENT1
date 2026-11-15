@@ -116,9 +116,22 @@ def main() -> None:
         }
     (WEB / "companies.json").write_text(json.dumps({"as_of": as_of, "companies": out}, ensure_ascii=False, indent=1),
                                         encoding="utf-8")
+    write_prices(set(out))
     for sym, c in out.items():
         print(f"{sym:<11} q={len(c['quarters'])} ledger={len(c['ledger']):>2} mgmt={len(c['thesis']['management'])} "
               f"inv={[i['status'] for i in c['thesis']['investor']]} needs_you={c['needs_you']}")
+
+
+def write_prices(syms: set[str]) -> None:
+    """The year of end-of-day closes already in the snapshot, for the Company page's price chart →
+    web/data/prices.json ({symbol: [[date, close], …]}). Read only by the server; one company's
+    series reaches the browser with its page."""
+    series: dict[str, list] = defaultdict(list)
+    for r in csv.DictReader((SEED / "prices.csv").open(encoding="utf-8")):
+        if r["symbol"] in syms:
+            series[r["symbol"]].append([r["date"], round(float(r["close"]), 2)])
+    (WEB / "prices.json").write_text(json.dumps({k: sorted(v) for k, v in sorted(series.items())},
+                                                separators=(",", ":")), encoding="utf-8")
 
 
 if __name__ == "__main__":
