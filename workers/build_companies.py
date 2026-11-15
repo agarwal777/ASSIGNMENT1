@@ -33,7 +33,15 @@ def transcripts_on_nse(sym: str, recent: list[dict]) -> dict:
     hits = [x for x in rows if TRANSCRIPT.search((x.get("attchmntText") or "") + x.get("desc", "") + x.get("attchmntFile", ""))]
     window = rows if hist.exists() else recent      # the window searched, not this company's first filing
     since = min((_dt.strptime(x["an_dt"][:11], "%d-%b-%Y") for x in window), default=None)
-    return {"count": len(hits), "since": since.date().isoformat() if since else None}
+    # Why there may be no ledger: the transcript FINN read, a covering letter that only links to it, or none filed.
+    manifest = json.loads(Path("seed/manifest.json").read_text(encoding="utf-8"))
+    mine = [(u, v) for u, v in manifest.items() if v["symbol"] == sym and v["kind"] in ("transcript", "transcript_cover", "transcript_notice")]
+    latest = max(mine, key=lambda x: _dt.strptime(x[1]["filed"][:11], "%d-%b-%Y"), default=None)
+    status = "none" if not latest else "read" if latest[1]["kind"] == "transcript" else "cover_only"
+    out = {"count": len(hits), "since": since.date().isoformat() if since else None, "status": status}
+    if latest:
+        out.update({"url": latest[0], "filed": _dt.strptime(latest[1]["filed"][:11], "%d-%b-%Y").date().isoformat()})
+    return out
 
 
 def main() -> None:

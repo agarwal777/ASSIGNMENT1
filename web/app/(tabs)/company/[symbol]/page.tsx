@@ -40,6 +40,12 @@ export default async function CompanyPage({ params }: { params: Promise<{ symbol
   const important = c.recentFilings.filter((f) => f.tier !== "collapsed");
   const routine = c.recentFilings.filter((f) => f.tier === "collapsed");
   const prices = priceSeries(c.symbol);
+  // Without a ledger, say exactly why: only a covering letter was filed, or no transcript in the window.
+  const tr = c.transcripts;
+  const whyNoLedger = tr?.status === "cover_only" && tr.filed
+    ? copy.company.coverOnly(shortName(c.name), date(`${tr.filed}T12:00:00+05:30`, SNAPSHOT_AS_OF))
+    : tr?.since ? copy.company.noneFiled(shortName(c.name), date(`${tr.since}T12:00:00+05:30`))
+    : copy.company.noClaimsWithoutTranscripts;
   const statements = statementsFor(c.symbol);
 
   return (
@@ -69,7 +75,7 @@ export default async function CompanyPage({ params }: { params: Promise<{ symbol
           ) : cred && cred.resolved === 1 ? (
             <>{copy.company.notEnough} <span className="text-ink-2">({copy.company.oneResolved(cred.met === 1)})</span></>
           ) : (
-            <span className="text-ink-2">{hasLedgerData(c.symbol) ? copy.company.noneCheckable : copy.company.noTranscripts}</span>
+            <span className="text-ink-2">{hasLedgerData(c.symbol) ? copy.company.noneCheckable : whyNoLedger}</span>
           )}
         </p>
 
@@ -77,7 +83,7 @@ export default async function CompanyPage({ params }: { params: Promise<{ symbol
         <section aria-labelledby="thesis" className="mt-6">
           <h2 id="thesis" className="text-[13px] font-medium text-ink-2">{copy.company.thesis}</h2>
           <ThesisRow title={copy.company.managementClaims} items={c.thesis.management}
-            empty={hasLedgerData(c.symbol) ? copy.company.noManagementClaims : copy.company.noClaimsWithoutTranscripts} />
+            empty={hasLedgerData(c.symbol) ? copy.company.noManagementClaims : whyNoLedger} />
           {/* Reads ?sheet=assumption, so it sits in a Suspense boundary; the fallback is the same card. */}
           <Suspense fallback={<p className="mt-3 text-[13px] text-ink-3">{copy.company.yourAssumptions}</p>}>
             <InvestorAssumption symbol={c.symbol} items={c.thesis.investor} quarters={c.quarters} dataTo={DATA_TO_DAY}

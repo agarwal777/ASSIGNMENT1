@@ -412,7 +412,7 @@
  },
  "https://nsearchives.nseindia.in/corporate/PIIND_12112026103314_Transcript_intimation.pdf": {
   "symbol": "PIIND",
-  "kind": "results",
+  "kind": "transcript",
   "path": "seed/docs/PIIND/12Nov2026_results_PIIND_12112026103314_Transcript_intimation.pdf",
   "filed": "12-Nov-2026 10:33:31",
   "subject": "Analysts/Institutional Investor Meet/Con. Call Updates",
@@ -464,5 +464,126 @@
   "bytes": 1087954,
   "pages": 18,
   "text_chars": 47615
+ },
+ "https://nsearchives.nseindia.in/corporate/MINDAIND1_11112026151509_Intimationcovering_transcript.pdf": {
+  "symbol": "UNOMINDA",
+  "kind": "transcript",
+  "path": "seed/docs/UNOMINDA/11Nov2026_transcript_MINDAIND1_11112026151509_Intimationcovering_transcript.pdf",
+  "filed": "11-Nov-2026 15:15:24",
+  "subject": "Analysts/Institutional Investor Meet/Con. Call Updates",
+  "sha256": "a205b455b35915a1cae9956a0765df0b24eba263c2fba0a4dd6b30ce4d0088c1",
+  "bytes": 3737297,
+  "pages": 12,
+  "text_chars": 34411
+ },
+ "https://nsearchives.nseindia.in/corporate/Lupin2_06112026203743_SE_Intimation_of_Investor_Meet_Transcript.pdf": {
+  "symbol": "LUPIN",
+  "kind": "transcript",
+  "path": "seed/docs/LUPIN/06Nov2026_transcript_Lupin2_06112026203743_SE_Intimation_of_Investor_Meet_Transcript.pdf",
+  "filed": "06-Nov-2026 20:38:37",
+  "subject": "Analysts/Institutional Investor Meet/Con. Call Updates",
+  "sha256": "4827721247f6634d4aec314a5d1dd35942e02294cb971cb8fec3e81f650ae152",
+  "bytes": 1060753,
+  "pages": 16,
+  "text_chars": 40844
+ },
+ "https://nsearchives.nseindia.in/corporate/MEDANTA21_10112026114048_GHLTRANSCRIPTSINTNOV2026SIGNED.pdf": {
+  "symbol": "MEDANTA",
+  "kind": "transcript",
+  "path": "seed/docs/MEDANTA/10Nov2026_transcript_MEDANTA21_10112026114048_GHLTRANSCRIPTSINTNOV2026SIGNED.pdf",
+  "filed": "10-Nov-2026 11:41:17",
+  "subject": "Analysts/Institutional Investor Meet/Con. Call Updates",
+  "sha256": "457bd94e0b37063ac06ad4441c9c3ab2bc705b540c8f500d3829e23ec71387ea",
+  "bytes": 668339,
+  "pages": 18,
+  "text_chars": 52951
+ },
+ "https://nsearchives.nseindia.in/corporate/NCC_10112026121249_Transcript_10Nov26.pdf": {
+  "symbol": "NCC",
+  "kind": "transcript",
+  "path": "seed/docs/NCC/10Nov2026_transcript_NCC_10112026121249_Transcript_10Nov26.pdf",
+  "filed": "10-Nov-2026 12:13:22",
+  "subject": "Analysts/Institutional Investor Meet/Con. Call Updates",
+  "sha256": "d711c000ac0a84ed57462bdda79fb75ffab996d30e383379dbb40e9b83148157",
+  "bytes": 3995956,
+  "pages": 18,
+  "text_chars": 45879
+ },
+ "https://nsearchives.nseindia.in/corporate/VPTPCL_31072026201434_TranscriptsQ1FY27.pdf": {
+  "symbol": "TATAPOWER",
+  "kind": "transcript",
+  "path": "seed/docs/TATAPOWER/31Jul2026_transcript_VPTPCL_31072026201434_TranscriptsQ1FY27.pdf",
+  "filed": "31-Jul-2026 20:14:43",
+  "subject": "Analysts/Institutional Investor Meet/Con. Call Updates",
+  "sha256": "2022df3dfb4c55e237661e9b3a7ec1ca26f69b4462e21e51eeee2855f8865dcf",
+  "bytes": 517999,
+  "pages": 21,
+  "text_chars": 48158
+ },
+ "https://nsearchives.nseindia.in/corporate/JUBLFOOD_13112026133207_SETranscriptQ2FY27.pdf": {
+  "symbol": "JUBLFOOD",
+  "kind": "transcript",
+  "path": "seed/docs/JUBLFOOD/13Nov2026_transcript_JUBLFOOD_13112026133207_SETranscriptQ2FY27.pdf",
+  "filed": "13-Nov-2026 13:33:14",
+  "subject": "Analysts/Institutional Investor Meet/Con. Call Updates",
+  "sha256": "642f8c5b45c7ea0c9cd53bde1e0275136315d7d1222b2246a4097b1b7a7bb957",
+  "bytes": 738343,
+  "pages": 14,
+  "text_chars": 37533
+ },
+ "https://nsearchives.nseindia.in/corporate/AURIONPRO_05112026153420_ASL_Earnings_Call_Transcript_sd.pdf": {
+  "symbol": "AURIONPRO",
+  "kind": "transcript",
+  "path": "seed/docs/AURIONPRO/05Nov2026_transcript_AURIONPRO_05112026153420_ASL_Earnings_Call_Transcript_sd.pdf",
+  "filed": "05-Nov-2026 15:34:46",
+  "subject": "Analysts/Institutional Investor Meet/Con. Call Updates",
+  "sha256": "f48b76ee0cbaab35f021ed84bd2cd983be98d734ae2ddf4da02522ced6d9ed2f",
+  "bytes": 742676,
+  "pages": 20,
+  "text_chars": 56012
+ },
+ "https://nsearchives.nseindia.in/corporate/NIDHIFADNAVIS_12112026221915_BSENSE_Signed.pdf": {
+  "symbol": "TATASTEEL",
+  "kind": "transcript",
+  "path": "seed/docs/TATASTEEL/12Nov2026_transcript_NIDHIFADNAVIS_12112026221915_BSENSE_Signed.pdf",
+  "filed": "12-Nov-2026 22:19:55",
+  "subject": "Analysts/Institutional Investor Meet/Con. Call Updates",
+  "sha256": "d8f711a12ffe902c38b59e99f94ac7eda949103bbafe3ec63fa117307ee2511a",
+  "bytes": 575731,
+  "pages": 14,
+  "text_chars": 51707
+ },
+ "https://nsearchives.nseindia.in/corporate/TITAN_11112026143915_SEearningcalltranscriptsQ2.pdf": {
+  "symbol": "TITAN",
+  "kind": "transcript",
+  "path": "seed/docs/TITAN/11Nov2026_transcript_TITAN_11112026143915_SEearningcalltranscriptsQ2.pdf",
+  "filed": "11-Nov-2026 14:39:56",
+  "subject": "Analysts/Institutional Investor Meet/Con. Call Updates",
+  "sha256": "d689272799f297af7ab77fc440ff9e91fb723c56a9b8e6c85952a6fc82e1764c",
+  "bytes": 437309,
+  "pages": 18,
+  "text_chars": 50537
+ },
+ "https://nsearchives.nseindia.in/corporate/ASTRAL_11112026143751_Transcript.pdf": {
+  "symbol": "ASTRAL",
+  "kind": "transcript_cover",
+  "path": "seed/docs/ASTRAL/11Nov2026_transcript_ASTRAL_11112026143751_Transcript.pdf",
+  "filed": "11-Nov-2026 14:38:10",
+  "subject": "Analysts/Institutional Investor Meet/Con. Call Updates",
+  "sha256": "d23e4c7695b6417d43a2d71bab2215bf80f0b3ed7c2b3bf6ec506905e7461a96",
+  "bytes": 3497014,
+  "pages": 1,
+  "text_chars": 974
+ },
+ "https://nsearchives.nseindia.in/corporate/ANILSHINDE_06112026155750_SEIntimationTranscript_sd.pdf": {
+  "symbol": "BHARATFORG",
+  "kind": "transcript",
+  "path": "seed/docs/BHARATFORG/06Nov2026_transcript_ANILSHINDE_06112026155750_SEIntimationTranscript_sd.pdf",
+  "filed": "06-Nov-2026 15:57:58",
+  "subject": "Analysts/Institutional Investor Meet/Con. Call Updates",
+  "sha256": "130a4042ab6ad6b99dc5f596299265cbb0c184908931c41e7035015d5daef7cc",
+  "bytes": 688851,
+  "pages": 12,
+  "text_chars": 29233
  }
 }

@@ -258,6 +258,8 @@ export const copy = {
     yourAssumptions: "Your assumptions",
     noManagementClaims: "No checkable management claim yet. Segment and non-financial promises are in the ledger below.",
     noClaimsWithoutTranscripts: "Nothing to track until this company's call transcripts are in the snapshot.",
+    coverOnly: (name: string, d: string) => `${name} filed its latest earnings-call transcript on NSE (${d}) only as a covering letter with a link, so FINN has no text to quote management from yet.`,
+    noneFiled: (name: string, since: string) => `${name} hasn't filed an earnings-call transcript on NSE since ${since}, so there's no management guidance to track yet.`,
     noAssumptions: "You haven't written an assumption for this company yet.",
     ledger: "Promised vs delivered",
     noPromises: "No measurable promises were found in the transcripts we have.",

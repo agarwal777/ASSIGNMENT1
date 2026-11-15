@@ -1,5 +1,5 @@
 {
- "generated_at": "2026-11-15T18:24:27",
+ "generated_at": "2026-11-15T22:01:05",
  "default_as_of": "2026-11-06T08:00:00+05:30",
  "scoring_note": "score = (0.35·materiality + 0.25·surprise + 0.30·thesis) / 0.90; your network adds up to 0.10 on your device and only reorders cards. Weights are a starting heuristic",
  "events": [
@@ -5000,11 +5000,12 @@
    "components": {
     "M": 0.9,
     "S": 0.81,
-    "T": 0.4,
+    "T": 0.7,
     "N": null
    },
-   "score": 0.708,
+   "score": 0.808,
    "reasons": [
+    "touches your thesis",
     "revenue +32.4% YoY"
    ],
    "trend": [
@@ -5086,7 +5087,38 @@
      "Q2FY26": false
     }
    },
-   "thesis": [],
+   "promise_check": {
+    "promise_id": "NCC-2026-11-10-3",
+    "guided_low": 8.5,
+    "guided_high": 9.0,
+    "unit": "percent",
+    "actual": 9.08,
+    "actual_quarters": [
+     "Q1FY27",
+     "Q2FY27"
+    ],
+    "said_at": "2026-11-10",
+    "page": 4,
+    "source": "https://nsearchives.nseindia.in/corporate/NCC_10112026121249_Transcript_10Nov26.pdf",
+    "met": false
+   },
+   "thesis": [
+    {
+     "id": "NCC-2026-11-10-3",
+     "text": "EBITDA margin 8.5–9%",
+     "deadline": "FY27",
+     "metric": "ebitda_margin",
+     "stance": "supports",
+     "evidence": "actual 9.08% (year to date Q1FY27–Q2FY27), above the guided range",
+     "status": "on_track",
+     "source": "management",
+     "target_low": 8.5,
+     "target_high": 9,
+     "actual": 9.08,
+     "quarters_reported": 2,
+     "quarters_total": 4
+    }
+   ],
    "bucket": "needs_you"
   },
   {
@@ -6178,11 +6210,12 @@
    "components": {
     "M": 0.9,
     "S": 0.96,
-    "T": 0.4,
+    "T": 0.7,
     "N": null
    },
-   "score": 0.75,
+   "score": 0.85,
    "reasons": [
+    "touches your thesis",
     "revenue +38.3% YoY",
     "PAT +36.6% YoY"
    ],
@@ -6265,7 +6298,38 @@
      "Q2FY26": false
     }
    },
-   "thesis": [],
+   "promise_check": {
+    "promise_id": "UNOMINDA-2026-11-11-1",
+    "guided_low": 10.5,
+    "guided_high": 11.5,
+    "unit": "percent",
+    "actual": 10.69,
+    "actual_quarters": [
+     "Q1FY27",
+     "Q2FY27"
+    ],
+    "said_at": "2026-11-11",
+    "page": 9,
+    "source": "https://nsearchives.nseindia.in/corporate/MINDAIND1_11112026151509_Intimationcovering_transcript.pdf",
+    "met": true
+   },
+   "thesis": [
+    {
+     "id": "UNOMINDA-2026-11-11-1",
+     "text": "EBITDA margin 10.5–11.5%",
+     "deadline": "FY27",
+     "metric": "ebitda_margin",
+     "stance": "supports",
+     "evidence": "actual 10.69% (year to date Q1FY27–Q2FY27)",
+     "status": "on_track",
+     "source": "management",
+     "target_low": 10.5,
+     "target_high": 11.5,
+     "actual": 10.69,
+     "quarters_reported": 2,
+     "quarters_total": 4
+    }
+   ],
    "bucket": "needs_you"
   },
   {
@@ -7307,11 +7371,12 @@
    "components": {
     "M": 0.9,
     "S": 1,
-    "T": 0.4,
+    "T": 0.7,
     "N": null
    },
-   "score": 0.761,
+   "score": 0.861,
    "reasons": [
+    "touches your thesis",
     "EBITDA margin -710 bps YoY"
    ],
    "trend": [
@@ -7393,7 +7458,38 @@
      "Q2FY26": false
     }
    },
-   "thesis": [],
+   "promise_check": {
+    "promise_id": "LUPIN-2026-11-06-2",
+    "guided_low": 24.0,
+    "guided_high": 25.0,
+    "unit": "percent",
+    "actual": 27.91,
+    "actual_quarters": [
+     "Q1FY27",
+     "Q2FY27"
+    ],
+    "said_at": "2026-11-06",
+    "page": 3,
+    "source": "https://nsearchives.nseindia.in/corporate/Lupin2_06112026203743_SE_Intimation_of_Investor_Meet_Transcript.pdf",
+    "met": false
+   },
+   "thesis": [
+    {
+     "id": "LUPIN-2026-11-06-2",
+     "text": "EBITDA margin 24–25%",
+     "deadline": "FY27",
+     "metric": "ebitda_margin",
+     "stance": "supports",
+     "evidence": "actual 27.91% (year to date Q1FY27–Q2FY27), above the guided range",
+     "status": "on_track",
+     "source": "management",
+     "target_low": 24.0,
+     "target_high": 25.0,
+     "actual": 27.91,
+     "quarters_reported": 2,
+     "quarters_total": 4
+    }
+   ],
    "bucket": "needs_you"
   },
   {

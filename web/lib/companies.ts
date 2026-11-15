@@ -85,7 +85,7 @@ export function getCompany(symbol: string): CompanyPayload | null {
     price: p && close ? { close, asOf: p.as_of,
       dayChange: { value: p.day_change, kind: "pct", epistemic: "CALCULATED", formula: "(close − previous close) ÷ previous close" } } : undefined,
     credibility: r.credibility,
-    transcripts: r.transcripts,
+    transcripts: r.transcripts as CompanyPayload["transcripts"],
     thesis: { management: (r.thesis.management as RawItem[]).map(item("management")),
       investor: (r.thesis.investor as RawItem[]).map((i) => ({ ...item("investor")(i), editable: true })) },
     ledger: ledger(r.symbol, r),

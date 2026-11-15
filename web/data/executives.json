@@ -1,5 +1,5 @@
 {
- "_note": "Public data: executives named in exchange filings. Voltas entries were transcribed by hand; the others are extracted by workers/extract_executives.py from each appointment filing, keeping a stint only if its source sentence is found word for word in the PDF. Years only: filings give no months.",
+ "_note": "Public data: executives named in exchange filings. Voltas entries were transcribed by hand; the others are extracted by workers/extract_executives.py from each appointment filing, keeping a stint only if its source sentence is found word for word in the PDF. Years only: filings give no months. Model per entry in 'model' (3.6 Flash where re-run; 3.5 Flash-Lite where the free tier's rate limit stopped the re-run; quotes verified either way).",
  "executives": [
   {
    "id": "jayant-balan",
@@ -97,157 +97,6 @@
    ]
   },
   {
-   "id": "venkatesan-venkataraman",
-   "name": "Venkatesan Venkataraman",
-   "din": "09635261",
-   "company": "ASHOKLEY",
-   "role": "Additional Director in the capacity of Non-Executive Non-Independent Director",
-   "title": "Additional Director in the capacity of Non-Executive Non-Independent Director",
-   "effective": "2026-11-14",
-   "profile_quote": "Mr. V Venkatesan is a British national and an accomplished automotive industry executive with more than 45 years of experience in the commercial vehicle sector.",
-   "events": [
-    "ASHOKLEY-management_change-2026-11-14"
-   ],
-   "source": "https://nsearchives.nseindia.in/corporate/ASHOKLEYLAND_14112026201346_ALOutcomeofBMNov142026VVAppt.pdf",
-   "extracted": true,
-   "stints": [
-    {
-     "org": "Ashok Leyland",
-     "role": "Graduate Trainee",
-     "function": "engineering",
-     "start": null,
-     "end": null,
-     "quote": "Mr. V Venkatesan began his career with Ashok Leyland as a Graduate Trainee and subsequently held leadership positions across several functions.",
-     "page": 2
-    },
-    {
-     "org": "Hinduja Automotive Limited",
-     "role": "President",
-     "function": "general_management",
-     "start": null,
-     "end": null,
-     "quote": "He is currently President of Hinduja Automotive Limited and serves on its Board of Directors.",
-     "page": 2
-    },
-    {
-     "org": "Avia Motors",
-     "role": "Chief Operating Officer",
-     "function": "operations",
-     "start": null,
-     "end": null,
-     "quote": "He managed the transaction from target identification through execution and subsequently served as Chief Operating Officer during the initial phase, helping stabilise the company’s operations.",
-     "page": 2
-    },
-    {
-     "org": "Boston Consulting Group",
-     "role": "Collaborator",
-     "function": "strategy",
-     "start": null,
-     "end": null,
-     "quote": "Beyond his corporate responsibilities, Mr. V Venkatesan collaborated with Boston Consulting Group to develop the blueprint for “Road to School,” Ashok Leyland’s flagship corporate social responsibility initiative.",
-     "page": 3
-    }
-   ]
-  },
-  {
-   "id": "sanjay-banga",
-   "name": "Sanjay Banga",
-   "din": "07785948",
-   "company": "TATAPOWER",
-   "role": "Additional Director and CEO Designate",
-   "title": "Additional Director and CEO Designate",
-   "effective": "2026-11-11",
-   "profile_quote": "Mr. Sanjay Banga is the Chief Executive Officer and Managing Director of Tata Power Renewable Energy Limited and currently holds the position of President – Renewables of The Tata Power Company Limited (“Tata Power”).",
-   "events": [
-    "TATAPOWER-management_change-2026-11-11"
-   ],
-   "source": "https://nsearchives.nseindia.in/corporate/KSTPCL_11112026190124_MD_APPT_-_Reg_30.pdf",
-   "extracted": true,
-   "stints": [
-    {
-     "org": "Tata Power Renewable Energy Limited",
-     "role": "Chief Executive Officer and Managing Director",
-     "function": "general_management",
-     "start": null,
-     "end": null,
-     "quote": "Mr. Sanjay Banga is the Chief Executive Officer and Managing Director of Tata Power Renewable Energy Limited and currently holds the position of President – Renewables of The Tata Power Company Limited (“Tata Power”).",
-     "page": 2
-    },
-    {
-     "org": "The Tata Power Company Limited",
-     "role": "President – Renewables",
-     "function": "general_management",
-     "start": null,
-     "end": null,
-     "quote": "Mr. Sanjay Banga is the Chief Executive Officer and Managing Director of Tata Power Renewable Energy Limited and currently holds the position of President – Renewables of The Tata Power Company Limited (“Tata Power”).",
-     "page": 2
-    },
-    {
-     "org": "Transmission and Distribution businesses",
-     "role": "President",
-     "function": "general_management",
-     "start": null,
-     "end": null,
-     "quote": "Mr. Banga previously served as President of the Transmission and Distribution businesses.",
-     "page": 2
-    },
-    {
-     "org": "Tata Power Delhi Distribution Limited",
-     "role": "Chief Executive Officer",
-     "function": "general_management",
-     "start": null,
-     "end": null,
-     "quote": "Mr. Banga also served as the Chief Executive Officer of Tata Power Delhi Distribution Limited (TPDDL), a notable Public-Private Partnership (JV) between Tata Power and the Government of the National Capital Territory of Delhi.",
-     "page": 2
-    },
-    {
-     "org": "National Thermal Power Corporation Limited",
-     "role": "Engineer Trainee",
-     "function": "engineering",
-     "start": "1989",
-     "end": "1995",
-     "quote": "Mr. Banga began his career as an Engineer Trainee at National Thermal Power Corporation Limited (NTPC), where he was involved in the operation and commissioning of super thermal power projects from 1989 to 1995.",
-     "page": 2
-    },
-    {
-     "org": "Reliance Energy",
-     "role": "Employee",
-     "function": "operations",
-     "start": "1996",
-     "end": "2003",
-     "quote": "Before joining TPDDL in 2003, he worked with Reliance Energy (formerly BSES Limited) from 1996 to 2003, with responsibilities covering operations, maintenance, planning, design and project engineering for thermal power projects.",
-     "page": 2
-    },
-    {
-     "org": "National Institute of Technology, Kurukshetra",
-     "role": "Student",
-     "function": "education",
-     "start": null,
-     "end": null,
-     "quote": "Mr. Banga is an alumnus of the National Institute of Technology, Kurukshetra, and holds a Master of Business Administration degree from the Faculty of Management Studies, University of Delhi.",
-     "page": 2
-    },
-    {
-     "org": "Faculty of Management Studies, University of Delhi",
-     "role": "Student",
-     "function": "education",
-     "start": null,
-     "end": null,
-     "quote": "Mr. Banga is an alumnus of the National Institute of Technology, Kurukshetra, and holds a Master of Business Administration degree from the Faculty of Management Studies, University of Delhi.",
-     "page": 2
-    },
-    {
-     "org": "Harvard Business School",
-     "role": "Student",
-     "function": "education",
-     "start": null,
-     "end": null,
-     "quote": "He has also completed the Senior Executive Leadership Program at Harvard Business School and holds alumni status.",
-     "page": 2
-    }
-   ]
-  },
-  {
    "id": "amit-deshpande",
    "name": "Amit Deshpande",
    "din": null,
@@ -261,7 +110,8 @@
    ],
    "source": "https://nsearchives.nseindia.in/corporate/SUDARSCHEM_06112026141412_SUDARSHANOutcomeofBM06112026_v1SIGNED.pdf",
    "extracted": true,
-   "stints": []
+   "stints": [],
+   "model": "gemini-3.5-flash-lite"
   },
   {
    "id": "a-a-v-ranga-raju",
@@ -277,7 +127,8 @@
    ],
    "source": "https://nsearchives.nseindia.in/corporate/NCC_05112026181328_Outcome_of_the_Board_Meeting.pdf",
    "extracted": true,
-   "stints": []
+   "stints": [],
+   "model": "gemini-3.5-flash-lite"
   },
   {
    "id": "a-g-k-raju",
@@ -293,7 +144,8 @@
    ],
    "source": "https://nsearchives.nseindia.in/corporate/NCC_05112026181328_Outcome_of_the_Board_Meeting.pdf",
    "extracted": true,
-   "stints": []
+   "stints": [],
+   "model": "gemini-3.5-flash-lite"
   },
   {
    "id": "j-v-ranga-raju",
@@ -309,99 +161,8 @@
    ],
    "source": "https://nsearchives.nseindia.in/corporate/NCC_05112026181328_Outcome_of_the_Board_Meeting.pdf",
    "extracted": true,
-   "stints": []
-  },
-  {
-   "id": "udyavar-vittal-kamath",
-   "name": "Udyavar Vittal Kamath",
-   "din": "00648897",
-   "company": "TEXRAIL",
-   "role": "Executive Director",
-   "title": "Executive Director",
-   "effective": "2027-02-01",
-   "profile_quote": "Mr. Udyavar Vittal Kamath, an Electrical Engineering graduate, was a founder director of Bright Power Projects (India) Private Limited (\"Bright Power\").",
-   "events": [
-    "TEXRAIL-management_change-2026-11-05"
-   ],
-   "source": "https://nsearchives.nseindia.in/corporate/TEXRAIL_05112026145903_TexRailBMOutcome05112026Signed.pdf",
-   "extracted": true,
-   "stints": [
-    {
-     "org": "Bright Power Projects (India) Private Limited",
-     "role": "Founder Director",
-     "function": "general_management",
-     "start": null,
-     "end": null,
-     "quote": "Mr. Udyavar Vittal Kamath, an Electrical Engineering graduate, was a founder director of Bright Power Projects (India) Private Limited (\"Bright Power\").",
-     "page": 10
-    },
-    {
-     "org": "MIT-Manipal",
-     "role": "Student",
-     "function": "education",
-     "start": "1986",
-     "end": "1986",
-     "quote": "After completion of his Electrical Engineering degree in the year 1986 from MIT-Manipal, he has acquired more than 30 years of vast experience in the field of Railway Electrification business and other electrical engineering service industry, well recognised in the field.",
-     "page": 10
-    },
-    {
-     "org": "Texmaco Rail & Engineering Limited",
-     "role": "Executive Director",
-     "function": "operations",
-     "start": null,
-     "end": null,
-     "quote": "He has been associated with the Company more than nine years, during which he has significantly contributed in growth of business and in execution of Railway business including track laying and S&T business.",
-     "page": 10
-    }
-   ]
-  },
-  {
-   "id": "nitesh-minda",
-   "name": "Nitesh Minda",
-   "din": null,
-   "company": "UNOMINDA",
-   "role": "Appointee",
-   "title": null,
-   "effective": "2026-11-05",
-   "profile_quote": "Mr. Nitesh Minda will transition into a new role as Chief Executive officer-SCS Domain of the Company",
-   "events": [
-    "UNOMINDA-management_change-2026-11-05"
-   ],
-   "source": "https://nsearchives.nseindia.in/corporate/MINDAIND1_05112026125215_Outcomef.pdf",
-   "extracted": true,
-   "stints": []
-  },
-  {
-   "id": "kartikeya-joshi",
-   "name": "Kartikeya Joshi",
-   "din": null,
-   "company": "UNOMINDA",
-   "role": "Appointee",
-   "title": null,
-   "effective": "2026-11-05",
-   "profile_quote": "Elevation of Mr. Kartikeya Joshi to the role of Chief Marketing Officer (CMO) of the Company",
-   "events": [
-    "UNOMINDA-management_change-2026-11-05"
-   ],
-   "source": "https://nsearchives.nseindia.in/corporate/MINDAIND1_05112026125215_Outcomef.pdf",
-   "extracted": true,
-   "stints": []
-  },
-  {
-   "id": "amit-jain",
-   "name": "Amit Jain",
-   "din": null,
-   "company": "UNOMINDA",
-   "role": "Appointee",
-   "title": null,
-   "effective": null,
-   "profile_quote": "Additional charge to Mr. Amit Jain, re-designated as Group Chief Growth and Technology Officer (CGTO)",
-   "events": [
-    "UNOMINDA-management_change-2026-11-05"
-   ],
-   "source": "https://nsearchives.nseindia.in/corporate/MINDAIND1_05112026125215_Outcomef.pdf",
-   "extracted": true,
-   "stints": []
+   "stints": [],
+   "model": "gemini-3.5-flash-lite"
   },
   {
    "id": "mangalam-ramasubramanian-kumar",
@@ -616,7 +377,8 @@
      "quote": "Currently, he is Director on the Board of Cholamandalam Investment and Finance Company Limited, Aurobindo Pharma Usa Inc., and Non-executive Chairman of Bank of India.",
      "page": 3
     }
-   ]
+   ],
+   "model": "gemini-3.5-flash-lite"
   },
   {
    "id": "akhil-gupta",
@@ -732,7 +494,8 @@
      "quote": "He is the former Vice Chairman of Bharti Enterprises Limited and played a pivotal role in Bharti’s phenomenal growth right since inception - both organically and by way of various acquisitions.",
      "page": 3
     }
-   ]
+   ],
+   "model": "gemini-3.5-flash-lite"
   },
   {
    "id": "anant-vardhan-goenka",
@@ -848,7 +611,8 @@
      "quote": "Mr. Goenka holds a Master of Business Administration from the Kellogg School of Management and a BS (Economics) from the Wharton School of the University of Pennsylvania.",
      "page": 2
     }
-   ]
+   ],
+   "model": "gemini-3.5-flash-lite"
   },
   {
    "id": "laishram-meenabanta-singh",
@@ -864,7 +628,248 @@
    ],
    "source": "https://nsearchives.nseindia.in/corporate/GRSE_02112026151337_Appointment_of_Shri_Laishram_Meenabanta_Singh_ID.pdf",
    "extracted": true,
-   "stints": []
+   "stints": [],
+   "model": "gemini-3.5-flash-lite"
+  },
+  {
+   "id": "venkatesan-venkataraman",
+   "name": "Venkatesan Venkataraman",
+   "din": "09635261",
+   "company": "ASHOKLEY",
+   "role": "Additional Director",
+   "title": "Additional Director",
+   "effective": "2026-11-14",
+   "profile_quote": "Mr. V Venkatesan is a British national and an accomplished automotive industry executive with more than 45 years of experience in the commercial vehicle sector.",
+   "events": [
+    "ASHOKLEY-management_change-2026-11-14"
+   ],
+   "source": "https://nsearchives.nseindia.in/corporate/ASHOKLEYLAND_14112026201346_ALOutcomeofBMNov142026VVAppt.pdf",
+   "extracted": true,
+   "stints": [
+    {
+     "org": "Ashok Leyland",
+     "role": "Graduate Trainee",
+     "function": "general_management",
+     "start": null,
+     "end": null,
+     "quote": "Mr. V Venkatesan began his career with Ashok Leyland as a Graduate Trainee and subsequently held leadership positions across several functions.",
+     "page": 2
+    },
+    {
+     "org": "Hinduja Automotive Limited",
+     "role": "President and Director",
+     "function": "general_management",
+     "start": null,
+     "end": null,
+     "quote": "He is currently President of Hinduja Automotive Limited and serves on its Board of Directors.",
+     "page": 2
+    },
+    {
+     "org": "Avia Motors",
+     "role": "Chief Operating Officer",
+     "function": "operations",
+     "start": null,
+     "end": null,
+     "quote": "He managed the transaction from target identification through execution and subsequently served as Chief Operating Officer during the initial phase, helping stabilise the company’s operations.",
+     "page": 2
+    }
+   ],
+   "model": "gemini-3.6-flash"
+  },
+  {
+   "id": "sanjay-banga",
+   "name": "Sanjay Banga",
+   "din": "07785948",
+   "company": "TATAPOWER",
+   "role": "Additional Director and Chief Executive Officer Designate",
+   "title": "Additional Director and Chief Executive Officer Designate",
+   "effective": "2026-11-11",
+   "profile_quote": "Mr. Sanjay Banga is the Chief Executive Officer and Managing Director of Tata Power Renewable Energy Limited and currently holds the position of President – Renewables of The Tata Power Company Limited (“Tata Power”).",
+   "events": [
+    "TATAPOWER-management_change-2026-11-11"
+   ],
+   "source": "https://nsearchives.nseindia.in/corporate/KSTPCL_11112026190124_MD_APPT_-_Reg_30.pdf",
+   "extracted": true,
+   "stints": [
+    {
+     "org": "Tata Power Renewable Energy Limited",
+     "role": "Chief Executive Officer and Managing Director",
+     "function": "general_management",
+     "start": null,
+     "end": null,
+     "quote": "Mr. Sanjay Banga is the Chief Executive Officer and Managing Director of Tata Power Renewable Energy Limited and currently holds the position of President – Renewables of The Tata Power Company Limited (“Tata Power”).",
+     "page": 2
+    },
+    {
+     "org": "The Tata Power Company Limited",
+     "role": "President – Renewables",
+     "function": "general_management",
+     "start": null,
+     "end": null,
+     "quote": "Mr. Sanjay Banga is the Chief Executive Officer and Managing Director of Tata Power Renewable Energy Limited and currently holds the position of President – Renewables of The Tata Power Company Limited (“Tata Power”).",
+     "page": 2
+    },
+    {
+     "org": "Transmission and Distribution businesses",
+     "role": "President",
+     "function": "general_management",
+     "start": null,
+     "end": null,
+     "quote": "Mr. Banga previously served as President of the Transmission and Distribution businesses.",
+     "page": 2
+    },
+    {
+     "org": "Tata Power Delhi Distribution Limited (TPDDL)",
+     "role": "Chief Executive Officer",
+     "function": "general_management",
+     "start": "2003",
+     "end": null,
+     "quote": "Mr. Banga also served as the Chief Executive Officer of Tata Power Delhi Distribution Limited (TPDDL), a notable Public-Private Partnership (JV) between Tata Power and the Government of the National Capital Territory of Delhi.",
+     "page": 2
+    },
+    {
+     "org": "National Thermal Power Corporation Limited (NTPC)",
+     "role": "Engineer Trainee",
+     "function": "engineering",
+     "start": "1989",
+     "end": "1995",
+     "quote": "Mr. Banga began his career as an Engineer Trainee at National Thermal Power Corporation Limited (NTPC), where he was involved in the operation and commissioning of super thermal power projects from 1989 to 1995.",
+     "page": 2
+    },
+    {
+     "org": "Reliance Energy (formerly BSES Limited)",
+     "role": "worked with Reliance Energy",
+     "function": "operations",
+     "start": "1996",
+     "end": "2003",
+     "quote": "Before joining TPDDL in 2003, he worked with Reliance Energy (formerly BSES Limited) from 1996 to 2003, with responsibilities covering operations, maintenance, planning, design and project engineering for thermal power projects.",
+     "page": 2
+    },
+    {
+     "org": "National Institute of Technology, Kurukshetra",
+     "role": "alumnus",
+     "function": "education",
+     "start": null,
+     "end": null,
+     "quote": "Mr. Banga is an alumnus of the National Institute of Technology, Kurukshetra, and holds a Master of Business Administration degree from the Faculty of Management Studies, University of Delhi.",
+     "page": 2
+    },
+    {
+     "org": "Faculty of Management Studies, University of Delhi",
+     "role": "Master of Business Administration",
+     "function": "education",
+     "start": null,
+     "end": null,
+     "quote": "Mr. Banga is an alumnus of the National Institute of Technology, Kurukshetra, and holds a Master of Business Administration degree from the Faculty of Management Studies, University of Delhi.",
+     "page": 2
+    },
+    {
+     "org": "Harvard Business School",
+     "role": "Senior Executive Leadership Program",
+     "function": "education",
+     "start": null,
+     "end": null,
+     "quote": "He has also completed the Senior Executive Leadership Program at Harvard Business School and holds alumni status.",
+     "page": 2
+    }
+   ],
+   "model": "gemini-3.6-flash"
+  },
+  {
+   "id": "udyavar-vittal-kamath",
+   "name": "Udyavar Vittal Kamath",
+   "din": "00648897",
+   "company": "TEXRAIL",
+   "role": "Executive Director",
+   "title": "Executive Director",
+   "effective": "2027-02-01",
+   "profile_quote": "Mr. Udyavar Vittal Kamath, an Electrical Engineering graduate, was a founder director of Bright Power Projects (India) Private Limited (\"Bright Power\").",
+   "events": [
+    "TEXRAIL-management_change-2026-11-05"
+   ],
+   "source": "https://nsearchives.nseindia.in/corporate/TEXRAIL_05112026145903_TexRailBMOutcome05112026Signed.pdf",
+   "extracted": true,
+   "stints": [
+    {
+     "org": "Bright Power Projects (India) Private Limited",
+     "role": "founder director",
+     "function": "general_management",
+     "start": null,
+     "end": null,
+     "quote": "Mr. Udyavar Vittal Kamath, an Electrical Engineering graduate, was a founder director of Bright Power Projects (India) Private Limited (\"Bright Power\").",
+     "page": 10
+    },
+    {
+     "org": "MIT-Manipal",
+     "role": "Electrical Engineering degree",
+     "function": "education",
+     "start": null,
+     "end": "1986",
+     "quote": "After completion of his Electrical Engineering degree in the year 1986 from MIT-Manipal, he has acquired more than 30 years of vast experience in the field of Railway Electrification business and other electrical engineering service industry, well recognised in the field.",
+     "page": 10
+    },
+    {
+     "org": "Texmaco Rail & Engineering Ltd",
+     "role": "Executive Director",
+     "function": "general_management",
+     "start": null,
+     "end": null,
+     "quote": "He has been associated with the Company more than nine years, during which he has significantly contributed in growth of business and in execution of Railway business including track laying and S&T business.",
+     "page": 10
+    }
+   ],
+   "model": "gemini-3.6-flash"
+  },
+  {
+   "id": "nitesh-minda",
+   "name": "Nitesh Minda",
+   "din": null,
+   "company": "UNOMINDA",
+   "role": "Chief Executive Officer (Designate)-SCS Domain",
+   "title": "Chief Executive Officer (Designate)-SCS Domain",
+   "effective": "2026-11-05",
+   "profile_quote": null,
+   "events": [
+    "UNOMINDA-management_change-2026-11-05"
+   ],
+   "source": "https://nsearchives.nseindia.in/corporate/MINDAIND1_05112026125215_Outcomef.pdf",
+   "extracted": true,
+   "stints": [],
+   "model": "gemini-3.6-flash"
+  },
+  {
+   "id": "kartikeya-joshi",
+   "name": "Kartikeya Joshi",
+   "din": null,
+   "company": "UNOMINDA",
+   "role": "Chief Marketing Officer",
+   "title": "Chief Marketing Officer",
+   "effective": "2026-11-05",
+   "profile_quote": null,
+   "events": [
+    "UNOMINDA-management_change-2026-11-05"
+   ],
+   "source": "https://nsearchives.nseindia.in/corporate/MINDAIND1_05112026125215_Outcomef.pdf",
+   "extracted": true,
+   "stints": [],
+   "model": "gemini-3.6-flash"
+  },
+  {
+   "id": "amit-jain",
+   "name": "Amit Jain",
+   "din": null,
+   "company": "UNOMINDA",
+   "role": "Group Chief Growth and Technology Officer",
+   "title": "Group Chief Growth and Technology Officer",
+   "effective": null,
+   "profile_quote": null,
+   "events": [
+    "UNOMINDA-management_change-2026-11-05"
+   ],
+   "source": "https://nsearchives.nseindia.in/corporate/MINDAIND1_05112026125215_Outcomef.pdf",
+   "extracted": true,
+   "stints": [],
+   "model": "gemini-3.6-flash"
   }
  ]
 }

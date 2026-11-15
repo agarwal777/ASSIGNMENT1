@@ -60,7 +60,7 @@ true**, and if not, what to ask and whom. So FINN is organised around beliefs an
 |---|---|---|
 | **Push** | Daily brief with replay (any day 1–15 Nov); 24 h, 7-day or custom window; scored and bucketed cards; folded routine filings; reading-time estimate with its formula; your own move thresholds and per-type Alert / Mute, saved per user | 11,147 NSE announcements (251 for the portfolio), 1 year of prices, 21 of 22 companies' Q2 FY27 results parsed from XBRL |
 | **Push → Network** | Management-change card with the appointee's career from the filing, second-degree path, call sheet | 16 appointees from 11 appointment filings (careers for 8; the rest give none); 34 synthetic contacts |
-| **Pull** | Portfolio search and screen (sector; minimum EBITDA margin, revenue growth YoY, margin change; sort). Company page: credibility line, balance sheet, cash flow and segment mix, thesis strip with your editable assumption, promise timeline (said → deadline), quote sheet, quarter charts, one-year price chart with events, next question with people, bull vs bear, cited question box | Promise Ledger: 30 verified promises from 9 of 12 transcripts (Aurobindo, M&M, Voltas); balance sheet and cash flow for all 22 companies (68 periods) from annual and half-year XBRL filings |
+| **Pull** | Portfolio search and screen (sector; minimum EBITDA margin, revenue growth YoY, margin change; sort). Company page: credibility line, balance sheet, cash flow and segment mix, thesis strip with your editable assumption, promise timeline (said → deadline), quote sheet, quarter charts, one-year price chart with events, next question with people, bull vs bear, cited question box | Promise Ledger: 94 verified promises from 23 transcripts across 14 companies (10 checkable against reported numbers: 1 met, 6 on track, 3 behind); balance sheet and cash flow for all 22 companies (68 periods) from annual and half-year XBRL filings |
 | **Pull, any ticker** | Ask: search 2,635 NSE symbols; unseen companies processed live by a Python function; reduced view with quarter charts | NSE integrated-filing XBRL + prices, from Vercel's servers |
 | **Network** | Who to ask on every card and Company page; "Who knows…" by person, company or theme, with a call sheet per name; an expertise map; keep-warm note (6+ months since you spoke) | Matching runs in the browser over the investor's own rows |
 
@@ -206,9 +206,11 @@ question (question box) is stored in Supabase and served to every visitor, keyed
 evidence and prompt version; a request already in progress is not started twice; new generations share a
 global daily cap (`BULL_BEAR_DAILY_CAP`, default 40); each successful generation is logged in `llm_calls` (one row per side or answer; failed attempts and retries are not).
 
-**Spend: ₹0** (free tier). Extraction: 12 live calls, about 194k input and 10k output tokens, plus 14
-cache hits (`seed/llm_calls.jsonl`). The free tier's 503/429 limits are why 3 of 12 transcripts are still
-missing. Successful live generations are logged in Supabase `llm_calls` and are not included in these figures.
+**Spend: ₹0** (free tier). Offline extraction to date: 70 live calls, about 957k input and 116k output
+tokens, plus 44 cache hits (`seed/llm_calls.jsonl`; failed attempts are not logged). One run on 15 Nov used
+the router's code default, gemini-3.5-flash-lite, because `MODEL_SMALL` was not applied; the new promises were
+re-extracted on gemini-3.6-flash, and the executive profiles the free tier's 429 limit stopped from being
+re-run keep their Flash-Lite extraction (marked per entry; every quote is still checked against the PDF). Successful live generations are logged in Supabase `llm_calls` and are not included in these figures.
 
 ## 8. Cloud
 
@@ -225,13 +227,13 @@ missing. Successful live generations are logged in Supabase `llm_calls` and are 
 | Item | Status |
 |---|---|
 | Annual reports | The annual report's financial statements are covered: balance sheet, cash flow and segment revenue come from the annual and half-year XBRL results filings (the same audited figures). Not covered: the annual report's narrative (MD&A, risks, related-party notes, contingent liabilities), so there is no written business description, and the trajectory covers 2 years of statements and 8 quarters, not 5 years |
-| Promise Ledger coverage | 3 companies (Aurobindo, M&M, Voltas), 9 of 12 transcripts (free-tier quota stopped the other 3); 26 of 30 promises are segment-level or non-financial, shown as "Can't check yet" with the reason. The research companies have no ledger. Segment parsing from XBRL is the next step |
+| Promise Ledger coverage | 14 of 22 companies, 23 transcripts, 94 promises; 84 are segment-level, non-financial or stated as an amount rather than a percentage, shown as "Can't check yet" with the reason. No ledger for 8: Thermax, KEC and Astral filed only a covering letter with a link; Ashok Leyland, Texmaco, Garden Reach, Deepak Fertilisers and Sudarshan Chemical filed no transcript in the snapshot (the page says which). Checking segment promises against the segment figures now parsed is the next step |
 | Unseen tickers | Prices and the last few quarters of results (5 for Dixon); no ledger, bull vs bear or question box (those need the batch evidence) |
 | Executive profiles | 16 appointees across 11 filings; 8 have a career in their filing, the rest (and 5 cessations) show the plain card. Most filings give no years, so links through them show as "probable". A career card shows on Today when the appointment reaches Needs you (or Management is set to Alert) |
 | Network | Synthetic, 34 contacts at portfolio and research companies and their peers. Theme search and an expertise map use the contacts' tags. Supplier and customer links only where a related-party filing names them (M&M's H1 FY27 filing: 46 suppliers, 37 customers, group companies only); peers by NSE industry for 47 listed companies; the rest of our own peer list is labelled "our classification". Education almost absent. Keep-warm is "6+ months since you spoke", not tied to a former employer's news |
 | Real push | Nothing is sent to the phone: no notifications, no scheduled refresh (the snapshot is a replay) |
 | BSE | Not fetched: BSE's announcements API refuses scripted requests (403) and its data products are paid. A one-week spot-check of 3 dual-listed companies found every one of 23 BSE announcements on NSE too, filed within minutes ([`docs/reviews/bse-spotcheck.md`](docs/reviews/bse-spotcheck.md)); a BSE-only company would need BSE. Each filing carries `source_exchange` and a `dedupe_key` (company + day + subject), so a licensed BSE feed would be a data change |
-| Status rule | Strict range check: Aurobindo said "mostly on the **higher** side of 20–21%" and delivered 20.23%, marked Met. Qualifiers are shown in the quote, not scored |
+| Status rule | Every checkable metric (EBITDA margin, revenue and PAT growth) is higher-is-better: met / on track means at or above the bottom of the guided range, and a result above the range says "above the guided range" (Lupin guided 24–25% and is at 27.9%: On track). A target stated as an amount (₹ crore, US$, "1.2x") is not judged as a percentage. Qualifiers like "higher side of" are shown in the quote, not scored |
 | General chat agent | Not built on purpose: the question box answers one company from its own sources, never from outside knowledge |
 | Assumption editor | One investor assumption per company (metric, condition, target, deadline), saved per user; shown on Today, Portfolio and the Company page |
 | WhatsApp share, swipe feedback, service worker, Playwright, CI | Cut (CI by owner decision; tests run by hand) |
@@ -266,8 +268,9 @@ and an Aurobindo plant update (a US FDA inspection outcome, since fixed; see abo
 low by category, and a press release *about results* is not grouped with the results card; the per-type
 Alert setting now lets an investor override the first. With n = 40 and one labeller, read these as directional.
 
-**Promise extraction** (`eval/promise_spotcheck.csv`). 20 of the 30 promises (fixed seed) checked
-field by field against the transcript, by the coding assistant rather than the author:
+**Promise extraction** (`eval/promise_spotcheck.csv`). 20 of the first run's 30 promises (fixed seed) checked
+field by field against the transcript, by the coding assistant rather than the author. The 64 promises added
+on 15 Nov are quote-verified in code but not yet spot-checked field by field:
 
 | Field | Correct |
 |---|---|
@@ -313,8 +316,8 @@ sign-ins. **Environment:** `web/.env.local` holds `NEXT_PUBLIC_SUPABASE_URL` and
 `MODEL_SMALL`, `MODEL_FALLBACK`. Without the service key, a production build shows the live model features
 as not switched on; `npm run dev` generates them uncached. The workers read `GEMINI_API_KEY` and `MODEL_SMALL` from the repository-root `.env.local` (not `web/.env.local`); `MODEL_FALLBACK` only from the process environment.
 
-**Tests (run by hand; no CI):** `workers/.venv/Scripts/python -m pytest workers/tests` (50) · in `web/`:
-`npm test` (32) · `npm run budget` (JS size of `/today`, after `npm run build`; exits 1 while over budget) ·
+**Tests (run by hand; no CI):** `workers/.venv/Scripts/python -m pytest workers/tests` (53) · in `web/`:
+`npm test` (33) · `npm run budget` (JS size of `/today`, after `npm run build`; exits 1 while over budget) ·
 `node --env-file=web/.env.local web/scripts/rls_test.mjs` (row-level security, against the live database).
 
 ## 12. Next

@@ -78,7 +78,7 @@ all answer one question: is the thesis still true, and if not, what should I ask
 
 - The annual report's narrative (MD&A, notes) isn't read; its financial statements come from the XBRL
   results filings instead.
-- The Ledger covers 3 companies (9 of 12 transcripts, free-tier quota); 26 of its 30 promises are
+- The Ledger covers 14 of 22 companies (94 promises from 23 transcripts); 84 of them are
   segment-level or non-financial and shown as "can't check yet" until segment parsing exists.
 - Most appointment filings give no years, so links through new appointees are marked "probable".
 - Supplier links exist only where a related-party filing names them (so far M&M's, group companies only);

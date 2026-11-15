@@ -2,8 +2,10 @@
 
 Checkable today (company-level, from XBRL facts): ebitda_margin, revenue_growth, pat_growth,
 for a quarter (QnFYyy), a half (HnFYyy) or a fiscal year (FYyy).
-  met / missed         the period is complete and actual is inside / outside the target range
-  on_track / behind    the period is in progress; year-to-date actual is inside / outside the range
+  met / missed         the period is complete and actual is at or above / below the bottom of the target
+  on_track / behind    the period is in progress; year-to-date actual is at or above / below the bottom
+  All checkable metrics are higher-is-better (margin, growth), so beating the top of a guided range is
+  delivery, not a shortfall; the evidence says "above the guided range" when it happens.
   (revised_by)         set when a later call gave a different target; the outcome is still judged
   cant_check           segment-level, non-financial (capacity, dates) or data not available
 "A single number" targets count as met when actual ≥ target (growth, margin) — stated in the UI.
@@ -71,15 +73,20 @@ def judge(p: dict, facts: dict, latest: str) -> tuple[str, str]:
     lo, hi = p.get("target_low"), p.get("target_high")
     if lo is None and hi is None:
         return "cant_check", "no numeric target"
+    # Margin and growth targets are percentages; an amount (₹ crore, US$, "1.2x") is a different promise.
+    unit = (p.get("unit") or "").lower()
+    if not re.search(r"percent|%|per cent|bps|basis", unit) or max(abs(lo or 0), abs(hi or 0)) > 100:
+        return "cant_check", f"the target is stated as {p.get('unit') or 'an amount'}, not a percentage"
     lo = lo if lo is not None else hi
     val, used = actual(p["metric"], qs, facts)
     if val is None:
         return "cant_check", "financials for this period not in the snapshot"
     complete = len(used) == len(qs)
-    inside = val >= lo if (hi is None or hi == lo) else lo <= val <= hi
+    inside = val >= lo                    # higher is better for every checkable metric
+    above = hi is not None and hi != lo and val > hi
     span = f"{used[0]}–{used[-1]}" if len(used) > 1 else used[0]
     unit = "%" if p["metric"] == "ebitda_margin" else "% YoY"
-    evidence = f"actual {val}{unit} ({'full period' if complete else 'year to date ' + span})"
+    evidence = f"actual {val}{unit} ({'full period' if complete else 'year to date ' + span})" + (", above the guided range" if above else "")
     p["actual"], p["quarters_reported"], p["quarters_total"] = val, len(used), len(qs)   # for the bullet chart
     if complete:
         return ("met" if inside else "missed"), evidence

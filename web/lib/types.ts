@@ -81,7 +81,7 @@ export interface CompanyPayload {
   ledger: LedgerPromise[];
   quarters: QuarterRow[];
   nextQuestion?: { text: string; people: PersonRef[] };
-  transcripts?: { count: number; since: string | null };
+  transcripts?: { count: number; since: string | null; status?: "read" | "cover_only" | "none"; filed?: string; url?: string };
   recentFilings: { id: string; title: string; headline?: string; at: string; tier: 'needs_you' | 'worth_a_read' | 'collapsed'; source: SourceRef }[];
 }
 
