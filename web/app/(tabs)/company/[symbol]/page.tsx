@@ -1,6 +1,7 @@
 import Link from "next/link";
 import { notFound } from "next/navigation";
 import { ChevronLeft } from "lucide-react";
+import BullBear from "@/components/company/BullBear";
 import LedgerTimeline from "@/components/company/LedgerTimeline";
 import NextQuestion from "@/components/company/NextQuestion";
 import QuarterCharts from "@/components/company/QuarterCharts";
@@ -99,7 +100,15 @@ export default async function CompanyPage({ params }: { params: Promise<{ symbol
           </section>
         )}
 
-        {/* 8 · recent filings (bull vs bear, slot 7, arrives with the Pull block) */}
+        {/* 7 · bull vs bear */}
+        {c.quarters.length > 0 && (
+          <section aria-labelledby="bullbear" className="mt-6">
+            <h2 id="bullbear" className="mb-2 text-[13px] font-medium text-ink-2">{copy.bullBear.title}</h2>
+            <BullBear symbol={c.symbol} />
+          </section>
+        )}
+
+        {/* 8 · recent filings */}
         {c.recentFilings.length > 0 && (
           <section aria-labelledby="filings" className="mt-6">
             <h2 id="filings" className="text-[13px] font-medium text-ink-2">{copy.company.recentFilings}</h2>

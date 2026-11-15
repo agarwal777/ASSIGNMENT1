@@ -99,5 +99,6 @@ export interface PathResult { target: string; people: (PersonRef & { kind: 'seco
 export type StreamEvent =
   | { type: 'step'; id: string; status: 'running' | 'done' | 'failed' | 'skipped'; detail?: string }
   | { type: 'section'; side: 'bull' | 'bear'; text: string; citations: SourceRef[] }
+  | { type: 'side_done'; side: 'bull' | 'bear'; kept: number }
   | { type: 'done'; mode: 'full' | 'reduced'; redirect?: string }
   | { type: 'error'; message: string };

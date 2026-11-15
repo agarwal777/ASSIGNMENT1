@@ -292,6 +292,19 @@ export const copy = {
     note: "Fictional fixtures for review. Not shown to users.",
   },
   comingNext: "This screen is being built next.",
+  bullBear: {
+    title: "Bull vs bear",
+    build: "Build bull vs bear",
+    bear: "Bear",
+    bull: "Bull",
+    writing: "Writing from the filings…",
+    nothing: "No point in this direction is supported by the sources.",
+    generated: (when: string) => `Generated ${when}`,
+    refresh: "Refresh",
+    failed: (why: string) => `Couldn't finish just now (${why}). What arrived is shown and not saved.`,
+    retry: "Try again",
+    note: "Written by a model from primary sources only: exchange results and earnings-call transcripts (annual reports aren't in the snapshot yet). Sentences without a citation are dropped. Tap a number for its source.",
+  },
   /** NSE subject → a short written headline for filings without a template (never the raw text). */
   subjectHeadline: {
     "Acquisition": "Acquisition filed", "Amalgamation/Merger": "Group companies to merge",
