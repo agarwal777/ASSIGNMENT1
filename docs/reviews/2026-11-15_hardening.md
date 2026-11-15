@@ -28,7 +28,7 @@ After the redesign and nine fixes (commits `ef3ad83`…`076f8ab`), the drift rep
    wrong numbers instead of refusing.
 3. **Prototype shortcuts** that design-v2.md describes as built (Postgres as the source of truth,
    per-user scores, route handlers per screen, Playwright, service worker). These are documented as not
-   built; this pass builds only CI from that list.
+   built; this pass builds none of them (CI was considered and declined by the owner).
 
 ## 2. Goals (each with its check)
 - G1 (L1) README.md and WRITEUP-draft.md: every number, count, date, command, file path and feature
@@ -63,7 +63,7 @@ named-slot number generation; on-device re-ranking; per-day bundle split.
 | L9 | `promises.status` constraint and default use the old vocabulary | `db/migrations/0001_init.sql:59-60` | Major |
 | L10 | Hard-coded dates disagree (Python 15 Nov vs app 14 Nov boundary) | `workers/thesis.py:22`, `web/lib/copy.ts` Settings line | Nit |
 | L11 | `/status` (setup smoke page) and `/dev/cards` routable in production | `web/app/status`, `web/app/(tabs)/dev/cards` | Nit |
-| L12 | No CI | no `.github/` | Major |
+| L12 | No CI | no `.github/` | Withdrawn (owner: no CI) |
 | L13 | Today's client JS size unmeasured | `web/components/today/TodayView.tsx` → `web/lib/api.ts` | Nit (measure only) |
 | L14 | Card company name not a link; "Who knows" results can't open a call sheet | `web/components/today/EventCard.tsx:31`, `web/components/ask/AskView.tsx:212-218` | Nit (UX) |
 
