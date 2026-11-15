@@ -39,7 +39,7 @@ all answer one question: is the thesis still true, and if not, what should I ask
   Behind at 20.79% year to date. Every quote is verified word for word against the PDF. The Company page
   adds the balance sheet, cash flow and segment mix from the annual and half-year XBRL filings, quarter charts, a year of prices with filings and alerts marked, a cited bull vs bear, and a
   question box that answers only from that company's primary sources.
-- **Portfolio:** search by name, symbol or sector; filter and sort by the latest quarter's EBITDA margin,
+- **Portfolio:** add or remove companies (any of the 22 in FINN, or any NSE symbol as a live view); search by name, symbol or sector; filter and sort by the latest quarter's EBITDA margin,
   revenue growth YoY or margin change.
 - **Any ticker:** Ask processes a company I didn't pick (e.g. Dixon, Polycab) live from NSE in 2–3 s.
 - **Network, directly:** "Who knows…" ranks contacts for a person, an organisation or a theme, with an
@@ -80,8 +80,10 @@ all answer one question: is the thesis still true, and if not, what should I ask
   results filings instead.
 - The Ledger covers 3 companies (9 of 12 transcripts, free-tier quota); 26 of its 30 promises are
   segment-level or non-financial and shown as "can't check yet" until segment parsing exists.
-- Most appointment filings give no years, so links through new appointees are marked "probable"; no
-  supplier links, because no source names a company's suppliers.
+- Most appointment filings give no years, so links through new appointees are marked "probable".
+- Supplier links exist only where a related-party filing names them (so far M&M's, group companies only);
+  outside suppliers are not disclosed, so none are shown. Peers are "same NSE industry"; our own peer list
+  is labelled as ours.
 - No real push to the phone (no notifications or scheduled refresh).
 - NSE only: BSE's feed blocks scripts and its data products are paid. A one-week check of 3 dual-listed
   companies found all 23 BSE announcements on NSE too; filings keep a source and a dedupe key for a second feed.

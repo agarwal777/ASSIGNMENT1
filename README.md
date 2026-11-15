@@ -38,6 +38,8 @@ Built for the ENAM Founding AI Engineer Build Challenge (Push · Pull · Network
    (themes from your contacts' tags → who covers them); "specialty chemicals" lists your go-to people.
 5. **Settings**: your own thresholds for an unusual move (volume × average, ± % in a day) and, per
    announcement type, **Alert / As scored / Mute**. Today and Portfolio re-rank as you change them.
+6. **Portfolio → Edit portfolio**: every company in FINN with Add / Remove, or add any NSE symbol (it opens a
+   live view in Ask). Today's brief follows your portfolio.
 
 ## 2. Point of view
 
@@ -130,8 +132,10 @@ flowchart LR
 and a contact's "Voltbek" meet. Two people are linked when they held stints at the same canonical
 organisation with overlapping dates: strength = (1 − e^(−years/2)) × function match × size discount ×
 recency decay. Missing dates give a "probable" link, shown as unconfirmed. A second-degree path is a
-contact linked to the executive; a first-degree "who to ask" is a contact at the company, a listed
-competitor or customer.
+contact linked to the executive. A first-degree "who to ask" is, in order: a contact at the company; one at a
+supplier or customer named in its related-party filing (with the page); one at a company in the same NSE
+industry (NSE's Basic Industry, read from each NSE quote page); and last, one at a competitor, customer or
+partner from our own list, which the app labels "our classification".
 
 **EBITDA**, stated in the UI: profit before exceptional items and tax + finance costs + depreciation −
 other income − share of associates *only when it sits inside PBT* (decided per filing by arithmetic).
@@ -224,7 +228,7 @@ missing. Successful live generations are logged in Supabase `llm_calls` and are 
 | Promise Ledger coverage | 3 companies (Aurobindo, M&M, Voltas), 9 of 12 transcripts (free-tier quota stopped the other 3); 26 of 30 promises are segment-level or non-financial, shown as "Can't check yet" with the reason. The research companies have no ledger. Segment parsing from XBRL is the next step |
 | Unseen tickers | Prices and the last few quarters of results (5 for Dixon); no ledger, bull vs bear or question box (those need the batch evidence) |
 | Executive profiles | 16 appointees across 11 filings; 8 have a career in their filing, the rest (and 5 cessations) show the plain card. Most filings give no years, so links through them show as "probable". A career card shows on Today when the appointment reaches Needs you (or Management is set to Alert) |
-| Network | Synthetic, 34 contacts at portfolio and research companies and their peers. Theme search and an expertise map use the contacts' tags. No supplier links (no source names a supplier; see below), education almost absent. Keep-warm is "6+ months since you spoke", not tied to a former employer's news |
+| Network | Synthetic, 34 contacts at portfolio and research companies and their peers. Theme search and an expertise map use the contacts' tags. Supplier and customer links only where a related-party filing names them (M&M's H1 FY27 filing: 46 suppliers, 37 customers, group companies only); peers by NSE industry for 47 listed companies; the rest of our own peer list is labelled "our classification". Education almost absent. Keep-warm is "6+ months since you spoke", not tied to a former employer's news |
 | Real push | Nothing is sent to the phone: no notifications, no scheduled refresh (the snapshot is a replay) |
 | BSE | Not fetched: BSE's announcements API refuses scripted requests (403) and its data products are paid. A one-week spot-check of 3 dual-listed companies found every one of 23 BSE announcements on NSE too, filed within minutes ([`docs/reviews/bse-spotcheck.md`](docs/reviews/bse-spotcheck.md)); a BSE-only company would need BSE. Each filing carries `source_exchange` and a `dedupe_key` (company + day + subject), so a licensed BSE feed would be a data change |
 | Status rule | Strict range check: Aurobindo said "mostly on the **higher** side of 20–21%" and delivered 20.23%, marked Met. Qualifiers are shown in the quote, not scored |
@@ -302,7 +306,7 @@ workers/.venv/Scripts/python workers/extract_executives.py # appointment filings
 ```
 
 **Supabase:** run the migrations in order in the SQL Editor (`db/migrations/0001_init.sql` to
-`0005_alert_types.sql`; 0004 and 0005 are safe to re-run), then `db/seed_network.sql` (re-run it after the network changes; it re-seeds every visitor); enable anonymous
+`0006_user_portfolio.sql`; 0004–0006 are safe to re-run), then `db/seed_network.sql` (re-run it after the network changes; it re-seeds every visitor); enable anonymous
 sign-ins. **Environment:** `web/.env.local` holds `NEXT_PUBLIC_SUPABASE_URL` and
 `NEXT_PUBLIC_SUPABASE_ANON_KEY`. The server-only keys, `GEMINI_API_KEY` and `SUPABASE_SERVICE_ROLE_KEY`
 (never with a `NEXT_PUBLIC_` prefix), go in Vercel's environment variables; optional `BULL_BEAR_DAILY_CAP`,
@@ -310,7 +314,7 @@ sign-ins. **Environment:** `web/.env.local` holds `NEXT_PUBLIC_SUPABASE_URL` and
 as not switched on; `npm run dev` generates them uncached. The workers read `GEMINI_API_KEY` and `MODEL_SMALL` from the repository-root `.env.local` (not `web/.env.local`); `MODEL_FALLBACK` only from the process environment.
 
 **Tests (run by hand; no CI):** `workers/.venv/Scripts/python -m pytest workers/tests` (50) · in `web/`:
-`npm test` (31) · `npm run budget` (JS size of `/today`, after `npm run build`; exits 1 while over budget) ·
+`npm test` (32) · `npm run budget` (JS size of `/today`, after `npm run build`; exits 1 while over budget) ·
 `node --env-file=web/.env.local web/scripts/rls_test.mjs` (row-level security, against the live database).
 
 ## 12. Next
