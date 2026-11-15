@@ -2,11 +2,21 @@
 // against public executive data. Shared by the cards and the call sheet so both say the same thing.
 import executivesData from "@/data/executives.json";
 import orgsData from "@/data/orgs.json";
+import rptData from "@/data/rpt_links.json";
 import { whoToAsk, type Contact, type Executive, type Orgs, type Suggestion } from "@/lib/network";
 import type { Card, PersonRef } from "@/lib/types";
 
 const DAY = 24 * 3600_000;
-export const orgs = orgsData as unknown as Orgs;
+type RptLinks = Record<string, { source: string; suppliers: { org: string; page: number }[]; customers: { org: string; page: number }[] }>;
+const RPT = rptData as unknown as RptLinks;
+/** Organisations, with supplier/customer links sourced from related-party filings attached. */
+export const orgs: Orgs = {
+  ...(orgsData as unknown as Orgs),
+  sourced: Object.fromEntries(Object.entries(RPT).map(([sym, r]) => [sym, [
+    ...r.suppliers.map((x) => ({ org: x.org, kind: "supplier" as const, page: x.page, source: r.source })),
+    ...r.customers.map((x) => ({ org: x.org, kind: "customer" as const, page: x.page, source: r.source })),
+  ]])),
+};
 export const executives: Executive[] = executivesData.executives.map((x) => ({
   ...x, stints: x.stints.map((s) => ({ ...s, datesKnown: s.start != null })),
 }));

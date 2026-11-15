@@ -17,7 +17,12 @@ export type Orgs = {
   symbols: Record<string, string>;
   aliases: Record<string, string>;
   large: string[];
+  /** Our classification (judgement, not from filings); labelled so wherever it is shown. */
   relations: Record<string, Partial<Record<"competitors" | "customers" | "partners", string[]>>>;
+  /** NSE's Basic Industry per organisation, from its NSE quote page: a peer is the same industry. */
+  industry?: Record<string, { symbol: string; basic_industry: string; source: string }>;
+  /** Supplier/customer links named in a related-party filing, with the page they are on. */
+  sourced?: Record<string, { org: string; kind: "supplier" | "customer"; page: number; source: string }[]>;
 };
 export type Overlap = { strength: number; confirmed: boolean; org: string; from?: number; to?: number; years?: number; education?: boolean };
 export type Suggestion = {
@@ -182,16 +187,35 @@ export function whoToAsk(symbol: string, eventId: string, contacts: Contact[], e
         score: round(0.7 * recency * (0.5 + c.closeness / 10)),
         reason: `Worked at ${company} ${yr(s.start)}–${s.end ? yr(s.end) : "now"} (${s.role ?? s.function})` });
     }
-    // 3. Peers: at a competitor, customer or partner.
-    for (const [kind, list] of Object.entries(rel)) {
-      for (const s of c.stints) {
-        const org = canonical(s.org, orgs);
+    // 3. Peers. Sourced first: same NSE industry, or a supplier/customer named in a related-party
+    //    filing. Then our own classification (competitor/customer/partner), labelled as such.
+    const ownCanon = canonical(company, orgs);
+    const industry = orgs.industry?.[ownCanon]?.basic_industry;
+    const sourced = orgs.sourced?.[symbol] ?? [];
+    for (const s of c.stints) {
+      if (s.function === "education") continue;
+      const org = canonical(s.org, orgs);
+      if (org === ownCanon) continue;
+      const current = s.end == null;
+      const when = current ? `since ${yr(s.start)}` : `${yr(s.start)}–${yr(s.end)}`;
+      const at = current ? "At" : "Was at";
+      const score = round((current ? 0.5 : 0.35) * (0.5 + c.closeness / 10));
+      const link = sourced.find((x) => canonical(x.org, orgs).toLowerCase() === org.toLowerCase());
+      if (link) {
+        out.push({ contact: c, kind: "peer", probable: false, keepWarm: warm, score: round(score * 1.1),
+          reason: `${at} ${org}, a ${link.kind} of ${company} in its related-party filing (p. ${link.page}) ${when}` });
+        continue;
+      }
+      if (industry && orgs.industry?.[org]?.basic_industry === industry) {
+        out.push({ contact: c, kind: "peer", probable: false, keepWarm: warm, score,
+          reason: `${at} ${org}, same NSE industry (${industry}) ${when}` });
+        continue;
+      }
+      for (const [kind, list] of Object.entries(rel)) {
         if (!list!.map((x) => canonical(x, orgs)).includes(org)) continue;
-        const current = s.end == null;
         const label = kind === "competitors" ? "competitor" : kind === "customers" ? "customer" : "partner";
-        out.push({ contact: c, kind: "peer", probable: false, keepWarm: warm,
-          score: round((current ? 0.5 : 0.35) * (0.5 + c.closeness / 10)),
-          reason: `${current ? "At" : "Was at"} ${org} (${label}) ${current ? `since ${yr(s.start)}` : `${yr(s.start)}–${yr(s.end)}`}` });
+        out.push({ contact: c, kind: "peer", probable: false, keepWarm: warm, score: round(score * 0.9),
+          reason: `${at} ${org} (${label}, our classification) ${when}` });
       }
     }
   }

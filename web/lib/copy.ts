@@ -228,6 +228,11 @@ export const copy = {
       `Daily closing price from ${d0} (${c0}) to ${d1} (${c1}); low ${lo}, high ${hi}. ${n} events marked; the list is below.`,
     note: "End-of-day closes from the snapshot, not live prices. Marks: results filed on NSE (the time is in the XBRL filing), earnings calls quoted in the promise ledger, and FINN alerts from the briefs. A mark on a non-trading day sits on the next session.",
   },
+  links: {
+    sourced: (s: number, c: number) => `Supplier and customer links: ${s} suppliers and ${c} customers named in the latest related-party filing (group companies only); a contact who worked at one of them is shown above.`,
+    none: "No sourced supplier links. FINN adds one only when a filing names it (related-party disclosures); peers are companies in the same NSE industry.",
+    filing: (sym: string) => `${sym}: related-party transactions, half year to 30 Sep 2026`,
+  },
   statements: {
     title: "Balance sheet and cash",
     segments: (period: string) => `Revenue by segment, ${period}`,

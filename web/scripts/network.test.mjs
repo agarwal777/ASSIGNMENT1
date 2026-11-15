@@ -87,3 +87,21 @@ test("themes: who knows a theme, and the expertise map", async () => {
   assert.deepEqual(map[0], { theme: "specialty chemicals", people: ["Ishaan K.", "Ritu A."] });
   assert.equal(map.length, 4);
 });
+
+test("peers: sourced link first, then same NSE industry, then our classification (labelled)", async () => {
+  const { whoToAsk } = await import("../lib/network.ts");
+  const o = {
+    symbols: { VOLTAS: "Voltas" }, aliases: {}, large: [],
+    relations: { VOLTAS: { competitors: ["Godrej Appliances", "Blue Star"] } },
+    industry: { "Voltas": { symbol: "VOLTAS", basic_industry: "Household Appliances", source: "x" },
+                "Blue Star": { symbol: "BLUESTARCO", basic_industry: "Household Appliances", source: "x" } },
+    sourced: { VOLTAS: [{ org: "Voltbek Home Appliances", kind: "supplier", page: 4, source: "x" }] },
+  };
+  const at = (name, org) => ({ id: name, name, closeness: 3, lastContacted: "2026-10-01", tags: [],
+    stints: [{ org, role: "Manager", function: "sales", start: "2018-01-01", end: null, datesKnown: true }] });
+  const r = whoToAsk("VOLTAS", "ev", [at("A", "Blue Star"), at("B", "Godrej Appliances"), at("C", "Voltbek Home Appliances")], [], o, AS_OF);
+  const reason = (n) => r.find((s) => s.contact.name === n).reason;
+  assert.match(reason("A"), /same NSE industry \(Household Appliances\)/);
+  assert.match(reason("B"), /competitor, our classification/);
+  assert.match(reason("C"), /a supplier of Voltas in its related-party filing \(p\. 4\)/);
+});

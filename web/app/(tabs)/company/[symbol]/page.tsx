@@ -20,6 +20,7 @@ import { DATA_TO_DAY, DEFAULT_AS_OF } from "@/lib/api";
 import { copy } from "@/lib/copy";
 import { priceSeries } from "@/lib/priceChart";
 import { statementsFor } from "@/lib/statements";
+import rptLinks from "@/data/rpt_links.json";
 import { date, period } from "@/lib/format";
 import type { ThesisItem } from "@/lib/types";
 
@@ -130,6 +131,7 @@ export default async function CompanyPage({ params }: { params: Promise<{ symbol
           <section aria-labelledby="next" className="mt-6">
             <h2 id="next" className="mb-2 text-[13px] font-medium text-ink-2">{copy.company.nextQuestion}</h2>
             <NextQuestion text={c.nextQuestion.text} symbol={c.symbol} eventId={eventId} asOf={SNAPSHOT_AS_OF} />
+            <LinksNote symbol={c.symbol} />
           </section>
         )}
 
@@ -205,6 +207,18 @@ function ThesisRow({ title, items, empty }: { title: string; items: ThesisItem[]
           ))}
         </ul>
       )}
+    </div>
+  );
+}
+
+/** Where supplier/customer links come from, or that there are none: never an invented link. */
+function LinksNote({ symbol }: { symbol: string }) {
+  const r = (rptLinks as unknown as Record<string, { source: string; filed: string; suppliers: unknown[]; customers: unknown[] }>)[symbol];
+  if (!r) return <p className="mt-2 text-[12px] leading-4 text-ink-3">{copy.links.none}</p>;
+  return (
+    <div className="mt-2 text-[12px] leading-4 text-ink-3">
+      <p>{copy.links.sourced(r.suppliers.length, r.customers.length)}</p>
+      <SourceLink s={{ documentId: r.source, label: copy.links.filing(symbol), publishedAt: r.filed }} oneLine />
     </div>
   );
 }

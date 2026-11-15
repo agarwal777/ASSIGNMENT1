@@ -1,5 +1,5 @@
 {
- "_note": "Curated by FINN for the prototype (our judgement, not from filings): canonical names, aliases, rough size and peer relations. Production would grow this from annual-report disclosures.",
+ "_note": "Canonical names and aliases, rough size, and relations. 'relations' (competitors, customers, partners) is OUR classification (judgement, not from filings) and is labelled so in the app; peers by NSE industry and supplier/customer links from related-party filings are sourced.",
  "symbols": {
   "M&M": "Mahindra & Mahindra",
   "ASHOKLEY": "Ashok Leyland",
@@ -51,7 +51,13 @@
   "The Tata Power Company": "Tata Power",
   "Texmaco Rail & Engineering": "Texmaco Rail & Engineering",
   "KEC International": "KEC International",
-  "Aurobindo Pharma Usa Inc.": "Aurobindo Pharma USA"
+  "Aurobindo Pharma Usa Inc.": "Aurobindo Pharma USA",
+  "Kalpataru Projects International": "Kalpataru Projects",
+  "Sona BLW Precision Forgings": "Sona Comstar",
+  "Amber Enterprises India": "Amber Enterprises",
+  "Kalyan Jewellers India": "Kalyan Jewellers",
+  "Dr. Reddy's Laboratories": "Dr. Reddy's",
+  "Titagarh Rail": "Titagarh Rail Systems"
  },
  "large": [
   "Mahindra & Mahindra",
@@ -211,5 +217,243 @@
     "Havells India"
    ]
   }
- }
+ },
+ "industry": {
+  "Mahindra & Mahindra": {
+   "symbol": "M&M",
+   "basic_industry": "Passenger Cars & Utility Vehicles",
+   "source": "https://www.nseindia.com/get-quotes/equity?symbol=M%26M"
+  },
+  "Ashok Leyland": {
+   "symbol": "ASHOKLEY",
+   "basic_industry": "Commercial Vehicles",
+   "source": "https://www.nseindia.com/get-quotes/equity?symbol=ASHOKLEY"
+  },
+  "Uno Minda": {
+   "symbol": "UNOMINDA",
+   "basic_industry": "Auto Components & Equipments",
+   "source": "https://www.nseindia.com/get-quotes/equity?symbol=UNOMINDA"
+  },
+  "Aurobindo Pharma": {
+   "symbol": "AUROPHARMA",
+   "basic_industry": "Pharmaceuticals",
+   "source": "https://www.nseindia.com/get-quotes/equity?symbol=AUROPHARMA"
+  },
+  "Lupin": {
+   "symbol": "LUPIN",
+   "basic_industry": "Pharmaceuticals",
+   "source": "https://www.nseindia.com/get-quotes/equity?symbol=LUPIN"
+  },
+  "Medanta (Global Health)": {
+   "symbol": "MEDANTA",
+   "basic_industry": "Hospital",
+   "source": "https://www.nseindia.com/get-quotes/equity?symbol=MEDANTA"
+  },
+  "Texmaco Rail & Engineering": {
+   "symbol": "TEXRAIL",
+   "basic_industry": "Railway Wagons",
+   "source": "https://www.nseindia.com/get-quotes/equity?symbol=TEXRAIL"
+  },
+  "Thermax": {
+   "symbol": "THERMAX",
+   "basic_industry": "Heavy Electrical Equipment",
+   "source": "https://www.nseindia.com/get-quotes/equity?symbol=THERMAX"
+  },
+  "Garden Reach Shipbuilders & Engineers": {
+   "symbol": "GRSE",
+   "basic_industry": "Aerospace & Defense",
+   "source": "https://www.nseindia.com/get-quotes/equity?symbol=GRSE"
+  },
+  "KEC International": {
+   "symbol": "KEC",
+   "basic_industry": "Civil Construction",
+   "source": "https://www.nseindia.com/get-quotes/equity?symbol=KEC"
+  },
+  "NCC": {
+   "symbol": "NCC",
+   "basic_industry": "Civil Construction",
+   "source": "https://www.nseindia.com/get-quotes/equity?symbol=NCC"
+  },
+  "Tata Power": {
+   "symbol": "TATAPOWER",
+   "basic_industry": "Integrated Power Utilities",
+   "source": "https://www.nseindia.com/get-quotes/equity?symbol=TATAPOWER"
+  },
+  "Deepak Fertilisers": {
+   "symbol": "DEEPAKFERT",
+   "basic_industry": "Commodity Chemicals",
+   "source": "https://www.nseindia.com/get-quotes/equity?symbol=DEEPAKFERT"
+  },
+  "Sudarshan Chemical": {
+   "symbol": "SUDARSCHEM",
+   "basic_industry": "Dyes And Pigments",
+   "source": "https://www.nseindia.com/get-quotes/equity?symbol=SUDARSCHEM"
+  },
+  "Jubilant FoodWorks": {
+   "symbol": "JUBLFOOD",
+   "basic_industry": "Restaurants",
+   "source": "https://www.nseindia.com/get-quotes/equity?symbol=JUBLFOOD"
+  },
+  "Voltas": {
+   "symbol": "VOLTAS",
+   "basic_industry": "Household Appliances",
+   "source": "https://www.nseindia.com/get-quotes/equity?symbol=VOLTAS"
+  },
+  "Aurionpro Solutions": {
+   "symbol": "AURIONPRO",
+   "basic_industry": "Computers - Software & Consulting",
+   "source": "https://www.nseindia.com/get-quotes/equity?symbol=AURIONPRO"
+  },
+  "Tata Steel": {
+   "symbol": "TATASTEEL",
+   "basic_industry": "Iron & Steel",
+   "source": "https://www.nseindia.com/get-quotes/equity?symbol=TATASTEEL"
+  },
+  "Titan Company": {
+   "symbol": "TITAN",
+   "basic_industry": "Gems Jewellery And Watches",
+   "source": "https://www.nseindia.com/get-quotes/equity?symbol=TITAN"
+  },
+  "Astral": {
+   "symbol": "ASTRAL",
+   "basic_industry": "Plastic Products - Industrial",
+   "source": "https://www.nseindia.com/get-quotes/equity?symbol=ASTRAL"
+  },
+  "Bharat Forge": {
+   "symbol": "BHARATFORG",
+   "basic_industry": "Auto Components & Equipments",
+   "source": "https://www.nseindia.com/get-quotes/equity?symbol=BHARATFORG"
+  },
+  "PI Industries": {
+   "symbol": "PIIND",
+   "basic_industry": "Pesticides & Agrochemicals",
+   "source": "https://www.nseindia.com/get-quotes/equity?symbol=PIIND"
+  },
+  "Dixon Technologies": {
+   "symbol": "DIXON",
+   "basic_industry": "Consumer Electronics",
+   "source": "https://www.nseindia.com/get-quotes/equity?symbol=DIXON"
+  },
+  "Polycab India": {
+   "symbol": "POLYCAB",
+   "basic_industry": "Cables - Electricals",
+   "source": "https://www.nseindia.com/get-quotes/equity?symbol=POLYCAB"
+  },
+  "Blue Star": {
+   "symbol": "BLUESTARCO",
+   "basic_industry": "Household Appliances",
+   "source": "https://www.nseindia.com/get-quotes/equity?symbol=BLUESTARCO"
+  },
+  "Hindustan Unilever": {
+   "symbol": "HINDUNILVR",
+   "basic_industry": "Diversified FMCG",
+   "source": "https://www.nseindia.com/get-quotes/equity?symbol=HINDUNILVR"
+  },
+  "Titagarh Rail Systems": {
+   "symbol": "TITAGARH",
+   "basic_industry": "Railway Wagons",
+   "source": "https://www.nseindia.com/get-quotes/equity?symbol=TITAGARH"
+  },
+  "UltraTech Cement": {
+   "symbol": "ULTRACEMCO",
+   "basic_industry": "Cement & Cement Products",
+   "source": "https://www.nseindia.com/get-quotes/equity?symbol=ULTRACEMCO"
+  },
+  "Escorts Kubota": {
+   "symbol": "ESCORTS",
+   "basic_industry": "Tractors",
+   "source": "https://www.nseindia.com/get-quotes/equity?symbol=ESCORTS"
+  },
+  "Gland Pharma": {
+   "symbol": "GLAND",
+   "basic_industry": "Pharmaceuticals",
+   "source": "https://www.nseindia.com/get-quotes/equity?symbol=GLAND"
+  },
+  "Kalpataru Projects": {
+   "symbol": "KPIL",
+   "basic_industry": "Civil Construction",
+   "source": "https://www.nseindia.com/get-quotes/equity?symbol=KPIL"
+  },
+  "Max Healthcare": {
+   "symbol": "MAXHEALTH",
+   "basic_industry": "Hospital",
+   "source": "https://www.nseindia.com/get-quotes/equity?symbol=MAXHEALTH"
+  },
+  "Sona Comstar": {
+   "symbol": "SONACOMS",
+   "basic_industry": "Auto Components & Equipments",
+   "source": "https://www.nseindia.com/get-quotes/equity?symbol=SONACOMS"
+  },
+  "Coromandel International": {
+   "symbol": "COROMANDEL",
+   "basic_industry": "Fertilizers",
+   "source": "https://www.nseindia.com/get-quotes/equity?symbol=COROMANDEL"
+  },
+  "Mazagon Dock Shipbuilders": {
+   "symbol": "MAZDOCK",
+   "basic_industry": "Ship Building & Allied Services",
+   "source": "https://www.nseindia.com/get-quotes/equity?symbol=MAZDOCK"
+  },
+  "Westlife Foodworld": {
+   "symbol": "WESTLIFE",
+   "basic_industry": "Restaurants",
+   "source": "https://www.nseindia.com/get-quotes/equity?symbol=WESTLIFE"
+  },
+  "Infosys": {
+   "symbol": "INFY",
+   "basic_industry": "Computers - Software & Consulting",
+   "source": "https://www.nseindia.com/get-quotes/equity?symbol=INFY"
+  },
+  "JSW Steel": {
+   "symbol": "JSWSTEEL",
+   "basic_industry": "Iron & Steel",
+   "source": "https://www.nseindia.com/get-quotes/equity?symbol=JSWSTEEL"
+  },
+  "Larsen & Toubro": {
+   "symbol": "LT",
+   "basic_industry": "Civil Construction",
+   "source": "https://www.nseindia.com/get-quotes/equity?symbol=LT"
+  },
+  "Trent": {
+   "symbol": "TRENT",
+   "basic_industry": "Speciality Retail",
+   "source": "https://www.nseindia.com/get-quotes/equity?symbol=TRENT"
+  },
+  "Dr. Reddy's": {
+   "symbol": "DRREDDY",
+   "basic_industry": "Pharmaceuticals",
+   "source": "https://www.nseindia.com/get-quotes/equity?symbol=DRREDDY"
+  },
+  "Kalyan Jewellers": {
+   "symbol": "KALYANKJIL",
+   "basic_industry": "Gems Jewellery And Watches",
+   "source": "https://www.nseindia.com/get-quotes/equity?symbol=KALYANKJIL"
+  },
+  "Supreme Industries": {
+   "symbol": "SUPREMEIND",
+   "basic_industry": "Plastic Products - Industrial",
+   "source": "https://www.nseindia.com/get-quotes/equity?symbol=SUPREMEIND"
+  },
+  "Ramkrishna Forgings": {
+   "symbol": "RKFORGE",
+   "basic_industry": "Auto Components & Equipments",
+   "source": "https://www.nseindia.com/get-quotes/equity?symbol=RKFORGE"
+  },
+  "UPL": {
+   "symbol": "UPL",
+   "basic_industry": "Pesticides & Agrochemicals",
+   "source": "https://www.nseindia.com/get-quotes/equity?symbol=UPL"
+  },
+  "Amber Enterprises": {
+   "symbol": "AMBER",
+   "basic_industry": "Household Appliances",
+   "source": "https://www.nseindia.com/get-quotes/equity?symbol=AMBER"
+  },
+  "Havells India": {
+   "symbol": "HAVELLS",
+   "basic_industry": "Consumer Electronics",
+   "source": "https://www.nseindia.com/get-quotes/equity?symbol=HAVELLS"
+  }
+ },
+ "industry_note": "NSE's Basic Industry (one of ~197 industries in NSE's classification), read from each company's NSE quote page on 15 Nov 2026. A peer is a company in the same NSE industry. Not classified: unlisted or foreign employers, Clariant (page unavailable) and Tata Motors (symbol not found)."
 }
