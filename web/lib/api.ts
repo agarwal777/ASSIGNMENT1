@@ -40,6 +40,9 @@ export const DATA_TO_DAY = dayOf(EVENTS.filter((e) => e.kind === "filing").reduc
 /** The latest brief: 08:00 the morning after the latest filing. Today opens here. */
 export const LATEST_DAY = addDays(DATA_TO_DAY, 1);
 export const DEFAULT_AS_OF = asOfFor(LATEST_DAY);
+/** The day a brief's data runs to: the brief for the 17th, 08:00 is shown as "16 Nov", so a brief built on the
+ *  evening of the 16th never shows a date that hasn't happened yet. URLs and scoring keep the brief day. */
+export const dataDayOf = (briefDay: string) => addDays(briefDay, -1);
 export const FIRST_DAY = addDays(dayOf(EVENT_RANGE.first), 1);
 /** The earliest day a custom window can start: the first day with an event in the snapshot. */
 export const EARLIEST_DAY = dayOf(EVENT_RANGE.first);

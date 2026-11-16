@@ -9,7 +9,7 @@ import DayStrip from "@/components/today/DayStrip";
 import EventCard from "@/components/today/EventCard";
 import Num from "@/components/trust/Num";
 import { SourceLink } from "@/components/trust/SourceLink";
-import { BRIEF_DAYS, DATA_TO_DAY, EARLIEST_DAY, LATEST_DAY, QUARTERS_COMPACT, RESULTS_WEEK_DAY, SCORING_NOTE, asOfFor, getDigest } from "@/lib/api";
+import { BRIEF_DAYS, DATA_TO_DAY, EARLIEST_DAY, LATEST_DAY, QUARTERS_COMPACT, RESULTS_WEEK_DAY, SCORING_NOTE, asOfFor, dataDayOf, getDigest } from "@/lib/api";
 import { assumptionText, checkAssumption, loadAssumptions, onAssumptions, rowsFromCompact, type Saved } from "@/lib/assumption";
 import type { Card } from "@/lib/types";
 import { copy } from "@/lib/copy";
@@ -115,7 +115,7 @@ export default function TodayView() {
           <p className="text-[13px] font-medium text-accent">
             {latest
               ? <>{copy.today.latest} <span className="font-normal text-ink-2">· {copy.today.dataTo(date(asOfFor(DATA_TO_DAY), asOf))}</span></>
-              : <>{copy.today.viewing(date(asOf, asOf))} <span className="font-normal text-ink-2">· {copy.today.replay}</span></>}
+              : <>{copy.today.viewing(date(asOfFor(dataDayOf(day)), asOf))} <span className="font-normal text-ink-2">· {copy.today.replay}</span></>}
           </p>
           <button type="button" onClick={() => pick(RESULTS_WEEK_DAY)} aria-pressed={day === RESULTS_WEEK_DAY}
             className={`min-h-9 shrink-0 rounded-full border px-3 text-[13px] font-medium ${
@@ -156,7 +156,7 @@ export default function TodayView() {
               className="min-h-11 rounded-[8px] border border-line bg-surface px-2 text-[15px] text-ink">
               {sinceDays.map((d) => <option key={d} value={d}>{date(`${d}T00:00:00+05:30`, asOf)}</option>)}
             </select>
-            <span>{copy.today.customTo(date(asOf, asOf), time(asOf))}</span>
+            <span>{copy.today.customTo(date(asOfFor(dataDayOf(day)), asOf))}</span>
             <span className="basis-full text-[12px] text-ink-3">{copy.today.customNote(date(`${EARLIEST_DAY}T00:00:00+05:30`))}</span>
           </div>
         )}

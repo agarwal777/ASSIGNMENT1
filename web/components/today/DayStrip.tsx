@@ -4,11 +4,12 @@ import { useEffect, useRef } from "react";
 import { copy } from "@/lib/copy";
 
 const IST = "Asia/Kolkata";
-const fmt = (day: string, o: Intl.DateTimeFormatOptions) =>
-  new Date(`${day}T08:00:00+05:30`).toLocaleDateString("en-IN", { timeZone: IST, ...o });
+// Each brief is labelled by the day its data runs to (the day before the 08:00 brief), never a future date.
+const fmt = (briefDay: string, o: Intl.DateTimeFormatOptions) =>
+  new Date(Date.parse(`${briefDay}T08:00:00+05:30`) - 864e5).toLocaleDateString("en-IN", { timeZone: IST, ...o });
 
 /**
- * Brief dates as a horizontally scrollable strip, about seven visible at 375 px. Each day shows its
+ * Brief dates (labelled by the day the data runs to) as a horizontally scrollable strip, about seven visible at 375 px. Each day shows its
  * weekday, date and a dot with the number of "needs you" cards in that day's 24-hour brief.
  */
 export default function DayStrip({ days, counts, selected, onPick }: {
