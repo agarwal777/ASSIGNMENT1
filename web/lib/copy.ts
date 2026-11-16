@@ -213,6 +213,7 @@ export const copy = {
     avgLine: "dashed line: 20-day average",
     volumeStripLabel: (r: string) => `Volume over the last 30 sessions; today is ${r} the 20-day average`,
     noFiling: (h: number) => `No filing in the last ${h} hours.`,
+    moveNotFiling: (h: number | null) => `Price and volume alert, not a filing: ${h == null ? "no exchange filing explains it" : `no exchange filing in the ${h} hours before it`}, so there is no PDF.`,
     priceSource: "Source: end-of-day prices",
     oneDay: "1 day",
     latestQuarter: "latest",

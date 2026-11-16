@@ -186,8 +186,9 @@ export default function TodayView() {
                 <li key={w.id} className="py-2">
                   <p className="text-[13px] text-ink-3"><span className="font-medium text-ink">{w.companyName}</span> · {time(w.at)}, {date(w.at, asOf)}</p>
                   <p className="text-[15px] leading-[22px]">{w.summary}</p>
+                  {w.move && <p className="text-[13px] text-ink-2">{copy.card.moveNotFiling(w.move.noFilingHours)}</p>}
                   {w.source.documentId && <SourceLink s={w.source} refDate={asOf} />}
-                  {!w.id.includes("-move-") && <FilingInsight id={w.id} refDate={asOf} />}
+                  {!w.move && <FilingInsight id={w.id} refDate={asOf} />}
                 </li>
               ))}
             </ul>

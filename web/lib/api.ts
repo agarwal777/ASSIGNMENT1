@@ -336,6 +336,8 @@ export function getDigest(asOf: string, hours: number, t?: Thresholds): DigestRe
       id: e.id, companyName: `${e.name}`, at: e.at,
       summary: e.results?.period ? resultsHeadline(e) : (e.summary || e.title),
       source: sourceOf(e) ?? { documentId: "", label: `${e.symbol}: end-of-day prices`, publishedAt: e.at },
+      // A price/volume move is not a filing: say so, and how long the company had been silent before it.
+      ...(e.kind === "move" ? { move: { noFilingHours: e.no_filing_hours ?? null } } : {}),
     })),
     collapsed: [...groups.values()].sort((a, b) => b.count - a.count),
     all: inWin,

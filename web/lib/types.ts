@@ -40,7 +40,7 @@ export interface DigestResponse {
   totals: { filings: number; touched: number };
   readingEstimate?: { minutes: number; formula: string };
   needsYou: Card[];                       // ≤ 5
-  worthARead: { id: string; companyName: string; summary: string; at: string; source: SourceRef }[];
+  worthARead: { id: string; companyName: string; summary: string; at: string; source: SourceRef; move?: { noFilingHours: number | null } }[];
   collapsed: { category: string; count: number; items: { id: string; title: string; source: SourceRef }[] }[];
 }
 
