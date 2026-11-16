@@ -1,3 +1,4 @@
 # Deployed to Vercel. httpx instead of yfinance keeps pandas/numpy (~100 MB) out of the function.
 fastapi==0.117.1
 httpx>=0.27
+pypdf==5.1.0

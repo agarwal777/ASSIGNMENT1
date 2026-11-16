@@ -17,7 +17,7 @@ export type SideResult = { sentences: Sentence[]; dropped: number; model: string
 
 // Bump when the prompt changes, so cached copies written under the old prompt are regenerated.
 const PROMPT_VERSION = "p2-status-words";
-const ENDPOINT = (m: string) => `https://generativelanguage.googleapis.com/v1beta/models/${m}:generateContent`;
+export const ENDPOINT = (m: string) => `https://generativelanguage.googleapis.com/v1beta/models/${m}:generateContent`;
 
 /** Numbered evidence for one company: last 4 reported quarters, then management's checkable words. */
 export function evidenceFor(symbol: string): { name: string; items: Evidence[] } | null {
@@ -66,7 +66,7 @@ function prompt(side: "bear" | "bull", name: string, items: Evidence[]): string 
   ].join("\n");
 }
 
-function apiKey(): string | undefined {
+export function apiKey(): string | undefined {
   if (process.env.GEMINI_API_KEY) return process.env.GEMINI_API_KEY;
   // Local runs: the workers' key file one level up (never committed, never sent to the browser).
   const f = path.join(process.cwd(), "..", ".env.local");

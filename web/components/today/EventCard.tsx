@@ -6,6 +6,7 @@ import MetricTable from "@/components/today/MetricTable";
 import StatTiles from "@/components/today/StatTiles";
 import TrendChart from "@/components/today/TrendChart";
 import VolumeStrip from "@/components/today/VolumeStrip";
+import FilingInsight from "@/components/today/FilingInsight";
 import BulletChart from "@/components/trust/BulletChart";
 import EpistemicTag from "@/components/trust/EpistemicTag";
 import { SourceLink } from "@/components/trust/SourceLink";
@@ -72,6 +73,9 @@ export default function EventCard({ card, refDate, networkLoaded = false, review
           </div>
         </details>
       )}
+
+      {/* 6b · what the filing says and how the price moved after it (filings only) */}
+      {card.variant !== "anomaly" && <FilingInsight id={card.id} refDate={refDate} />}
 
       <hr className="my-3 border-line" />
 

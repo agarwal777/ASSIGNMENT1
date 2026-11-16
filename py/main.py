@@ -256,6 +256,49 @@ def refresh(request: Request, dry: int = 0):
     return job.run(nse_client=_nse, quarters_by_label=quarters_by_label, ua=UA["User-Agent"])
 
 
+PDF_HOSTS = {"nsearchives.nseindia.com", "nsearchives.nseindia.in", "archives.nseindia.com", "www.nseindia.com"}
+PDF_PAGES, PDF_CHARS = 15, 60_000
+
+
+@app.get("/api/py/filing-text")
+def filing_text(request: Request, url: str):
+    """Text of one exchange filing PDF, page by page, for "Explain this filing" (web/app/api/filing-insight).
+    Only NSE archive hosts are fetched (no open proxy). On Vercel the caller must send the server's
+    `Authorization: Bearer <CRON_SECRET>`, so only FINN's own route can use it. First 15 pages / 60k chars."""
+    from urllib.parse import urlparse
+    if os.environ.get("VERCEL"):
+        secret = os.environ.get("CRON_SECRET")
+        if not secret or request.headers.get("authorization") != f"Bearer {secret}":
+            return JSONResponse({"error": "unauthorized"}, status_code=401)
+    u = urlparse(url)
+    if u.scheme != "https" or u.hostname not in PDF_HOSTS or not u.path.lower().endswith(".pdf"):
+        return JSONResponse({"error": "not an NSE filing PDF"}, status_code=400)
+    import io
+    import pypdf
+    c = _nse()
+    try:
+        r = c.get(url, timeout=25)
+        r.raise_for_status()
+    except httpx.HTTPError as e:
+        return JSONResponse({"error": f"could not fetch the filing ({type(e).__name__})"}, status_code=502)
+    finally:
+        c.close()
+    try:
+        reader = pypdf.PdfReader(io.BytesIO(r.content))
+        pages, total = [], 0
+        for i, page in enumerate(reader.pages[:PDF_PAGES]):
+            text = re.sub(r"[ \t]+", " ", page.extract_text() or "").strip()
+            if total + len(text) > PDF_CHARS:
+                text = text[: max(0, PDF_CHARS - total)]
+            total += len(text)
+            pages.append({"page": i + 1, "text": text})
+            if total >= PDF_CHARS:
+                break
+        return {"pages": pages, "page_count": len(reader.pages)}
+    except Exception as e:  # noqa: BLE001 — a damaged or encrypted PDF
+        return JSONResponse({"error": f"could not read the PDF ({type(e).__name__})"}, status_code=422)
+
+
 @app.post("/api/py/ensure_company")
 def ensure_company(req: EnsureRequest):
     if not re.fullmatch(r"[A-Za-z0-9&\-]{1,20}", req.symbol.strip()):

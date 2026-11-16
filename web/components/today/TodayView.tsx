@@ -6,6 +6,7 @@ import Link from "next/link";
 import { Settings } from "lucide-react";
 import TopBar from "@/components/shell/TopBar";
 import DayStrip from "@/components/today/DayStrip";
+import FilingInsight from "@/components/today/FilingInsight";
 import EventCard from "@/components/today/EventCard";
 import Num from "@/components/trust/Num";
 import { SourceLink } from "@/components/trust/SourceLink";
@@ -186,6 +187,7 @@ export default function TodayView() {
                   <p className="text-[13px] text-ink-3"><span className="font-medium text-ink">{w.companyName}</span> · {time(w.at)}, {date(w.at, asOf)}</p>
                   <p className="text-[15px] leading-[22px]">{w.summary}</p>
                   {w.source.documentId && <SourceLink s={w.source} refDate={asOf} />}
+                  {!w.id.includes("-move-") && <FilingInsight id={w.id} refDate={asOf} />}
                 </li>
               ))}
             </ul>
