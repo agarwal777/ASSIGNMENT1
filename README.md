@@ -58,7 +58,7 @@ true**, and if not, what to ask and whom. So FINN is organised around beliefs an
 
 | Layer | Working workflow | Real data behind it |
 |---|---|---|
-| **Push** | Daily brief with replay (any day 1–15 Nov); 24 h, 7-day or custom window; scored and bucketed cards; folded routine filings; reading-time estimate with its formula; your own move thresholds and per-type Alert / Mute, saved per user | 11,147 NSE announcements (251 for the portfolio), 1 year of prices, 21 of 22 companies' Q2 FY27 results parsed from XBRL |
+| **Push** | Daily brief with replay (any day 1–15 Nov); 24 h, 7-day or custom window; scored and bucketed cards; folded routine filings; reading-time estimate with its formula; your own move thresholds and per-type Alert / Mute, saved per user; under every filing, "What this filing means": the price move after it (next close, 5 trading days, since) and after the company's earlier results or same-type filings, plus an on-request summary of the PDF with what it means for a holder | 11,147 NSE announcements (251 for the portfolio), 1 year of prices, 21 of 22 companies' Q2 FY27 results parsed from XBRL |
 | **Push → Network** | Management-change card with the appointee's career from the filing, second-degree path, call sheet | 16 appointees from 11 appointment filings (careers for 8; the rest give none); 34 synthetic contacts |
 | **Pull** | Portfolio search and screen (sector; minimum EBITDA margin, revenue growth YoY, margin change; sort). Company page: credibility line, balance sheet, cash flow and segment mix, thesis strip with your editable assumption, promise timeline (said → deadline), quote sheet, quarter charts, one-year price chart with events, next question with people, bull vs bear, cited question box | Promise Ledger: 94 verified promises from 23 transcripts across 14 companies (10 checkable against reported numbers: 1 met, 6 on track, 3 behind); balance sheet and cash flow for all 22 companies (68 periods) from annual and half-year XBRL filings |
 | **Pull, any ticker** | Ask: search 2,635 NSE symbols; unseen companies processed live by a Python function; reduced view with quarter charts | NSE integrated-filing XBRL + prices, from Vercel's servers |
@@ -81,7 +81,7 @@ flowchart LR
     end
     subgraph Vercel
       N["Next.js 16 app\nserver components read JSON"]
-      A["API routes: bull vs bear,\ncompany question"]
+      A["API routes: bull vs bear,\ncompany question, filing insight"]
       P["Python function\nensure_company (NDJSON)"]
     end
     J --> N
@@ -173,7 +173,9 @@ Moves are "unexplained" only if nothing was filed between the previous session a
   from where the quote is found, not from the model.
 - **Headlines are templates over parsed numbers**, not model prose.
 - **Model-written text is checked before it is shown** (bull vs bear, company question): uncited sentences
-  and sentences with a figure not in their cited evidence are dropped, and the count is shown.
+  and sentences with a figure not in their cited evidence are dropped, and the count is shown. Filing
+  summaries (`web/lib/quoteCheck.ts`): each point must carry a 4+ word quote found on its cited PDF page
+  (spaces ignored, since PDF text extraction breaks words) and its figures must be on that page.
 - **Honest uncertainty in the UI:** "probable" links, "overlap not confirmed", "Can't check yet" with a
   reason, "numbers not machine-readable" (Deepak Fertilisers filed only a half-year context).
 
@@ -200,6 +202,8 @@ Moves are "unexplained" only if nothing was filed between the previous session a
 | Executive careers (offline) | Gemini, one call per appointment filing, same router; stints kept only if their sentence is in the PDF |
 | Bull vs bear (live) | Gemini, two calls per company (bear, then bull) over numbered primary-source evidence (`web/lib/bullbear.ts`) |
 | Ask about this company (live) | Gemini, one call per new question over the same evidence plus recent filings and prices (`web/lib/companyQuestion.ts`) |
+| Explain this filing (live, on tap) | `GET /api/py/filing-text` (NSE archive hosts only; on Vercel only with the server's `CRON_SECRET`) extracts the first 15 pages / 60k characters with `pypdf`; Gemini returns points and "what it means for you", each with quote + page; no price predictions or advice (`web/lib/filingExplain.ts`, `web/app/api/filing-insight/route.ts`). Cached per filing in `bull_bear_cache` (key `filing:<id>`), same daily cap |
+| Price after a filing (no model) | `web/lib/reaction.ts`: a filing before 15:30 IST counts from that day's close, later ones from the next trading day; next close, 5 trading days and since; earlier results dated from their XBRL file names. Raw closes, not market-adjusted |
 
 **Routing, as it actually happened:** `gemini-3.5-flash-lite` (the router's code default) returned 1 weak
 promise (and an `Infinity` target) where `gemini-3.8-flash` found 6 verified ones on the same transcript;
@@ -221,7 +225,7 @@ re-run keep their Flash-Lite extraction (marked per entry; every quote is still 
 
 | Part | Where | Why |
 |---|---|---|
-| Next.js app and API routes (bull vs bear, company question) | Vercel | Prerendered pages, zero config; the API routes hold the server-only keys |
+| Next.js app and API routes (bull vs bear, company question, filing insight) | Vercel | Prerendered pages, zero config; the API routes hold the server-only keys |
 | `ensure_company` | Vercel Python function (Vercel Services routes `/api/py/*`) | Same project; no idle sleep; 90 s internal budget |
 | Private rows and server tables | Supabase (Postgres + anonymous auth) | RLS, free tier |
 | Model | Google Gemini API (free tier) | Called from the laptop (extraction) and from the Vercel API routes (live features); the daily refresh uses no model |
@@ -323,7 +327,7 @@ sign-ins. **Environment:** `web/.env.local` holds `NEXT_PUBLIC_SUPABASE_URL` and
 as not switched on; `npm run dev` generates them uncached. The workers read `GEMINI_API_KEY` and `MODEL_SMALL` from the repository-root `.env.local` (not `web/.env.local`); `MODEL_FALLBACK` only from the process environment.
 
 **Tests (run by hand; no CI):** `workers/.venv/Scripts/python -m pytest workers/tests` (54) · in `web/`:
-`npm test` (35) · `npm run budget` (JS size of `/today`, after `npm run build`; exits 1 while over budget) ·
+`npm test` (43) · `npm run budget` (JS size of `/today`, after `npm run build`; exits 1 while over budget) ·
 `node --env-file=web/.env.local web/scripts/rls_test.mjs` (row-level security, against the live database).
 
 ## 12. Next

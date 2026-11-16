@@ -34,7 +34,10 @@ It has the three layers the brief asks for:
   three groups: at most five cards that "need you", one-line items "worth a read", and routine paperwork
   folded into counted groups. A results card shows Revenue, EBITDA, PBT and PAT, each against the previous
   quarter (QoQ) and the same quarter last year (YoY), parsed from the company's results filing. Unusual
-  price or volume moves are flagged against thresholds the investor sets.
+  price or volume moves are flagged against thresholds the investor sets. Under every filing, "What this
+  filing means" shows how the share price actually moved after it (next close, five trading days, and the
+  same for the company's earlier results), and on request a short summary of the filing PDF with what it
+  means for a holder.
 - **Pull (the Company page and Ask).** For any portfolio company:
   - **A promise ledger:** each measurable target management stated on an earnings call, quoted word for
     word, with its status against reported numbers (met, missed, on track, behind, or can't check yet, with
@@ -173,7 +176,7 @@ the thresholds re-ranks without a server call. That puts about 39 KB of data int
 
 ### LLMs and agents
 
-A model is used in four steps, all on Google Gemini's free tier. Each is checked in code, not just
+A model is used in five steps, all on Google Gemini's free tier. Each is checked in code, not just
 instructed in the prompt:
 
 1. **Promise extraction (offline).** One call per transcript returns JSON with a fixed schema. Each quote is
@@ -188,6 +191,12 @@ instructed in the prompt:
    rounding to the decimals shown.
 4. **Company question box (live).** The same check, with the investor's question fenced in the prompt as
    data.
+5. **Explain this filing (live, on request).** A Python function fetches the filing PDF from NSE's archive
+   (only that host) and extracts its text page by page. The model returns 3–5 points and 1–3 "what it means
+   for you" points, each with a verbatim quote and a page number. Code keeps a point only if its quote is on
+   that page (ignoring the broken spacing PDF extraction produces) and its ₹, % and bps figures appear on that
+   page. It is told not to predict prices or give advice. On test filings it surfaced an auditor's disclaimer
+   buried on page 14 of a results filing.
 
 On choosing models: Flash-Lite missed most promises on a test transcript, 3.8 Flash took 6–20 minutes per
 transcript, and 3.6 Flash with 3.8 as fallback was the balance.
@@ -206,10 +215,11 @@ output; nothing plans, calls tools or acts for the investor. The daily refresh u
 
 ### Cloud
 
-- **Web app (Next.js) and the two model routes run on Vercel.** Pages are prerendered, and the server-only
+- **Web app (Next.js) and the three model routes run on Vercel.** Pages are prerendered, and the server-only
   keys stay off the phone.
-- **The live read of an unseen ticker runs as a Python function on Vercel.** It streams progress, sits in
-  the same deployment, and works within a 90-second budget.
+- **The live read of an unseen ticker and the filing-PDF reader run as a Python function on Vercel.** It
+  streams progress, sits in the same deployment, and works within a 90-second budget. The PDF reader only
+  answers FINN's own server (it requires the server's secret).
 - **The daily refresh runs on Vercel Cron**, once a day at 19:30 IST. The free plan allows one run a day,
   started within the hour. It calls a Deploy Hook to rebuild only when there is new data.
 - **Private data, the answer cache, the call log and the fresh market data live in Supabase (Postgres with
@@ -229,6 +239,9 @@ output; nothing plans, calls tools or acts for the investor. The daily refresh u
   companies have no ledger because no transcript, or only a covering letter, was filed.
 - **The annual report's narrative.** The financial statements come from the XBRL results filings instead.
 - **BSE,** for the reasons above.
+- **Price predictions.** FINN shows how the price moved after a filing and after earlier ones of the same
+  type, labelled as history and not adjusted for the market. A forecast with no track record would look
+  precise without being reliable.
 - **My 150 KB JavaScript target.** The home screen is 255 KB, about 175 KB of it the framework.
 
 ## 5. Where I'd take it next
@@ -239,7 +252,7 @@ output; nothing plans, calls tools or acts for the investor. The daily refresh u
 3. Read the annual report's narrative sections.
 4. Add a results card for banks and lenders, where EBITDA doesn't apply.
 
-Testing: 89 automated tests (Python and TypeScript), run by hand, plus a row-level-security test against
+Testing: 97 automated tests (Python and TypeScript), run by hand, plus a row-level-security test against
 the live database.
 
 I built FINN with Claude Code as a coding assistant; the build history shows how I broke the work down,
